@@ -1,0 +1,3 @@
+.nebeneinander {display:block; width:300px; float: left;}
+.clear {clear:left;}
+.section-number-2:after {content:"."};
