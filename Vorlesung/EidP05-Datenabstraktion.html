@@ -1,0 +1,918 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="de" xml:lang="de">
+<head>
+<!-- 2017-01-26 Thu 18:52 -->
+<meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta  name="viewport" content="width=device-width, initial-scale=1" />
+<title>Datenabstraktion</title>
+<meta  name="generator" content="Org-mode" />
+<meta  name="author" content="Johannes Brauer" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  pre.src-sh:before    { content: 'sh'; }
+  pre.src-bash:before  { content: 'sh'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-R:before     { content: 'R'; }
+  pre.src-perl:before  { content: 'Perl'; }
+  pre.src-java:before  { content: 'Java'; }
+  pre.src-sql:before   { content: 'SQL'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  /*]]>*/-->
+</style>
+<link rel="stylesheet" type="text/css" href="styles/bigblow/css/htmlize.css"/>
+<link rel="stylesheet" type="text/css" href="styles/bigblow/css/bigblow.css"/>
+<link rel="stylesheet" type="text/css" href="styles/bigblow/css/hideshow.css"/>
+<script type="text/javascript" src="styles/bigblow/js/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="styles/bigblow/js/jquery-ui-1.10.2.min.js"></script>
+<script type="text/javascript" src="styles/bigblow/js/jquery.localscroll-min.js"></script>
+<script type="text/javascript" src="styles/bigblow/js/jquery.scrollTo-1.4.3.1-min.js"></script>
+<script type="text/javascript" src="styles/bigblow/js/jquery.zclip.min.js"></script>
+<script type="text/javascript" src="styles/bigblow/js/bigblow.js"></script>
+<script type="text/javascript" src="styles/bigblow/js/hideshow.js"></script>
+<script type="text/javascript" src="styles/lib/js/jquery.stickytableheaders.min.js"></script>
+<link rel="stylesheet" type="text/css" href="mycss/mystyle.css" />
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2013 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        displayAlign: "center",
+        displayIndent: "0em",
+
+        "HTML-CSS": { scale: 100,
+                        linebreaks: { automatic: "false" },
+                        webFont: "TeX"
+                       },
+        SVG: {scale: 100,
+              linebreaks: { automatic: "false" },
+              font: "TeX"},
+        NativeMML: {scale: 100},
+        TeX: { equationNumbers: {autoNumber: "AMS"},
+               MultLineWidth: "85%",
+               TagSide: "right",
+               TagIndent: ".8em"
+             }
+});
+</script>
+<script type="text/javascript"
+        src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">Datenabstraktion
+<br>
+<span class="subtitle">Einführung in die Programmierung</span>
+</h1>
+
+<div id="outline-container-orgheadline1" class="outline-2">
+<h2 id="orgheadline1">Zusammengesetzte Datenstrukturen</h2>
+<div class="outline-text-2" id="text-orgheadline1">
+<ul class="org-ul">
+<li>Im Abschnitt über die Verwendung von Hilfsfunktionen wurde der
+Begriff der <i>prozeduralen Abstraktion</i> geprägt: Eine Funktion kann
+unter Verwendung von Hilfsfunktionen entwickelt werden, ohne die
+Details ihrer Implementierung kennen zu müssen. Davon kann
+abstrahiert werden.</li>
+<li><i>Datenabstraktion</i> ermöglicht mit zusammengesetzten Daten
+(Datenstrukturen) zu arbeiten, ohne wissen zu müssen, wie sie aus
+primitiveren Datenobjekten konstruiert werden.</li>
+</ul>
+</div>
+<div id="outline-container-orgheadline2" class="outline-3">
+<h3 id="orgheadline2">Datenabstraktion</h3>
+<div class="outline-text-3" id="text-orgheadline2">
+<ul class="org-ul">
+<li>Grundgedanke: Einzelne Dinge werden zu einem neuen Ganzen. 
+<ul class="org-ul">
+<li>Aus 5000 Einzelteilen entsteht ein Auto.</li>
+<li>Aus zwei Keksen und Schokocreme entsteht ein Waffelkeks.</li>
+<li>Aus zwei Koordinaten entsteht ein Punkt.</li>
+<li>Aus einer Menge von Merkmalen entsteht eine Objektstruktur.</li>
+</ul></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgheadline3" class="outline-3">
+<h3 id="orgheadline3">Beispiel: Rechnen mit Punkten in der Ebene</h3>
+<div class="outline-text-3" id="text-orgheadline3">
+<ul class="org-ul">
+<li>In den bisherigen Beispielen wurden nur Funktionen betrachtet, die
+atomare Daten (Zahlen) verarbeiten.</li>
+<li>Jetzt rechnen wir mit Punkten in der Ebene</li>
+</ul>
+</div>
+
+<div id="outline-container-orgheadline4" class="outline-4">
+<h4 id="orgheadline4">Defintion von Punkten</h4>
+<div class="outline-text-4" id="text-orgheadline4">
+<ul class="org-ul">
+<li>Ein Punkt in der Ebene wird durch seine x- und seine y-Koordinate
+bestimmt (kartesisches Koordinatensystem).</li>
+<li><p>
+Wir tun so, als ob wir eine Funktion <code>make-point</code> zur Verfügung
+hätten, die einen Punkt erzeugt, z. B. so:
+</p>
+<pre class="example">
+(make-point 3 4)
+</pre></li>
+<li><p>
+Nehmen wir weiter an, es gäbe zwei Funktionen, die die x- bzw. die
+y-Koordinate eines Punkts zugänglich macht:
+</p>
+<pre class="example">
+(point-x (make-point 3 4)) ;;=&gt; 3
+(point-y (make-point 3 4)) ;;=&gt; 4
+</pre></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgheadline5" class="outline-4">
+<h4 id="orgheadline5">Punkt-Funktionen</h4>
+<div class="outline-text-4" id="text-orgheadline5">
+<ul class="org-ul">
+<li><p>
+Unter diesen Voraussetzungen könnte eine Funktion zur Addition
+zweier Punkte wie folgt definiert werden:
+</p>
+<div class="org-src-container">
+
+<pre class="src src-scheme"><span style="color: #707183;">(</span><span style="color: #0000FF;">define</span> <span style="color: #006699;">add-point</span>
+  <span style="color: #7388D6;">(</span><span style="color: #0000FF;">lambda</span> <span style="color: #909183;">[</span>p1 p2<span style="color: #909183;">]</span>
+    <span style="color: #909183;">(</span>make-point
+      <span style="color: #709870;">(</span>+ <span style="color: #907373;">(</span>point-x p1<span style="color: #907373;">)</span> <span style="color: #907373;">(</span>point-x p2<span style="color: #907373;">)</span><span style="color: #709870;">)</span>
+      <span style="color: #709870;">(</span>+ <span style="color: #907373;">(</span>point-y p1<span style="color: #907373;">)</span> <span style="color: #907373;">(</span>point-y p2<span style="color: #907373;">)</span><span style="color: #709870;">)</span><span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
+</pre>
+</div></li>
+</ul>
+<ul class="org-ul">
+<li><p>
+Weitere <code>point</code>-Funktionen könnten sein:
+</p>
+<div class="org-src-container">
+
+<pre class="src src-scheme"><span style="color: #707183;">(</span><span style="color: #0000FF;">define</span> <span style="color: #006699;">equal-point?</span>
+  <span style="color: #7388D6;">(</span><span style="color: #0000FF;">lambda</span> <span style="color: #909183;">[</span>p1 p2<span style="color: #909183;">]</span>
+    <span style="color: #909183;">(</span><span style="color: #0000FF;">and</span> 
+     <span style="color: #709870;">(</span>= <span style="color: #907373;">(</span>point-x p1<span style="color: #907373;">)</span> <span style="color: #907373;">(</span>point-x p2<span style="color: #907373;">)</span><span style="color: #709870;">)</span>
+     <span style="color: #709870;">(</span>= <span style="color: #907373;">(</span>point-y p1<span style="color: #907373;">)</span> <span style="color: #907373;">(</span>point-y p2<span style="color: #907373;">)</span><span style="color: #709870;">)</span><span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
+
+<span style="color: #707183;">(</span><span style="color: #0000FF;">define</span> <span style="color: #006699;">distance-to-0</span>
+  <span style="color: #7388D6;">(</span><span style="color: #0000FF;">lambda</span> <span style="color: #909183;">[</span>p<span style="color: #909183;">]</span>
+    <span style="color: #909183;">(</span>sqrt
+     <span style="color: #709870;">(</span>+ <span style="color: #907373;">(</span>sqr <span style="color: #6276BA;">(</span>point-x p<span style="color: #6276BA;">)</span><span style="color: #907373;">)</span>
+        <span style="color: #907373;">(</span>sqr <span style="color: #6276BA;">(</span>point-y p<span style="color: #6276BA;">)</span><span style="color: #907373;">)</span><span style="color: #709870;">)</span><span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
+</pre>
+</div></li>
+<li>Diese (und weitere) Funktionen können programmiert werden, ohne
+<ul class="org-ul">
+<li>die Funktionen <code>make-point</code>, <code>point-x</code> und <code>point-y</code> implementiert
+zu haben und</li>
+<li>eine konkrete Repräsentation von Punkten angegeben zu haben.</li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgheadline6" class="outline-4">
+<h4 id="orgheadline6">Implementierung der Datenstruktur durch <code>pairs</code></h4>
+<div class="outline-text-4" id="text-orgheadline6">
+<p>
+<b>Anmerkung:</b> Die hier gezeigte Implementierung funktioniert nicht in
+den Lehrsprachen von DrRacket.
+</p>
+
+<ul class="org-ul">
+<li>Racket stellt eine einfache, aus zwei Komponenten bestehende
+Verbundstruktur &#x2013; genannt <code>pair</code> &#x2013; zur Vefügung.</li>
+<li>Ein <code>pair</code> kann mithilfe der Funktion <code>cons</code> erzeugt werden.</li>
+<li><code>cons</code> erwartet zwei Argumente und gibt ein zusammengesetztes
+Datenobjekt zurück, das die beiden Argumente als Teile enthält.
+Beispiel: <code>(cons 3 4)</code> liefert <code>(3 . 4)</code></li>
+<li><p>
+Für den Zugriff auf die beiden Teile eines <code>pairs</code> gibt es die
+beiden Funktionen <code>car</code> und <code>cdr</code>:
+</p>
+<pre class="example">
+(car (cons 1 2)) ;;=&gt; 1
+(cdr (cons 1 2)) ;;=&gt; 2
+</pre></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgheadline7" class="outline-4">
+<h4 id="orgheadline7">Die Funktionen <code>make-point</code>, <code>point-x</code> und <code>point-y</code></h4>
+<div class="outline-text-4" id="text-orgheadline7">
+<ul class="org-ul">
+<li><code>make-point</code> heißt auch Konstruktionsfunktion.</li>
+<li><code>point-x</code> und <code>point-y</code> nennt man auch Selektionsfunktionen.</li>
+</ul>
+<div class="org-src-container">
+
+<pre class="src src-scheme"> <span style="color: #707183;">(</span><span style="color: #0000FF;">define</span> <span style="color: #006699;">make-point</span>
+   <span style="color: #7388D6;">(</span><span style="color: #0000FF;">lambda</span> <span style="color: #909183;">[</span>x y<span style="color: #909183;">]</span> <span style="color: #909183;">(</span>cons x y<span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
+
+ <span style="color: #707183;">(</span><span style="color: #0000FF;">define</span> <span style="color: #006699;">point-x</span>
+   <span style="color: #7388D6;">(</span><span style="color: #0000FF;">lambda</span> <span style="color: #909183;">[</span>p<span style="color: #909183;">]</span> <span style="color: #909183;">(</span>car p<span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
+
+ <span style="color: #707183;">(</span><span style="color: #0000FF;">define</span> <span style="color: #006699;">point-y</span>
+   <span style="color: #7388D6;">(</span><span style="color: #0000FF;">lambda</span> <span style="color: #909183;">[</span>p<span style="color: #909183;">]</span> <span style="color: #909183;">(</span>cdr p<span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-orgheadline8" class="outline-4">
+<h4 id="orgheadline8">Abstraktionsbarrieren</h4>
+<div class="outline-text-4" id="text-orgheadline8">
+
+<div class="figure">
+<p><img src="./Abbildungen/barrieren.png" alt="barrieren.png" width="400px" />
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-orgheadline9" class="outline-4">
+<h4 id="orgheadline9">Nutzen der Abstraktion</h4>
+<div class="outline-text-4" id="text-orgheadline9">
+<ul class="org-ul">
+<li>Programm leichter pflegbar</li>
+<li>Komplexe Datenstrukturen können auf verschieden Arten unter
+Verwendung der von der Programmiersprache bereitgestellten
+primitiven Strukturen implementiert werden.</li>
+<li>Die Implementierung mithilfe von <code>pairs</code> erfordert allerdings für
+jede neu zu definierende Datenstruktur die erneute Implementierung
+von Konstruktions- und Selektionsfunktionen. („boiler plate code”)</li>
+<li>Deshalb sehen Programmiersprache häufig komfortablere Möglichkeiten
+vor, Datenstrukturen zu definieren.</li>
+</ul>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgheadline10" class="outline-3">
+<h3 id="orgheadline10">Definition von Strukturen in Racket</h3>
+<div class="outline-text-3" id="text-orgheadline10">
+<ul class="org-ul">
+<li>Sprache: DrRacket-Lehrsprache „Zwischenstufe mit lambda”</li>
+<li>Für die Definition von Strukturen (Verbünde, records) steht die
+Pseudofunktion <code>define-struct</code> zur Verfügung.</li>
+<li><p>
+Punkte im zweidimensionalen, kartesischen Koordinatensystem (s. o.)
+könnten wie folgt definiert werden:
+</p>
+<pre class="example">
+(define-struct point [x y])
+</pre></li>
+<li>Mit dieser Definition stehen automatisch die folgenden Funktionen
+bereit:</li>
+</ul>
+<ul class="org-ul">
+<li><code>make-point</code> : akzeptiert zwei Zahlen als Argumente und erzeugt
+ein neues Exemplar der Struktur <code>point</code>.</li>
+<li><code>point-x</code> : akzeptiert ein Exemplar der Struktur <code>point</code> und
+liefert die <code>x</code>-Komponente.</li>
+<li><code>point-y</code> : akzeptiert ein Exemplar der Struktur <code>point</code> und
+liefert die <code>y</code>-Komponente.</li>
+<li><code>point?</code> : akzeptiert einen beliebigen Wert als Argument und
+liefert <code>#true</code>, falls der Wert ein Exemplar der Struktur <code>point</code>
+ist.</li>
+</ul>
+</div>
+<div id="outline-container-orgheadline11" class="outline-4">
+<h4 id="orgheadline11">Benutzungsbeispiel in DrRacket</h4>
+<div class="outline-text-4" id="text-orgheadline11">
+<pre class="example">
+Willkommen bei DrRacket, Version 6.7 [3m].
+Sprache: Zwischenstufe mit lambda; memory limit: 128 MB.
+&gt; (define-struct point [x y])
+&gt; (define p1 (make-point 3 4))
+&gt; p1
+(make-point 3 4)
+&gt; (point-x p1)
+3
+&gt; (point-y p1)
+4
+&gt; (point? p1)
+#true
+&gt; (point? "p1")
+#false
+&gt;
+</pre>
+</div>
+</div>
+<div id="outline-container-orgheadline12" class="outline-4">
+<h4 id="orgheadline12">Weiterverwendung von <code>add-point</code> &#x2026;</h4>
+<div class="outline-text-4" id="text-orgheadline12">
+<p>
+Die in Abschnitt <a href="#orgheadline5">Punkt-Funktionen</a> eingeführten Funktionen
+</p>
+
+<div class="org-src-container">
+
+<pre class="src src-scheme"> <span style="color: #707183;">(</span><span style="color: #0000FF;">define</span> <span style="color: #006699;">add-point</span>
+   <span style="color: #7388D6;">(</span><span style="color: #0000FF;">lambda</span> <span style="color: #909183;">[</span>p1 p2<span style="color: #909183;">]</span>
+     <span style="color: #909183;">(</span>make-point
+       <span style="color: #709870;">(</span>+ <span style="color: #907373;">(</span>point-x p1<span style="color: #907373;">)</span> <span style="color: #907373;">(</span>point-x p2<span style="color: #907373;">)</span><span style="color: #709870;">)</span>
+       <span style="color: #709870;">(</span>+ <span style="color: #907373;">(</span>point-y p1<span style="color: #907373;">)</span> <span style="color: #907373;">(</span>point-y p2<span style="color: #907373;">)</span><span style="color: #709870;">)</span><span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
+ <span style="color: #707183;">(</span><span style="color: #0000FF;">define</span> <span style="color: #006699;">equal-point?</span>
+   <span style="color: #7388D6;">(</span><span style="color: #0000FF;">lambda</span> <span style="color: #909183;">[</span>p1 p2<span style="color: #909183;">]</span>
+     <span style="color: #909183;">(</span><span style="color: #0000FF;">and</span> 
+      <span style="color: #709870;">(</span>= <span style="color: #907373;">(</span>point-x p1<span style="color: #907373;">)</span> <span style="color: #907373;">(</span>point-x p2<span style="color: #907373;">)</span><span style="color: #709870;">)</span>
+      <span style="color: #709870;">(</span>= <span style="color: #907373;">(</span>point-y p1<span style="color: #907373;">)</span> <span style="color: #907373;">(</span>point-y p2<span style="color: #907373;">)</span><span style="color: #709870;">)</span><span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
+ <span style="color: #707183;">(</span><span style="color: #0000FF;">define</span> <span style="color: #006699;">distance-to-0</span>
+   <span style="color: #7388D6;">(</span><span style="color: #0000FF;">lambda</span> <span style="color: #909183;">[</span>p<span style="color: #909183;">]</span>
+     <span style="color: #909183;">(</span>sqrt
+      <span style="color: #709870;">(</span>+ <span style="color: #907373;">(</span>sqr <span style="color: #6276BA;">(</span>point-x p<span style="color: #6276BA;">)</span><span style="color: #907373;">)</span>
+         <span style="color: #907373;">(</span>sqr <span style="color: #6276BA;">(</span>point-y p<span style="color: #6276BA;">)</span><span style="color: #907373;">)</span><span style="color: #709870;">)</span><span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
+</pre>
+</div>
+<p>
+können unverändert bleiben.
+</p>
+</div>
+</div>
+<div id="outline-container-orgheadline13" class="outline-4">
+<h4 id="orgheadline13">Regel (7) für das Aufschreiben von Strukturdefinitionen</h4>
+<div class="outline-text-4" id="text-orgheadline13">
+<ul class="org-ul">
+<li>Für den Entwurf einer zusammengesetzten Datenstruktur ist es
+hilfreich, ihre Zusammensetzung durch einen Kommentar genau zu beschreiben.</li>
+<li>Anschließend erfolgt der passende Aufruf von <code>define-struct</code></li>
+<li><p>
+Beispiel:
+</p>
+<pre class="example">
+;; Ein Rechteck ist ein Wert
+;;  (make-rectangle a b)
+;; wobei a und b Zahlen sind, die die Seitenlängen eines Rechecks
+;; beschreiben.
+(define-struct rectangle [a b])
+</pre></li>
+</ul>
+<p>
+<b>Regel 7 (Datenstrukturen)</b>
+</p>
+<ol class="org-ol">
+<li>Finde durch die Datenanalyse heraus, aus welchen Komponenten die
+Datenstruktur besteht.</li>
+<li>Schreibe dann die Datendefinition in der Form auf:<br  />
+; Ein \(s\) ist ein Wert<br  />
+; (make-s <i>s<sub>1</sub></i> &#x2026; <i>s<sub>n</sub></i>)<br  />
+; wobei <i>s<sub>1</sub></i> &#x2026;</li>
+<li>Definiere die Datenstruktur:<br  />
+(define-struct \(s\) [\(s_1\) &#x2026;])</li>
+</ol>
+</div>
+</div>
+</div>
+<div id="outline-container-orgheadline14" class="outline-3">
+<h3 id="orgheadline14">Entwicklungsmethodik für strukturverarbeitende Funktionen</h3>
+<div class="outline-text-3" id="text-orgheadline14">
+<p>
+<b>Regel 8 (strukturverarbeitende Funktionen)</b>
+</p>
+
+<ol class="org-ol">
+<li>Bestimme die für die Berechnung des Ergebnisses
+erforderlichen Komponenten der Datenstruktur!</li>
+<li>Für jede Komponente der Datenstruktur, von deren Wert das Ergebnis
+der Funktion abhängt, schreibe den zugehörigen Selektor in die
+Funktionsschablone.</li>
+<li>Falls die Funktion eine Datenstruktur als Resultat liefern muss,
+nimm den Aufruf des Konstruktors in die Schablone mit auf.</li>
+</ol>
+</div>
+
+<div id="outline-container-orgheadline15" class="outline-4">
+<h4 id="orgheadline15">Anwendungsbeispiele für Regel 8</h4>
+<div class="outline-text-4" id="text-orgheadline15">
+<p>
+Für die Funktion <code>add-point</code> ergäbe sich damit die folgenden Schablone:
+</p>
+<div class="small">
+<div class="org-src-container">
+
+<pre class="src src-scheme"><span style="color: #707183;">(</span><span style="color: #0000FF;">define</span> <span style="color: #006699;">add-point</span>
+      <span style="color: #7388D6;">(</span><span style="color: #0000FF;">lambda</span> <span style="color: #909183;">[</span>p1 p2<span style="color: #909183;">]</span>
+         <span style="color: #909183;">(</span>make-point
+            <span style="color: #709870;">(</span>... <span style="color: #907373;">(</span>point-x p1<span style="color: #907373;">)</span> <span style="color: #907373;">(</span>point-x p2<span style="color: #907373;">)</span>...
+             ... <span style="color: #907373;">(</span>point-y p1<span style="color: #907373;">)</span> <span style="color: #907373;">(</span>point-y p2<span style="color: #907373;">)</span>...<span style="color: #709870;">)</span><span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
+</pre>
+</div>
+
+</div>
+
+<p>
+Für die Funktion <code>equal-point?</code> ergäbe sich eine Schablone ohne Konstruktor:
+</p>
+<div class="org-src-container">
+
+<pre class="src src-scheme"><span style="color: #707183;">(</span><span style="color: #0000FF;">define</span> <span style="color: #006699;">equal-point?</span>
+      <span style="color: #7388D6;">(</span><span style="color: #0000FF;">lambda</span> <span style="color: #909183;">[</span>p1 p2<span style="color: #909183;">]</span>
+         <span style="color: #909183;">(</span>...
+            <span style="color: #709870;">(</span>... <span style="color: #907373;">(</span>point-x p1<span style="color: #907373;">)</span> <span style="color: #907373;">(</span>point-x p2<span style="color: #907373;">)</span>...
+             ... <span style="color: #907373;">(</span>point-y p1<span style="color: #907373;">)</span> <span style="color: #907373;">(</span>point-y p2<span style="color: #907373;">)</span>...<span style="color: #709870;">)</span><span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgheadline18" class="outline-4">
+<h4 id="orgheadline18">Regel-konforme Aufschreibung der Funktionen <code>equal-point?</code> und <code>add-point</code></h4>
+<div class="outline-text-4" id="text-orgheadline18">
+</div><div id="outline-container-orgheadline16" class="outline-5">
+<h5 id="orgheadline16"><code>equal-point?</code></h5>
+<div class="outline-text-5" id="text-orgheadline16">
+<div class="org-src-container">
+
+<pre class="src src-scheme"><span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">ein Punkt ist ein Wert</span>
+<span style="color: #8D8D84;">;;   </span><span style="color: #8D8D84; font-style: italic;">(make-point x y)</span>
+<span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">wobei x und y Zahlen sind und die kartesischen Koordinaten</span>
+<span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">eines Punkts in der Ebene darstellen.</span>
+<span style="color: #707183;">(</span>define-struct point <span style="color: #7388D6;">[</span>x y<span style="color: #7388D6;">]</span><span style="color: #707183;">)</span>
+
+<span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">pr&#252;ft zwei Punkte auf Gleichheit, die durch die Gleichheit</span>
+<span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">der x- und der y-Koordinaten gegeben ist.</span>
+<span style="color: #707183;">(</span><span style="color: #0000FF;">define</span> <span style="color: #006699;">equal-point?</span>
+  <span style="color: #7388D6;">(</span><span style="color: #0000FF;">lambda</span> <span style="color: #909183;">[</span>p1 p2<span style="color: #909183;">]</span>
+    <span style="color: #909183;">(</span><span style="color: #0000FF;">and</span> 
+     <span style="color: #709870;">(</span>= <span style="color: #907373;">(</span>point-x p1<span style="color: #907373;">)</span> <span style="color: #907373;">(</span>point-x p2<span style="color: #907373;">)</span><span style="color: #709870;">)</span>
+     <span style="color: #709870;">(</span>= <span style="color: #907373;">(</span>point-y p1<span style="color: #907373;">)</span> <span style="color: #907373;">(</span>point-y p2<span style="color: #907373;">)</span><span style="color: #709870;">)</span><span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
+<span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">Beispielanwendungen:</span>
+<span style="color: #707183;">(</span>not <span style="color: #7388D6;">(</span>equal-point? <span style="color: #909183;">(</span>make-point 2 3<span style="color: #909183;">)</span> <span style="color: #909183;">(</span>make-point 5 1<span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
+<span style="color: #707183;">(</span>equal-point? <span style="color: #7388D6;">(</span>make-point 2 3<span style="color: #7388D6;">)</span> <span style="color: #7388D6;">(</span>make-point 2 3<span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-orgheadline17" class="outline-5">
+<h5 id="orgheadline17"><code>add-point</code></h5>
+<div class="outline-text-5" id="text-orgheadline17">
+<div class="org-src-container">
+
+<pre class="src src-scheme"><span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">Berechnung eines neuen Punktes durch die Addition zweier Punkte</span>
+<span style="color: #707183;">(</span><span style="color: #0000FF;">define</span> <span style="color: #006699;">add-point</span>
+  <span style="color: #7388D6;">(</span><span style="color: #0000FF;">lambda</span> <span style="color: #909183;">[</span>p1 p2<span style="color: #909183;">]</span>
+    <span style="color: #909183;">(</span>make-point
+     <span style="color: #709870;">(</span>+ <span style="color: #907373;">(</span>point-x p1<span style="color: #907373;">)</span> <span style="color: #907373;">(</span>point-x p2<span style="color: #907373;">)</span><span style="color: #709870;">)</span>
+     <span style="color: #709870;">(</span>+ <span style="color: #907373;">(</span>point-y p1<span style="color: #907373;">)</span> <span style="color: #907373;">(</span>point-y p2<span style="color: #907373;">)</span><span style="color: #709870;">)</span><span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
+<span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">Beispielanwendungen:</span>
+<span style="color: #707183;">(</span>equal-point? <span style="color: #7388D6;">(</span>add-point <span style="color: #909183;">(</span>make-point 2 3<span style="color: #909183;">)</span> <span style="color: #909183;">(</span>make-point 5 1<span style="color: #909183;">)</span><span style="color: #7388D6;">)</span> <span style="color: #7388D6;">(</span>make-point 7 4<span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-orgheadline24" class="outline-2">
+<h2 id="orgheadline24">Formulierung von Tests</h2>
+<div class="outline-text-2" id="text-orgheadline24">
+</div><div id="outline-container-orgheadline19" class="outline-3">
+<h3 id="orgheadline19">Tests statt Beispielanwendungen</h3>
+<div class="outline-text-3" id="text-orgheadline19">
+<ul class="org-ul">
+<li>Man beachte, dass Formulierung der Beispielanwendungen für die
+Funktion <code>add-point</code> die Existenz der Funktion <code>equal-point?</code> voraussetzt.</li>
+<li>Ohne diese Funktion wäre das Aufschreiben der Beispielanwendungen
+erheblich umständlicher.</li>
+<li>Die Pseudofunktion <code>define-struct</code> erzeugt leider kein
+Gleichheisprädikat automatisch.</li>
+<li>Racket bietet aber die Möglichkeit Testprozeduren anstelle von
+Beispielanwendungen zu benutzen.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgheadline20" class="outline-3">
+<h3 id="orgheadline20">Die Funktion <code>add-point</code> mit Tests</h3>
+<div class="outline-text-3" id="text-orgheadline20">
+<ul class="org-ul">
+<li>Statt des selbst definierten Gleichheitsprädikats <code>equal-point?</code>
+  verwenden wir für den Test die Standard-Testprozedur <code>check-expect</code>.</li>
+<li><code>check-expect</code> erwartet zwei Argumente:
+<ol class="org-ol">
+<li>den zu testenden Ausdruck</li>
+<li>den Erwartungswert</li>
+</ol></li>
+</ul>
+<div class="org-src-container">
+
+<pre class="src src-scheme"><span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">ein Punkt ist ein Wert</span>
+<span style="color: #8D8D84;">;;   </span><span style="color: #8D8D84; font-style: italic;">(make-point x y)</span>
+<span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">wobei x und y Zahlen sind und die kartesischen Koordinaten</span>
+<span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">eines Punkts in der Ebene darstellen.</span>
+<span style="color: #707183;">(</span>define-struct point <span style="color: #7388D6;">[</span>x y<span style="color: #7388D6;">]</span><span style="color: #707183;">)</span>
+
+<span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">Berechnung eines neuen Punktes durch die Addition zweier Punkte</span>
+<span style="color: #707183;">(</span><span style="color: #0000FF;">define</span> <span style="color: #006699;">add-point</span>
+  <span style="color: #7388D6;">(</span><span style="color: #0000FF;">lambda</span> <span style="color: #909183;">[</span>p1 p2<span style="color: #909183;">]</span>
+    <span style="color: #909183;">(</span>make-point
+     <span style="color: #709870;">(</span>+ <span style="color: #907373;">(</span>point-x p1<span style="color: #907373;">)</span> <span style="color: #907373;">(</span>point-x p2<span style="color: #907373;">)</span><span style="color: #709870;">)</span>
+     <span style="color: #709870;">(</span>+ <span style="color: #907373;">(</span>point-y p1<span style="color: #907373;">)</span> <span style="color: #907373;">(</span>point-y p2<span style="color: #907373;">)</span><span style="color: #709870;">)</span><span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
+<span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">Tests:</span>
+<span style="color: #707183;">(</span>check-expect <span style="color: #7388D6;">(</span>add-point <span style="color: #909183;">(</span>make-point 2 3<span style="color: #909183;">)</span> <span style="color: #909183;">(</span>make-point 5 1<span style="color: #909183;">)</span><span style="color: #7388D6;">)</span> <span style="color: #7388D6;">(</span>make-point 7 4<span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
+</pre>
+</div>
+<ul class="org-ul">
+<li>Betätigt man nun den Start-Knopf von DrRacket, erscheint im
+Interaktionsfenster:</li>
+</ul>
+<pre class="example">
+Willkommen bei DrRacket, Version 6.7 [3m].
+Sprache: Zwischenstufe mit lambda; memory limit: 128 MB.
+Der eine Test ist bestanden!
+&gt;
+</pre>
+</div>
+</div>
+<div id="outline-container-orgheadline21" class="outline-3">
+<h3 id="orgheadline21">Testfälle in Racket</h3>
+<div class="outline-text-3" id="text-orgheadline21">
+<dl class="org-dl">
+<dt>(check-expect expr expr)</dt><dd>Dieser Testfall überprüft, ob der erste
+expr den gleichen Wert hat wie der zweite expr, wobei das zweite
+expr meist ein Literal ist.</dd>
+<dt>(check-within expr expr expr)</dt><dd>Wie
+check-expect, aber mit einem weiteren Ausdruck, der als Wert eine
+Zahl delta hat. Dieser Testfall überprüft, dass jede Zahl im Resultat
+des ersten expr maximal um delta von der entsprechenden Zahl im
+zweiten expr abweicht.</dd>
+<dt>(check-member-of expr expr &#x2026;)</dt><dd>Ähnlich wie
+check-expect: Der Testfall überprüft, dass das Resultat des ersten
+Operanden gleich dem Wert eines der folgenden Operanden ist.</dd>
+</dl>
+<dl class="org-dl">
+<dt>(check-range expr expr expr)</dt><dd>Ähnlich wie check-expect: Alle drei
+Operanden müssen Zahlen sein. Der Testfall überprüft, ob die erste
+Zahl zwischen der zweiten und der dritten liegt (inklusive).</dd>
+<dt>(check-error expr expr)</dt><dd>Dieser Testfall überprüft, ob der erste expr
+einen Fehler produziert, wobei die Fehlermeldung der Zeichenkette
+entspricht, die der Wert des zweiten expr ist.</dd>
+</dl>
+</div>
+</div>
+
+<div id="outline-container-orgheadline22" class="outline-3">
+<h3 id="orgheadline22">Modifikation der Regel 3</h3>
+<div class="outline-text-3" id="text-orgheadline22">
+<p>
+<b>Regel 3neu</b>
+</p>
+
+<p>
+Schreibe Tests für die Funktion unter Verwendung der
+<code>check-...</code>-Prozeduren von Racket auf.
+</p>
+
+<p>
+Es ist üblich, die Tests zwischen die Zweckbestimmung und die Funktion
+zu schreiben.
+</p>
+</div>
+
+<div id="outline-container-orgheadline23" class="outline-4">
+<h4 id="orgheadline23">Anwendung auf die Funktion <code>distance-to-0</code></h4>
+<div class="outline-text-4" id="text-orgheadline23">
+<div class="org-src-container">
+
+<pre class="src src-scheme"><span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">ein Punkt ist ein Wert</span>
+<span style="color: #8D8D84;">;;   </span><span style="color: #8D8D84; font-style: italic;">(make-point x y)</span>
+<span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">wobei x und y Zahlen sind und die kartesischen Koordinaten</span>
+<span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">eines Punkts in der Ebene darstellen.</span>
+<span style="color: #707183;">(</span>define-struct point <span style="color: #7388D6;">[</span>x y<span style="color: #7388D6;">]</span><span style="color: #707183;">)</span>
+
+<span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">berechnet den Abstand eines Punktes vom Ursprung des</span>
+<span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">Koordinatensystems</span>
+<span style="color: #707183;">(</span>check-within <span style="color: #7388D6;">(</span>distance-to-0 <span style="color: #909183;">(</span>make-point 2 2<span style="color: #909183;">)</span><span style="color: #7388D6;">)</span> <span style="color: #7388D6;">(</span>sqrt 8<span style="color: #7388D6;">)</span> 0.01<span style="color: #707183;">)</span>
+<span style="color: #707183;">(</span>check-within <span style="color: #7388D6;">(</span>distance-to-0 <span style="color: #909183;">(</span>make-point <span style="color: #709870;">(</span>sqrt 8<span style="color: #709870;">)</span> <span style="color: #709870;">(</span>sqrt 8<span style="color: #709870;">)</span><span style="color: #909183;">)</span><span style="color: #7388D6;">)</span> 4 0.01<span style="color: #707183;">)</span>
+<span style="color: #707183;">(</span><span style="color: #0000FF;">define</span> <span style="color: #006699;">distance-to-0</span>
+  <span style="color: #7388D6;">(</span><span style="color: #0000FF;">lambda</span> <span style="color: #909183;">[</span>p<span style="color: #909183;">]</span>
+    <span style="color: #909183;">(</span>sqrt
+     <span style="color: #709870;">(</span>+ <span style="color: #907373;">(</span>sqr <span style="color: #6276BA;">(</span>point-x p<span style="color: #6276BA;">)</span><span style="color: #907373;">)</span>
+        <span style="color: #907373;">(</span>sqr <span style="color: #6276BA;">(</span>point-y p<span style="color: #6276BA;">)</span><span style="color: #907373;">)</span><span style="color: #709870;">)</span><span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
+</pre>
+</div>
+<p>
+<b>Frage:</b> Warum brauchen wir hier die Testprozedur <code>check-within</code>?
+</p>
+
+<p>
+(Aufgaben zu Datenstrukturen)
+</p>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgheadline30" class="outline-2">
+<h2 id="orgheadline30">Gemischte Daten</h2>
+<div class="outline-text-2" id="text-orgheadline30">
+</div><div id="outline-container-orgheadline25" class="outline-3">
+<h3 id="orgheadline25">Datenabstraktion durch Generalisierung</h3>
+<div class="outline-text-3" id="text-orgheadline25">
+<ul class="org-ul">
+<li>Funktionen sollen verschiedene &#x2013; aber verwandte &#x2013; Datenstrukturen
+verarbeiten.</li>
+
+<li>Beispiel: Rechtecke und Kreise sind geometrische Figuren.</li>
+</ul>
+
+<pre class="example">
+    ;; Eine Figur ist entweder
+    ;; - ein Rechteck oder
+    ;; - ein Kreis
+    ;; Name: shape
+</pre>
+
+<ul class="org-ul">
+<li>Für <code>shapes</code>-verarbeitende Funktionen sind nur die
+Datenstrukturdefinitionen für Rechtecke und Kreise erforderlich.</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgheadline26" class="outline-3">
+<h3 id="orgheadline26">Definition von <code>rectangle</code></h3>
+<div class="outline-text-3" id="text-orgheadline26">
+<div class="org-src-container">
+
+<pre class="src src-scheme"><span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">Eine Rechteck ist ein Wert </span>
+<span style="color: #8D8D84;">;;   </span><span style="color: #8D8D84; font-style: italic;">(make-rectangle h w)</span>
+<span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">wobei h eine Zahl f&#252;r die H&#246;he, </span>
+<span style="color: #8D8D84;">;;       </span><span style="color: #8D8D84; font-style: italic;">w eine Zahl f&#252;r die Breite</span>
+<span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">des Rechtecks ist</span>
+<span style="color: #707183;">(</span>define-struct rectangle <span style="color: #7388D6;">[</span>h w<span style="color: #7388D6;">]</span><span style="color: #707183;">)</span>
+
+<span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">Rechteckfl&#228;che berechnen</span>
+<span style="color: #707183;">(</span>check-within <span style="color: #7388D6;">(</span>rect-area <span style="color: #909183;">(</span>make-rectangle 2.5 3.0<span style="color: #909183;">)</span><span style="color: #7388D6;">)</span> 7.5 0.01<span style="color: #707183;">)</span>
+<span style="color: #707183;">(</span><span style="color: #0000FF;">define</span> <span style="color: #006699;">rect-area</span>
+  <span style="color: #7388D6;">(</span><span style="color: #0000FF;">lambda</span> <span style="color: #909183;">[</span>r<span style="color: #909183;">]</span>
+    <span style="color: #909183;">(</span>* <span style="color: #709870;">(</span>rectangle-h r<span style="color: #709870;">)</span> <span style="color: #709870;">(</span>rectangle-w r<span style="color: #709870;">)</span><span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgheadline27" class="outline-3">
+<h3 id="orgheadline27">Definition von <code>circle</code></h3>
+<div class="outline-text-3" id="text-orgheadline27">
+<div class="org-src-container">
+
+<pre class="src src-scheme"><span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">Ein Kreis ist ein Wert</span>
+<span style="color: #8D8D84;">;;    </span><span style="color: #8D8D84; font-style: italic;">(make-cicle r)</span>
+<span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">wobei r eine Zahl f&#252;r den Radius ist.</span>
+<span style="color: #707183;">(</span>define-struct circle <span style="color: #7388D6;">[</span>r<span style="color: #7388D6;">]</span><span style="color: #707183;">)</span>
+
+<span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">Kreisfl&#228;che berechnen</span>
+<span style="color: #707183;">(</span>check-within <span style="color: #7388D6;">(</span>circle-area <span style="color: #909183;">(</span>make-circle 1.0<span style="color: #909183;">)</span><span style="color: #7388D6;">)</span> pi 0.01<span style="color: #707183;">)</span>
+<span style="color: #707183;">(</span><span style="color: #0000FF;">define</span> <span style="color: #006699;">circle-area</span>
+  <span style="color: #7388D6;">(</span><span style="color: #0000FF;">lambda</span> <span style="color: #909183;">[</span>r<span style="color: #909183;">]</span>
+    <span style="color: #909183;">(</span>* <span style="color: #709870;">(</span>circle-r r<span style="color: #709870;">)</span> <span style="color: #709870;">(</span>circle-r r<span style="color: #709870;">)</span> pi<span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgheadline28" class="outline-3">
+<h3 id="orgheadline28">Flächeninhalt von Figuren</h3>
+<div class="outline-text-3" id="text-orgheadline28">
+<div class="org-src-container">
+
+<pre class="src src-scheme"><span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">Eine Figur ist entweder</span>
+<span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">- ein Rechteck oder</span>
+<span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">- ein Kreis</span>
+<span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">Name: shape</span>
+
+<span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">Fl&#228;cheninhalt einer Figur berechnen</span>
+<span style="color: #707183;">(</span>check-within <span style="color: #7388D6;">(</span>shape-area <span style="color: #909183;">(</span>make-circle 1.0<span style="color: #909183;">)</span><span style="color: #7388D6;">)</span> pi 0.01<span style="color: #707183;">)</span>
+<span style="color: #707183;">(</span>check-within <span style="color: #7388D6;">(</span>shape-area <span style="color: #909183;">(</span>make-rectangle 2.5 3.0<span style="color: #909183;">)</span><span style="color: #7388D6;">)</span> 7.5 0.01<span style="color: #707183;">)</span>
+<span style="color: #707183;">(</span><span style="color: #0000FF;">define</span> <span style="color: #006699;">shape-area</span>
+  <span style="color: #7388D6;">(</span><span style="color: #0000FF;">lambda</span> <span style="color: #909183;">[</span>s<span style="color: #909183;">]</span>
+    <span style="color: #909183;">(</span><span style="color: #0000FF;">cond</span>
+      <span style="color: #709870;">[</span><span style="color: #907373;">(</span>circle? s<span style="color: #907373;">)</span>    <span style="color: #907373;">(</span>circle-area s<span style="color: #907373;">)</span><span style="color: #709870;">]</span>
+      <span style="color: #709870;">[</span><span style="color: #907373;">(</span>rectangle? s<span style="color: #907373;">)</span> <span style="color: #907373;">(</span>rect-area s<span style="color: #907373;">)</span><span style="color: #709870;">]</span><span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgheadline29" class="outline-3">
+<h3 id="orgheadline29">Entwurfsmethodik für Funktionen zur Verarbeitung gemischter Daten</h3>
+<div class="outline-text-3" id="text-orgheadline29">
+<p>
+<b>Regel 9 (Funktionen für gemischte Daten)</b>  
+</p>
+
+<ol class="org-ol">
+<li>Wenn sich bei der Datenanalyse herausstellt, dass
+gemischte Daten zu verarbeiten sind, schreibe zunächst eine
+Datendefinition in der Form auf:<br  />
+;; Ein \(s\) ist entweder<br  />
+;; - ein \(t_1\) oder<br  />
+;; - \(\ldots\) oder<br  />
+;; - ein \(t_n\) <br  />
+;; Name: x</li>
+<li>Für eine \(s\) -verarbeitende Funktion ist mindestens je ein Testfall
+für jede Variante von \(s\) aufzuschreiben.</li>
+</ol>
+<ol class="org-ol">
+<li value="3"><p>
+Seien <code>t1?</code>, <code>t2?</code>, &#x2026;, <code>tn?</code> die Prädikate zu den in \(s\)
+vorkommenden Varianten \(t_1, t_2, \ldots, t_n\). Dann ergibt
+sich für eine \(s\) -verarbeitende Funktion die folgende Funktionsschablone:
+</p>
+<pre class="example">
+ (check-... )
+ ...
+ (check-... )
+ (define f
+   (lambda [x]
+     (cond
+        [(t1? x) ...]
+        [(t2? x) ...]
+        ...
+        [(tn? x) ...])))
+</pre></li>
+</ol>
+<p>
+(Aufgaben zu gemischten Daten)
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-orgheadline34" class="outline-2">
+<h2 id="orgheadline34">Exkurs: Algebraische Datentypen</h2>
+<div class="outline-text-2" id="text-orgheadline34">
+</div><div id="outline-container-orgheadline31" class="outline-3">
+<h3 id="orgheadline31">Produkttypen</h3>
+<div class="outline-text-3" id="text-orgheadline31">
+<ul class="org-ul">
+<li>Die in Kapitel <a href="#orgheadline10">Definition von Strukturen in Racket</a> erläuterten Strukturdefinitionen
+nennt man oft auch <i>Produkte</i>.</li>
+<li>Die Menge aller Exemplare der Strukturdefinition <code>point</code>
+kann man als Teilmenge des kartesischen Produkts 
+\[number \times number\]
+angesehen werden.</li>
+<li>Daher die Bezeichnung <i>Produkttypen</i>.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgheadline32" class="outline-3">
+<h3 id="orgheadline32">Summentypen</h3>
+<div class="outline-text-3" id="text-orgheadline32">
+<ul class="org-ul">
+<li><p>
+Die in Kapitel <a href="#orgheadline30">Gemischte Daten</a> eingeführten varianten Typen
+</p>
+<blockquote>
+<p>
+Eine Figur ist entweder ein Rechteck oder ein Kreis.
+</p>
+</blockquote>
+<p>
+werden auch als Summentypen bezeichnet.
+</p></li>
+<li>Die Menge aller Figuren ist die Vereinigung der Menge aller Kreise
+mit der Menge aller Rechtecke.</li>
+<li>Die <i>Vereinigung von Mengen</i> wird auch als die <i>Summe der Mengen</i>
+  bezeichnet.</li>
+<li>Daher die Bezeichnung Summentypen.</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgheadline33" class="outline-3">
+<h3 id="orgheadline33">Haskell</h3>
+<div class="outline-text-3" id="text-orgheadline33">
+<p>
+Der Begriff der algebraischen Datentypen ist inbesondere im Kontext
+der Programmiersprache <a href="https://www.haskell.org">Haskell</a> sehr gebräuchlich.
+</p>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Autor: Johannes Brauer</p>
+<p class="date">Created: 2017-01-26 Thu 18:52</p>
+<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>

@@ -1,0 +1,500 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="de" xml:lang="de">
+<head>
+<!-- 2017-01-17 Tue 19:14 -->
+<meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta  name="viewport" content="width=device-width, initial-scale=1" />
+<title>Erste Schritte in Racket</title>
+<meta  name="generator" content="Org-mode" />
+<meta  name="author" content="Johannes Brauer" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  pre.src-sh:before    { content: 'sh'; }
+  pre.src-bash:before  { content: 'sh'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-R:before     { content: 'R'; }
+  pre.src-perl:before  { content: 'Perl'; }
+  pre.src-java:before  { content: 'Java'; }
+  pre.src-sql:before   { content: 'SQL'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  /*]]>*/-->
+</style>
+<link rel="stylesheet" type="text/css" href="styles/bigblow/css/htmlize.css"/>
+<link rel="stylesheet" type="text/css" href="styles/bigblow/css/bigblow.css"/>
+<link rel="stylesheet" type="text/css" href="styles/bigblow/css/hideshow.css"/>
+<script type="text/javascript" src="styles/bigblow/js/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="styles/bigblow/js/jquery-ui-1.10.2.min.js"></script>
+<script type="text/javascript" src="styles/bigblow/js/jquery.localscroll-min.js"></script>
+<script type="text/javascript" src="styles/bigblow/js/jquery.scrollTo-1.4.3.1-min.js"></script>
+<script type="text/javascript" src="styles/bigblow/js/jquery.zclip.min.js"></script>
+<script type="text/javascript" src="styles/bigblow/js/bigblow.js"></script>
+<script type="text/javascript" src="styles/bigblow/js/hideshow.js"></script>
+<script type="text/javascript" src="styles/lib/js/jquery.stickytableheaders.min.js"></script>
+<link rel="stylesheet" type="text/css" href="mycss/mystyle.css" />
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2013 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        displayAlign: "center",
+        displayIndent: "0em",
+
+        "HTML-CSS": { scale: 100,
+                        linebreaks: { automatic: "false" },
+                        webFont: "TeX"
+                       },
+        SVG: {scale: 100,
+              linebreaks: { automatic: "false" },
+              font: "TeX"},
+        NativeMML: {scale: 100},
+        TeX: { equationNumbers: {autoNumber: "AMS"},
+               MultLineWidth: "85%",
+               TagSide: "right",
+               TagIndent: ".8em"
+             }
+});
+</script>
+<script type="text/javascript"
+        src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">Erste Schritte in Racket
+<br>
+<span class="subtitle">Einführung in die Programmierung</span>
+</h1>
+
+<div id="outline-container-orgheadline5" class="outline-2">
+<h2 id="orgheadline5">Die Sprache <i>Racket</i></h2>
+<div class="outline-text-2" id="text-orgheadline5">
+</div><div id="outline-container-orgheadline1" class="outline-3">
+<h3 id="orgheadline1">Funktionale Programmierung</h3>
+<div class="outline-text-3" id="text-orgheadline1">
+<ul class="org-ul">
+<li>Es gibt verschiedene Programmierparadigmen, die sich in der
+Herangehensweise sehr unterscheiden.</li>
+<li>Wichtig sind die <i>objektorientierte</i> Programmierung (heutzutage
+vorherrschend, z. B. Java, C#, C++), die <i>logische</i> Programmierung
+(z. B. Prolog) und die <i>funktionale</i> Programmierung (z. B. Racket).</li>
+<li>Bei der funktionalen Programmierung werden Probleme dadurch gelöst,
+dass Funktionen definiert und aufgerufen werden.</li>
+<li>Funktionale Programmierung orientiert sich stark an der Mathematik.</li>
+<li>Programme in funktionalen Programmiersprachen sind meist deutlich
+kürzer, einfacher verständlich und besser wiederverwendbar. Es ist
+aber nicht einfach, gute funktionale Programme zu schreiben.</li>
+<li>Für einige Aufgaben – grafische Benutzungsoberflächen, Anbindung
+technischer Schnittstellen, logisches Schließen – bieten sich andere
+Programmierparadigmen eher an.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgheadline2" class="outline-3">
+<h3 id="orgheadline2">Die funktionale Programmiersprache Racket und DrRacket</h3>
+<div class="outline-text-3" id="text-orgheadline2">
+<ul class="org-ul">
+<li>Racket ist ein Dialekt von Scheme. Scheme ist eine Variante von
+Lisp. Lisp ist eine sehr alte Programmiersprache (entstanden Ende
+der 1950er Jahre), ist aber noch weit verbreitet.</li>
+<li>Racket ist einfach aufgebaut und eignet sich daher gut als
+Programmiersprache für Einsteiger.</li>
+<li>Die Konzepte hinter Racket sind über 20 Jahre alt. Seit dem Jahr
+2010 heißt die Programmiersprache Racket.</li>
+
+<li><i>DrRacket</i> ist eine integrierte Entwicklungsumgebung (IDE) für
+Racket. Sie bietet alles Notwendige, ist aber trotzdem nicht
+überfrachtet.</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgheadline3" class="outline-3">
+<h3 id="orgheadline3">Installation und Einrichtung von DrRacket</h3>
+<div class="outline-text-3" id="text-orgheadline3">
+<ul class="org-ul">
+<li>Auf den NORDAKADEMIE-PCs und Virtuellen Maschinen ist DrRacket im
+Startmenü im Ordner Racket zu finden.</li>
+<li>Für private Rechner können Installationsdateien unter
+<a href="https://download.racket-lang.org/">https://download.racket-lang.org/</a> heruntergeladen werden.</li>
+</ul>
+<ul class="org-ul">
+<li>Beim ersten Aufruf ist (über das Menü <code>Sprache</code> eine Sprache zu wählen.</li>
+<li>Nehmen Sie bitte „Lehrsprachen“ -&gt; „How to Design Programs“ -&gt; „Zwischenstufe mit Lambda“.</li>
+<li><p>
+Anschließend einmal auf „Start“ klicken.
+</p>
+<div class="nebeneinander">
+
+<div class="figure">
+<p><img src="./Abbildungen/drracket.png" alt="drracket.png" width="320px" />
+</p>
+</div>
+
+</div>
+<div class="nebeneinander">
+
+<div class="figure">
+<p><img src="./Abbildungen/sprachauswahl.png" alt="sprachauswahl.png" width="250px" />
+</p>
+</div>
+
+</div>
+<div class="clear">
+
+</div></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgheadline4" class="outline-3">
+<h3 id="orgheadline4">Aufbau von DrRacket</h3>
+<div class="outline-text-3" id="text-orgheadline4">
+<ul class="org-ul">
+<li>DrRacket verwendet wie viele funktionale Sprachen eine
+read-eval-print loop (REPL).</li>
+<li>Im oberen Bereich werden Funktionen definiert und mit „Start“
+(Strg-R) übersetzt.</li>
+<li>Im unteren Bereich können interaktiv Ausdrücke eingegeben und
+übersetzt werden.</li>
+</ul>
+
+<div class="figure">
+<p><img src="./Abbildungen/drracket2.png" alt="drracket2.png" width="600px" />
+</p>
+</div>
+</div>
+</div>
+</div>
+
+
+
+<div id="outline-container-orgheadline8" class="outline-2">
+<h2 id="orgheadline8">Elementare Ausdrücke</h2>
+<div class="outline-text-2" id="text-orgheadline8">
+</div><div id="outline-container-orgheadline6" class="outline-3">
+<h3 id="orgheadline6">Auswertung arithmetischer Ausdrücke</h3>
+<div class="outline-text-3" id="text-orgheadline6">
+<ul class="org-ul">
+<li>Wir beginnen mit Zahlen</li>
+<li>Racket kennt 
+<ul class="org-ul">
+<li>ganze Zahlen (integers) : 6, -12</li>
+<li>rationale Zahlen (rationals, fractions): 2/3, 8/7</li>
+<li>Dezimalzahlen, auch Gleitkommazahlen (decimals, floating point
+numbers): 3.14159, 6.0, 2.1E7 (entspricht \(2.1\cdot 10^7\) )</li>
+<li><i>Racket</i> benutzt &#x2013; wie fast alle bekannten Programmiersprachen &#x2013;
+den Dezimalpunkt statt des Dezimalkommas.</li>
+<li>Zahlen werden zu sich selbst ausgewertet (self evaluating expression).</li>
+</ul></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgheadline7" class="outline-3">
+<h3 id="orgheadline7">Grundform des arithmetischen Ausdrucks (in <i>Racket</i>):</h3>
+<div class="outline-text-3" id="text-orgheadline7">
+<pre class="example">
+(operator operand-1 operand-2 ... operand-n)
+</pre>
+<ul class="org-ul">
+<li>Beispiele:</li>
+</ul>
+<div class="org-src-container">
+
+<pre class="src src-racket">(+ 1 2 3)
+(* 3 4 5)
+(/ 9  3)
+(/ 3 9)
+(/ 1.0 3.0)
+(* (+ 2 2) (/ (* (+ 3 5) (/ 30 10)) 2))
+</pre>
+</div>
+<p>
+(vgl. 2. Aufgabe) 
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-orgheadline11" class="outline-2">
+<h2 id="orgheadline11">Anwendung und Definition einfacher Funktionen in der Repl</h2>
+<div class="outline-text-2" id="text-orgheadline11">
+</div><div id="outline-container-orgheadline9" class="outline-3">
+<h3 id="orgheadline9">Funktionale Abstraktion</h3>
+<div class="outline-text-3" id="text-orgheadline9">
+<ul class="org-ul">
+<li>Problem: Berechnung der Ökosteuer bei:
+<ul class="org-ul">
+<li>gegebenem Preis für die Tankfüllung Benzin: 4500 Eurocent,</li>
+<li>gegebenem Preis pro Liter: 150 Eurocent und</li>
+<li>gegegenem Ökosteueranteil: 7 Cent/l)</li>
+</ul></li>
+<li>Lösung: \(\frac{4500}{150}\cdot 7\) oder: <code>(* (/ 4500 150) 7)</code></li>
+<li>Verallgemeinerung der Berechnungsvorschrift, wenn der Preis für die
+Tankfüllung und der Literpreis als variabel sind, der
+Ökosteueranteil hingegen fest ist:
+\[\frac{preis\text{-}fuer\text{-}tankfuellung}{preis\text{-}pro\text{-}liter}\cdot 7\] 
+oder: <br  />
+<code>(* (/ preis-fuer-tankfuellung preis-pro-liter) 7)</code></li>
+<li>Dieser Ausdruck ist nicht auswertbar. Warum nicht?</li>
+</ul>
+<ul class="org-ul">
+<li><p>
+Abstraktionsschritt: Definition der Berechnungsvorschrift als Funktion:
+</p>
+\begin{equation}
+f(preis\text{-}fuer\text{-}tankfuellung, preis\text{-}pro\text{-}liter) = \frac{preis\text{-}fuer\text{-}tankfuellung}{preis\text{-}pro\text{-}liter}\cdot 7
+\end{equation}</li>
+<li>Die Funktion könnte dann so benutzt werden: \(f(4500, 150)\)</li>
+<li>Dieser Ausdruck liefert als Resultat wieder \(210\).</li>
+<li>In <i>Racket</i> besteht die Abstraktion aus zwei Schritten.
+<ol class="org-ol">
+<li><p>
+Definition der Berechnungsvorschrift als Funktion:<br  />
+</p>
+<div class="smaller">
+<div class="org-src-container">
+
+<pre class="src src-scheme"><span style="color: #707183;">(</span><span style="color: #0000FF;">lambda</span> <span style="color: #7388D6;">[</span>preis-fuer-tankfuellung preis-pro-liter<span style="color: #7388D6;">]</span>
+  <span style="color: #7388D6;">(</span>* <span style="color: #909183;">(</span>/ preis-fuer-tankfuellung preis-pro-liter<span style="color: #909183;">)</span> 7<span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
+</pre>
+</div>
+
+</div>
+<ul class="org-ul">
+<li>Dieser Ausdruck ist auswertbar, das Resultat ist eine Funktion.</li>
+<li><p>
+Eine Funktion kann in <i>Racket</i> wie ein Operator verwendet werden: <br  />
+</p>
+<pre class="example">
+(function operand-1 operand-2 ... operand-n)
+</pre></li>
+</ul></li>
+</ol></li>
+</ul>
+<ul class="org-ul">
+<li><p>
+Ersetzt man „function” durch obige Funktion, kann diese wie folgt angewendet werden:<br  />
+</p>
+<div class="smaller">
+<div class="org-src-container">
+
+<pre class="src src-scheme"><span style="color: #707183;">(</span> <span style="color: #7388D6;">(</span><span style="color: #0000FF;">lambda</span> <span style="color: #909183;">[</span>preis-fuer-tankfuellung preis-pro-liter<span style="color: #909183;">]</span>
+      <span style="color: #909183;">(</span>* <span style="color: #709870;">(</span>/ preis-fuer-tankfuellung preis-pro-liter<span style="color: #709870;">)</span> 7<span style="color: #909183;">)</span><span style="color: #7388D6;">)</span>
+  4500 150<span style="color: #707183;">)</span>
+</pre>
+</div>
+
+</div></li>
+<li>Das Resultat ist wieder 210.</li>
+</ul>
+<ol class="org-ol">
+<li value="2"><p>
+Mit dieser Abstraktion ist insofern noch nicht so viel gewonnen,
+als die Funktionsdefinition bei jeder Anwendung der Funktion
+erneut mit angegeben werden müsste. Deswegen erlaubt <i>Racket</i> die
+Bindung einer Berechnungsvorschrift (Funktion) an einen Namen:
+</p>
+<div class="smaller">
+<div class="org-src-container">
+
+<pre class="src src-scheme"><span style="color: #707183;">(</span><span style="color: #0000FF;">define</span> <span style="color: #006699;">oeko-steuer</span>
+  <span style="color: #7388D6;">(</span><span style="color: #0000FF;">lambda</span> <span style="color: #909183;">[</span>preis-fuer-tankfuellung preis-pro-liter<span style="color: #909183;">]</span>
+     <span style="color: #909183;">(</span>* <span style="color: #709870;">(</span>/ preis-fuer-tankfuellung preis-pro-liter<span style="color: #709870;">)</span> 7<span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
+</pre>
+</div>
+
+</div>
+<p>
+Danach kann die Funktion durch Angabe des Namens angewendet werden. So liefert der Ausdruck
+<code>(oeko-steuer 4500 150)</code>
+wieder den Wert 210.
+</p></li>
+</ol>
+</div>
+</div>
+<div id="outline-container-orgheadline10" class="outline-3">
+<h3 id="orgheadline10">Ausdrücke in <i>Racket</i> (1)</h3>
+<div class="outline-text-3" id="text-orgheadline10">
+<p>
+Nach dem zuvor Erläuterten kann der Aufbau von Ausdrücken in
+<i>Racket</i> wie folgt präzisiert werden. Die Grundform bleibt dabei
+unverändert: 
+</p>
+<pre class="example">
+(operator operand-1 operand-2 ... operand-n)
+</pre>
+<p>
+<i>Operatoren</i> sind Namen von
+</p>
+<ul class="org-ul">
+<li>Standardfunktionen wie z. B:  +, /, *, - für die vier Grundrechenarten</li>
+<li>eigenen Funktionen: <code>oeko-steuer</code></li>
+<li>Pseudofunktionen: <code>define</code>, <code>lambda</code></li>
+<li>namenlose Funktionen (lambda-Ausdrücke)</li>
+</ul>
+<p>
+Beispiele für <i>Operanden</i> sind (neben vielen anderen):
+</p>
+<ul class="org-ul">
+<li>Zahlen: 3.14, 4500, 2/3</li>
+<li>Variable: <code>preis-pro-liter</code></li>
+<li>Ausdrücke: <code>(f ...)</code></li>
+<li>boolesche Werte: <code>#true</code> und <code>#false</code></li>
+</ul>
+
+<p>
+(s. Aufgaben 3, 4)
+</p>
+
+<p>
+<b>Anmerkung:</b> <i>Racket</i> kennt auch noch andere Konstanten als Zahlen,
+außerdem eine Vielzahl von Standardfunktionen. Dazu später mehr je
+nach Bedarf.
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgheadline12" class="outline-2">
+<h2 id="orgheadline12">Zusammenfassung</h2>
+<div class="outline-text-2" id="text-orgheadline12">
+<ul class="org-ul">
+<li>Funktionale Programmierung ist ein wichtiges Programmierparadigma.</li>
+<li>Racket ist eine funktionale Programmiersprache, die einfach und
+somit sehr gut für Einsteiger geeignet ist.</li>
+<li>DrRacket ist eine integrierte Entwicklungsumgebung für Racket. Sie
+folgt dem REPL-Prinzip(read-eval-print loop).</li>
+<li>Racket versteht verschiedene Zahlenformate. In runden Klammern
+werden zuerst ein Operator(z. B. eine arithmetische Funktion) und
+dann beliebig viele Operanden zusammengefasst.</li>
+<li>Mit dem Lambda-Operator können eigene Funktionen definiert
+werden. Über Parameter können Funktionen Werte als Argumente übergeben werden.</li>
+<li>Mit der Pseudofunktion <code>define</code> kann eine Funktion an einen Namen gebunden werden.</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Autor: Johannes Brauer</p>
+<p class="date">Created: 2017-01-17 Tue 19:14</p>
+<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>

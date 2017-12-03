@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8"/>
+<title>Erste Schritte in Racket</title>
+<meta name="author" content="(Johannes Brauer)"/>
+<style type="text/css">
+.underline { text-decoration: underline; }
+</style>
+<link rel="stylesheet" href="./reveal.js/css/reveal.css"/>
+
+<link rel="stylesheet" href="./reveal.js/css/theme/simple.css" id="theme"/>
+
+<link rel="stylesheet" href="./mycss/myrevealstyle.css"/>
+
+<!-- If the query includes 'print-pdf', include the PDF print sheet -->
+<script>
+    if( window.location.search.match( /print-pdf/gi ) ) {
+        var link = document.createElement( 'link' );
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = './reveal.js/css/print/pdf.css';
+        document.getElementsByTagName( 'head' )[0].appendChild( link );
+    }
+</script>
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+<section id="sec-title-slide"><h1 class="title">Erste Schritte in Racket</h1><h2 class="author">Johannes Brauer</h2><p class="date">Created: 2017-01-17 Tue 19:19</p>
+</section>
+
+<section>
+<section id="slide-orgheadline5">
+<h2 id="orgheadline5">Die Sprache <i>Racket</i></h2>
+<div class="outline-text-2" id="text-orgheadline5">
+</div></section>
+<section id="slide-orgheadline1">
+<h3 id="orgheadline1">Funktionale Programmierung</h3>
+<ul>
+<li>Es gibt verschiedene Programmierparadigmen, die sich in der
+Herangehensweise sehr unterscheiden.</li>
+<li>Wichtig sind die <i>objektorientierte</i> Programmierung (heutzutage
+vorherrschend, z. B. Java, C#, C++), die <i>logische</i> Programmierung
+(z. B. Prolog) und die <i>funktionale</i> Programmierung (z. B. Racket).</li>
+<li>Bei der funktionalen Programmierung werden Probleme dadurch gelöst,
+dass Funktionen definiert und aufgerufen werden.</li>
+<li>Funktionale Programmierung orientiert sich stark an der Mathematik.</li>
+<li>Programme in funktionalen Programmiersprachen sind meist deutlich
+kürzer, einfacher verständlich und besser wiederverwendbar. Es ist
+aber nicht einfach, gute funktionale Programme zu schreiben.</li>
+<li>Für einige Aufgaben – grafische Benutzungsoberflächen, Anbindung
+technischer Schnittstellen, logisches Schließen – bieten sich andere
+Programmierparadigmen eher an.</li>
+
+</ul>
+</section>
+<section id="slide-orgheadline2">
+<h3 id="orgheadline2">Die funktionale Programmiersprache Racket und DrRacket</h3>
+<ul>
+<li>Racket ist ein Dialekt von Scheme. Scheme ist eine Variante von
+Lisp. Lisp ist eine sehr alte Programmiersprache (entstanden Ende
+der 1950er Jahre), ist aber noch weit verbreitet.</li>
+<li>Racket ist einfach aufgebaut und eignet sich daher gut als
+Programmiersprache für Einsteiger.</li>
+<li>Die Konzepte hinter Racket sind über 20 Jahre alt. Seit dem Jahr
+2010 heißt die Programmiersprache Racket.</li>
+
+<li><i>DrRacket</i> ist eine integrierte Entwicklungsumgebung (IDE) für
+Racket. Sie bietet alles Notwendige, ist aber trotzdem nicht
+überfrachtet.</li>
+
+</ul>
+
+</section>
+<section id="slide-orgheadline3">
+<h3 id="orgheadline3">Installation und Einrichtung von DrRacket</h3>
+<ul>
+<li>Auf den NORDAKADEMIE-PCs und Virtuellen Maschinen ist DrRacket im
+Startmenü im Ordner Racket zu finden.</li>
+<li>Für private Rechner können Installationsdateien unter
+<a href="https://download.racket-lang.org/">https://download.racket-lang.org/</a> heruntergeladen werden.</li>
+
+</ul>
+</section>
+<section>
+<ul>
+<li>Beim ersten Aufruf ist (über das Menü <code>Sprache</code> eine Sprache zu wählen.</li>
+<li>Nehmen Sie bitte „Lehrsprachen“ -&gt; „How to Design Programs“ -&gt; „Zwischenstufe mit Lambda“.</li>
+<li><p>
+Anschließend einmal auf „Start“ klicken.
+</p>
+<div class="nebeneinander">
+
+<div class="figure">
+<p><img src="./Abbildungen/drracket.png" alt="drracket.png" width="320px" />
+</p>
+</div>
+
+</div>
+<div class="nebeneinander">
+
+<div class="figure">
+<p><img src="./Abbildungen/sprachauswahl.png" alt="sprachauswahl.png" width="250px" />
+</p>
+</div>
+
+</div>
+<div class="clear">
+
+</div></li>
+
+</ul>
+
+</section>
+<section id="slide-orgheadline4">
+<h3 id="orgheadline4">Aufbau von DrRacket</h3>
+<ul>
+<li>DrRacket verwendet wie viele funktionale Sprachen eine
+read-eval-print loop (REPL).</li>
+<li>Im oberen Bereich werden Funktionen definiert und mit „Start“
+(Strg-R) übersetzt.</li>
+<li>Im unteren Bereich können interaktiv Ausdrücke eingegeben und
+übersetzt werden.</li>
+
+</ul>
+
+<div class="figure">
+<p><img src="./Abbildungen/drracket2.png" alt="drracket2.png" width="600px" />
+</p>
+</div>
+
+
+
+</section>
+</section>
+<section>
+<section id="slide-orgheadline8">
+<h2 id="orgheadline8">Elementare Ausdrücke</h2>
+<div class="outline-text-2" id="text-orgheadline8">
+</div></section>
+<section id="slide-orgheadline6">
+<h3 id="orgheadline6">Auswertung arithmetischer Ausdrücke</h3>
+<ul>
+<li>Wir beginnen mit Zahlen</li>
+<li>Racket kennt 
+<ul>
+<li>ganze Zahlen (integers) : 6, -12</li>
+<li>rationale Zahlen (rationals, fractions): 2/3, 8/7</li>
+<li>Dezimalzahlen, auch Gleitkommazahlen (decimals, floating point
+numbers): 3.14159, 6.0, 2.1E7 (entspricht \(2.1\cdot 10^7\) )</li>
+<li><i>Racket</i> benutzt &#x2013; wie fast alle bekannten Programmiersprachen &#x2013;
+den Dezimalpunkt statt des Dezimalkommas.</li>
+<li>Zahlen werden zu sich selbst ausgewertet (self evaluating expression).</li>
+
+</ul></li>
+
+</ul>
+
+</section>
+<section id="slide-orgheadline7">
+<h3 id="orgheadline7">Grundform des arithmetischen Ausdrucks (in <i>Racket</i>):</h3>
+<pre class="example">
+(operator operand-1 operand-2 ... operand-n)
+</pre>
+<ul>
+<li>Beispiele:</li>
+
+</ul>
+<div class="org-src-container">
+
+<pre  class="src src-racket">(+ 1 2 3)
+(* 3 4 5)
+(/ 9  3)
+(/ 3 9)
+(/ 1.0 3.0)
+(* (+ 2 2) (/ (* (+ 3 5) (/ 30 10)) 2))
+</pre>
+</div>
+<p>
+(vgl. 2. Aufgabe) 
+</p>
+</section>
+</section>
+<section>
+<section id="slide-orgheadline11">
+<h2 id="orgheadline11">Anwendung und Definition einfacher Funktionen in der Repl</h2>
+<div class="outline-text-2" id="text-orgheadline11">
+</div></section>
+<section id="slide-orgheadline9">
+<h3 id="orgheadline9">Funktionale Abstraktion</h3>
+<ul>
+<li>Problem: Berechnung der Ökosteuer bei:
+<ul>
+<li>gegebenem Preis für die Tankfüllung Benzin: 4500 Eurocent,</li>
+<li>gegebenem Preis pro Liter: 150 Eurocent und</li>
+<li>gegegenem Ökosteueranteil: 7 Cent/l)</li>
+
+</ul></li>
+<li>Lösung: \(\frac{4500}{150}\cdot 7\) oder: <code>(* (/ 4500 150) 7)</code></li>
+<li>Verallgemeinerung der Berechnungsvorschrift, wenn der Preis für die
+Tankfüllung und der Literpreis als variabel sind, der
+Ökosteueranteil hingegen fest ist:
+\[\frac{preis\text{-}fuer\text{-}tankfuellung}{preis\text{-}pro\text{-}liter}\cdot 7\] 
+oder: <br  />
+<code>(* (/ preis-fuer-tankfuellung preis-pro-liter) 7)</code></li>
+<li>Dieser Ausdruck ist nicht auswertbar. Warum nicht?</li>
+
+</ul>
+</section>
+<section>
+<ul>
+<li><p>
+Abstraktionsschritt: Definition der Berechnungsvorschrift als Funktion:
+</p>
+<div>
+\begin{equation}
+f(preis\text{-}fuer\text{-}tankfuellung, preis\text{-}pro\text{-}liter) = \frac{preis\text{-}fuer\text{-}tankfuellung}{preis\text{-}pro\text{-}liter}\cdot 7
+\end{equation}
+
+</div></li>
+<li>Die Funktion könnte dann so benutzt werden: \(f(4500, 150)\)</li>
+<li>Dieser Ausdruck liefert als Resultat wieder \(210\).</li>
+<li>In <i>Racket</i> besteht die Abstraktion aus zwei Schritten.
+<ol>
+<li><p>
+Definition der Berechnungsvorschrift als Funktion:<br  />
+</p>
+<div class="smaller">
+<div class="org-src-container">
+
+<pre  class="src src-scheme"><span style="color: #707183;">(</span><span style="color: #0000FF;">lambda</span> <span style="color: #7388D6;">[</span>preis-fuer-tankfuellung preis-pro-liter<span style="color: #7388D6;">]</span>
+  <span style="color: #7388D6;">(</span>* <span style="color: #909183;">(</span>/ preis-fuer-tankfuellung preis-pro-liter<span style="color: #909183;">)</span> 7<span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
+</pre>
+</div>
+
+</div>
+<ul>
+<li>Dieser Ausdruck ist auswertbar, das Resultat ist eine Funktion.</li>
+<li><p>
+Eine Funktion kann in <i>Racket</i> wie ein Operator verwendet werden: <br  />
+</p>
+<pre class="example">
+(function operand-1 operand-2 ... operand-n)
+</pre></li>
+
+</ul></li>
+
+</ol></li>
+
+</ul>
+</section>
+<section>
+<ul>
+<li><p>
+Ersetzt man „function” durch obige Funktion, kann diese wie folgt angewendet werden:<br  />
+</p>
+<div class="smaller">
+<div class="org-src-container">
+
+<pre  class="src src-scheme"><span style="color: #707183;">(</span> <span style="color: #7388D6;">(</span><span style="color: #0000FF;">lambda</span> <span style="color: #909183;">[</span>preis-fuer-tankfuellung preis-pro-liter<span style="color: #909183;">]</span>
+      <span style="color: #909183;">(</span>* <span style="color: #709870;">(</span>/ preis-fuer-tankfuellung preis-pro-liter<span style="color: #709870;">)</span> 7<span style="color: #909183;">)</span><span style="color: #7388D6;">)</span>
+  4500 150<span style="color: #707183;">)</span>
+</pre>
+</div>
+
+</div></li>
+<li>Das Resultat ist wieder 210.</li>
+
+</ul>
+<ol>
+<li value="2"><p>
+Mit dieser Abstraktion ist insofern noch nicht so viel gewonnen,
+als die Funktionsdefinition bei jeder Anwendung der Funktion
+erneut mit angegeben werden müsste. Deswegen erlaubt <i>Racket</i> die
+Bindung einer Berechnungsvorschrift (Funktion) an einen Namen:
+</p>
+<div class="smaller">
+<div class="org-src-container">
+
+<pre  class="src src-scheme"><span style="color: #707183;">(</span><span style="color: #0000FF;">define</span> <span style="color: #006699;">oeko-steuer</span>
+  <span style="color: #7388D6;">(</span><span style="color: #0000FF;">lambda</span> <span style="color: #909183;">[</span>preis-fuer-tankfuellung preis-pro-liter<span style="color: #909183;">]</span>
+     <span style="color: #909183;">(</span>* <span style="color: #709870;">(</span>/ preis-fuer-tankfuellung preis-pro-liter<span style="color: #709870;">)</span> 7<span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
+</pre>
+</div>
+
+</div>
+<p>
+Danach kann die Funktion durch Angabe des Namens angewendet werden. So liefert der Ausdruck
+<code>(oeko-steuer 4500 150)</code>
+wieder den Wert 210.
+</p></li>
+
+</ol>
+</section>
+<section id="slide-orgheadline10">
+<h3 id="orgheadline10">Ausdrücke in <i>Racket</i> (1)</h3>
+<p>
+Nach dem zuvor Erläuterten kann der Aufbau von Ausdrücken in
+<i>Racket</i> wie folgt präzisiert werden. Die Grundform bleibt dabei
+unverändert: 
+</p>
+<pre class="example">
+(operator operand-1 operand-2 ... operand-n)
+</pre>
+<p>
+<i>Operatoren</i> sind Namen von
+</p>
+<ul>
+<li>Standardfunktionen wie z. B:  +, /, *, - für die vier Grundrechenarten</li>
+<li>eigenen Funktionen: <code>oeko-steuer</code></li>
+<li>Pseudofunktionen: <code>define</code>, <code>lambda</code></li>
+<li>namenlose Funktionen (lambda-Ausdrücke)</li>
+
+</ul>
+</section>
+<section>
+<p>
+Beispiele für <i>Operanden</i> sind (neben vielen anderen):
+</p>
+<ul>
+<li>Zahlen: 3.14, 4500, 2/3</li>
+<li>Variable: <code>preis-pro-liter</code></li>
+<li>Ausdrücke: <code>(f ...)</code></li>
+<li>boolesche Werte: <code>#true</code> und <code>#false</code></li>
+
+</ul>
+
+<p>
+(s. Aufgaben 3, 4)
+</p>
+
+<p>
+<b>Anmerkung:</b> <i>Racket</i> kennt auch noch andere Konstanten als Zahlen,
+außerdem eine Vielzahl von Standardfunktionen. Dazu später mehr je
+nach Bedarf.
+</p>
+
+</section>
+</section>
+<section>
+<section id="slide-orgheadline12">
+<h2 id="orgheadline12">Zusammenfassung</h2>
+<ul>
+<li>Funktionale Programmierung ist ein wichtiges Programmierparadigma.</li>
+<li>Racket ist eine funktionale Programmiersprache, die einfach und
+somit sehr gut für Einsteiger geeignet ist.</li>
+<li>DrRacket ist eine integrierte Entwicklungsumgebung für Racket. Sie
+folgt dem REPL-Prinzip(read-eval-print loop).</li>
+<li>Racket versteht verschiedene Zahlenformate. In runden Klammern
+werden zuerst ein Operator(z. B. eine arithmetische Funktion) und
+dann beliebig viele Operanden zusammengefasst.</li>
+<li>Mit dem Lambda-Operator können eigene Funktionen definiert
+werden. Über Parameter können Funktionen Werte als Argumente übergeben werden.</li>
+<li>Mit der Pseudofunktion <code>define</code> kann eine Funktion an einen Namen gebunden werden.</li>
+
+</ul>
+</section>
+</section>
+</div>
+</div>
+<script src="./reveal.js/lib/js/head.min.js"></script>
+<script src="./reveal.js/js/reveal.js"></script>
+
+<script>
+// Full list of configuration options available here:
+// https://github.com/hakimel/reveal.js#configuration
+Reveal.initialize({
+
+controls: true,
+progress: true,
+history: false,
+center: true,
+slideNumber: 'c',
+rollingLinks: false,
+keyboard: true,
+overview: true,
+margin: 0.05,
+
+theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+transition: Reveal.getQueryHash().transition || 'slide', // default/cube/page/concave/zoom/linear/fade/none
+transitionSpeed: 'default',
+multiplex: {
+    secret: '', // null if client
+    id: '', // id, obtained from socket.io server
+    url: '' // Location of socket.io server
+},
+
+// Optional libraries used to extend on reveal.js
+dependencies: [
+ { src: './reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+ { src: './reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+ { src: './reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+ { src: './reveal.js/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+ { src: './reveal.js/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }]
+,dependencies: [ { src: 'plugin/menu/menu.js', async: true }, { src: 'reveal.js/plugin/zoom-js/zoom.js', async: true } ]});
+</script>
+</body>
+</html>

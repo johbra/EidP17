@@ -1,0 +1,56 @@
+.reveal .slide-footer {
+    position: fixed;
+    width: 100%;
+    height: 0px;
+    left: 0%;
+    bottom: 3%;
+    font-size: 0.5em;
+    text-align: left;
+}
+
+.reveal .title {
+    font-size: 3em
+}
+
+.reveal {
+    font-size: 30px;
+}
+
+.reveal pre {
+    font-size: 20px;
+    width: 100%;
+    border: none;
+    box-shadow: none;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.reveal p {
+    text-align: left;
+}
+
+.reveal .figure p {
+    text-align: center;
+}
+
+.reveal ol, .reveal dl, .reveal ul {display: block}
+
+.reveal h2, .reveal h3,  .reveal h4,  .reveal h5,  .reveal h6 {text-transform:none; }
+
+.org-src-container {
+    overflow: auto;
+    height: 400px;
+    width: 110%;
+}
+
+.reveal .small {height: 200px;}
+.reveal .large {height: 500px;}
+.reveal .slides > section,
+.reveal .slides > section > section {padding: 2px 0px;}
+
+
+.slide-number:before{content:"Prof. Dr.-Ing. Johannes Brauer: Datomic";
+		     position: fixed; left: 3%;
+		     color: #657b83;}
+.reveal .nebeneinander {display:block; width:300px; float: left;}
+.reveal .clear {clear:left;}

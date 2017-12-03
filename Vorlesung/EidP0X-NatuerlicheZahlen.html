@@ -1,0 +1,482 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="de" xml:lang="de">
+<head>
+<!-- 2017-02-04 Sat 12:28 -->
+<meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta  name="viewport" content="width=device-width, initial-scale=1" />
+<title>Natürliche Zahlen als rekursive Datenstruktur</title>
+<meta  name="generator" content="Org-mode" />
+<meta  name="author" content="Johannes Brauer" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  pre.src-sh:before    { content: 'sh'; }
+  pre.src-bash:before  { content: 'sh'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-R:before     { content: 'R'; }
+  pre.src-perl:before  { content: 'Perl'; }
+  pre.src-java:before  { content: 'Java'; }
+  pre.src-sql:before   { content: 'SQL'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  /*]]>*/-->
+</style>
+<link rel="stylesheet" type="text/css" href="styles/bigblow/css/htmlize.css"/>
+<link rel="stylesheet" type="text/css" href="styles/bigblow/css/bigblow.css"/>
+<link rel="stylesheet" type="text/css" href="styles/bigblow/css/hideshow.css"/>
+<script type="text/javascript" src="styles/bigblow/js/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="styles/bigblow/js/jquery-ui-1.10.2.min.js"></script>
+<script type="text/javascript" src="styles/bigblow/js/jquery.localscroll-min.js"></script>
+<script type="text/javascript" src="styles/bigblow/js/jquery.scrollTo-1.4.3.1-min.js"></script>
+<script type="text/javascript" src="styles/bigblow/js/jquery.zclip.min.js"></script>
+<script type="text/javascript" src="styles/bigblow/js/bigblow.js"></script>
+<script type="text/javascript" src="styles/bigblow/js/hideshow.js"></script>
+<script type="text/javascript" src="styles/lib/js/jquery.stickytableheaders.min.js"></script>
+<link rel="stylesheet" type="text/css" href="mycss/mystyle.css" />
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2013 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        displayAlign: "center",
+        displayIndent: "0em",
+
+        "HTML-CSS": { scale: 100,
+                        linebreaks: { automatic: "false" },
+                        webFont: "TeX"
+                       },
+        SVG: {scale: 100,
+              linebreaks: { automatic: "false" },
+              font: "TeX"},
+        NativeMML: {scale: 100},
+        TeX: { equationNumbers: {autoNumber: "AMS"},
+               MultLineWidth: "85%",
+               TagSide: "right",
+               TagIndent: ".8em"
+             }
+});
+</script>
+<script type="text/javascript"
+        src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">Natürliche Zahlen als rekursive Datenstruktur
+<br>
+<span class="subtitle">Einführung in die Programmierung</span>
+</h1>
+
+<div id="outline-container-orgheadline4" class="outline-2">
+<h2 id="orgheadline4">Definition eines Datentyps für natürliche Zahlen</h2>
+<div class="outline-text-2" id="text-orgheadline4">
+</div><div id="outline-container-orgheadline1" class="outline-3">
+<h3 id="orgheadline1">Rekursive Definition der natürlichen Zahlen</h3>
+<div class="outline-text-3" id="text-orgheadline1">
+<ul class="org-ul">
+<li>Bisher wurden nur Listen als rekursive Datenstrukturen betrachtet.</li>
+<li>Mathematisch können die natürlichen Zahlen folgendermaßen definiert
+werden:
+<ul class="org-ul">
+<li>\(0\) ist eine natürliche Zahl.</li>
+<li>Wenn \(n\) eine natürliche Zahl ist, dann ist auch \(succ(n)\) eine
+natürliche Zahl.</li>
+</ul></li>
+<li>Wir definieren also eine Konstante (\(0\)) und eine Nachfolgeroperation
+(\(succ\)). Der Term \(succ(succ(succ(0)))\) entspricht dann der \(3\),
+ohne dass wir die \(3\) als Konstante einführen müssen.</li>
+<li>Durch die Prämisse im zweiten Teil der Definition ist diese rekursiv.</li>
+<li>In Racket-Notation könnte die Definition lauten:
+<ol class="org-ol">
+<li><code>zero</code> ist eine natürliche Zahl.</li>
+<li><code>(succ n)</code> ist eine natürliche Zahl, wenn <code>n</code> eine natürliche Zahl
+ist.</li>
+</ol></li>
+<li>Um Verwechslungen mit den in Racket eingebauten Zahlen zu vermeiden,
+wird hier die Konstante <code>zero</code> anstelle von \(0\) verwendet.</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgheadline2" class="outline-3">
+<h3 id="orgheadline2">Racket-Definitionen für <code>zero</code> und <code>succ</code></h3>
+<div class="outline-text-3" id="text-orgheadline2">
+<ul class="org-ul">
+<li><p>
+Konstanten sind u.a. dadurch gekennzeichnet, dass sie zu sich selbst
+ausgewertet werden. Für die Konstante <code>zero</code> können wir das durch die
+folgende Definition erreichen:
+</p>
+<pre class="example">
+(define zero 'zero)
+</pre></li>
+<li>Die Eingabe von <i>zero</i> im Interaktionsfenster liefert dann <code>zero</code>.
+(Hierbei und im Folgenden setzen wir voraus, dass in den Details der
+Spracheinstellung der Ausgabestil <i>write</i> ausgewählt ist.)</li>
+<li><p>
+Da wir in unserer abstrakten, rekursiven Definition für andere
+natürliche Zahlen nur <code>succ</code>-Terme haben, soll auch ein Ausdruck
+<code>(succ (succ zero))</code> zu sich selbst ausgewertet werden. Dies ist durch
+folgende Definition zu erreichen:
+</p>
+<pre class="example">
+(define succ
+  (lambda [n] (list 'succ n)))
+</pre></li>
+<li>Die Auswertung von <code>(succ (succ (succ zero)))</code> liefert damit
+<code>(succ (succ (succ zero)))</code>.</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgheadline3" class="outline-3">
+<h3 id="orgheadline3">Der abstrakte Datentyp <b>Nat</b></h3>
+<div class="outline-text-3" id="text-orgheadline3">
+<ul class="org-ul">
+<li><p>
+Mit den Definitionen für <code>zero</code> und <code>succ</code> haben wir quasi einen
+neuen Datentyp geschaffen, den wir <b>Nat</b> nennen wollen.
+</p>
+<div class="org-src-container">
+
+<pre class="src src-scheme">    <span style="color: #707183;">(</span><span style="color: #0000FF;">define</span> <span style="color: #006699;">zero</span> 'zero<span style="color: #707183;">)</span>
+
+    <span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">succ: Nat -&gt; Nat</span>
+    <span style="color: #707183;">(</span>check-expect <span style="color: #7388D6;">(</span>succ zero<span style="color: #7388D6;">)</span> <span style="color: #7388D6;">(</span>succ zero<span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
+    <span style="color: #707183;">(</span>check-expect <span style="color: #7388D6;">(</span>succ <span style="color: #909183;">(</span>succ zero<span style="color: #909183;">)</span><span style="color: #7388D6;">)</span> 
+                  <span style="color: #7388D6;">(</span>succ <span style="color: #909183;">(</span>succ zero<span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
+    <span style="color: #707183;">(</span><span style="color: #0000FF;">define</span> <span style="color: #006699;">succ</span>
+      <span style="color: #7388D6;">(</span><span style="color: #0000FF;">lambda</span> <span style="color: #909183;">[</span>n<span style="color: #909183;">]</span> <span style="color: #909183;">(</span>list 'succ n<span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
+</pre>
+</div></li>
+<li>Mithilfe dieses Datentyps können wir Funktionen definieren, die z.B.
+natürliche Zahlen (d.h. Exemplare von <b>Nat</b>) als Ergebnis liefern.</li>
+</ul>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgheadline7" class="outline-2">
+<h2 id="orgheadline7">Anwendung des Datentyps <b>Nat</b></h2>
+<div class="outline-text-2" id="text-orgheadline7">
+</div><div id="outline-container-orgheadline5" class="outline-3">
+<h3 id="orgheadline5">Beispiel: Zählen der Elemente einer Liste.</h3>
+<div class="outline-text-3" id="text-orgheadline5">
+<ul class="org-ul">
+<li><p>
+Gemäß den Regeln für natürliche Rekursion ergibt sich folgende Schablone:
+</p>
+<div class="org-src-container">
+
+<pre class="src src-scheme">    <span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">z&#228;hlt die Anzahl der Elemente ihres Arguments</span>
+    <span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">countElements: (list-of any) -&gt; Nat</span>
+    <span style="color: #707183;">(</span>check-expect <span style="color: #7388D6;">(</span>countElements empty<span style="color: #7388D6;">)</span> zero<span style="color: #707183;">)</span>
+    <span style="color: #707183;">(</span>check-expect <span style="color: #7388D6;">(</span>countElements '<span style="color: #909183;">(</span>19 27 36<span style="color: #909183;">)</span><span style="color: #7388D6;">)</span> 
+                  <span style="color: #7388D6;">(</span>succ <span style="color: #909183;">(</span>succ <span style="color: #709870;">(</span>succ zero<span style="color: #709870;">)</span><span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
+    <span style="color: #707183;">(</span><span style="color: #0000FF;">define</span> <span style="color: #006699;">countElements</span>
+      <span style="color: #7388D6;">(</span><span style="color: #0000FF;">lambda</span> <span style="color: #909183;">[</span>lst<span style="color: #909183;">]</span>
+         <span style="color: #909183;">(</span><span style="color: #0000FF;">cond</span> 
+           <span style="color: #709870;">[</span><span style="color: #907373;">(</span>empty? lst<span style="color: #907373;">)</span> ...<span style="color: #709870;">]</span> 
+           <span style="color: #709870;">[</span>else ... <span style="color: #907373;">(</span>first lst<span style="color: #907373;">)</span> ... 
+                     <span style="color: #907373;">(</span>countelements <span style="color: #6276BA;">(</span>rest lst<span style="color: #6276BA;">)</span><span style="color: #907373;">)</span> ...<span style="color: #709870;">]</span><span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
+</pre>
+</div></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgheadline6" class="outline-3">
+<h3 id="orgheadline6">Die Funktion <code>countElements</code></h3>
+<div class="outline-text-3" id="text-orgheadline6">
+<ul class="org-ul">
+<li><p>
+Wenn die Liste nicht leer ist, ist das Resultat der Nachfolger der
+Anwendung von <code>countElements</code> auf die Restliste.
+</p>
+<div class="org-src-container">
+
+<pre class="src src-scheme">    <span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">z&#228;hlt die Anzahl der Elemente ihres Arguments</span>
+    <span style="color: #707183;">(</span>: countElements <span style="color: #7388D6;">(</span><span style="color: #909183;">(</span>list-of any<span style="color: #909183;">)</span> -&gt; Nat<span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
+    <span style="color: #707183;">(</span>check-expect <span style="color: #7388D6;">(</span>countElements empty<span style="color: #7388D6;">)</span> zero<span style="color: #707183;">)</span>
+    <span style="color: #707183;">(</span>check-expect <span style="color: #7388D6;">(</span>countElements '<span style="color: #909183;">(</span>19 27 36<span style="color: #909183;">)</span><span style="color: #7388D6;">)</span> 
+                  <span style="color: #7388D6;">(</span>succ <span style="color: #909183;">(</span>succ <span style="color: #709870;">(</span>succ zero<span style="color: #709870;">)</span><span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
+    <span style="color: #707183;">(</span><span style="color: #0000FF;">define</span> <span style="color: #006699;">countElements</span>
+      <span style="color: #7388D6;">(</span><span style="color: #0000FF;">lambda</span> <span style="color: #909183;">[</span>lst<span style="color: #909183;">]</span>
+        <span style="color: #909183;">(</span><span style="color: #0000FF;">cond</span>
+          <span style="color: #709870;">[</span><span style="color: #907373;">(</span>empty? lst<span style="color: #907373;">)</span> zero<span style="color: #709870;">]</span>
+          <span style="color: #709870;">[</span>else <span style="color: #907373;">(</span>succ <span style="color: #6276BA;">(</span>countElements <span style="color: #858580;">(</span>rest lst<span style="color: #858580;">)</span><span style="color: #6276BA;">)</span><span style="color: #907373;">)</span><span style="color: #709870;">]</span><span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
+</pre>
+</div></li>
+</ul>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgheadline12" class="outline-2">
+<h2 id="orgheadline12">Definition weiterer Operationen für <b>Nat</b></h2>
+<div class="outline-text-2" id="text-orgheadline12">
+</div><div id="outline-container-orgheadline8" class="outline-3">
+<h3 id="orgheadline8">Die Operationen <code>pred</code> und <code>plus</code></h3>
+<div class="outline-text-3" id="text-orgheadline8">
+<ul class="org-ul">
+<li>Die Operation \(succ\) ermöglicht es bisher nur (vorwärts) zu zählen.</li>
+<li>Wir definieren zwei weitere Operationen zur
+<ul class="org-ul">
+<li>Ermittlung des Vorgängers einer natürlichen Zahl: \(pred\)</li>
+<li>Addition von zwei natürlichen Zahlen: \(plus\)</li>
+</ul></li>
+<li>Die Definitionen nehmen wir dadurch vor, dass wir die
+Wechselwirkungen der neuen Operationen mit den Basisoperationen \(0\)
+und \(succ\) zunächst durch Gleichungen beschreiben.
+<ul class="org-ul">
+<li>Für \(pred\) gelte (mit \(n \in \textbf{Nat}\)):
+\[\begin{aligned}
+                      pred(succ(n)) & =  n  \\
+                      pred(0) & \ \mathrm{undefiniert}  
+                  \end{aligned}\]</li>
+<li>Für \(plus\) gelte (mit \(n, m \in \textbf{Nat}\)):
+\[\begin{aligned}
+                       plus(0, n) & =  n  \\
+                       plus(succ(n), m) & =  succ(plus(n, m))  
+                   \end{aligned}\]</li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgheadline9" class="outline-3">
+<h3 id="orgheadline9">Prädikat <code>zero?</code></h3>
+<div class="outline-text-3" id="text-orgheadline9">
+<ul class="org-ul">
+<li><p>
+Beide Definitionen basieren auf einer Fallunterscheidung. Um sie in
+entsprechende Racket-Definitionen zu übertragen, ist es sinnvoll,
+zunächst ein Prädikat <code>=zero?</code> zu definieren, das feststellt, ob sein
+Argument <code>zero</code> ist:
+</p>
+<div class="small">
+<div class="org-src-container">
+
+<pre class="src src-scheme">    <span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">prueft, ob ihr Argument zero ist.</span>
+    <span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">=zero?: Nat -&gt; boolean</span>
+    <span style="color: #707183;">(</span>check-expect <span style="color: #7388D6;">(</span>=zero? zero<span style="color: #7388D6;">)</span> #true<span style="color: #707183;">)</span>
+    <span style="color: #707183;">(</span>check-expect <span style="color: #7388D6;">(</span>=zero? <span style="color: #909183;">(</span>succ zero<span style="color: #909183;">)</span><span style="color: #7388D6;">)</span> #false<span style="color: #707183;">)</span>
+    <span style="color: #707183;">(</span><span style="color: #0000FF;">define</span> <span style="color: #006699;">=zero?</span> 
+      <span style="color: #7388D6;">(</span><span style="color: #0000FF;">lambda</span> <span style="color: #909183;">[</span>n<span style="color: #909183;">]</span>
+        <span style="color: #909183;">(</span>not <span style="color: #709870;">(</span>cons? n<span style="color: #709870;">)</span><span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
+</pre>
+</div>
+
+</div></li>
+<li><code>cons?</code> ist ein Racket-Standardprädikat, das <code>#true</code> liefert, wenn
+sein Argument eine nicht-leere Liste ist.</li>
+<li>Exemplare von <b>Nat</b> sind entweder <code>succ</code>-Terme (also Listen) oder
+<code>zero</code>.</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgheadline10" class="outline-3">
+<h3 id="orgheadline10">Der abstrakte Datentyp <b>Nat</b>: <code>pred</code></h3>
+<div class="outline-text-3" id="text-orgheadline10">
+<ul class="org-ul">
+<li><p>
+Definieren wir nun die Funktion <code>pred</code>:
+</p>
+<div class="org-src-container">
+
+<pre class="src src-scheme">    <span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">liefert den Term des Vorgaengers ihres Arguments</span>
+    <span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">pred (Nat -&gt; Nat</span>
+    <span style="color: #707183;">(</span>check-expect <span style="color: #7388D6;">(</span>pred <span style="color: #909183;">(</span>succ zero<span style="color: #909183;">)</span><span style="color: #7388D6;">)</span> zero<span style="color: #707183;">)</span>
+    <span style="color: #707183;">(</span>check-expect <span style="color: #7388D6;">(</span>pred <span style="color: #909183;">(</span>succ <span style="color: #709870;">(</span>succ zero<span style="color: #709870;">)</span><span style="color: #909183;">)</span><span style="color: #7388D6;">)</span> 
+                  <span style="color: #7388D6;">(</span>succ zero<span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
+    <span style="color: #707183;">(</span>check-error <span style="color: #7388D6;">(</span>pred zero<span style="color: #7388D6;">)</span> 
+                 <span style="color: #008000;">"pred : zero hat keinen Vorgaenger"</span><span style="color: #707183;">)</span>
+    <span style="color: #707183;">(</span><span style="color: #0000FF;">define</span> <span style="color: #006699;">pred</span>
+      <span style="color: #7388D6;">(</span><span style="color: #0000FF;">lambda</span> <span style="color: #909183;">[</span>n<span style="color: #909183;">]</span>
+        <span style="color: #909183;">(</span><span style="color: #0000FF;">cond</span>
+          <span style="color: #709870;">[</span><span style="color: #907373;">(</span>=zero? n<span style="color: #907373;">)</span> <span style="color: #907373;">(</span>error 'pred <span style="color: #008000;">"zero hat keinen Vorgaenger"</span><span style="color: #907373;">)</span><span style="color: #709870;">]</span>
+          <span style="color: #709870;">[</span>else <span style="color: #907373;">(</span>first <span style="color: #6276BA;">(</span>rest n<span style="color: #6276BA;">)</span><span style="color: #907373;">)</span><span style="color: #709870;">]</span><span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
+</pre>
+</div></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgheadline11" class="outline-3">
+<h3 id="orgheadline11">Der abstrakte Datentyp <b>Nat</b>: <code>plus</code></h3>
+<div class="outline-text-3" id="text-orgheadline11">
+<ul class="org-ul">
+<li><p>
+Die rekursive Definition von \(plus\) übertragen wir in eine rekursive
+Funktion <code>plus</code>:
+</p>
+<div class="org-src-container">
+
+<pre class="src src-scheme">    <span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">berechnet die Summe ihrer Argumente</span>
+    <span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">plus: Nat Nat -&gt; Nat</span>
+    <span style="color: #707183;">(</span>check-expect <span style="color: #7388D6;">(</span>plus zero <span style="color: #909183;">(</span>succ zero<span style="color: #909183;">)</span><span style="color: #7388D6;">)</span> <span style="color: #7388D6;">(</span>succ zero<span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
+    <span style="color: #707183;">(</span>check-expect <span style="color: #7388D6;">(</span>plus <span style="color: #909183;">(</span>succ zero<span style="color: #909183;">)</span> <span style="color: #909183;">(</span>succ zero<span style="color: #909183;">)</span><span style="color: #7388D6;">)</span> 
+                  <span style="color: #7388D6;">(</span>succ <span style="color: #909183;">(</span>succ zero<span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
+    <span style="color: #707183;">(</span>check-expect <span style="color: #7388D6;">(</span>plus <span style="color: #909183;">(</span>succ zero<span style="color: #909183;">)</span> <span style="color: #909183;">(</span>plus <span style="color: #709870;">(</span>succ zero<span style="color: #709870;">)</span> <span style="color: #709870;">(</span>succ zero<span style="color: #709870;">)</span><span style="color: #909183;">)</span><span style="color: #7388D6;">)</span>
+                  <span style="color: #7388D6;">(</span>succ <span style="color: #909183;">(</span>succ <span style="color: #709870;">(</span>succ zero<span style="color: #709870;">)</span><span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
+    <span style="color: #707183;">(</span><span style="color: #0000FF;">define</span> <span style="color: #006699;">plus</span>
+      <span style="color: #7388D6;">(</span><span style="color: #0000FF;">lambda</span> <span style="color: #909183;">[</span>n m<span style="color: #909183;">]</span>
+        <span style="color: #909183;">(</span><span style="color: #0000FF;">cond</span> 
+          <span style="color: #709870;">[</span><span style="color: #907373;">(</span>=zero? n<span style="color: #907373;">)</span> m<span style="color: #709870;">]</span>
+          <span style="color: #709870;">[</span>else <span style="color: #907373;">(</span>succ <span style="color: #6276BA;">(</span>plus <span style="color: #858580;">(</span>pred n<span style="color: #858580;">)</span> m<span style="color: #6276BA;">)</span><span style="color: #907373;">)</span><span style="color: #709870;">]</span><span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
+</pre>
+</div></li>
+</ul>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgheadline14" class="outline-2">
+<h2 id="orgheadline14">Der Datentyp <b>Nat</b>: Zusammenfassung</h2>
+<div class="outline-text-2" id="text-orgheadline14">
+</div><div id="outline-container-orgheadline13" class="outline-3">
+<h3 id="orgheadline13">Was haben wir gelernt?</h3>
+<div class="outline-text-3" id="text-orgheadline13">
+<ul class="org-ul">
+<li>Rekursive Datenstrukturen können beliebig wachsen.</li>
+<li>Der Datentyp <b>Nat</b> ermöglicht, mit beliebig großen natürlichen Zahlen
+zu rechnen.</li>
+<li>Das kann man in Racket zwar einfacher haben, in mancher populärer
+Programmiersprache aber nicht.</li>
+<li>Datentypen kann man bauen.</li>
+<li>Mit Exemplaren des abstrakten Datentyps <b>Nat</b> kann man rechnen, ohne
+sich auf eine herkömmliche (maschinenabhängige) Repräsentation von
+Zahlen festlegen zu müssen.</li>
+<li><b>Ausblick:</b> Abstrakte Datentypen haben eine besondere Bedeutung für
+die formale Spezifikation der Semantik von Software erlangt.</li>
+</ul>
+
+<p>
+Aufgaben zum Datentyp Nat
+</p>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Autor: Johannes Brauer</p>
+<p class="date">Created: 2017-02-04 Sat 12:28</p>
+<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>

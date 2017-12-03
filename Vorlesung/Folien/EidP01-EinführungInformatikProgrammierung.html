@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8"/>
+<title>Einführung</title>
+<meta name="author" content="(Johannes Brauer)"/>
+<style type="text/css">
+.underline { text-decoration: underline; }
+</style>
+<link rel="stylesheet" href="./reveal.js/css/reveal.css"/>
+
+<link rel="stylesheet" href="./reveal.js/css/theme/simple.css" id="theme"/>
+
+<link rel="stylesheet" href="./mycss/myrevealstyle.css"/>
+
+<!-- If the query includes 'print-pdf', include the PDF print sheet -->
+<script>
+    if( window.location.search.match( /print-pdf/gi ) ) {
+        var link = document.createElement( 'link' );
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = './reveal.js/css/print/pdf.css';
+        document.getElementsByTagName( 'head' )[0].appendChild( link );
+    }
+</script>
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+<section id="sec-title-slide"><h1 class="title">Einführung</h1><h2 class="author">Johannes Brauer</h2><p class="date">Created: 2017-01-08 Sun 00:03</p>
+</section>
+
+<section>
+<section id="slide-orgheadline7">
+<h2 id="orgheadline7">Was ist Informatik?</h2>
+<div class="outline-text-2" id="text-orgheadline7">
+</div></section>
+<section id="slide-orgheadline1">
+<h3 id="orgheadline1">Definitionsversuche</h3>
+<ul>
+<li>Informatik := <i>Infor/mation + Auto/matik</i></li>
+<li>Definitionen des Begriffs Informatik:
+
+<ul>
+<li>Informatik ist das Fachgebiet der Informations- und Datentechnik</li>
+<li>Informatik ist die Wissenschaft von der Automatisierung
+menschlicher Arbeit.</li>
+<li>Informatik ist die Wissenschaft, Technik und Anwendung der
+maschinellen Verarbeitung, Speicherung und Übertragung von
+Information</li>
+<li>Informatik ist die Kunst, Komplexität zu meistern.</li>
+
+</ul></li>
+
+<li><b>Hauptteilgebiete</b> der Informatik
+
+<ul>
+<li>Gerätetechnik (Hardware, Mikroelektronik)</li>
+<li>Programmierung (Software)</li>
+
+</ul></li>
+
+</ul>
+
+</section>
+<section id="slide-orgheadline2">
+<h3 id="orgheadline2">Weitergehende Gliederung der Informatik</h3>
+<ul>
+<li>Theoretische Informatik</li>
+<li>Technische Informatik</li>
+<li>Praktische Informatik</li>
+<li>Angewandte Informatik</li>
+
+</ul>
+
+</section>
+<section id="slide-orgheadline3">
+<h3 id="orgheadline3">Theoretische Informatik</h3>
+<ul>
+<li>Automatentheorie</li>
+<li>Theorie der formalen Sprachen</li>
+<li>Theorie der Berechenbarkeit und Komplexitätstheorie</li>
+<li>Algorithmenanalyse</li>
+<li>Theorie der Programmierung</li>
+<li>Semantik von Programmiersprachen</li>
+
+</ul>
+
+</section>
+<section id="slide-orgheadline4">
+<h3 id="orgheadline4">Technische Informatik</h3>
+<ul>
+<li>Digitaltechnik: Schaltnetze, Schaltwerke</li>
+<li>Hardware-Komponenten, insbesondere Prozessoren, Mikroprozessoren</li>
+<li>Mikroprogrammierung</li>
+<li>Rechnerorganisation und -architektur</li>
+<li>Schnittstellentechnik, Rechnernetze</li>
+
+</ul>
+
+</section>
+<section id="slide-orgheadline5">
+<h3 id="orgheadline5">Praktische Informatik</h3>
+<ul>
+<li>Algorithmen, Datenstrukturen und Programmiermethoden</li>
+<li>Programmiersprachen und Übersetzer</li>
+<li>Verifikation von Programmen</li>
+<li>Betriebssysteme</li>
+<li>Echtzeitverarbeitung</li>
+<li>Datenbanksysteme</li>
+<li>Graphische Systeme</li>
+<li>Benutzungsoberflächen</li>
+
+</ul>
+
+</section>
+<section id="slide-orgheadline6">
+<h3 id="orgheadline6">Angewandte Informatik</h3>
+<ul>
+<li>Informationssysteme</li>
+<li>Künstliche Intelligenz</li>
+<li>Digitale Signalverarbeitung</li>
+<li>Modellierung und Simulation (CAE)</li>
+<li>Rechnerunterstützter Entwurf (CAD)</li>
+<li>Rechnerunterstützte und rechnerintegrierte Fertigung (CAM, CIM)</li>
+<li>Textverarbeitung und Büroautomatisierung</li>
+<li><b>Wirtschaftsinformatik</b>
+<ul>
+<li>Industrie, Verkehr, Telekommunikation, Handel, Banken, &#x2026;</li>
+<li>öffentliche und private Verwaltung: Behörden, Versicherungen</li>
+
+</ul></li>
+<li>Weitere Anwendungen
+<ul>
+<li>Bildungsbereich und häusliche Umgebung</li>
+<li>Ingenieur- und Naturwissenschaften: Maschinenbau, Meteorologie,
+Umwelttechnik, Weltraumtechnik</li>
+<li>Human-, Sozial- und Geisteswissenschaften: Medizin, Kunst</li>
+<li>Datenschutz</li>
+
+</ul></li>
+
+</ul>
+
+</section>
+</section>
+<section>
+<section id="slide-orgheadline8">
+<h2 id="orgheadline8">Was ist Wirtschaftsinformatik?</h2>
+<ul>
+<li><b>Wirtschaftsinformatik</b> =</li>
+
+</ul>
+
+<blockquote nil>
+<p>
+Planung, Realisierung und Einführung betrieblicher Informationssysteme
+</p>
+</blockquote>
+
+<ul>
+<li>Zwei Wege der <i>Realisierung</i>
+
+<ul>
+<li>Anpassung von „Fertig-Software” für standardisierte
+Geschäftprozesse an die Erfordernisse des eigenen Unternehmens</li>
+<li>Entwicklung von <a href="./Abbildungen/IndividualSoftware.pdf">Individual-Software</a>
+für den optimalen Zuschnitt der Funktionalität an die
+Unternehmensanforderungen</li>
+
+</ul></li>
+
+<li>In dieser Veranstaltung: Vermittlung von Grundkenntnissen und
+Fertigkeiten der funktionalen Programmierung</li>
+
+</ul>
+
+</section>
+</section>
+<section>
+<section id="slide-orgheadline9">
+<h2 id="orgheadline9">Literaturhinweise</h2>
+<ul>
+<li>Hartmut Ernst: Grundkurs Informatik, Vieweg, 2003</li>
+<li>Hans-Jürgen Appelrath, Dietrich Boles, Volker Claus, Ingo</li>
+<li>Wegener: Starthilfe Informatik, B.G. Teubner-Verlag, 2002</li>
+<li>Jörg Desel (Hrsg.): Das ist Informatik. Springer-Verlag, Berlin
+Heidelberg, 2001</li>
+
+</ul>
+
+</section>
+</section>
+<section>
+<section id="slide-orgheadline19">
+<h2 id="orgheadline19">Programme &#x2013; Rechner &#x2013; Programmiersprachen</h2>
+<div class="outline-text-2" id="text-orgheadline19">
+</div></section>
+<section id="slide-orgheadline10">
+<h3 id="orgheadline10">Programme für Computer</h3>
+<p>
+Ein Programm ist eine Folge von Anweisungen (Befehlen) an eine Maschine
+(Rechner, Computer), die von dieser „verstanden” wird und damit
+ausgeführt werden kann.
+</p>
+
+
+<div class="figure">
+<p><img src="./Abbildungen/Computermodell.png" alt="Computermodell.png" />
+</p>
+</div>
+</section>
+<section id="slide-orgheadline11">
+<h3 id="orgheadline11">Computer im Wandel der Jahrzehnte</h3>
+
+<div class="figure">
+<p><img src="./Abbildungen/computervon60Jahrenundjetzt.jpg" alt="computervon60Jahrenundjetzt.jpg" width="400px" />
+</p>
+</div>
+</section>
+<section>
+<ul>
+<li>Ein iPhone enthält ca. 1 Milliarde Transistoren.</li>
+<li>Um diese Rechenleistung mit der Technologie der 1950er Jahre zu
+bauen, bräuchte es:
+<ul>
+<li>1 Milliarde Elektronenröhren</li>
+<li>170 vehicle assembly buildings, um sie unterzubringen</li>
+<li>1 Terawatt Leistung, um sie zu betreiben</li>
+<li>das entspräche 500 2-Gigawatt-Kernkraftwerken für ca. 50 Milliarden Euro</li>
+<li>das entspräche dem Weltbruttosozialprodukt von 60 Jahren</li>
+
+</ul></li>
+<li>Smartphones realisieren eine Steigerung der Rechenleistung um den
+Faktor \(10^{22}\) verglichen mit der Technologie vor 60 Jahren.</li>
+
+</ul>
+
+<p>
+Welche Fortschritte gibt es in dieser Zeit in der Software?
+</p>
+
+</section>
+<section id="slide-orgheadline12">
+<h3 id="orgheadline12">Programme für Computer (2)</h3>
+<ul>
+<li><b>Problem:</b> Computer können nur sehr simple Dinge tun.</li>
+<li><p>
+Beispiel: Der Computer soll 10 mal „piepen”.
+Pseudo-Maschinenprogramm
+</p>
+<pre class="example">
+    put the number 10 into memory location 0
+ a  if contents of location 0 is negative go to line b
+    beep
+    subtract 1 from the number in location 0
+    go to line a
+ b  ...  rest of program ...
+</pre></li>
+<li>Man stelle sich vor, auf diese Weise ein Programm für die
+Tourenplanung einer Spedition zu schreiben.</li>
+<li>Fällt Ihnen an dem Programm etwas auf?</li>
+<li><p>
+Besser wäre, man könnte z. B. schreiben:
+</p>
+<pre class="example">
+(dotimes [n 10] (beep))
+</pre></li>
+
+</ul>
+
+</section>
+<section id="slide-orgheadline13">
+<h3 id="orgheadline13">Was ist eine Programmiersprache?</h3>
+<ul>
+<li>Damit die Maschine uns „versteht”, müssen Programme in einer für sie
+verständlichen Sprache formuliert werden.</li>
+<li>Programmiersprachen sind <i>formale Sprachen</i> zur Formulierung von
+Programmen, die auf Rechnern ausführbar sind.</li>
+
+</ul>
+
+</section>
+<section id="slide-orgheadline14">
+<h3 id="orgheadline14">Abstraktionsebenen für Programmiersprachen</h3>
+<ul>
+<li>Zu jeder Maschine gehört eine Liste von Dingen, die sie tun kann:
+<ul>
+<li>Wasserkocher?</li>
+<li>MP3-Player?</li>
+<li>Computer?</li>
+
+</ul></li>
+<li>Die vollständige Liste der Dinge (Befehle), die ein Computer tun
+kann, kann als seine <i>Maschinensprache</i> (machine language) bezeichnet
+werden.</li>
+<li>Maschinencode: interne (ausführbare) Darstellung eines
+Maschinenprogramms als Bitmuster.</li>
+<li>Assemblersprache (assembly language): Symbolische, textorientierte
+Darstellung einer Maschinensprache. Ihre Merkmale sind:
+<ul>
+<li>Die Liste der Befehle ist dieselbe, wie die der Maschinensprache.</li>
+<li>Symbolische Namen der Befehle</li>
+<li>Dezimalzahlen, symbolische Adressen.</li>
+
+</ul></li>
+<li>Assemblerprogramm, Assemblercode: Programm in Assemblersprache.</li>
+
+</ul>
+</section>
+<section>
+
+<div class="figure">
+<p><img src="./Abbildungen/binaervsassembler.png" alt="binaervsassembler.png" width="700px" />
+</p>
+</div>
+</section>
+<section id="slide-orgheadline15">
+<h3 id="orgheadline15">Abstraktionsebenen für Programmiersprachen (2)</h3>
+<ul>
+<li>Höhere, problemorientierte Programmiersprache: Formale Sprache zur
+textuellen Darstellung von Programmen, deren Konstrukte
+<ul>
+<li>mächtiger als einzelne Maschinenbefehle sind (kürzere
+„Befehlsliste”),</li>
+<li>Details der von-Neumann-Architektur verbergen,</li>
+<li>die Formulierung von Algorithmen unabhängig von einem bestimmten
+Rechensystem ermöglichen,</li>
+<li>sich an den Bedürfnissen eines Anwendungsbereichs orientieren.</li>
+
+</ul></li>
+<li>Quellprogramm (source code): Programm in Hochsprache.</li>
+
+</ul>
+</section>
+<section>
+
+<div class="figure">
+<p><img src="./Abbildungen/assemblervsfortran.png" alt="assemblervsfortran.png" width="700px" />
+</p>
+</div>
+</section>
+<section id="slide-orgheadline16">
+<h3 id="orgheadline16">Die Entwicklung von Programmiersprachen</h3>
+
+<div class="figure">
+<p><img src="./Abbildungen/programmiersprachen.png" alt="programmiersprachen.png" width="700px" />
+</p>
+</div>
+
+
+</section>
+<section id="slide-orgheadline17">
+<h3 id="orgheadline17">Wichtige Programmiersprachen</h3>
+<dl>
+<dt>1954 - 57</dt><dd><b>Fortran</b> (Formula Translation) von J. W. Backus, IBM.</dd>
+<dt>1956 - 62</dt><dd><b>Lisp</b> (List Processing Language) von J. McCarthy.
+Funktional, Hauptsprache der Künstlichen Intelligenz</dd>
+<dt>1958 - 60</dt><dd><b>Algol 60</b> (Algorithmic Language) von P. Naur u.a.</dd>
+<dt>1959 - 61</dt><dd><b>Cobol</b> (Common Business Oriented Language), noch heute
+weit verbreitete Sprache für kommerzielle Anwendungen.</dd>
+<dt>1967</dt><dd><b>Simula 67</b> von Dahl/Nygaard, erste objektorientierte Sprache</dd>
+<dt>1968 - 71</dt><dd><b>Pascal</b> von N. Wirth, einfach, strukturierte
+Programmierung, strenges Typkonzept</dd>
+
+</dl>
+</section>
+<section>
+<dl>
+<dt>1970 - 72</dt><dd><b>C</b> von D. Ritchie, maschinennah, mit Unixverbunden, für
+Betriebssystemprogrammierung.</dd>
+<dt>1970 - 80</dt><dd><b>Smalltalk</b> von Kay/Goldberg/Ingalls, rein
+objektorientiert.</dd>
+<dt>1975 - 80</dt><dd><b>Ada</b> von J. Ichbiah/DoD, modular, Prozesse,
+Ausnahmebehandlung, komplex, militärische Anwendungen.</dd>
+<dt>1975 - 82</dt><dd><b>Prolog</b> (Programming in Logic) von Colmerauer/Warren,
+modelliert logisches Schließen, KI-Sprache.</dd>
+<dt>1980</dt><dd><b>Modula-2</b> von N. Wirth, modular, für Systemprogrammierung.</dd>
+<dt>1980 - 86</dt><dd><b>C++</b> von B. Stroustrup, objektorientierte Erweiterung
+von C.</dd>
+<dt>1985 - 86</dt><dd><b>Oberon</b> von N. Wirth, objektorientiert, für
+Systemprogrammierung.</dd>
+
+</dl>
+</section>
+<section>
+<dl>
+<dt>1985 - 88</dt><dd><b>Eiffel</b> von B. Meyer, objektorientiert</dd>
+<dt>1996 -</dt><dd><b>Java</b> objektorientiert, ursprünglich eingetragenes
+Warenzeichen der Firma Sun Microsystems, heute im Besitz von Oracle</dd>
+<dt>neuere</dt><dd><dl>
+<dt><b>C#</b></dt><dd>ähnlich Java. Microsoft, .Net-Plattform</dd>
+<dt><b>F#</b></dt><dd>funktional. Microsoft, .Net-Plattform</dd>
+<dt><b>Scala</b></dt><dd>funktionale Erweiterung von Java</dd>
+<dt><b>Dart</b></dt><dd>Googles JavaScript-Alternative</dd>
+<dt><b>Clojure</b></dt><dd>Lisp-Dialekt auf der JVM</dd>
+
+</dl></dd>
+<dt>u.v.a.m.</dt><dd></dd>
+
+</dl>
+
+</section>
+<section id="slide-orgheadline18">
+<h3 id="orgheadline18">Syntax, Semantik, Pragmatik von Programmiersprachen</h3>
+<ul>
+<li>Syntax legt fest,
+<ul>
+<li>welche Sprachelemente und -konstrukte es gibt und</li>
+<li>wie mit ihrer Hilfe korrekte Sätze in der Sprache formuliert
+werden können</li>
+<li>Syntax = Menge von Regeln, die die Struktur von Programmen
+bestimmen.</li>
+
+</ul></li>
+<li>Semantik einer Programmiersprache
+<ul>
+<li>legt die Bedeutung syntaktisch korrekter Sätze fest</li>
+<li>legt fest, welche Wirkung jedes Sprachelement oder -konstrukt im
+Programmablauf hervorruft.</li>
+<li>Semantik = Menge von Verhaltensregeln, die die Funktionsweise von
+Programmen bestimmen.</li>
+
+</ul></li>
+<li>Pragmatik
+<ul>
+<li>Intention des Programmierers mit einem Programm</li>
+<li>Nutzen der Ausdrucksmöglichkeiten einer Programmiersprache für die
+Formulierung von Lösungen</li>
+
+</ul></li>
+
+</ul>
+
+</section>
+</section>
+<section>
+<section id="slide-orgheadline24">
+<h2 id="orgheadline24">Informationen und Daten</h2>
+<div class="outline-text-2" id="text-orgheadline24">
+</div></section>
+<section id="slide-orgheadline20">
+<h3 id="orgheadline20">Information</h3>
+<ul>
+<li>Begriff:
+
+<ul>
+<li>lateinisch informatio = Erläuterung, Deutung</li>
+<li>laut Duden: Auskunft, Nachricht, Belehrung</li>
+<li>Wissen / Kenntnisse über Sachverhalte oder Vorgänge</li>
+
+</ul></li>
+
+<li>Wichtige Unterscheidung für die Informatik
+
+<ul>
+<li>äußere Form (<i>Repräsentation</i>) einer Nachricht; die gleiche
+Information kann unterschiedlich repräsentiert werden, z. B.
+Zahlen in römischer bzw. arabischer Schreibweise</li>
+<li>Bedeutung (<i>abstrakte Information</i>)</li>
+<li>Der Übergang von der äußeren Form zur Bedeutung vollzieht sich
+durch <i>Interpretation</i>.</li>
+
+</ul></li>
+
+</ul>
+
+</section>
+<section id="slide-orgheadline21">
+<h3 id="orgheadline21">Informationsverarbeitung &#x2013; Datenverarbeitung</h3>
+
+<div class="figure">
+<p><img src="./Abbildungen/Informationsverarbeitung.png" alt="Informationsverarbeitung.png" width="700px" />
+</p>
+</div>
+</section>
+<section id="slide-orgheadline22">
+<h3 id="orgheadline22">Informationsdarstellung - Daten</h3>
+
+<div class="figure">
+<p><img src="./Abbildungen/InformationDaten.png" alt="InformationDaten.png" width="700px" />
+</p>
+</div>
+
+<p>
+Unter <i>Daten</i> versteht man in der Informatik eine, in der Regel
+<i>strukturierte</i>, Repräsentationsform von Information.
+</p>
+
+</section>
+<section id="slide-orgheadline23">
+<h3 id="orgheadline23">Darstellbare Information</h3>
+<ul>
+<li>Zahlen</li>
+<li>Text</li>
+<li>logische Werte</li>
+<li>Programme</li>
+<li>Bilder</li>
+<li>Musik</li>
+<li>&#x2026;</li>
+
+</ul>
+</section>
+</section>
+<section>
+<section id="slide-orgheadline25">
+<h2 id="orgheadline25">Zusammenfassung</h2>
+<ul>
+<li>Die <b>Informatik</b> beschäftigt sich mit der Automatisierung
+menschlicher Arbeit und der Verarbeitung von Informationen als
+Daten.</li>
+<li>Ihre Hauptteilgebiete sind Gerätetechnik und Programmierung. Sie
+lässt sich weiter in Theoretische, Technische, Praktische und
+Angewandte Informatik unterteilen. An der NORDAKADEMIE beschäftigt
+sich der Studiengang Angewandte Informatik hauptsächlich mit der
+Softwareentwicklung.</li>
+<li>Die <b>Wirtschaftsinformatik</b> gehört zum Teilgebiet der Angewandten
+Informatik. Sie beschäftigt sich mit der Planung, Realisierung und
+Einführung betrieblicher Informationssysteme.</li>
+<li><b>Programmiersprachen</b> sind formale Sprachen, in denen sich für den
+Menschen verständliche Programme für Rechenmaschinen formulieren
+lassen. Wichtig sind ihre Syntax, Semantik und Pragmatik.</li>
+<li><b>Informationen</b> werden als <b>Daten</b> repräsentiert und
+verarbeitet. Durch Interpretation werden aus den Ausgabedaten die
+sich ergebenden Informationen zurückgewonnen.</li>
+
+</ul>
+</section>
+</section>
+</div>
+</div>
+<script src="./reveal.js/lib/js/head.min.js"></script>
+<script src="./reveal.js/js/reveal.js"></script>
+
+<script>
+// Full list of configuration options available here:
+// https://github.com/hakimel/reveal.js#configuration
+Reveal.initialize({
+
+controls: true,
+progress: true,
+history: false,
+center: true,
+slideNumber: 'c',
+rollingLinks: false,
+keyboard: true,
+overview: true,
+margin: 0.05,
+
+theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+transition: Reveal.getQueryHash().transition || 'slide', // default/cube/page/concave/zoom/linear/fade/none
+transitionSpeed: 'default',
+multiplex: {
+    secret: '', // null if client
+    id: '', // id, obtained from socket.io server
+    url: '' // Location of socket.io server
+},
+
+// Optional libraries used to extend on reveal.js
+dependencies: [
+ { src: './reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+ { src: './reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+ { src: './reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+ { src: './reveal.js/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+ { src: './reveal.js/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }]
+,dependencies: [ { src: 'plugin/menu/menu.js', async: true }, { src: 'reveal.js/plugin/zoom-js/zoom.js', async: true } ]});
+</script>
+</body>
+</html>

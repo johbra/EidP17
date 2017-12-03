@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8"/>
+<title>Fallunterscheidungen</title>
+<meta name="author" content="(Johannes Brauer)"/>
+<style type="text/css">
+.underline { text-decoration: underline; }
+</style>
+<link rel="stylesheet" href="./reveal.js/css/reveal.css"/>
+
+<link rel="stylesheet" href="./reveal.js/css/theme/simple.css" id="theme"/>
+
+<link rel="stylesheet" href="./mycss/myrevealstyle.css"/>
+
+<!-- If the query includes 'print-pdf', include the PDF print sheet -->
+<script>
+    if( window.location.search.match( /print-pdf/gi ) ) {
+        var link = document.createElement( 'link' );
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = './reveal.js/css/print/pdf.css';
+        document.getElementsByTagName( 'head' )[0].appendChild( link );
+    }
+</script>
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+<section id="sec-title-slide"><h1 class="title">Fallunterscheidungen</h1><h2 class="author">Johannes Brauer</h2><p class="date">Created: 2017-01-19 Thu 09:18</p>
+</section>
+
+<section>
+<section id="slide-orgheadline3">
+<h2 id="orgheadline3">Fallunterscheidungen aus der Mathematik</h2>
+<p>
+Zwei Beispiele
+</p>
+</section>
+<section id="slide-orgheadline1">
+<h3 id="orgheadline1">Definition der Fakultät</h3>
+<p>
+\[n! = \left\{\begin{array}{l}1, \mbox{falls } n=0\\n\cdot (n-1)!, 
+\mbox{falls } n\geq 1 \end{array}\right.\]
+</p>
+</section>
+<section id="slide-orgheadline2">
+<h3 id="orgheadline2">Definition der Fibonacci-Folge</h3>
+<p>
+Die Fibonacci-Folge \(f_{1},\,f_{2},\,f_{3},\ldots\) ist wie folgt
+definiert:
+</p>
+<div>
+\begin{eqnarray} 
+f_{1} &= & 1\\
+f_{2} &= & 1\\
+f_{n} &= & f_{{n-1}}+f_{{n-2}} & \mbox{ für } n>2\\
+\end{eqnarray}
+
+</div>
+</section>
+</section>
+<section>
+<section id="slide-orgheadline13">
+<h2 id="orgheadline13">Bedingte Funktionen</h2>
+<div class="outline-text-2" id="text-orgheadline13">
+</div></section>
+<section id="slide-orgheadline4">
+<h3 id="orgheadline4">Vergleichsausdrücke und Boolesche Ausdrücke</h3>
+<ul>
+<li><p>
+Numerische Vergleichsausdrücke der Art
+</p>
+
+<p>
+\(a < b, x \geq y\) oder \(r < s < t\)
+</p>
+
+<p>
+werden in Racket so aufgeschrieben:
+</p>
+
+<pre class="example">
+(&lt; a b) (&gt;= x y ) (&lt; r s t)
+</pre></li>
+
+<li>Die Auswertung ergibt <code>#true</code> oder <code>#false</code>.</li>
+
+<li><p>
+Den Racket-Ausdruck <code>(&lt; r s t)</code> kann man als Abkürzung für
+</p>
+
+<pre class="example">
+(and (&lt; r s) (&lt; s t))
+</pre>
+
+<p>
+betrachten.
+</p></li>
+
+<li>Neben <code>(and ...)</code> stehen <code>(or ...)</code> und <code>(not ...)</code> zur Verfügung.
+Die Anzahl der Argumente von <code>and</code> und <code>or</code> ist dabei beliebig groß.</li>
+
+</ul>
+
+</section>
+<section id="slide-orgheadline5">
+<h3 id="orgheadline5">Anwendungsbeispiel</h3>
+<ul>
+<li>Wir nennen eine Funktion <i>bedingt</i>, wenn für die Ermittlung ihres
+Resultats eine <i>Fallunterscheidung</i> erforderlich ist.</li>
+
+<li><p>
+Beispiel: Ein Hersteller für Speicherchips verkauft die Chips nach
+folgender Preisstaffel:
+</p>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left"><b>Stückzahl</b></th>
+<th scope="col" class="org-left"><b>Stückpreis</b> [€]</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">\(<= 1000\)</td>
+<td class="org-left">15,00</td>
+</tr>
+
+<tr>
+<td class="org-left">\(> 1000\) und \(<= 10000\)</td>
+<td class="org-left">12,50</td>
+</tr>
+
+<tr>
+<td class="org-left">\(> 10000\)</td>
+<td class="org-left">9,75</td>
+</tr>
+</tbody>
+</table>
+
+<p>
+Gesucht: Funktion, die aus der Stückzahl den Stückpreis ermittelt
+</p></li>
+
+</ul>
+
+</section>
+<section id="slide-orgheadline6">
+<h3 id="orgheadline6">Racket-Pseudofunktion für Fallunterscheidungen</h3>
+<div class="nebeneinander">
+<div class="small">
+<div class="org-src-container">
+
+<pre  class="src src-scheme">     <span style="color: #707183;">(</span><span style="color: #0000FF;">cond</span>
+        <span style="color: #7388D6;">[</span>frage antwort<span style="color: #7388D6;">]</span>
+        ...
+        <span style="color: #7388D6;">[</span>frage antwort<span style="color: #7388D6;">]</span><span style="color: #707183;">)</span>
+</pre>
+</div>
+
+</div>
+
+</div>
+
+<div class="nebeneinander">
+<div class="small">
+<div class="org-src-container">
+
+<pre  class="src src-scheme">     <span style="color: #707183;">(</span><span style="color: #0000FF;">cond</span>
+        <span style="color: #7388D6;">[</span>frage antwort<span style="color: #7388D6;">]</span>
+        ...
+        <span style="color: #7388D6;">[</span>else antwort<span style="color: #7388D6;">]</span><span style="color: #707183;">)</span>
+</pre>
+</div>
+
+</div>
+
+</div>
+<div class="clear">
+
+</div>
+<ul>
+<li>Jede <i>frage</i> muss ein boolescher Ausdruck sein.</li>
+<li>Jede <i>antwort</i> ist ein beliebiger Racket-Ausdruck.</li>
+<li>Das Resultat der cond-Funktion ist die <i>antwort</i> der ersten frage,
+deren Auswertung <code>#true</code> liefert.</li>
+<li>In der linken Variante von <code>cond</code> muss die Auswertung mindestens einer
+<i>frage</i> <code>#true</code> liefern.</li>
+
+</ul>
+
+</section>
+<section id="slide-orgheadline7">
+<h3 id="orgheadline7">Entwurf bedingter Funktionen &#x2013; Regel 6</h3>
+<ul>
+<li>Für den Entwurf einer bedingten Funktion sind in der Problembeschreibung alle zu
+unterscheidenden Fälle zu identifizieren.</li>
+
+<li>Für die gemäß Regel 3 erforderlichen Beispiele ist für jeden
+identifizierten Fall mindestens ein Beispiel
+aufzuschreiben.</li>
+
+<li>Zusätzlich sind die Grenzfälle (Intervallgrenzen) zu
+beachten.</li>
+
+</ul>
+
+<p>
+<b>Regel 6:</b>
+</p>
+<ul>
+<li>Für den Funktionsrumpf ist
+
+<ul>
+<li>ein <code>cond</code>-Skelett mit je einer Frage-Antwort-Kombination für
+jeden Fall zu formulieren,</li>
+
+<li>für jeden Fall die Frage (Bedingung) zu formulieren,</li>
+
+<li>für jeden Fall der Racket-Ausdruck für die Berechnung der Antwort
+zu ermitteln.</li>
+
+</ul></li>
+
+</ul>
+
+</section>
+<section id="slide-orgheadline12">
+<h3 id="orgheadline12">Entwurf der Funktion <code>stueckpreis</code></h3>
+<div class="outline-text-3" id="text-orgheadline12">
+</div></section>
+<section id="slide-orgheadline8">
+<h4 id="orgheadline8">Das <code>cond</code>-Skelett</h4>
+<p>
+Für das Beispiel des Chipherstellers ergibt sich folgendes
+Funktionsskelett:
+</p>
+
+<div class="org-src-container">
+
+<pre  class="src src-scheme">    <span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">berechnet aus einer gegebenen Stueckzahl</span>
+    <span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">den Stueckpreis gemaess Preisstaffel</span>
+    <span style="color: #707183;">(</span><span style="color: #0000FF;">define</span> <span style="color: #006699;">stueckpreis</span>
+      <span style="color: #7388D6;">(</span><span style="color: #0000FF;">lambda</span> <span style="color: #909183;">[</span>stueckzahl<span style="color: #909183;">]</span>
+         <span style="color: #909183;">(</span><span style="color: #0000FF;">cond</span>
+            <span style="color: #709870;">[</span>... ...<span style="color: #709870;">]</span>
+            <span style="color: #709870;">[</span>... ...<span style="color: #709870;">]</span>
+            <span style="color: #709870;">[</span>... ...<span style="color: #709870;">]</span><span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
+</pre>
+</div>
+
+</section>
+<section id="slide-orgheadline9">
+<h4 id="orgheadline9">Formulierung der Fragen</h4>
+<p>
+Aus der Tabelle für die Preisstaffelung ergeben sich folgende
+Bedingungen/Fragen:
+</p>
+
+<div class="org-src-container">
+
+<pre  class="src src-scheme">    <span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">berechnet aus einer gegebenen Stueckzahl</span>
+    <span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">den Stueckpreis gemaess Preisstaffel</span>
+    <span style="color: #707183;">(</span><span style="color: #0000FF;">define</span> <span style="color: #006699;">stueckpreis</span>
+      <span style="color: #7388D6;">(</span><span style="color: #0000FF;">lambda</span> <span style="color: #909183;">[</span>stueckzahl<span style="color: #909183;">]</span>
+         <span style="color: #909183;">(</span><span style="color: #0000FF;">cond</span>
+            <span style="color: #709870;">[</span><span style="color: #907373;">(</span><span style="color: #0000FF;">and</span> <span style="color: #6276BA;">(</span>&gt;= stueckzahl 0<span style="color: #6276BA;">)</span>
+                  <span style="color: #6276BA;">(</span>&lt;= stueckzahl 1000<span style="color: #6276BA;">)</span><span style="color: #907373;">)</span>  ...<span style="color: #709870;">]</span>
+            <span style="color: #709870;">[</span><span style="color: #907373;">(</span><span style="color: #0000FF;">and</span> <span style="color: #6276BA;">(</span>&gt; stueckzahl 1000<span style="color: #6276BA;">)</span>
+                  <span style="color: #6276BA;">(</span>&lt;= stueckzahl 10000<span style="color: #6276BA;">)</span><span style="color: #907373;">)</span> ...<span style="color: #709870;">]</span>
+            <span style="color: #709870;">[</span><span style="color: #907373;">(</span>&gt; stueckzahl 10000<span style="color: #907373;">)</span>        ...<span style="color: #709870;">]</span><span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
+</pre>
+</div>
+
+<p>
+Für die Beispiele sollten die Grenzfälle 0, 1000 und 10000 sowie Werte
+aus dem Innern der Intervalle (z. B. 500, 2000, 20000) verwendet werden.
+</p>
+
+</section>
+<section id="slide-orgheadline10">
+<h4 id="orgheadline10">Formulierung der Antworten</h4>
+<p>
+Die Ausdrücke für die Berechnung der Antworten ergeben sich
+direkt aus der Tabelle für die Preisstaffelung:
+</p>
+
+<div class="org-src-container">
+
+<pre  class="src src-scheme">    <span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">berechnet aus einer gegebenen Stueckzahl</span>
+    <span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">den Stueckpreis gemaess Preisstaffel</span>
+     <span style="color: #707183;">(</span><span style="color: #0000FF;">define</span> <span style="color: #006699;">stueckpreis</span>
+       <span style="color: #7388D6;">(</span><span style="color: #0000FF;">lambda</span> <span style="color: #909183;">[</span>stueckzahl<span style="color: #909183;">]</span>
+          <span style="color: #909183;">(</span><span style="color: #0000FF;">cond</span>
+            <span style="color: #709870;">[</span><span style="color: #907373;">(</span><span style="color: #0000FF;">and</span> <span style="color: #6276BA;">(</span>&gt;= stueckzahl 0<span style="color: #6276BA;">)</span>
+                  <span style="color: #6276BA;">(</span>&lt;= stueckzahl 1000<span style="color: #6276BA;">)</span><span style="color: #907373;">)</span>  1500<span style="color: #709870;">]</span>
+            <span style="color: #709870;">[</span><span style="color: #907373;">(</span><span style="color: #0000FF;">and</span> <span style="color: #6276BA;">(</span>&gt; stueckzahl 1000<span style="color: #6276BA;">)</span>
+                  <span style="color: #6276BA;">(</span>&lt;= stueckzahl 10000<span style="color: #6276BA;">)</span><span style="color: #907373;">)</span> 1250<span style="color: #709870;">]</span>
+            <span style="color: #709870;">[</span><span style="color: #907373;">(</span>&gt; stueckzahl 10000<span style="color: #907373;">)</span>        975<span style="color: #709870;">]</span><span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
+</pre>
+</div>
+
+</section>
+<section id="slide-orgheadline11">
+<h4 id="orgheadline11">Vereinfachung der Bedingungen</h4>
+<p>
+Nachdem die Funktion getestet wurde, können die Bedingungen
+vereinfacht werden:
+</p>
+
+<div class="small">
+<div class="org-src-container">
+
+<pre  class="src src-scheme">    <span style="color: #707183;">(</span><span style="color: #0000FF;">define</span> <span style="color: #006699;">stueckpreis</span>
+       <span style="color: #7388D6;">(</span><span style="color: #0000FF;">lambda</span> <span style="color: #909183;">[</span>stueckzahl<span style="color: #909183;">]</span>
+          <span style="color: #909183;">(</span><span style="color: #0000FF;">cond</span>
+            <span style="color: #709870;">[</span><span style="color: #907373;">(</span>&lt;= stueckzahl 1000<span style="color: #907373;">)</span> 1500<span style="color: #709870;">]</span>
+            <span style="color: #709870;">[</span><span style="color: #907373;">(</span>&lt;= stueckzahl 10000<span style="color: #907373;">)</span> 1250<span style="color: #709870;">]</span>
+            <span style="color: #709870;">[</span>else 975<span style="color: #709870;">]</span><span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
+</pre>
+</div>
+
+</div>
+
+<p>
+(Die vollständige Funktion <code>stueckpreis</code> steht in Moodle zur Verfügung.)
+</p>
+
+<p>
+(Aufgaben zu bedingten Funktionen) 
+</p>
+</section>
+</section>
+</div>
+</div>
+<script src="./reveal.js/lib/js/head.min.js"></script>
+<script src="./reveal.js/js/reveal.js"></script>
+
+<script>
+// Full list of configuration options available here:
+// https://github.com/hakimel/reveal.js#configuration
+Reveal.initialize({
+
+controls: true,
+progress: true,
+history: false,
+center: true,
+slideNumber: 'c',
+rollingLinks: false,
+keyboard: true,
+overview: true,
+margin: 0.05,
+
+theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+transition: Reveal.getQueryHash().transition || 'slide', // default/cube/page/concave/zoom/linear/fade/none
+transitionSpeed: 'default',
+multiplex: {
+    secret: '', // null if client
+    id: '', // id, obtained from socket.io server
+    url: '' // Location of socket.io server
+},
+
+// Optional libraries used to extend on reveal.js
+dependencies: [
+ { src: './reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+ { src: './reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+ { src: './reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+ { src: './reveal.js/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+ { src: './reveal.js/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }]
+,dependencies: [ { src: 'plugin/menu/menu.js', async: true }, { src: 'reveal.js/plugin/zoom-js/zoom.js', async: true } ]});
+</script>
+</body>
+</html>

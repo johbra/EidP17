@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8"/>
+<title>Auswertungsregeln</title>
+<meta name="author" content="(Johannes Brauer)"/>
+<style type="text/css">
+.underline { text-decoration: underline; }
+</style>
+<link rel="stylesheet" href="./reveal.js/css/reveal.css"/>
+
+<link rel="stylesheet" href="./reveal.js/css/theme/simple.css" id="theme"/>
+
+<link rel="stylesheet" href="./mycss/myrevealstyle.css"/>
+
+<!-- If the query includes 'print-pdf', include the PDF print sheet -->
+<script>
+    if( window.location.search.match( /print-pdf/gi ) ) {
+        var link = document.createElement( 'link' );
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = './reveal.js/css/print/pdf.css';
+        document.getElementsByTagName( 'head' )[0].appendChild( link );
+    }
+</script>
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+<section id="sec-title-slide"><h1 class="title">Auswertungsregeln</h1><h2 class="author">Johannes Brauer</h2><p class="date">Created: 2017-01-20 Fri 11:21</p>
+</section>
+
+<section>
+<section id="slide-orgheadline3">
+<h2 id="orgheadline3">Syntax und Semantik einer mathematischen Formelsprache</h2>
+<p>
+Die Auswertung von Ausdrücken in <i>Racket</i> basiert auf der Anwendung
+einfacher äquivalenter Umformungen, wie sie aus der Schulmathematik
+bekannt sein sollten.
+</p>
+
+<p>
+Betrachten wir folgende mathematische Funktion:
+</p>
+<div>
+\begin{equation}
+bf(a,b) = a\cdot a + 2ab + b\cdot b
+\end{equation}
+
+</div>
+<p>
+Halten wir zunächst fest, dass diese Funktionsdefinition in einer
+definierten mathematischen Formelsprache aufgeschrieben ist. Die
+Sprache definiert einige grammatikalische Regeln, die beim
+Aufschreiben von Formeln einzuhalten sind. Diese Regeln bezeichnet man
+auch als die <i>Syntax</i> der Sprache. 
+</p>
+
+</section>
+<section id="slide-orgheadline1">
+<h3 id="orgheadline1">Syntax der mathematischen Formelsprache</h3>
+<p>
+Sie legt z. B. fest, dass
+</p>
+<ul>
+<li>Konstanten (Zahlen bzw. Ziffernfolgen),</li>
+<li>Variablen (\(a\), \(b\)) und</li>
+<li>bestimmte Operationszeichen (z. B. \(+\), \(-\) oder der Bruchstrich
+verwendet werden dürfen.</li>
+
+</ul>
+<p>
+Zu den Syntaxregeln gehört aber z. B auch, dass
+</p>
+<ul>
+<li>links und rechts von Operationszeichen \(+\) jeweils ein Operand
+stehen muss und dass</li>
+<li><p>
+die Zeichenfolge \(2ab\) als Abkürzung für \(2\cdot a\cdot b\)
+geschrieben werden darf, das Operationszeichen \(\cdot\) also in
+bestimmten Situationen weggelassen werden darf.
+</p>
+
+</section>
+<section></li>
+
+</ul>
+
+<p>
+Die Syntaxregeln der Sprache sagen nun aber zunächst nichts darüber
+aus, was eine syntaktisch korrekte Zeichenfolge bedeutet. Eine
+syntaktisch nicht korrekte Zeichenfolge &#x2013; wie z. B. \(3 +\) &#x2013; ist von
+vornherein bedeutungslos. Die Definition der Bedeutung syntaktisch
+korrekter Zeichenfolgen bezeichnet man als die <i>Semantik</i> der
+Sprache. 
+</p>
+
+</section>
+<section id="slide-orgheadline2">
+<h3 id="orgheadline2">Semantik der mathematischen Formelsprache</h3>
+<p>
+Sie bestimmt z. B., dass
+</p>
+
+<ul>
+<li>das Operationszeichen \(+\) für die Addition steht und</li>
+<li>der Ausdruck \(3 + 5\) äquivalent zu \(8\) ist.</li>
+
+</ul>
+
+<p>
+Man beachte, dass dabei vorausgesetzt wird, dass die Semantik der
+Addition bereits anderswo definiert ist. Die Addition natürlicher
+Zahlen ist in der Mathematik z. B. durch die bekannten Peano-Axiome
+definiert. Darauf soll aber hier nicht näher eingegangen werden. Wir
+setzen die Wohldefiniertheit der Semantik der mathematischen Formelsprache
+als gegeben voraus.
+</p>
+
+<p>
+Ein wichtiger Bestandteil der Semantik der mathematischen
+Formelsprache sind die Regeln, die erlauben, Teile einer Formel durch
+äquivalente, einfachere Teile zu ersetzen. Beinhaltet dieser Prozess
+auch das Ersetzung von Variablen durch Konstanten, bezeichnet
+man ihn auch als <i>Auswertung</i> einer Formel oder eines Ausdrucks. 
+</p>
+</section>
+<section>
+<p>
+Dabei werden die Ersetzungsregeln solange angewendet, bis keine weitere
+Regel mehr anwendbar ist.
+</p>
+
+<p>
+Aus der Mathematik wissen wir, dass die Gleichung
+</p>
+<div>
+\begin{equation}
+a\cdot a + 2ab + b\cdot b = (a + b)(a + b)
+\end{equation}
+
+</div>
+<p>
+gilt, das Ersetzen der linken durch die rechte Seite also eine
+äquivalente Umformung darstellt. Hierbei handelt es sich aber nicht um
+eine Auswertung, denn erstens werden hier die Variablen nicht durch
+Konstanten ersetzt und zweitens ist auch nicht klar, welcher der beiden
+Ausdrücke der einfachere ist.
+</p>
+
+<p>
+Eine Auswertung könnte nun stattfinden, wenn wir danach fragen,
+welchen Wert die Funktion \(bf(a,b)\) hat, wenn z. B. \(a\) durch \(3\) und \(b\)
+durch \(4\) ersetzt werden. 
+</p>
+</section>
+<section>
+<p>
+In der folgenden Gleichung ist diese
+Ersetzung vorgenommen worden:
+</p>
+<div>
+\begin{equation}
+bf(3,4) = 3\cdot 3 + 2\cdot 3\cdot 4 + 4\cdot 4
+\end{equation}
+
+</div>
+
+<p>
+Um den Ausdruck auf der rechten Seite korrekt auswerten zu können,
+müssen weitere semantische Regeln benutzt werden; hier insbesondere
+die Regel: Punktrechnung geht vor Strichrechnung.
+</p>
+
+<p>
+Damit könnte nun der Ausdruck wie folgt äquivalent umgeformt werden:
+</p>
+<div>
+\begin{eqnarray}
+bf(3,4) & = & 3\cdot 3 + 2\cdot 3\cdot 4 + 4\cdot 4 \\
+& = & 9 +  2\cdot 3\cdot 4 + 4\cdot 4 \\
+& = & 9 +  6\cdot 4 + 4\cdot 4 \\
+& = & 9 + 24 + 4\cdot 4 \\
+& = & 9 + 24 + 16 \\
+& = & 33 + 16 \\
+& = & 49
+\end{eqnarray}
+
+</div>
+
+</section>
+</section>
+<section>
+<section id="slide-orgheadline5">
+<h2 id="orgheadline5">Syntax und Semantik von <i>Racket</i> (vorläufig)</h2>
+<p>
+Funktionale Programmiersprachen zeichnen sich u. a. dadurch aus, dass
+sie sich hinsichtlich ihrer Semantik sehr strikt an der Mathematik
+orientieren. Das bedeutet z. B., dass die Auswertung von Ausdrücken
+durch eine Folge von äquivalenten Umformungen definiert ist.
+</p>
+
+<p>
+Betrachten wir dies exemplarisch anhand der Funktion \(f\) aus dem
+vorhergehenden Abschnitt. Die Syntax von <i>Racket</i> verlangt zunächst
+das wir die mathematische Funktionsdefintion
+</p>
+<div>
+\begin{equation}
+bf(a,b) = a\cdot a + 2ab + b\cdot b
+\end{equation}
+
+</div>
+<p>
+umschreiben. Wollen wir in <i>Racket</i> eine Funktion mit Namen <code>bf</code> und
+den Parametern <code>a</code> und <code>b</code> definieren, sieht das so aus:
+</p>
+<pre class="example">
+(define bf
+  (lambda [a b] ... ))
+</pre>
+
+</section>
+<section>
+<p>
+Wollen wir nun die rechte Seite der Funktionsdefinition nach <i>Racket</i>
+übertragen, müssen wir die Syntaxregel von <i>Racket</i> beachten, wonach
+Grundform eines (arithmetischen) Ausdrucks (in <i>Racket</i>) immer so
+aussieht:
+</p>
+<pre class="example">
+(operator operand-1 operand-2 ... operand-n)
+</pre>
+<p>
+Damit erhalten wir die vollständige Funktionsdefinition:
+</p>
+<div class="small">
+<div class="org-src-container">
+
+<pre  class="src src-scheme"><span style="color: #707183;">(</span><span style="color: #0000FF;">define</span> <span style="color: #006699;">bf</span>
+  <span style="color: #7388D6;">(</span><span style="color: #0000FF;">lambda</span> <span style="color: #909183;">[</span>a b<span style="color: #909183;">]</span>
+    <span style="color: #909183;">(</span>+ <span style="color: #709870;">(</span>* a a<span style="color: #709870;">)</span>
+       <span style="color: #709870;">(</span>* 2 a b<span style="color: #709870;">)</span>
+       <span style="color: #709870;">(</span>* b b<span style="color: #709870;">)</span><span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
+</pre>
+</div>
+
+</div>
+<p>
+Die Semantik von <i>Racket</i> definiert nun insbesondere, wie
+Ausdrücke, d. h. Funktionsanwendungen ausgewertet werden. 
+</p>
+</section>
+<section>
+<p>
+Wie in der
+mathematischen Formelsprache können durch die Anwendung einfacher
+Regeln, Ausdrücke in <i>Racket</i> in einfachere Ausdrücke äquivalent
+umgeformt werden können. 
+Die Frage lautet also z. B., wie aus der
+Funktionsanwendung 
+</p>
+<pre class="example">
+(bf 3 4)
+</pre>
+<p>
+das Resultat <code>49</code> entsteht.
+</p>
+
+<p>
+Betrachten wir dazu eine verallgemeinerte Definition einer
+Funktion <code>f</code> mit den formalen Parametern <code>x-1 ... x-n</code> und der
+Berechnungsvorschrift <code>exp</code>:
+</p>
+<pre class="example">
+(define f
+  (lambda [x-1 ... x-n]
+    exp))
+</pre>
+
+<p>
+Für die Anwendung der Funktion gilt dann die folgende Ersetzungsregel.
+</p>
+
+</section>
+<section id="slide-orgheadline4">
+<h3 id="orgheadline4">Ersetzungsmodell für Funktionsanwendungen:</h3>
+<ul>
+<li><p>
+Formal: Mit <code>(define f (lambda [x-1 ... x-n] exp))</code> gilt: 
+</p>
+<div>
+\begin{equation}
+(f\ v_{1}\  ...\  v_{n}) = exp^{x_{i}}_{v_{i}}
+\end{equation}
+
+</div>
+<p>
+Dabei bedeutet \(exp^{x_{i}}_{v_{i}}\), dass in <code>exp</code> jedes Auftreten
+eines \(x_{i}\) durch \(v_{i}\) ersetzt wird. (\(x_i\) entspricht <code>x-i</code>.)
+</p></li>
+<li>Werte den Rumpf der Funktion aus, wobei jeder formale Parameter
+durch das korrespondierende ausgewertete Argument ersetzt wird.</li>
+
+<li><p>
+Wenden wir diese Regel auf die Anwendung der Funktion <code>bf</code> an:
+</p>
+<pre class="example">
+(bf 3 4) = (+ (* 3 3)
+              (* 2 3 4)
+              (* 4 4))
+</pre></li>
+
+<li>Wie in der Mathematik gehen wir davon aus, dass die Addition und
+Multiplikation auch in <i>Racket</i> bereits definiert sind.</li>
+
+</ul>
+</section>
+<section>
+<ul>
+<li><p>
+D. h., weitere Auswertungsschritte erfolgen analog zur
+mathematischen Formelsprache. Man beachte dabei, dass aufgrund der
+Klammerstruktur in <i>Racket</i> keine Vorrangregel für die
+Multiplikation und Addition erforderlich ist:
+</p>
+<pre class="example">
+(bf 3 4) = (+ (* 3 3)
+              (* 2 3 4)
+              (* 4 4))
+         = (+ 9
+              (* 2 3 4)
+              (* 4 4))
+         = (+ 9
+              24
+              (* 4 4))
+         = (+ 9 24 16)
+         = 49
+</pre></li>
+
+</ul>
+<p>
+(s. Aufgabe 9)
+</p>
+
+</section>
+</section>
+<section>
+<section id="slide-orgheadline6">
+<h2 id="orgheadline6">Zusammenfassung</h2>
+<ul>
+<li>Die <b>Syntax</b> einer Programmiersprache legt zulässige Elemente und Strukturen fest.</li>
+<li>Die <b>Semantik</b> einer Programmiersprache legt die Bedeutung syntaktisch korrekter Ausdrücke fest.</li>
+<li>Die Semantik funktionaler Programmiersprachen orientiert sich an der Mathematik.</li>
+<li>Ausdrücke werden schrittweise über <b>äquivalente Umformungen</b> durch
+das <b>Ersetzungsmodell für Funktionsanwendungen</b> vereinfacht.</li>
+
+</ul>
+</section>
+</section>
+</div>
+</div>
+<script src="./reveal.js/lib/js/head.min.js"></script>
+<script src="./reveal.js/js/reveal.js"></script>
+
+<script>
+// Full list of configuration options available here:
+// https://github.com/hakimel/reveal.js#configuration
+Reveal.initialize({
+
+controls: true,
+progress: true,
+history: false,
+center: true,
+slideNumber: 'c',
+rollingLinks: false,
+keyboard: true,
+overview: true,
+margin: 0.05,
+
+theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+transition: Reveal.getQueryHash().transition || 'slide', // default/cube/page/concave/zoom/linear/fade/none
+transitionSpeed: 'default',
+multiplex: {
+    secret: '', // null if client
+    id: '', // id, obtained from socket.io server
+    url: '' // Location of socket.io server
+},
+
+// Optional libraries used to extend on reveal.js
+dependencies: [
+ { src: './reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+ { src: './reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+ { src: './reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+ { src: './reveal.js/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+ { src: './reveal.js/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }]
+,dependencies: [ { src: 'plugin/menu/menu.js', async: true }, { src: 'reveal.js/plugin/zoom-js/zoom.js', async: true } ]});
+</script>
+</body>
+</html>

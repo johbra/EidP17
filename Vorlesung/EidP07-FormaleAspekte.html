@@ -1,0 +1,841 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="de" xml:lang="de">
+<head>
+<!-- 2017-02-18 Sat 21:28 -->
+<meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta  name="viewport" content="width=device-width, initial-scale=1" />
+<title>Formale Aspekte der Programmierung</title>
+<meta  name="generator" content="Org-mode" />
+<meta  name="author" content="Johannes Brauer" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  pre.src-sh:before    { content: 'sh'; }
+  pre.src-bash:before  { content: 'sh'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-R:before     { content: 'R'; }
+  pre.src-perl:before  { content: 'Perl'; }
+  pre.src-java:before  { content: 'Java'; }
+  pre.src-sql:before   { content: 'SQL'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  /*]]>*/-->
+</style>
+<link rel="stylesheet" type="text/css" href="styles/bigblow/css/htmlize.css"/>
+<link rel="stylesheet" type="text/css" href="styles/bigblow/css/bigblow.css"/>
+<link rel="stylesheet" type="text/css" href="styles/bigblow/css/hideshow.css"/>
+<script type="text/javascript" src="styles/bigblow/js/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="styles/bigblow/js/jquery-ui-1.10.2.min.js"></script>
+<script type="text/javascript" src="styles/bigblow/js/jquery.localscroll-min.js"></script>
+<script type="text/javascript" src="styles/bigblow/js/jquery.scrollTo-1.4.3.1-min.js"></script>
+<script type="text/javascript" src="styles/bigblow/js/jquery.zclip.min.js"></script>
+<script type="text/javascript" src="styles/bigblow/js/bigblow.js"></script>
+<script type="text/javascript" src="styles/bigblow/js/hideshow.js"></script>
+<script type="text/javascript" src="styles/lib/js/jquery.stickytableheaders.min.js"></script>
+<link rel="stylesheet" type="text/css" href="mycss/mystyle.css" />
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2013 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        displayAlign: "center",
+        displayIndent: "0em",
+
+        "HTML-CSS": { scale: 100,
+                        linebreaks: { automatic: "false" },
+                        webFont: "TeX"
+                       },
+        SVG: {scale: 100,
+              linebreaks: { automatic: "false" },
+              font: "TeX"},
+        NativeMML: {scale: 100},
+        TeX: { equationNumbers: {autoNumber: "AMS"},
+               MultLineWidth: "85%",
+               TagSide: "right",
+               TagIndent: ".8em"
+             }
+});
+</script>
+<script type="text/javascript"
+        src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">Formale Aspekte der Programmierung
+<br>
+<span class="subtitle">Einführung in die Programmierung</span>
+</h1>
+
+<div id="outline-container-orgheadline1" class="outline-2">
+<h2 id="orgheadline1">Syntax und Semantik einer Programmiersprache</h2>
+<div class="outline-text-2" id="text-orgheadline1">
+<ul class="org-ul">
+<li>zur Wiederholung:</li>
+</ul>
+
+<blockquote>
+<p>
+Was bedeuten die Begriffe <i>Syntax</i> und <i>Semantik</i>?
+</p>
+</blockquote>
+</div>
+
+<div id="outline-container-orgheadline2" class="outline-3">
+<h3 id="orgheadline2">(Vereinfachte) Syntax von Racket</h3>
+<div class="outline-text-3" id="text-orgheadline2">
+<div class="small">
+<div class="org-src-container">
+
+<pre class="src src-scheme">    <span style="color: #6434A3;">&lt;def&gt;</span> = <span style="color: #707183;">(</span><span style="color: #0000FF;">define</span> <span style="color: #006699;">&lt;var&gt;</span> <span style="color: #6434A3;">&lt;exp&gt;</span><span style="color: #707183;">)</span>
+    <span style="color: #6434A3;">&lt;exp&gt;</span> = <span style="color: #6434A3;">&lt;var&gt;</span>
+            <span style="color: #008000;">| &lt;con&gt;</span>
+<span style="color: #008000;">            |</span> <span style="color: #707183;">(</span><span style="color: #6434A3;">&lt;prm&gt;</span> <span style="color: #6434A3;">&lt;exp&gt;</span> ... <span style="color: #6434A3;">&lt;exp&gt;</span><span style="color: #707183;">)</span>
+            <span style="color: #008000;">| (&lt;var&gt; &lt;exp&gt; ... &lt;exp&gt;)</span>
+<span style="color: #008000;">            |</span> <span style="color: #707183;">(</span><span style="color: #0000FF;">cond</span> <span style="color: #7388D6;">[</span><span style="color: #6434A3;">&lt;exp&gt;</span> <span style="color: #6434A3;">&lt;exp&gt;</span><span style="color: #7388D6;">]</span> ... <span style="color: #7388D6;">[</span><span style="color: #6434A3;">&lt;exp&gt;</span> <span style="color: #6434A3;">&lt;exp&gt;</span><span style="color: #7388D6;">]</span><span style="color: #707183;">)</span>
+            <span style="color: #008000;">| (cond [&lt;exp&gt; &lt;exp&gt;] ... [else &lt;exp&gt;])</span>
+<span style="color: #008000;">            |</span> <span style="color: #707183;">(</span><span style="color: #0000FF;">lambda</span> <span style="color: #7388D6;">[</span><span style="color: #6434A3;">&lt;var&gt;</span> <span style="color: #6434A3;">&lt;var&gt;</span> ... <span style="color: #6434A3;">&lt;var&gt;</span><span style="color: #7388D6;">]</span> <span style="color: #6434A3;">&lt;exp&gt;</span><span style="color: #707183;">)</span>
+</pre>
+</div>
+
+</div>
+<ul class="org-ul">
+<li>Racket-Programme bestehen (bisher) aus Definitionen (<code>&lt;def&gt;</code>) und
+Ausdrücken (<code>&lt;exp&gt;</code>)</li>
+<li>Ausdrücke können sein:
+<ul class="org-ul">
+<li>Variablen (<code>&lt;var&gt;</code>) oder Konstanten (<code>&lt;con&gt;</code>)</li>
+<li>Funktionsanwendungen (Funktionsaufrufe)</li>
+<li>Bedingte Ausdrücke</li>
+<li>Lambda-Ausdrücke</li>
+</ul></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgheadline3" class="outline-3">
+<h3 id="orgheadline3">Semantik einer Programmiersprache</h3>
+<div class="outline-text-3" id="text-orgheadline3">
+<ul class="org-ul">
+<li>Die Syntax beschreibt den Aufbau grammatikalisch korrekter Sätze</li>
+<li>Die Semantik beschreibt die Bedeutung grammatikalisch korrekter Sätze</li>
+<li>Die Semantik natürlich-sprachlicher Sätze wird häufig durch Sätze mit
+einfacheren (bereits bekannten) Begriffen beschrieben</li>
+<li>Die Semantik einer Programmiersprache
+<ul class="org-ul">
+<li>legt fest, welche Wirkung jedes Sprachelement oder -konstrukt im
+Programmablauf hervorruft</li>
+<li>wird beschrieben durch
+<ul class="org-ul">
+<li>Sätze in natürlicher Sprache (häufig anzutreffen bei gängigen
+Programmiersprachen (z.B. C, Pascal, Java, Smalltalk); Problem:
+Beschreibung umfangreich und nicht eindeutig</li>
+<li>Menge von Verhaltensregeln, die die Funktionsweise von
+Programmen bestimmen; kann formal und damit unzweideutig
+erfolgen</li>
+</ul></li>
+</ul></li>
+</ul>
+</div>
+
+<div id="outline-container-orgheadline4" class="outline-4">
+<h4 id="orgheadline4">(Vereinfachte) Semantik von Racket</h4>
+<div class="outline-text-4" id="text-orgheadline4">
+<ul class="org-ul">
+<li>Für die Beschreibung der Semantik von Racket greifen wir auf einfache
+Regeln der Algebra zurück.</li>
+<li>Die Semantik definiert wie, Racket-Ausdrücke ausgewertet werden.</li>
+<li>Auswertung bedeutet, dass ein Ausdruck durch Anwenden von Regeln
+solange umgeformt wird, bis ein Wert übrig bleibt.</li>
+<li>Werte sind (bisher):
+<ul class="org-ul">
+<li>Zahlen (2, 3.5, 1/3)</li>
+<li>boolesche Werte (<code>#true</code>, <code>#false</code>)</li>
+<li>Symbole (<code>’Karl</code>, <code>’hallo</code>)</li>
+<li>Listen, bestehend aus Zahlen, booleschen Werten, Symbolen und
+Listen</li>
+<li>Lambda-Ausdrücke</li>
+</ul></li>
+<li>Zahlen, booleschen Werte und Symbole sind Ausdrücke, die zu sich
+selbst ausgewertet werden (self evaluating expressions).</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgheadline5" class="outline-4">
+<h4 id="orgheadline5">Semantik der Funktionsanwendung</h4>
+<div class="outline-text-4" id="text-orgheadline5">
+<ul class="org-ul">
+<li>Dieses Thema wurde bereits in Kapitel <a href="EidP03b-Auswertungsregeln.html">EidP03b-Auswertungsregeln</a>
+  behandelt.</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgheadline6" class="outline-4">
+<h4 id="orgheadline6">Auswertungsregeln für Racket-Pseudofunktionen</h4>
+<div class="outline-text-4" id="text-orgheadline6">
+<ul class="org-ul">
+<li><i>Pseudofunktionen</i> (in der Lisp-Terminologie auch <i>special forms</i>
+   genannt) heißen so, weil
+<ul class="org-ul">
+<li>für sie besondere Auswertungsregeln gelten und/oder</li>
+<li>ihre Auswertung keinen Wert liefert.</li>
+</ul></li>
+<li>Bisher benutzte Pseudofunktionen:
+<ul class="org-ul">
+<li><code>define</code></li>
+<li><code>lambda</code></li>
+<li><code>cond</code></li>
+<li><code>else</code></li>
+</ul></li>
+</ul>
+</div>
+
+<div id="outline-container-orgheadline7" class="outline-5">
+<h5 id="orgheadline7">Auswertungsregeln für <code>define</code> und <code>lambda</code></h5>
+<div class="outline-text-5" id="text-orgheadline7">
+<dl class="org-dl">
+<dt><code>define</code></dt><dd>Der Ausdruck <code>(define var exp)</code> liefert keinen Wert,
+sondern hat lediglich den Effekt, dass der Variablen <code>var</code> der Wert
+von <code>exp</code> in der globalen Umgebung zugeordnet wird.</dd>
+
+<dt><code>lambda</code></dt><dd>Der Ausdruck <code>(lambda [v1 …vn] exp)</code> liefert als Wert
+eine (namenlose) Funktion mit den formalen Parametern <code>v1 …vn</code> und
+der Berechnungsvorschrift <code>exp</code>.</dd>
+</dl>
+</div>
+</div>
+
+<div id="outline-container-orgheadline8" class="outline-5">
+<h5 id="orgheadline8">Auswertungsregel für <code>cond</code> ohne <code>else</code></h5>
+<div class="outline-text-5" id="text-orgheadline8">
+<p>
+Zwei Fälle sind zu unterscheiden:
+</p>
+
+<ol class="org-ol">
+<li><p>
+Die Auswertung der ersten Frage (Bedingung) liefert <code>#false</code>:
+</p>
+
+<div class="small">
+<div class="org-src-container">
+
+<pre class="src src-scheme"><span style="color: #707183;">(</span><span style="color: #0000FF;">cond</span>
+  <span style="color: #7388D6;">[</span>#false ...<span style="color: #7388D6;">]</span>
+  <span style="color: #7388D6;">[</span>frage2 antwort2<span style="color: #7388D6;">]</span>
+  ....<span style="color: #707183;">)</span>
+  = <span style="color: #707183;">(</span><span style="color: #0000FF;">cond</span>
+      <span style="color: #7388D6;">[</span>frage2 antwort2<span style="color: #7388D6;">]</span>
+      ...<span style="color: #707183;">)</span>
+</pre>
+</div>
+
+</div>
+<p>
+Das heißt, die erste Frage-Antwort-Kombination wird eliminiert.
+</p></li>
+</ol>
+
+<ol class="org-ol">
+<li value="2"><p>
+Die Auswertung der ersten Frage (Bedingung) liefert <code>#true</code>:
+</p>
+
+<div class="small">
+<div class="org-src-container">
+
+<pre class="src src-scheme"><span style="color: #707183;">(</span><span style="color: #0000FF;">cond</span>
+  <span style="color: #7388D6;">[</span>#true exp<span style="color: #7388D6;">]</span>
+  ...<span style="color: #707183;">)</span>
+  = exp
+</pre>
+</div>
+
+</div>
+<p>
+Das heißt, der Wert des ganzen <code>cond</code>-Ausdrucks ist <code>exp</code>.
+</p></li>
+</ol>
+
+<p>
+Es ist ein Fehler, wenn keine Frage <code>#true</code> liefert.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgheadline9" class="outline-5">
+<h5 id="orgheadline9">Auswertungsregel für <code>cond</code> mit <code>else</code></h5>
+<div class="outline-text-5" id="text-orgheadline9">
+<ul class="org-ul">
+<li><p>
+Die Auswertung erfolgt wie bei <code>cond</code> ohne <code>else</code>. Wenn dabei als
+letzte die <code>else</code>-Zeile übrig bleibt, gilt:
+</p>
+
+<div class="small">
+<div class="org-src-container">
+
+<pre class="src src-scheme"><span style="color: #707183;">(</span><span style="color: #0000FF;">cond</span>
+   <span style="color: #7388D6;">[</span>else exp<span style="color: #7388D6;">]</span><span style="color: #707183;">)</span>
+= exp
+</pre>
+</div>
+
+</div>
+<p>
+Das heißt, der Wert des ganzen <code>cond</code>-Ausdrucks ist die Antwort hinter
+<code>else</code>.
+</p></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgheadline10" class="outline-2">
+<h2 id="orgheadline10">Korrektheit von Funktionen</h2>
+<div class="outline-text-2" id="text-orgheadline10">
+<p>
+Frage: 
+</p>
+<blockquote>
+<p>
+Was sagt uns die Mitteilung von DrRacket: 
+</p>
+
+<p>
+Alle 4 Tests bestanden!
+</p>
+
+<p>
+???
+</p>
+</blockquote>
+
+<blockquote>
+<p>
+Software wird zur Benutzung freigegeben, nicht wenn sie nachweislich
+korrekt ist, sondern wenn die Häufigkeit, mit der neue Fehler entdeckt
+werden, auf ein für die Geschäftsleitung akzeptables Niveau gesunken
+ist. 
+</p>
+
+<p>
+DAVID L. PARNAS
+</p>
+</blockquote>
+<ul class="org-ul">
+<li>Voraussetzungen für den <b>Beweis</b> der Korrektheit einer Funktion:
+<ul class="org-ul">
+<li>Formalisierung der Spezifikation eines Programms</li>
+<li>formale Definition der Semantik der Programmiersprache</li>
+</ul></li>
+<li>Funktionale (zustandslose) Programmierung:
+<ul class="org-ul">
+<li>Semantik definiert durch Substitutionsmodell.</li>
+<li>Beweise durch vollständige Induktion über die Rekursionstiefe</li>
+</ul></li>
+<li>Nicht-funktionale, zustandsbehaftete Programmierung: 
+<ul class="org-ul">
+<li>Beweisverfahren werden überaus komplex.</li>
+</ul></li>
+</ul>
+</div>
+
+<div id="outline-container-orgheadline11" class="outline-3">
+<h3 id="orgheadline11">Korrektheit rekursiver Funktionen</h3>
+<div class="outline-text-3" id="text-orgheadline11">
+<p>
+Beweis mittels rekursiver Induktion:
+</p>
+
+<ol class="org-ol">
+<li>Formuliere die Behauptung, die für den Wert der Funktion gelten muss.</li>
+<li>Zeige, dass die Behauptung für einen Aufruf mit Rekursionstiefe 0
+gilt.</li>
+<li>Zeige, dass aus der Gültigkeit der Behauptung für Aufrufe mit
+Rekursionstiefe gleich \(n\) die Gültigkeit der Behauptung für Aufrufe
+mit Rekursionstiefe \(n+1\) folgt.</li>
+</ol>
+</div>
+
+<div id="outline-container-orgheadline12" class="outline-4">
+<h4 id="orgheadline12">Definition der Rekursionstiefe</h4>
+<div class="outline-text-4" id="text-orgheadline12">
+<blockquote>
+<p>
+Findet beim Ausführen des Aufrufs kein rekursiver Aufruf statt, dann
+ist die Rekursionstiefe 0, und sonst ist sie um 1 größer als die
+größte Rekursionstiefe aller weiteren Aufrufe, die durch diesen Aufruf
+verursacht werden.
+</p>
+</blockquote>
+</div>
+</div>
+
+<div id="outline-container-orgheadline13" class="outline-4">
+<h4 id="orgheadline13">Beispiel: Funktion <code>len</code></h4>
+<div class="outline-text-4" id="text-orgheadline13">
+<div class="small">
+<div class="org-src-container">
+
+<pre class="src src-scheme"><span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">berechnet die Laenge einer Liste</span>
+<span style="color: #707183;">(</span><span style="color: #0000FF;">define</span> <span style="color: #006699;">len</span>
+  <span style="color: #7388D6;">(</span><span style="color: #0000FF;">lambda</span> <span style="color: #909183;">[</span>lst<span style="color: #909183;">]</span>
+  <span style="color: #909183;">(</span><span style="color: #0000FF;">cond</span>
+    <span style="color: #709870;">[</span><span style="color: #907373;">(</span>empty? lst<span style="color: #907373;">)</span> 0<span style="color: #709870;">]</span>
+    <span style="color: #709870;">[</span>else <span style="color: #907373;">(</span>+ 1 <span style="color: #6276BA;">(</span>len <span style="color: #858580;">(</span>rest lst<span style="color: #858580;">)</span><span style="color: #6276BA;">)</span><span style="color: #907373;">)</span><span style="color: #709870;">]</span><span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
+</pre>
+</div>
+
+</div>
+
+<dl class="org-dl">
+<dt>Behauptung:</dt><dd><p>
+Der Aufruf
+</p>
+
+<p>
+<code>(len ’</code> \((e_{1}\ e_{2}\ \ldots\ e_{n})\) <code>)</code>
+</p>
+
+<p>
+liefert die Anzahl \(n\) der Elemente der Argumentliste.
+</p></dd>
+</dl>
+
+<dl class="org-dl">
+<dt>Verankerung:</dt><dd><p>
+Der Aufruf <code>(len ’())</code> liefert nach Ersetzungsmodell:
+</p>
+
+<div class="small">
+<div class="org-src-container">
+
+<pre class="src src-scheme"><span style="color: #707183;">(</span>len '<span style="color: #7388D6;">()</span><span style="color: #707183;">)</span>
+= <span style="color: #707183;">(</span><span style="color: #0000FF;">cond</span>
+   <span style="color: #7388D6;">[</span><span style="color: #909183;">(</span>empty? '<span style="color: #709870;">()</span><span style="color: #909183;">)</span> 0<span style="color: #7388D6;">]</span>
+   <span style="color: #7388D6;">[</span>else <span style="color: #909183;">(</span>+ 1 <span style="color: #709870;">(</span>len <span style="color: #907373;">(</span>rest '<span style="color: #6276BA;">()</span><span style="color: #907373;">)</span><span style="color: #709870;">)</span><span style="color: #909183;">)</span><span style="color: #7388D6;">]</span><span style="color: #707183;">)</span>
+= <span style="color: #707183;">(</span><span style="color: #0000FF;">cond</span>
+    <span style="color: #7388D6;">[</span>true 0<span style="color: #7388D6;">]</span>
+    <span style="color: #7388D6;">[</span>else <span style="color: #909183;">(</span>+ 1 <span style="color: #709870;">(</span>len <span style="color: #907373;">(</span>rest '<span style="color: #6276BA;">()</span><span style="color: #907373;">)</span><span style="color: #709870;">)</span><span style="color: #909183;">)</span><span style="color: #7388D6;">]</span><span style="color: #707183;">)</span>
+= 0
+</pre>
+</div>
+
+</div>
+
+<p>
+Wenn die Rekursionstiefe \(k=0\) ist, liefert die Funktion \(0\), d.h.
+die Länge der leeren Liste.
+</p></dd>
+</dl>
+
+<dl class="org-dl">
+<dt>Induktionsannahme:</dt><dd>Die Behauptung gilt für Rekursionstiefe
+\(k = m\).</dd>
+<dt>Induktionsschluss</dt><dd><p>
+Wir betrachten jetzt den Aufruf
+<code>(len ’</code> \((e_{1}\ e_{2}\ \ldots\ e_{m+1})\) <code>)</code>
+</p>
+
+<p>
+Dieser Aufruf wird gemäß Ersetzungmodell ausgewertet als<br  />
+<code>(len ’</code> \((e_{1}\ e_{2}\ \ldots\ e_{m+1})\) <code>)</code><br  />
+= <code>(cond</code><br  />
+    &nbsp;&nbsp;&nbsp;&nbsp; <code>[(empty? ’</code> \((e_{1}\ e_{2}\ \ldots\ e_{m+1})\) <code>) 0]</code><br  />
+    &nbsp;&nbsp;&nbsp;&nbsp; <code>[else (+ 1 (len (rest ’</code> \((e_{1}\ e_{2}\ \ldots\ e_{m+1})\) <code>)))])</code><br  />
+= <code>(cond</code><br  />
+    &nbsp;&nbsp;&nbsp;&nbsp; <code>[false 0]</code><br  />
+    &nbsp;&nbsp;&nbsp;&nbsp; <code>[else (+ 1 (len (rest ’</code> \((e_{1}\ e_{2}\ \ldots\ e_{m+1})\) <code>)))])</code><br  />
+= <code>(+ 1 (len (rest ’</code> \((e_{1}\ e_{2}\ \ldots\ e_{m+1})\) <code>)))</code><br  />
+= <code>(+ 1 (len ’</code> \((e_{2}\ \ldots\ e_{m+1})\) <code>))</code><br  />
+</p></dd>
+</dl>
+<p>
+Der Aufruf <code>(len ’</code> \((e_{2}\ \ldots\ e_{m+1})\) <code>)</code> besitzt die
+Rekursionstiefe \(m\) und liefert gemäß Induktionsannahme \(m\):<br  />
+= <code>(+ 1 (len ’</code> \((e_{2}\ \ldots\ e_{m+1})\) <code>))</code><br  />
+= <code>(+ 1 m)</code><br  />
+= \(m+1\)
+</p>
+</div>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-orgheadline24" class="outline-2">
+<h2 id="orgheadline24">Lokale Definitionen</h2>
+<div class="outline-text-2" id="text-orgheadline24">
+</div><div id="outline-container-orgheadline14" class="outline-3">
+<h3 id="orgheadline14">Die globale Umgebung</h3>
+<div class="outline-text-3" id="text-orgheadline14">
+<ul class="org-ul">
+<li><p>
+Man beachte, dass Ausdrücke wie
+</p>
+
+<p>
+<code>(+ x 2)</code> oder <code>(f 7 8)</code>
+</p>
+
+<p>
+&#x2013; jeweils isoliert betrachtet &#x2013; nicht ausgewertet werden können, da
+nicht klar ist, wozu <code>x</code> bzw. welche Funktion <code>f</code> ausgewertet werden
+soll.
+</p></li>
+<li>Die Auswertung ist nur in einer <i>Umgebung</i> möglich, in der die Werte
+aller Variablen definiert sind.</li>
+<li>Durch die Pseudofunktion <code>define</code> wird einer Variablen ein Wert
+zugeordnet. Diese Assoziation merkt sich der Interpreter in einem
+Gedächtnis, das <i>globale Umgebung</i> genannt wird.</li>
+<li>Hinweis zur Benutzung von DrRacket: Bei jeder Betätigung der
+<code>Ausführen</code>-Schaltfläche wird zunächst die globale Umgebung gelöscht
+und anschließend werden die durch die im Definitionsfenster
+per <code>define</code> erzeugten Assoziationen in die globale
+Umgebung übernommen.</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgheadline23" class="outline-3">
+<h3 id="orgheadline23">Lokale Umgebungen</h3>
+<div class="outline-text-3" id="text-orgheadline23">
+</div><div id="outline-container-orgheadline15" class="outline-4">
+<h4 id="orgheadline15">Ineffiziente Funktion <code>sumprod</code></h4>
+<div class="outline-text-4" id="text-orgheadline15">
+<div class="org-src-container">
+
+<pre class="src src-scheme">    <span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">berechnet eine zweielementige Liste, bestehend </span>
+    <span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">aus der Summe und dem Produkt der </span>
+    <span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">Elemente der Zahlenliste  </span>
+    <span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">sumprod: (list-of number) -&gt; (list-of number)</span>
+    <span style="color: #707183;">(</span>check-expect <span style="color: #7388D6;">(</span>sumprod empty<span style="color: #7388D6;">)</span> '<span style="color: #7388D6;">(</span>0 1<span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
+    <span style="color: #707183;">(</span>check-expect <span style="color: #7388D6;">(</span>sumprod '<span style="color: #909183;">(</span>3 4 5<span style="color: #909183;">)</span><span style="color: #7388D6;">)</span> '<span style="color: #7388D6;">(</span>12 60<span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
+    <span style="color: #707183;">(</span><span style="color: #0000FF;">define</span> <span style="color: #006699;">sumprod</span>
+      <span style="color: #7388D6;">(</span><span style="color: #0000FF;">lambda</span> <span style="color: #909183;">[</span>lon<span style="color: #909183;">]</span>
+        <span style="color: #909183;">(</span><span style="color: #0000FF;">cond</span>
+          <span style="color: #709870;">[</span><span style="color: #907373;">(</span>empty? lon<span style="color: #907373;">)</span> <span style="color: #907373;">(</span>list 0 1<span style="color: #907373;">)</span><span style="color: #709870;">]</span>
+          <span style="color: #709870;">[</span>else <span style="color: #907373;">(</span>list 
+                 <span style="color: #6276BA;">(</span>+ <span style="color: #858580;">(</span>first lon<span style="color: #858580;">)</span> 
+                    <span style="color: #858580;">(</span>first <span style="color: #80A880;">(</span>sumprod <span style="color: #887070;">(</span>rest lon<span style="color: #887070;">)</span><span style="color: #80A880;">)</span><span style="color: #858580;">)</span><span style="color: #6276BA;">)</span>
+                 <span style="color: #6276BA;">(</span>* <span style="color: #858580;">(</span>first lon<span style="color: #858580;">)</span> 
+                    <span style="color: #858580;">(</span>first <span style="color: #80A880;">(</span>rest <span style="color: #887070;">(</span>sumprod 
+                                   <span style="color: #707183;">(</span>rest lon<span style="color: #707183;">)</span><span style="color: #887070;">)</span><span style="color: #80A880;">)</span><span style="color: #858580;">)</span><span style="color: #6276BA;">)</span><span style="color: #907373;">)</span><span style="color: #709870;">]</span><span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
+</pre>
+</div>
+<p>
+<b>Warum ist die Funktion ineffizient?</b>
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgheadline16" class="outline-4">
+<h4 id="orgheadline16">Verwendung einer <i>lokalen Definition</i></h4>
+<div class="outline-text-4" id="text-orgheadline16">
+<div class="org-src-container">
+
+<pre class="src src-scheme">    <span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">berechnet ... </span>
+    <span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">sumprod: (list-of number) -&gt; (list-of number)</span>
+    <span style="color: #707183;">(</span>check-expect <span style="color: #7388D6;">(</span>sumprod empty<span style="color: #7388D6;">)</span> '<span style="color: #7388D6;">(</span>0 1<span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
+    <span style="color: #707183;">(</span>check-expect <span style="color: #7388D6;">(</span>sumprod '<span style="color: #909183;">(</span>3 4 5<span style="color: #909183;">)</span><span style="color: #7388D6;">)</span> '<span style="color: #7388D6;">(</span>12 60<span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
+    <span style="color: #707183;">(</span><span style="color: #0000FF;">define</span> <span style="color: #006699;">sumprod</span>
+      <span style="color: #7388D6;">(</span><span style="color: #0000FF;">lambda</span> <span style="color: #909183;">[</span>lon<span style="color: #909183;">]</span>
+        <span style="color: #909183;">(</span><span style="color: #0000FF;">cond</span> 
+          <span style="color: #709870;">[</span><span style="color: #907373;">(</span>empty? lon<span style="color: #907373;">)</span> <span style="color: #907373;">(</span>list 0 1<span style="color: #907373;">)</span><span style="color: #709870;">]</span> 
+          <span style="color: #709870;">[</span>else <span style="color: #907373;">(</span><span style="color: #0000FF;">let</span> <span style="color: #6276BA;">[</span><span style="color: #858580;">(</span>sp <span style="color: #80A880;">(</span>sumprod <span style="color: #887070;">(</span>rest lon<span style="color: #887070;">)</span><span style="color: #80A880;">)</span><span style="color: #858580;">)</span><span style="color: #6276BA;">]</span>
+                       <span style="color: #8D8D84;">;;</span>
+                  <span style="color: #6276BA;">(</span>list 
+                   <span style="color: #858580;">(</span>+ <span style="color: #80A880;">(</span>first lon<span style="color: #80A880;">)</span> 
+                      <span style="color: #80A880;">(</span>first sp<span style="color: #80A880;">)</span><span style="color: #858580;">)</span>
+                             <span style="color: #8D8D84;">;;</span>
+                   <span style="color: #858580;">(</span>* <span style="color: #80A880;">(</span>first lon<span style="color: #80A880;">)</span> 
+                      <span style="color: #80A880;">(</span>first <span style="color: #887070;">(</span>rest sp<span style="color: #887070;">)</span><span style="color: #80A880;">)</span><span style="color: #858580;">)</span><span style="color: #6276BA;">)</span><span style="color: #907373;">)</span><span style="color: #709870;">]</span><span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
+                                   <span style="color: #8D8D84;">;;</span>
+</pre>
+</div>
+
+<p>
+Lokale Definitionen dienen (u.a.) zur Benennung des Wertes eines
+Ausdrucks zum Zweck der Vermeidung von Mehrfachberechnungen.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgheadline17" class="outline-4">
+<h4 id="orgheadline17">Syntax und Semantik von <code>let</code></h4>
+<div class="outline-text-4" id="text-orgheadline17">
+<ul class="org-ul">
+<li>Die Syntax der Anwendung der Pseudofunktion <code>let</code>, ein so genannter
+<code>let</code>-Ausdruck, hat die folgende Form:<br  />
+<code>(let [</code> \((v_{1}\; e_{1}) …(v_{n}\; e_{n})\) <code>] exp)</code></li>
+<li>Dabei sind
+<ul class="org-ul">
+<li>die \(v_{i}\) Variablenbezeichner,</li>
+<li>die \(e_{i}\) Ausdrücke sowie</li>
+<li>\(exp\), der <i>Rumpf</i> des <code>let</code>-Ausdrucks, ebenfalls ein Ausdruck.</li>
+</ul></li>
+<li>Semantik informell: Der Wert eines <code>let</code>-Ausdrucks ist der Wert, der
+sich aus der Auswertung seines Rumpfes ergibt, wenn alle darin
+vorkommenden \(v_{i}\) durch die Werte der korrespondierenden \(e_{i}\)
+ersetzt werden.</li>
+</ul>
+<ul class="org-ul">
+<li>Für die formale Definition der Semantik genügt es hier festzuhalten,
+dass der Ausdruck<br  />
+<code>(let [</code> \((v_{1}\; e_{1}) …(v_{n}\; e_{n})\) <code>] exp)</code><br  />
+durch den folgenden <code>lambda</code>-Ausdruck ersetzt werden kann:<br  />
+<code>((lambda</code> \((v_{1} \ldots v_{n})\; exp) e_{1} \ldots e_{n}\) <code>)</code></li>
+<li><code>let</code> ist syntaktischer Zucker.</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgheadline18" class="outline-4">
+<h4 id="orgheadline18">Pragmatik von <code>let</code></h4>
+<div class="outline-text-4" id="text-orgheadline18">
+<ul class="org-ul">
+<li>Einen Anwendungszweck von <code>let</code> haben wir in der Funktion <code>sumprod</code>
+bereits gesehen: Benennung eines Zwischenergebnisses zur Vermeidung
+von Mehrfachberechnungen.</li>
+<li><p>
+Die Benennung von Werten kann ein Programm besser lesbar machen:
+</p>
+<div class="org-src-container">
+
+<pre class="src src-scheme"><span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">berechnet ...  </span>
+<span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">sumprod: (list-of number) -&gt; (list-of number)</span>
+<span style="color: #707183;">(</span><span style="color: #0000FF;">define</span> <span style="color: #006699;">sumprod</span> 
+  <span style="color: #7388D6;">(</span><span style="color: #0000FF;">lambda</span> <span style="color: #909183;">[</span>lon<span style="color: #909183;">]</span> 
+    <span style="color: #909183;">(</span><span style="color: #0000FF;">cond</span> 
+    <span style="color: #709870;">[</span><span style="color: #907373;">(</span>empty? lon<span style="color: #907373;">)</span> <span style="color: #907373;">(</span>list 0 1<span style="color: #907373;">)</span><span style="color: #709870;">]</span> 
+    <span style="color: #709870;">[</span>else <span style="color: #907373;">(</span><span style="color: #0000FF;">let*</span> <span style="color: #6276BA;">[</span><span style="color: #858580;">(</span>sp <span style="color: #80A880;">(</span>sumprod <span style="color: #887070;">(</span>rest lon<span style="color: #887070;">)</span><span style="color: #80A880;">)</span><span style="color: #858580;">)</span> 
+                 <span style="color: #858580;">(</span>restsumme <span style="color: #80A880;">(</span>first sp<span style="color: #80A880;">)</span><span style="color: #858580;">)</span> 
+                 <span style="color: #858580;">(</span>restprodukt <span style="color: #80A880;">(</span>first <span style="color: #887070;">(</span>rest sp<span style="color: #887070;">)</span><span style="color: #80A880;">)</span><span style="color: #858580;">)</span><span style="color: #6276BA;">]</span> 
+                <span style="color: #6276BA;">(</span>list 
+                  <span style="color: #858580;">(</span>+ <span style="color: #80A880;">(</span>first lon<span style="color: #80A880;">)</span> restsumme<span style="color: #858580;">)</span> 
+                  <span style="color: #858580;">(</span>* <span style="color: #80A880;">(</span>first lon<span style="color: #80A880;">)</span> restprodukt<span style="color: #858580;">)</span><span style="color: #6276BA;">)</span><span style="color: #907373;">)</span><span style="color: #709870;">]</span><span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
+</pre>
+</div></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgheadline19" class="outline-4">
+<h4 id="orgheadline19">Unterschied zwischen <code>let</code> und <code>let*</code></h4>
+<div class="outline-text-4" id="text-orgheadline19">
+<ul class="org-ul">
+<li>Die Variablen \(v_{i}\) in einem <code>let</code>-Ausdruck sind nur im Rumpf
+sichtbar aber nicht in den \(e_{i}\).</li>
+<li>Um in der Funktion <code>sumprod</code> die Variablen <code>restsumme</code> und
+<code>restprodukt</code> unter Verwendung der Variablen <code>sp</code> zu definieren,
+müssten die let-Ausdrücke verschachtelt werden. Das wird leicht
+unübersichtlich.</li>
+<li>Deshalb gibt es mit <code>let*</code> weiteren syntaktischen Zucker: Hier sind
+in \(e_{i}\) alle \(v_{j}\) mit \(j\) &lt; \(i\) sichtbar.</li>
+<li>Formal gilt:<br  />
+<code>(let* [</code> \((v_{1}\; e_{1}) …(v_{n}\; e_{n})\) <code>] exp)</code><br  />
+ist äquivalent zu
+<code>(let [</code> \((v_{1}\; e_{1})\) <code>] (let* [</code> \((v_{2}\; e_{2}) \ldots\) <code>] exp))</code></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgheadline20" class="outline-4">
+<h4 id="orgheadline20">Lokale Hilfsfunktionen</h4>
+<div class="outline-text-4" id="text-orgheadline20">
+<ul class="org-ul">
+<li>Wenn Hilfsfunktionen nur reinen Hilfscharakter haben, d.h. nur im
+Kontext der Hauptfunktion sinnvoll sind, kann es &#x2013; schon zur
+Vermeidung von Namenskonflikten in der globalen Umgebung &#x2013;
+zweckmäßig sein, Hilfsfunktionen lokal zu definieren.</li>
+
+<li>Betrachten wir dazu eine weitere Variante von <code>sumprod</code> mit zwei
+Hilfsfunktionen.</li>
+</ul>
+</div>
+
+<div id="outline-container-orgheadline21" class="outline-5">
+<h5 id="orgheadline21"><code>sumprod</code> mit Hilfsfunktionen</h5>
+<div class="outline-text-5" id="text-orgheadline21">
+<div class="org-src-container">
+
+<pre class="src src-scheme">    <span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">berechnet ...</span>
+    <span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">sumprod: (list-of number) -&gt; (list-of number)</span>
+    <span style="color: #707183;">(</span><span style="color: #0000FF;">define</span> <span style="color: #006699;">sumprod</span>
+      <span style="color: #7388D6;">(</span><span style="color: #0000FF;">lambda</span> <span style="color: #909183;">[</span>lon<span style="color: #909183;">]</span> <span style="color: #909183;">(</span>list <span style="color: #709870;">(</span>sum lon<span style="color: #709870;">)</span> <span style="color: #709870;">(</span>prod lon<span style="color: #709870;">)</span><span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
+
+    <span style="color: #707183;">(</span><span style="color: #0000FF;">define</span> <span style="color: #006699;">sum</span>
+      <span style="color: #7388D6;">(</span><span style="color: #0000FF;">lambda</span> <span style="color: #909183;">[</span>lon<span style="color: #909183;">]</span>
+        <span style="color: #909183;">(</span><span style="color: #0000FF;">cond</span>
+          <span style="color: #709870;">[</span><span style="color: #907373;">(</span>empty? lon<span style="color: #907373;">)</span> 0<span style="color: #709870;">]</span>
+          <span style="color: #709870;">[</span>else <span style="color: #907373;">(</span>+ <span style="color: #6276BA;">(</span>first lon<span style="color: #6276BA;">)</span> <span style="color: #6276BA;">(</span>sum <span style="color: #858580;">(</span>rest lon<span style="color: #858580;">)</span><span style="color: #6276BA;">)</span><span style="color: #907373;">)</span><span style="color: #709870;">]</span><span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
+
+    <span style="color: #707183;">(</span><span style="color: #0000FF;">define</span> <span style="color: #006699;">prod</span>
+      <span style="color: #7388D6;">(</span><span style="color: #0000FF;">lambda</span> <span style="color: #909183;">[</span>lon<span style="color: #909183;">]</span>
+        <span style="color: #909183;">(</span><span style="color: #0000FF;">cond</span>
+          <span style="color: #709870;">[</span><span style="color: #907373;">(</span>empty? lon<span style="color: #907373;">)</span> 1<span style="color: #709870;">]</span>
+          <span style="color: #709870;">[</span>else <span style="color: #907373;">(</span>* <span style="color: #6276BA;">(</span>first lon<span style="color: #6276BA;">)</span> <span style="color: #6276BA;">(</span>prod <span style="color: #858580;">(</span>rest lon<span style="color: #858580;">)</span><span style="color: #6276BA;">)</span><span style="color: #907373;">)</span><span style="color: #709870;">]</span><span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgheadline22" class="outline-5">
+<h5 id="orgheadline22"><code>sumprod</code> mit lokalen Hilfsfunktionen</h5>
+<div class="outline-text-5" id="text-orgheadline22">
+<div class="org-src-container">
+
+<pre class="src src-scheme">    <span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">sumprod: (list-of number) -&gt; (list-of number)</span>
+    <span style="color: #707183;">(</span><span style="color: #0000FF;">define</span> <span style="color: #006699;">sumprod</span>
+      <span style="color: #7388D6;">(</span><span style="color: #0000FF;">lambda</span> <span style="color: #909183;">[</span>lon<span style="color: #909183;">]</span>
+        <span style="color: #909183;">(</span><span style="color: #0000FF;">letrec</span> 
+         <span style="color: #709870;">[</span><span style="color: #907373;">(</span>sum 
+           <span style="color: #6276BA;">(</span><span style="color: #0000FF;">lambda</span> <span style="color: #858580;">[</span>lon<span style="color: #858580;">]</span>
+             <span style="color: #858580;">(</span><span style="color: #0000FF;">cond</span> <span style="color: #80A880;">[</span><span style="color: #887070;">(</span>empty? lon<span style="color: #887070;">)</span> 0<span style="color: #80A880;">]</span>
+               <span style="color: #80A880;">[</span>else <span style="color: #887070;">(</span>+ <span style="color: #707183;">(</span>first lon<span style="color: #707183;">)</span> 
+                        <span style="color: #707183;">(</span>sum <span style="color: #7388D6;">(</span>rest lon<span style="color: #7388D6;">)</span><span style="color: #707183;">)</span><span style="color: #887070;">)</span><span style="color: #80A880;">]</span><span style="color: #858580;">)</span><span style="color: #6276BA;">)</span><span style="color: #907373;">)</span>
+          <span style="color: #907373;">(</span>prod 
+           <span style="color: #6276BA;">(</span><span style="color: #0000FF;">lambda</span> <span style="color: #858580;">[</span>lon<span style="color: #858580;">]</span>
+             <span style="color: #858580;">(</span><span style="color: #0000FF;">cond</span> <span style="color: #80A880;">[</span><span style="color: #887070;">(</span>empty? lon<span style="color: #887070;">)</span> 1<span style="color: #80A880;">]</span>
+               <span style="color: #80A880;">[</span>else <span style="color: #887070;">(</span>* <span style="color: #707183;">(</span>first lon<span style="color: #707183;">)</span> 
+                     <span style="color: #707183;">(</span>prod <span style="color: #7388D6;">(</span>rest lon<span style="color: #7388D6;">)</span><span style="color: #707183;">)</span><span style="color: #887070;">)</span><span style="color: #80A880;">]</span><span style="color: #858580;">)</span><span style="color: #6276BA;">)</span><span style="color: #907373;">)</span><span style="color: #709870;">]</span>
+       <span style="color: #709870;">(</span>list <span style="color: #907373;">(</span>sum lon<span style="color: #907373;">)</span> <span style="color: #907373;">(</span>prod lon<span style="color: #907373;">)</span><span style="color: #709870;">)</span><span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
+</pre>
+</div>
+<p>
+Bei der dritten <code>let</code>-Variante <b><code>letrec</code></b> sind alle \(v_{i}\) in allen
+\(e_{i}\) bekannt.
+</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Autor: Johannes Brauer</p>
+<p class="date">Created: 2017-02-18 Sat 21:28</p>
+<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>
