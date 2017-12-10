@@ -3,12 +3,12 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="de" xml:lang="de">
 <head>
-<!-- 2017-02-08 Wed 13:27 -->
-<meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
-<meta  name="viewport" content="width=device-width, initial-scale=1" />
+<!-- 2017-12-10 Sun 20:49 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Nicht-numerische Daten</title>
-<meta  name="generator" content="Org-mode" />
-<meta  name="author" content="Johannes Brauer" />
+<meta name="generator" content="Org mode" />
+<meta name="author" content="Johannes Brauer" />
 <style type="text/css">
  <!--/*--><![CDATA[/*><!--*/
   .title  { text-align: center;
@@ -53,13 +53,98 @@
     border: 1px solid black;
   }
   pre.src:hover:before { display: inline;}
-  pre.src-sh:before    { content: 'sh'; }
-  pre.src-bash:before  { content: 'sh'; }
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
   pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
-  pre.src-R:before     { content: 'R'; }
-  pre.src-perl:before  { content: 'Perl'; }
-  pre.src-java:before  { content: 'Java'; }
-  pre.src-sql:before   { content: 'SQL'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
 
   table { border-collapse:collapse; }
   caption.t-above { caption-side: top; }
@@ -92,6 +177,7 @@
     { font-size: 10px; font-weight: bold; white-space: nowrap; }
   .org-info-js_search-highlight
     { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
   /*]]>*/-->
 </style>
 <link rel="stylesheet" type="text/css" href="styles/bigblow/css/htmlize.css"/>
@@ -111,7 +197,7 @@
 @licstart  The following is the entire license notice for the
 JavaScript code in this tag.
 
-Copyright (C) 2012-2013 Free Software Foundation, Inc.
+Copyright (C) 2012-2017 Free Software Foundation, Inc.
 
 The JavaScript code in this tag is free software: you can
 redistribute it and/or modify it under the terms of the GNU
@@ -178,13 +264,12 @@ for the JavaScript code in this tag.
 <body>
 <div id="content">
 <h1 class="title">Nicht-numerische Daten
-<br>
+<br />
 <span class="subtitle">Einführung in die Programmierung</span>
 </h1>
-
-<div id="outline-container-orgheadline1" class="outline-2">
-<h2 id="orgheadline1">Was sind nicht numerische Daten?</h2>
-<div class="outline-text-2" id="text-orgheadline1">
+<div id="outline-container-org9d7d844" class="outline-2">
+<h2 id="org9d7d844">Was sind nicht numerische Daten?</h2>
+<div class="outline-text-2" id="text-org9d7d844">
 <ul class="org-ul">
 <li>Zeichen</li>
 <li>Zeichenketten</li>
@@ -195,12 +280,13 @@ for the JavaScript code in this tag.
 </ul>
 </div>
 </div>
-<div id="outline-container-orgheadline7" class="outline-2">
-<h2 id="orgheadline7">Symbolische Ausdrücke</h2>
-<div class="outline-text-2" id="text-orgheadline7">
-</div><div id="outline-container-orgheadline2" class="outline-3">
-<h3 id="orgheadline2">Symbole</h3>
-<div class="outline-text-3" id="text-orgheadline2">
+<div id="outline-container-org21ea2b0" class="outline-2">
+<h2 id="org21ea2b0">Symbolische Ausdrücke</h2>
+<div class="outline-text-2" id="text-org21ea2b0">
+</div>
+<div id="outline-container-org517cbb5" class="outline-3">
+<h3 id="org517cbb5">Symbole</h3>
+<div class="outline-text-3" id="text-org517cbb5">
 <ul class="org-ul">
 <li><i>Symbole</i> sind eine einfache Möglichkeit für die Repräsentation
 nicht-numerischer Daten.</li>
@@ -211,6 +297,7 @@ Beispiele:
 </p>
 <pre class="example">
 'symbol 'KarlMarx 'Dies-ist-auch-ein-Symbol 'x1
+
 </pre></li>
 <li>Symbole dürfen Buchstaben, Ziffern und ein paar Sonderzeichen
 (keine Leerzeichen!) enthalten.</li>
@@ -224,22 +311,21 @@ Gleichheit: <code>equal?</code> erwartet zwei Symbole als Argumente und liefert
 <code>#true</code> dann und nur dann, wenn sie identisch sind:
 </p>
 <div class="org-src-container">
-
 <pre class="src src-scheme">  <span style="color: #707183;">(</span>equal? 'Hallo 'Hallo<span style="color: #707183;">)</span> <span style="color: #8D8D84;">;;</span><span style="color: #8D8D84; font-style: italic;">=&gt; #true </span>
   <span style="color: #707183;">(</span>equal? 'Karl 'Rosa<span style="color: #707183;">)</span>   <span style="color: #8D8D84;">;;</span><span style="color: #8D8D84; font-style: italic;">=&gt; #false</span>
-  <span style="color: #707183;">(</span>equal? 'Hallo hallo<span style="color: #707183;">)</span>  <span style="color: #8D8D84;">;;</span><span style="color: #8D8D84; font-style: italic;">=&gt; #true, wenn hallo f&#252;r 'Hallo steht</span>
+  <span style="color: #707183;">(</span>equal? 'Hallo hallo<span style="color: #707183;">)</span>  <span style="color: #8D8D84;">;;</span><span style="color: #8D8D84; font-style: italic;">=&gt; #true, wenn hallo f&#252;r 'Hallo steht</span></pre>
 </pre>
 </div></li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-orgheadline3" class="outline-3">
-<h3 id="orgheadline3">S-Ausdrücke</h3>
-<div class="outline-text-3" id="text-orgheadline3">
+<div id="outline-container-org7a9c086" class="outline-3">
+<h3 id="org7a9c086">S-Ausdrücke</h3>
+<div class="outline-text-3" id="text-org7a9c086">
 <ul class="org-ul">
 <li><i>Symbolische Ausdrücke</i> (kurz: S-Ausdrücke) wurden erfunden von McCarthy für LISP.</li>
-<li><b>Definition:</b> (vorläufig)<br  />
+<li><b>Definition:</b> (vorläufig)<br />
 Ein S-Ausdruck ist
 <ul class="org-ul">
 <li>ein Atom, z.B. <code>27</code>, <code>’Karl</code>, <code>’ist</code></li>
@@ -259,9 +345,9 @@ Solche S-Ausdrücke heißen <i>Listen</i>.
 </ul>
 </div>
 
-<div id="outline-container-orgheadline4" class="outline-4">
-<h4 id="orgheadline4">Darstellung von Formeln als S-Ausdrücke</h4>
-<div class="outline-text-4" id="text-orgheadline4">
+<div id="outline-container-orge4b29c4" class="outline-4">
+<h4 id="orge4b29c4">Darstellung von Formeln als S-Ausdrücke</h4>
+<div class="outline-text-4" id="text-orge4b29c4">
 <ul class="org-ul">
 <li><p>
 Bestandteile einer Formel:
@@ -269,6 +355,7 @@ Bestandteile einer Formel:
 <ul class="org-ul">
 <li>Konstanten, Variablen und duale Operatoren</li>
 </ul>
+
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
 
@@ -346,9 +433,9 @@ dargestellt.
 </div>
 </div>
 
-<div id="outline-container-orgheadline5" class="outline-4">
-<h4 id="orgheadline5">Konstruktion von Listen</h4>
-<div class="outline-text-4" id="text-orgheadline5">
+<div id="outline-container-org411d3d4" class="outline-4">
+<h4 id="org411d3d4">Konstruktion von Listen</h4>
+<div class="outline-text-4" id="text-org411d3d4">
 <ul class="org-ul">
 <li><p>
 Ausgangspunkt für die Konstruktion einer Liste ist die leere Liste,
@@ -378,6 +465,7 @@ Mit der Funktion <code>cons</code> kann ein Element als neues erstes Element ein
 (cons ’Karl empty)                            ;;=&gt; (Karl)
 (cons ’Rosa (cons ’Karl empty))               ;;=&gt; (Rosa Karl)
 (cons ’Klara (cons ’Rosa (cons ’Karl empty))) ;;=&gt; (Klara Rosa Karl)
+
 </pre></li>
 </ul>
 
@@ -421,9 +509,9 @@ Mit der Funktion <code>cons</code> kann ein Element als neues erstes Element ein
 </div>
 </div>
 
-<div id="outline-container-orgheadline6" class="outline-4">
-<h4 id="orgheadline6">Zerlegung von Listen</h4>
-<div class="outline-text-4" id="text-orgheadline6">
+<div id="outline-container-org1171834" class="outline-4">
+<h4 id="org1171834">Zerlegung von Listen</h4>
+<div class="outline-text-4" id="text-org1171834">
 <ul class="org-ul">
 <li>Racket stellt zwei Funktionen bereit zum Zugriff auf die beiden
 Komponenten einer Liste:
@@ -434,19 +522,18 @@ erste Element.</li>
 Restliste.</li>
 </ul></li>
 <li>Der Zusammenhang zwischen <code>cons</code>, <code>first</code> und <code>rest</code> kann durch die
-folgenden Gleichungen beschrieben werden:<br  />
- \((first (cons\ elem\ liste))  = elem\) <br  />
+folgenden Gleichungen beschrieben werden:<br />
+ \((first (cons\ elem\ liste))  = elem\) <br />
  \((rest (cons\ elem\ liste))  =  liste\)</li>
 <li><p>
 Beispiele:
 </p>
 
 <div class="org-src-container">
-
-<pre class="src src-scheme"><span style="color: #707183;">(</span>first <span style="color: #7388D6;">(</span>cons 1 <span style="color: #909183;">(</span>cons 2 <span style="color: #709870;">(</span>cons 3 empty<span style="color: #709870;">)</span><span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>        <span style="color: #8D8D84;">;;</span><span style="color: #8D8D84; font-style: italic;">=&gt; 1</span>
-<span style="color: #707183;">(</span>first <span style="color: #7388D6;">(</span>rest <span style="color: #909183;">(</span>cons 1 <span style="color: #709870;">(</span>cons 2 <span style="color: #907373;">(</span>cons 3 empty<span style="color: #907373;">)</span><span style="color: #709870;">)</span><span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span> <span style="color: #006FE0;">::=&gt;</span> 2
-<span style="color: #707183;">(</span>first empty<span style="color: #707183;">)</span> <span style="color: #8D8D84;">;;</span><span style="color: #8D8D84; font-style: italic;">=&gt;</span>
-    first: expects a non-empty list<span style="color: #8D8D84;">; </span><span style="color: #8D8D84; font-style: italic;">given: ()</span>
+<pre class="src src-scheme">   <span style="color: #707183;">(</span>first <span style="color: #7388D6;">(</span>cons 1 <span style="color: #909183;">(</span>cons 2 <span style="color: #709870;">(</span>cons 3 empty<span style="color: #709870;">)</span><span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>        <span style="color: #8D8D84;">;;</span><span style="color: #8D8D84; font-style: italic;">=&gt; 1</span>
+   <span style="color: #707183;">(</span>first <span style="color: #7388D6;">(</span>rest <span style="color: #909183;">(</span>cons 1 <span style="color: #709870;">(</span>cons 2 <span style="color: #907373;">(</span>cons 3 empty<span style="color: #907373;">)</span><span style="color: #709870;">)</span><span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span> <span style="color: #006FE0;">::=&gt;</span> 2
+   <span style="color: #707183;">(</span>first empty<span style="color: #707183;">)</span> <span style="color: #8D8D84;">;;</span><span style="color: #8D8D84; font-style: italic;">=&gt;</span>
+       first: expects a non-empty list<span style="color: #8D8D84;">; </span><span style="color: #8D8D84; font-style: italic;">given: ()</span></pre>
 </pre>
 </div></li>
 </ul>
@@ -456,12 +543,13 @@ Beispiele:
 </div>
 
 
-<div id="outline-container-orgheadline15" class="outline-2">
-<h2 id="orgheadline15">Funktionen für die Verarbeitung rekursiv definierter Datenstrukturen</h2>
-<div class="outline-text-2" id="text-orgheadline15">
-</div><div id="outline-container-orgheadline8" class="outline-3">
-<h3 id="orgheadline8">Rekursive Datenstrukturen</h3>
-<div class="outline-text-3" id="text-orgheadline8">
+<div id="outline-container-org2eb07ba" class="outline-2">
+<h2 id="org2eb07ba">Funktionen für die Verarbeitung rekursiv definierter Datenstrukturen</h2>
+<div class="outline-text-2" id="text-org2eb07ba">
+</div>
+<div id="outline-container-org2c8e19e" class="outline-3">
+<h3 id="org2c8e19e">Rekursive Datenstrukturen</h3>
+<div class="outline-text-3" id="text-org2c8e19e">
 <ul class="org-ul">
 <li><p>
 Für einen Gebrauchtwagenhändler repräsentieren wir die Menge der im
@@ -469,6 +557,7 @@ Angebot befindlichen Automarken in einer Liste von Symbolen, z.B. so:
 </p>
 <pre class="example">
 (’VW ’Opel ’Toyota)
+
 </pre></li>
 <li>Listen können beliebig lang werden (vgl. Definition des S-Ausdrucks).
 Eine <i>Liste-von-Symbolen (lvs)</i> kann als Datenstruktur wie folgt
@@ -490,9 +579,9 @@ nicht-leere Liste mit dem Prädikat <code>cons?</code> erkannt werden.</li>
 </div>
 </div>
 
-<div id="outline-container-orgheadline9" class="outline-3">
-<h3 id="orgheadline9">Verarbeitung beliebig langer Listen</h3>
-<div class="outline-text-3" id="text-orgheadline9">
+<div id="outline-container-org42cbcdf" class="outline-3">
+<h3 id="org42cbcdf">Verarbeitung beliebig langer Listen</h3>
+<div class="outline-text-3" id="text-org42cbcdf">
 <ul class="org-ul">
 <li>Es soll geprüft werden können, ob in der Liste mit den Automarken
 <code>’BMW</code> vorkommt.</li>
@@ -502,19 +591,18 @@ und einen passenden Funktionskopf auf:
 </p>
 
 <div class="org-src-container">
-
-<pre class="src src-scheme"><span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">ermittelt, ob das Symbol 'BMW in der liste-von-symbolen auftritt</span>
-<span style="color: #707183;">(</span><span style="color: #0000FF;">define</span> <span style="color: #006699;">enthaelt-bmw?</span>
-  <span style="color: #7388D6;">(</span><span style="color: #0000FF;">lambda</span> <span style="color: #909183;">[</span>lvs<span style="color: #909183;">]</span> ...<span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
+<pre class="src src-scheme">   <span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">ermittelt, ob das Symbol 'BMW in der liste-von-symbolen auftritt</span>
+   <span style="color: #707183;">(</span><span style="color: #0000FF;">define</span> <span style="color: #006699;">enthaelt-bmw?</span>
+     <span style="color: #7388D6;">(</span><span style="color: #0000FF;">lambda</span> <span style="color: #909183;">[</span>lvs<span style="color: #909183;">]</span> ...<span style="color: #7388D6;">)</span><span style="color: #707183;">)</span></pre>
 </pre>
 </div></li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-orgheadline10" class="outline-3">
-<h3 id="orgheadline10">Verträge für Funktionen (Regel 10)</h3>
-<div class="outline-text-3" id="text-orgheadline10">
+<div id="outline-container-orge8ac55f" class="outline-3">
+<h3 id="orge8ac55f">Verträge für Funktionen (Regel 10)</h3>
+<div class="outline-text-3" id="text-orge8ac55f">
 <p>
 <b>Regel 10</b>:
 </p>
@@ -529,52 +617,53 @@ als Resultat liefert:
 </p>
 <pre class="example">
 &lt;Typ von Argument 1&gt; ... &lt;Typ von Argument n&gt; -&gt; &lt;Typ des Resultats&gt;
+
 </pre></li>
 <li><p>
 Für unser Beispiel <code>enthaelt-bmw?</code> lauter der Vertrag
 </p>
 <pre class="example">
 ;; enthaelt-bmw? : (list-of symbol) -&gt; boolean
+
 </pre></li>
 <li><p>
 Den Vertrag fügen wir hinter die Zweckbestimmung ein:
 </p>
 <div class="org-src-container">
-
-<pre class="src src-scheme"><span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">ermittelt, ob das Symbol 'BMW in der liste-von-symbolen auftritt</span>
-<span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">enthaelt-bmw? : (list-of symbol) -&gt; boolean </span>
-<span style="color: #707183;">(</span><span style="color: #0000FF;">define</span> <span style="color: #006699;">enthaelt-bmw?</span>
-  <span style="color: #7388D6;">(</span><span style="color: #0000FF;">lambda</span> <span style="color: #909183;">[</span>lvs<span style="color: #909183;">]</span> ...<span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
+<pre class="src src-scheme">   <span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">ermittelt, ob das Symbol 'BMW in der liste-von-symbolen auftritt</span>
+   <span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">enthaelt-bmw? : (list-of symbol) -&gt; boolean </span>
+   <span style="color: #707183;">(</span><span style="color: #0000FF;">define</span> <span style="color: #006699;">enthaelt-bmw?</span>
+     <span style="color: #7388D6;">(</span><span style="color: #0000FF;">lambda</span> <span style="color: #909183;">[</span>lvs<span style="color: #909183;">]</span> ...<span style="color: #7388D6;">)</span><span style="color: #707183;">)</span></pre>
 </pre>
 </div></li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-orgheadline11" class="outline-3">
-<h3 id="orgheadline11">Angabe von Tests für <code>enthaelt-bmw?</code></h3>
-<div class="outline-text-3" id="text-orgheadline11">
+<div id="outline-container-orgaed60e6" class="outline-3">
+<h3 id="orgaed60e6">Angabe von Tests für <code>enthaelt-bmw?</code></h3>
+<div class="outline-text-3" id="text-orgaed60e6">
 <div class="org-src-container">
+<pre class="src src-scheme">           
+   <span style="color: #707183;">(</span>check-expect <span style="color: #7388D6;">(</span>enthaelt-bmw? empty<span style="color: #7388D6;">)</span> #false<span style="color: #707183;">)</span>
 
-<pre class="src src-scheme"><span style="color: #707183;">(</span>check-expect <span style="color: #7388D6;">(</span>enthaelt-bmw? empty<span style="color: #7388D6;">)</span> #false<span style="color: #707183;">)</span>
+   <span style="color: #707183;">(</span>check-expect 
+     <span style="color: #7388D6;">(</span>enthaelt-bmw? 
+       <span style="color: #909183;">(</span>cons 'VW <span style="color: #709870;">(</span>cons 'Opel <span style="color: #907373;">(</span>cons 'Toyota empty<span style="color: #907373;">)</span><span style="color: #709870;">)</span><span style="color: #909183;">)</span><span style="color: #7388D6;">)</span> 
+     #false<span style="color: #707183;">)</span>
 
-<span style="color: #707183;">(</span>check-expect 
-  <span style="color: #7388D6;">(</span>enthaelt-bmw? 
-    <span style="color: #909183;">(</span>cons 'VW <span style="color: #709870;">(</span>cons 'Opel <span style="color: #907373;">(</span>cons 'Toyota empty<span style="color: #907373;">)</span><span style="color: #709870;">)</span><span style="color: #909183;">)</span><span style="color: #7388D6;">)</span> 
-  #false<span style="color: #707183;">)</span>
-
-<span style="color: #707183;">(</span>check-expect
-  <span style="color: #7388D6;">(</span>enthaelt-bmw? 
-    <span style="color: #909183;">(</span>cons 'VW <span style="color: #709870;">(</span>cons 'BMW <span style="color: #907373;">(</span>cons 'Toyota empty<span style="color: #907373;">)</span><span style="color: #709870;">)</span><span style="color: #909183;">)</span><span style="color: #7388D6;">)</span>
-  #true<span style="color: #707183;">)</span>
+   <span style="color: #707183;">(</span>check-expect
+     <span style="color: #7388D6;">(</span>enthaelt-bmw? 
+       <span style="color: #909183;">(</span>cons 'VW <span style="color: #709870;">(</span>cons 'BMW <span style="color: #907373;">(</span>cons 'Toyota empty<span style="color: #907373;">)</span><span style="color: #709870;">)</span><span style="color: #909183;">)</span><span style="color: #7388D6;">)</span>
+     #true<span style="color: #707183;">)</span></pre>
 </pre>
 </div>
 </div>
 </div>
 
-<div id="outline-container-orgheadline12" class="outline-3">
-<h3 id="orgheadline12">Anlegen einer Funktionsschablone</h3>
-<div class="outline-text-3" id="text-orgheadline12">
+<div id="outline-container-org0a2e320" class="outline-3">
+<h3 id="org0a2e320">Anlegen einer Funktionsschablone</h3>
+<div class="outline-text-3" id="text-org0a2e320">
 <ul class="org-ul">
 <li>Nun definieren wir eine <i>Funktionsschablone</i> gemäß Regel 9 
 (für die Verarbeitung gemischter Daten), die der Struktur der
@@ -585,11 +674,10 @@ unterscheidet, ergibt sich folgende Schablone:
 </p>
 
 <div class="org-src-container">
-
-<pre class="src src-scheme">    <span style="color: #707183;">(</span><span style="color: #0000FF;">define</span> <span style="color: #006699;">f</span>
-       <span style="color: #7388D6;">(</span><span style="color: #0000FF;">lambda</span> <span style="color: #909183;">[</span>lvs<span style="color: #909183;">]</span>
-          <span style="color: #909183;">(</span><span style="color: #0000FF;">cond</span> <span style="color: #709870;">[</span><span style="color: #907373;">(</span>empty? lvs<span style="color: #907373;">)</span> ...<span style="color: #709870;">]</span>
-                <span style="color: #709870;">[</span><span style="color: #907373;">(</span>cons? lvs<span style="color: #907373;">)</span>  ...<span style="color: #709870;">]</span><span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
+<pre class="src src-scheme">       <span style="color: #707183;">(</span><span style="color: #0000FF;">define</span> <span style="color: #006699;">f</span>
+          <span style="color: #7388D6;">(</span><span style="color: #0000FF;">lambda</span> <span style="color: #909183;">[</span>lvs<span style="color: #909183;">]</span>
+             <span style="color: #909183;">(</span><span style="color: #0000FF;">cond</span> <span style="color: #709870;">[</span><span style="color: #907373;">(</span>empty? lvs<span style="color: #907373;">)</span> ...<span style="color: #709870;">]</span>
+                   <span style="color: #709870;">[</span><span style="color: #907373;">(</span>cons? lvs<span style="color: #907373;">)</span>  ...<span style="color: #709870;">]</span><span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span></pre>
 </pre>
 </div></li>
 </ul>
@@ -601,7 +689,7 @@ Datenstruktur:
 </p>
 <ol class="org-ol">
 <li>dem ersten Element</li>
-<li>der Restliste (ohne das erste Element)<br  /></li>
+<li>der Restliste (ohne das erste Element)<br /></li>
 </ol>
 <p>
 Dem Prinzip von Regel 8 (für strukturverarbeitende
@@ -613,13 +701,12 @@ Aus diesen Überlegungen ergibt sich folgende Schablone:
 </p>
 <div class="small">
 <div class="org-src-container">
-
-<pre class="src src-scheme"><span style="color: #707183;">(</span><span style="color: #0000FF;">define</span> <span style="color: #006699;">f</span>
-  <span style="color: #7388D6;">(</span><span style="color: #0000FF;">lambda</span> <span style="color: #909183;">[</span>lvs<span style="color: #909183;">]</span>
-    <span style="color: #909183;">(</span><span style="color: #0000FF;">cond</span> 
-      <span style="color: #709870;">[</span><span style="color: #907373;">(</span>empty? lvs<span style="color: #907373;">)</span> ...<span style="color: #709870;">]</span>
-      <span style="color: #709870;">[</span><span style="color: #907373;">(</span>cons? lvs<span style="color: #907373;">)</span>  ... <span style="color: #907373;">(</span>first lvs<span style="color: #907373;">)</span> 
-                    ... <span style="color: #907373;">(</span>rest lvs<span style="color: #907373;">)</span> ...<span style="color: #709870;">]</span><span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
+<pre class="src src-scheme">   <span style="color: #707183;">(</span><span style="color: #0000FF;">define</span> <span style="color: #006699;">f</span>
+     <span style="color: #7388D6;">(</span><span style="color: #0000FF;">lambda</span> <span style="color: #909183;">[</span>lvs<span style="color: #909183;">]</span>
+       <span style="color: #909183;">(</span><span style="color: #0000FF;">cond</span> 
+         <span style="color: #709870;">[</span><span style="color: #907373;">(</span>empty? lvs<span style="color: #907373;">)</span> ...<span style="color: #709870;">]</span>
+         <span style="color: #709870;">[</span><span style="color: #907373;">(</span>cons? lvs<span style="color: #907373;">)</span>  ... <span style="color: #907373;">(</span>first lvs<span style="color: #907373;">)</span> 
+                       ... <span style="color: #907373;">(</span>rest lvs<span style="color: #907373;">)</span> ...<span style="color: #709870;">]</span><span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span></pre>
 </pre>
 </div>
 
@@ -634,9 +721,9 @@ Element und die Restliste geeignet kombiniert werden.</li>
 </div>
 </div>
 
-<div id="outline-container-orgheadline13" class="outline-3">
-<h3 id="orgheadline13">Benutzung der Schablone für <code>enthaelt-bmw?</code></h3>
-<div class="outline-text-3" id="text-orgheadline13">
+<div id="outline-container-org3492852" class="outline-3">
+<h3 id="org3492852">Benutzung der Schablone für <code>enthaelt-bmw?</code></h3>
+<div class="outline-text-3" id="text-org3492852">
 <ul class="org-ul">
 <li><p>
 Die Schablone angewendet auf <code>enthaelt-bmw?</code>, wobei die Lösung für
@@ -644,24 +731,23 @@ den Fall der leeren Liste bereits eingetragen ist:
 </p>
 
 <div class="org-src-container">
-
-<pre class="src src-scheme"><span style="color: #707183;">(</span><span style="color: #0000FF;">define</span> <span style="color: #006699;">enthaelt-bmw?</span>
-       <span style="color: #8D8D84;">;;;;;;;;;;;;;;</span>
-  <span style="color: #7388D6;">(</span><span style="color: #0000FF;">lambda</span> <span style="color: #909183;">[</span>lvs<span style="color: #909183;">]</span>
-    <span style="color: #909183;">(</span><span style="color: #0000FF;">cond</span> 
-      <span style="color: #709870;">[</span><span style="color: #907373;">(</span>empty? lvs<span style="color: #907373;">)</span> #false<span style="color: #709870;">]</span>
-                    <span style="color: #8D8D84;">;;;;;;</span>
-      <span style="color: #709870;">[</span><span style="color: #907373;">(</span>cons? lvs<span style="color: #907373;">)</span> ... <span style="color: #907373;">(</span>first lvs<span style="color: #907373;">)</span> 
-                   ... <span style="color: #907373;">(</span>rest lvs<span style="color: #907373;">)</span> ...<span style="color: #709870;">]</span><span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
+<pre class="src src-scheme">   <span style="color: #707183;">(</span><span style="color: #0000FF;">define</span> <span style="color: #006699;">enthaelt-bmw?</span>
+          <span style="color: #8D8D84;">;;;;;;;;;;;;;;</span>
+     <span style="color: #7388D6;">(</span><span style="color: #0000FF;">lambda</span> <span style="color: #909183;">[</span>lvs<span style="color: #909183;">]</span>
+       <span style="color: #909183;">(</span><span style="color: #0000FF;">cond</span> 
+         <span style="color: #709870;">[</span><span style="color: #907373;">(</span>empty? lvs<span style="color: #907373;">)</span> #false<span style="color: #709870;">]</span>
+                       <span style="color: #8D8D84;">;;;;;;</span>
+         <span style="color: #709870;">[</span><span style="color: #907373;">(</span>cons? lvs<span style="color: #907373;">)</span> ... <span style="color: #907373;">(</span>first lvs<span style="color: #907373;">)</span> 
+                      ... <span style="color: #907373;">(</span>rest lvs<span style="color: #907373;">)</span> ...<span style="color: #709870;">]</span><span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span></pre>
 </pre>
 </div></li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-orgheadline14" class="outline-3">
-<h3 id="orgheadline14">Ausfüllen der Schablone für <code>enthaelt-bmw?</code></h3>
-<div class="outline-text-3" id="text-orgheadline14">
+<div id="outline-container-org6d5abbb" class="outline-3">
+<h3 id="org6d5abbb">Ausfüllen der Schablone für <code>enthaelt-bmw?</code></h3>
+<div class="outline-text-3" id="text-org6d5abbb">
 <ul class="org-ul">
 <li><p>
 Nun betrachten wir die Komponenten der nicht-leeren Liste. Falls das
@@ -669,15 +755,14 @@ erste Element das gesuchte ist, muss die Funktion <code>#true</code> liefern:
 </p>
 
 <div class="org-src-container">
-
-<pre class="src src-scheme"><span style="color: #707183;">(</span><span style="color: #0000FF;">define</span> <span style="color: #006699;">enthaelt-bmw?</span>
-  <span style="color: #7388D6;">(</span><span style="color: #0000FF;">lambda</span> <span style="color: #909183;">[</span>lvs<span style="color: #909183;">]</span>
-    <span style="color: #909183;">(</span><span style="color: #0000FF;">cond</span> 
-      <span style="color: #709870;">[</span><span style="color: #907373;">(</span>empty? lvs<span style="color: #907373;">)</span> #false<span style="color: #709870;">]</span>
-      <span style="color: #709870;">[</span><span style="color: #907373;">(</span>cons? lvs<span style="color: #907373;">)</span> 
-         <span style="color: #907373;">(</span><span style="color: #0000FF;">cond</span> <span style="color: #6276BA;">[</span><span style="color: #858580;">(</span>equal? <span style="color: #80A880;">(</span>first lvs<span style="color: #80A880;">)</span> 'BMW<span style="color: #858580;">)</span> #true<span style="color: #6276BA;">]</span>
-                <span style="color: #8D8D84;">;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;</span>
-               <span style="color: #6276BA;">[</span>else ... <span style="color: #858580;">(</span>rest lvs<span style="color: #858580;">)</span> ...<span style="color: #6276BA;">]</span><span style="color: #907373;">)</span><span style="color: #709870;">]</span><span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
+<pre class="src src-scheme">   <span style="color: #707183;">(</span><span style="color: #0000FF;">define</span> <span style="color: #006699;">enthaelt-bmw?</span>
+     <span style="color: #7388D6;">(</span><span style="color: #0000FF;">lambda</span> <span style="color: #909183;">[</span>lvs<span style="color: #909183;">]</span>
+       <span style="color: #909183;">(</span><span style="color: #0000FF;">cond</span> 
+         <span style="color: #709870;">[</span><span style="color: #907373;">(</span>empty? lvs<span style="color: #907373;">)</span> #false<span style="color: #709870;">]</span>
+         <span style="color: #709870;">[</span><span style="color: #907373;">(</span>cons? lvs<span style="color: #907373;">)</span> 
+            <span style="color: #907373;">(</span><span style="color: #0000FF;">cond</span> <span style="color: #6276BA;">[</span><span style="color: #858580;">(</span>equal? <span style="color: #80A880;">(</span>first lvs<span style="color: #80A880;">)</span> 'BMW<span style="color: #858580;">)</span> #true<span style="color: #6276BA;">]</span>
+                   <span style="color: #8D8D84;">;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;</span>
+                  <span style="color: #6276BA;">[</span>else ... <span style="color: #858580;">(</span>rest lvs<span style="color: #858580;">)</span> ...<span style="color: #6276BA;">]</span><span style="color: #907373;">)</span><span style="color: #709870;">]</span><span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span></pre>
 </pre>
 </div></li>
 </ul>
@@ -691,14 +776,13 @@ auf sie die Funktion <code>enthaelt-bmw?</code> anwendbar:
 </p>
 
 <div class="org-src-container">
-
-<pre class="src src-scheme"><span style="color: #707183;">(</span><span style="color: #0000FF;">define</span> <span style="color: #006699;">enthaelt-bmw?</span>
-  <span style="color: #7388D6;">(</span><span style="color: #0000FF;">lambda</span> <span style="color: #909183;">[</span>lvs<span style="color: #909183;">]</span>
-    <span style="color: #909183;">(</span><span style="color: #0000FF;">cond</span> 
-      <span style="color: #709870;">[</span><span style="color: #907373;">(</span>empty? lvs<span style="color: #907373;">)</span> #false<span style="color: #709870;">]</span>
-      <span style="color: #709870;">[</span><span style="color: #907373;">(</span>cons? lvs<span style="color: #907373;">)</span> 
-              <span style="color: #907373;">(</span><span style="color: #0000FF;">cond</span> <span style="color: #6276BA;">[</span><span style="color: #858580;">(</span>equal? <span style="color: #80A880;">(</span>first lvs<span style="color: #80A880;">)</span> 'BMW<span style="color: #858580;">)</span> #true<span style="color: #6276BA;">]</span>
-                    <span style="color: #6276BA;">[</span>else <span style="color: #858580;">(</span>enthaelt-bmw? <span style="color: #80A880;">(</span>rest lvs<span style="color: #80A880;">)</span><span style="color: #858580;">)</span><span style="color: #6276BA;">]</span><span style="color: #907373;">)</span><span style="color: #709870;">]</span><span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
+<pre class="src src-scheme">   <span style="color: #707183;">(</span><span style="color: #0000FF;">define</span> <span style="color: #006699;">enthaelt-bmw?</span>
+     <span style="color: #7388D6;">(</span><span style="color: #0000FF;">lambda</span> <span style="color: #909183;">[</span>lvs<span style="color: #909183;">]</span>
+       <span style="color: #909183;">(</span><span style="color: #0000FF;">cond</span> 
+         <span style="color: #709870;">[</span><span style="color: #907373;">(</span>empty? lvs<span style="color: #907373;">)</span> #false<span style="color: #709870;">]</span>
+         <span style="color: #709870;">[</span><span style="color: #907373;">(</span>cons? lvs<span style="color: #907373;">)</span> 
+                 <span style="color: #907373;">(</span><span style="color: #0000FF;">cond</span> <span style="color: #6276BA;">[</span><span style="color: #858580;">(</span>equal? <span style="color: #80A880;">(</span>first lvs<span style="color: #80A880;">)</span> 'BMW<span style="color: #858580;">)</span> #true<span style="color: #6276BA;">]</span>
+                       <span style="color: #6276BA;">[</span>else <span style="color: #858580;">(</span>enthaelt-bmw? <span style="color: #80A880;">(</span>rest lvs<span style="color: #80A880;">)</span><span style="color: #858580;">)</span><span style="color: #6276BA;">]</span><span style="color: #907373;">)</span><span style="color: #709870;">]</span><span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span></pre>
 </pre>
 </div></li>
 
@@ -708,12 +792,13 @@ auf sie die Funktion <code>enthaelt-bmw?</code> anwendbar:
 </div>
 </div>
 
-<div id="outline-container-orgheadline25" class="outline-2">
-<h2 id="orgheadline25">Systematisierung des Entwurfs rekursiver Funktionen</h2>
-<div class="outline-text-2" id="text-orgheadline25">
-</div><div id="outline-container-orgheadline16" class="outline-3">
-<h3 id="orgheadline16">Datendefinition</h3>
-<div class="outline-text-3" id="text-orgheadline16">
+<div id="outline-container-orga3918a2" class="outline-2">
+<h2 id="orga3918a2">Systematisierung des Entwurfs rekursiver Funktionen</h2>
+<div class="outline-text-2" id="text-orga3918a2">
+</div>
+<div id="outline-container-orgd94bf76" class="outline-3">
+<h3 id="orgd94bf76">Datendefinition</h3>
+<div class="outline-text-3" id="text-orgd94bf76">
 <ul class="org-ul">
 <li>Die Funktion <code>enthaelt-bmw?</code> wurde unter Verwendung der
 Regeln 8 und 9 (ergänzt um Regel 10) entwickelt.</li>
@@ -743,9 +828,9 @@ Symbolen:</li>
 </div>
 </div>
 
-<div id="outline-container-orgheadline17" class="outline-3">
-<h3 id="orgheadline17">Funktionsschablone</h3>
-<div class="outline-text-3" id="text-orgheadline17">
+<div id="outline-container-orgce29d32" class="outline-3">
+<h3 id="orgce29d32">Funktionsschablone</h3>
+<div class="outline-text-3" id="text-orgce29d32">
 <ul class="org-ul">
 <li>Die Funktionsschablone wird als bedingte Funktion aufgeschrieben,
 die für jeden Satz der Definition der rekursiven Datenstruktur eine
@@ -778,14 +863,13 @@ Listen von Symbolen die folgende Funktionsschablone:
 </p>
 
 <div class="org-src-container">
-
-<pre class="src src-scheme"><span style="color: #707183;">(</span><span style="color: #0000FF;">define</span> <span style="color: #006699;">listen-funktion</span>
-  <span style="color: #7388D6;">(</span><span style="color: #0000FF;">lambda</span> <span style="color: #909183;">[</span>lvs<span style="color: #909183;">]</span>
-    <span style="color: #909183;">(</span><span style="color: #0000FF;">cond</span> 
-      <span style="color: #709870;">[</span><span style="color: #907373;">(</span>empty? lvs<span style="color: #907373;">)</span> ...<span style="color: #709870;">]</span>
-      <span style="color: #709870;">[</span>else ... <span style="color: #907373;">(</span>first lvs<span style="color: #907373;">)</span> ... 
-            ... <span style="color: #907373;">(</span>listen-funktion <span style="color: #6276BA;">(</span>rest lvs<span style="color: #6276BA;">)</span><span style="color: #907373;">)</span> ...<span style="color: #709870;">]</span><span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
-                 <span style="color: #8D8D84;">;;;;;;;;;;;;;;;</span>
+<pre class="src src-scheme">   <span style="color: #707183;">(</span><span style="color: #0000FF;">define</span> <span style="color: #006699;">listen-funktion</span>
+     <span style="color: #7388D6;">(</span><span style="color: #0000FF;">lambda</span> <span style="color: #909183;">[</span>lvs<span style="color: #909183;">]</span>
+       <span style="color: #909183;">(</span><span style="color: #0000FF;">cond</span> 
+         <span style="color: #709870;">[</span><span style="color: #907373;">(</span>empty? lvs<span style="color: #907373;">)</span> ...<span style="color: #709870;">]</span>
+         <span style="color: #709870;">[</span>else ... <span style="color: #907373;">(</span>first lvs<span style="color: #907373;">)</span> ... 
+               ... <span style="color: #907373;">(</span>listen-funktion <span style="color: #6276BA;">(</span>rest lvs<span style="color: #6276BA;">)</span><span style="color: #907373;">)</span> ...<span style="color: #709870;">]</span><span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
+                    <span style="color: #8D8D84;">;;;;;;;;;;;;;;;    </span></pre>
 </pre>
 </div></li>
 
@@ -794,9 +878,9 @@ Listen von Symbolen die folgende Funktionsschablone:
 </div>
 </div>
 
-<div id="outline-container-orgheadline18" class="outline-3">
-<h3 id="orgheadline18">Ausfüllen der Schablone</h3>
-<div class="outline-text-3" id="text-orgheadline18">
+<div id="outline-container-orgcd2f96b" class="outline-3">
+<h3 id="orgcd2f96b">Ausfüllen der Schablone</h3>
+<div class="outline-text-3" id="text-orgcd2f96b">
 <ul class="org-ul">
 <li>Die Entwicklung des Funktionsrumpfs beginnt mit den
 Frage-Antwort-Kombinationen, die keine rekursiven Aufrufe enthalten.
@@ -817,9 +901,9 @@ weiteren Fallunterscheidung.</li>
 </div>
 </div>
 
-<div id="outline-container-orgheadline19" class="outline-3">
-<h3 id="orgheadline19">Erweiterung des Regelsatzes für die Entwicklung rekursiver Funktionen</h3>
-<div class="outline-text-3" id="text-orgheadline19">
+<div id="outline-container-orge1b7674" class="outline-3">
+<h3 id="orge1b7674">Erweiterung des Regelsatzes für die Entwicklung rekursiver Funktionen</h3>
+<div class="outline-text-3" id="text-orge1b7674">
 <p>
 <b>Regel 11</b>:
 </p>
@@ -827,7 +911,7 @@ weiteren Fallunterscheidung.</li>
 <p>
 Schreibe eine präzise Datendefinition für die zu verarbeitende
 rekursive Datenstruktur auf. Folge dabei dem im Abschnitt
-<a href="#orgheadline16">Datendefinition</a> angegebenen Muster.
+<a href="#orgd94bf76">Datendefinition</a> angegebenen Muster.
 </p>
 
 <p>
@@ -867,9 +951,9 @@ entwickelnde Funktion <b>rekursiv anzuwenden</b> ist.</li>
 </div>
 </div>
 
-<div id="outline-container-orgheadline20" class="outline-3">
-<h3 id="orgheadline20">Listen als Resultate</h3>
-<div class="outline-text-3" id="text-orgheadline20">
+<div id="outline-container-org735cd86" class="outline-3">
+<h3 id="org735cd86">Listen als Resultate</h3>
+<div class="outline-text-3" id="text-org735cd86">
 <ul class="org-ul">
 <li>Anwendung der Regeln für die Entwicklung rekursiver Funktionen auf
 Funktionen, die eine Liste als Resultat liefern.</li>
@@ -878,26 +962,24 @@ werden, mit dem er ein Modell aus seiner Angebotspalette entfernen
 kann.</li>
 </ul>
 </div>
-<div id="outline-container-orgheadline21" class="outline-4">
-<h4 id="orgheadline21">Vertrag, Funktionskopf, Zweckbestimmung</h4>
-<div class="outline-text-4" id="text-orgheadline21">
+<div id="outline-container-orgd170751" class="outline-4">
+<h4 id="orgd170751">Vertrag, Funktionskopf, Zweckbestimmung</h4>
+<div class="outline-text-4" id="text-orgd170751">
 <div class="org-src-container">
-
-<pre class="src src-scheme"><span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">entfernt eine Modell (symbol) aus der  </span>
-<span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">Modellpalette (liste-von-symbolen)</span>
-<span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">entferne-modell: (list-of symbol) symbol -&gt; (list-of symbol)</span>
-<span style="color: #707183;">(</span><span style="color: #0000FF;">define</span> <span style="color: #006699;">entferne-modell</span>
-<span style="color: #7388D6;">(</span><span style="color: #0000FF;">lambda</span> <span style="color: #909183;">[</span>modellpalette modell<span style="color: #909183;">]</span> ...<span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
+<pre class="src src-scheme">  <span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">entfernt eine Modell (symbol) aus der  </span>
+  <span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">Modellpalette (liste-von-symbolen)</span>
+  <span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">entferne-modell: (list-of symbol) symbol -&gt; (list-of symbol)</span>
+  <span style="color: #707183;">(</span><span style="color: #0000FF;">define</span> <span style="color: #006699;">entferne-modell</span>
+  <span style="color: #7388D6;">(</span><span style="color: #0000FF;">lambda</span> <span style="color: #909183;">[</span>modellpalette modell<span style="color: #909183;">]</span> ...<span style="color: #7388D6;">)</span><span style="color: #707183;">)</span></pre>
 </pre>
 </div>
 </div>
 </div>
 
-<div id="outline-container-orgheadline22" class="outline-4">
-<h4 id="orgheadline22">Hinzufügen der Tests</h4>
-<div class="outline-text-4" id="text-orgheadline22">
+<div id="outline-container-orgc1e03a0" class="outline-4">
+<h4 id="orgc1e03a0">Hinzufügen der Tests</h4>
+<div class="outline-text-4" id="text-orgc1e03a0">
 <div class="org-src-container">
-
 <pre class="src src-scheme"><span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">entfernt eine Modell (symbol) aus der  </span>
 <span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">Modellpalette (liste-von-symbolen)</span>
 <span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">entferne-modell: (list-of symbol) symbol -&gt; (list-of symbol)</span>
@@ -907,17 +989,16 @@ kann.</li>
 <span style="color: #707183;">(</span>check-expect <span style="color: #7388D6;">(</span>entferne-modell '<span style="color: #909183;">(</span>BMW OPEL FORD<span style="color: #909183;">)</span> 'TOYOTA<span style="color: #7388D6;">)</span> '<span style="color: #7388D6;">(</span>BMW OPEL FORD<span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
 <span style="color: #707183;">(</span>check-expect <span style="color: #7388D6;">(</span>entferne-modell '<span style="color: #909183;">(</span>BMW OPEL FORD<span style="color: #909183;">)</span> 'OPEL<span style="color: #7388D6;">)</span> '<span style="color: #7388D6;">(</span>BMW FORD<span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
 <span style="color: #707183;">(</span><span style="color: #0000FF;">define</span> <span style="color: #006699;">entferne-modell</span>
-   <span style="color: #7388D6;">(</span><span style="color: #0000FF;">lambda</span> <span style="color: #909183;">[</span>modellpalette modell<span style="color: #909183;">]</span> ...<span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
+   <span style="color: #7388D6;">(</span><span style="color: #0000FF;">lambda</span> <span style="color: #909183;">[</span>modellpalette modell<span style="color: #909183;">]</span> ...<span style="color: #7388D6;">)</span><span style="color: #707183;">)</span></pre>
 </pre>
 </div>
 </div>
 </div>
 
-<div id="outline-container-orgheadline23" class="outline-4">
-<h4 id="orgheadline23">Hinzufügen der Funktionsschablone</h4>
-<div class="outline-text-4" id="text-orgheadline23">
+<div id="outline-container-orgf45dbcb" class="outline-4">
+<h4 id="orgf45dbcb">Hinzufügen der Funktionsschablone</h4>
+<div class="outline-text-4" id="text-orgf45dbcb">
 <div class="org-src-container">
-
 <pre class="src src-scheme"><span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">entfernt eine Modell (symbol) aus der  </span>
 <span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">Modellpalette (liste-von-symbolen)</span>
 <span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">entferne-modell: (list-of symbol) symbol -&gt; (list-of symbol)</span>
@@ -931,15 +1012,15 @@ kann.</li>
     <span style="color: #909183;">(</span><span style="color: #0000FF;">cond</span> 
       <span style="color: #709870;">[</span><span style="color: #907373;">(</span>empty? modellpalette<span style="color: #907373;">)</span> ...<span style="color: #709870;">]</span>
       <span style="color: #709870;">[</span>else ... <span style="color: #907373;">(</span>first modellpalette<span style="color: #907373;">)</span> ... 
-            ... <span style="color: #907373;">(</span>entferne-modell <span style="color: #6276BA;">(</span>rest modellpalette<span style="color: #6276BA;">)</span>  modell<span style="color: #907373;">)</span> ...<span style="color: #709870;">]</span><span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
+            ... <span style="color: #907373;">(</span>entferne-modell <span style="color: #6276BA;">(</span>rest modellpalette<span style="color: #6276BA;">)</span>  modell<span style="color: #907373;">)</span> ...<span style="color: #709870;">]</span><span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span></pre>
 </pre>
 </div>
 </div>
 </div>
 
-<div id="outline-container-orgheadline24" class="outline-4">
-<h4 id="orgheadline24">Vervollständigung des Funktionsrumpfs</h4>
-<div class="outline-text-4" id="text-orgheadline24">
+<div id="outline-container-org3a368b9" class="outline-4">
+<h4 id="org3a368b9">Vervollständigung des Funktionsrumpfs</h4>
+<div class="outline-text-4" id="text-org3a368b9">
 <ul class="org-ul">
 <li>Folgende Fälle sind zu unterscheiden:
 <ol class="org-ol">
@@ -952,7 +1033,6 @@ der Restliste, aus der das zu entfernende Modell entfernt wurde.</li>
 </ol></li>
 </ul>
 <div class="org-src-container">
-
 <pre class="src src-scheme"><span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">entfernt eine Modell (symbol) aus der  </span>
 <span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">Modellpalette (liste-von-symbolen)</span>
 <span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">entferne-modell: (list-of symbol) symbol -&gt; (list-of symbol)</span>
@@ -967,7 +1047,7 @@ der Restliste, aus der das zu entfernende Modell entfernt wurde.</li>
       <span style="color: #709870;">[</span><span style="color: #907373;">(</span>empty? modellpalette<span style="color: #907373;">)</span> empty<span style="color: #709870;">]</span>
       <span style="color: #709870;">[</span><span style="color: #907373;">(</span>equal? <span style="color: #6276BA;">(</span>first modellpalette<span style="color: #6276BA;">)</span> modell<span style="color: #907373;">)</span> <span style="color: #907373;">(</span>rest modellpalette<span style="color: #907373;">)</span><span style="color: #709870;">]</span>
       <span style="color: #709870;">[</span>else <span style="color: #907373;">(</span>cons <span style="color: #6276BA;">(</span>first modellpalette<span style="color: #6276BA;">)</span>
-                  <span style="color: #6276BA;">(</span>entferne-modell <span style="color: #858580;">(</span>rest modellpalette<span style="color: #858580;">)</span> modell<span style="color: #6276BA;">)</span><span style="color: #907373;">)</span><span style="color: #709870;">]</span><span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
+                  <span style="color: #6276BA;">(</span>entferne-modell <span style="color: #858580;">(</span>rest modellpalette<span style="color: #858580;">)</span> modell<span style="color: #6276BA;">)</span><span style="color: #907373;">)</span><span style="color: #709870;">]</span><span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span></pre>
 </pre>
 </div>
 </div>
@@ -976,12 +1056,13 @@ der Restliste, aus der das zu entfernende Modell entfernt wurde.</li>
 </div>
 
 
-<div id="outline-container-orgheadline33" class="outline-2">
-<h2 id="orgheadline33">Rekursive Funktionen und Hilfsfunktionen</h2>
-<div class="outline-text-2" id="text-orgheadline33">
-</div><div id="outline-container-orgheadline26" class="outline-3">
-<h3 id="orgheadline26">Top-down-Entwurf</h3>
-<div class="outline-text-3" id="text-orgheadline26">
+<div id="outline-container-orgaec2d67" class="outline-2">
+<h2 id="orgaec2d67">Rekursive Funktionen und Hilfsfunktionen</h2>
+<div class="outline-text-2" id="text-orgaec2d67">
+</div>
+<div id="outline-container-org34e5919" class="outline-3">
+<h3 id="org34e5919">Top-down-Entwurf</h3>
+<div class="outline-text-3" id="text-org34e5919">
 <ul class="org-ul">
 <li>Anhand eines weiteren Beispiels soll die Anwendung der Regeln für
 die Entwicklung rekursiver Funktionen V demonstriert werden.</li>
@@ -1004,9 +1085,9 @@ bezeichnet.
 </ul>
 </div>
 
-<div id="outline-container-orgheadline27" class="outline-4">
-<h4 id="orgheadline27">Literaturhinweise</h4>
-<div class="outline-text-4" id="text-orgheadline27">
+<div id="outline-container-org60115e4" class="outline-4">
+<h4 id="org60115e4">Literaturhinweise</h4>
+<div class="outline-text-4" id="text-org60115e4">
 <ul class="org-ul">
 <li>Gelegentlich werden auch die Begriffe Wunschdenken oder Wunschliste
 benutzt, z.B. in
@@ -1024,9 +1105,9 @@ of Computer Programs. The MIT Press, 1999</li>
 </div>
 </div>
 
-<div id="outline-container-orgheadline28" class="outline-4">
-<h4 id="orgheadline28">Top-down-Entwurf &#x2013; Beispiel</h4>
-<div class="outline-text-4" id="text-orgheadline28">
+<div id="outline-container-org1388abc" class="outline-4">
+<h4 id="org1388abc">Top-down-Entwurf &#x2013; Beispiel</h4>
+<div class="outline-text-4" id="text-org1388abc">
 <ul class="org-ul">
 <li><p>
 Die Funktion <code>(symbolsin x)</code> liefere, angewandt auf eine Liste von
@@ -1064,16 +1145,15 @@ Die Anwendung der Regeln (ohne Tests) liefert zunächst die
 folgende Funktionsschablone:
 </p>
 <div class="org-src-container">
-
-<pre class="src src-scheme"><span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">entfernt aus eine Liste von Symbolen jedes </span>
-<span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">mehrfache Autreten eines Symbols</span>
-<span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">symbolsin: (list-of symbol) -&gt; (list-of symbol)</span>
-<span style="color: #707183;">(</span><span style="color: #0000FF;">define</span> <span style="color: #006699;">symbolsin</span>
-  <span style="color: #7388D6;">(</span><span style="color: #0000FF;">lambda</span> <span style="color: #909183;">[</span>lvs<span style="color: #909183;">]</span>
-    <span style="color: #909183;">(</span><span style="color: #0000FF;">cond</span> 
-      <span style="color: #709870;">[</span><span style="color: #907373;">(</span>empty? lvs<span style="color: #907373;">)</span> ...<span style="color: #709870;">]</span>
-      <span style="color: #709870;">[</span>else ... <span style="color: #907373;">(</span>first lvs<span style="color: #907373;">)</span> ... 
-            ... <span style="color: #907373;">(</span>symbolsin <span style="color: #6276BA;">(</span>rest lvs<span style="color: #6276BA;">)</span><span style="color: #907373;">)</span> ...<span style="color: #709870;">]</span><span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
+<pre class="src src-scheme">   <span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">entfernt aus eine Liste von Symbolen jedes </span>
+   <span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">mehrfache Autreten eines Symbols</span>
+   <span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">symbolsin: (list-of symbol) -&gt; (list-of symbol)</span>
+   <span style="color: #707183;">(</span><span style="color: #0000FF;">define</span> <span style="color: #006699;">symbolsin</span>
+     <span style="color: #7388D6;">(</span><span style="color: #0000FF;">lambda</span> <span style="color: #909183;">[</span>lvs<span style="color: #909183;">]</span>
+       <span style="color: #909183;">(</span><span style="color: #0000FF;">cond</span> 
+         <span style="color: #709870;">[</span><span style="color: #907373;">(</span>empty? lvs<span style="color: #907373;">)</span> ...<span style="color: #709870;">]</span>
+         <span style="color: #709870;">[</span>else ... <span style="color: #907373;">(</span>first lvs<span style="color: #907373;">)</span> ... 
+               ... <span style="color: #907373;">(</span>symbolsin <span style="color: #6276BA;">(</span>rest lvs<span style="color: #6276BA;">)</span><span style="color: #907373;">)</span> ...<span style="color: #709870;">]</span><span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span></pre>
 </pre>
 </div></li>
 </ul>
@@ -1099,11 +1179,10 @@ hinzufügt, wenn es in ihr nicht bereits enthalten ist.</li>
 </div>
 </div>
 
-<div id="outline-container-orgheadline29" class="outline-4">
-<h4 id="orgheadline29">Funktionsschablone für <code>addtoset</code></h4>
-<div class="outline-text-4" id="text-orgheadline29">
+<div id="outline-container-org199453f" class="outline-4">
+<h4 id="org199453f">Funktionsschablone für <code>addtoset</code></h4>
+<div class="outline-text-4" id="text-org199453f">
 <div class="org-src-container">
-
 <pre class="src src-scheme"><span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">f&#252;gt einer Liste von Symbolen ein weiteres hinzu, </span>
 <span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">falls es nicht bereits enthalten ist.</span>
 <span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">addtoset: (list-of symbol) symbol -&gt; (list-of symbol)</span>
@@ -1114,7 +1193,7 @@ hinzufügt, wenn es in ihr nicht bereits enthalten ist.</li>
     <span style="color: #909183;">(</span><span style="color: #0000FF;">cond</span> 
       <span style="color: #709870;">[</span><span style="color: #907373;">(</span>empty? lvs<span style="color: #907373;">)</span> ...<span style="color: #709870;">]</span>
       <span style="color: #709870;">[</span>else ... <span style="color: #907373;">(</span>first lvs<span style="color: #907373;">)</span> ... 
-            ... <span style="color: #907373;">(</span>addtoset <span style="color: #6276BA;">(</span>rest lvs<span style="color: #6276BA;">)</span> s<span style="color: #907373;">)</span> ...<span style="color: #709870;">]</span><span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
+            ... <span style="color: #907373;">(</span>addtoset <span style="color: #6276BA;">(</span>rest lvs<span style="color: #6276BA;">)</span> s<span style="color: #907373;">)</span> ...<span style="color: #709870;">]</span><span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span></pre>
 </pre>
 </div>
 
@@ -1124,11 +1203,10 @@ Mit dieser Funktion kann <code>symbolsin</code> vervollständigt werden.
 </div>
 </div>
 
-<div id="outline-container-orgheadline30" class="outline-4">
-<h4 id="orgheadline30">Funktion <code>symbolsin</code></h4>
-<div class="outline-text-4" id="text-orgheadline30">
+<div id="outline-container-org34d79cb" class="outline-4">
+<h4 id="org34d79cb">Funktion <code>symbolsin</code></h4>
+<div class="outline-text-4" id="text-org34d79cb">
 <div class="org-src-container">
-
 <pre class="src src-scheme"><span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">entfernt aus eine Liste von Symbolen jedes </span>
 <span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">mehrfache Autreten eines Symbols</span>
 <span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">symbolsin: (list-of symbol) -&gt; (list-of symbol)</span>
@@ -1138,27 +1216,26 @@ Mit dieser Funktion kann <code>symbolsin</code> vervollständigt werden.
   <span style="color: #7388D6;">(</span><span style="color: #0000FF;">lambda</span> <span style="color: #909183;">[</span>lvs<span style="color: #909183;">]</span>
     <span style="color: #909183;">(</span><span style="color: #0000FF;">cond</span> 
       <span style="color: #709870;">[</span><span style="color: #907373;">(</span>empty? lvs<span style="color: #907373;">)</span> empty<span style="color: #709870;">]</span>
-      <span style="color: #709870;">[</span>else <span style="color: #907373;">(</span>addtoset <span style="color: #6276BA;">(</span>symbolsin <span style="color: #858580;">(</span>rest lvs<span style="color: #858580;">)</span><span style="color: #6276BA;">)</span> <span style="color: #6276BA;">(</span>first lvs<span style="color: #6276BA;">)</span><span style="color: #907373;">)</span><span style="color: #709870;">]</span><span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
+      <span style="color: #709870;">[</span>else <span style="color: #907373;">(</span>addtoset <span style="color: #6276BA;">(</span>symbolsin <span style="color: #858580;">(</span>rest lvs<span style="color: #858580;">)</span><span style="color: #6276BA;">)</span> <span style="color: #6276BA;">(</span>first lvs<span style="color: #6276BA;">)</span><span style="color: #907373;">)</span><span style="color: #709870;">]</span><span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span></pre>
 </pre>
 </div>
 </div>
 </div>
 
-<div id="outline-container-orgheadline31" class="outline-4">
-<h4 id="orgheadline31">Funktion <code>addtoset</code></h4>
-<div class="outline-text-4" id="text-orgheadline31">
+<div id="outline-container-org86e7004" class="outline-4">
+<h4 id="org86e7004">Funktion <code>addtoset</code></h4>
+<div class="outline-text-4" id="text-org86e7004">
 <ul class="org-ul">
 <li>Für die Funktion <code>addtoset</code> stellen wir folgende Überlegungen an:
 <ul class="org-ul">
 <li>Falls die Liste (Menge) leer ist, kann das neue Element mit <code>cons</code>
-      hinzugefügt werden.</li>
+hinzugefügt werden.</li>
 <li>Wenn die Menge nicht leer ist, muss geprüft werden, ob das Element
 bereits in der Liste enthalten ist.</li>
 </ul></li>
 <li>Fügen wir der Wunschliste ein Prädikat <code>member?</code> hinzu.</li>
 </ul>
 <div class="org-src-container">
-
 <pre class="src src-scheme">...
 <span style="color: #707183;">(</span><span style="color: #0000FF;">define</span> <span style="color: #006699;">addtoset</span>
   <span style="color: #7388D6;">(</span><span style="color: #0000FF;">lambda</span> <span style="color: #909183;">[</span>lvs s<span style="color: #909183;">]</span>
@@ -1167,21 +1244,20 @@ bereits in der Liste enthalten ist.</li>
       <span style="color: #709870;">[</span>else
         <span style="color: #907373;">(</span><span style="color: #0000FF;">cond</span>
           <span style="color: #6276BA;">[</span><span style="color: #858580;">(</span>member? s lvs<span style="color: #858580;">)</span> lvs<span style="color: #6276BA;">]</span>
-          <span style="color: #6276BA;">[</span>else <span style="color: #858580;">(</span>cons s lvs<span style="color: #858580;">)</span><span style="color: #6276BA;">]</span><span style="color: #907373;">)</span><span style="color: #709870;">]</span><span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
+          <span style="color: #6276BA;">[</span>else <span style="color: #858580;">(</span>cons s lvs<span style="color: #858580;">)</span><span style="color: #6276BA;">]</span><span style="color: #907373;">)</span><span style="color: #709870;">]</span><span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span></pre>
 </pre>
 </div>
 </div>
 </div>
 
-<div id="outline-container-orgheadline32" class="outline-4">
-<h4 id="orgheadline32">Funktion <code>member?</code></h4>
-<div class="outline-text-4" id="text-orgheadline32">
+<div id="outline-container-orgdf7888f" class="outline-4">
+<h4 id="orgdf7888f">Funktion <code>member?</code></h4>
+<div class="outline-text-4" id="text-orgdf7888f">
 <p>
 Die Logik der Funktion <code>member</code>? entspricht im Wesentlichen der der
 Funktion <code>enthaelt-bmw</code>:
 </p>
 <div class="org-src-container">
-
 <pre class="src src-scheme"><span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">prueft, ob ein Symbol in einer Liste enthalten ist.</span>
 <span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">member? (list-of symbol) symbol -&gt; boolean</span>
 <span style="color: #707183;">(</span>check-expect <span style="color: #7388D6;">(</span>member? empty 'x<span style="color: #7388D6;">)</span> #false<span style="color: #707183;">)</span>
@@ -1192,7 +1268,7 @@ Funktion <code>enthaelt-bmw</code>:
     <span style="color: #909183;">(</span><span style="color: #0000FF;">cond</span> 
       <span style="color: #709870;">[</span><span style="color: #907373;">(</span>empty? lvs<span style="color: #907373;">)</span> #false<span style="color: #709870;">]</span>
       <span style="color: #709870;">[</span><span style="color: #907373;">(</span>equal? <span style="color: #6276BA;">(</span>first lvs<span style="color: #6276BA;">)</span> s<span style="color: #907373;">)</span> #true<span style="color: #709870;">]</span>
-      <span style="color: #709870;">[</span>else <span style="color: #907373;">(</span>member? s <span style="color: #6276BA;">(</span>rest lvs<span style="color: #6276BA;">)</span><span style="color: #907373;">)</span><span style="color: #709870;">]</span><span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
+      <span style="color: #709870;">[</span>else <span style="color: #907373;">(</span>member? s <span style="color: #6276BA;">(</span>rest lvs<span style="color: #6276BA;">)</span><span style="color: #907373;">)</span><span style="color: #709870;">]</span><span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span></pre>
 </pre>
 </div>
 <p>
@@ -1208,9 +1284,9 @@ symbolsin.rkt in Moodle zu finden.
 </div>
 </div>
 
-<div id="outline-container-orgheadline34" class="outline-2">
-<h2 id="orgheadline34">Funktionen für die Verarbeitung mehrerer Listen</h2>
-<div class="outline-text-2" id="text-orgheadline34">
+<div id="outline-container-org305c9e4" class="outline-2">
+<h2 id="org305c9e4">Funktionen für die Verarbeitung mehrerer Listen</h2>
+<div class="outline-text-2" id="text-org305c9e4">
 <p>
 Falls eine Funktion zwei Listenparameter zu verarbeiten hat, sind
 grundsätzlich drei Fälle zu unterscheiden:
@@ -1226,9 +1302,9 @@ auf das erste Element und die Restliste notwendig.</li>
 </ol>
 </div>
 
-<div id="outline-container-orgheadline35" class="outline-3">
-<h3 id="orgheadline35">Behandlung der drei Fälle:</h3>
-<div class="outline-text-3" id="text-orgheadline35">
+<div id="outline-container-org5b5a0b5" class="outline-3">
+<h3 id="org5b5a0b5">Behandlung der drei Fälle:</h3>
+<div class="outline-text-3" id="text-org5b5a0b5">
 <dl class="org-dl">
 <dt>Fall 1</dt><dd>Die bekannten Regeln (insbesondere was die
 Funktionsschablone anbelangt) können wie bisher angewendet, weil das
@@ -1243,11 +1319,10 @@ Funktionsschablone:</dd>
 </dl>
 </div>
 
-<div id="outline-container-orgheadline36" class="outline-4">
-<h4 id="orgheadline36">Funktionsschablone für Fall 2</h4>
-<div class="outline-text-4" id="text-orgheadline36">
+<div id="outline-container-org2851389" class="outline-4">
+<h4 id="org2851389">Funktionsschablone für Fall 2</h4>
+<div class="outline-text-4" id="text-org2851389">
 <div class="org-src-container">
-
 <pre class="src src-scheme"><span style="color: #707183;">(</span><span style="color: #0000FF;">define</span> <span style="color: #006699;">listen-funktion</span>
   <span style="color: #7388D6;">(</span><span style="color: #0000FF;">lambda</span> <span style="color: #909183;">[</span>lst1 lst2<span style="color: #909183;">]</span>
     <span style="color: #909183;">(</span><span style="color: #0000FF;">cond</span> 
@@ -1255,15 +1330,15 @@ Funktionsschablone:</dd>
       <span style="color: #709870;">[</span>else ... <span style="color: #907373;">(</span>first lst1<span style="color: #907373;">)</span> ... <span style="color: #907373;">(</span>first lst2<span style="color: #907373;">)</span>
                                  <span style="color: #8D8D84;">;;;;;;;;;;;;</span>
             ... <span style="color: #907373;">(</span>listen-funktion <span style="color: #6276BA;">(</span>rest lst1<span style="color: #6276BA;">)</span> <span style="color: #6276BA;">(</span>rest lst2<span style="color: #6276BA;">)</span><span style="color: #907373;">)</span> ...<span style="color: #709870;">]</span><span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
-                                             <span style="color: #8D8D84;">;;;;;;;;;;;</span>
+                                             <span style="color: #8D8D84;">;;;;;;;;;;;</span></pre>
 </pre>
 </div>
 </div>
 </div>
 
-<div id="outline-container-orgheadline37" class="outline-4">
-<h4 id="orgheadline37">Behandlung von Fall 3</h4>
-<div class="outline-text-4" id="text-orgheadline37">
+<div id="outline-container-org82af9df" class="outline-4">
+<h4 id="org82af9df">Behandlung von Fall 3</h4>
+<div class="outline-text-4" id="text-org82af9df">
 <p>
 Es gibt keine nutzbare Abhängigkeit der beiden Parameter. Hier müssen
 grundsätzlich alle (vier) Fälle (Liste ist leer oder nicht.)
@@ -1271,7 +1346,6 @@ berücksichtigt werden:
 </p>
 
 <div class="org-src-container">
-
 <pre class="src src-scheme">    <span style="color: #707183;">(</span><span style="color: #0000FF;">define</span> <span style="color: #006699;">listen-funktion</span>
        <span style="color: #7388D6;">(</span><span style="color: #0000FF;">lambda</span> <span style="color: #909183;">[</span>lst1 lst2<span style="color: #909183;">]</span>
           <span style="color: #909183;">(</span><span style="color: #0000FF;">cond</span> 
@@ -1282,14 +1356,14 @@ berücksichtigt werden:
               ... <span style="color: #907373;">(</span>first lst2<span style="color: #907373;">)</span> ... <span style="color: #907373;">(</span>rest lst2<span style="color: #907373;">)</span> ...<span style="color: #709870;">]</span>
              <span style="color: #709870;">[</span><span style="color: #907373;">(</span><span style="color: #0000FF;">and</span> <span style="color: #6276BA;">(</span>cons? lst1<span style="color: #6276BA;">)</span> <span style="color: #6276BA;">(</span>cons?  lst2<span style="color: #6276BA;">)</span>
               ... <span style="color: #6276BA;">(</span>first lst1<span style="color: #6276BA;">)</span> ... <span style="color: #6276BA;">(</span>first lst2<span style="color: #6276BA;">)</span> ...
-              ... <span style="color: #6276BA;">(</span>rest lst1<span style="color: #6276BA;">)</span>  ... <span style="color: #6276BA;">(</span>rest lst2<span style="color: #6276BA;">)</span><span style="color: #907373;">)</span> ...<span style="color: #709870;">]</span><span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
+              ... <span style="color: #6276BA;">(</span>rest lst1<span style="color: #6276BA;">)</span>  ... <span style="color: #6276BA;">(</span>rest lst2<span style="color: #6276BA;">)</span><span style="color: #907373;">)</span> ...<span style="color: #709870;">]</span><span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span></pre>
 </pre>
 </div>
 </div>
 
-<div id="outline-container-orgheadline38" class="outline-5">
-<h5 id="orgheadline38">Drei mögliche Rekursionsschemata</h5>
-<div class="outline-text-5" id="text-orgheadline38">
+<div id="outline-container-org9e50f22" class="outline-5">
+<h5 id="org9e50f22">Drei mögliche Rekursionsschemata</h5>
+<div class="outline-text-5" id="text-org9e50f22">
 <p>
 Man beachte, dass die
 Schablone noch keine rekursiven Aufrufe enthält. Nur für den Fall, dass
@@ -1300,10 +1374,9 @@ aber drei Varianten denkbar:
 
 <div class="small">
 <div class="org-src-container">
-
 <pre class="src src-scheme">    <span style="color: #707183;">(</span>listen-funktion lst1 <span style="color: #7388D6;">(</span>rest lst2<span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
     <span style="color: #707183;">(</span>listen-funktion <span style="color: #7388D6;">(</span>rest lst1<span style="color: #7388D6;">)</span> lst2<span style="color: #707183;">)</span>
-    <span style="color: #707183;">(</span>listen-funktion <span style="color: #7388D6;">(</span>rest lst1<span style="color: #7388D6;">)</span> <span style="color: #7388D6;">(</span>rest lst2<span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
+    <span style="color: #707183;">(</span>listen-funktion <span style="color: #7388D6;">(</span>rest lst1<span style="color: #7388D6;">)</span> <span style="color: #7388D6;">(</span>rest lst2<span style="color: #7388D6;">)</span><span style="color: #707183;">)</span></pre>
 </pre>
 </div>
 
@@ -1321,7 +1394,7 @@ entschieden werden.
 </div>
 <div id="postamble" class="status">
 <p class="author">Autor: Johannes Brauer</p>
-<p class="date">Created: 2017-02-08 Wed 13:27</p>
+<p class="date">Created: 2017-12-10 Sun 20:49</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

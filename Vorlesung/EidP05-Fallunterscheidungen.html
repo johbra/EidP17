@@ -3,12 +3,12 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="de" xml:lang="de">
 <head>
-<!-- 2017-01-19 Thu 09:15 -->
-<meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
-<meta  name="viewport" content="width=device-width, initial-scale=1" />
+<!-- 2017-12-10 Sun 20:44 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Fallunterscheidungen</title>
-<meta  name="generator" content="Org-mode" />
-<meta  name="author" content="Johannes Brauer" />
+<meta name="generator" content="Org mode" />
+<meta name="author" content="Johannes Brauer" />
 <style type="text/css">
  <!--/*--><![CDATA[/*><!--*/
   .title  { text-align: center;
@@ -53,13 +53,98 @@
     border: 1px solid black;
   }
   pre.src:hover:before { display: inline;}
-  pre.src-sh:before    { content: 'sh'; }
-  pre.src-bash:before  { content: 'sh'; }
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
   pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
-  pre.src-R:before     { content: 'R'; }
-  pre.src-perl:before  { content: 'Perl'; }
-  pre.src-java:before  { content: 'Java'; }
-  pre.src-sql:before   { content: 'SQL'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
 
   table { border-collapse:collapse; }
   caption.t-above { caption-side: top; }
@@ -92,6 +177,7 @@
     { font-size: 10px; font-weight: bold; white-space: nowrap; }
   .org-info-js_search-highlight
     { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
   /*]]>*/-->
 </style>
 <link rel="stylesheet" type="text/css" href="styles/bigblow/css/htmlize.css"/>
@@ -111,7 +197,7 @@
 @licstart  The following is the entire license notice for the
 JavaScript code in this tag.
 
-Copyright (C) 2012-2013 Free Software Foundation, Inc.
+Copyright (C) 2012-2017 Free Software Foundation, Inc.
 
 The JavaScript code in this tag is free software: you can
 redistribute it and/or modify it under the terms of the GNU
@@ -178,29 +264,28 @@ for the JavaScript code in this tag.
 <body>
 <div id="content">
 <h1 class="title">Fallunterscheidungen
-<br>
+<br />
 <span class="subtitle">Einführung in die Programmierung</span>
 </h1>
-
-<div id="outline-container-orgheadline1" class="outline-2">
-<h2 id="orgheadline1">Fallunterscheidungen aus der Mathematik</h2>
-<div class="outline-text-2" id="text-orgheadline1">
+<div id="outline-container-org44d964d" class="outline-2">
+<h2 id="org44d964d">Fallunterscheidungen aus der Mathematik</h2>
+<div class="outline-text-2" id="text-org44d964d">
 <p>
 Zwei Beispiele
 </p>
 </div>
-<div id="outline-container-orgheadline2" class="outline-3">
-<h3 id="orgheadline2">Definition der Fakultät</h3>
-<div class="outline-text-3" id="text-orgheadline2">
+<div id="outline-container-org720ecea" class="outline-3">
+<h3 id="org720ecea">Definition der Fakultät</h3>
+<div class="outline-text-3" id="text-org720ecea">
 <p>
 \[n! = \left\{\begin{array}{l}1, \mbox{falls } n=0\\n\cdot (n-1)!, 
 \mbox{falls } n\geq 1 \end{array}\right.\]
 </p>
 </div>
 </div>
-<div id="outline-container-orgheadline3" class="outline-3">
-<h3 id="orgheadline3">Definition der Fibonacci-Folge</h3>
-<div class="outline-text-3" id="text-orgheadline3">
+<div id="outline-container-org4199981" class="outline-3">
+<h3 id="org4199981">Definition der Fibonacci-Folge</h3>
+<div class="outline-text-3" id="text-org4199981">
 <p>
 Die Fibonacci-Folge \(f_{1},\,f_{2},\,f_{3},\ldots\) ist wie folgt
 definiert:
@@ -213,12 +298,13 @@ f_{n} &= & f_{{n-1}}+f_{{n-2}} & \mbox{ für } n>2\\
 </div>
 </div>
 </div>
-<div id="outline-container-orgheadline13" class="outline-2">
-<h2 id="orgheadline13">Bedingte Funktionen</h2>
-<div class="outline-text-2" id="text-orgheadline13">
-</div><div id="outline-container-orgheadline4" class="outline-3">
-<h3 id="orgheadline4">Vergleichsausdrücke und Boolesche Ausdrücke</h3>
-<div class="outline-text-3" id="text-orgheadline4">
+<div id="outline-container-org5ad7205" class="outline-2">
+<h2 id="org5ad7205">Bedingte Funktionen</h2>
+<div class="outline-text-2" id="text-org5ad7205">
+</div>
+<div id="outline-container-org830dd31" class="outline-3">
+<h3 id="org830dd31">Vergleichsausdrücke und Boolesche Ausdrücke</h3>
+<div class="outline-text-3" id="text-org830dd31">
 <ul class="org-ul">
 <li><p>
 Numerische Vergleichsausdrücke der Art
@@ -234,6 +320,7 @@ werden in Racket so aufgeschrieben:
 
 <pre class="example">
 (&lt; a b) (&gt;= x y ) (&lt; r s t)
+
 </pre></li>
 
 <li>Die Auswertung ergibt <code>#true</code> oder <code>#false</code>.</li>
@@ -244,6 +331,7 @@ Den Racket-Ausdruck <code>(&lt; r s t)</code> kann man als Abkürzung für
 
 <pre class="example">
 (and (&lt; r s) (&lt; s t))
+
 </pre>
 
 <p>
@@ -256,9 +344,9 @@ Die Anzahl der Argumente von <code>and</code> und <code>or</code> ist dabei beli
 </div>
 </div>
 
-<div id="outline-container-orgheadline5" class="outline-3">
-<h3 id="orgheadline5">Anwendungsbeispiel</h3>
-<div class="outline-text-3" id="text-orgheadline5">
+<div id="outline-container-orgca444eb" class="outline-3">
+<h3 id="orgca444eb">Anwendungsbeispiel</h3>
+<div class="outline-text-3" id="text-orgca444eb">
 <ul class="org-ul">
 <li>Wir nennen eine Funktion <i>bedingt</i>, wenn für die Ermittlung ihres
 Resultats eine <i>Fallunterscheidung</i> erforderlich ist.</li>
@@ -307,17 +395,16 @@ Gesucht: Funktion, die aus der Stückzahl den Stückpreis ermittelt
 </div>
 </div>
 
-<div id="outline-container-orgheadline6" class="outline-3">
-<h3 id="orgheadline6">Racket-Pseudofunktion für Fallunterscheidungen</h3>
-<div class="outline-text-3" id="text-orgheadline6">
+<div id="outline-container-orga12ea52" class="outline-3">
+<h3 id="orga12ea52">Racket-Pseudofunktion für Fallunterscheidungen</h3>
+<div class="outline-text-3" id="text-orga12ea52">
 <div class="nebeneinander">
 <div class="small">
 <div class="org-src-container">
-
-<pre class="src src-scheme">     <span style="color: #707183;">(</span><span style="color: #0000FF;">cond</span>
-        <span style="color: #7388D6;">[</span>frage antwort<span style="color: #7388D6;">]</span>
-        ...
-        <span style="color: #7388D6;">[</span>frage antwort<span style="color: #7388D6;">]</span><span style="color: #707183;">)</span>
+<pre class="src src-scheme">        <span style="color: #707183;">(</span><span style="color: #0000FF;">cond</span>
+           <span style="color: #7388D6;">[</span>frage antwort<span style="color: #7388D6;">]</span>
+           ...
+           <span style="color: #7388D6;">[</span>frage antwort<span style="color: #7388D6;">]</span><span style="color: #707183;">)</span></pre>
 </pre>
 </div>
 
@@ -325,14 +412,14 @@ Gesucht: Funktion, die aus der Stückzahl den Stückpreis ermittelt
 
 </div>
 
+
 <div class="nebeneinander">
 <div class="small">
 <div class="org-src-container">
-
-<pre class="src src-scheme">     <span style="color: #707183;">(</span><span style="color: #0000FF;">cond</span>
-        <span style="color: #7388D6;">[</span>frage antwort<span style="color: #7388D6;">]</span>
-        ...
-        <span style="color: #7388D6;">[</span>else antwort<span style="color: #7388D6;">]</span><span style="color: #707183;">)</span>
+<pre class="src src-scheme">        <span style="color: #707183;">(</span><span style="color: #0000FF;">cond</span>
+           <span style="color: #7388D6;">[</span>frage antwort<span style="color: #7388D6;">]</span>
+           ...
+           <span style="color: #7388D6;">[</span>else antwort<span style="color: #7388D6;">]</span><span style="color: #707183;">)</span></pre>
 </pre>
 </div>
 
@@ -353,9 +440,9 @@ deren Auswertung <code>#true</code> liefert.</li>
 </div>
 </div>
 
-<div id="outline-container-orgheadline7" class="outline-3">
-<h3 id="orgheadline7">Entwurf bedingter Funktionen &#x2013; Regel 6</h3>
-<div class="outline-text-3" id="text-orgheadline7">
+<div id="outline-container-orgb8f79b4" class="outline-3">
+<h3 id="orgb8f79b4">Entwurf bedingter Funktionen &#x2013; Regel 6</h3>
+<div class="outline-text-3" id="text-orgb8f79b4">
 <ul class="org-ul">
 <li>Für den Entwurf einer bedingten Funktion sind in der Problembeschreibung alle zu
 unterscheidenden Fälle zu identifizieren.</li>
@@ -387,42 +474,42 @@ zu ermitteln.</li>
 </div>
 </div>
 
-<div id="outline-container-orgheadline12" class="outline-3">
-<h3 id="orgheadline12">Entwurf der Funktion <code>stueckpreis</code></h3>
-<div class="outline-text-3" id="text-orgheadline12">
-</div><div id="outline-container-orgheadline8" class="outline-4">
-<h4 id="orgheadline8">Das <code>cond</code>-Skelett</h4>
-<div class="outline-text-4" id="text-orgheadline8">
+<div id="outline-container-orgc8dfadd" class="outline-3">
+<h3 id="orgc8dfadd">Entwurf der Funktion <code>stueckpreis</code></h3>
+<div class="outline-text-3" id="text-orgc8dfadd">
+</div>
+<div id="outline-container-orgf7e4905" class="outline-4">
+<h4 id="orgf7e4905">Das <code>cond</code>-Skelett</h4>
+<div class="outline-text-4" id="text-orgf7e4905">
 <p>
 Für das Beispiel des Chipherstellers ergibt sich folgendes
 Funktionsskelett:
 </p>
 
 <div class="org-src-container">
-
-<pre class="src src-scheme">    <span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">berechnet aus einer gegebenen Stueckzahl</span>
+<pre class="src src-scheme">     
+    <span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">berechnet aus einer gegebenen Stueckzahl</span>
     <span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">den Stueckpreis gemaess Preisstaffel</span>
     <span style="color: #707183;">(</span><span style="color: #0000FF;">define</span> <span style="color: #006699;">stueckpreis</span>
       <span style="color: #7388D6;">(</span><span style="color: #0000FF;">lambda</span> <span style="color: #909183;">[</span>stueckzahl<span style="color: #909183;">]</span>
          <span style="color: #909183;">(</span><span style="color: #0000FF;">cond</span>
             <span style="color: #709870;">[</span>... ...<span style="color: #709870;">]</span>
             <span style="color: #709870;">[</span>... ...<span style="color: #709870;">]</span>
-            <span style="color: #709870;">[</span>... ...<span style="color: #709870;">]</span><span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
+            <span style="color: #709870;">[</span>... ...<span style="color: #709870;">]</span><span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span></pre>
 </pre>
 </div>
 </div>
 </div>
 
-<div id="outline-container-orgheadline9" class="outline-4">
-<h4 id="orgheadline9">Formulierung der Fragen</h4>
-<div class="outline-text-4" id="text-orgheadline9">
+<div id="outline-container-org464fce5" class="outline-4">
+<h4 id="org464fce5">Formulierung der Fragen</h4>
+<div class="outline-text-4" id="text-org464fce5">
 <p>
 Aus der Tabelle für die Preisstaffelung ergeben sich folgende
 Bedingungen/Fragen:
 </p>
 
 <div class="org-src-container">
-
 <pre class="src src-scheme">    <span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">berechnet aus einer gegebenen Stueckzahl</span>
     <span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">den Stueckpreis gemaess Preisstaffel</span>
     <span style="color: #707183;">(</span><span style="color: #0000FF;">define</span> <span style="color: #006699;">stueckpreis</span>
@@ -432,7 +519,7 @@ Bedingungen/Fragen:
                   <span style="color: #6276BA;">(</span>&lt;= stueckzahl 1000<span style="color: #6276BA;">)</span><span style="color: #907373;">)</span>  ...<span style="color: #709870;">]</span>
             <span style="color: #709870;">[</span><span style="color: #907373;">(</span><span style="color: #0000FF;">and</span> <span style="color: #6276BA;">(</span>&gt; stueckzahl 1000<span style="color: #6276BA;">)</span>
                   <span style="color: #6276BA;">(</span>&lt;= stueckzahl 10000<span style="color: #6276BA;">)</span><span style="color: #907373;">)</span> ...<span style="color: #709870;">]</span>
-            <span style="color: #709870;">[</span><span style="color: #907373;">(</span>&gt; stueckzahl 10000<span style="color: #907373;">)</span>        ...<span style="color: #709870;">]</span><span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
+            <span style="color: #709870;">[</span><span style="color: #907373;">(</span>&gt; stueckzahl 10000<span style="color: #907373;">)</span>        ...<span style="color: #709870;">]</span><span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span></pre>
 </pre>
 </div>
 
@@ -443,16 +530,15 @@ aus dem Innern der Intervalle (z. B. 500, 2000, 20000) verwendet werden.
 </div>
 </div>
 
-<div id="outline-container-orgheadline10" class="outline-4">
-<h4 id="orgheadline10">Formulierung der Antworten</h4>
-<div class="outline-text-4" id="text-orgheadline10">
+<div id="outline-container-org29e21c8" class="outline-4">
+<h4 id="org29e21c8">Formulierung der Antworten</h4>
+<div class="outline-text-4" id="text-org29e21c8">
 <p>
 Die Ausdrücke für die Berechnung der Antworten ergeben sich
 direkt aus der Tabelle für die Preisstaffelung:
 </p>
 
 <div class="org-src-container">
-
 <pre class="src src-scheme">    <span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">berechnet aus einer gegebenen Stueckzahl</span>
     <span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">den Stueckpreis gemaess Preisstaffel</span>
      <span style="color: #707183;">(</span><span style="color: #0000FF;">define</span> <span style="color: #006699;">stueckpreis</span>
@@ -462,15 +548,15 @@ direkt aus der Tabelle für die Preisstaffelung:
                   <span style="color: #6276BA;">(</span>&lt;= stueckzahl 1000<span style="color: #6276BA;">)</span><span style="color: #907373;">)</span>  1500<span style="color: #709870;">]</span>
             <span style="color: #709870;">[</span><span style="color: #907373;">(</span><span style="color: #0000FF;">and</span> <span style="color: #6276BA;">(</span>&gt; stueckzahl 1000<span style="color: #6276BA;">)</span>
                   <span style="color: #6276BA;">(</span>&lt;= stueckzahl 10000<span style="color: #6276BA;">)</span><span style="color: #907373;">)</span> 1250<span style="color: #709870;">]</span>
-            <span style="color: #709870;">[</span><span style="color: #907373;">(</span>&gt; stueckzahl 10000<span style="color: #907373;">)</span>        975<span style="color: #709870;">]</span><span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
+            <span style="color: #709870;">[</span><span style="color: #907373;">(</span>&gt; stueckzahl 10000<span style="color: #907373;">)</span>        975<span style="color: #709870;">]</span><span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span></pre>
 </pre>
 </div>
 </div>
 </div>
 
-<div id="outline-container-orgheadline11" class="outline-4">
-<h4 id="orgheadline11">Vereinfachung der Bedingungen</h4>
-<div class="outline-text-4" id="text-orgheadline11">
+<div id="outline-container-org0ae1bac" class="outline-4">
+<h4 id="org0ae1bac">Vereinfachung der Bedingungen</h4>
+<div class="outline-text-4" id="text-org0ae1bac">
 <p>
 Nachdem die Funktion getestet wurde, können die Bedingungen
 vereinfacht werden:
@@ -478,13 +564,12 @@ vereinfacht werden:
 
 <div class="small">
 <div class="org-src-container">
-
 <pre class="src src-scheme">    <span style="color: #707183;">(</span><span style="color: #0000FF;">define</span> <span style="color: #006699;">stueckpreis</span>
        <span style="color: #7388D6;">(</span><span style="color: #0000FF;">lambda</span> <span style="color: #909183;">[</span>stueckzahl<span style="color: #909183;">]</span>
           <span style="color: #909183;">(</span><span style="color: #0000FF;">cond</span>
             <span style="color: #709870;">[</span><span style="color: #907373;">(</span>&lt;= stueckzahl 1000<span style="color: #907373;">)</span> 1500<span style="color: #709870;">]</span>
             <span style="color: #709870;">[</span><span style="color: #907373;">(</span>&lt;= stueckzahl 10000<span style="color: #907373;">)</span> 1250<span style="color: #709870;">]</span>
-            <span style="color: #709870;">[</span>else 975<span style="color: #709870;">]</span><span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
+            <span style="color: #709870;">[</span>else 975<span style="color: #709870;">]</span><span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span></pre>
 </pre>
 </div>
 
@@ -504,7 +589,7 @@ vereinfacht werden:
 </div>
 <div id="postamble" class="status">
 <p class="author">Autor: Johannes Brauer</p>
-<p class="date">Created: 2017-01-19 Thu 09:15</p>
+<p class="date">Created: 2017-12-10 Sun 20:44</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

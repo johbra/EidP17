@@ -3,12 +3,12 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="de" xml:lang="de">
 <head>
-<!-- 2017-02-09 Thu 23:37 -->
-<meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
-<meta  name="viewport" content="width=device-width, initial-scale=1" />
+<!-- 2017-12-10 Sun 20:54 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Akkumulierende Parameter</title>
-<meta  name="generator" content="Org-mode" />
-<meta  name="author" content="Johannes Brauer" />
+<meta name="generator" content="Org mode" />
+<meta name="author" content="Johannes Brauer" />
 <style type="text/css">
  <!--/*--><![CDATA[/*><!--*/
   .title  { text-align: center;
@@ -53,13 +53,98 @@
     border: 1px solid black;
   }
   pre.src:hover:before { display: inline;}
-  pre.src-sh:before    { content: 'sh'; }
-  pre.src-bash:before  { content: 'sh'; }
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
   pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
-  pre.src-R:before     { content: 'R'; }
-  pre.src-perl:before  { content: 'Perl'; }
-  pre.src-java:before  { content: 'Java'; }
-  pre.src-sql:before   { content: 'SQL'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
 
   table { border-collapse:collapse; }
   caption.t-above { caption-side: top; }
@@ -92,6 +177,7 @@
     { font-size: 10px; font-weight: bold; white-space: nowrap; }
   .org-info-js_search-highlight
     { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
   /*]]>*/-->
 </style>
 <link rel="stylesheet" type="text/css" href="styles/bigblow/css/htmlize.css"/>
@@ -111,7 +197,7 @@
 @licstart  The following is the entire license notice for the
 JavaScript code in this tag.
 
-Copyright (C) 2012-2013 Free Software Foundation, Inc.
+Copyright (C) 2012-2017 Free Software Foundation, Inc.
 
 The JavaScript code in this tag is free software: you can
 redistribute it and/or modify it under the terms of the GNU
@@ -178,16 +264,16 @@ for the JavaScript code in this tag.
 <body>
 <div id="content">
 <h1 class="title">Akkumulierende Parameter
-<br>
+<br />
 <span class="subtitle">Einführung in die Programmierung</span>
 </h1>
-
-<div id="outline-container-orgheadline7" class="outline-2">
-<h2 id="orgheadline7">Rekursive und iterative Prozesse</h2>
-<div class="outline-text-2" id="text-orgheadline7">
-</div><div id="outline-container-orgheadline1" class="outline-3">
-<h3 id="orgheadline1">Fakultät rekursiv</h3>
-<div class="outline-text-3" id="text-orgheadline1">
+<div id="outline-container-org23c67fc" class="outline-2">
+<h2 id="org23c67fc">Rekursive und iterative Prozesse</h2>
+<div class="outline-text-2" id="text-org23c67fc">
+</div>
+<div id="outline-container-orgb91dc08" class="outline-3">
+<h3 id="orgb91dc08">Fakultät rekursiv</h3>
+<div class="outline-text-3" id="text-orgb91dc08">
 <p>
 Ausgehend von der mathematischen Definition:
 </p>
@@ -199,12 +285,11 @@ kann folgende rekursive Funktionsdefinition gegeben werden:
 </p>
 <div class="small">
 <div class="org-src-container">
-
 <pre class="src src-clojure">    <span style="color: #707183;">(</span><span style="color: #0000FF;">define</span> <span style="color: #006699;">factorial</span>
        <span style="color: #7388D6;">(</span>lambda <span style="color: #909183;">[</span>n<span style="color: #909183;">]</span>
           <span style="color: #909183;">(</span><span style="color: #0000FF;">cond</span> 
              <span style="color: #709870;">[</span><span style="color: #907373;">(</span>= n 1<span style="color: #907373;">)</span> 1<span style="color: #709870;">]</span>
-             <span style="color: #709870;">[</span>else <span style="color: #907373;">(</span>* n <span style="color: #6276BA;">(</span>factorial <span style="color: #858580;">(</span>- n 1<span style="color: #858580;">)</span><span style="color: #6276BA;">)</span><span style="color: #907373;">)</span><span style="color: #709870;">]</span><span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
+             <span style="color: #709870;">[</span>else <span style="color: #907373;">(</span>* n <span style="color: #6276BA;">(</span>factorial <span style="color: #858580;">(</span>- n 1<span style="color: #858580;">)</span><span style="color: #6276BA;">)</span><span style="color: #907373;">)</span><span style="color: #709870;">]</span><span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span></pre>
 </pre>
 </div>
 
@@ -217,9 +302,9 @@ Abarbeitungsprozess:
 </div>
 </div>
 
-<div id="outline-container-orgheadline2" class="outline-3">
-<h3 id="orgheadline2">rekursive Abarbeitung der Fakultät</h3>
-<div class="outline-text-3" id="text-orgheadline2">
+<div id="outline-container-orgd2809d3" class="outline-3">
+<h3 id="orgd2809d3">rekursive Abarbeitung der Fakultät</h3>
+<div class="outline-text-3" id="text-orgd2809d3">
 
 <div class="figure">
 <p><img src="./Abbildungen/faktreku.png" alt="faktreku.png" width="600px" />
@@ -228,9 +313,9 @@ Abarbeitungsprozess:
 </div>
 </div>
 
-<div id="outline-container-orgheadline3" class="outline-3">
-<h3 id="orgheadline3">Fakultät iterativ</h3>
-<div class="outline-text-3" id="text-orgheadline3">
+<div id="outline-container-org2b9f7df" class="outline-3">
+<h3 id="org2b9f7df">Fakultät iterativ</h3>
+<div class="outline-text-3" id="text-org2b9f7df">
 <p>
 \(n! = 1  \cdot 2 \cdot\cdot\cdot (n-1) \cdot n\)
 </p>
@@ -252,7 +337,6 @@ Berechnung der Fakultät im Vorwärtsgang mit zwei Hilfsvariablen:
 </p>
 
 <div class="org-src-container">
-
 <pre class="src src-clojure">    <span style="color: #707183;">(</span><span style="color: #0000FF;">define</span> <span style="color: #006699;">factorial</span>
       <span style="color: #7388D6;">(</span>lambda <span style="color: #909183;">[</span>n<span style="color: #909183;">]</span>
         <span style="color: #909183;">(</span>fact-iter 1 1 n<span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
@@ -263,24 +347,24 @@ Berechnung der Fakultät im Vorwärtsgang mit zwei Hilfsvariablen:
           <span style="color: #709870;">[</span><span style="color: #907373;">(</span>&gt; counter max-counter<span style="color: #907373;">)</span> product<span style="color: #709870;">]</span> 
           <span style="color: #709870;">[</span>else <span style="color: #907373;">(</span>fact-iter <span style="color: #6276BA;">(</span>* product counter<span style="color: #6276BA;">)</span> 
                            <span style="color: #6276BA;">(</span>+ counter 1<span style="color: #6276BA;">)</span>
-                           max-counter<span style="color: #907373;">)</span><span style="color: #709870;">]</span><span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
+                           max-counter<span style="color: #907373;">)</span><span style="color: #709870;">]</span><span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span></pre>
 </pre>
 </div>
 </div>
 </div>
 
-<div id="outline-container-orgheadline4" class="outline-3">
-<h3 id="orgheadline4">iterative Abarbeitung der Fakultät</h3>
-<div class="outline-text-3" id="text-orgheadline4">
+<div id="outline-container-org4dc27e9" class="outline-3">
+<h3 id="org4dc27e9">iterative Abarbeitung der Fakultät</h3>
+<div class="outline-text-3" id="text-org4dc27e9">
 <p width="500px">
 <img src="./Abbildungen/faktiter.png" alt="faktiter.png" width="500px" /> 
 </p>
 </div>
 </div>
 
-<div id="outline-container-orgheadline5" class="outline-3">
-<h3 id="orgheadline5">Fakultät iterativ mit lokaler Hilfsfunktion</h3>
-<div class="outline-text-3" id="text-orgheadline5">
+<div id="outline-container-org33ffb63" class="outline-3">
+<h3 id="org33ffb63">Fakultät iterativ mit lokaler Hilfsfunktion</h3>
+<div class="outline-text-3" id="text-org33ffb63">
 <ul class="org-ul">
 <li>Die Funktion <code>fact-iter</code> hat reinen Hilfscharakter, d.h. sollte nur
 von <code>factorial</code> aufgerufen werden.</li>
@@ -288,17 +372,16 @@ von <code>factorial</code> aufgerufen werden.</li>
 Konsequenz: Funktion <code>fact-iter</code> lokal definieren:
 </p>
 <div class="org-src-container">
-
-<pre class="src src-clojure">    <span style="color: #707183;">(</span><span style="color: #0000FF;">define</span> <span style="color: #006699;">factorial</span>
-      <span style="color: #7388D6;">(</span>lambda <span style="color: #909183;">[</span>n<span style="color: #909183;">]</span>
-        <span style="color: #909183;">(</span>letrec 
-            <span style="color: #709870;">(</span><span style="color: #907373;">[</span>fact-iter
-              <span style="color: #6276BA;">(</span>lambda <span style="color: #858580;">[</span>product counter<span style="color: #858580;">]</span>
-                <span style="color: #858580;">(</span><span style="color: #0000FF;">cond</span> 
-                  <span style="color: #80A880;">[</span><span style="color: #887070;">(</span>&gt; counter n<span style="color: #887070;">)</span> product<span style="color: #80A880;">]</span> 
-                  <span style="color: #80A880;">[</span>else <span style="color: #887070;">(</span>fact-iter <span style="color: #707183;">(</span>* product counter<span style="color: #707183;">)</span> 
-                                   <span style="color: #707183;">(</span>+ counter 1<span style="color: #707183;">)</span><span style="color: #887070;">)</span><span style="color: #80A880;">]</span><span style="color: #858580;">)</span><span style="color: #6276BA;">)</span><span style="color: #907373;">]</span><span style="color: #709870;">)</span>
-          <span style="color: #709870;">(</span>fact-iter 1 1<span style="color: #709870;">)</span><span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
+<pre class="src src-clojure">       <span style="color: #707183;">(</span><span style="color: #0000FF;">define</span> <span style="color: #006699;">factorial</span>
+         <span style="color: #7388D6;">(</span>lambda <span style="color: #909183;">[</span>n<span style="color: #909183;">]</span>
+           <span style="color: #909183;">(</span>letrec 
+               <span style="color: #709870;">(</span><span style="color: #907373;">[</span>fact-iter
+                 <span style="color: #6276BA;">(</span>lambda <span style="color: #858580;">[</span>product counter<span style="color: #858580;">]</span>
+                   <span style="color: #858580;">(</span><span style="color: #0000FF;">cond</span> 
+                     <span style="color: #80A880;">[</span><span style="color: #887070;">(</span>&gt; counter n<span style="color: #887070;">)</span> product<span style="color: #80A880;">]</span> 
+                     <span style="color: #80A880;">[</span>else <span style="color: #887070;">(</span>fact-iter <span style="color: #707183;">(</span>* product counter<span style="color: #707183;">)</span> 
+                                      <span style="color: #707183;">(</span>+ counter 1<span style="color: #707183;">)</span><span style="color: #887070;">)</span><span style="color: #80A880;">]</span><span style="color: #858580;">)</span><span style="color: #6276BA;">)</span><span style="color: #907373;">]</span><span style="color: #709870;">)</span>
+             <span style="color: #709870;">(</span>fact-iter 1 1<span style="color: #709870;">)</span><span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span></pre>
 </pre>
 </div></li>
 <li>Das dritte Argument für <code>fact-iter</code> ist überflüssig
@@ -307,9 +390,9 @@ geworden.</li>
 </div>
 </div>
 
-<div id="outline-container-orgheadline6" class="outline-3">
-<h3 id="orgheadline6">Akkumulierende Parameter</h3>
-<div class="outline-text-3" id="text-orgheadline6">
+<div id="outline-container-orgefa08a4" class="outline-3">
+<h3 id="orgefa08a4">Akkumulierende Parameter</h3>
+<div class="outline-text-3" id="text-orgefa08a4">
 <ul class="org-ul">
 <li>Ein <i>rekursiver Prozess</i> ist durch eine Folge von verzögerten
 Operationen gekennzeichnet.</li>
@@ -332,14 +415,14 @@ rekursiver Funktionen.</li>
 </div>
 </div>
 
-<div id="outline-container-orgheadline15" class="outline-2">
-<h2 id="orgheadline15">Akkumulierende Parameter</h2>
-<div class="outline-text-2" id="text-orgheadline15">
-</div><div id="outline-container-orgheadline8" class="outline-3">
-<h3 id="orgheadline8">Invertieren einer Liste</h3>
-<div class="outline-text-3" id="text-orgheadline8">
+<div id="outline-container-org3ba0672" class="outline-2">
+<h2 id="org3ba0672">Akkumulierende Parameter</h2>
+<div class="outline-text-2" id="text-org3ba0672">
+</div>
+<div id="outline-container-org8cd9b38" class="outline-3">
+<h3 id="org8cd9b38">Invertieren einer Liste</h3>
+<div class="outline-text-3" id="text-org8cd9b38">
 <div class="org-src-container">
-
 <pre class="src src-clojure">    <span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">kehrt die Reihenfolge der Symbole einer Liste um</span>
     <span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">rev-list : (list-of symbol) -&gt; (list-of symbol)</span>
     <span style="color: #707183;">(</span><span style="color: #0000FF;">define</span> <span style="color: #006699;">rev-list</span>
@@ -356,15 +439,15 @@ rekursiver Funktionen.</li>
         <span style="color: #909183;">(</span><span style="color: #0000FF;">cond</span> 
           <span style="color: #709870;">[</span><span style="color: #907373;">(</span><span style="color: #006FE0;">empty?</span> list<span style="color: #907373;">)</span> <span style="color: #907373;">(</span><span style="color: #006FE0;">cons</span> symbol empty<span style="color: #907373;">)</span><span style="color: #709870;">]</span>
           <span style="color: #709870;">[</span>else <span style="color: #907373;">(</span><span style="color: #006FE0;">cons</span> <span style="color: #6276BA;">(</span><span style="color: #006FE0;">first</span> list<span style="color: #6276BA;">)</span> 
-                <span style="color: #6276BA;">(</span>putatend symbol <span style="color: #858580;">(</span><span style="color: #006FE0;">rest</span> list<span style="color: #858580;">)</span><span style="color: #6276BA;">)</span><span style="color: #907373;">)</span><span style="color: #709870;">]</span><span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
+                <span style="color: #6276BA;">(</span>putatend symbol <span style="color: #858580;">(</span><span style="color: #006FE0;">rest</span> list<span style="color: #858580;">)</span><span style="color: #6276BA;">)</span><span style="color: #907373;">)</span><span style="color: #709870;">]</span><span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span></pre>
 </pre>
 </div>
 </div>
 </div>
 
-<div id="outline-container-orgheadline9" class="outline-3">
-<h3 id="orgheadline9">Effizienzbetrachtung:</h3>
-<div class="outline-text-3" id="text-orgheadline9">
+<div id="outline-container-org8145eee" class="outline-3">
+<h3 id="org8145eee">Effizienzbetrachtung:</h3>
+<div class="outline-text-3" id="text-org8145eee">
 <ul class="org-ul">
 <li>Vorbemerkung: Beide Funktionen entstehen durch Anwendung der
 bekannten Regeln für den Entwurf listenverarbeitender Funktionen.</li>
@@ -385,11 +468,10 @@ erfordern.</li>
 </div>
 </div>
 
-<div id="outline-container-orgheadline10" class="outline-3">
-<h3 id="orgheadline10">Invertieren einer Liste (2)</h3>
-<div class="outline-text-3" id="text-orgheadline10">
+<div id="outline-container-org9d43b0e" class="outline-3">
+<h3 id="org9d43b0e">Invertieren einer Liste (2)</h3>
+<div class="outline-text-3" id="text-org9d43b0e">
 <div class="org-src-container">
-
 <pre class="src src-clojure">    <span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">kehrt die Reihenfolge der Symbole einer Liste um</span>
     <span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">rev-list (list-of symbol) -&gt; (list-of symbol)</span>
      <span style="color: #707183;">(</span><span style="color: #0000FF;">define</span> <span style="color: #006699;">rev-list</span>
@@ -402,7 +484,7 @@ erfordern.</li>
                   <span style="color: #80A880;">(</span>else <span style="color: #887070;">(</span>rev <span style="color: #707183;">(</span><span style="color: #006FE0;">rest</span> list-x<span style="color: #707183;">)</span> 
                              <span style="color: #707183;">(</span><span style="color: #006FE0;">cons</span> <span style="color: #7388D6;">(</span><span style="color: #006FE0;">first</span> list-x<span style="color: #7388D6;">)</span> 
                                    list-y<span style="color: #707183;">)</span><span style="color: #887070;">)</span><span style="color: #80A880;">)</span><span style="color: #858580;">)</span><span style="color: #6276BA;">)</span><span style="color: #907373;">]</span><span style="color: #709870;">)</span>
-          <span style="color: #709870;">(</span>rev list empty<span style="color: #709870;">)</span><span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
+          <span style="color: #709870;">(</span>rev list empty<span style="color: #709870;">)</span><span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span></pre>
 </pre>
 </div>
 
@@ -413,9 +495,9 @@ der Liste.</li>
 </div>
 </div>
 
-<div id="outline-container-orgheadline11" class="outline-3">
-<h3 id="orgheadline11">Einsatz von akkumulierenden Parametern</h3>
-<div class="outline-text-3" id="text-orgheadline11">
+<div id="outline-container-orgb33c81d" class="outline-3">
+<h3 id="orgb33c81d">Einsatz von akkumulierenden Parametern</h3>
+<div class="outline-text-3" id="text-orgb33c81d">
 <ul class="org-ul">
 <li>Im Zusammenhang mit akkumulierenden Parametern sind zwei Fragen
 interessant:
@@ -431,9 +513,9 @@ Regeln sind nicht ohne weiteres anwendbar.</li>
 </div>
 </div>
 
-<div id="outline-container-orgheadline12" class="outline-3">
-<h3 id="orgheadline12">Vorgehensweise beim Entwurf</h3>
-<div class="outline-text-3" id="text-orgheadline12">
+<div id="outline-container-orga1db842" class="outline-3">
+<h3 id="orga1db842">Vorgehensweise beim Entwurf</h3>
+<div class="outline-text-3" id="text-orga1db842">
 <ul class="org-ul">
 <li>Da war zunächst die Frage, ob eine Funktion mit akkumulierendem
 Parameter zweckmäßig ist.</li>
@@ -458,11 +540,10 @@ Folie!</li>
 </div>
 </div>
 
-<div id="outline-container-orgheadline13" class="outline-3">
-<h3 id="orgheadline13">Funktionsschablone für <code>rev-list</code> mit <code>rev</code></h3>
-<div class="outline-text-3" id="text-orgheadline13">
+<div id="outline-container-org5af7f4b" class="outline-3">
+<h3 id="org5af7f4b">Funktionsschablone für <code>rev-list</code> mit <code>rev</code></h3>
+<div class="outline-text-3" id="text-org5af7f4b">
 <div class="org-src-container">
-
 <pre class="src src-clojure">    <span style="color: #707183;">(</span><span style="color: #0000FF;">define</span> <span style="color: #006699;">rev-list</span>
       <span style="color: #7388D6;">(</span>lambda <span style="color: #909183;">[</span>list<span style="color: #909183;">]</span>
         <span style="color: #909183;">(</span>letrec
@@ -476,7 +557,7 @@ Folie!</li>
                             ... <span style="color: #707183;">(</span><span style="color: #006FE0;">first</span> <span style="color: #808080;">listX</span><span style="color: #707183;">)</span> ...akku<span style="color: #887070;">)</span>
     <span style="color: #8D8D84;">;;                      </span><span style="color: #8D8D84; font-style: italic;">==========================</span>
                             <span style="color: #80A880;">]</span><span style="color: #858580;">)</span><span style="color: #6276BA;">)</span><span style="color: #907373;">]</span><span style="color: #709870;">)</span>
-          <span style="color: #709870;">(</span>rev list ...<span style="color: #709870;">)</span><span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
+          <span style="color: #709870;">(</span>rev list ...<span style="color: #709870;">)</span><span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span></pre>
 </pre>
 </div>
 <ul class="org-ul">
@@ -488,9 +569,9 @@ Akkumulatorinvariante gültig bleibt.</li>
 </div>
 </div>
 
-<div id="outline-container-orgheadline14" class="outline-3">
-<h3 id="orgheadline14">Akkumulatorinvariante für <code>rev</code></h3>
-<div class="outline-text-3" id="text-orgheadline14">
+<div id="outline-container-org7e6bee4" class="outline-3">
+<h3 id="org7e6bee4">Akkumulatorinvariante für <code>rev</code></h3>
+<div class="outline-text-3" id="text-org7e6bee4">
 <ul class="org-ul">
 <li>Eine Akkumulatorinvariante ist eine Aussage über das Argument der
 Hauptfunktion (hier: <code>list</code>), das entsprechende Argument der
@@ -524,7 +605,7 @@ vorangehen.</li>
 </div>
 <div id="postamble" class="status">
 <p class="author">Autor: Johannes Brauer</p>
-<p class="date">Created: 2017-02-09 Thu 23:37</p>
+<p class="date">Created: 2017-12-10 Sun 20:54</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
