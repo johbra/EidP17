@@ -24,6 +24,8 @@
 
 [[file:Vorlesung/EinfuehrungProgrammierung.html][Übersicht]]
 
+[[https://moodle2.nordakademie.de/course/view.php?id=1903][Muhdel-Kurs]]
+
 
 
 
