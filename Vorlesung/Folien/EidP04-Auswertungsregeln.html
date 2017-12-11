@@ -24,16 +24,17 @@
     }
 </script>
 <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<link rel="stylesheet" type="text/css" href="mycss/mystyle.css" />
 </head>
 <body>
 <div class="reveal">
 <div class="slides">
-<section id="sec-title-slide"><h1 class="title">Auswertungsregeln</h1><h2 class="author">Johannes Brauer</h2><p class="date">Created: 2017-01-20 Fri 11:21</p>
+<section id="sec-title-slide"><h1 class="title">Auswertungsregeln</h1><h2 class="author">Johannes Brauer</h2><p class="date">Created: 2017-12-11 Mon 14:05</p>
 </section>
 
 <section>
-<section id="slide-orgheadline3">
-<h2 id="orgheadline3">Syntax und Semantik einer mathematischen Formelsprache</h2>
+<section id="slide-org46cc015">
+<h2 id="org46cc015">Syntax und Semantik einer mathematischen Formelsprache</h2>
 <p>
 Die Auswertung von Ausdrücken in <i>Racket</i> basiert auf der Anwendung
 einfacher äquivalenter Umformungen, wie sie aus der Schulmathematik
@@ -58,8 +59,8 @@ auch als die <i>Syntax</i> der Sprache.
 </p>
 
 </section>
-<section id="slide-orgheadline1">
-<h3 id="orgheadline1">Syntax der mathematischen Formelsprache</h3>
+<section id="slide-orgd895592">
+<h3 id="orgd895592">Syntax der mathematischen Formelsprache</h3>
 <p>
 Sie legt z. B. fest, dass
 </p>
@@ -82,8 +83,7 @@ geschrieben werden darf, das Operationszeichen \(\cdot\) also in
 bestimmten Situationen weggelassen werden darf.
 </p>
 
-</section>
-<section></li>
+</section></li>
 
 </ul>
 
@@ -97,8 +97,8 @@ Sprache.
 </p>
 
 </section>
-<section id="slide-orgheadline2">
-<h3 id="orgheadline2">Semantik der mathematischen Formelsprache</h3>
+<section id="slide-orgb3fb32d">
+<h3 id="orgb3fb32d">Semantik der mathematischen Formelsprache</h3>
 <p>
 Sie bestimmt z. B., dass
 </p>
@@ -126,7 +126,7 @@ auch das Ersetzung von Variablen durch Konstanten, bezeichnet
 man ihn auch als <i>Auswertung</i> einer Formel oder eines Ausdrucks. 
 </p>
 </section>
-<section>
+<section >
 <p>
 Dabei werden die Ersetzungsregeln solange angewendet, bis keine weitere
 Regel mehr anwendbar ist.
@@ -155,7 +155,7 @@ welchen Wert die Funktion \(bf(a,b)\) hat, wenn z. B. \(a\) durch \(3\) und \(b\
 durch \(4\) ersetzt werden. 
 </p>
 </section>
-<section>
+<section >
 <p>
 In der folgenden Gleichung ist diese
 Ersetzung vorgenommen worden:
@@ -192,8 +192,8 @@ bf(3,4) & = & 3\cdot 3 + 2\cdot 3\cdot 4 + 4\cdot 4 \\
 </section>
 </section>
 <section>
-<section id="slide-orgheadline5">
-<h2 id="orgheadline5">Syntax und Semantik von <i>Racket</i> (vorläufig)</h2>
+<section id="slide-org39b55f0">
+<h2 id="org39b55f0">Syntax und Semantik von <i>Racket</i> (vorläufig)</h2>
 <p>
 Funktionale Programmiersprachen zeichnen sich u. a. dadurch aus, dass
 sie sich hinsichtlich ihrer Semantik sehr strikt an der Mathematik
@@ -219,10 +219,11 @@ den Parametern <code>a</code> und <code>b</code> definieren, sieht das so aus:
 <pre class="example">
 (define bf
   (lambda [a b] ... ))
+
 </pre>
 
 </section>
-<section>
+<section >
 <p>
 Wollen wir nun die rechte Seite der Funktionsdefinition nach <i>Racket</i>
 übertragen, müssen wir die Syntaxregel von <i>Racket</i> beachten, wonach
@@ -231,6 +232,7 @@ aussieht:
 </p>
 <pre class="example">
 (operator operand-1 operand-2 ... operand-n)
+
 </pre>
 <p>
 Damit erhalten wir die vollständige Funktionsdefinition:
@@ -242,7 +244,7 @@ Damit erhalten wir die vollständige Funktionsdefinition:
   <span style="color: #7388D6;">(</span><span style="color: #0000FF;">lambda</span> <span style="color: #909183;">[</span>a b<span style="color: #909183;">]</span>
     <span style="color: #909183;">(</span>+ <span style="color: #709870;">(</span>* a a<span style="color: #709870;">)</span>
        <span style="color: #709870;">(</span>* 2 a b<span style="color: #709870;">)</span>
-       <span style="color: #709870;">(</span>* b b<span style="color: #709870;">)</span><span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
+       <span style="color: #709870;">(</span>* b b<span style="color: #709870;">)</span><span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span></pre>
 </pre>
 </div>
 
@@ -252,7 +254,7 @@ Die Semantik von <i>Racket</i> definiert nun insbesondere, wie
 Ausdrücke, d. h. Funktionsanwendungen ausgewertet werden. 
 </p>
 </section>
-<section>
+<section >
 <p>
 Wie in der
 mathematischen Formelsprache können durch die Anwendung einfacher
@@ -263,6 +265,7 @@ Funktionsanwendung
 </p>
 <pre class="example">
 (bf 3 4)
+
 </pre>
 <p>
 das Resultat <code>49</code> entsteht.
@@ -277,6 +280,7 @@ Berechnungsvorschrift <code>exp</code>:
 (define f
   (lambda [x-1 ... x-n]
     exp))
+
 </pre>
 
 <p>
@@ -284,8 +288,8 @@ Für die Anwendung der Funktion gilt dann die folgende Ersetzungsregel.
 </p>
 
 </section>
-<section id="slide-orgheadline4">
-<h3 id="orgheadline4">Ersetzungsmodell für Funktionsanwendungen:</h3>
+<section id="slide-orgf7cd5c1">
+<h3 id="orgf7cd5c1">Ersetzungsmodell für Funktionsanwendungen:</h3>
 <ul>
 <li><p>
 Formal: Mit <code>(define f (lambda [x-1 ... x-n] exp))</code> gilt: 
@@ -310,6 +314,7 @@ Wenden wir diese Regel auf die Anwendung der Funktion <code>bf</code> an:
 (bf 3 4) = (+ (* 3 3)
               (* 2 3 4)
               (* 4 4))
+
 </pre></li>
 
 <li>Wie in der Mathematik gehen wir davon aus, dass die Addition und
@@ -317,7 +322,7 @@ Multiplikation auch in <i>Racket</i> bereits definiert sind.</li>
 
 </ul>
 </section>
-<section>
+<section >
 <ul>
 <li><p>
 D. h., weitere Auswertungsschritte erfolgen analog zur
@@ -337,6 +342,7 @@ Multiplikation und Addition erforderlich ist:
               (* 4 4))
          = (+ 9 24 16)
          = 49
+
 </pre></li>
 
 </ul>
@@ -347,8 +353,8 @@ Multiplikation und Addition erforderlich ist:
 </section>
 </section>
 <section>
-<section id="slide-orgheadline6">
-<h2 id="orgheadline6">Zusammenfassung</h2>
+<section id="slide-orgbe6c336">
+<h2 id="orgbe6c336">Zusammenfassung</h2>
 <ul>
 <li>Die <b>Syntax</b> einer Programmiersprache legt zulässige Elemente und Strukturen fest.</li>
 <li>Die <b>Semantik</b> einer Programmiersprache legt die Bedeutung syntaktisch korrekter Ausdrücke fest.</li>
