@@ -1,0 +1,1818 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="de" xml:lang="de">
+<head>
+<!-- 2017-12-11 Mon 14:41 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Aufgaben</title>
+<meta name="generator" content="Org mode" />
+<meta name="author" content="Johannes Brauer" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+  /*]]>*/-->
+</style>
+<link rel="stylesheet" type="text/css" href="mystyle.css" />
+<style type="text/css">
+ol { list-style-type: lower-alpha; }
+</style>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2017 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        displayAlign: "center",
+        displayIndent: "0em",
+
+        "HTML-CSS": { scale: 100,
+                        linebreaks: { automatic: "false" },
+                        webFont: "TeX"
+                       },
+        SVG: {scale: 100,
+              linebreaks: { automatic: "false" },
+              font: "TeX"},
+        NativeMML: {scale: 100},
+        TeX: { equationNumbers: {autoNumber: "AMS"},
+               MultLineWidth: "85%",
+               TagSide: "right",
+               TagIndent: ".8em"
+             }
+});
+</script>
+<script type="text/javascript"
+        src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">Aufgaben
+<br />
+<span class="subtitle">Einführung in die Programmierung</span>
+</h1>
+<div id="table-of-contents">
+<h2>Inhaltsverzeichnis</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#orgec278d1">1. Aufgabe (Erste Schritte in Racket)</a></li>
+<li><a href="#orga10fd45">2. Aufgabe (Auswertung arithmetischer Ausdrücke)</a></li>
+<li><a href="#org42accdd">3. Aufgabe (Aufschreiben elementarer Funktionen)</a></li>
+<li><a href="#org8694ae6">4. Aufgabe (Aufschreiben elementarer Funktionen)</a></li>
+<li><a href="#org73c3ad8">5. Aufgabe (Anwenden der Aufschreibregeln)</a></li>
+<li><a href="#org8e440d0">6. Aufgabe (Profit für den Kinobesitzer)</a></li>
+<li><a href="#orgb673600">7. Aufgabe (Modifikation von <code>kino.rkt</code></a></li>
+<li><a href="#org7c5faa8">8. Aufgabe (Einsatz von Hilfsfunktionen)</a></li>
+<li><a href="#org65726a7">9. Aufgabe (Ersetzungsmodell)</a></li>
+<li><a href="#org84eb63c">10. Aufgabe (bedingte Funktion)</a></li>
+<li><a href="#org6fc585e">11. Aufgabe (Zusatzaufgaben zu bedingten Funktionen)</a></li>
+<li><a href="#orgd78fc25">12. Aufgabe (Datenabstraktion)</a></li>
+<li><a href="#org85adddc">13. Aufgabe (Datenabstraktion &#x2013; Zusatzaufgabe)</a>
+<ul>
+<li><a href="#org7144a24">13.1. Vorbemerkungen</a></li>
+<li><a href="#org8c80a6d">13.2. Aufgabenstellungen</a></li>
+</ul>
+</li>
+<li><a href="#org3e6a0e5">14. Aufgabe (Datenabstraktion &#x2013; gemischte Daten)</a></li>
+<li><a href="#org04506b2">15. Aufgabe (Datenabstraktion &#x2013; gemischte Daten &#x2013; Zusatzaufgabe)</a>
+<ul>
+<li><a href="#org1e8c1df">15.1. Vorbemerkung</a></li>
+<li><a href="#org397ca06">15.2. Aufgabenstellungen</a></li>
+</ul>
+</li>
+<li><a href="#org4966d94">16. Aufgabe (Listenkonstruktion und -zerlegung)</a></li>
+<li><a href="#org0d3988f">17. Aufgabe (Listenverarbeitung)</a></li>
+<li><a href="#orgcd1802d">18. Aufgabe (Funktionen über zwei Listen)</a></li>
+<li><a href="#orgb3c85bc">19. Aufgabe (Formale Aspekte)</a></li>
+<li><a href="#org09d168d">20. Aufgabe (lokale Definitionen)</a></li>
+<li><a href="#org8e3c54b">21. Aufgabe (Listen über gemischten Daten &#x2013; Zusatzaufgabe)</a></li>
+<li><a href="#orgc1e07f1">22. Aufgabe (Hilfsfunktionen mit akkumulierenden Parametern)</a></li>
+<li><a href="#org0b0eaa8">23. Aufgabe (Anwendung von <code>map</code>, <code>filter</code> und <code>reduce</code>)</a></li>
+<li><a href="#org5a8289e">24. Aufgabe (Definition von Funktionen höherer Ordnung)</a></li>
+<li><a href="#orgb3efeda">25. Aufgabe (die Funktion mapp)</a></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgec278d1" class="outline-2">
+<h2 id="orgec278d1"><span class="section-number-2">1</span> Aufgabe (Erste Schritte in Racket)</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+Machen Sie sich mit den NORDAKADEMIE-Rechnern vertraut und richten Sie
+Ihren Arbeitsplatz ein (Mail, Webbrowser, Verzeichnisse für die
+Vorlesungen usw.).  
+</p>
+
+<p>
+Finden und starten Sie DrRacket nach den Anweisungen in der Vorlesung.
+Werten Sie einen ersten Ausdruck aus, z. B. (* 6 7). 
+</p>
+
+<p>
+Welche Funktion haben die Buttons? Welche Menü-Befehle verstehen Sie
+schon?
+</p>
+
+<p>
+Schauen Sie sich in einem Webbrowser die Seiten zu Racket unter
+<a href="https://racket-lang.org/">https://racket-lang.org/</a> an. Wo finden Sie Hilfe zur Bedienung von
+DrRacket? Wie können Sie sich über die Sprache Racket informieren? Wo
+finden Sie alle vordefinierten mathematischen Funktionen?
+</p>
+</div>
+</div>
+
+<div id="outline-container-orga10fd45" class="outline-2">
+<h2 id="orga10fd45"><span class="section-number-2">2</span> Aufgabe (Auswertung arithmetischer Ausdrücke)</h2>
+<div class="outline-text-2" id="text-2">
+<ol class="org-ol">
+<li>Wie wird der Ausdruck<br />
+<code>(* (+ 2 2) (/ (* (+ 3 5) (/ 30 10)) 2))</code> <br />
+ausgewertet?</li>
+<li>Experimentieren Sie mit verschiedenen Operatoren und Zahlenarten.</li>
+<li><p>
+Werten Sie die folgenden Ausdrücke aus und vergleichen Sie die Resultate:
+</p>
+<pre class="example">
+(- 1.0 0.9)
+(- 1000.0 999.9) 
+(- #i1000.0 #i999.9)
+
+</pre></li>
+</ol>
+</div>
+</div>
+
+<div id="outline-container-org42accdd" class="outline-2">
+<h2 id="org42accdd"><span class="section-number-2">3</span> Aufgabe (Aufschreiben elementarer Funktionen)</h2>
+<div class="outline-text-2" id="text-3">
+<p>
+Schreiben Sie für die folgenden mathematischen Formeln Racket-Funktionsdefinitionen auf:
+</p>
+
+<ol class="org-ol">
+<li>\(n^2 + 1\)</li>
+<li>\(\frac{1}{2}n^2 + 3\)</li>
+<li>\(2 - \frac{1}{n}\)</li>
+</ol>
+<p>
+Geben Sie die Racket-Funktionen in das Definitionsfenster von
+DrRacket ein. Geben Sie anschließend in das Interaktionsfenster
+Funktionsaufrufe für diese Funktionen ein.
+</p>
+</div>
+</div>
+<div id="outline-container-org8694ae6" class="outline-2">
+<h2 id="org8694ae6"><span class="section-number-2">4</span> Aufgabe (Aufschreiben elementarer Funktionen)</h2>
+<div class="outline-text-2" id="text-4">
+<p>
+In der Praxis findet der Programmierer selten mathematische Formeln
+   vor. Aufgabenstellungen sind eher als Prosatext gegeben. Die
+   Berechnungsformeln muss er selbst entwickeln durch 
+</p>
+<ul class="org-ul">
+<li>eigenes Nachdenken,</li>
+<li>Nachschlagen in geeigneten Quellen oder</li>
+<li>Nachfragen beim Auftraggeber.</li>
+</ul>
+<p>
+Finden Sie für die folgenden Aufgabenstellungen die passenden
+   Formeln und schreiben Sie diese als Funktionsdefinitionen in
+   <i>Racket</i> auf: 
+</p>
+<ol class="org-ol">
+<li>Berechnung des Rauminhalts eines Quaders aus dessen Länge, Breite und Höhe.</li>
+<li>Schreiben Sie eine Funktion, die aus der Entfernung und der
+Geschwindigkeit zweier Züge die Zeit ermittelt, nach der die
+Züge sich treffen, wenn Sie sich auf einem gemeinsamen
+Streckenabschnitt von ihren jeweiligen Startpunkten aus
+aufeinander zu bewegen.</li>
+<li><p>
+Berechnung der Miete, die eine andere Spielerin in Monopoly
+bezahlen muss, falls sie auf einen Bahnhof trifft, der einer
+anderen Spielerin gehört. Die Miete ist davon abhängig wie viele
+Bahnhöfe der anderen Spielerin gehören:
+</p>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-right" />
+
+<col  class="org-right" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-right">Anzahl der Bahnhöfe</th>
+<th scope="col" class="org-right">Miete</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-right">1</td>
+<td class="org-right">500</td>
+</tr>
+
+<tr>
+<td class="org-right">2</td>
+<td class="org-right">1000</td>
+</tr>
+
+<tr>
+<td class="org-right">3</td>
+<td class="org-right">2000</td>
+</tr>
+
+<tr>
+<td class="org-right">4</td>
+<td class="org-right">4000</td>
+</tr>
+</tbody>
+</table>
+<p>
+Hinweis: Ein Aufruf <code>(expt x y)</code> liefert \(x^y\) als Ergebnis.
+</p></li>
+</ol>
+</div>
+</div>
+
+<div id="outline-container-org73c3ad8" class="outline-2">
+<h2 id="org73c3ad8"><span class="section-number-2">5</span> Aufgabe (Anwenden der Aufschreibregeln)</h2>
+<div class="outline-text-2" id="text-5">
+<p>
+Schreiben Sie die Funktion zur Berechnung der Bahnhofsmiete in
+Monopoly (s. o.) gemäß den Regeln 1 bis 3 aus der Vorlesung auf.
+</p>
+<p>
+<b>Wenn nichts anderes angeben ist, sind auch die Funktionen für die
+folgenden Aufgaben gemäß diesen Regeln aufzuschreiben!!!</b>
+</p>
+</div>
+</div>
+
+<div id="outline-container-org8e440d0" class="outline-2">
+<h2 id="org8e440d0"><span class="section-number-2">6</span> Aufgabe (Profit für den Kinobesitzer)</h2>
+<div class="outline-text-2" id="text-6">
+<p>
+Ein altmodisches Vorstadtkino besitzt eine einfache Formel für die
+Berechnung des Profits einer Vorstellung: Jeder Kinobesucher
+bezahlt 500 Währungseinheiten für die Eintrittskarte. Jede
+Vorstellung kostet das Kino 2000 Währungseinheiten plus 50
+Währungseinheiten pro Besucher. Schreiben Sie eine Funktion <code>profit</code> zur
+Berechnung des Profits bei gegebener Besucherzahl.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgb673600" class="outline-2">
+<h2 id="orgb673600"><span class="section-number-2">7</span> Aufgabe (Modifikation von <code>kino.rkt</code></h2>
+<div class="outline-text-2" id="text-7">
+<ol class="org-ol">
+<li>Modifizieren Sie das Programm <code>kino.rkt</code> so, dass die Fixkosten
+einer Veranstaltung wegfallen und dafür 15 Währungseinheiten pro
+Besucher an Kosten anfallen.</li>
+<li>Nehmen Sie die gleiche Modifikation auch an der Funktion <code>profit</code>
+aus der Vorlesung vor, die ohne Hilfsfunktionen auskommt, und
+vergleichen Sie die Ergebnisse.</li>
+</ol>
+</div>
+</div>
+
+<div id="outline-container-org7c5faa8" class="outline-2">
+<h2 id="org7c5faa8"><span class="section-number-2">8</span> Aufgabe (Einsatz von Hilfsfunktionen)</h2>
+<div class="outline-text-2" id="text-8">
+<p>
+Die folgenden Aufgaben sind unter Benutzung von Hilfsfunktionen zu
+lösen. Befolgen Sie unbedingt alle in der Vorlesung angegebenen Regeln:
+</p>
+<ol class="org-ol">
+<li>Schreiben Sie ein Programm, das das Volumen eines Zylinders zu
+berechnen erlaubt. Eingangsgrößen sind der Radius und die Höhe des Zylinders.</li>
+<li>Schreiben Sie ein Programm, das die Oberfläche eines Zylinders zu
+berechnen erlaubt. Eingangsgrößen sind der Radius und die Höhe des Zylinders.</li>
+<li>Schreiben Sie ein Programm, das die Oberfläche eines Rohrs zu
+berechnen erlaubt. Eingangsgrößen sind der Innenradius, die
+Wandstärke und die Länge des Rohrs.</li>
+</ol>
+</div>
+</div>
+
+<div id="outline-container-org65726a7" class="outline-2">
+<h2 id="org65726a7"><span class="section-number-2">9</span> Aufgabe (Ersetzungsmodell)</h2>
+<div class="outline-text-2" id="text-9">
+<p>
+Gegeben sei die folgende Funktionsdefinition:
+</p>
+<div class="org-src-container">
+<pre class="src src-scheme">    <span style="color: #707183;">(</span><span style="color: #0000FF;">define</span> <span style="color: #006699;">f</span>
+       <span style="color: #7388D6;">(</span><span style="color: #0000FF;">lambda</span> <span style="color: #909183;">[</span>x y<span style="color: #909183;">]</span>
+           <span style="color: #909183;">(</span>+ <span style="color: #709870;">(</span>* 3 x<span style="color: #709870;">)</span> <span style="color: #709870;">(</span>* y y<span style="color: #709870;">)</span><span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span></pre>
+</pre>
+</div>
+<p>
+Werten Sie die folgenden Ausdrücke Schritt für Schritt unter Anwendung
+des Ersetzungsmodells aus:
+</p>
+<ol class="org-ol">
+<li><code>(f 1 (* 2 3))</code></li>
+<li><code>(+ (f 1 2) (f 2 1))</code></li>
+<li><code>(f (f 1 (* 2 3)) 19)</code></li>
+</ol>
+</div>
+</div>
+
+<div id="outline-container-org84eb63c" class="outline-2">
+<h2 id="org84eb63c"><span class="section-number-2">10</span> Aufgabe (bedingte Funktion)</h2>
+<div class="outline-text-2" id="text-10">
+<p>
+Schreiben Sie ein Programm, das aus dem Bruttoeinkommen eines
+Arbeitnehmers, das sich aus der Anzahl der Arbeitsstunden und seinem
+Bruttostundenlohn ergibt, sein Nettoeinkommen durch Abzug der
+Einkommensteuer berechnet. Die Einkommensteuer wird dabei nach einem
+steuererklärungaufbierdeckelgeeigneten Tarif ermittelt, der
+folgendermaßen definiert ist:
+</p>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-right" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left"><b>Einkommen</b></th>
+<th scope="col" class="org-right"><b>Steuersatz</b> [%]</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">\(<= 5000\)</td>
+<td class="org-right">0</td>
+</tr>
+
+<tr>
+<td class="org-left">\(> 5000\; und \leq 10000\)</td>
+<td class="org-right">15</td>
+</tr>
+
+<tr>
+<td class="org-left">\(>10000\; und \leq 100000\)</td>
+<td class="org-right">29</td>
+</tr>
+
+<tr>
+<td class="org-left">\(>100000\)</td>
+<td class="org-right">64</td>
+</tr>
+</tbody>
+</table>
+
+<p>
+Der Steuersatz gilt immer nur für die Einkommensanteile in dem
+jeweiligen Intervall.
+</p>
+
+<p>
+Die Funktion <code>nettoeinkommen</code> soll nach folgendem Schema aufrufbar sein:
+</p>
+
+<pre class="example">
+          (nettoeinkommen anzahl-arbeitsStunden stundenLohn)
+</pre>
+
+<p>
+Hier noch ein paar Testvorgaben:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-scheme"><span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">Beispielanwendungen</span>
+<span style="color: #707183;">(</span>= <span style="color: #7388D6;">(</span>nettoeinkommen 1 5001<span style="color: #7388D6;">)</span> 5000.85<span style="color: #707183;">)</span>
+<span style="color: #707183;">(</span>= <span style="color: #7388D6;">(</span>nettoeinkommen 1 10001<span style="color: #7388D6;">)</span> 9250.71<span style="color: #707183;">)</span>
+<span style="color: #707183;">(</span>= <span style="color: #7388D6;">(</span>nettoeinkommen 1 100001<span style="color: #7388D6;">)</span> 73150.36<span style="color: #707183;">)</span></pre>
+</pre>
+</div>
+
+<p>
+Hinweise:
+</p>
+
+<ol class="org-ol">
+<li>Lesen Sie den Aufgabentext aufmerksam durch. Jeder Satz bedeutet
+etwas.</li>
+
+<li>Entwickeln Sie die Funktion gemäß den Regel 1 bis 6. Benutzen Sie
+Hilfsfunktionen und machen von Variablendefinitionen (benannte
+Konstanten, Regel 5) Gebrauch.</li>
+</ol>
+</div>
+</div>
+
+<div id="outline-container-org6fc585e" class="outline-2">
+<h2 id="org6fc585e"><span class="section-number-2">11</span> Aufgabe (Zusatzaufgaben zu bedingten Funktionen)</h2>
+<div class="outline-text-2" id="text-11">
+<ol class="org-ol">
+<li><p>
+Eine Kreditkartengesellschaft gewährt ihren Kunden nach
+Jahresumsatz gestaffelte Rückerstattung von
+Kreditkartenbelastungen. Die Rückerstattungen könnten z. B. wie 
+folgt aussehen:
+</p>
+<ul class="org-ul">
+<li>ein viertel Prozent für die ersten 500€ des Jahresumsatzes (nur
+Belastungen keine Gutschriften werden gezählt),</li>
+<li>ein halbes Prozent für die nächsten 1000€, d. h. für den
+Umsatzanteil zwischen 500€ und 1500€,</li>
+<li>ein dreiviertel Prozent für die nächsten 1000€, d. h. für den
+Umsatzanteil zwischen 1500€ und 2500€ und</li>
+<li>ein Prozent für die Umsatzanteile oberhalb von 2500€.</li>
+</ul>
+<p>
+Ein Kunde mit einem Umsatz von 400€ erhält demnach eine Gutschrift
+von 1€ (\(= \frac{1}{4} \cdot \frac{1}{100} \cdot 400\)). Ein Kunde
+mit einem Umsatz von 1400€ erhält eine Gutschrift von 5,75€:
+</p>
+<ul class="org-ul">
+<li>1,25€ (\(= \frac{1}{4} \cdot \frac{1}{100} \cdot 500\)) für die
+ersten 500€ plus</li>
+<li>4,50€ (\(=\frac{1}{2} \cdot \frac{1}{100} \cdot 900\)) für die
+nächsten 900€</li>
+</ul>
+<p>
+Lösen Sie die folgenden Teilaufgaben
+</p>
+<ol class="org-ol">
+<li>Bestimmen Sie manuell die Gutschriften für Umsätze 2000€ und
+2600€.</li>
+<li>Schreiben Sie eine Funktion <code>rueckerstattung</code>, die einen Umsatz
+als Argument akzeptiert und den Rückerstattungsbetrag ermittelt.</li>
+</ol>
+<p>
+<br />
+</p></li>
+<li>Wieviele reelle Lösungen besitzt eine quadratische Gleichung
+\[ax^2 + bx + c = 0\] 
+für beliebige Koeffizienten \(a\), \(b\) und \(c\)?
+<ol class="org-ol">
+<li>Betrachten Sie zunächst nur <i>echte</i> quadratische
+Gleichungen, d. h. es gilt \(a\neq0\)</li>
+<li>Erweitern Sie die Lösung so, dass auch der Fall \(a=0\) korrekt
+behandelt wird.</li>
+</ol></li>
+</ol>
+</div>
+</div>
+<div id="outline-container-orgd78fc25" class="outline-2">
+<h2 id="orgd78fc25"><span class="section-number-2">12</span> Aufgabe (Datenabstraktion)</h2>
+<div class="outline-text-2" id="text-12">
+<p>
+Gehen Sie für die Lösung der Aufgabe unter Anwendung der Regeln 7 und 8!
+</p>
+
+<ol class="org-ol">
+<li><p>
+Definieren Sie eine Datenstruktur für „Zeitpunkte seit
+Mitternacht”, die aus den Komponenten <code>stunden</code>, <code>minuten</code> und
+<code>sekunden</code> besteht.
+</p>
+
+<p>
+Entwickeln Sie eine Funktion <code>zeit-&gt;sekunden</code>, die eine
+   Zeitpunkt-seit-Mittnacht-Struktur verarbeitet und die seit
+   Mitternacht vergangenen Sekunden berechnet.
+</p></li>
+
+<li><p>
+Definieren Sie geeignete <b>Datenstrukturen</b> für Kreise, die durch
+</p>
+
+<ul class="org-ul">
+<li>die Koordinaten des Mittelpunkts und</li>
+<li>den Radius und</li>
+</ul>
+
+<p>
+gegeben sind.
+</p>
+
+<p>
+Schreiben Sie eine Funktion, die prüft, ob ein Punkt
+   innerhalb eines Kreises liegt.
+</p></li>
+</ol>
+</div>
+</div>
+<div id="outline-container-org85adddc" class="outline-2">
+<h2 id="org85adddc"><span class="section-number-2">13</span> Aufgabe (Datenabstraktion &#x2013; Zusatzaufgabe)</h2>
+<div class="outline-text-2" id="text-13">
+</div>
+<div id="outline-container-org7144a24" class="outline-3">
+<h3 id="org7144a24"><span class="section-number-3">13.1</span> Vorbemerkungen</h3>
+<div class="outline-text-3" id="text-13-1">
+<p>
+In den Lehrsprachen von DrRacket gibt es ein vordefinierte
+Strukturdefinition namens <code>posn</code> für Punkte in der Ebene, die genauso
+aufgebaut ist wie die Strukturdefinition <code>point</code> aus der
+Vorlesung. Die damit vordefinierten Funktionen sind
+</p>
+<ul class="org-ul">
+<li>die Konstruktionsfunktion <code>make-posn</code>,</li>
+<li>die Selektionsfunktionen <code>posn-x</code> und <code>posn-y</code> und</li>
+<li>das Typprädikat <code>posn?</code>.</li>
+</ul>
+
+<p>
+Wenn man über den Menüpunkt <code>Sprache-&gt;Teachpack hinzufügen...</code> das
+Teachpack <code>draw.rkt</code> auswählt und anschließend den <code>Start</code>-Knopf
+drückt, steht ein Grafikpaket mit den folgenden Funktionen bereit:
+</p>
+<dl class="org-dl">
+<dt><code>draw-solid-line</code></dt><dd>erwartet zwei Punkte (<code>posn</code>-Strukturen), die
+den Anfang und das Ende einer Strecke definieren sowie eine Farbe
+als Argumente</dd>
+<dt><code>draw-solid-rect</code></dt><dd>erwartet vier Argumente: ein Punkt für die
+linke obere Ecke des Rechtecks, zwei Zahlen für Breite und Höhe
+des Rechecks und eine Farbe</dd>
+<dt><code>draw-solid-disk</code></dt><dd>erwartet drei Argumente: ein Punkt für den
+Mittelpunkt, eine Zahl für den Radius der Scheibe und eine Farbe</dd>
+<dt><code>draw-circle</code></dt><dd>erwartet drei Argumente: ein Punkt für den
+Mittelpunkt, eine Zahl für den Radius des Kreises und eine Farbe</dd>
+</dl>
+<p>
+Alle Funktionen liefern als Funktionswert <code>true</code>, wobei wir in diesem Fall
+an den Funktionswerten weniger interessiert sind als an ihrem
+<b>Effekt</b>. Der besteht nämlich darin, dass die Prozeduren jeweils eine
+Strecke, ein Rechteck, eine Scheibe und einen Kreis auf eine zuvor
+definierte Zeichenfläche zeichnen.
+</p>
+
+<p>
+Eine Zeichenfläche kann mit einem Ausdruck <code>(start x y)</code> erzeugt
+werden, wobei <code>x</code> und <code>y</code> die Breite und die Höhe in Pixeln der
+Zeichenfläche angeben. Zum Beispiel erzeugt ein Aufruf <code>(start 150
+200)</code> die folgende Zeichenfläche: <img src="./Abbildungen/canvas.png" alt="canvas.png" /> Ein
+Anwendungsbeispiel zeigt die folgende Abbildung:
+<img src="./Abbildungen/drawings.png" alt="drawings.png" />
+</p>
+
+<p>
+Der <b>Ursprung des Koordinatensystems</b> liegt in der linken oberen Ecke
+der Zeichenfläche. Die x-Koordinate zählt nach rechts, die
+y-Koordinate nach unten positiv:
+<img src="http://www.htdp.org/2003-09-26/Book/curriculum1aa-Z-G-17.gif" alt="curriculum1aa-Z-G-17.gif" />
+</p>
+
+<p>
+Die <b>Farben</b> werden durch Symbole wie '<code>yellow</code>, '<code>red</code>, '<code>green</code>
+angegeben. Bitte beachten Sie das vorangestellte Hochkomma.
+</p>
+
+<p>
+Für jede Zeichenoperation gibt es eine korrespondierende
+<b>Löschoperation</b>: <code>clear-solid-line</code>, <code>clear-solid-rect</code>,
+<code>clear-solid-disk</code> und <code>clear-circle</code>. Wenn diese Funktionen mit den
+gleichen Argumenten wie zuvor die zugehörigen <code>draw</code>-Operationen aufgerufen
+werden, werden die entsprechenden Figuren von der Zeichenfläche
+entfernt.
+</p>
+
+<p>
+Um <b>mehrere Zeichenoperationen hintereinander</b> ausführen zu
+können, d. h. * mehrere Effekte* zu <b>kombininieren</b>, macht man davon
+Gebrauch, dass die einzelnen Zeichenoperationen <code>#true</code> als Resultat
+liefern. Dadurch ist es möglich mehrere Zeichenoperationen
+hintereinander auszuführen, indem man sie in eine Und-Verknüpfung
+einschließt:
+</p>
+<pre class="example">
+(and exp1 exp2)
+
+</pre>
+<p>
+Dieser Ausdruck bewirkt, dass man zuerst den Effekt von <code>exp1</code> und
+anschließend den von <code>exp2</code> zu sehen bekommt.
+</p>
+
+<p>
+Mit <code>(stop)</code> wird die Zeichenfläche geschlossen.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org8c80a6d" class="outline-3">
+<h3 id="org8c80a6d"><span class="section-number-3">13.2</span> Aufgabenstellungen</h3>
+<div class="outline-text-3" id="text-13-2">
+<ol class="org-ol">
+<li>Experimentieren Sie mit den o. g. Funktionen.</li>
+<li>Kreise und Rechtecke bewegen
+<ol class="org-ol">
+<li>Entwickeln Sie eine Datenstruktur <code>circle</code> für farbige Kreise. Diese
+sollen durch drei Komponenten definiert sein: den Mittelpunkt,
+den Radius und die Farbe des Umfangs.</li>
+<li>Schreiben Sie die Datendefinition für Kreise und die
+Funktionsschablone (gemäß Regeln 7 und 8) für Kreise
+verarbeitende Funktionen.</li>
+<li>Benutzen Sie die Schablone für die Entwicklung einer Funktion
+<code>draw-a-circle</code>. Die Funktion erwartet einen Kreis (<code>circle</code>) als
+Argument und zeichnet ihn auf einer Zeichenfläche. Der
+Funktionswert sollte <code>#true</code> sein.</li>
+<li>Entwickeln Sie eine Funktion <code>translate-circle</code> mit einer
+<code>circle</code>-Struktur <code>c</code> und einer <code>posn</code>-Struktur <code>delta</code> als
+Parameter. Die Funktion liefert einen <code>circle</code> als Resultat,
+dessen Mittelpunkt gegenüber dem von <code>c</code> um den x-Wert von
+<code>delta</code> nach rechts und um den y-Wert von <code>delta</code> nach unten
+verschoben ist. Die Funktion hat keinen Effekt auf der
+Zeichenfläche.</li>
+<li>Schreiben Sie eine Funktion <code>clear-a-circle</code>, die einen Kreis
+von der Zeichenfläche entfernt.</li>
+<li><p>
+Schreiben Sie eine Funktion <code>draw-and-clear-circle</code>, die eine
+<code>circle</code>-Struktur zeichnet, eine kurze Zeit wartet und sie
+anschließend wieder entfernt. Für die Implementierung der
+Wartezeit steht die Prozedur <code>sleep-for-a-while</code> zur
+Verfügung. Der Aufruf <code>(sleep-for-a-while 3)</code> erzeugt eine
+Wartezeit von drei Sekunden. Der Funktionswert ist <code>#true</code>.
+</p>
+
+<p>
+Die Funktion
+</p>
+<div class="org-src-container">
+<pre class="src src-scheme">          <span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">zeichnet und l&#246;scht einen Kreis a-circle und bewegt ihn um a-posn</span>
+           <span style="color: #707183;">(</span><span style="color: #0000FF;">define</span> <span style="color: #006699;">move-circle</span>
+             <span style="color: #7388D6;">(</span><span style="color: #0000FF;">lambda</span> <span style="color: #909183;">[</span>a-posn a-circle<span style="color: #909183;">]</span>
+               <span style="color: #909183;">(</span><span style="color: #0000FF;">cond</span>
+                 <span style="color: #709870;">[</span><span style="color: #907373;">(</span>draw-and-clear-circle a-circle<span style="color: #907373;">)</span> <span style="color: #907373;">(</span>translate-circle a-circle a-posn<span style="color: #907373;">)</span><span style="color: #709870;">]</span>
+                 <span style="color: #709870;">[</span>else a-circle<span style="color: #709870;">]</span><span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span></pre>
+</pre>
+</div>
+<p>
+zeichnet und löscht einen Kreis auf der Zeichenfläche und
+erzeugt anschließend einen (verschobenen) Kreis, so dass eine
+erneute Zeichenoperation den Kreis an einer neuen Position
+erscheinen lässt. 
+</p>
+
+<p>
+Zum Beispiel bewegt der Ausdruck
+</p>
+<div class="org-src-container">
+<pre class="src src-scheme">          <span style="color: #707183;">(</span>draw-a-circle 
+           <span style="color: #7388D6;">(</span>move-circle 
+            <span style="color: #909183;">(</span>make-posn 10 0<span style="color: #909183;">)</span> 
+            <span style="color: #909183;">(</span>move-circle
+             <span style="color: #709870;">(</span>make-posn 10 0<span style="color: #709870;">)</span> 
+              <span style="color: #709870;">(</span>move-circle 
+               <span style="color: #907373;">(</span>make-posn 10 0<span style="color: #907373;">)</span>
+               <span style="color: #907373;">(</span>make-circle <span style="color: #6276BA;">(</span>make-posn 10 50<span style="color: #6276BA;">)</span> 10 'green<span style="color: #907373;">)</span><span style="color: #709870;">)</span><span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span></pre>
+</pre>
+</div>
+<p>
+einen grünen Kreis dreimal um 10 Pixel nach rechts. Der äußere
+Aufruf von <code>draw-a-circle</code> sorgt dafür, dass auch die letzte
+Position des Kreises angezeigt wird.
+</p>
+
+<p>
+Das sei nur ein kleine Anregung für eigene „Animationen“.
+</p></li>
+</ol></li>
+</ol>
+</div>
+</div>
+</div>
+<div id="outline-container-org3e6a0e5" class="outline-2">
+<h2 id="org3e6a0e5"><span class="section-number-2">14</span> Aufgabe (Datenabstraktion &#x2013; gemischte Daten)</h2>
+<div class="outline-text-2" id="text-14">
+<p>
+Lösen Sie die Aufgabe unter Anwendung der passenden Regeln!
+</p>
+
+<p>
+Ein <i>Mitarbeiter</i> ist entweder
+</p>
+
+<ul class="org-ul">
+<li>ein <i>Festangestellter</i> oder</li>
+<li>ein <i>Werkstudent</i></li>
+</ul>
+
+<p>
+Ein <i>Festangestellter</i> wird definiert durch
+</p>
+
+<ul class="org-ul">
+<li>seinen Namen,</li>
+<li>sein Grundgehalt,</li>
+<li>die im letzten Monat geleisteten Arbeitsstunden.</li>
+</ul>
+
+<p>
+Ein <i>Werkstudent</i> wird definiert durch
+</p>
+
+<ul class="org-ul">
+<li>seinen Namen,</li>
+<li>seinen Stundenlohn,</li>
+<li>die im letzten Monat geleisteten Arbeitsstunden.</li>
+</ul>
+
+<p>
+Definieren Sie 
+</p>
+
+<ul class="org-ul">
+<li>geeignete Datenstrukturen für <i>Mitarbeiter</i>,</li>
+<li>eine Funktionsschablone für Funktionen, die <i>Mitarbeiter</i>
+verarbeiten.</li>
+</ul>
+
+<p>
+Entwickeln auf der Grundlage dieser Schablone eine Funktion, die den
+Bruttomonatslohn eines Mitarbeiters berechnet. Bei <i>Festangestellten</i>
+berechnet sich der Monatslohn aus dem Grundgehalt zuzüglich
+Überstundenentgelt. Überstunden sind die über die monatliche
+Sollarbeitszeit (die als globale Konstante definiert wird)
+hinausgehenden Arbeitsstunden. Der Stundenlohn pro Überstunde berechnet
+sich aus dem Grundgehalt und der monatlichen Sollarbeitszeit plus
+\(25\%\). Minderstunden bleiben unberücksichtigt.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org04506b2" class="outline-2">
+<h2 id="org04506b2"><span class="section-number-2">15</span> Aufgabe (Datenabstraktion &#x2013; gemischte Daten &#x2013; Zusatzaufgabe)</h2>
+<div class="outline-text-2" id="text-15">
+</div>
+<div id="outline-container-org1e8c1df" class="outline-3">
+<h3 id="org1e8c1df"><span class="section-number-3">15.1</span> Vorbemerkung</h3>
+<div class="outline-text-3" id="text-15-1">
+<p>
+Diese Aufgabe stellt eine Fortführung von Aufgabe 13 dar. Falls Sie
+diese noch nicht bearbeitet haben, sollte Sie zunächst damit beginnen.
+</p>
+</div>
+</div>
+<div id="outline-container-org397ca06" class="outline-3">
+<h3 id="org397ca06"><span class="section-number-3">15.2</span> Aufgabenstellungen</h3>
+<div class="outline-text-3" id="text-15-2">
+<ol class="org-ol">
+<li>Enwtickeln Sie eine Datenstrukturdefinition für farbige
+Rechtecke. Ein Rechteck sei durch einen Punkt (<code>posn</code>-Struktur),
+der die linke obere Ecke des Rechtecks bildet, zwei Zahlen für die
+Höhe und die Breite des Rechecks und ein Symbol für seine Farbe
+charakterisiert.</li>
+<li>Entwickeln sie die folgenden Funktionen
+<dl class="org-dl">
+<dt><code>draw-a-rectangle</code></dt><dd>zeichnet das Rechteck auf die Zeichenfläche. Im
+Gegensatz zu den Kreisen aus Aufgabe 13 sollen die Rechtecke immer
+mit der Farbe gefüllt gezeichnet werden.</dd>
+<dt><code>in-rectangle?</code></dt><dd>akzeptiert ein Rechteck und einen Punkt als
+Argumente und prüft, ob der Punkt innerhalb des Rechecks liegt.</dd>
+<dt><code>translate-rectangle</code></dt><dd>verschiebt ein Rechteck auf die gleiche
+Art, wie es die Funktion <code>translate-circle</code> aus Aufgabe 13 mit
+Kreisen tut. Diese Funktion hat keinen Effekt auf der
+Zeichenfläche.</dd>
+<dt><code>clear-a-rectangle</code></dt><dd>entfernt ein Rechteck von der Zeichenfläche.</dd>
+<dt><code>move-rectangle</code></dt><dd>soll analog zur Funktion <code>move-circle</code> aus
+Aufgabe 13 ein Rechteck zeichnen, löschen und mit einem
+verschobenen Rechteck antworten.</dd>
+</dl></li>
+<li>Definieren Sie eine gemischte Datenstruktur für Figuren (shapes),
+die als Generalisierung mindestens Kreise und Rechtecke umfassen
+sollte. Schreiben Sie die Funktionsschablone für Funktionen, die
+Figuren verarbeiten, auf.</li>
+<li>Programmieren Sie nun die oben genannten Funktionen für Figuren
+(z. B. <code>draw-a-shape</code>)</li>
+</ol>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org4966d94" class="outline-2">
+<h2 id="org4966d94"><span class="section-number-2">16</span> Aufgabe (Listenkonstruktion und -zerlegung)</h2>
+<div class="outline-text-2" id="text-16">
+<p>
+Werten Sie die folgenden Funktionsaufrufe aus:
+</p>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">Nr.</th>
+<th scope="col" class="org-left">Ausdruck</th>
+<th scope="col" class="org-left">Lösung</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">a)</td>
+<td class="org-left"><code>(first '((A) B C D))</code></td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">b)</td>
+<td class="org-left"><code>(rest '((A)(B C D)))</code></td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">c)</td>
+<td class="org-left"><code>(cons '(A B) '(A B))</code></td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">d)</td>
+<td class="org-left"><code>(cons 'A '())</code></td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">e)</td>
+<td class="org-left"><code>(first '(((A))))</code></td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">f)</td>
+<td class="org-left"><code>(rest '(((A))))</code></td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">g)</td>
+<td class="org-left"><code>(cons '((A)) empty)</code></td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">h)</td>
+<td class="org-left"><code>(equal? 'X1 'X2)</code></td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">i)</td>
+<td class="org-left"><code>(equal? '(X1) 'X2)</code></td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">j)</td>
+<td class="org-left"><code>(equal? '(X1) '(X2))</code></td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">k)</td>
+<td class="org-left"><code>(list? 'X1)</code></td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">l)</td>
+<td class="org-left"><code>(list? '(X1))</code></td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">m)</td>
+<td class="org-left"><code>(empty? '())</code></td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">n)</td>
+<td class="org-left"><code>(empty? '(()))</code></td>
+<td class="org-left">&#xa0;</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="outline-container-org0d3988f" class="outline-2">
+<h2 id="org0d3988f"><span class="section-number-2">17</span> Aufgabe (Listenverarbeitung)</h2>
+<div class="outline-text-2" id="text-17">
+<ol class="org-ol">
+<li>Die Funktion <code>sum</code> liefere, angewendet auf eine Liste von Zahlen <code>x</code>,
+die Summe der Elemente.</li>
+
+<li>Die Funktion <code>prod</code> liefere, angewendet auf eine Liste von Zahlen
+<code>x</code>, das Produkt der Elemente.</li>
+</ol>
+
+
+<ol class="org-ol">
+<li><p>
+Die Funktion <code>maximum</code> liefere, angewendet auf eine Liste von Zahlen
+<code>x</code>, das Maximum der Elemente.
+</p>
+
+<p>
+Die folgende Lösung erlaubt nur nicht leere Listen von Zahlen:
+</p></li>
+
+<li>Die Funktion <code>enthaelt?</code> beantworte, angewendet auf ein Symbol und
+eine Liste von Symbolen, die Frage, ob das Symbol in der Liste
+enthalten ist oder nicht</li>
+
+<li><p>
+Schreiben Sie eine Funktion <code>(declist x)</code>, die aus einer Liste <code>x</code>
+von Zahlen eine neue Liste berechnet, deren Elemente um 1 kleiner
+sind, als die der ursprünglichen Liste:
+</p>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">x</th>
+<th scope="col" class="org-left">(declist x)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">(2 5 7)</td>
+<td class="org-left">(1 4 6)</td>
+</tr>
+
+<tr>
+<td class="org-left">()</td>
+<td class="org-left">()</td>
+</tr>
+</tbody>
+</table></li>
+
+<li><p>
+Definieren Sie eine Funktion <code>(flatten x)</code>, die als Argument eine
+Liste <code>x</code> mit beliebig tief geschachtelten Unterlisten hat und als
+Ergebnis eine Liste von Atomen liefern soll mit der Eigenschaft, dass
+alle Atome, die in x vorkommen auch in <code>(flatten x)</code> in derselben
+Reihenfolge vorkommen:
+</p>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">x</th>
+<th scope="col" class="org-left">(flatten x)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">(A (B C) D)</td>
+<td class="org-left">(A B C D)</td>
+</tr>
+
+<tr>
+<td class="org-left">(((A B) C)(D E))</td>
+<td class="org-left">(A B C D E)</td>
+</tr>
+
+<tr>
+<td class="org-left">((((A))))</td>
+<td class="org-left">(A)</td>
+</tr>
+</tbody>
+</table>
+
+<p>
+<b>Hinweis:</b> Definieren Sie zuerst in der bekannten Art und Weise
+eine rekursive Datenstruktur für geschachtelte Listen. Leiten Sie
+daraus eine passende <b>Funktionsschablone</b> ab.
+</p></li>
+</ol>
+
+
+<ol class="org-ol">
+<li><p>
+Schreiben Sie eine Funktion <code>(frequencies x)</code>, die aus einer Liste
+<code>x</code> von Atomen eine Liste von zwei-elementigen Listen erzeugt: Dabei
+ist das erste Element das Atom aus <code>x</code>, das zweite Element die
+Häufigkeit des Auftretens in <code>x</code>. Die Reihenfolge der Strukturen in
+der Ergebnisliste ist belanglos.
+</p>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">x</th>
+<th scope="col" class="org-left">(frequencies x)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">(A B A B A C A)</td>
+<td class="org-left">((A 4) (B 2) (C 1))</td>
+</tr>
+
+<tr>
+<td class="org-left">()</td>
+<td class="org-left">()</td>
+</tr>
+</tbody>
+</table></li>
+
+<li><p>
+Schreiben Sie eine Funktion <code>anzahl-bevor-summe-erreicht</code>, die eine
+positive ganze Zahl, genannt <code>summe</code> und eine Liste von positiven
+ganzen Zahlen, genannt <code>lvz</code> als Argumente akzeptiert. Sie gibt
+eine ganze Zahl \(n\) zurück, so dass die Summe der ersten \(n\)
+Elemente von <code>lvz</code> kleiner als <code>sum</code>,  die Summe der ersten \(n+1\)
+Elemente hingegen größer oder gleich <code>sum</code> ist. Es ist ein Fehler,
+wenn die Summe der Elemente der Liste insgesamt kleiner als sum
+ist.<br />
+Beispiele:<br />
+</p>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-right" />
+
+<col  class="org-left" />
+
+<col  class="org-right" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-right">sum</th>
+<th scope="col" class="org-left">lvz</th>
+<th scope="col" class="org-right">(anzahl-bevor-summe-erreicht sum lvz)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-right">2</td>
+<td class="org-left">(2 5 7)</td>
+<td class="org-right">0</td>
+</tr>
+
+<tr>
+<td class="org-right">4</td>
+<td class="org-left">(2 5 7)</td>
+<td class="org-right">1</td>
+</tr>
+
+<tr>
+<td class="org-right">8</td>
+<td class="org-left">(2 5 7)</td>
+<td class="org-right">2</td>
+</tr>
+
+<tr>
+<td class="org-right">15</td>
+<td class="org-left">(2 5 7)</td>
+<td class="org-right">Fehler</td>
+</tr>
+</tbody>
+</table>
+
+<p>
+<b>Hinweise:</b> 
+</p>
+<ol class="org-ol">
+<li><p>
+Für den Fehlerfall darf die Standardfunktion <code>error</code>
+benutzt werden. Sie erwartet zwei Argumente, ein Smbol und eine
+Zeichenkette und könnte z. B. so benutzt werden:
+</p>
+<pre class="example">
+(error 'anzahl-bevor-summe-erreicht "Summe der Listenelemente zu klein")
+
+</pre></li>
+<li>Lösen Sie die Aufgabe, ohne die Summe der Listenelemente zu berechnen.</li>
+</ol></li>
+</ol>
+</div>
+</div>
+
+<div id="outline-container-orgcd1802d" class="outline-2">
+<h2 id="orgcd1802d"><span class="section-number-2">18</span> Aufgabe (Funktionen über zwei Listen)</h2>
+<div class="outline-text-2" id="text-18">
+<p>
+Die in den folgenden Aufgaben zu entwickelnden Funktionen haben alle 2
+Listen-Parameter. Lösen Sie diese Aufgaben unter Anwendung der Regeln
+11 bis 13. Überlegen Sie dabei, ob für die Erstellung der
+Funktionsschablone der Zugriff auf das erste Element und die Restliste
+hinsichtlich des ersten, des zweiten oder beider Parameter vorgenommen
+werden muss.
+</p>
+
+<ol class="org-ol">
+<li><p>
+Schreiben Sie ein Funktion <code>concatenate</code>, die zwei Listen von
+Symbolen aneinander hängt. Beispiel:
+</p>
+<pre class="example">
+(concatenate ’(a b c) ’(d e f)) =&gt; ’(a b c d e f)
+
+</pre></li>
+
+<li><p>
+Schreiben Sie eine Funktion <code>mult-2-num-lists</code>, die zwei gleich lange
+Listen mit Zahlen zu einer Liste verarbeitet, die die Produkte der
+korrespondierenden Elemente der Argumentlisten enthält. Beispiel:
+</p>
+<pre class="example">
+(mult-2-num-lists ’(2 3 4) ’(7 8 9)) =&gt; ’(14 24 36)
+
+</pre></li>
+</ol>
+
+<p>
+o   :student:
+</p>
+<div class="org-src-container">
+<pre class="src src-scheme">   <span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">Zweckbestimmung s. Aufgabenstellung</span>
+   <span style="color: #8D8D84;">;; </span>
+   <span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">Datendefinition</span>
+   <span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">Eine Liste-von-Zahlen ist entweder</span>
+   <span style="color: #8D8D84;">;;  </span><span style="color: #8D8D84; font-style: italic;">1. empty oder</span>
+   <span style="color: #8D8D84;">;;  </span><span style="color: #8D8D84; font-style: italic;">2. (cons z lvz), wobei z eine Zahl </span>
+   <span style="color: #8D8D84;">;;                   </span><span style="color: #8D8D84; font-style: italic;">und lvz eine Liste-von-Zahlen ist</span>
+   <span style="color: #8D8D84;">;; </span>
+   <span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">mult-2-num-lists : (list-of number) (list-of number) -&gt; (list-of number)</span>
+
+   <span style="color: #707183;">(</span>check-expect <span style="color: #7388D6;">(</span>mult-2-num-lists '<span style="color: #909183;">(</span>2 3 4<span style="color: #909183;">)</span> '<span style="color: #909183;">(</span>7 8 9<span style="color: #909183;">)</span><span style="color: #7388D6;">)</span> '<span style="color: #7388D6;">(</span>14 24 36<span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
+   <span style="color: #707183;">(</span>check-expect <span style="color: #7388D6;">(</span>mult-2-num-lists '<span style="color: #909183;">()</span> '<span style="color: #909183;">()</span><span style="color: #7388D6;">)</span> '<span style="color: #7388D6;">()</span><span style="color: #707183;">)</span>
+
+   <span style="color: #707183;">(</span><span style="color: #0000FF;">define</span> <span style="color: #006699;">mult-2-num-lists</span>
+          <span style="color: #7388D6;">(</span><span style="color: #0000FF;">lambda</span> <span style="color: #909183;">[</span>l1 l2<span style="color: #909183;">]</span>
+            <span style="color: #909183;">(</span><span style="color: #0000FF;">cond</span>
+                  <span style="color: #709870;">[</span><span style="color: #907373;">(</span>empty? l1<span style="color: #907373;">)</span> empty<span style="color: #709870;">]</span>
+                  <span style="color: #709870;">[</span>else <span style="color: #907373;">(</span>cons <span style="color: #6276BA;">(</span>* <span style="color: #858580;">(</span>first l1<span style="color: #858580;">)</span> <span style="color: #858580;">(</span>first l2<span style="color: #858580;">)</span><span style="color: #6276BA;">)</span>
+                              <span style="color: #6276BA;">(</span>mult-2-num-lists <span style="color: #858580;">(</span>rest l1<span style="color: #858580;">)</span> <span style="color: #858580;">(</span>rest l2<span style="color: #858580;">)</span><span style="color: #6276BA;">)</span><span style="color: #907373;">)</span><span style="color: #709870;">]</span><span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span></pre>
+</pre>
+</div>
+<ol class="org-ol">
+<li>Entwickeln Sie eine Funktion <code>merge</code>, die 2 Listen von Zahlen</li>
+</ol>
+<p>
+verarbeitet, die aufsteigend sortiert sind. Sie liefert eine
+sortierte Liste von Zahlen, die alle Zahlen aus den beiden
+Argumentlisten enthält. Wenn Zahlen in den Argumentliste mehrfach
+vorkommen, sollen Sie auch in der Ergebnisliste entsprechend oft
+auftauchen. Beispiel:
+</p>
+<pre class="example">
+(merge ’(2 5 7) ’(1 3 5 9)) =&gt; ’(1 2 3 5 5 7 9)
+
+</pre>
+</div>
+</div>
+
+<div id="outline-container-orgb3c85bc" class="outline-2">
+<h2 id="orgb3c85bc"><span class="section-number-2">19</span> Aufgabe (Formale Aspekte)</h2>
+<div class="outline-text-2" id="text-19">
+<ol class="org-ol">
+<li><p>
+Werten Sie die folgenden Ausdrücke Schritt für Schritt aus:
+</p>
+<dl class="org-dl">
+<dt>Ausdruck 1</dt><dd><div class="org-src-container">
+<pre class="src src-scheme">      <span style="color: #707183;">(</span><span style="color: #0000FF;">cond</span>
+        <span style="color: #7388D6;">[</span><span style="color: #909183;">(</span>= 0 0 <span style="color: #909183;">)</span> false<span style="color: #7388D6;">]</span>
+        <span style="color: #7388D6;">[</span><span style="color: #909183;">(</span>&gt; 0 1 <span style="color: #909183;">)</span> <span style="color: #909183;">(</span>equal? 'a 'a<span style="color: #909183;">)</span><span style="color: #7388D6;">]</span>
+        <span style="color: #7388D6;">[</span>else <span style="color: #909183;">(</span> = <span style="color: #709870;">(</span>/ 1 0 <span style="color: #709870;">)</span> 9<span style="color: #909183;">)</span><span style="color: #7388D6;">]</span><span style="color: #707183;">)</span></pre>
+</pre>
+</div></dd>
+</dl>
+
+<dl class="org-dl">
+<dt>Ausdruck 2</dt><dd><div class="org-src-container">
+<pre class="src src-scheme">      <span style="color: #707183;">(</span><span style="color: #0000FF;">cond</span> 
+        <span style="color: #7388D6;">[</span><span style="color: #909183;">(</span>= 2 0<span style="color: #909183;">)</span> false<span style="color: #7388D6;">]</span>
+        <span style="color: #7388D6;">[</span><span style="color: #909183;">(</span>&gt; 2 1<span style="color: #909183;">)</span> <span style="color: #909183;">(</span>equal? 'a 'a <span style="color: #909183;">)</span><span style="color: #7388D6;">]</span>
+        <span style="color: #7388D6;">[</span>else <span style="color: #909183;">(</span>= <span style="color: #709870;">(</span> / 1 2<span style="color: #709870;">)</span> 9<span style="color: #909183;">)</span><span style="color: #7388D6;">]</span><span style="color: #707183;">)</span></pre>
+</pre>
+</div></dd>
+</dl></li>
+
+<li><p>
+Gegeben sei folgende Racket-Funktion
+</p>
+
+<div class="org-src-container">
+<pre class="src src-scheme">   <span style="color: #707183;">(</span><span style="color: #0000FF;">define</span> <span style="color: #006699;">f</span>
+     <span style="color: #7388D6;">(</span><span style="color: #0000FF;">lambda</span> <span style="color: #909183;">[</span>n<span style="color: #909183;">]</span>
+        <span style="color: #909183;">(</span><span style="color: #0000FF;">cond</span>
+          <span style="color: #709870;">[</span><span style="color: #907373;">(</span>= n 0<span style="color: #907373;">)</span> 0<span style="color: #709870;">]</span>
+          <span style="color: #709870;">[</span>else <span style="color: #907373;">(</span>+ <span style="color: #6276BA;">(</span>f <span style="color: #858580;">(</span>- n 1<span style="color: #858580;">)</span><span style="color: #6276BA;">)</span>
+                   <span style="color: #6276BA;">(</span>/ 1 <span style="color: #858580;">(</span>* n <span style="color: #80A880;">(</span>+ n 1<span style="color: #80A880;">)</span><span style="color: #858580;">)</span><span style="color: #6276BA;">)</span><span style="color: #907373;">)</span><span style="color: #709870;">]</span><span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span></pre>
+</pre>
+</div>
+<p>
+Zeigen Sie, dass der Aufruf <code>(f n)</code> für alle natürlichen Zahlen \[n >= 0\] die Zahl \[f(n)=\frac{n}{n+1}\]
+berechnet.
+</p></li>
+</ol>
+</div>
+</div>
+
+<div id="outline-container-org09d168d" class="outline-2">
+<h2 id="org09d168d"><span class="section-number-2">20</span> Aufgabe (lokale Definitionen)</h2>
+<div class="outline-text-2" id="text-20">
+<ol class="org-ol">
+<li><p>
+Schreiben Sie unter Anwendung der Regeln 11 bis 13 eine Funktion
+<code>exchange</code>, die eine Liste von Symbolen <code>l</code> und zwei Symbole <code>s1</code>
+und <code>s2</code> als
+Argumente erwartet und eine Liste als Resultat liefert, bei der
+jedes Auftreten von <code>s1</code> in <code>l</code> durch <code>s2</code> ersetzt ist. So
+soll z. B. der Aufruf
+</p>
+<pre class="example">
+(exchange '(a b c a c) 'a 'f)
+
+</pre>
+<p>
+das Resultat
+</p>
+<pre class="example">
+(list 'f 'b 'c 'f 'c)
+
+</pre>
+<p>
+liefern.
+</p>
+
+<p>
+Modifizieren Sie anschließend die Funktion so, dass durch
+Verwendung von lokalen Variablen Mehrfachberechnungen des gleichen
+Ausdrucks vermieden werden.
+</p></li>
+<li><p>
+Bildung der ersten Ableitung mathematischer Formeln (symbolische
+Differentiation)
+</p>
+
+<p>
+Es sollen Ausdrücke abgeleitet werden, die nur aus Konstanten,
+Variablen und den Operationen \(+\) und \(\cdot\) bestehen.
+</p>
+
+<p>
+Sei \(D_x\) die partielle Ableitung einer Funktion \(f\) nach \(x\), dann
+gelten folgende Regeln:
+</p>
+<ul class="org-ul">
+<li>\(D_x(x) = 1\)</li>
+<li>\(D_x(y) = 0\), \(y\neq x\), sei \(y\) eine Konstante oder Variable</li>
+<li>\(D_x(e_1 + e_2) = D_x(e_1)+D_x(e_2)\) (Summenregel)</li>
+<li>\(D_x(e_1\cdot e_2) = e_1\cdot D_x(e_2) + e_2\cdot D_x(e_1)\) (Produktregel)</li>
+</ul>
+<p>
+Repräsentation der Formeln:
+</p>
+<ul class="org-ul">
+<li>Konstante: numerisches Atom</li>
+<li>Variable: symbolisches Atom</li>
+<li>\(e_1 + e_2\): (ADD \(e_1\) \(e_2\))</li>
+<li>\(e_1 \cdot e_2\): (MUL \(e_1\) \(e_2\))</li>
+</ul>
+<p>
+Anwendungsbeispiele:
+</p>
+<ol class="org-ol">
+<li><p>
+Der Ausdruck <br />
+</p>
+<pre class="example">
+(diff '(add x x) x)
+
+</pre>
+<p>
+liefere '<code>(add 1 1)</code>
+</p></li>
+<li><p>
+Der Ausdruck <br />
+</p>
+<pre class="example">
+(diff '(mul x x) 'x)
+
+</pre>
+<p>
+liefere '<code>(add (mul x 1) (mul 1 x))</code>.<br />
+</p></li>
+</ol>
+<p>
+Hinweise:
+</p>
+<ul class="org-ul">
+<li>Definieren Sie zur Erzeugung von Formeln geeignete Hilfsfunktionen!</li>
+<li>Wenn eine Formel nicht korrekt aufgebaut ist, kann das Symbol
+’ERROR zurückgeliefert werden, das möglicherweise in einem
+korrekten Teil der Formel eingeschachtelt erscheint.</li>
+<li>Machen Sie ausgiebig von lokalen Definitionen Gebrauch.</li>
+</ul></li>
+</ol>
+</div>
+</div>
+
+<div id="outline-container-org8e3c54b" class="outline-2">
+<h2 id="org8e3c54b"><span class="section-number-2">21</span> Aufgabe (Listen über gemischten Daten &#x2013; Zusatzaufgabe)</h2>
+<div class="outline-text-2" id="text-21">
+<p>
+Diese Aufgabe ist eine Fortführung der Aufgaben 13 und 15. Dort haben
+Sie Funktionen zum Bewegen einzelner Figuren (shapes) geschrieben. Ein Bild
+hingegen besteht aus einer Sammlung von Figuren. Um Bilder zeichnen,
+verschieben und löschen zu können ist es sinnvoll, alle Bildteile
+(Figuren) in einer Datenstruktur zusammen zu fassen. Da die Anzahl der
+Figuren eines Bildes von Bild zu Bild variieren kann, bietet es sich
+an, die Figuren eines Bildes in einer Liste zu verwalten. 
+</p>
+
+<ol class="org-ol">
+<li>Beschreiben Sie eine Datendefinition für Listen von Figuren.</li>
+<li><p>
+Erzeugen Sie eine Beispielliste (genannt face), die aus den Figuren
+der folgenden Tabelle besteht:
+</p>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">Figur</th>
+<th scope="col" class="org-left">Position</th>
+<th scope="col" class="org-left">Größen</th>
+<th scope="col" class="org-left">Farbe</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">circle</td>
+<td class="org-left">(50,50)</td>
+<td class="org-left">40</td>
+<td class="org-left">red</td>
+</tr>
+
+<tr>
+<td class="org-left">rectangle</td>
+<td class="org-left">(30,20)</td>
+<td class="org-left">5 × 5</td>
+<td class="org-left">blue</td>
+</tr>
+
+<tr>
+<td class="org-left">rectangle</td>
+<td class="org-left">(65,20)</td>
+<td class="org-left">5 × 5</td>
+<td class="org-left">blue</td>
+</tr>
+
+<tr>
+<td class="org-left">rectangle</td>
+<td class="org-left">(40,75)</td>
+<td class="org-left">20 × 10</td>
+<td class="org-left">red</td>
+</tr>
+
+<tr>
+<td class="org-left">rectangle</td>
+<td class="org-left">(45,35)</td>
+<td class="org-left">10 × 30</td>
+<td class="org-left">blue</td>
+</tr>
+</tbody>
+</table>
+
+<p>
+Die Tabelle setzt eine Zeichenfläche der Größe 300 x 100 voraus.
+</p></li>
+<li>Entwickeln Sie eine Funktionsschablone für figurenverarbeitende
+Funktionen.</li>
+<li>Entwickeln Sie auf der Grundlage dieser Funktionsschablone eine
+Funktion <code>draw-losh</code>, die eine Liste von Figuren als Argument
+erwartet und alle Elemente der Liste zeichnet und <code>#true</code> zurückliefert.</li>
+<li>Entwickeln Sie eine Funktion <code>translate-losh</code>, die eine Liste von
+Figuren sowie eine <code>posn</code>-Struktur <code>delta</code> als Argumente akzeptiert
+und eine Liste von Figuren als Resultat liefert, in der alle
+Figuren der Argumentliste um <code>delta</code> verschoben sind. Die Funktion
+hat keinen Effekt auf der Zeichenfläche.</li>
+<li>Entwicklen Sie die Funktion <code>clear-losh</code>, die die eine Liste von Figuren als Argument
+erwartet und alle Elemente der Liste von der Zeichenfläche
+entfernt und <code>#true</code> zurückliefert.</li>
+<li>Entwicklen Sie die Funktion <code>draw-and-clear-picture</code>. Sie zeichnet
+ein Bild, wartet eine Weile und löscht anschließend das Bild von
+der Zeichenfläche.</li>
+<li><p>
+Entwicklen Sie die Funktion <code>move-picture</code>, die eine
+<code>posn</code>-Struktur <code>delta</code> und ein Bild als Argumente akzeptiert. Sie zeichnet
+ein Bild, wartet eine Weile und löscht anschließend das Bild von
+der Zeichenfläche. Sie liefert als Resultat das um <code>delta</code>
+verschobene Bild. 
+</p>
+
+<p>
+Testen Sie die Funktion z. B. so
+</p>
+<div class="org-src-container">
+<pre class="src src-scheme">   <span style="color: #707183;">(</span>start 500 100<span style="color: #707183;">)</span>
+
+   <span style="color: #707183;">(</span>draw-losh
+     <span style="color: #7388D6;">(</span>move-picture <span style="color: #909183;">(</span>make-posn -5 0<span style="color: #909183;">)</span>
+       <span style="color: #909183;">(</span>move-picture <span style="color: #709870;">(</span>make-pos 23 0<span style="color: #709870;">)</span>
+         <span style="color: #709870;">(</span>move-picture <span style="color: #907373;">(</span>make-pos 10 0<span style="color: #907373;">)</span> face<span style="color: #709870;">)</span><span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
+
+   <span style="color: #707183;">(</span>stop<span style="color: #707183;">)</span></pre>
+</pre>
+</div></li>
+</ol>
+</div>
+</div>
+<div id="outline-container-orgc1e07f1" class="outline-2">
+<h2 id="orgc1e07f1"><span class="section-number-2">22</span> Aufgabe (Hilfsfunktionen mit akkumulierenden Parametern)</h2>
+<div class="outline-text-2" id="text-22">
+<ol class="org-ol">
+<li>Schreiben Sie die Funktion <code>sum</code>, die die Summe der
+Elemente einer Liste von Zahlen berechnet, unter Benutzung einer
+Hilfsfunktion mit akkumulierendem Parameter.  Verwenden Sie die
+Funktiosnschablone aus der Vorlesung.  Formulieren Sie die
+Akkumulatorinvariante.</li>
+
+<li><p>
+Gegeben ist ein Weg in einem ungerichteten Graphen, dessen 
+Knoten Orte repräsentieren und dessen Kanten mit den Entfernungen 
+zwischen den Orten attributiert sind, z. B. so:
+</p>
+
+
+<div class="figure">
+<p><img src="./Abbildungen/entfernungen.png" alt="entfernungen.png" />
+</p>
+</div>
+
+<p>
+Entwickeln Sie eine Funktion, die aus einer Liste mit relativen 
+Entfernungen eine Liste mit den absoluten Entfernungen der Orte 
+vom Ursprungsort berechnet. Für den obigen Graphen soll also aus 
+der Liste (120 90 70 65) die Liste (120 210 280 345) werden.
+</p>
+<ol class="org-ol">
+<li>Entwickeln Sie zunächst eine Funktion (ggf. mit Hilfsfunktion)
+nach den bekannten Regeln (ohne akkumulierende
+Parameter).</li>
+
+<li>Diskutieren Sie, warum eine Hilfsfunktion mit akkumulierendem
+Parameter sinnvoll ist.</li>
+<li>Entwickeln Sie eine solche.</li>
+</ol></li>
+<li>Definieren Sie eine Funktion <code>(singletons x)</code>, die als Argument
+eine Liste von den Atomen <code>x</code> hat und als Ergebnis eine Liste von
+den Atomen liefern soll, die in <code>x</code> genau einmal auftreten.</li>
+<li value="4">Modifizieren die Funktion <code>(singletons x)</code> so, dass zwei
+akkumulierende Parameter verwendet werden.  Der eine soll zum
+Akkumulieren der Atome, die genau einmal in <code>x</code> auftreten, dienen,
+der andere zum Akkumulieren der Atome, die mehrmals in <code>x</code>
+auftreten.</li>
+</ol>
+</div>
+</div>
+<div id="outline-container-org0b0eaa8" class="outline-2">
+<h2 id="org0b0eaa8"><span class="section-number-2">23</span> Aufgabe (Anwendung von <code>map</code>, <code>filter</code> und <code>reduce</code>)</h2>
+<div class="outline-text-2" id="text-23">
+<p>
+Implementieren Sie folgende Funktionen unter Nutzung der Funktionen
+<code>filter</code>, <code>reduce</code> und <code>map</code> aus dem Skript:
+</p>
+
+<ol class="org-ol">
+<li>Eine Funktion, die zu allen Zahlen einer Liste jeweils 42 addiert.</li>
+<li>Eine Funktion, die sich wie a) verhält, aber nur die geraden Zahlen
+zurückgibt.</li>
+<li>Eine Funktion, die sich wie b) verhält, aber das Produkt aller Zahlen
+zurückgibt.</li>
+<li>Eine Funktion, die aus einer Liste von Zahlen alle Zahlen streicht,
+die nicht durch 4 oder 5 teilbar sind.</li>
+<li>Eine Funktion, die die Summe der Quadrate der natürlichen Zahlen in
+einer Liste berechnet.</li>
+<li>Eine Funktion <code>und</code>, die genau dann <code>true</code> zurück liefert, wenn alle
+Elemente einer Liste von Booleans <code>true</code> sind.</li>
+<li>Eine Funktion <code>partitioniere</code>, die ein Prädikat als Argument nimmt
+und, angewandt auf eine Liste, zwei Listen zurückgibt, wobei erstere
+alle Elemente enthält, die das Prädikat erfüllen, und die andere die
+restlichen Elemente enthält.</li>
+<li>Eine Funktion <code>sort</code>, die, angewendet auf eine Liste von Zahlen,
+diese Liste absteigend sortiert.</li>
+<li>Modifizieren Sie die Funktion <code>sort</code> aus 8. so, dass durch einen
+zusätzlichen Parameter die Sortierreihenfolge bestimmt werden kann.</li>
+</ol>
+</div>
+</div>
+<div id="outline-container-org5a8289e" class="outline-2">
+<h2 id="org5a8289e"><span class="section-number-2">24</span> Aufgabe (Definition von Funktionen höherer Ordnung)</h2>
+<div class="outline-text-2" id="text-24">
+<p>
+Definieren Sie die folgenden Funktionen höherer Ordnung rekursiv oder
+durch Verwendung von anderen Funktionen höherer Ordnung:
+</p>
+<ol class="org-ol">
+<li><p>
+Eine Funktion
+</p>
+
+<div class="org-src-container">
+<pre class="src src-scheme">         <span style="color: #707183;">(</span>Number -&gt; Number<span style="color: #707183;">)</span> <span style="color: #707183;">(</span>Number-&gt; Number<span style="color: #707183;">)</span> list-of Number 
+            -&gt; list-of Number,</pre>
+</pre>
+</div>
+<p>
+die zwei Funktionen und eine Liste von Zahlen als Argument erhält und
+auf jede Zahl zuerst die erste und dann die zweite Funktion anwendet.
+</p></li>
+<li><p>
+Eine Funktion
+</p>
+
+<div class="org-src-container">
+<pre class="src src-scheme">          <span style="color: #707183;">(</span>Number -&gt; Number<span style="color: #707183;">)</span> <span style="color: #707183;">(</span>Number -&gt; Number<span style="color: #707183;">)</span> -&gt; Number,</pre>
+</pre>
+</div>
+<p>
+die zwei Funktionen als Argument erhält und die kleinste natürliche
+Zahl sucht, für die diese beiden Funktionen dasselbe Ergebnis
+liefern. Begrenzen Sie die Suche auf Zahlen bis 1000 und geben Sie
+<code>nil</code> zurück, wenn keine passende Zahl gefunden wurde.
+</p></li>
+</ol>
+</div>
+</div>
+
+<div id="outline-container-orgb3efeda" class="outline-2">
+<h2 id="orgb3efeda"><span class="section-number-2">25</span> Aufgabe (die Funktion mapp)</h2>
+<div class="outline-text-2" id="text-25">
+<p>
+Was liefern die folgenden Ausdrücke:
+</p>
+
+<ol class="org-ol">
+<li><code>((mapp abs) '( 4 -7 3))</code></li>
+<li><code>(define betraege (mapp abs))</code></li>
+<li><code>(betraege '(4 -7 -3))</code></li>
+<li><code>(reduce * ((mapp abs) '( 4 -7 3)) 1)</code></li>
+
+<li>Wie lautet  der Vertrag von <code>mapp</code>?</li>
+</ol>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Autor: Johannes Brauer</p>
+<p class="date">Created: 2017-12-11 Mon 14:41</p>
+<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>
