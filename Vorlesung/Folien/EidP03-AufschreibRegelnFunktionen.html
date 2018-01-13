@@ -1,0 +1,785 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8"/>
+<title>Aufschreibregeln für Funktionen</title>
+<meta name="author" content="(Johannes Brauer)"/>
+<style type="text/css">
+.underline { text-decoration: underline; }
+</style>
+<link rel="stylesheet" href="./reveal.js/css/reveal.css"/>
+
+<link rel="stylesheet" href="./reveal.js/css/theme/simple.css" id="theme"/>
+
+<link rel="stylesheet" href="./mycss/myrevealstyle.css"/>
+
+<!-- If the query includes 'print-pdf', include the PDF print sheet -->
+<script>
+    if( window.location.search.match( /print-pdf/gi ) ) {
+        var link = document.createElement( 'link' );
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = './reveal.js/css/print/pdf.css';
+        document.getElementsByTagName( 'head' )[0].appendChild( link );
+    }
+</script>
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<link rel="stylesheet" type="text/css" href="mycss/mystyle.css" />
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+<section id="sec-title-slide"><h1 class="title">Aufschreibregeln für Funktionen</h1><h2 class="author">Johannes Brauer</h2><p class="date">Created: 2018-01-13 Sat 12:30</p>
+</section>
+<section>
+<section id="slide-orgddba863">
+<h2 id="orgddba863">Regeln 1 bis 3 zum Aufschreiben von Funktionen</h2>
+<div class="outline-text-2" id="text-orgddba863">
+</div>
+</section>
+<section id="slide-org0dfb259">
+<h3 id="org0dfb259">Regel 1</h3>
+<p>
+Was tut diese Funktion?
+</p>
+<div class="small">
+<div class="org-src-container">
+
+<pre  class="src src-racket">(define e
+  (lambda [a z l]
+    (+ a 
+       (* a 
+          (/ z 100 12) l))))
+</pre>
+</div>
+
+</div>
+
+<p>
+<b>Regel 1:</b> Verwende aussagekräftige Namen für Funktionen und Variablen
+(„sprechende Bezeichner”)!
+</p>
+<div class="small">
+<div class="org-src-container">
+
+<pre  class="src src-scheme"><span style="color: #707183;">(</span><span style="color: #0000FF;">define</span> <span style="color: #006699;">endkapital</span> 
+  <span style="color: #7388D6;">(</span><span style="color: #0000FF;">lambda</span> <span style="color: #909183;">[</span>anfangskapital jahreszinssatz laufzeit-in-monaten<span style="color: #909183;">]</span>
+    <span style="color: #909183;">(</span>+ anfangskapital 
+       <span style="color: #709870;">(</span>* anfangskapital
+          <span style="color: #907373;">(</span>/ jahreszinssatz 100 12<span style="color: #907373;">)</span> laufzeit-in-monaten<span style="color: #709870;">)</span><span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span></pre>
+</pre>
+</div>
+
+</div>
+
+</section>
+<section id="slide-org70f8670">
+<h3 id="org70f8670">Regel 2</h3>
+<p>
+<b>Regel 2:</b> Beschreibe den <b>Zweck der Funktion</b> durch einen Satz, der das
+Resultat der Funktion <b>in Abhängigkeit von ihren Argumenten</b> beschreibt.
+</p>
+<div class="org-src-container">
+
+<pre  class="src src-racket">;; Aus dem anfangskapital, einem jahreszinssatz  und einer laufzeit-in-monaten wird
+;; das Endkapital ermittelt, wobei die Zinsgutschrift einmalig am Ende der Laufzeit 
+;; erfolgt.
+(define endkapital 
+  (lambda [anfangskapital jahreszinssatz laufzeit-in-monaten]
+    (+ anfangskapital 
+       (* anfangskapital
+          (/ jahreszinssatz 100 12) laufzeit-in-monaten))))
+</pre>
+</div>
+
+</section>
+<section id="slide-org49e046f">
+<h3 id="org49e046f">Regel 3</h3>
+<p>
+<b>Regel 3:</b> Schreibe Beispielanwendungen der Funktion auf, die das
+Resultat der Funktion mit dem Erwartungswert vergleicht. Die
+Auswertung der Ausdrücke muss dabei immer den Wahrheitswert <code>#true</code> liefern:
+</p>
+<div class="org-src-container">
+
+<pre  class="src src-racket">;; Aus dem anfangskapital, einem jahreszinssatz  und einer laufzeit-in-monaten wird
+;; das Endkapital ermittelt, wobei die Zinsgutschrift einmalig am Ende der Laufzeit 
+;; erfolgt.
+(define endkapital 
+  (lambda [anfangskapital jahreszinssatz laufzeit-in-monaten]
+    (+ anfangskapital 
+       (* anfangskapital
+          (/ jahreszinssatz 100 12) laufzeit-in-monaten))))
+;; Beispielanwendungen:
+(= (endkapital 1000 0 24) 1000)   ;; =&gt; #true
+(= (endkapital 1000 12 12) 1120)  ;; =&gt; #true
+(= (endkapital 1000 12 24) 1240)  ;; =&gt; #true
+</pre>
+</div>
+
+</section>
+<section >
+
+<p>
+<b>Funktionen, die nicht gemäß diesen Regeln aufgeschrieben sind, sind
+unzulässig!</b>
+</p>
+
+<p>
+(s. Aufgaben 5 und 6)
+</p>
+
+</section>
+</section>
+<section>
+<section id="slide-orgdd21600">
+<h2 id="orgdd21600">Ausdrücke in <i>Racket</i> (2)</h2>
+<p>
+Die in Abschnitt 
+<a href="EidP02-ErsteSchritteInRacket.html#MissingReference">Ausdrücke in <i>Racket</i> (1)</a> beschriebenen Operatoren und Operanden
+werden wie folgt ergänzt:
+</p>
+<ul>
+<li>Die Standardfunktion = vergleicht zwei Zahlen und liefert einen der
+beiden Wahrheitswerte <code>#true</code> oder <code>#false</code> als Resultat.</li>
+<li><p>
+Zum Vergleich von Zahlen gibt es außerdem die Standardfunktionen
+</p>
+<pre class="example">
+&lt;, &gt;, &lt;=, &gt;=
+
+</pre></li>
+
+</ul>
+</section>
+</section>
+<section>
+<section id="slide-orgabd8a90">
+<h2 id="orgabd8a90">Zusammengesetzte Funktionen (Regeln 4 und 5)</h2>
+<p>
+Bei der Definition unserer bisherigen Funktionen waren wir darauf
+angewiesen, bereits existierende Funktionen (in Form der
+arithmetischen Operatoren) nutzen zu können. Für die Lösung
+komplexerer Aufgabenstellungen werden wir nicht mit einer einzigen
+eigenen Funktion auskommen sondern für die Lösung von Teilaufgaben
+auch eigene Funktionen (auch Hilfsfunktionen genannt) zu nutzen, die
+dann zur Gesamtlösung zusammengesetzt werden.
+</p>
+
+<p>
+Die Nutzung von Hilfsfunktionen erleichtert nicht nur den Entwurf
+komplexerer Programme sondern erhöht auch ihre Lesbarkeit. 
+</p>
+
+<p>
+Betrachten wir dazu zwei Varianten einer Funktion, die die Fläche
+eines Kreisrings berechnet:
+</p>
+
+</section>
+<section >
+
+<div class="smaller">
+<div class="org-src-container">
+
+<pre  class="src src-scheme"><span style="color: #707183;">(</span><span style="color: #0000FF;">define</span> <span style="color: #006699;">kreisring-flaeche</span>
+  <span style="color: #7388D6;">(</span><span style="color: #0000FF;">lambda</span> <span style="color: #909183;">[</span>radius-aussen radius-innen<span style="color: #909183;">]</span>
+    <span style="color: #909183;">(</span>- <span style="color: #709870;">(</span>* 3.14 <span style="color: #907373;">(</span>* radius-aussen radius-aussen<span style="color: #907373;">)</span><span style="color: #709870;">)</span>
+       <span style="color: #709870;">(</span>* 3.14 <span style="color: #907373;">(</span>* radius-innen  radius-innen<span style="color: #907373;">)</span><span style="color: #709870;">)</span><span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span></pre>
+</pre>
+</div>
+
+</div>
+<p>
+Unter der Voraussetzung, dass eine Funktion zur Berechnung
+der Kreisfläche zur Verfügung steht &#x2013; wie z. B. diese:
+</p>
+<div class="smaller">
+<div class="org-src-container">
+
+<pre  class="src src-scheme"><span style="color: #707183;">(</span><span style="color: #0000FF;">define</span> <span style="color: #006699;">kreis-flaeche</span>
+  <span style="color: #7388D6;">(</span><span style="color: #0000FF;">lambda</span> <span style="color: #909183;">[</span>radius<span style="color: #909183;">]</span>
+    <span style="color: #909183;">(</span>* 3.14 <span style="color: #709870;">(</span>* radius radius<span style="color: #709870;">)</span><span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span></pre>
+</pre>
+</div>
+
+</div>
+<p>
+&#x2013;, kann die Funktion <code>kreisring-flaeche</code> auch so geschrieben werden: 
+</p>
+<div class="org-src-container">
+
+<pre  class="src src-scheme"><span style="color: #707183;">(</span><span style="color: #0000FF;">define</span> <span style="color: #006699;">kreisring-flaeche</span>
+  <span style="color: #7388D6;">(</span><span style="color: #0000FF;">lambda</span> <span style="color: #909183;">[</span>radius-aussen radius-innen<span style="color: #909183;">]</span>
+    <span style="color: #909183;">(</span>- <span style="color: #709870;">(</span>kreis-flaeche radius-aussen<span style="color: #709870;">)</span>
+       <span style="color: #709870;">(</span>kreis-flaeche radius-innen<span style="color: #709870;">)</span><span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span></pre>
+</pre>
+</div>
+
+</section>
+<section >
+
+<p>
+In der zweiten Variante der Funktion wird die Hilfsfunktion
+<code>kreis-flaeche</code> benutzt. Damit wird das Problem der Berechnung der
+Fläche des Kreisrings explizit auf die Subtraktion zweier Kreisflächen
+zurück geführt, während man dies in der ersten Variante erst aus dem
+Programmcode herauslesen müsste.
+</p>
+
+<p>
+Betrachten wir nun als weiteres Beispiel eine Erweiterung  der
+Problembeschreibung der Profitberechnung für den Eigentümer eines
+Vorstadtkinos.
+</p>
+
+</section>
+<section id="slide-org5502f90">
+<h3 id="org5502f90">Beispiel für die Nutzung von Hilfsfunktionen</h3>
+<blockquote nil>
+<p>
+Er kann die Preise für die Eintrittskarten frei festlegen. Er hat
+einen exakten Zusammenhang 
+zwischen dem Kartenpreis und der durchschnittlichen Besucheranzahl
+empirisch festgestellt: Bei einem Preis von 500 Währungseinheiten
+pro Karte kommen im Schnitt 120 Zuschauer. Reduziert er den Preis
+um 10 Währungseinheiten, erhöht sich die Besucherzahl um 15. Aber
+mehr Besucher verursachen höhere Kosten. Jede Veranstaltung kostet
+18000 Währungseinheiten plus 5 Währungseinheiten für jeden
+Zuschauer. Der Eigentümer möchte nun wissen, wie groß der Profit
+bei einem bestimmten Kartenpreis ist.
+</p>
+</blockquote>
+
+</section>
+<section id="slide-org60faf16">
+<h4 id="org60faf16">Lösungsansatz</h4>
+<ul>
+<li>Können wir dem Kinoeigentümer helfen?</li>
+<li><p>
+Versuchen wir zunächst die Abhängigkeiten zu erkennen, die sich aus
+der Problembeschreibung ableiten lassen:
+</p>
+<ol>
+<li class="fragment roll-in">Der <i>Profit</i> ist die Differenz aus Einnahmen und Kosten.</li>
+<li class="fragment roll-in">Die <i>Einnahmen</i> sind das Produkt aus Kartenpreis und Besucheranzahl.</li>
+<li class="fragment roll-in">Die <i>Kosten</i> sind die Summe aus den Fixkosten (18000 Währungseinheiten) und dem
+Produkt aus Besucheranzahl und den Kosten pro Besucher (5 Währungseinheiten).</li>
+<li class="fragment roll-in">Schließlich gibt es noch den Zusammenhang zwischen
+<i>Besucheranzahl</i> und Kartenpreis.</li>
+
+</ol></li>
+
+</ul>
+
+</section>
+<section id="slide-org44ca991">
+<h4 id="org44ca991">Vorgehensweise</h4>
+<p>
+Die weitere Vorgehensweise ist nun dadurch gekennzeichnet, dass für
+jeden der ermittelten Zusammenhänge je eine Funktion geschrieben
+wird. Dabei gehen wir in 3 Schritten vor:
+</p>
+
+<ol>
+<li>Für jede Funktion wird zunächst gemäß Regel 2 ihre Zweckbestimmung
+und ihr Funktionskopf (Name der Funktion und die Parameterliste) aufgeschrieben.</li>
+<li>Jetzt werden gemäß Regel 3 Beispielanwendungen hinzugefügt.</li>
+<li>Schließlich wird für jede Funktion die Berechnungsvorschrift, der
+Funktionrumpf, ermittelt.</li>
+
+</ol>
+
+</section>
+<section id="slide-orgb41d51a">
+<h5 id="orgb41d51a">Schritt 1 für die Funktion <code>profit</code> und ihre Hilfsfunktionen</h5>
+<p>
+<b>Die Funktion <code>profit</code>:</b>
+</p>
+
+<div class="small">
+<div class="org-src-container">
+
+<pre  class="src src-scheme"><span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">berechnet den Profit aus der Differenz zwischen</span>
+<span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">Einnahmen und Kosten bei gegebenem Kartenpreis</span>
+<span style="color: #707183;">(</span><span style="color: #0000FF;">define</span> <span style="color: #006699;">profit</span>
+  <span style="color: #7388D6;">(</span><span style="color: #0000FF;">lambda</span> <span style="color: #909183;">[</span>kartenpreis<span style="color: #909183;">]</span>
+    nil<span style="color: #7388D6;">)</span><span style="color: #707183;">)</span></pre>
+</pre>
+</div>
+
+</div>
+
+<p>
+Das Symbol <code>nil</code> steht hier als Platzhalter für den noch zu
+bestimmenden Funktionsrumpf.
+</p>
+
+</section>
+<section >
+
+<p>
+<b>Die Berechnung der Einnahmen:</b>
+</p>
+
+<div class="small">
+<div class="org-src-container">
+
+<pre  class="src src-scheme"><span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">berechnet die Einnahmen aus dem Produkt von </span>
+<span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">Besucherzahl und Kartenpreis</span>
+<span style="color: #707183;">(</span><span style="color: #0000FF;">define</span> <span style="color: #006699;">einnahmen</span>
+  <span style="color: #7388D6;">(</span><span style="color: #0000FF;">lambda</span> <span style="color: #909183;">[</span>kartenpreis<span style="color: #909183;">]</span>
+    nil<span style="color: #7388D6;">)</span><span style="color: #707183;">)</span></pre>
+</pre>
+</div>
+
+</div>
+
+<p>
+<b>Die Berechnung der Kosten:</b>
+</p>
+
+<div class="org-src-container">
+
+<pre  class="src src-scheme"><span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">berechnet die entstehenden Kosten bei gegebenem</span>
+<span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">Kartenpreis aus Fixkosten und variablen Kosten</span>
+<span style="color: #707183;">(</span><span style="color: #0000FF;">define</span> <span style="color: #006699;">kosten</span>
+  <span style="color: #7388D6;">(</span><span style="color: #0000FF;">lambda</span> <span style="color: #909183;">[</span>kartenpreis<span style="color: #909183;">]</span>
+    nil<span style="color: #7388D6;">)</span><span style="color: #707183;">)</span></pre>
+</pre>
+</div>
+
+</section>
+<section >
+<p>
+<b>Die Berechnung der Besucherzahl:</b> 
+</p>
+
+<div class="org-src-container">
+
+<pre  class="src src-scheme"><span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">berechnet die Besucherzahl bei gegebenem</span>
+<span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">Kartenpreis nach empirisch ermittelter Formel</span>
+<span style="color: #707183;">(</span><span style="color: #0000FF;">define</span> <span style="color: #006699;">besucherzahl</span>
+  <span style="color: #7388D6;">(</span><span style="color: #0000FF;">lambda</span> <span style="color: #909183;">[</span>kartenpreis<span style="color: #909183;">]</span>
+    nil<span style="color: #7388D6;">)</span><span style="color: #707183;">)</span></pre>
+</pre>
+</div>
+
+</section>
+<section id="slide-org64e63cd">
+<h5 id="org64e63cd">Schritt 2 für die Funktion <code>profit</code> und ihre Hilfsfunktionen</h5>
+<p>
+In diesem Schritt versuchen wir Beispielanwendungen zu finden;
+beginnen wir mit der Funktion <code>besucherzahl</code>.
+</p>
+
+<p>
+Aus der Problembeschreibung lassen sich direkt die beiden folgende Beispiele ableiten:
+</p>
+<ul>
+<li>(besucherzahl 500) = 120</li>
+<li>(besucherzahl 490) = 135</li>
+
+</ul>
+
+<p>
+Für weitere Beispiele müssten Annahmen getroffen werden, die die
+Problembeschreibung nicht direkt hergibt. So sind die beiden
+folgenden Beispiele nur dann korrekt, wenn aus den Beispielen der
+Problembeschreibung eine linearer Zusammenhang zwischen dem
+Kartenpreis und der Besucherzahl angenommen wird:
+</p>
+<ul>
+<li>(besucherzahl 510) = 105</li>
+<li>(besucherzahl 400) = 270</li>
+
+</ul>
+
+</section>
+<section >
+<p>
+Ob diese Annahme sinnvoll ist, müsste letztendlich der Auftraggeber
+entscheiden. Für die folgenden Betrachtungen legen wir diese
+Annahme zugrunde.
+</p>
+
+<p>
+Ein linearer Zusammenhang ergäbe die folgende Geradengleichung:
+\[besucherzahl(kartenpreis) = 120 + \frac{15}{10}\cdot (500 - kartenpreis)\]
+</p>
+
+</section>
+<section >
+
+<p>
+<b>Beispielanwendungen für die Funkton <code>besucherzahl</code>:</b>
+</p>
+
+<div class="org-src-container">
+
+<pre  class="src src-scheme"><span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">berechnet die Besucherzahl bei gegebenem</span>
+<span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">Kartenpreis nach empirisch ermittelter Formel</span>
+<span style="color: #707183;">(</span><span style="color: #0000FF;">define</span> <span style="color: #006699;">besucherzahl</span>
+  <span style="color: #7388D6;">(</span><span style="color: #0000FF;">lambda</span> <span style="color: #909183;">[</span>kartenpreis<span style="color: #909183;">]</span>
+    nil<span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
+
+<span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">Beispielanwendungen</span>
+<span style="color: #707183;">(</span>= <span style="color: #7388D6;">(</span>besucherzahl 500<span style="color: #7388D6;">)</span> 120<span style="color: #707183;">)</span>
+<span style="color: #707183;">(</span>= <span style="color: #7388D6;">(</span>besucherzahl 490<span style="color: #7388D6;">)</span> 135<span style="color: #707183;">)</span>
+<span style="color: #707183;">(</span>= <span style="color: #7388D6;">(</span>besucherzahl 510<span style="color: #7388D6;">)</span> 105<span style="color: #707183;">)</span>
+<span style="color: #707183;">(</span>= <span style="color: #7388D6;">(</span>besucherzahl 400<span style="color: #7388D6;">)</span> 270<span style="color: #707183;">)</span></pre>
+</pre>
+</div>
+
+</section>
+<section >
+
+<p>
+<b>Beispielanwendungen für die Funkton <code>kosten</code>:</b>
+</p>
+
+<div class="org-src-container">
+
+<pre  class="src src-scheme"><span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">berechnet die entstehenden Kosten bei gegebenem</span>
+<span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">Kartenpreis aus Fixkosten und variablen Kosten</span>
+<span style="color: #707183;">(</span><span style="color: #0000FF;">define</span> <span style="color: #006699;">kosten</span>
+  <span style="color: #7388D6;">(</span><span style="color: #0000FF;">lambda</span> <span style="color: #909183;">[</span>kartenpreis<span style="color: #909183;">]</span>
+    nil<span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
+
+<span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">Beispielanwendungen</span>
+<span style="color: #707183;">(</span>= <span style="color: #7388D6;">(</span>kosten 500<span style="color: #7388D6;">)</span> 18600<span style="color: #707183;">)</span>
+<span style="color: #707183;">(</span>= <span style="color: #7388D6;">(</span>kosten 400<span style="color: #7388D6;">)</span> 19350<span style="color: #707183;">)</span></pre>
+</pre>
+</div>
+
+</section>
+<section >
+
+<p>
+<b>Beispielanwendungen für die Funkton <code>einnahmen</code>:</b>
+</p>
+
+<div class="org-src-container">
+
+<pre  class="src src-scheme"><span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">berechnet die Einnahmen aus dem Produkt von </span>
+<span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">Besucherzahl und Kartenpreis</span>
+<span style="color: #707183;">(</span><span style="color: #0000FF;">define</span> <span style="color: #006699;">einnahmen</span>
+  <span style="color: #7388D6;">(</span><span style="color: #0000FF;">lambda</span> <span style="color: #909183;">[</span>kartenpreis<span style="color: #909183;">]</span>
+    nil<span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
+
+<span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">Beispielanwendungen</span>
+<span style="color: #707183;">(</span>= <span style="color: #7388D6;">(</span>einnahmen 500<span style="color: #7388D6;">)</span> 60000<span style="color: #707183;">)</span>
+<span style="color: #707183;">(</span>= <span style="color: #7388D6;">(</span>einnahmen 400<span style="color: #7388D6;">)</span> 108000<span style="color: #707183;">)</span></pre>
+</pre>
+</div>
+
+</section>
+<section >
+
+<p>
+<b>Beispielanwendungen für die Funkton <code>profit</code>:</b>
+</p>
+
+<div class="org-src-container">
+
+<pre  class="src src-scheme"><span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">berechnet den Profit aus der Differenz zwischen</span>
+<span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">Einnahmen und Kosten bei gegebenem Kartenpreis</span>
+<span style="color: #707183;">(</span><span style="color: #0000FF;">define</span> <span style="color: #006699;">profit</span>
+  <span style="color: #7388D6;">(</span><span style="color: #0000FF;">lambda</span> <span style="color: #909183;">[</span>kartenpreis<span style="color: #909183;">]</span>
+    nil<span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
+
+<span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">Beispielanwendungen</span>
+<span style="color: #707183;">(</span>= <span style="color: #7388D6;">(</span>profit 500<span style="color: #7388D6;">)</span> 41400<span style="color: #707183;">)</span>
+<span style="color: #707183;">(</span>= <span style="color: #7388D6;">(</span>profit 400<span style="color: #7388D6;">)</span> 88650<span style="color: #707183;">)</span></pre>
+</pre>
+</div>
+
+</section>
+<section id="slide-orgd5f1e2d">
+<h5 id="orgd5f1e2d">Schritt 3: Ermittlung des Funktionsrumpfs für die Funktion <code>profit</code> und ihre Hilfsfunktionen</h5>
+<p>
+Beginnen wir wieder mit der <b>Funktion <code>besucherzahl</code></b>. Der für die
+Ermittlung der Beispielanwendungen zugrunde gelegte lineare
+Zusammenhang zwischen Besucherzahl und Kartenpreis wird direkt in die
+Berechnungsvorschrift für die Funktion genutzt:
+</p>
+
+<div class="org-src-container">
+
+<pre  class="src src-scheme"><span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">berechnet die Besucherzahl bei gegebenem</span>
+<span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">Kartenpreis nach empirisch ermittelter Formel</span>
+<span style="color: #707183;">(</span><span style="color: #0000FF;">define</span> <span style="color: #006699;">besucherzahl</span>
+  <span style="color: #7388D6;">(</span><span style="color: #0000FF;">lambda</span> <span style="color: #909183;">[</span>kartenpreis<span style="color: #909183;">]</span>
+    <span style="color: #909183;">(</span>+ 120 <span style="color: #709870;">(</span>* <span style="color: #907373;">(</span>/ 15 10<span style="color: #907373;">)</span> <span style="color: #907373;">(</span>- 500 kartenpreis<span style="color: #907373;">)</span><span style="color: #709870;">)</span><span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
+
+<span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">Beispielanwendungen</span>
+<span style="color: #707183;">(</span>= <span style="color: #7388D6;">(</span>besucherzahl 500<span style="color: #7388D6;">)</span> 120<span style="color: #707183;">)</span>
+<span style="color: #707183;">(</span>= <span style="color: #7388D6;">(</span>besucherzahl 490<span style="color: #7388D6;">)</span> 135<span style="color: #707183;">)</span>
+<span style="color: #707183;">(</span>= <span style="color: #7388D6;">(</span>besucherzahl 510<span style="color: #7388D6;">)</span> 105<span style="color: #707183;">)</span>
+<span style="color: #707183;">(</span>= <span style="color: #7388D6;">(</span>besucherzahl 400<span style="color: #7388D6;">)</span> 270<span style="color: #707183;">)</span></pre>
+</pre>
+</div>
+
+</section>
+<section >
+
+<p>
+Die Berechnungsvorschrift der <b>Funktion <code>kosten</code></b> ergibt sich aus dem
+oben formulierten Zusammenhang (Die Kosten sind die Summe aus den
+Fixkosten (18000 Währungseinheiten) und dem Produkt aus Besucheranzahl
+und den Kosten pro Besucher (5 Währungseinheiten).):
+</p>
+
+<div class="small">
+<div class="org-src-container">
+
+<pre  class="src src-scheme"><span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">berechnet die entstehenden Kosten bei gegebenem</span>
+<span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">Kartenpreis aus Fixkosten und variablen Kosten</span>
+<span style="color: #707183;">(</span><span style="color: #0000FF;">define</span> <span style="color: #006699;">kosten</span>
+  <span style="color: #7388D6;">(</span><span style="color: #0000FF;">lambda</span> <span style="color: #909183;">[</span>kartenpreis<span style="color: #909183;">]</span>
+    <span style="color: #909183;">(</span>+ 18000 <span style="color: #709870;">(</span>* 5 <span style="color: #907373;">(</span>besucherzahl kartenpreis<span style="color: #907373;">)</span><span style="color: #709870;">)</span><span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
+
+<span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">Beispielanwendungen</span>
+<span style="color: #707183;">(</span>= <span style="color: #7388D6;">(</span>kosten 500<span style="color: #7388D6;">)</span> 18600<span style="color: #707183;">)</span>
+<span style="color: #707183;">(</span>= <span style="color: #7388D6;">(</span>kosten 400<span style="color: #7388D6;">)</span> 19350<span style="color: #707183;">)</span></pre>
+</pre>
+</div>
+
+</div>
+
+<p>
+Man beachte, dass die Funktion <code>kosten</code> die Funktion <code>besucherzahl</code>
+als Hilfsfunktion benutzt.
+</p>
+
+</section>
+<section >
+
+<p>
+Die Berechnungsvorschrift für die <b>Funktion <code>einnahmen</code></b> als Produkt
+aus Besucherzahl und Kartenpreis: 
+</p>
+
+<div class="small">
+<div class="org-src-container">
+
+<pre  class="src src-scheme"><span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">berechnet die Einnahmen aus dem Produkt von </span>
+<span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">Besucherzahl und Kartenpreis</span>
+<span style="color: #707183;">(</span><span style="color: #0000FF;">define</span> <span style="color: #006699;">einnahmen</span>
+  <span style="color: #7388D6;">(</span><span style="color: #0000FF;">lambda</span> <span style="color: #909183;">[</span>kartenpreis<span style="color: #909183;">]</span>
+    <span style="color: #909183;">(</span>* <span style="color: #709870;">(</span>besucherzahl kartenpreis<span style="color: #709870;">)</span> kartenpreis<span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
+
+<span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">Beispielanwendungen</span>
+<span style="color: #707183;">(</span>= <span style="color: #7388D6;">(</span>einnahmen 500<span style="color: #7388D6;">)</span> 60000<span style="color: #707183;">)</span>
+<span style="color: #707183;">(</span>= <span style="color: #7388D6;">(</span>einnahmen 400<span style="color: #7388D6;">)</span> 108000<span style="color: #707183;">)</span></pre>
+</pre>
+</div>
+
+</div>
+
+<p>
+Man beachte auch hier die Verwendung von <code>besucherzahl</code> als
+Hilfsfunktion.
+</p>
+
+</section>
+<section >
+
+<p>
+Schließlich werden in der <b>Berechnungsvorschrift für <code>profit</code></b> die
+Funktionen <code>einnahmen</code> und <code>kosten</code> benutzt:
+</p>
+
+<div class="org-src-container">
+
+<pre  class="src src-scheme"><span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">berechnet den Profit aus der Differenz zwischen</span>
+<span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">Einnahmen und Kosten bei gegebenem Kartenpreis</span>
+<span style="color: #707183;">(</span><span style="color: #0000FF;">define</span> <span style="color: #006699;">profit</span>
+  <span style="color: #7388D6;">(</span><span style="color: #0000FF;">lambda</span> <span style="color: #909183;">[</span>kartenpreis<span style="color: #909183;">]</span>
+    <span style="color: #909183;">(</span>- <span style="color: #709870;">(</span>einnahmen kartenpreis<span style="color: #709870;">)</span>
+       <span style="color: #709870;">(</span>kosten kartenpreis<span style="color: #709870;">)</span><span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
+
+<span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">Beispielanwendungen</span>
+<span style="color: #707183;">(</span>= <span style="color: #7388D6;">(</span>profit 500<span style="color: #7388D6;">)</span> 41400<span style="color: #707183;">)</span>
+<span style="color: #707183;">(</span>= <span style="color: #7388D6;">(</span>profit 400<span style="color: #7388D6;">)</span> 88650<span style="color: #707183;">)</span></pre>
+</pre>
+</div>
+
+</section>
+<section id="slide-org3afc7d7">
+<h5 id="org3afc7d7">Zusammenfassung</h5>
+<p>
+<b>Regel 4 (Hilfsfunktionen):</b>
+</p>
+
+<blockquote nil>
+<p>
+<b>Definiere für jeden Zusammenhang zwischen Größen, die sich aus der
+Problembeschreibung ergeben, eine Funktion.</b>
+</p>
+</blockquote>
+
+<p>
+<b>Prozedurale Abstraktion</b>
+</p>
+<ul>
+<li>Die Funktion <code>profit</code>, wie sie oben definiert wurde, zerlegt das
+Problem der Berechnung des Profit in zwei Teilprobleme, nämlich auf
+die Berechnung der Einnahmen und der Kosten.</li>
+<li>Die Funktionen <code>einnahmen</code> und <code>kosten</code> liefern eine Abstraktion von
+den Details ihrer Berechnungen. Auch wenn sich diese Details verändern,
+kann die Funktion <code>profit</code> unverändert bleiben.</li>
+
+</ul>
+</section>
+<section >
+
+<p>
+Man könnte die Funktion <code>profit</code> auch ohne die Verwendung von
+Hilfsfunktionen aufschreiben:
+</p>
+
+<div class="org-src-container">
+
+<pre  class="src src-scheme"><span style="color: #707183;">(</span><span style="color: #0000FF;">define</span> <span style="color: #006699;">profit</span>
+  <span style="color: #7388D6;">(</span><span style="color: #0000FF;">lambda</span> <span style="color: #909183;">[</span>kartenpreis<span style="color: #909183;">]</span>
+    <span style="color: #909183;">(</span>- <span style="color: #709870;">(</span>* <span style="color: #907373;">(</span>+ 120 <span style="color: #6276BA;">(</span>* <span style="color: #858580;">(</span>/ 15 10 <span style="color: #858580;">)</span>
+                    <span style="color: #858580;">(</span>- 500 kartenpreis<span style="color: #858580;">)</span><span style="color: #6276BA;">)</span><span style="color: #907373;">)</span>
+          kartenpreis<span style="color: #709870;">)</span>
+       <span style="color: #709870;">(</span>+ 18000
+          <span style="color: #907373;">(</span>* 5 <span style="color: #6276BA;">(</span>+ 120
+                  <span style="color: #858580;">(</span>* <span style="color: #80A880;">(</span>/ 15 10 <span style="color: #80A880;">)</span>
+                     <span style="color: #80A880;">(</span>- 500 kartenpreis<span style="color: #80A880;">)</span><span style="color: #858580;">)</span><span style="color: #6276BA;">)</span><span style="color: #907373;">)</span><span style="color: #709870;">)</span><span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span></pre>
+</pre>
+</div>
+
+<p>
+Diese Funktion berechnet das Gleiche wie die Variante mit
+Hilfsfunktionen, ist aber völlig unlesbar. Sollte in dieser Funktion
+der Zusammenhang zwischen Kartenpreis und Besucherzahl geändert werden
+müssen, wäre dies eine nur schwer lösbare Aufgabe.
+</p>
+
+
+</section>
+<section id="slide-orgbdb4c86">
+<h5 id="orgbdb4c86">Konstantendefinitionen</h5>
+<p>
+Die Lesbarkeit der Funktion <code>profit</code> (in beiden Varianten) und ihrer
+Hilfsfunktionen ist auch dadurch eingeschränkt, dass in den
+Berechnungsvorschriften eine Reihe von Zahlen auftreten, deren
+Bedeutung nicht unmittelbar einleuchtend sein muss.
+</p>
+
+<p>
+<b>Regel 5 Konstantendefinitionen:</b>
+</p>
+
+<blockquote nil>
+<p>
+<b>Ersetze jede Konstante, deren Bedeutung sich nicht aus dem Kontext
+ergibt, durch einen sprechenden Variablennamen.</b>
+</p>
+</blockquote>
+
+<p>
+Zum Beispiel für die
+Funktion <code>profit</code> und ihre Hilfsfunktionen:
+</p>
+
+<div class="org-src-container">
+
+<pre  class="src src-scheme"><span style="color: #707183;">(</span><span style="color: #0000FF;">define</span> <span style="color: #006699;">fixkosten</span> 18000<span style="color: #707183;">)</span>
+<span style="color: #707183;">(</span><span style="color: #0000FF;">define</span> <span style="color: #006699;">kosten-pro-besucher</span> 5<span style="color: #707183;">)</span>
+<span style="color: #707183;">(</span><span style="color: #0000FF;">define</span> <span style="color: #006699;">basis-besucherzahl</span> 120<span style="color: #707183;">)</span>
+<span style="color: #707183;">(</span><span style="color: #0000FF;">define</span> <span style="color: #006699;">besucher-preis-faktor</span> <span style="color: #7388D6;">(</span>/ 15 10<span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
+<span style="color: #707183;">(</span><span style="color: #0000FF;">define</span> <span style="color: #006699;">preis-fuer-basis-besucherzahl</span> 500<span style="color: #707183;">)</span>        </pre>
+</pre>
+</div>
+
+</section>
+<section >
+
+<p>
+(Das vollständige Programm <code>profit</code> (kino.rkt) steht in moodle zur
+     Verfügung.)
+</p>
+
+<p>
+<b>Gegenbeispiel:</b> In der Formel zur Berechnung der Dreiecksfläche
+</p>
+
+<pre class="example">
+(/ (* grundseite hoehe) 2)
+
+</pre>
+
+<p>
+<b>nicht</b> die Konstante 2 durch eine eine benannte Konstante <code>zwei</code> ersetzen.
+</p>
+
+<p>
+(s. Aufgaben 7 und 8)
+</p>
+
+</section>
+</section>
+<section>
+<section id="slide-org5d8af30">
+<h2 id="org5d8af30">Fünf Regeln</h2>
+<dl>
+<dt>Regel 1</dt><dd>Verwende aussagekräftige Namen für Funktionen und
+Variablen („sprechende Bezeichner“).</dd>
+<dt>Regel 2</dt><dd>Beschreibe den Zweck der Funktion durch einen Satz, der
+das Resultat der Funktion in Abhängigkeit von ihren Argumenten
+beschreibt.</dd>
+<dt>Regel 3</dt><dd>Schreibe Beispielanwendungen der Funktion auf, die das
+Resultat der Funktion mit dem Erwartungswert vergleichen.</dd>
+<dt>Regel 4</dt><dd>Definiere für jeden Zusammenhang zwischen Größen, die sich
+aus der Problembeschreibung ergeben, eine Funktion.</dd>
+<dt>Regel 5</dt><dd>Ersetze jede Konstante, deren Bedeutung sich nicht aus dem
+Kontext ergibt, durch einen sprechenden Variablennamen.</dd>
+
+</dl>
+</section>
+</section>
+</div>
+</div>
+<script src="./reveal.js/lib/js/head.min.js"></script>
+<script src="./reveal.js/js/reveal.js"></script>
+
+<script>
+// Full list of configuration options available here:
+// https://github.com/hakimel/reveal.js#configuration
+Reveal.initialize({
+
+controls: true,
+progress: true,
+history: false,
+center: true,
+slideNumber: 'c',
+rollingLinks: false,
+keyboard: true,
+overview: true,
+margin: 0.05,
+
+theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+transition: Reveal.getQueryHash().transition || 'slide', // default/cube/page/concave/zoom/linear/fade/none
+transitionSpeed: 'default',
+multiplex: {
+    secret: '', // null if client
+    id: '', // id, obtained from socket.io server
+    url: '' // Location of socket.io server
+},
+
+// Optional libraries used to extend on reveal.js
+dependencies: [
+ { src: './reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+ { src: './reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+ { src: './reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+ { src: './reveal.js/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+ { src: './reveal.js/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }]
+,dependencies: [ { src: 'plugin/menu/menu.js', async: true }, { src: 'reveal.js/plugin/zoom-js/zoom.js', async: true } ]});
+</script>
+</body>
+</html>
