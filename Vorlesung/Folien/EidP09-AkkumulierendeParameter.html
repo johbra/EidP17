@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8"/>
+<title>Akkumulierende Parameter</title>
+<meta name="author" content="(Johannes Brauer)"/>
+<style type="text/css">
+.underline { text-decoration: underline; }
+</style>
+<link rel="stylesheet" href="./reveal.js/css/reveal.css"/>
+
+<link rel="stylesheet" href="./reveal.js/css/theme/simple.css" id="theme"/>
+
+<link rel="stylesheet" href="./mycss/myrevealstyle.css"/>
+
+<!-- If the query includes 'print-pdf', include the PDF print sheet -->
+<script>
+    if( window.location.search.match( /print-pdf/gi ) ) {
+        var link = document.createElement( 'link' );
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = './reveal.js/css/print/pdf.css';
+        document.getElementsByTagName( 'head' )[0].appendChild( link );
+    }
+</script>
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<link rel="stylesheet" type="text/css" href="mycss/mystyle.css" />
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+<section id="sec-title-slide"><h1 class="title">Akkumulierende Parameter</h1><h2 class="author">Johannes Brauer</h2><p class="date">Created: 2018-01-25 Thu 18:10</p>
+</section>
+<section>
+<section id="slide-org0c29601">
+<h2 id="org0c29601">Rekursive und iterative Prozesse</h2>
+<div class="outline-text-2" id="text-org0c29601">
+</div>
+</section>
+<section id="slide-orga71ee6a">
+<h3 id="orga71ee6a">Fakultät rekursiv</h3>
+<p>
+Ausgehend von der mathematischen Definition:
+</p>
+
+<p>
+\[n! = n \cdot (n-1) \cdot (n-2) \cdot\cdot\cdot 2 \cdot 1 =
+        n\cdot (n-1)!\]
+kann folgende rekursive Funktionsdefinition gegeben werden:
+</p>
+<div class="small">
+<div class="org-src-container">
+
+<pre  class="src src-clojure">    <span style="color: #707183;">(</span><span style="color: #0000FF;">define</span> <span style="color: #006699;">factorial</span>
+       <span style="color: #7388D6;">(</span>lambda <span style="color: #909183;">[</span>n<span style="color: #909183;">]</span>
+          <span style="color: #909183;">(</span><span style="color: #0000FF;">cond</span> 
+             <span style="color: #709870;">[</span><span style="color: #907373;">(</span>= n 1<span style="color: #907373;">)</span> 1<span style="color: #709870;">]</span>
+             <span style="color: #709870;">[</span>else <span style="color: #907373;">(</span>* n <span style="color: #6276BA;">(</span>factorial <span style="color: #858580;">(</span>- n 1<span style="color: #858580;">)</span><span style="color: #6276BA;">)</span><span style="color: #907373;">)</span><span style="color: #709870;">]</span><span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span></pre>
+</pre>
+</div>
+
+</div>
+
+<p>
+Die Anwendung <code>(factorial 6)</code> führt zu folgendem rekursiven
+Abarbeitungsprozess:
+</p>
+
+</section>
+<section id="slide-orgbe7ede6">
+<h3 id="orgbe7ede6">rekursive Abarbeitung der Fakultät</h3>
+
+<div class="figure">
+<p><img src="./Abbildungen/faktreku.png" alt="faktreku.png" width="600px" />
+</p>
+</div>
+
+</section>
+<section id="slide-org30a6a4e">
+<h3 id="org30a6a4e">Fakultät iterativ</h3>
+<p>
+\(n! = 1  \cdot 2 \cdot\cdot\cdot (n-1) \cdot n\)
+</p>
+
+<p>
+Berechnung der Fakultät im Vorwärtsgang mit zwei Hilfsvariablen:
+</p>
+
+<p>
+<code>product</code> \(\leftarrow\) <code>product * counter</code>
+</p>
+
+<p>
+<code>counter</code> \(\leftarrow\) <code>counter + 1</code>
+</p>
+
+<p>
+<code>product</code> ist gleich \(n!\), wenn <code>counter</code> größer als \(n\) ist.
+</p>
+
+<div class="org-src-container">
+
+<pre  class="src src-clojure">    <span style="color: #707183;">(</span><span style="color: #0000FF;">define</span> <span style="color: #006699;">factorial</span>
+      <span style="color: #7388D6;">(</span>lambda <span style="color: #909183;">[</span>n<span style="color: #909183;">]</span>
+        <span style="color: #909183;">(</span>fact-iter 1 1 n<span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
+
+    <span style="color: #707183;">(</span><span style="color: #0000FF;">define</span> <span style="color: #006699;">fact-iter</span>
+      <span style="color: #7388D6;">(</span>lambda <span style="color: #909183;">[</span>product counter max-counter<span style="color: #909183;">]</span>
+        <span style="color: #909183;">(</span><span style="color: #0000FF;">cond</span> 
+          <span style="color: #709870;">[</span><span style="color: #907373;">(</span>&gt; counter max-counter<span style="color: #907373;">)</span> product<span style="color: #709870;">]</span> 
+          <span style="color: #709870;">[</span>else <span style="color: #907373;">(</span>fact-iter <span style="color: #6276BA;">(</span>* product counter<span style="color: #6276BA;">)</span> 
+                           <span style="color: #6276BA;">(</span>+ counter 1<span style="color: #6276BA;">)</span>
+                           max-counter<span style="color: #907373;">)</span><span style="color: #709870;">]</span><span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span></pre>
+</pre>
+</div>
+
+</section>
+<section id="slide-org0261881">
+<h3 id="org0261881">iterative Abarbeitung der Fakultät</h3>
+<p width="500px">
+<img src="./Abbildungen/faktiter.png" alt="faktiter.png" width="500px" /> 
+</p>
+
+</section>
+<section id="slide-orgc46e301">
+<h3 id="orgc46e301">Fakultät iterativ mit lokaler Hilfsfunktion</h3>
+<ul>
+<li>Die Funktion <code>fact-iter</code> hat reinen Hilfscharakter, d.h. sollte nur
+von <code>factorial</code> aufgerufen werden.</li>
+<li><p>
+Konsequenz: Funktion <code>fact-iter</code> lokal definieren:
+</p>
+<div class="org-src-container">
+
+<pre  class="src src-clojure">       <span style="color: #707183;">(</span><span style="color: #0000FF;">define</span> <span style="color: #006699;">factorial</span>
+         <span style="color: #7388D6;">(</span>lambda <span style="color: #909183;">[</span>n<span style="color: #909183;">]</span>
+           <span style="color: #909183;">(</span>letrec 
+               <span style="color: #709870;">(</span><span style="color: #907373;">[</span>fact-iter
+                 <span style="color: #6276BA;">(</span>lambda <span style="color: #858580;">[</span>product counter<span style="color: #858580;">]</span>
+                   <span style="color: #858580;">(</span><span style="color: #0000FF;">cond</span> 
+                     <span style="color: #80A880;">[</span><span style="color: #887070;">(</span>&gt; counter n<span style="color: #887070;">)</span> product<span style="color: #80A880;">]</span> 
+                     <span style="color: #80A880;">[</span>else <span style="color: #887070;">(</span>fact-iter <span style="color: #707183;">(</span>* product counter<span style="color: #707183;">)</span> 
+                                      <span style="color: #707183;">(</span>+ counter 1<span style="color: #707183;">)</span><span style="color: #887070;">)</span><span style="color: #80A880;">]</span><span style="color: #858580;">)</span><span style="color: #6276BA;">)</span><span style="color: #907373;">]</span><span style="color: #709870;">)</span>
+             <span style="color: #709870;">(</span>fact-iter 1 1<span style="color: #709870;">)</span><span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span></pre>
+</pre>
+</div></li>
+<li>Das dritte Argument für <code>fact-iter</code> ist überflüssig
+geworden.</li>
+
+</ul>
+
+</section>
+<section id="slide-org7529619">
+<h3 id="org7529619">Akkumulierende Parameter</h3>
+<ul>
+<li>Ein <i>rekursiver Prozess</i> ist durch eine Folge von verzögerten
+Operationen gekennzeichnet.</li>
+
+<li>Der Speicherbedarf für das Merken von noch nicht ausgeführten
+Operationen wächst linear mit \(n\).</li>
+
+<li>Die iterative Abarbeitung erfordert hingegen nur konstanten
+Speicherbedarf für die Werte von <code>product</code>, <code>counter</code>
+<code>und max-counter</code>.</li>
+
+<li><code>product</code> bezeichnet man als <i>akkumulierenden Parameter</i>.</li>
+
+<li>Akkumulierende Parameter ermöglichen oft die iterative Abarbeitung
+rekursiver Funktionen.</li>
+
+<li>Akkumulierende Parameter führen oft zu effizienteren Funktionen.</li>
+
+</ul>
+
+</section>
+</section>
+<section>
+<section id="slide-orgeeeaa3d">
+<h2 id="orgeeeaa3d">Akkumulierende Parameter</h2>
+<div class="outline-text-2" id="text-orgeeeaa3d">
+</div>
+</section>
+<section id="slide-orgfd7a4a2">
+<h3 id="orgfd7a4a2">Invertieren einer Liste</h3>
+<div class="org-src-container">
+
+<pre  class="src src-clojure">    <span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">kehrt die Reihenfolge der Symbole einer Liste um</span>
+    <span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">rev-list : (list-of symbol) -&gt; (list-of symbol)</span>
+    <span style="color: #707183;">(</span><span style="color: #0000FF;">define</span> <span style="color: #006699;">rev-list</span>
+      <span style="color: #7388D6;">(</span>lambda <span style="color: #909183;">[</span>list<span style="color: #909183;">]</span>
+        <span style="color: #909183;">(</span><span style="color: #0000FF;">cond</span> 
+          <span style="color: #709870;">[</span><span style="color: #907373;">(</span><span style="color: #006FE0;">empty?</span> list<span style="color: #907373;">)</span> empty<span style="color: #709870;">]</span>
+          <span style="color: #709870;">[</span>else <span style="color: #907373;">(</span>putatend <span style="color: #6276BA;">(</span><span style="color: #006FE0;">first</span> list<span style="color: #6276BA;">)</span> 
+                          <span style="color: #6276BA;">(</span>rev-list <span style="color: #858580;">(</span><span style="color: #006FE0;">rest</span> list<span style="color: #858580;">)</span><span style="color: #6276BA;">)</span><span style="color: #907373;">)</span><span style="color: #709870;">]</span><span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
+
+    <span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">stellt das Symbol an das Ende der Liste</span>
+    <span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">putatend: symbol (list-of symbol) -&gt; (list-of symbol)</span>
+    <span style="color: #707183;">(</span><span style="color: #0000FF;">define</span> <span style="color: #006699;">putatend</span>
+      <span style="color: #7388D6;">(</span>lambda <span style="color: #909183;">[</span>symbol list<span style="color: #909183;">]</span>
+        <span style="color: #909183;">(</span><span style="color: #0000FF;">cond</span> 
+          <span style="color: #709870;">[</span><span style="color: #907373;">(</span><span style="color: #006FE0;">empty?</span> list<span style="color: #907373;">)</span> <span style="color: #907373;">(</span><span style="color: #006FE0;">cons</span> symbol empty<span style="color: #907373;">)</span><span style="color: #709870;">]</span>
+          <span style="color: #709870;">[</span>else <span style="color: #907373;">(</span><span style="color: #006FE0;">cons</span> <span style="color: #6276BA;">(</span><span style="color: #006FE0;">first</span> list<span style="color: #6276BA;">)</span> 
+                <span style="color: #6276BA;">(</span>putatend symbol <span style="color: #858580;">(</span><span style="color: #006FE0;">rest</span> list<span style="color: #858580;">)</span><span style="color: #6276BA;">)</span><span style="color: #907373;">)</span><span style="color: #709870;">]</span><span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span></pre>
+</pre>
+</div>
+
+</section>
+<section id="slide-org61fc2dc">
+<h3 id="org61fc2dc">Effizienzbetrachtung:</h3>
+<ul>
+<li>Vorbemerkung: Beide Funktionen entstehen durch Anwendung der
+bekannten Regeln für den Entwurf listenverarbeitender Funktionen.</li>
+<li><code>putatend</code> wird \(n\) mal rekursiv aufgerufen, wenn \(n\) die
+Mächtigkeit der Liste ist, d.h. <code>cons</code> wird \(n\) mal ausgeführt.</li>
+<li><code>rev-list</code> ruft sich selbst ebenfalls \(n\) mal auf.</li>
+<li>Jeder Aufruf von <code>rev-list</code> ruft einen Aufruf von <code>putatend</code> hervor.</li>
+<li>Für diese Aufrufe von <code>putatend</code> ist die Länge des zweiten
+Arguments \(n-1, n-2\ldots 1, 0\).</li>
+<li>Die Anzahl der <code>cons</code>-Aufrufe von <code>putatend</code> beträgt:
+\[0 + 1 + \cdots + n-1 = \frac{n(n-1)}{2}\]</li>
+<li>Die Funktion <code>rev-list</code> wächst quadratisch:
+\(O(\texttt{rev-list})=n^2\).</li>
+<li>Das Invertieren einer Liste sollte aber nur linearen Aufwand
+erfordern.</li>
+<li>Lösung: Hilfsfunktion mit akkumulierendem Parameter</li>
+
+</ul>
+
+</section>
+<section id="slide-org483e0e5">
+<h3 id="org483e0e5">Invertieren einer Liste (2)</h3>
+<div class="org-src-container">
+
+<pre  class="src src-clojure">    <span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">kehrt die Reihenfolge der Symbole einer Liste um</span>
+    <span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">rev-list (list-of symbol) -&gt; (list-of symbol)</span>
+     <span style="color: #707183;">(</span><span style="color: #0000FF;">define</span> <span style="color: #006699;">rev-list</span>
+      <span style="color: #7388D6;">(</span>lambda <span style="color: #909183;">[</span>list<span style="color: #909183;">]</span>
+        <span style="color: #909183;">(</span>letrec
+            <span style="color: #709870;">(</span><span style="color: #907373;">[</span>rev
+              <span style="color: #6276BA;">(</span>lambda <span style="color: #858580;">[</span>list-x list-y<span style="color: #858580;">]</span>
+                <span style="color: #858580;">(</span><span style="color: #0000FF;">cond</span> 
+                  <span style="color: #80A880;">(</span><span style="color: #887070;">(</span><span style="color: #006FE0;">empty?</span> list-x<span style="color: #887070;">)</span> list-y<span style="color: #80A880;">)</span>
+                  <span style="color: #80A880;">(</span>else <span style="color: #887070;">(</span>rev <span style="color: #707183;">(</span><span style="color: #006FE0;">rest</span> list-x<span style="color: #707183;">)</span> 
+                             <span style="color: #707183;">(</span><span style="color: #006FE0;">cons</span> <span style="color: #7388D6;">(</span><span style="color: #006FE0;">first</span> list-x<span style="color: #7388D6;">)</span> 
+                                   list-y<span style="color: #707183;">)</span><span style="color: #887070;">)</span><span style="color: #80A880;">)</span><span style="color: #858580;">)</span><span style="color: #6276BA;">)</span><span style="color: #907373;">]</span><span style="color: #709870;">)</span>
+          <span style="color: #709870;">(</span>rev list empty<span style="color: #709870;">)</span><span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span></pre>
+</pre>
+</div>
+
+<ul>
+<li>Die Anzahl der <code>cons</code>-Aufrufe in <code>rev</code> wächst linear mit der Länge
+der Liste.</li>
+
+</ul>
+
+</section>
+<section id="slide-org7f99fd6">
+<h3 id="org7f99fd6">Einsatz von akkumulierenden Parametern</h3>
+<ul>
+<li>Im Zusammenhang mit akkumulierenden Parametern sind zwei Fragen
+interessant:
+<ol>
+<li>Woran erkennt man, dass eine Funktion von akkumulierenden
+Parametern profitieren kann?</li>
+<li>Was muss ggf. in einem akkumulierenden Parameter eigentlich
+akkumuliert werden?</li>
+
+</ol></li>
+<li>Schwierigkeit beim Entwurf einer solchen Hilfsfunktion: Die bekannten
+Regeln sind nicht ohne weiteres anwendbar.</li>
+
+</ul>
+
+</section>
+<section id="slide-orgfd81f9e">
+<h3 id="orgfd81f9e">Vorgehensweise beim Entwurf</h3>
+<ul>
+<li>Da war zunächst die Frage, ob eine Funktion mit akkumulierendem
+Parameter zweckmäßig ist.</li>
+<li>Frage ist i.a. nicht leicht zu beantworten.</li>
+<li><b>Indiz:</b> Die Anwendung der bekannten Regeln liefert eine
+Funktion, die die Liste rekursiv abarbeitet unter Verwendung einer
+Hilfsfunktion, die die Liste ebenfalls rekursiv abarbeitet.</li>
+<li>Hier ist eine Effizienzbetrachtung angebracht.</li>
+<li>Vergleiche die Definition von <code>rev-list</code> mit Hilfsfunktion
+<code>putatend</code>.</li>
+<li>Der Entwurf einer Hilfsfunktion mit akkumulierendem Parameter
+vollzieht sich dann in zwei Schritten:
+<ol>
+<li>Man schreibt zunächst eine Funktionsschablone für die Funktion
+samt lokaler Hilfsfunktion mit akkumulierendem Parameter auf.
+Siehe nächste Folie!</li>
+<li>Man beschreibt präzise die Aufgabe des akkumulierenden Parameters
+durch eine so genannte <i>Akkumulatorinvariante</i>. Siehe übernächste
+Folie!</li>
+
+</ol></li>
+
+</ul>
+
+</section>
+<section id="slide-org123dde5">
+<h3 id="org123dde5">Funktionsschablone für <code>rev-list</code> mit <code>rev</code></h3>
+<div class="org-src-container">
+
+<pre  class="src src-clojure">    <span style="color: #707183;">(</span><span style="color: #0000FF;">define</span> <span style="color: #006699;">rev-list</span>
+      <span style="color: #7388D6;">(</span>lambda <span style="color: #909183;">[</span>list<span style="color: #909183;">]</span>
+        <span style="color: #909183;">(</span>letrec
+            <span style="color: #709870;">(</span><span style="color: #907373;">[</span><span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">Akkumulator ...</span>
+              rev
+              <span style="color: #6276BA;">(</span>lambda <span style="color: #858580;">[</span><span style="color: #808080;">listX</span> akku<span style="color: #858580;">]</span>
+                <span style="color: #858580;">(</span><span style="color: #0000FF;">cond</span> 
+                  <span style="color: #80A880;">[</span><span style="color: #887070;">(</span><span style="color: #006FE0;">empty?</span> <span style="color: #808080;">listX</span><span style="color: #887070;">)</span> ... akku ...<span style="color: #80A880;">]</span>
+                  <span style="color: #80A880;">[</span>else 
+                   ... <span style="color: #887070;">(</span>rev <span style="color: #707183;">(</span><span style="color: #006FE0;">rest</span> <span style="color: #808080;">listX</span><span style="color: #707183;">)</span> 
+                            ... <span style="color: #707183;">(</span><span style="color: #006FE0;">first</span> <span style="color: #808080;">listX</span><span style="color: #707183;">)</span> ...akku<span style="color: #887070;">)</span>
+    <span style="color: #8D8D84;">;;                      </span><span style="color: #8D8D84; font-style: italic;">==========================</span>
+                            <span style="color: #80A880;">]</span><span style="color: #858580;">)</span><span style="color: #6276BA;">)</span><span style="color: #907373;">]</span><span style="color: #709870;">)</span>
+          <span style="color: #709870;">(</span>rev list ...<span style="color: #709870;">)</span><span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span></pre>
+</pre>
+</div>
+<ul>
+<li>Das Argument für den akkumulierenden Parameter im rekursiven Aufruf
+der lokalen Hilfsfunktion <code>rev</code> ist hier unterstrichen.</li>
+<li>Es muss so bestimmt werden, dass die noch zu definierende
+Akkumulatorinvariante gültig bleibt.</li>
+
+</ul>
+
+</section>
+<section id="slide-org55b70cf">
+<h3 id="org55b70cf">Akkumulatorinvariante für <code>rev</code></h3>
+<ul>
+<li>Eine Akkumulatorinvariante ist eine Aussage über das Argument der
+Hauptfunktion (hier: <code>list</code>), das entsprechende Argument der
+Hilfsfunktion (hier: <code>listX</code>) und den Akkumulator, die vor und nach
+jedem rekursiven Aufruf der Funktion gilt.</li>
+
+<li>Für den letzten Aufruf von <code>rev</code> gilt: \(listX = 
+           empty\). Wenn wir voraussetzen, dass <code>akku</code> dann das
+invertierte <code>list</code> enthält, können wir die Schablone für den Fall,
+dass das Argument <code>listX</code> von <code>rev</code> <code>empty</code> ist, so ergänzen:
+<code>[(empty? listX) akku]</code>.</li>
+
+<li>Für den ersten Aufruf von <code>rev</code> gilt: \(listX = 
+           list\). Da beim Invertierungsprozess keine Listenelemente
+hinzukommen, kann die Schablone hier so ergänzt werden:
+<code>(rev list empty)</code></li>
+
+</ul>
+</section>
+<section >
+<ul>
+<li>Da bei jedem rekursiven Aufruf von <code>rev</code> vorne ein Element von
+<code>listX</code> wegenommen wird, muss <code>(first listX)</code> an den Anfang der Liste
+<code>akku</code> gestellt werden. Damit ergibt sich für den unterstrichenen Teil der
+Schablone: <code>(cons (first listX) akku))</code>.</li>
+
+<li>Akkumulatorinvariante: <code>akku</code> ist eine Liste, die diejenigen Elemente
+von <code>list</code> in umgekehrter Reihenfolge enthält, die denen von <code>listX</code>
+vorangehen.</li>
+
+</ul>
+</section>
+</section>
+</div>
+</div>
+<script src="./reveal.js/lib/js/head.min.js"></script>
+<script src="./reveal.js/js/reveal.js"></script>
+
+<script>
+// Full list of configuration options available here:
+// https://github.com/hakimel/reveal.js#configuration
+Reveal.initialize({
+
+controls: true,
+progress: true,
+history: false,
+center: true,
+slideNumber: 'c',
+rollingLinks: false,
+keyboard: true,
+overview: true,
+margin: 0.05,
+
+theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+transition: Reveal.getQueryHash().transition || 'slide', // default/cube/page/concave/zoom/linear/fade/none
+transitionSpeed: 'default',
+multiplex: {
+    secret: '', // null if client
+    id: '', // id, obtained from socket.io server
+    url: '' // Location of socket.io server
+},
+
+// Optional libraries used to extend on reveal.js
+dependencies: [
+ { src: './reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+ { src: './reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+ { src: './reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+ { src: './reveal.js/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+ { src: './reveal.js/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }]
+,dependencies: [ { src: 'plugin/menu/menu.js', async: true }, { src: 'reveal.js/plugin/zoom-js/zoom.js', async: true } ]});
+</script>
+</body>
+</html>
