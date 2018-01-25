@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="de" xml:lang="de">
 <head>
-<!-- 2018-01-21 Sun 17:50 -->
+<!-- 2018-01-25 Thu 12:03 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Aufgaben - Lösungen</title>
@@ -263,17 +263,21 @@ for the JavaScript code in this tag.
 <h2>Inhaltsverzeichnis</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#orgaa9d0c5">1. Aufgabe (Erste Schritte in Racket)</a></li>
-<li><a href="#org215e531">2. Aufgabe (Auswertung arithmetischer Ausdrücke)</a></li>
-<li><a href="#org2a75f2e">3. Aufgabe (Aufschreiben elementarer Funktionen)</a></li>
-<li><a href="#orgdd58831">4. Aufgabe (Aufschreiben elementarer Funktionen)</a></li>
-<li><a href="#orga9a2d23">5. Aufgabe (Anwenden der Aufschreibregeln)</a></li>
+<li><a href="#org4b3cded">1. Aufgabe (Erste Schritte in Racket)</a></li>
+<li><a href="#org067de79">2. Aufgabe (Auswertung arithmetischer Ausdrücke)</a></li>
+<li><a href="#orgc7b8913">3. Aufgabe (Aufschreiben elementarer Funktionen)</a></li>
+<li><a href="#org2509d48">4. Aufgabe (Aufschreiben elementarer Funktionen)</a></li>
+<li><a href="#org62dc7b2">5. Aufgabe (Anwenden der Aufschreibregeln)</a></li>
+<li><a href="#org538d9d9">6. Aufgabe (Profit für den Kinobesitzer)</a></li>
+<li><a href="#orgec2efc7">7. Aufgabe (Modifikation von <code>kino.rkt</code>)</a></li>
+<li><a href="#org6a11b4f">8. Aufgabe (Einsatz von Hilfsfunktionen)</a></li>
+<li><a href="#org936377e">9. Aufgabe (Ersetzungsmodell)</a></li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-orgaa9d0c5" class="outline-2">
-<h2 id="orgaa9d0c5"><span class="section-number-2">1</span> Aufgabe (Erste Schritte in Racket)</h2>
+<div id="outline-container-org4b3cded" class="outline-2">
+<h2 id="org4b3cded"><span class="section-number-2">1</span> Aufgabe (Erste Schritte in Racket)</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 Machen Sie sich mit den NORDAKADEMIE-Rechnern vertraut und richten Sie
@@ -300,8 +304,8 @@ finden Sie alle vordefinierten mathematischen Funktionen?
 </div>
 </div>
 
-<div id="outline-container-org215e531" class="outline-2">
-<h2 id="org215e531"><span class="section-number-2">2</span> Aufgabe (Auswertung arithmetischer Ausdrücke)</h2>
+<div id="outline-container-org067de79" class="outline-2">
+<h2 id="org067de79"><span class="section-number-2">2</span> Aufgabe (Auswertung arithmetischer Ausdrücke)</h2>
 <div class="outline-text-2" id="text-2">
 <ol class="org-ol">
 <li>Wie wird der Ausdruck<br />
@@ -321,8 +325,8 @@ Werten Sie die folgenden Ausdrücke aus und vergleichen Sie die Resultate:
 </div>
 </div>
 
-<div id="outline-container-org2a75f2e" class="outline-2">
-<h2 id="org2a75f2e"><span class="section-number-2">3</span> Aufgabe (Aufschreiben elementarer Funktionen)</h2>
+<div id="outline-container-orgc7b8913" class="outline-2">
+<h2 id="orgc7b8913"><span class="section-number-2">3</span> Aufgabe (Aufschreiben elementarer Funktionen)</h2>
 <div class="outline-text-2" id="text-3">
 <p>
 Schreiben Sie für die folgenden mathematischen Formeln Racket-Funktionsdefinitionen auf:
@@ -364,8 +368,8 @@ Funktionsaufrufe für diese Funktionen ein.
 </p>
 </div>
 </div>
-<div id="outline-container-orgdd58831" class="outline-2">
-<h2 id="orgdd58831"><span class="section-number-2">4</span> Aufgabe (Aufschreiben elementarer Funktionen)</h2>
+<div id="outline-container-org2509d48" class="outline-2">
+<h2 id="org2509d48"><span class="section-number-2">4</span> Aufgabe (Aufschreiben elementarer Funktionen)</h2>
 <div class="outline-text-2" id="text-4">
 <p>
 In der Praxis findet der Programmierer selten mathematische Formeln
@@ -460,8 +464,8 @@ Hinweis: Ein Aufruf <code>(expt x y)</code> liefert \(x^y\) als Ergebnis.
 </div>
 </div>
 
-<div id="outline-container-orga9a2d23" class="outline-2">
-<h2 id="orga9a2d23"><span class="section-number-2">5</span> Aufgabe (Anwenden der Aufschreibregeln)</h2>
+<div id="outline-container-org62dc7b2" class="outline-2">
+<h2 id="org62dc7b2"><span class="section-number-2">5</span> Aufgabe (Anwenden der Aufschreibregeln)</h2>
 <div class="outline-text-2" id="text-5">
 <p>
 Schreiben Sie die Funktion zur Berechnung der Bahnhofsmiete in
@@ -486,10 +490,209 @@ folgenden Aufgaben gemäß diesen Regeln aufzuschreiben!!!</b>
 </p>
 </div>
 </div>
+<div id="outline-container-org538d9d9" class="outline-2">
+<h2 id="org538d9d9"><span class="section-number-2">6</span> Aufgabe (Profit für den Kinobesitzer)</h2>
+<div class="outline-text-2" id="text-6">
+<p>
+Ein altmodisches Vorstadtkino besitzt eine einfache Formel für die
+Berechnung des Profits einer Vorstellung: Jeder Kinobesucher
+bezahlt 500 Währungseinheiten für die Eintrittskarte. Jede
+Vorstellung kostet das Kino 2000 Währungseinheiten plus 50
+Währungseinheiten pro Besucher. Schreiben Sie eine Funktion <code>profit</code> zur
+Berechnung des Profits bei gegebener Besucherzahl.
+</p>
+<div class="org-src-container">
+<pre class="src src-scheme"><span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">berechnet den Profit eine Filmvorfuehrung aus 2000 WE Fixkosten</span>
+<span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">und 50 WE Kosten pro Besucher bei gegebener Besucherzahl und</span>
+<span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">500 WE Kartenpreis</span>
+<span style="color: #707183;">(</span><span style="color: #0000FF;">define</span> <span style="color: #006699;">profit</span>
+  <span style="color: #7388D6;">(</span><span style="color: #0000FF;">lambda</span> <span style="color: #909183;">[</span>besucherzahl<span style="color: #909183;">]</span>
+    <span style="color: #909183;">(</span>- <span style="color: #709870;">(</span>* 500 besucherzahl<span style="color: #709870;">)</span>
+       <span style="color: #709870;">(</span>+ <span style="color: #907373;">(</span>* 50 besucherzahl<span style="color: #907373;">)</span> 2000<span style="color: #709870;">)</span><span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
+<span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">Beispielanwendungen</span>
+<span style="color: #707183;">(</span>= <span style="color: #7388D6;">(</span>profit 100<span style="color: #7388D6;">)</span> 43000<span style="color: #707183;">)</span></pre>
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgec2efc7" class="outline-2">
+<h2 id="orgec2efc7"><span class="section-number-2">7</span> Aufgabe (Modifikation von <code>kino.rkt</code>)</h2>
+<div class="outline-text-2" id="text-7">
+<ol class="org-ol">
+<li>Modifizieren Sie das Programm <code>kino.rkt</code> so, dass die Fixkosten
+einer Veranstaltung wegfallen und dafür 15 Währungseinheiten pro
+Besucher an Kosten anfallen.</li>
+<li>Nehmen Sie die gleiche Modifikation auch an der Funktion <code>profit</code>
+aus der Vorlesung vor, die ohne Hilfsfunktionen auskommt, und
+vergleichen Sie die Ergebnisse.</li>
+</ol>
+</div>
+</div>
+
+<div id="outline-container-org6a11b4f" class="outline-2">
+<h2 id="org6a11b4f"><span class="section-number-2">8</span> Aufgabe (Einsatz von Hilfsfunktionen)</h2>
+<div class="outline-text-2" id="text-8">
+<p>
+Die folgenden Aufgaben sind unter Benutzung von Hilfsfunktionen zu
+lösen. Befolgen Sie unbedingt alle in der Vorlesung angegebenen Regeln:
+</p>
+<ol class="org-ol">
+<li>Schreiben Sie ein Programm, das das Volumen eines Zylinders zu
+berechnen erlaubt. Eingangsgrößen sind der Radius und die Höhe des Zylinders.</li>
+<li>Schreiben Sie ein Programm, das die Oberfläche eines Zylinders zu
+berechnen erlaubt. Eingangsgrößen sind der Radius und die Höhe des Zylinders.</li>
+<li>Schreiben Sie ein Programm, das die Oberfläche eines Rohrs zu
+berechnen erlaubt. Eingangsgrößen sind der Innenradius, die
+Wandstärke und die Länge des Rohrs.</li>
+</ol>
+<div class="org-src-container">
+<pre class="src src-scheme"><span style="color: #707183;">(</span><span style="color: #0000FF;">define</span> <span style="color: #006699;">PI</span> 3.14<span style="color: #707183;">)</span>
+
+<span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">berechnet die Fl&#228;che eines Kreises aus dem radius</span>
+<span style="color: #707183;">(</span><span style="color: #0000FF;">define</span> <span style="color: #006699;">kreisflaeche</span>
+  <span style="color: #7388D6;">(</span><span style="color: #0000FF;">lambda</span> <span style="color: #909183;">[</span>radius<span style="color: #909183;">]</span>
+    <span style="color: #909183;">(</span>* <span style="color: #709870;">(</span>sqr radius<span style="color: #709870;">)</span> PI<span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
+<span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">Beispielanwendungen</span>
+<span style="color: #707183;">(</span>= <span style="color: #7388D6;">(</span>kreisflaeche 2<span style="color: #7388D6;">)</span> 12.56<span style="color: #707183;">)</span>
+
+<span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">berechnet die Fl&#228;che eines Kreisrings aus dem gro&#223;en radius1</span>
+<span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">und dem kleinen radius2</span>
+<span style="color: #707183;">(</span><span style="color: #0000FF;">define</span> <span style="color: #006699;">kreisring</span>
+  <span style="color: #7388D6;">(</span><span style="color: #0000FF;">lambda</span> <span style="color: #909183;">[</span>radius1 radius2<span style="color: #909183;">]</span>
+    <span style="color: #909183;">(</span>- <span style="color: #709870;">(</span>kreisflaeche radius1<span style="color: #709870;">)</span>
+       <span style="color: #709870;">(</span>kreisflaeche radius2<span style="color: #709870;">)</span><span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
+<span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">Beispielanwendungen</span>
+<span style="color: #707183;">(</span>= <span style="color: #7388D6;">(</span>kreisring 2 1<span style="color: #7388D6;">)</span> 9.42<span style="color: #707183;">)</span>
+
+<span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">berechnet den Umfang eines Kreises aus dem radius</span>
+<span style="color: #707183;">(</span><span style="color: #0000FF;">define</span> <span style="color: #006699;">kreisumfang</span>
+  <span style="color: #7388D6;">(</span><span style="color: #0000FF;">lambda</span> <span style="color: #909183;">[</span>radius<span style="color: #909183;">]</span>
+    <span style="color: #909183;">(</span>* 2 radius PI<span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
+<span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">Beispielanwendungen</span>
+<span style="color: #707183;">(</span>= <span style="color: #7388D6;">(</span>kreisumfang 2<span style="color: #7388D6;">)</span> 12.56<span style="color: #707183;">)</span>
+
+<span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">berechnet das Volumen eines Zylinders aus radius und hoehe</span>
+<span style="color: #707183;">(</span><span style="color: #0000FF;">define</span> <span style="color: #006699;">zylinder-volumen</span>
+  <span style="color: #7388D6;">(</span><span style="color: #0000FF;">lambda</span> <span style="color: #909183;">[</span>radius hoehe<span style="color: #909183;">]</span>
+    <span style="color: #909183;">(</span>* <span style="color: #709870;">(</span>kreisflaeche radius<span style="color: #709870;">)</span> hoehe<span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
+<span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">Beispielanwendungen</span>
+<span style="color: #707183;">(</span>= <span style="color: #7388D6;">(</span>zylinder-volumen 1 5<span style="color: #7388D6;">)</span> 15.7<span style="color: #707183;">)</span>
+
+<span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">berechnet die Oberfl&#228;che eines Zylinders aus radius und hoehe</span>
+<span style="color: #707183;">(</span><span style="color: #0000FF;">define</span> <span style="color: #006699;">zylinder-oberflaeche</span>
+  <span style="color: #7388D6;">(</span><span style="color: #0000FF;">lambda</span> <span style="color: #909183;">[</span>radius hoehe<span style="color: #909183;">]</span>
+    <span style="color: #909183;">(</span>+ <span style="color: #709870;">(</span>* 2 <span style="color: #907373;">(</span>kreisflaeche radius<span style="color: #907373;">)</span><span style="color: #709870;">)</span>
+       <span style="color: #709870;">(</span>* <span style="color: #907373;">(</span>kreisumfang radius<span style="color: #907373;">)</span> hoehe<span style="color: #709870;">)</span><span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span> 
+<span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">Beispielanwendungen</span>
+<span style="color: #707183;">(</span>= <span style="color: #7388D6;">(</span>zylinder-oberflaeche 1 5<span style="color: #7388D6;">)</span> 37.68<span style="color: #707183;">)</span>
+<span style="color: #707183;">(</span>= <span style="color: #7388D6;">(</span>zylinder-oberflaeche 1 1<span style="color: #7388D6;">)</span> 12.56<span style="color: #707183;">)</span>
+
+<span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">berechnet die Oberfl&#228;che eines Rohrs aus dem innenradius,</span>
+<span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">der wandstaerke und der laenge des Rohrs.</span>
+<span style="color: #707183;">(</span><span style="color: #0000FF;">define</span> <span style="color: #006699;">rohr-oberflaeche</span>
+  <span style="color: #7388D6;">(</span><span style="color: #0000FF;">lambda</span> <span style="color: #909183;">[</span>innenradius wandstaerke laenge<span style="color: #909183;">]</span>
+    <span style="color: #909183;">(</span>+ <span style="color: #709870;">(</span>* 2 <span style="color: #907373;">(</span>kreisring <span style="color: #6276BA;">(</span>+ innenradius wandstaerke<span style="color: #6276BA;">)</span> innenradius<span style="color: #907373;">)</span>
+       <span style="color: #907373;">(</span>* <span style="color: #6276BA;">(</span>kreisumfang innenradius<span style="color: #6276BA;">)</span> laenge<span style="color: #907373;">)</span>
+       <span style="color: #907373;">(</span>* <span style="color: #6276BA;">(</span>kreisumfang <span style="color: #858580;">(</span>+ innenradius wandstaerke<span style="color: #858580;">)</span><span style="color: #6276BA;">)</span> laenge<span style="color: #907373;">)</span><span style="color: #709870;">)</span><span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span> 
+<span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">Beispielanwendungen</span>
+<span style="color: #707183;">(</span>= <span style="color: #7388D6;">(</span>rohr-oberflaeche 5 1 10<span style="color: #7388D6;">)</span> 8173214.016<span style="color: #707183;">)</span>
+<span style="color: #707183;">(</span>= <span style="color: #7388D6;">(</span>rohr-oberflaeche 1 1 1<span style="color: #7388D6;">)</span>  1486.038912<span style="color: #707183;">)</span></pre>
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org936377e" class="outline-2">
+<h2 id="org936377e"><span class="section-number-2">9</span> Aufgabe (Ersetzungsmodell)</h2>
+<div class="outline-text-2" id="text-9">
+<p>
+Gegeben sei die folgende Funktionsdefinition:
+</p>
+<div class="org-src-container">
+<pre class="src src-scheme">    <span style="color: #707183;">(</span><span style="color: #0000FF;">define</span> <span style="color: #006699;">f</span>
+       <span style="color: #7388D6;">(</span><span style="color: #0000FF;">lambda</span> <span style="color: #909183;">[</span>x y<span style="color: #909183;">]</span>
+           <span style="color: #909183;">(</span>+ <span style="color: #709870;">(</span>* 3 x<span style="color: #709870;">)</span> <span style="color: #709870;">(</span>* y y<span style="color: #709870;">)</span><span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span></pre>
+</pre>
+</div>
+<p>
+Werten Sie die folgenden Ausdrücke Schritt für Schritt unter Anwendung
+des Ersetzungsmodells aus:
+</p>
+<ol class="org-ol">
+<li><p>
+<code>(f 1 (* 2 3))</code>
+</p>
+<div class="org-src-container">
+<pre class="src src-scheme">    <span style="color: #707183;">(</span>f 1 <span style="color: #7388D6;">(</span>* 2 3<span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
+    = <span style="color: #707183;">(</span><span style="color: #7388D6;">(</span><span style="color: #0000FF;">lambda</span> <span style="color: #909183;">[</span>x y<span style="color: #909183;">]</span> <span style="color: #909183;">(</span>+ <span style="color: #709870;">(</span>* 3 x<span style="color: #709870;">)</span> <span style="color: #709870;">(</span>* y y<span style="color: #709870;">)</span><span style="color: #909183;">)</span><span style="color: #7388D6;">)</span> 1 <span style="color: #7388D6;">(</span>* 2 3<span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
+    = <span style="color: #707183;">(</span><span style="color: #7388D6;">(</span><span style="color: #0000FF;">lambda</span> <span style="color: #909183;">[</span>x y<span style="color: #909183;">]</span> <span style="color: #909183;">(</span>+ <span style="color: #709870;">(</span>* 3 x<span style="color: #709870;">)</span> <span style="color: #709870;">(</span>* y y<span style="color: #709870;">)</span><span style="color: #909183;">)</span><span style="color: #7388D6;">)</span> 1 6<span style="color: #707183;">)</span>
+    = <span style="color: #707183;">(</span>+ <span style="color: #7388D6;">(</span>* 3 1<span style="color: #7388D6;">)</span> <span style="color: #7388D6;">(</span>* 6 6<span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
+    = <span style="color: #707183;">(</span>+ 3 36<span style="color: #707183;">)</span>
+    = 39</pre>
+</pre>
+</div></li>
+<li><p>
+<code>(+ (f 1 2) (f 2 1))</code>
+</p>
+<div class="org-src-container">
+<pre class="src src-scheme">    <span style="color: #707183;">(</span>+ <span style="color: #7388D6;">(</span>f 1 2<span style="color: #7388D6;">)</span> <span style="color: #7388D6;">(</span>f 2 1<span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
+    = <span style="color: #707183;">(</span>+ <span style="color: #7388D6;">(</span><span style="color: #909183;">(</span><span style="color: #0000FF;">lambda</span> <span style="color: #709870;">[</span>x y<span style="color: #709870;">]</span> <span style="color: #709870;">(</span>+ <span style="color: #907373;">(</span>* 3 x<span style="color: #907373;">)</span> <span style="color: #907373;">(</span>* y y<span style="color: #907373;">)</span><span style="color: #709870;">)</span><span style="color: #909183;">)</span> 1 2<span style="color: #7388D6;">)</span>
+         <span style="color: #7388D6;">(</span><span style="color: #909183;">(</span><span style="color: #0000FF;">lambda</span> <span style="color: #709870;">[</span>x y<span style="color: #709870;">]</span> <span style="color: #709870;">(</span>+ <span style="color: #907373;">(</span>* 3 x<span style="color: #907373;">)</span> <span style="color: #907373;">(</span>* y y<span style="color: #907373;">)</span><span style="color: #709870;">)</span><span style="color: #909183;">)</span> 2 1<span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
+    = <span style="color: #707183;">(</span>+ <span style="color: #7388D6;">(</span>+ <span style="color: #909183;">(</span>* 3 1<span style="color: #909183;">)</span> <span style="color: #909183;">(</span>* 2 2<span style="color: #909183;">)</span><span style="color: #7388D6;">)</span> 
+         <span style="color: #7388D6;">(</span>+ <span style="color: #909183;">(</span>* 3 2<span style="color: #909183;">)</span> <span style="color: #909183;">(</span>* 1 1<span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
+    = <span style="color: #707183;">(</span>+ <span style="color: #7388D6;">(</span>+ 3 4<span style="color: #7388D6;">)</span> <span style="color: #7388D6;">(</span>+ 6 1<span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
+    = <span style="color: #707183;">(</span>+ 7 7<span style="color: #707183;">)</span>
+    = 14  </pre>
+</pre>
+</div>
+
+<p>
+Ausführlich:
+</p>
+<div class="org-src-container">
+<pre class="src src-scheme">    <span style="color: #707183;">(</span>+ <span style="color: #7388D6;">(</span>f 1 2<span style="color: #7388D6;">)</span> <span style="color: #7388D6;">(</span>f 2 1<span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
+    = <span style="color: #707183;">(</span>+ <span style="color: #7388D6;">(</span><span style="color: #909183;">(</span><span style="color: #0000FF;">lambda</span> <span style="color: #709870;">[</span>x y<span style="color: #709870;">]</span> <span style="color: #709870;">(</span>+ <span style="color: #907373;">(</span>* 3 x<span style="color: #907373;">)</span> <span style="color: #907373;">(</span>* y y<span style="color: #907373;">)</span><span style="color: #709870;">)</span><span style="color: #909183;">)</span> 1 2<span style="color: #7388D6;">)</span>
+         <span style="color: #7388D6;">(</span>f 2 1<span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
+    = <span style="color: #707183;">(</span>+ <span style="color: #7388D6;">(</span><span style="color: #909183;">(</span><span style="color: #0000FF;">lambda</span> <span style="color: #709870;">[</span>x y<span style="color: #709870;">]</span> <span style="color: #709870;">(</span>+ <span style="color: #907373;">(</span>* 3 x<span style="color: #907373;">)</span> <span style="color: #907373;">(</span>* y y<span style="color: #907373;">)</span><span style="color: #709870;">)</span><span style="color: #909183;">)</span> 1 2<span style="color: #7388D6;">)</span>
+         <span style="color: #7388D6;">(</span><span style="color: #909183;">(</span><span style="color: #0000FF;">lambda</span> <span style="color: #709870;">[</span>x y<span style="color: #709870;">]</span> <span style="color: #709870;">(</span>+ <span style="color: #907373;">(</span>* 3 x<span style="color: #907373;">)</span> <span style="color: #907373;">(</span>* y y<span style="color: #907373;">)</span><span style="color: #709870;">)</span><span style="color: #909183;">)</span> 2 1<span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
+    = <span style="color: #707183;">(</span>+ <span style="color: #7388D6;">(</span>+ <span style="color: #909183;">(</span>* 3 1<span style="color: #909183;">)</span> <span style="color: #909183;">(</span>* 2 2<span style="color: #909183;">)</span><span style="color: #7388D6;">)</span>
+         <span style="color: #7388D6;">(</span>+ <span style="color: #909183;">(</span><span style="color: #709870;">(</span><span style="color: #0000FF;">lambda</span> <span style="color: #907373;">[</span>x y<span style="color: #907373;">]</span> <span style="color: #907373;">(</span>+ <span style="color: #6276BA;">(</span>* 3 x<span style="color: #6276BA;">)</span> <span style="color: #6276BA;">(</span>* y y<span style="color: #6276BA;">)</span><span style="color: #907373;">)</span><span style="color: #709870;">)</span> 2 1<span style="color: #909183;">)</span><span style="color: #7388D6;">)</span>
+    = <span style="color: #7388D6;">(</span>+ <span style="color: #909183;">(</span>+ <span style="color: #709870;">(</span>* 3 1<span style="color: #709870;">)</span> <span style="color: #709870;">(</span>* 2 2<span style="color: #709870;">)</span><span style="color: #909183;">)</span> 
+         <span style="color: #909183;">(</span>+ <span style="color: #709870;">(</span>* 3 2<span style="color: #709870;">)</span> <span style="color: #709870;">(</span>* 1 1<span style="color: #709870;">)</span><span style="color: #909183;">)</span><span style="color: #7388D6;">)</span>
+    = <span style="color: #7388D6;">(</span>+ <span style="color: #909183;">(</span>* 3 4<span style="color: #909183;">)</span> <span style="color: #909183;">(</span>+ <span style="color: #709870;">(</span>* 3 2<span style="color: #709870;">)</span> <span style="color: #709870;">(</span>* 1 1<span style="color: #709870;">)</span><span style="color: #909183;">)</span><span style="color: #7388D6;">)</span>
+    = <span style="color: #7388D6;">(</span>+ <span style="color: #909183;">(</span>+ 3 4<span style="color: #909183;">)</span> <span style="color: #909183;">(</span>+ 6 1<span style="color: #909183;">)</span><span style="color: #7388D6;">)</span>
+    = <span style="color: #7388D6;">(</span>+ 7 <span style="color: #909183;">(</span>+ 6 1<span style="color: #909183;">)</span><span style="color: #7388D6;">)</span>
+    = <span style="color: #7388D6;">(</span>+ 7 7<span style="color: #7388D6;">)</span>
+    = 14     </pre>
+</pre>
+</div></li>
+<li><p>
+<code>(f (f 1 (* 2 3)) 19)</code>
+</p>
+<div class="org-src-container">
+<pre class="src src-scheme">    <span style="color: #707183;">(</span>f <span style="color: #7388D6;">(</span>f 1 <span style="color: #909183;">(</span>* 2 3<span style="color: #909183;">)</span><span style="color: #7388D6;">)</span> 19<span style="color: #707183;">)</span>
+    = <span style="color: #707183;">(</span><span style="color: #7388D6;">(</span><span style="color: #0000FF;">lambda</span> <span style="color: #909183;">[</span>x y<span style="color: #909183;">]</span> <span style="color: #909183;">(</span>+ <span style="color: #709870;">(</span>* 3 x<span style="color: #709870;">)</span> <span style="color: #709870;">(</span>* y y<span style="color: #709870;">)</span><span style="color: #909183;">)</span><span style="color: #7388D6;">)</span> <span style="color: #7388D6;">(</span>f 1 <span style="color: #909183;">(</span>* 2 3<span style="color: #909183;">)</span><span style="color: #7388D6;">)</span> 19<span style="color: #707183;">)</span>
+    = <span style="color: #707183;">(</span><span style="color: #7388D6;">(</span><span style="color: #0000FF;">lambda</span> <span style="color: #909183;">[</span>x y<span style="color: #909183;">]</span> <span style="color: #909183;">(</span>+ <span style="color: #709870;">(</span>* 3 x<span style="color: #709870;">)</span> <span style="color: #709870;">(</span>* y y<span style="color: #709870;">)</span><span style="color: #909183;">)</span><span style="color: #7388D6;">)</span> 
+         <span style="color: #7388D6;">(</span><span style="color: #909183;">(</span><span style="color: #0000FF;">lambda</span> <span style="color: #709870;">[</span>x y<span style="color: #709870;">]</span> <span style="color: #709870;">(</span>+ <span style="color: #907373;">(</span>* 3 x<span style="color: #907373;">)</span> <span style="color: #907373;">(</span>* y y<span style="color: #907373;">)</span><span style="color: #709870;">)</span><span style="color: #909183;">)</span> 1 <span style="color: #909183;">(</span>* 2 3<span style="color: #909183;">)</span><span style="color: #7388D6;">)</span> 19<span style="color: #707183;">)</span>
+    = <span style="color: #707183;">(</span><span style="color: #7388D6;">(</span><span style="color: #0000FF;">lambda</span> <span style="color: #909183;">[</span>x y<span style="color: #909183;">]</span> <span style="color: #909183;">(</span>+ <span style="color: #709870;">(</span>* 3 x<span style="color: #709870;">)</span> <span style="color: #709870;">(</span>* y y<span style="color: #709870;">)</span><span style="color: #909183;">)</span><span style="color: #7388D6;">)</span> 
+         <span style="color: #7388D6;">(</span><span style="color: #909183;">(</span><span style="color: #0000FF;">lambda</span> <span style="color: #709870;">[</span>x y<span style="color: #709870;">]</span> <span style="color: #709870;">(</span>+ <span style="color: #907373;">(</span>* 3 x<span style="color: #907373;">)</span> <span style="color: #907373;">(</span>* y y<span style="color: #907373;">)</span><span style="color: #709870;">)</span><span style="color: #909183;">)</span> 1 6<span style="color: #7388D6;">)</span> 19<span style="color: #707183;">)</span>
+    = <span style="color: #707183;">(</span><span style="color: #7388D6;">(</span><span style="color: #0000FF;">lambda</span> <span style="color: #909183;">[</span>x y<span style="color: #909183;">]</span> <span style="color: #909183;">(</span>+ <span style="color: #709870;">(</span>* 3 x<span style="color: #709870;">)</span> <span style="color: #709870;">(</span>* y y<span style="color: #709870;">)</span><span style="color: #909183;">)</span><span style="color: #7388D6;">)</span> 
+         <span style="color: #7388D6;">(</span>+ <span style="color: #909183;">(</span>* 3 1<span style="color: #909183;">)</span> <span style="color: #909183;">(</span>* 6 6<span style="color: #909183;">)</span><span style="color: #7388D6;">)</span> 19<span style="color: #707183;">)</span>
+    = <span style="color: #707183;">(</span><span style="color: #7388D6;">(</span><span style="color: #0000FF;">lambda</span> <span style="color: #909183;">[</span>x y<span style="color: #909183;">]</span> <span style="color: #909183;">(</span>+ <span style="color: #709870;">(</span>* 3 x<span style="color: #709870;">)</span> <span style="color: #709870;">(</span>* y y<span style="color: #709870;">)</span><span style="color: #909183;">)</span><span style="color: #7388D6;">)</span> <span style="color: #7388D6;">(</span>+ 3 36<span style="color: #7388D6;">)</span> 19<span style="color: #707183;">)</span>
+    = <span style="color: #707183;">(</span><span style="color: #7388D6;">(</span><span style="color: #0000FF;">lambda</span> <span style="color: #909183;">[</span>x y<span style="color: #909183;">]</span> <span style="color: #909183;">(</span>+ <span style="color: #709870;">(</span>* 3 x<span style="color: #709870;">)</span> <span style="color: #709870;">(</span>* y y<span style="color: #709870;">)</span><span style="color: #909183;">)</span><span style="color: #7388D6;">)</span> 39 19<span style="color: #707183;">)</span>
+    = <span style="color: #707183;">(</span>+ <span style="color: #7388D6;">(</span>* 3 39<span style="color: #7388D6;">)</span> <span style="color: #7388D6;">(</span>* 19 19<span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
+    = <span style="color: #707183;">(</span>+ 117 361<span style="color: #707183;">)</span>
+    = 478</pre>
+</pre>
+</div></li>
+</ol>
+</div>
+</div>
 </div>
 <div id="postamble" class="status">
 <p class="author">Autor: Johannes Brauer</p>
-<p class="date">Created: 2018-01-21 Sun 17:50</p>
+<p class="date">Created: 2018-01-25 Thu 12:03</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
