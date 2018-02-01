@@ -29,11 +29,11 @@
 <body>
 <div class="reveal">
 <div class="slides">
-<section id="sec-title-slide"><h1 class="title">Nicht-numerische Daten</h1><h2 class="author">Johannes Brauer</h2><p class="date">Created: 2018-01-15 Mon 23:03</p>
+<section id="sec-title-slide"><h1 class="title">Nicht-numerische Daten</h1><h2 class="author">Johannes Brauer</h2><p class="date">Created: 2018-02-01 Thu 15:45</p>
 </section>
 <section>
-<section id="slide-org125a7c2">
-<h2 id="org125a7c2">Was sind nicht numerische Daten?</h2>
+<section id="slide-org00e1d70">
+<h2 id="org00e1d70">Was sind nicht numerische Daten?</h2>
 <ul>
 <li>Zeichen</li>
 <li>Zeichenketten</li>
@@ -46,13 +46,13 @@
 </section>
 </section>
 <section>
-<section id="slide-orga436f58">
-<h2 id="orga436f58">Symbolische Ausdrücke</h2>
-<div class="outline-text-2" id="text-orga436f58">
+<section id="slide-orgf9635db">
+<h2 id="orgf9635db">Symbolische Ausdrücke</h2>
+<div class="outline-text-2" id="text-orgf9635db">
 </div>
 </section>
-<section id="slide-org103e53f">
-<h3 id="org103e53f">Symbole</h3>
+<section id="slide-org46cb0cb">
+<h3 id="org46cb0cb">Symbole</h3>
 <ul>
 <li><i>Symbole</i> sind eine einfache Möglichkeit für die Repräsentation
 nicht-numerischer Daten.</li>
@@ -90,8 +90,8 @@ Gleichheit: <code>equal?</code> erwartet zwei Symbole als Argumente und liefert
 </ul>
 
 </section>
-<section id="slide-orgd3a8847">
-<h3 id="orgd3a8847">S-Ausdrücke</h3>
+<section id="slide-org7e0d124">
+<h3 id="org7e0d124">S-Ausdrücke</h3>
 <ul>
 <li><i>Symbolische Ausdrücke</i> (kurz: S-Ausdrücke) wurden erfunden von McCarthy für LISP.</li>
 <li><b>Definition:</b> (vorläufig)<br />
@@ -117,8 +117,8 @@ Solche S-Ausdrücke heißen <i>Listen</i>.
 </ul>
 
 </section>
-<section id="slide-orge62451c">
-<h4 id="orge62451c">Darstellung von Formeln als S-Ausdrücke</h4>
+<section id="slide-orga542f17">
+<h4 id="orga542f17">Darstellung von Formeln als S-Ausdrücke</h4>
 <ul>
 <li><p>
 Bestandteile einer Formel:
@@ -208,8 +208,8 @@ dargestellt.
 </ul>
 
 </section>
-<section id="slide-org7e4762d">
-<h4 id="org7e4762d">Konstruktion von Listen</h4>
+<section id="slide-org570e996">
+<h4 id="org570e996">Konstruktion von Listen</h4>
 <ul>
 <li><p>
 Ausgangspunkt für die Konstruktion einer Liste ist die leere Liste,
@@ -293,8 +293,8 @@ Mit der Funktion <code>cons</code> kann ein Element als neues erstes Element ein
 </div>
 
 </section>
-<section id="slide-org6a83e79">
-<h4 id="org6a83e79">Zerlegung von Listen</h4>
+<section id="slide-org8dd8685">
+<h4 id="org8dd8685">Zerlegung von Listen</h4>
 <ul>
 <li>Racket stellt zwei Funktionen bereit zum Zugriff auf die beiden
 Komponenten einer Liste:
@@ -328,13 +328,13 @@ Beispiele:
 </section>
 </section>
 <section>
-<section id="slide-orga36ad3f">
-<h2 id="orga36ad3f">Funktionen für die Verarbeitung rekursiv definierter Datenstrukturen</h2>
-<div class="outline-text-2" id="text-orga36ad3f">
+<section id="slide-org2a0c10c">
+<h2 id="org2a0c10c">Funktionen für die Verarbeitung rekursiv definierter Datenstrukturen</h2>
+<div class="outline-text-2" id="text-org2a0c10c">
 </div>
 </section>
-<section id="slide-org6a90ba5">
-<h3 id="org6a90ba5">Rekursive Datenstrukturen</h3>
+<section id="slide-orgdceb1eb">
+<h3 id="orgdceb1eb">Rekursive Datenstrukturen</h3>
 <ul>
 <li><p>
 Für einen Gebrauchtwagenhändler repräsentieren wir die Menge der im
@@ -367,8 +367,8 @@ nicht-leere Liste mit dem Prädikat <code>cons?</code> erkannt werden.</li>
 </ul>
 
 </section>
-<section id="slide-org8973aac">
-<h3 id="org8973aac">Verarbeitung beliebig langer Listen</h3>
+<section id="slide-orgfac468c">
+<h3 id="orgfac468c">Verarbeitung beliebig langer Listen</h3>
 <ul>
 <li>Es soll geprüft werden können, ob in der Liste mit den Automarken
 <code>’BMW</code> vorkommt.</li>
@@ -388,15 +388,13 @@ und einen passenden Funktionskopf auf:
 </ul>
 
 </section>
-<section id="slide-org4f0c088">
-<h3 id="org4f0c088">Verträge für Funktionen (Regel 10)</h3>
+<section id="slide-orge84a59f">
+<h3 id="orge84a59f">Verträge für Funktionen (Regel 10)</h3>
 <p>
-<b>Regel 10</b>:
+<b>Regel 10</b>: Von nun an schreiben wir vor jeden Funktionskopf einen <i>Vertrag</i> als
+  Kommentar. 
 </p>
-
 <ul>
-<li>Von nun an schreiben wir vor jeden Funktionskopf einen <i>Vertrag</i> als
-Kommentar.</li>
 <li><p>
 Der Vertrag beschreibt, welche Arten von Daten (Datentypen) die
 Funktion als Argumente erwartet  und welche Datenart die Funktion
@@ -428,8 +426,8 @@ Den Vertrag fügen wir hinter die Zweckbestimmung ein:
 </ul>
 
 </section>
-<section id="slide-org0ea1c38">
-<h3 id="org0ea1c38">Angabe von Tests für <code>enthaelt-bmw?</code></h3>
+<section id="slide-orgb28f631">
+<h3 id="orgb28f631">Angabe von Tests für <code>enthaelt-bmw?</code></h3>
 <div class="org-src-container">
 
 <pre  class="src src-scheme">           
@@ -448,8 +446,8 @@ Den Vertrag fügen wir hinter die Zweckbestimmung ein:
 </div>
 
 </section>
-<section id="slide-orgc6d455d">
-<h3 id="orgc6d455d">Anlegen einer Funktionsschablone</h3>
+<section id="slide-orgb117739">
+<h3 id="orgb117739">Anlegen einer Funktionsschablone</h3>
 <ul>
 <li>Nun definieren wir eine <i>Funktionsschablone</i> gemäß Regel 9 
 (für die Verarbeitung gemischter Daten), die der Struktur der
@@ -516,8 +514,8 @@ Element und die Restliste geeignet kombiniert werden.</li>
 </ul>
 
 </section>
-<section id="slide-org0b401ce">
-<h3 id="org0b401ce">Benutzung der Schablone für <code>enthaelt-bmw?</code></h3>
+<section id="slide-orgc717da5">
+<h3 id="orgc717da5">Benutzung der Schablone für <code>enthaelt-bmw?</code></h3>
 <ul>
 <li><p>
 Die Schablone angewendet auf <code>enthaelt-bmw?</code>, wobei die Lösung für
@@ -540,8 +538,8 @@ den Fall der leeren Liste bereits eingetragen ist:
 </ul>
 
 </section>
-<section id="slide-orgb08b2c0">
-<h3 id="orgb08b2c0">Ausfüllen der Schablone für <code>enthaelt-bmw?</code></h3>
+<section id="slide-org928b924">
+<h3 id="org928b924">Ausfüllen der Schablone für <code>enthaelt-bmw?</code></h3>
 <ul>
 <li><p>
 Nun betrachten wir die Komponenten der nicht-leeren Liste. Falls das
@@ -593,13 +591,13 @@ auf sie die Funktion <code>enthaelt-bmw?</code> anwendbar:
 </section>
 </section>
 <section>
-<section id="slide-org6f9203b">
-<h2 id="org6f9203b">Systematisierung des Entwurfs rekursiver Funktionen</h2>
-<div class="outline-text-2" id="text-org6f9203b">
+<section id="slide-orgdc407bc">
+<h2 id="orgdc407bc">Systematisierung des Entwurfs rekursiver Funktionen</h2>
+<div class="outline-text-2" id="text-orgdc407bc">
 </div>
 </section>
-<section id="slide-org3968da8">
-<h3 id="org3968da8">Datendefinition</h3>
+<section id="slide-org7aee512">
+<h3 id="org7aee512">Datendefinition</h3>
 <ul>
 <li>Die Funktion <code>enthaelt-bmw?</code> wurde unter Verwendung der
 Regeln 8 und 9 (ergänzt um Regel 10) entwickelt.</li>
@@ -633,8 +631,8 @@ Symbolen:</li>
 </ul>
 
 </section>
-<section id="slide-orgaac58ee">
-<h3 id="orgaac58ee">Funktionsschablone</h3>
+<section id="slide-org806e749">
+<h3 id="org806e749">Funktionsschablone</h3>
 <ul>
 <li>Die Funktionsschablone wird als bedingte Funktion aufgeschrieben,
 die für jeden Satz der Definition der rekursiven Datenstruktur eine
@@ -687,8 +685,8 @@ Listen von Symbolen die folgende Funktionsschablone:
 </ul>
 
 </section>
-<section id="slide-org860169a">
-<h3 id="org860169a">Ausfüllen der Schablone</h3>
+<section id="slide-orgaeeebe4">
+<h3 id="orgaeeebe4">Ausfüllen der Schablone</h3>
 <ul>
 <li>Die Entwicklung des Funktionsrumpfs beginnt mit den
 Frage-Antwort-Kombinationen, die keine rekursiven Aufrufe enthalten.
@@ -711,8 +709,8 @@ weiteren Fallunterscheidung.</li>
 </ul>
 
 </section>
-<section id="slide-orgd6172be">
-<h3 id="orgd6172be">Erweiterung des Regelsatzes für die Entwicklung rekursiver Funktionen</h3>
+<section id="slide-org23e68a2">
+<h3 id="org23e68a2">Erweiterung des Regelsatzes für die Entwicklung rekursiver Funktionen</h3>
 <p>
 <b>Regel 11</b>:
 </p>
@@ -720,7 +718,7 @@ weiteren Fallunterscheidung.</li>
 <p>
 Schreibe eine präzise Datendefinition für die zu verarbeitende
 rekursive Datenstruktur auf. Folge dabei dem im Abschnitt
-<a href="#/slide-org3968da8">Datendefinition</a> angegebenen Muster.
+<a href="#/slide-org7aee512">Datendefinition</a> angegebenen Muster.
 </p>
 
 <p>
@@ -764,8 +762,8 @@ entwickelnde Funktion <b>rekursiv anzuwenden</b> ist.</li>
 </ul>
 
 </section>
-<section id="slide-orgb13b005">
-<h3 id="orgb13b005">Listen als Resultate</h3>
+<section id="slide-org9e4ddb8">
+<h3 id="org9e4ddb8">Listen als Resultate</h3>
 <ul>
 <li>Anwendung der Regeln für die Entwicklung rekursiver Funktionen auf
 Funktionen, die eine Liste als Resultat liefern.</li>
@@ -775,8 +773,8 @@ kann.</li>
 
 </ul>
 </section>
-<section id="slide-org6eaa88e">
-<h4 id="org6eaa88e">Vertrag, Funktionskopf, Zweckbestimmung</h4>
+<section id="slide-orgd2d8ee1">
+<h4 id="orgd2d8ee1">Vertrag, Funktionskopf, Zweckbestimmung</h4>
 <div class="org-src-container">
 
 <pre  class="src src-scheme">  <span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">entfernt eine Modell (symbol) aus der  </span>
@@ -788,8 +786,8 @@ kann.</li>
 </div>
 
 </section>
-<section id="slide-org3ddfd6a">
-<h4 id="org3ddfd6a">Hinzufügen der Tests</h4>
+<section id="slide-org87f2cfa">
+<h4 id="org87f2cfa">Hinzufügen der Tests</h4>
 <div class="org-src-container">
 
 <pre  class="src src-scheme"><span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">entfernt eine Modell (symbol) aus der  </span>
@@ -806,8 +804,8 @@ kann.</li>
 </div>
 
 </section>
-<section id="slide-orgc304d78">
-<h4 id="orgc304d78">Hinzufügen der Funktionsschablone</h4>
+<section id="slide-org5062768">
+<h4 id="org5062768">Hinzufügen der Funktionsschablone</h4>
 <div class="org-src-container">
 
 <pre  class="src src-scheme"><span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">entfernt eine Modell (symbol) aus der  </span>
@@ -828,8 +826,8 @@ kann.</li>
 </div>
 
 </section>
-<section id="slide-org8029502">
-<h4 id="org8029502">Vervollständigung des Funktionsrumpfs</h4>
+<section id="slide-orgc133a8a">
+<h4 id="orgc133a8a">Vervollständigung des Funktionsrumpfs</h4>
 <ul>
 <li>Folgende Fälle sind zu unterscheiden:
 <ol>
@@ -867,13 +865,13 @@ der Restliste, aus der das zu entfernende Modell entfernt wurde.</li>
 </section>
 </section>
 <section>
-<section id="slide-org1275375">
-<h2 id="org1275375">Rekursive Funktionen und Hilfsfunktionen</h2>
-<div class="outline-text-2" id="text-org1275375">
+<section id="slide-org1c5769d">
+<h2 id="org1c5769d">Rekursive Funktionen und Hilfsfunktionen</h2>
+<div class="outline-text-2" id="text-org1c5769d">
 </div>
 </section>
-<section id="slide-orgbbbbcd6">
-<h3 id="orgbbbbcd6">Top-down-Entwurf</h3>
+<section id="slide-org82fe8c3">
+<h3 id="org82fe8c3">Top-down-Entwurf</h3>
 <ul>
 <li>Anhand eines weiteren Beispiels soll die Anwendung der Regeln für
 die Entwicklung rekursiver Funktionen V demonstriert werden.</li>
@@ -898,8 +896,8 @@ bezeichnet.
 </ul>
 
 </section>
-<section id="slide-orgeb2a342">
-<h4 id="orgeb2a342">Literaturhinweise</h4>
+<section id="slide-orgf08c8cd">
+<h4 id="orgf08c8cd">Literaturhinweise</h4>
 <ul>
 <li>Gelegentlich werden auch die Begriffe Wunschdenken oder Wunschliste
 benutzt, z.B. in
@@ -919,8 +917,8 @@ of Computer Programs. The MIT Press, 1999</li>
 </ul>
 
 </section>
-<section id="slide-orgc3cdafd">
-<h4 id="orgc3cdafd">Top-down-Entwurf &#x2013; Beispiel</h4>
+<section id="slide-orgd37e145">
+<h4 id="orgd37e145">Top-down-Entwurf &#x2013; Beispiel</h4>
 <ul>
 <li><p>
 Die Funktion <code>(symbolsin x)</code> liefere, angewandt auf eine Liste von
@@ -998,8 +996,8 @@ hinzufügt, wenn es in ihr nicht bereits enthalten ist.</li>
 </ul>
 
 </section>
-<section id="slide-org3ccb4ce">
-<h4 id="org3ccb4ce">Funktionsschablone für <code>addtoset</code></h4>
+<section id="slide-orgcd43e3a">
+<h4 id="orgcd43e3a">Funktionsschablone für <code>addtoset</code></h4>
 <div class="org-src-container">
 
 <pre  class="src src-scheme"><span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">f&#252;gt einer Liste von Symbolen ein weiteres hinzu, </span>
@@ -1021,8 +1019,8 @@ Mit dieser Funktion kann <code>symbolsin</code> vervollständigt werden.
 </p>
 
 </section>
-<section id="slide-orgbf34b4e">
-<h4 id="orgbf34b4e">Funktion <code>symbolsin</code></h4>
+<section id="slide-orgcd81d84">
+<h4 id="orgcd81d84">Funktion <code>symbolsin</code></h4>
 <div class="org-src-container">
 
 <pre  class="src src-scheme"><span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">entfernt aus eine Liste von Symbolen jedes </span>
@@ -1039,8 +1037,8 @@ Mit dieser Funktion kann <code>symbolsin</code> vervollständigt werden.
 </div>
 
 </section>
-<section id="slide-org71a391a">
-<h4 id="org71a391a">Funktion <code>addtoset</code></h4>
+<section id="slide-orgae2bb26">
+<h4 id="orgae2bb26">Funktion <code>addtoset</code></h4>
 <ul>
 <li>Für die Funktion <code>addtoset</code> stellen wir folgende Überlegungen an:
 <ul>
@@ -1068,8 +1066,8 @@ bereits in der Liste enthalten ist.</li>
 </div>
 
 </section>
-<section id="slide-org6abc9bc">
-<h4 id="org6abc9bc">Funktion <code>member?</code></h4>
+<section id="slide-orgb619494">
+<h4 id="orgb619494">Funktion <code>member?</code></h4>
 <p>
 Die Logik der Funktion <code>member</code>? entspricht im Wesentlichen der der
 Funktion <code>enthaelt-bmw</code>:
@@ -1101,8 +1099,8 @@ symbolsin.rkt in Moodle zu finden.
 </section>
 </section>
 <section>
-<section id="slide-org523ffa7">
-<h2 id="org523ffa7">Funktionen für die Verarbeitung mehrerer Listen</h2>
+<section id="slide-orgc81bfb4">
+<h2 id="orgc81bfb4">Funktionen für die Verarbeitung mehrerer Listen</h2>
 <p>
 Falls eine Funktion zwei Listenparameter zu verarbeiten hat, sind
 grundsätzlich drei Fälle zu unterscheiden:
@@ -1119,8 +1117,8 @@ auf das erste Element und die Restliste notwendig.</li>
 </ol>
 
 </section>
-<section id="slide-org42cbd13">
-<h3 id="org42cbd13">Behandlung der drei Fälle:</h3>
+<section id="slide-orgbc64bf2">
+<h3 id="orgbc64bf2">Behandlung der drei Fälle:</h3>
 <dl>
 <dt>Fall 1</dt><dd>Die bekannten Regeln (insbesondere was die
 Funktionsschablone anbelangt) können wie bisher angewendet, weil das
@@ -1136,8 +1134,8 @@ Funktionsschablone:</dd>
 </dl>
 
 </section>
-<section id="slide-orgf937e7c">
-<h4 id="orgf937e7c">Funktionsschablone für Fall 2</h4>
+<section id="slide-orgde5aa3d">
+<h4 id="orgde5aa3d">Funktionsschablone für Fall 2</h4>
 <div class="org-src-container">
 
 <pre  class="src src-scheme"><span style="color: #707183;">(</span><span style="color: #0000FF;">define</span> <span style="color: #006699;">listen-funktion</span>
@@ -1152,8 +1150,8 @@ Funktionsschablone:</dd>
 </div>
 
 </section>
-<section id="slide-org859d98a">
-<h4 id="org859d98a">Behandlung von Fall 3</h4>
+<section id="slide-orgb7a2eff">
+<h4 id="orgb7a2eff">Behandlung von Fall 3</h4>
 <p>
 Es gibt keine nutzbare Abhängigkeit der beiden Parameter. Hier müssen
 grundsätzlich alle (vier) Fälle (Liste ist leer oder nicht.)
@@ -1177,8 +1175,8 @@ berücksichtigt werden:
 </div>
 
 </section>
-<section id="slide-org42b15bc">
-<h5 id="org42b15bc">Drei mögliche Rekursionsschemata</h5>
+<section id="slide-org840ab1b">
+<h5 id="org840ab1b">Drei mögliche Rekursionsschemata</h5>
 <p>
 Man beachte, dass die
 Schablone noch keine rekursiven Aufrufe enthält. Nur für den Fall, dass
