@@ -1,0 +1,912 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8"/>
+<title>Funktionen höherer Ordnung</title>
+<meta name="author" content="(Johannes Brauer)"/>
+<style type="text/css">
+.underline { text-decoration: underline; }
+</style>
+<link rel="stylesheet" href="./reveal.js/css/reveal.css"/>
+
+<link rel="stylesheet" href="./reveal.js/css/theme/simple.css" id="theme"/>
+
+<link rel="stylesheet" href="./mycss/myrevealstyle.css"/>
+
+<!-- If the query includes 'print-pdf', include the PDF print sheet -->
+<script>
+    if( window.location.search.match( /print-pdf/gi ) ) {
+        var link = document.createElement( 'link' );
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = './reveal.js/css/print/pdf.css';
+        document.getElementsByTagName( 'head' )[0].appendChild( link );
+    }
+</script>
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<link rel="stylesheet" type="text/css" href="mycss/mystyle.css" />
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+<section id="sec-title-slide"><h1 class="title">Funktionen höherer Ordnung</h1><h2 class="author">Johannes Brauer</h2><p class="date">Created: 2018-02-14 Wed 17:22</p>
+</section>
+<section>
+<section id="slide-org265c728">
+<h2 id="org265c728">Erweiterung der funktionalen Abstraktion</h2>
+<p>
+Historie:
+</p>
+<ul>
+<li>Infinitesimal-Rechnung (17. Jhdt. Newton, Leibniz) - Funktionen mit Funktionen als Argument</li>
+<li>1941 Anlonzo Church: Lambda-Kalkül - Daten sind Funktionen</li>
+<li>1960 John McCarthy: Lisp - Funktionen sind Daten</li>
+<li>2014 Lambda-Ausdrücke im „Mainstream” (Java) angekommen</li>
+<li>Google, Facebook, Twitter, Netflix - alle stützen sich auf funktionale Programmierung</li>
+
+</ul>
+
+</section>
+<section id="slide-orgd1c5557">
+<h3 id="orgd1c5557">Funktionen als Argumente &#x2013; Analogie zur Summenformel der Mathematik</h3>
+<div>
+\begin{equation}
+\sum_{i=a}^b f(i) = f(a)+ \ldots +f(b) 
+\end{equation}
+
+</div>
+<p>
+entspricht
+</p>
+<div class="org-src-container">
+
+<pre  class="src src-scheme"><span style="color: #707183;">(</span><span style="color: #0000FF;">define</span> <span style="color: #006699;">sum</span>
+  <span style="color: #7388D6;">(</span><span style="color: #0000FF;">lambda</span> <span style="color: #909183;">[</span>f a next b<span style="color: #909183;">]</span>
+    <span style="color: #909183;">(</span><span style="color: #0000FF;">if</span> <span style="color: #709870;">(</span>&gt; a b<span style="color: #709870;">)</span>
+      0
+      <span style="color: #709870;">(</span>+ <span style="color: #907373;">(</span>f a<span style="color: #907373;">)</span>
+         <span style="color: #907373;">(</span>sum f <span style="color: #6276BA;">(</span>next a<span style="color: #6276BA;">)</span> next b<span style="color: #907373;">)</span><span style="color: #709870;">)</span><span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span></pre>
+</pre>
+</div>
+</section>
+<section id="slide-orgac6d983">
+<h4 id="orgac6d983">Anwendungsbeispiele:</h4>
+<div>
+\begin{equation}
+\sum_{x=1}^5 x^3 
+\end{equation}
+
+</div>
+<p>
+entspricht
+</p>
+<pre class="example">
+(define cube (lambda [x] (* x x x)))
+(sum cube 1 add1 5)
+
+</pre>
+<div>
+\begin{equation}
+\sum_{i=1}^{10} i 
+\end{equation}
+
+</div>
+<p>
+entspricht
+</p>
+<pre class="example">
+(sum identity 1 add1 10)
+
+</pre>
+
+<p>
+Weitere Beispiele: Integrale
+</p>
+</section>
+<section id="slide-orgd138f80">
+<h3 id="orgd138f80">Nutzung anonymer Funktionen (Lambda-Ausdrücke)</h3>
+<ul>
+<li>Lambda-Ausdrücke bereits eingeführt im Abschnitt
+<i>Funktionale Abstraktion</i></li>
+<li><p>
+Beispiele aus dem vorigen Abschnitt:
+</p>
+<pre class="example">
+(sum (lambda [x] (* x x x)) 1 (lambda [i] (+ i 1)) 5)
+
+</pre>
+<p>
+oder
+</p>
+<pre class="example">
+(sum (lambda [x] x) 1 (lambda [i] (+ i 1)) 10)
+
+</pre></li>
+
+</ul>
+</section>
+</section>
+<section>
+<section id="slide-org3f3d1ec">
+<h2 id="org3f3d1ec">Funktionen höherer Ordnung</h2>
+<blockquote nil>
+<p>
+The Revised<sup>6</sup> Report on the Algorithmic Language Scheme:<br />
+Programming languages should be designed not by piling feature on top
+of feature, but by removing the weaknesses and restrictions that make
+additional features appear necessary.
+</p>
+</blockquote>
+</section>
+<section >
+<blockquote nil>
+<p>
+Tony Hoare:<br />
+There are two ways of constructing a software design:
+One way is to make it so simple that there are obviously no
+deficiencies and the other is to make it so complicated that there are
+no obvious deficiencies.
+</p>
+
+<p>
+Hoare, C. A. R.: The Emperor's Old Clothes 1980 Turing Award lecture; Comm.ACM vol24-81, 2 (Feb. 1981)
+</p>
+</blockquote>
+
+</section>
+<section id="slide-org5dfe2cd">
+<h3 id="org5dfe2cd">Regelkonforme Entwicklung von Funktionen &#x2026;</h3>
+<p>
+führt zu ähnlichen Funktionen. Zum Beispiel
+</p>
+
+<div class="org-src-container">
+
+<pre  class="src src-scheme">    <span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">sum: (list-of number) -&gt; number</span>
+    <span style="color: #707183;">(</span><span style="color: #0000FF;">define</span> <span style="color: #006699;">sum</span>
+      <span style="color: #7388D6;">(</span><span style="color: #0000FF;">lambda</span> <span style="color: #909183;">[</span>x<span style="color: #909183;">]</span>
+       <span style="color: #909183;">(</span><span style="color: #0000FF;">cond</span>
+         <span style="color: #709870;">[</span><span style="color: #907373;">(</span>empty? x<span style="color: #907373;">)</span> 0<span style="color: #709870;">]</span>
+         <span style="color: #709870;">[</span>else <span style="color: #907373;">(</span>+ <span style="color: #6276BA;">(</span>first x<span style="color: #6276BA;">)</span> <span style="color: #6276BA;">(</span>sum <span style="color: #858580;">(</span>rest x<span style="color: #858580;">)</span><span style="color: #6276BA;">)</span><span style="color: #907373;">)</span><span style="color: #709870;">]</span><span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
+
+    <span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">prod: (list-of number) -&gt; number</span>
+    <span style="color: #707183;">(</span><span style="color: #0000FF;">define</span> <span style="color: #006699;">prod</span>
+      <span style="color: #7388D6;">(</span><span style="color: #0000FF;">lambda</span> <span style="color: #909183;">[</span>x<span style="color: #909183;">]</span> 
+       <span style="color: #909183;">(</span><span style="color: #0000FF;">cond</span> 
+         <span style="color: #709870;">[</span><span style="color: #907373;">(</span>empty? x<span style="color: #907373;">)</span> 1<span style="color: #709870;">]</span>
+         <span style="color: #709870;">[</span>else <span style="color: #907373;">(</span>* <span style="color: #6276BA;">(</span>first x<span style="color: #6276BA;">)</span> <span style="color: #6276BA;">(</span>prod <span style="color: #858580;">(</span>rest x<span style="color: #858580;">)</span><span style="color: #6276BA;">)</span><span style="color: #907373;">)</span><span style="color: #709870;">]</span><span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span></pre>
+</pre>
+</div>
+
+</section>
+<section id="slide-org15c7209">
+<h3 id="org15c7209">Noch zwei ähnliche Funktionen</h3>
+<p>
+Beispiel: Aus einer
+ungeordneten Liste von Zahlen werden alle unterhalb/oberhalb eines
+Schwellwerts heraus gefiltert:
+</p>
+
+<div class="org-src-container">
+
+<pre  class="src src-scheme">    <span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">unterhalb/oberhalb: (list-of number) number -&gt; (list-of number)</span>
+    <span style="color: #707183;">(</span><span style="color: #0000FF;">define</span> <span style="color: #006699;">unterhalb/oberhalb</span>
+      <span style="color: #7388D6;">(</span><span style="color: #0000FF;">lambda</span> <span style="color: #909183;">[</span>eineLvz schwelle<span style="color: #909183;">]</span>
+        <span style="color: #909183;">(</span><span style="color: #0000FF;">cond</span> 
+          <span style="color: #709870;">[</span><span style="color: #907373;">(</span>empty? eineLvz<span style="color: #907373;">)</span> empty<span style="color: #709870;">]</span>
+          <span style="color: #709870;">[</span>else 
+           <span style="color: #907373;">(</span><span style="color: #0000FF;">cond</span> 
+             <span style="color: #6276BA;">[</span><span style="color: #858580;">(</span><span style="color: #6434A3;">&lt;/&gt;</span> <span style="color: #80A880;">(</span>first eineLvz<span style="color: #80A880;">)</span> schwelle<span style="color: #858580;">)</span>
+              <span style="color: #858580;">(</span>cons <span style="color: #80A880;">(</span>first eineLvz<span style="color: #80A880;">)</span>
+                    <span style="color: #80A880;">(</span>unterhalb/oberhalb <span style="color: #887070;">(</span>rest eineLvz<span style="color: #887070;">)</span> schwelle<span style="color: #80A880;">)</span><span style="color: #858580;">)</span><span style="color: #6276BA;">]</span>
+             <span style="color: #6276BA;">[</span>else <span style="color: #858580;">(</span>unterhalb/oberhalb <span style="color: #80A880;">(</span>rest eineLvz<span style="color: #80A880;">)</span> schwelle<span style="color: #858580;">)</span><span style="color: #6276BA;">]</span><span style="color: #907373;">)</span><span style="color: #709870;">]</span><span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span></pre>
+</pre>
+</div>
+
+</section>
+<section id="slide-orge08fb27">
+<h3 id="orge08fb27">Ähnliche Funktionen vermeiden</h3>
+<ul>
+<li>Die beiden Funktionen <code>unterhalb</code> und <code>oberhalb</code> unterscheiden sich
+&#x2013; abgesehen von ihrem Namen &#x2013; nur in dem Vergleichsoperator.</li>
+<li>Die Funktion <code>oberhalb</code> erzeugt man wahrscheinlich durch Kopieren und
+Anpassen von <code>unterhalb</code>.</li>
+<li>Kopieren von Code ist eine „Todsünde” wider die Pflegbarkeit von
+Programmen.</li>
+<li>Bessere Lösung: Eine allgemein verwendbare Filterfunktion, der die
+Art der Vergleichsoperation als Argument mitgegeben wird.</li>
+<li>Wir brauchen eine Funktion, die eine Funktion als Argument
+akzeptiert: <i>Funktion höherer Ordnung</i> (Typ 1)</li>
+
+</ul>
+
+</section>
+<section id="slide-org3baa20e">
+<h3 id="org3baa20e">Eine Filterfunktion</h3>
+<div class="org-src-container">
+
+<pre  class="src src-scheme">    <span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">filtere (number number -&gt; boolean) (list-of number) number </span>
+    <span style="color: #8D8D84;">;;          </span><span style="color: #8D8D84; font-style: italic;">-&gt; (list-of number))</span>
+    <span style="color: #707183;">(</span><span style="color: #0000FF;">define</span> <span style="color: #006699;">filtere</span> 
+      <span style="color: #7388D6;">(</span><span style="color: #0000FF;">lambda</span> <span style="color: #909183;">[</span>vglfkt eineLvz schwelle<span style="color: #909183;">]</span>
+               <span style="color: #8D8D84;">;;;;;;</span>
+        <span style="color: #909183;">(</span><span style="color: #0000FF;">cond</span> 
+          <span style="color: #709870;">[</span><span style="color: #907373;">(</span>empty? eineLvz <span style="color: #907373;">)</span>empty <span style="color: #709870;">]</span>
+          <span style="color: #709870;">[</span>else 
+           <span style="color: #907373;">(</span><span style="color: #0000FF;">cond</span> 
+             <span style="color: #6276BA;">[</span><span style="color: #858580;">(</span>vglfkt <span style="color: #80A880;">(</span>first eineLvz <span style="color: #80A880;">)</span> schwelle<span style="color: #858580;">)</span>
+               <span style="color: #8D8D84;">;;;;;;</span>
+              <span style="color: #858580;">(</span>cons <span style="color: #80A880;">(</span>first eineLvz <span style="color: #80A880;">)</span>
+                    <span style="color: #80A880;">(</span>filtere vglfkt
+                     <span style="color: #887070;">(</span>rest eineLvz <span style="color: #887070;">)</span> schwelle<span style="color: #80A880;">)</span><span style="color: #858580;">)</span><span style="color: #6276BA;">]</span>
+             <span style="color: #6276BA;">[</span>else <span style="color: #858580;">(</span>filtere vglfkt
+                    <span style="color: #80A880;">(</span>rest eineLvz <span style="color: #80A880;">)</span> schwelle<span style="color: #858580;">)</span><span style="color: #6276BA;">]</span><span style="color: #907373;">)</span><span style="color: #709870;">]</span><span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span></pre>
+</pre>
+</div>
+
+<ul>
+<li><p>
+Um <code>unterhalb</code> zu realisieren ruft man <code>filtere</code> so auf:
+</p>
+<pre class="example">
+(filtere &lt; ’(3 4 5 6) 5) ;;=&gt; (3 4)
+
+</pre></li>
+<li>Man beachte den Vertrag der Funktion!</li>
+
+</ul>
+
+</section>
+<section id="slide-orgc738105">
+<h3 id="orgc738105">Funktionen sind Werte erster Ordnung</h3>
+<ul>
+<li><p>
+Die Möglichkeit, Funktionen, die andere Funktionen als Argument
+erwarten, zu bauen, beruht auf einem ebenso einfachen wie
+fundamentalen Prinzip:
+</p>
+
+<p>
+<b>Funktionen sind Werte erster Ordnung</b>
+</p></li>
+<li><p>
+Das bedeutet im Grunde, dass Funktionen überall dort, wo normale
+Werte verwendet werden dürfen, ebenfalls benutzt werden können. D.h.
+sie dürfen als
+</p>
+<ul>
+<li>Argumente von Funktionen benutzt,</li>
+<li>als Resultate von Funktionen geliefert und</li>
+<li>in Datenstrukturen verpackt</li>
+
+</ul>
+<p>
+werden.
+</p></li>
+<li>Das Prinzip eröffnet eine breite Palette an Programmiertechniken.</li>
+
+</ul>
+
+</section>
+<section id="slide-orge19c9d2">
+<h3 id="orge19c9d2">Verallgemeinerung der Filterfunktion</h3>
+<div class="org-src-container">
+
+<pre  class="src src-scheme"><span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">filter wendet auf jedes Element der Zahlenliste das Pr&#228;dikat an. </span>
+<span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">In die Ergebnisliste werden die Elemente aufgenommen, f&#252;r die das</span>
+<span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">Pr&#228;dikat true liefert.</span>
+<span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">filter : (number -&gt; boolean) (list-of number) -&gt; (list-of number)</span>
+<span style="color: #707183;">(</span>check-expect <span style="color: #7388D6;">(</span>filter <span style="color: #909183;">(</span><span style="color: #0000FF;">lambda</span> <span style="color: #709870;">[</span>x<span style="color: #709870;">]</span> <span style="color: #709870;">(</span>&lt; x 5<span style="color: #709870;">)</span><span style="color: #909183;">)</span> '<span style="color: #909183;">(</span>3 4 5 6 <span style="color: #909183;">)</span><span style="color: #7388D6;">)</span> '<span style="color: #7388D6;">(</span>3 4<span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
+<span style="color: #707183;">(</span>check-expect <span style="color: #7388D6;">(</span>filter odd? '<span style="color: #909183;">(</span>3 4 5 6 <span style="color: #909183;">)</span><span style="color: #7388D6;">)</span> '<span style="color: #7388D6;">(</span>3 5<span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
+<span style="color: #707183;">(</span><span style="color: #0000FF;">define</span> <span style="color: #006699;">filter</span>
+  <span style="color: #7388D6;">(</span><span style="color: #0000FF;">lambda</span> <span style="color: #909183;">[</span>praedikat eineLvz<span style="color: #909183;">]</span>
+    <span style="color: #909183;">(</span><span style="color: #0000FF;">cond</span> 
+      <span style="color: #709870;">[</span><span style="color: #907373;">(</span>empty? eineLvz<span style="color: #907373;">)</span> empty<span style="color: #709870;">]</span>
+      <span style="color: #709870;">[</span><span style="color: #907373;">(</span>praedikat <span style="color: #6276BA;">(</span>first eineLvz<span style="color: #6276BA;">)</span><span style="color: #907373;">)</span> 
+         <span style="color: #907373;">(</span>cons <span style="color: #6276BA;">(</span>first eineLvz <span style="color: #6276BA;">)</span> <span style="color: #6276BA;">(</span>filter praedikat <span style="color: #858580;">(</span>rest eineLvz<span style="color: #858580;">)</span><span style="color: #6276BA;">)</span><span style="color: #907373;">)</span><span style="color: #709870;">]</span>
+      <span style="color: #709870;">[</span>else <span style="color: #907373;">(</span>filter praedikat <span style="color: #6276BA;">(</span>rest eineLvz<span style="color: #6276BA;">)</span><span style="color: #907373;">)</span><span style="color: #709870;">]</span><span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span> </pre>
+</pre>
+</div>
+
+</section>
+<section id="slide-org01236e1">
+<h3 id="org01236e1">Eine Abstraktion für <code>sum</code> und <code>prod</code></h3>
+<ul>
+<li>Es kommt häufiger vor, dass man z.B. eine Liste von Zahlen zu einem
+Wert zusammenfalten will.</li>
+<li>Die verschiedenen Faltungsarten unterscheiden sich meist nur in dem
+Basiswert (Ergebnis für die leere Liste) und der eigentlichen
+Faltungsfunktion &#x2013; z.B. Addition für <code>sum</code> und Multiplikation für
+<code>prod</code>.</li>
+<li><p>
+Man beachte auch hier wieder den Vertrag der Funktion!
+</p>
+<div class="org-src-container">
+
+<pre  class="src src-scheme"><span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">falte (number number -&gt; number) number (list-of number) -&gt; number</span>
+<span style="color: #707183;">(</span><span style="color: #0000FF;">define</span> <span style="color: #006699;">falte</span>
+  <span style="color: #7388D6;">(</span><span style="color: #0000FF;">lambda</span> <span style="color: #909183;">[</span>fltfkt basis aLon<span style="color: #909183;">]</span>
+           <span style="color: #8D8D84;">;;;;;; </span><span style="color: #8D8D84; font-style: italic;">;;;;;</span>
+    <span style="color: #909183;">(</span><span style="color: #0000FF;">cond</span>
+      <span style="color: #709870;">[</span><span style="color: #907373;">(</span>empty? aLon<span style="color: #907373;">)</span> basis<span style="color: #709870;">]</span>
+                     <span style="color: #8D8D84;">;;;;;</span>
+      <span style="color: #709870;">[</span>else
+        <span style="color: #907373;">(</span>fltfkt <span style="color: #6276BA;">(</span>first aLon<span style="color: #6276BA;">)</span>
+                <span style="color: #6276BA;">(</span>falte fltfkt basis <span style="color: #858580;">(</span>rest aLon<span style="color: #858580;">)</span><span style="color: #6276BA;">)</span><span style="color: #907373;">)</span><span style="color: #709870;">]</span><span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
+                       <span style="color: #8D8D84;">;;;;;; </span><span style="color: #8D8D84; font-style: italic;">;;;;;</span></pre>
+</pre>
+</div></li>
+
+</ul>
+
+</section>
+<section id="slide-orgbee2b30">
+<h3 id="orgbee2b30">Ähnliche Datenstrukturen &#x2026;</h3>
+<p>
+&#x2026; haben ähnliche Funktionen zur Folge.
+</p>
+
+<ul>
+<li>Zum Beispiel sind die rekursiven Datenstrukturen <i>Liste-von-Zahlen</i>
+und <i>Liste-von-Symbolen</i> isomorph:
+<ul>
+<li>Eine <i>Liste-von-Zahlen</i> ist entweder
+<ol>
+<li><code>empty</code> oder</li>
+<li><code>(cons z lvz)</code>, wobei \(z\) eine <b>Zahl</b> und \(lvz\) eine
+<i>Liste-von-Zahlen</i> ist.</li>
+
+</ol></li>
+<li>Eine <i>Liste-von-Symbolen</i> ist entweder
+<ol>
+<li><code>empty</code> oder</li>
+<li><code>(cons s lvs)</code>, wobei \(s\) eine <b>Symbol</b> und \(lvs\) eine
+<i>Liste-von-Symbolen</i> ist.</li>
+
+</ol></li>
+
+</ul></li>
+<li>Der wesentliche Unterschied ist hervorgehoben.</li>
+<li>Will man eine Funktion <code>enthaelt?</code> definieren, die prüft, ob eine
+Zahl bzw. ein Symbol in der Liste enthalten ist, muss man ihr ein
+Vergleichsprädikat als Argument mitgeben.</li>
+
+</ul>
+
+</section>
+<section id="slide-org3b03ccc">
+<h3 id="org3b03ccc">Eine generische Funktion <code>enthaelt?</code></h3>
+<div class="small">
+<div class="org-src-container">
+
+<pre  class="src src-scheme"><span style="color: #707183;">(</span><span style="color: #0000FF;">define</span> <span style="color: #006699;">enthaelt?</span>
+  <span style="color: #7388D6;">(</span><span style="color: #0000FF;">lambda</span> <span style="color: #909183;">[</span>gleich? liste elem<span style="color: #909183;">]</span>
+    <span style="color: #909183;">(</span><span style="color: #0000FF;">cond</span>
+      <span style="color: #709870;">[</span><span style="color: #907373;">(</span>empty? liste<span style="color: #907373;">)</span> #false<span style="color: #709870;">]</span>
+      <span style="color: #709870;">[</span>else
+        <span style="color: #907373;">(</span><span style="color: #0000FF;">cond</span> 
+          <span style="color: #6276BA;">[</span><span style="color: #858580;">(</span>gleich? <span style="color: #80A880;">(</span>first liste<span style="color: #80A880;">)</span> elem<span style="color: #858580;">)</span> #true<span style="color: #6276BA;">]</span>
+          <span style="color: #6276BA;">[</span>else <span style="color: #858580;">(</span>enthaelt? gleich? <span style="color: #80A880;">(</span>rest liste<span style="color: #80A880;">)</span> elem<span style="color: #858580;">)</span><span style="color: #6276BA;">]</span><span style="color: #907373;">)</span><span style="color: #709870;">]</span><span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span></pre>
+</pre>
+</div>
+
+</div>
+
+<p>
+Anwendungen:
+</p>
+<pre class="example">
+(enthaelt? = '(2 3 4 5) 4) ;;=&gt; #true
+(enthaelt? equal? '(a b c d) 'b) ;;=&gt; #true
+
+</pre>
+<ul>
+<li>Die Funktion <code>enthaelt?</code> kann alle Arten von Listen verarbeiten. Der
+Typ der Elemente spielt keine Rolle.</li>
+<li>Solche Funktionen heißen <i>generisch</i> oder <i>polymorph</i>.</li>
+<li>Wie lautet der Vertrag für diese Funktion?</li>
+
+</ul>
+
+</section>
+<section id="slide-orgcb0f599">
+<h3 id="orgcb0f599">Parametrisierte Datenstruktur-Definitionen</h3>
+<ul>
+<li>Da eine generische, Listen verarbeitende Funktion Listen von
+irgendetwas akzeptiert, brauchen wir eine generische
+Datenstrukturdefinition.</li>
+<li>Eine Liste von <i>X</i> ist entweder
+<ol>
+<li><code>empty</code> oder</li>
+<li><code>(cons e l)</code>, wobei \(e\) ein <i>X</i> und \(l\) eine Liste von <i>X</i> ist.</li>
+
+</ol></li>
+<li><i>X</i> bezeichnet man als Typparameter (Signaturvariable).</li>
+<li><i>X</i> kann durch jeden eingebauten Typ aber auch durch jede selbst
+definierte Datenstruktur ersetzt werden.</li>
+<li>In Verträgen benutzen wir die Notation <code>(list-of X)</code>, um
+auszudrücken, dass eine Funktion beliebige Listen akzeptiert.</li>
+<li><p>
+Für das generische <code>enthaelt?</code>-Prädikat ergibt sich dann der Vertrag:
+</p>
+<pre class="example">
+;; enthaelt? (X X -&gt; boolean) (list-of X) X -&gt; boolean
+
+</pre></li>
+
+</ul>
+
+</section>
+<section id="slide-orgcc1571a">
+<h3 id="orgcc1571a">Die Funktion <code>map</code></h3>
+<div class="outline-text-3" id="text-orgcc1571a">
+</div>
+</section>
+<section id="slide-orgc6c7b70">
+<h4 id="orgc6c7b70">Zunächst zwei Beispiele</h4>
+<ol>
+<li><p>
+Quadrieren einer Liste von Zahlen
+</p>
+<div class="org-src-container">
+
+<pre  class="src src-scheme">   <span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">quadrieren: (list-of number) -&gt; (list-of number)</span>
+   <span style="color: #707183;">(</span><span style="color: #0000FF;">define</span> <span style="color: #006699;">quadrieren</span>
+     <span style="color: #7388D6;">(</span><span style="color: #0000FF;">lambda</span> <span style="color: #909183;">[</span>lvz<span style="color: #909183;">]</span>
+       <span style="color: #909183;">(</span><span style="color: #0000FF;">cond</span>
+         <span style="color: #709870;">[</span><span style="color: #907373;">(</span>empty? lvz<span style="color: #907373;">)</span> empty<span style="color: #709870;">]</span>
+         <span style="color: #709870;">[</span>else <span style="color: #907373;">(</span>cons <span style="color: #6276BA;">(</span><span style="color: #858580;">(</span><span style="color: #0000FF;">lambda</span> <span style="color: #80A880;">[</span>x<span style="color: #80A880;">]</span> <span style="color: #80A880;">(</span>* x x<span style="color: #80A880;">)</span><span style="color: #858580;">)</span> <span style="color: #858580;">(</span>first lvz<span style="color: #858580;">)</span><span style="color: #6276BA;">)</span>
+                     <span style="color: #6276BA;">(</span>quadrieren <span style="color: #858580;">(</span>rest lvz<span style="color: #858580;">)</span><span style="color: #6276BA;">)</span><span style="color: #907373;">)</span><span style="color: #709870;">]</span><span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span></pre>
+</pre>
+</div></li>
+
+</ol>
+</section>
+<section >
+
+<ol>
+<li value="2"><p>
+Extrahieren von Produktnamen aus einer Preisliste
+</p>
+
+<div class="org-src-container">
+
+<pre  class="src src-scheme">    <span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">Ein Produkt besteht aus</span>
+    <span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">- einem Symbol f&#252;r den Namen</span>
+    <span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">- einer Zahl f&#252;r den Preis</span>
+    <span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">...</span>
+    <span style="color: #707183;">(</span>define-struct produkt <span style="color: #7388D6;">[</span>name preis<span style="color: #7388D6;">]</span><span style="color: #707183;">)</span>
+
+    <span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">produkt-namen: (list-of produkt) -&gt; (list-of symbol)</span>
+    <span style="color: #707183;">(</span><span style="color: #0000FF;">define</span> <span style="color: #006699;">produkt-namen</span>
+      <span style="color: #7388D6;">(</span><span style="color: #0000FF;">lambda</span> <span style="color: #909183;">[</span>pl<span style="color: #909183;">]</span>
+        <span style="color: #909183;">(</span><span style="color: #0000FF;">cond</span>
+          <span style="color: #709870;">[</span><span style="color: #907373;">(</span>empty? pl<span style="color: #907373;">)</span> empty<span style="color: #709870;">]</span>
+          <span style="color: #709870;">[</span>else <span style="color: #907373;">(</span>cons <span style="color: #6276BA;">(</span>produkt-name <span style="color: #858580;">(</span>first pl<span style="color: #858580;">)</span><span style="color: #6276BA;">)</span>
+                 <span style="color: #6276BA;">(</span>produkt-namen <span style="color: #858580;">(</span>rest pl<span style="color: #858580;">)</span><span style="color: #6276BA;">)</span><span style="color: #907373;">)</span><span style="color: #709870;">]</span><span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span></pre>
+</pre>
+</div></li>
+
+</ol>
+
+</section>
+<section id="slide-org14b8852">
+<h4 id="org14b8852">Verallgemeinerung von <code>quadrieren</code> und <code>produkt-namen</code></h4>
+<ul>
+<li>Die beiden Funktionen unterscheiden
+sich &#x2013; abgesehen von ihren Namen &#x2013; nur in der Funktion, die auf das
+erste Listenelement angewendet wird.</li>
+<li>Wann immer zwei (oder mehr) dieser Art ähnliche Funktionen auftreten,
+gehe man folgendermaßen vor:
+<ol>
+<li>Markiere die Stellen in den Funktionen, wo sie sich unterscheiden.
+Wenn sie sich nur in Werten (auch Funktionen sind Werte)
+unterscheiden, ist eine Abstraktion möglich.</li>
+<li>Führe für jedes Paar markierter Stellen einen neuen Namen ein.</li>
+<li>Übernimm diesen Namen in die Liste der formalen Parameter der
+Funktionen. Nach diesem Schritt müssen die beiden Funktionen außer
+in ihrem Namen übereinstimmen.</li>
+<li>Schließlich ersetzen wir die Funktionsnamen durch den Namen einer
+neuen abstrakten Funktion.</li>
+
+</ol></li>
+<li>So entsteht aus <code>quadrieren</code> und <code>produkt-namen</code> formal die Funktion
+<code>map</code>:</li>
+
+</ul>
+
+</section>
+<section id="slide-orgcbfdae4">
+<h4 id="orgcbfdae4">Die Funktion <code>map</code></h4>
+<div class="small">
+<div class="org-src-container">
+
+<pre  class="src src-scheme">    <span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">map: (X -&gt; Y) (list-of X) -&gt; (list-of Y)</span>
+    <span style="color: #707183;">(</span><span style="color: #0000FF;">define</span> <span style="color: #006699;">map</span>
+      <span style="color: #7388D6;">(</span><span style="color: #0000FF;">lambda</span> <span style="color: #909183;">[</span>fun lst<span style="color: #909183;">]</span>
+        <span style="color: #909183;">(</span><span style="color: #0000FF;">cond</span>
+          <span style="color: #709870;">[</span><span style="color: #907373;">(</span>empty? lst<span style="color: #907373;">)</span> empty<span style="color: #709870;">]</span>
+          <span style="color: #709870;">[</span>else <span style="color: #907373;">(</span>cons <span style="color: #6276BA;">(</span>fun <span style="color: #858580;">(</span>first lst<span style="color: #858580;">)</span><span style="color: #6276BA;">)</span>
+                 <span style="color: #6276BA;">(</span><span style="color: #0000FF;">map</span> fun <span style="color: #858580;">(</span>rest lst<span style="color: #858580;">)</span><span style="color: #6276BA;">)</span><span style="color: #907373;">)</span><span style="color: #709870;">]</span><span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span></pre>
+</pre>
+</div>
+
+</div>
+<ul>
+<li>Man beachte wieder den Vertrag der Funktion!</li>
+<li><p>
+Als letzten Schritt des Abstraktionsprozesses definiert man die
+Originalfunktionen mithilfe der neuen abstrahierten Funktion:
+</p>
+<pre class="example">
+(define quadrieren (lambda [lvz] (map (lambda [x] (* x x)) lvz)))
+(define produkt-namen (lambda [pl] (map produkt-name pl)))+
+
+</pre></li>
+
+</ul>
+</section>
+<section id="slide-org372b507">
+<h3 id="org372b507">Verallgemeinerung von <code>falte</code></h3>
+<div class="outline-text-3" id="text-org372b507">
+</div>
+</section>
+<section id="slide-org713ded8">
+<h4 id="org713ded8">Ein anderes Verständnis für <code>falte</code></h4>
+<ul>
+<li>Die Reduktion einer Liste zu einem Wert ist eine häufig vorkommende
+Aufgabe.</li>
+<li>Als Funktion höherer Ordnung gehört die Falte-Funktion zum
+Standard-Repertoire funktionaler Programmiersysteme.</li>
+<li>häufig verwendete Bezeichner: <code>fold</code> (in Racket: <code>foldl</code>), reduce</li>
+<li>Die Wirkung von <code>(falte + 0 '(11 17 5))</code>
+kann man sich, wie folgt, veranschaulichen:
+<ul>
+<li><p>
+<code>falte</code> ersetzt in der Argumentliste, die dem Ausdruck
+</p>
+<pre class="example">
+(cons 11 (cons 17 (cons 5 empty)))
+
+</pre>
+<p>
+entspricht, jedes Auftreten von <code>cons</code> durch <code>+</code> und jedes Auftreten
+von <code>empty</code> durch 0: <code>(+ 11 (+ 17 (+ 5 0)))</code>
+</p></li>
+<li>Verallgemeinert: Jedes Auftreten von <code>cons</code> wird durch die
+Faltungsfunktion (<code>fltfkt</code>) und jedes Auftreten von <code>empty</code> durch
+den Basiswert ersetzt.</li>
+
+</ul></li>
+
+</ul>
+
+</section>
+<section id="slide-orgb91adc9">
+<h4 id="orgb91adc9">Weitere Anwendungen von <code>falte</code></h4>
+<ul>
+<li>Was liefern die Ausdrücke
+
+<ol>
+<li>(falte cons empty '(a b c)) ?</li>
+
+<li>(falte cons '(x y z) '(a b c)) ?</li>
+
+</ol></li>
+
+</ul>
+
+</section>
+<section id="slide-org2c1a7bf">
+<h4 id="org2c1a7bf">Ein generisches <code>falte</code>: <code>reduce</code> (<code>foldl</code>)</h4>
+<ul>
+<li>Wir abstrahieren die Funktion <code>falte</code> bezüglich des Typs der
+Listenelemente.</li>
+<li><p>
+Aus dem Vertrag
+</p>
+<pre class="example">
+;; falte: (number number -&gt; number) number (list-of number) -&gt; number
+
+</pre>
+<p>
+wird:
+</p>
+<pre class="example">
+;; reduce: (X Y -&gt; Y) Y (list-of X) -&gt; Y
+
+</pre></li>
+
+</ul>
+
+</section>
+<section id="slide-org50e7048">
+<h4 id="org50e7048">Die Funktionsdefinition für <code>reduce</code></h4>
+<div class="small">
+<div class="org-src-container">
+
+<pre  class="src src-scheme">   <span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">reduce: (X Y -&gt; Y) Y (list-of X) -&gt; Y    </span>
+   <span style="color: #707183;">(</span><span style="color: #0000FF;">define</span> <span style="color: #006699;">reduce</span> 
+      <span style="color: #7388D6;">(</span><span style="color: #0000FF;">lambda</span> <span style="color: #909183;">[</span>combine base l<span style="color: #909183;">]</span>
+        <span style="color: #909183;">(</span><span style="color: #0000FF;">cond</span>
+          <span style="color: #709870;">[</span><span style="color: #907373;">(</span>empty? l<span style="color: #907373;">)</span> base<span style="color: #709870;">]</span>
+          <span style="color: #709870;">[</span>else <span style="color: #907373;">(</span>combine 
+                   <span style="color: #6276BA;">(</span>first l<span style="color: #6276BA;">)</span>
+                   <span style="color: #6276BA;">(</span>reduce combine base <span style="color: #858580;">(</span>rest l<span style="color: #858580;">)</span><span style="color: #6276BA;">)</span><span style="color: #907373;">)</span><span style="color: #709870;">]</span><span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span></pre>
+</pre>
+</div>
+
+</div>
+<ul>
+<li>Der Parameter <code>base</code> steht für den Funktionswert im Fall der leeren
+Liste.</li>
+<li>Der Parameter <code>combine</code> ist die Funktion, die aus dem Zugriff auf das
+ erste Element der Liste und der rekursiven Anwendung der Funktion
+auf die Restliste den Funktionswert ermittelt, falls die Liste <code>l</code> nicht leer ist.</li>
+
+</ul>
+</section>
+<section id="slide-org20f4150">
+<h4 id="org20f4150">Anwendungen von <code>reduce</code></h4>
+<div class="org-src-container">
+
+<pre  class="src src-scheme">    <span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">sum: (list-of number)  -&gt;  number)</span>
+    <span style="color: #707183;">(</span><span style="color: #0000FF;">define</span> <span style="color: #006699;">sum</span> <span style="color: #7388D6;">(</span><span style="color: #0000FF;">lambda</span> <span style="color: #909183;">[</span>list<span style="color: #909183;">]</span> <span style="color: #909183;">(</span>reduce + 0 list<span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
+
+    <span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">product: (list-of number)  -&gt;  number</span>
+    <span style="color: #707183;">(</span><span style="color: #0000FF;">define</span> <span style="color: #006699;">product</span> <span style="color: #7388D6;">(</span><span style="color: #0000FF;">lambda</span> <span style="color: #909183;">[</span>list<span style="color: #909183;">]</span> <span style="color: #909183;">(</span>reduce * 1 list<span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
+      
+    <span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">erzeugt eine Liste aus all den Elementen von alox,</span>
+    <span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">f&#252;r die p gilt </span>
+    <span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">filterr (X  -&gt;  boolean) (list-of X) -&gt; (list-of X)))</span>
+    <span style="color: #707183;">(</span><span style="color: #0000FF;">define</span> <span style="color: #006699;">filterr</span> 
+      <span style="color: #7388D6;">(</span><span style="color: #0000FF;">lambda</span> <span style="color: #909183;">[</span>p alox<span style="color: #909183;">]</span>
+        <span style="color: #909183;">(</span><span style="color: #0000FF;">letrec</span> <span style="color: #709870;">(</span><span style="color: #907373;">(</span>cp <span style="color: #6276BA;">(</span><span style="color: #0000FF;">lambda</span> <span style="color: #858580;">[</span>x y<span style="color: #858580;">]</span>
+                       <span style="color: #858580;">(</span><span style="color: #0000FF;">cond</span> <span style="color: #80A880;">[</span><span style="color: #887070;">(</span>p x<span style="color: #887070;">)</span> <span style="color: #887070;">(</span>cons x y<span style="color: #887070;">)</span><span style="color: #80A880;">]</span> 
+                             <span style="color: #80A880;">[</span>else y<span style="color: #80A880;">]</span><span style="color: #858580;">)</span><span style="color: #6276BA;">)</span><span style="color: #907373;">)</span><span style="color: #709870;">)</span>
+          <span style="color: #709870;">(</span>reduce cp empty alox<span style="color: #709870;">)</span><span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span></pre>
+</pre>
+</div>
+
+</section>
+</section>
+<section>
+<section id="slide-orga6a63c4">
+<h2 id="orga6a63c4">Integration von Daten und Funktionen &#x2013; Einführung des Objektbegriffs</h2>
+<div class="outline-text-2" id="text-orga6a63c4">
+</div>
+</section>
+<section id="slide-org7036314">
+<h3 id="org7036314">Funktionen mit Funktionen als Resultat</h3>
+<ul>
+<li><p>
+Was liefert der Ausdruck <code>(inc 3)</code>, wenn die Funktion <code>inc</code> wie folgt
+definiert ist?
+</p>
+
+<div class="small">
+<div class="org-src-container">
+
+<pre  class="src src-scheme">   <span style="color: #707183;">(</span><span style="color: #0000FF;">define</span> <span style="color: #006699;">inc</span> 
+      <span style="color: #7388D6;">(</span><span style="color: #0000FF;">lambda</span> <span style="color: #909183;">[</span>n<span style="color: #909183;">]</span> <span style="color: #909183;">(</span><span style="color: #0000FF;">lambda</span> <span style="color: #709870;">[</span>z<span style="color: #709870;">]</span> <span style="color: #709870;">(</span>+ z n<span style="color: #709870;">)</span><span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span></pre>
+</pre>
+</div>
+
+</div></li>
+
+<li><p>
+Welches Resultat liefert eine Anwendung der Funktion <code>dot</code>?
+</p>
+
+<div class="small">
+<div class="org-src-container">
+
+<pre  class="src src-scheme">   <span style="color: #707183;">(</span><span style="color: #0000FF;">define</span> <span style="color: #006699;">dot</span>
+      <span style="color: #7388D6;">(</span><span style="color: #0000FF;">lambda</span> <span style="color: #909183;">[</span>f g<span style="color: #909183;">]</span> <span style="color: #909183;">(</span><span style="color: #0000FF;">lambda</span> <span style="color: #709870;">[</span>x<span style="color: #709870;">]</span> <span style="color: #709870;">(</span>f <span style="color: #907373;">(</span>g x<span style="color: #907373;">)</span><span style="color: #709870;">)</span><span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span></pre>
+</pre>
+</div>
+
+</div></li>
+
+</ul>
+
+</section>
+<section >
+
+<ul>
+<li><p>
+Anwendung von <code>inc</code> und <code>dot</code>:
+</p>
+
+<div class="org-src-container">
+
+<pre  class="src src-scheme">   <span style="color: #707183;">(</span><span style="color: #0000FF;">define</span> <span style="color: #006699;">inclist</span> 
+      <span style="color: #7388D6;">(</span><span style="color: #0000FF;">lambda</span> <span style="color: #909183;">[</span>x<span style="color: #909183;">]</span> <span style="color: #909183;">(</span><span style="color: #0000FF;">map</span> <span style="color: #709870;">(</span>inc 1<span style="color: #709870;">)</span> x<span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
+
+   <span style="color: #707183;">(</span><span style="color: #0000FF;">define</span> <span style="color: #006699;">increv</span> 
+      <span style="color: #7388D6;">(</span><span style="color: #0000FF;">lambda</span> <span style="color: #909183;">[</span>x<span style="color: #909183;">]</span> <span style="color: #909183;">(</span><span style="color: #709870;">(</span>dot inclist reverse<span style="color: #709870;">)</span> x<span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
+          
+   <span style="color: #707183;">(</span>increv '<span style="color: #7388D6;">(</span>3 13 23 33<span style="color: #7388D6;">)</span><span style="color: #707183;">)</span> ==&gt; <span style="color: #707183;">(</span>34 24 14 4<span style="color: #707183;">)</span></pre>
+</pre>
+</div></li>
+
+</ul>
+
+</section>
+<section id="slide-org0ceac55">
+<h3 id="org0ceac55">Was ist ein Objekt?</h3>
+<ul>
+<li>Objekte im Sinne der „objektorientierten Programmierung” sind
+nichts weiter als Funktionen mit „internen” Daten.</li>
+<li><p>
+So gesehen liefert ein Ausdruck der Art
+</p>
+<pre class="example">
+(define inc-obj (inc 3))
+
+</pre>
+<p>
+ein Objekt (eine Funktion) mit dem internen Datum (Zustand) <b>3</b>.
+</p></li>
+<li>Die Funktion bezeichnet man in der objektorientierten Programmierung
+auch als <i>Methode</i>.</li>
+<li>Durch den Ausdruck <code>(inc-obj 7)</code> 
+wird die Methode aktiviert (die Funktion aufgerufen). Sie verlangt
+ein Argument.</li>
+<li><code>inc-obj</code> ist ein sehr primitives Objekt mit nur einer (unveränderlichen)
+Zustandsgrößen und einer Methode.</li>
+
+</ul>
+</section>
+<section id="slide-org062e93c">
+<h3 id="org062e93c">Ein etwas interessanteres Objekt</h3>
+<div class="org-src-container">
+
+<pre  class="src src-scheme"><span style="color: #707183;">(</span><span style="color: #0000FF;">define</span> <span style="color: #006699;">person</span>
+  <span style="color: #7388D6;">(</span><span style="color: #0000FF;">lambda</span> <span style="color: #909183;">[</span>name vorname<span style="color: #909183;">]</span>
+    <span style="color: #909183;">(</span><span style="color: #0000FF;">let*</span> <span style="color: #709870;">(</span><span style="color: #907373;">[</span>get-name    <span style="color: #6276BA;">(</span><span style="color: #0000FF;">lambda</span> <span style="color: #858580;">[]</span> name<span style="color: #6276BA;">)</span><span style="color: #907373;">]</span>
+           <span style="color: #907373;">[</span>get-vorname <span style="color: #6276BA;">(</span><span style="color: #0000FF;">lambda</span> <span style="color: #858580;">[]</span>vorname<span style="color: #6276BA;">)</span><span style="color: #907373;">]</span>
+           <span style="color: #907373;">[</span>vollname    <span style="color: #6276BA;">(</span><span style="color: #0000FF;">lambda</span> <span style="color: #858580;">[]</span> <span style="color: #858580;">(</span>string-append vorname <span style="color: #008000;">" "</span> name<span style="color: #858580;">)</span><span style="color: #6276BA;">)</span><span style="color: #907373;">]</span>
+           <span style="color: #907373;">[</span>gruss       <span style="color: #6276BA;">(</span><span style="color: #0000FF;">lambda</span> <span style="color: #858580;">[</span>g<span style="color: #858580;">]</span> <span style="color: #858580;">(</span>string-append g <span style="color: #008000;">" "</span> <span style="color: #80A880;">(</span>vollname<span style="color: #80A880;">)</span><span style="color: #858580;">)</span><span style="color: #6276BA;">)</span><span style="color: #907373;">]</span><span style="color: #709870;">)</span>
+      <span style="color: #709870;">(</span><span style="color: #0000FF;">lambda</span> <span style="color: #907373;">[</span>nachricht<span style="color: #907373;">]</span>
+        <span style="color: #907373;">(</span><span style="color: #0000FF;">cond</span>
+          <span style="color: #6276BA;">[</span><span style="color: #858580;">(</span>equal? nachricht 'get-name<span style="color: #858580;">)</span> get-name<span style="color: #6276BA;">]</span>
+          <span style="color: #6276BA;">[</span><span style="color: #858580;">(</span>equal? nachricht 'get-vorname<span style="color: #858580;">)</span> get-vorname<span style="color: #6276BA;">]</span>
+          <span style="color: #6276BA;">[</span><span style="color: #858580;">(</span>equal? nachricht 'get-vollname<span style="color: #858580;">)</span> vollname<span style="color: #6276BA;">]</span>
+          <span style="color: #6276BA;">[</span><span style="color: #858580;">(</span>equal? nachricht 'gruss<span style="color: #858580;">)</span> gruss<span style="color: #6276BA;">]</span>
+          <span style="color: #6276BA;">[</span>else <span style="color: #858580;">(</span>error <span style="color: #008000;">"unbekannte Nachricht"</span><span style="color: #858580;">)</span><span style="color: #6276BA;">]</span><span style="color: #907373;">)</span><span style="color: #709870;">)</span><span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span></pre>
+</pre>
+</div>
+<ul>
+<li>Ein Aufruf der Funktion <code>person</code> liefert ein „Objekt” mit 
+<ul>
+<li>zwei Zustandsgrößen (<code>name</code>, <code>vorname</code>) und</li>
+<li>vier Methoden: <code>get-name</code>, <code>get-vorname</code>, <code>vollname</code> und <code>gruss</code></li>
+
+</ul></li>
+
+</ul>
+</section>
+<section >
+<ul>
+<li>„In Wirklichkeit” liefert ein Aufruf der Funktion <code>person</code> eine
+Verteilfunktion, die anhand ihres Parameters <code>nachricht</code> ermittelt,
+welche der Methoden aufzurufen ist.</li>
+
+</ul>
+
+</section>
+<section id="slide-orgd546625">
+<h3 id="orgd546625">Anwendungen des <code>person</code>-Objekts</h3>
+<div class="org-src-container">
+
+<pre  class="src src-scheme"><span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">Objekterzeugung:</span>
+<span style="color: #707183;">(</span><span style="color: #0000FF;">define</span> <span style="color: #006699;">p1</span> <span style="color: #7388D6;">(</span>person <span style="color: #008000;">"Gans"</span> <span style="color: #008000;">"Gustav"</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
+<span style="color: #707183;">(</span><span style="color: #7388D6;">(</span>p1 'get-vorname<span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>     <span style="color: #8D8D84;">;;</span><span style="color: #8D8D84; font-style: italic;">=&gt; "Gustav"</span>
+<span style="color: #707183;">(</span><span style="color: #7388D6;">(</span>p1 'get-name<span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>        <span style="color: #8D8D84;">;;</span><span style="color: #8D8D84; font-style: italic;">=&gt; "Gans"</span>
+<span style="color: #707183;">(</span><span style="color: #7388D6;">(</span>p1 'get-vollname<span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>    <span style="color: #8D8D84;">;;</span><span style="color: #8D8D84; font-style: italic;">=&gt; "Gustav Gans"</span>
+<span style="color: #707183;">(</span><span style="color: #7388D6;">(</span>p1 'gruss<span style="color: #7388D6;">)</span> <span style="color: #008000;">"hallo"</span><span style="color: #707183;">)</span>   <span style="color: #8D8D84;">;;</span><span style="color: #8D8D84; font-style: italic;">=&gt; "hallo Gustav Gans"</span>
+<span style="color: #707183;">(</span>p1 'x<span style="color: #707183;">)</span>                 <span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">error</span></pre>
+</pre>
+</div>
+
+</section>
+<section id="slide-org3e94176">
+<h3 id="org3e94176">Java-Klasse <code>Person</code></h3>
+<div class="org-src-container">
+
+<pre  class="src src-java"> <span style="color: #0000FF;">public</span> <span style="color: #0000FF;">class</span> <span style="color: #6434A3;">Person</span>
+<span style="color: #707183;">{</span>
+   <span style="color: #6434A3;">String</span> <span style="color: #BA36A5;">vorname</span>, <span style="color: #BA36A5;">name</span>;
+
+    <span style="color: #0000FF;">public</span> <span style="color: #006699;">Person</span> <span style="color: #7388D6;">(</span><span style="color: #6434A3;">String</span> <span style="color: #BA36A5;">n</span>, <span style="color: #6434A3;">String</span> <span style="color: #BA36A5;">v</span><span style="color: #7388D6;">)</span>
+    <span style="color: #7388D6;">{</span>
+        vorname = v;
+        name = n;
+    <span style="color: #7388D6;">}</span>
+
+    <span style="color: #0000FF;">public</span> <span style="color: #6434A3;">String</span> <span style="color: #006699;">get_name</span><span style="color: #7388D6;">()</span>
+    <span style="color: #7388D6;">{</span>
+        <span style="color: #0000FF;">return</span> name;
+    <span style="color: #7388D6;">}</span>
+    <span style="color: #0000FF;">public</span> <span style="color: #6434A3;">String</span> <span style="color: #006699;">get_vorname</span><span style="color: #7388D6;">()</span>
+    <span style="color: #7388D6;">{</span>
+        <span style="color: #0000FF;">return</span> vorname;
+    <span style="color: #7388D6;">}</span>
+    <span style="color: #0000FF;">public</span> <span style="color: #6434A3;">String</span> <span style="color: #006699;">vollname</span><span style="color: #7388D6;">()</span>
+    <span style="color: #7388D6;">{</span>
+        <span style="color: #0000FF;">return</span> vorname + <span style="color: #008000;">" "</span> + name;
+    <span style="color: #7388D6;">}</span>
+    <span style="color: #0000FF;">public</span> <span style="color: #6434A3;">String</span> <span style="color: #006699;">gruss</span><span style="color: #7388D6;">(</span><span style="color: #6434A3;">String</span> <span style="color: #BA36A5;">gruss</span><span style="color: #7388D6;">)</span>
+    <span style="color: #7388D6;">{</span>
+        <span style="color: #0000FF;">return</span> gruss + <span style="color: #008000;">" "</span> + <span style="color: #0000FF;">this</span>.vollname<span style="color: #909183;">()</span>;
+    <span style="color: #7388D6;">}</span>
+<span style="color: #707183;">}</span></pre>
+</pre>
+</div>
+
+
+</section>
+<section id="slide-org63289d1">
+<h3 id="org63289d1">Zusammenfassung</h3>
+<ul>
+<li>Für die objektorientierte Programmierung bedarf es keiner speziellen
+Programmiersprachen.</li>
+<li>Objektorientierung besteht nur aus einer Reihe von Konventionen zum
+Umgang mit Daten.</li>
+<li>Diese Konventionen werden von objektorientierten Sprachen explizit
+und implizit unterstützt. Z. B. muss die Verteilfunktion nicht
+selbst programmiert werden.</li>
+<li>Objekte sind nichts weiter als
+<ul>
+<li>eine Menge von <code>Name-&gt;Wert</code>-Abbildungen</li>
+<li>eine Reihe von Funktionen, die solche Abbildungen als erstes
+Argument akzeptieren und</li>
+<li>eine Verteilfunktion, die ermittelt, welche dieser Funtkion
+aufzurufen ist.</li>
+
+</ul></li>
+
+</ul>
+</section>
+</section>
+</div>
+</div>
+<script src="./reveal.js/lib/js/head.min.js"></script>
+<script src="./reveal.js/js/reveal.js"></script>
+
+<script>
+// Full list of configuration options available here:
+// https://github.com/hakimel/reveal.js#configuration
+Reveal.initialize({
+
+controls: true,
+progress: true,
+history: false,
+center: true,
+slideNumber: 'c',
+rollingLinks: false,
+keyboard: true,
+overview: true,
+margin: 0.05,
+
+theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+transition: Reveal.getQueryHash().transition || 'slide', // default/cube/page/concave/zoom/linear/fade/none
+transitionSpeed: 'default',
+multiplex: {
+    secret: '', // null if client
+    id: '', // id, obtained from socket.io server
+    url: '' // Location of socket.io server
+},
+
+// Optional libraries used to extend on reveal.js
+dependencies: [
+ { src: './reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+ { src: './reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+ { src: './reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+ { src: './reveal.js/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+ { src: './reveal.js/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }]
+,dependencies: [ { src: 'plugin/menu/menu.js', async: true }, { src: 'reveal.js/plugin/zoom-js/zoom.js', async: true } ]});
+</script>
+</body>
+</html>
