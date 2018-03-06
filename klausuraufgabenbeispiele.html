@@ -3,12 +3,12 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="de" xml:lang="de">
 <head>
-<!-- 2017-02-18 Sat 23:20 -->
-<meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
-<meta  name="viewport" content="width=device-width, initial-scale=1" />
+<!-- 2018-03-06 Tue 14:29 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Beispiele für Klausuraufgaben</title>
-<meta  name="generator" content="Org-mode" />
-<meta  name="author" content="S. Jasser, J. Sauer, J. Brauer" />
+<meta name="generator" content="Org mode" />
+<meta name="author" content="S. Jasser, J. Sauer, J. Brauer" />
 <style type="text/css">
  <!--/*--><![CDATA[/*><!--*/
   .title  { text-align: center;
@@ -53,13 +53,98 @@
     border: 1px solid black;
   }
   pre.src:hover:before { display: inline;}
-  pre.src-sh:before    { content: 'sh'; }
-  pre.src-bash:before  { content: 'sh'; }
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
   pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
-  pre.src-R:before     { content: 'R'; }
-  pre.src-perl:before  { content: 'Perl'; }
-  pre.src-java:before  { content: 'Java'; }
-  pre.src-sql:before   { content: 'SQL'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
 
   table { border-collapse:collapse; }
   caption.t-above { caption-side: top; }
@@ -92,6 +177,7 @@
     { font-size: 10px; font-weight: bold; white-space: nowrap; }
   .org-info-js_search-highlight
     { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
   /*]]>*/-->
 </style>
 <link rel="stylesheet" type="text/css" href="mystyle.css" />
@@ -103,7 +189,7 @@ ol { list-style-type: lower-alpha; }
 @licstart  The following is the entire license notice for the
 JavaScript code in this tag.
 
-Copyright (C) 2012-2013 Free Software Foundation, Inc.
+Copyright (C) 2012-2018 Free Software Foundation, Inc.
 
 The JavaScript code in this tag is free software: you can
 redistribute it and/or modify it under the terms of the GNU
@@ -170,22 +256,22 @@ for the JavaScript code in this tag.
 <body>
 <div id="content">
 <h1 class="title">Beispiele für Klausuraufgaben
-<br>
+<br />
 <span class="subtitle">Einführung in die Programmierung</span>
 </h1>
 <div id="table-of-contents">
 <h2>Inhaltsverzeichnis</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#orgheadline1">1. Aufgabe</a></li>
-<li><a href="#orgheadline2">2. Aufgabe - Datenabstraktion/gemischte Daten</a></li>
-<li><a href="#orgheadline3">3. Aufgabe - Anwendung der Regel für listenverarbeitende Funktionen</a></li>
-<li><a href="#orgheadline4">4. Aufgabe - Funktionen über zwei Listen</a></li>
-<li><a href="#orgheadline5">5. Aufgabe - Auswertung von Funktionsanwendungen</a></li>
-<li><a href="#orgheadline6">6. Aufgabe - Akkumulierende Parameter</a></li>
-<li><a href="#orgheadline7">7. Aufgabe - Entwicklung einer Funktion höherer Ordnung</a></li>
-<li><a href="#orgheadline8">8. Aufgabe - Anwendung von Funktionen höherer Ordnung</a></li>
-<li><a href="#orgheadline9">9. Aufgabe - Korrektheitsbeweis</a></li>
+<li><a href="#org1445d94">1. Aufgabe</a></li>
+<li><a href="#orgca161e2">2. Aufgabe - Datenabstraktion/gemischte Daten</a></li>
+<li><a href="#org0f9d19c">3. Aufgabe - Anwendung der Regel für listenverarbeitende Funktionen</a></li>
+<li><a href="#orgb7e94ce">4. Aufgabe - Funktionen über zwei Listen</a></li>
+<li><a href="#org1a986ee">5. Aufgabe - Auswertung von Funktionsanwendungen</a></li>
+<li><a href="#orgb6c7426">6. Aufgabe - Akkumulierende Parameter</a></li>
+<li><a href="#org6e861f6">7. Aufgabe - Entwicklung einer Funktion höherer Ordnung</a></li>
+<li><a href="#org5ebdbf6">8. Aufgabe - Anwendung von Funktionen höherer Ordnung</a></li>
+<li><a href="#org9ecba22">9. Aufgabe - Korrektheitsbeweis</a></li>
 </ul>
 </div>
 </div>
@@ -195,8 +281,8 @@ in der Klausur vorkommenden Aufgabentypen dar. Sie sagen nichts aus
 über den Umfang der Klausur.
 </p>
 
-<div id="outline-container-orgheadline1" class="outline-2">
-<h2 id="orgheadline1"><span class="section-number-2">1</span> Aufgabe</h2>
+<div id="outline-container-org1445d94" class="outline-2">
+<h2 id="org1445d94"><span class="section-number-2">1</span> Aufgabe</h2>
 <div class="outline-text-2" id="text-1">
 <table border="2" cellspacing="0" cellpadding="6" rules="all" frame="border">
 
@@ -251,11 +337,63 @@ in der Klausur vorkommenden Aufgabentypen dar. Sie sagen nichts aus
 </tr>
 </tbody>
 </table>
-</div>
-</div>
+<table border="2" cellspacing="0" cellpadding="6" rules="all" frame="border">
 
-<div id="outline-container-orgheadline2" class="outline-2">
-<h2 id="orgheadline2"><span class="section-number-2">2</span> Aufgabe - Datenabstraktion/gemischte Daten</h2>
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left"><b>Aussage</b></th>
+<th scope="col" class="org-left"><b>ja</b></th>
+<th scope="col" class="org-left"><b>nein</b></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">Das Gebiet Informatik lässt sich in Theoretische, Angewandte, Praktische und Technische Informatik gliedern</td>
+<td class="org-left">x</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td class="org-left">Die Wirtschaftsinformatik zählt zur Praktischen Informatik.</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">x</td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td class="org-left">Die Syntax einer Programmiersprache besteht aus einer Menge von Regeln, die die Struktur ihrer Programme bestimmt.</td>
+<td class="org-left">x</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td class="org-left">Die Semantik einer Programmiersprache bestimmt, welche Intention ein Programmierer mit einem Programm verfolgt.</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">x</td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td class="org-left">Informationen werden als Daten repräsentiert und verarbeitet.</td>
+<td class="org-left">x</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="outline-container-orgca161e2" class="outline-2">
+<h2 id="orgca161e2"><span class="section-number-2">2</span> Aufgabe - Datenabstraktion/gemischte Daten</h2>
 <div class="outline-text-2" id="text-2">
 <p>
 Entwerfen Sie Datenstrukturen für verschiedene Kontentypen:
@@ -266,6 +404,26 @@ Entwerfen Sie Datenstrukturen für verschiedene Kontentypen:
 <dt>Kreditkonto</dt><dd>hat die Merkmale <i>Kontostand</i> <i>Ausgabelimit</i> und
 <i>Zahl der Transaktionen</i></dd>
 </dl>
+<p>
+Ein <code>girokonto</code> ist ein Wert
+</p>
+<ul class="org-ul">
+<li><code>(make-girokonto kontostand transkaktion)</code> wobei
+<ul class="org-ul">
+<li><code>kontostand</code> ist eine Zahl</li>
+<li><code>transaktionen</code> ist eine Zahl</li>
+</ul></li>
+</ul>
+
+<p>
+:student:
+Ein <code>sparkonto</code> ist ein Wert
+<code>(make-girokonto kontostand transkaktion)</code> wobei
+</p>
+<ul class="org-ul">
+<li><code>kontostand</code> ist eine Zahl</li>
+<li><code>transaktionen</code> ist eine Zahl</li>
+</ul>
 
 <p>
 Entwickeln Sie eine Funktion <code>abhebung</code>, die ein Konto und einen
@@ -281,8 +439,8 @@ darf.
 </p>
 </div>
 </div>
-<div id="outline-container-orgheadline3" class="outline-2">
-<h2 id="orgheadline3"><span class="section-number-2">3</span> Aufgabe - Anwendung der Regel für listenverarbeitende Funktionen</h2>
+<div id="outline-container-org0f9d19c" class="outline-2">
+<h2 id="org0f9d19c"><span class="section-number-2">3</span> Aufgabe - Anwendung der Regel für listenverarbeitende Funktionen</h2>
 <div class="outline-text-2" id="text-3">
 <p>
 Wenden Sie die passenden Regeln für die Entwicklung der folgenden
@@ -299,8 +457,8 @@ Zahlen <code>lvz</code>, eine Liste mit allen ungeraden Zahlen aus <code>lvz</co
 </div>
 </div>
 
-<div id="outline-container-orgheadline4" class="outline-2">
-<h2 id="orgheadline4"><span class="section-number-2">4</span> Aufgabe - Funktionen über zwei Listen</h2>
+<div id="outline-container-orgb7e94ce" class="outline-2">
+<h2 id="orgb7e94ce"><span class="section-number-2">4</span> Aufgabe - Funktionen über zwei Listen</h2>
 <div class="outline-text-2" id="text-4">
 <p>
 Die hier zu entwickelnden Funktionen haben 2 Listen-Parameter. Lösen Sie
@@ -319,6 +477,7 @@ Zahlen. Beispiel:
 </p>
 <pre class="example">
 (cross ’(a b c) ’(3 5 9)) =&gt; ’((a 3) (b 5) (c 9))
+
 </pre></li>
 
 <li><p>
@@ -328,27 +487,27 @@ abwechselnd je einem Element aus <code>l1</code> und <code>l2</code>. Beispiel:
 </p>
 <pre class="example">
 (shuffle ’(a b c) ’(u v w x y )) =&gt; ’(a u b v c w x y)
+
 </pre></li>
 </ol>
 </div>
 </div>
 
-<div id="outline-container-orgheadline5" class="outline-2">
-<h2 id="orgheadline5"><span class="section-number-2">5</span> Aufgabe - Auswertung von Funktionsanwendungen</h2>
+<div id="outline-container-org1a986ee" class="outline-2">
+<h2 id="org1a986ee"><span class="section-number-2">5</span> Aufgabe - Auswertung von Funktionsanwendungen</h2>
 <div class="outline-text-2" id="text-5">
 <p>
 Gegeben sei die folgende Funktionsdefinition:
 </p>
 
 <div class="org-src-container">
-
 <pre class="src src-scheme"><span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">f: number number -&gt; number</span>
 <span style="color: #707183;">(</span><span style="color: #0000FF;">define</span> <span style="color: #006699;">f</span>
    <span style="color: #7388D6;">(</span><span style="color: #0000FF;">lambda</span> <span style="color: #909183;">[</span>x y<span style="color: #909183;">]</span>
        <span style="color: #909183;">(</span><span style="color: #0000FF;">cond</span> 
           <span style="color: #709870;">[</span><span style="color: #907373;">(</span>&lt; x y<span style="color: #907373;">)</span> <span style="color: #907373;">(</span>- y x<span style="color: #907373;">)</span><span style="color: #709870;">]</span>
           <span style="color: #709870;">[</span><span style="color: #907373;">(</span>= x y<span style="color: #907373;">)</span> <span style="color: #907373;">(</span>+ x y<span style="color: #907373;">)</span><span style="color: #709870;">]</span>
-          <span style="color: #709870;">[</span>else <span style="color: #907373;">(</span>- x y<span style="color: #907373;">)</span><span style="color: #709870;">]</span><span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
+          <span style="color: #709870;">[</span>else <span style="color: #907373;">(</span>- x y<span style="color: #907373;">)</span><span style="color: #709870;">]</span><span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span></pre>
 </pre>
 </div>
 <p>
@@ -365,8 +524,8 @@ folgenden Ausdrücke Schritt für Schritt auszuwerten:
 </div>
 </div>
 
-<div id="outline-container-orgheadline6" class="outline-2">
-<h2 id="orgheadline6"><span class="section-number-2">6</span> Aufgabe - Akkumulierende Parameter</h2>
+<div id="outline-container-orgb6c7426" class="outline-2">
+<h2 id="orgb6c7426"><span class="section-number-2">6</span> Aufgabe - Akkumulierende Parameter</h2>
 <div class="outline-text-2" id="text-6">
 <p>
 Schreiben Sie eine Funktion, die eine Liste von Zahlen aufsteigend sortiert. Nutzen Sie eine Hilfsfunktion, die die Aufgabe mithilfe eines akkumulierenden Parameters löst. Falls sie weitere Hilfsfunktionen benötigen, definieren Sie diese.
@@ -374,8 +533,8 @@ Schreiben Sie eine Funktion, die eine Liste von Zahlen aufsteigend sortiert. Nut
 </div>
 </div>
 
-<div id="outline-container-orgheadline7" class="outline-2">
-<h2 id="orgheadline7"><span class="section-number-2">7</span> Aufgabe - Entwicklung einer Funktion höherer Ordnung</h2>
+<div id="outline-container-org6e861f6" class="outline-2">
+<h2 id="org6e861f6"><span class="section-number-2">7</span> Aufgabe - Entwicklung einer Funktion höherer Ordnung</h2>
 <div class="outline-text-2" id="text-7">
 <p>
 Abstrahieren Sie die beiden folgenden Funktionen in eine einzige
@@ -383,7 +542,6 @@ Funktion:
 </p>
 
 <div class="org-src-container">
-
 <pre class="src src-scheme"><span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">mini: (list-of number) -&gt; number</span>
 <span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">to determine the smallest number</span>
 <span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">on a non-empty list of numbers</span>
@@ -394,12 +552,11 @@ Funktion:
       <span style="color: #907373;">(</span><span style="color: #0000FF;">cond</span>
         <span style="color: #6276BA;">[</span><span style="color: #858580;">(</span>&lt; <span style="color: #80A880;">(</span>first alon<span style="color: #80A880;">)</span> <span style="color: #80A880;">(</span>mini <span style="color: #887070;">(</span>rest alon<span style="color: #887070;">)</span><span style="color: #80A880;">)</span><span style="color: #858580;">)</span> <span style="color: #858580;">(</span>first alon<span style="color: #858580;">)</span><span style="color: #6276BA;">]</span>
         <span style="color: #6276BA;">[</span>else
-         <span style="color: #858580;">(</span>mini <span style="color: #80A880;">(</span>rest alon<span style="color: #80A880;">)</span><span style="color: #858580;">)</span><span style="color: #6276BA;">]</span><span style="color: #907373;">)</span><span style="color: #709870;">]</span><span style="color: #909183;">)</span><span style="color: #7388D6;">)</span>
+         <span style="color: #858580;">(</span>mini <span style="color: #80A880;">(</span>rest alon<span style="color: #80A880;">)</span><span style="color: #858580;">)</span><span style="color: #6276BA;">]</span><span style="color: #907373;">)</span><span style="color: #709870;">]</span><span style="color: #909183;">)</span><span style="color: #7388D6;">)</span>    </pre>
 </pre>
 </div>
 
 <div class="org-src-container">
-
 <pre class="src src-scheme"> maxi: <span style="color: #707183;">(</span>list-of number<span style="color: #707183;">)</span> -&gt; number
 <span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">to determine the largest number</span>
 <span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">on a non-empty list of numbers</span>
@@ -410,7 +567,7 @@ Funktion:
       <span style="color: #907373;">(</span><span style="color: #0000FF;">cond</span>
         <span style="color: #6276BA;">[</span><span style="color: #858580;">(</span>&gt; <span style="color: #80A880;">(</span>first alon<span style="color: #80A880;">)</span> <span style="color: #80A880;">(</span>maxi <span style="color: #887070;">(</span>rest alon<span style="color: #887070;">)</span><span style="color: #80A880;">)</span><span style="color: #858580;">)</span> <span style="color: #858580;">(</span>first alon<span style="color: #858580;">)</span><span style="color: #6276BA;">]</span>
         <span style="color: #6276BA;">[</span>else
-         <span style="color: #858580;">(</span>maxi <span style="color: #80A880;">(</span>rest alon<span style="color: #80A880;">)</span><span style="color: #858580;">)</span><span style="color: #6276BA;">]</span><span style="color: #907373;">)</span><span style="color: #709870;">]</span><span style="color: #909183;">)</span><span style="color: #7388D6;">)</span>
+         <span style="color: #858580;">(</span>maxi <span style="color: #80A880;">(</span>rest alon<span style="color: #80A880;">)</span><span style="color: #858580;">)</span><span style="color: #6276BA;">]</span><span style="color: #907373;">)</span><span style="color: #709870;">]</span><span style="color: #909183;">)</span><span style="color: #7388D6;">)</span>    </pre>
 </pre>
 </div>
 
@@ -425,31 +582,30 @@ von lokalen Definitionen!
 </div>
 </div>
 
-<div id="outline-container-orgheadline8" class="outline-2">
-<h2 id="orgheadline8"><span class="section-number-2">8</span> Aufgabe - Anwendung von Funktionen höherer Ordnung</h2>
+<div id="outline-container-org5ebdbf6" class="outline-2">
+<h2 id="org5ebdbf6"><span class="section-number-2">8</span> Aufgabe - Anwendung von Funktionen höherer Ordnung</h2>
 <div class="outline-text-2" id="text-8">
 <p>
 Schreiben Sie die beiden Funktion <code>quadsum</code> und <code>oddelements</code> aus
-Aufgabe 2 neu unter Verwendung von geeigneten Funktionen höherer
+Aufgabe 3 neu unter Verwendung von geeigneten Funktionen höherer
 Ordnung. Verwenden Sie dabei die aus der Vorlesung bekannten.
 </p>
 </div>
 </div>
 
-<div id="outline-container-orgheadline9" class="outline-2">
-<h2 id="orgheadline9"><span class="section-number-2">9</span> Aufgabe - Korrektheitsbeweis</h2>
+<div id="outline-container-org9ecba22" class="outline-2">
+<h2 id="org9ecba22"><span class="section-number-2">9</span> Aufgabe - Korrektheitsbeweis</h2>
 <div class="outline-text-2" id="text-9">
 <p>
 Gegeben sei folgende Racket-Funktion
 </p>
 
 <div class="org-src-container">
-
 <pre class="src src-scheme"><span style="color: #707183;">(</span><span style="color: #0000FF;">define</span> <span style="color: #006699;">f</span>
   <span style="color: #7388D6;">(</span><span style="color: #0000FF;">lambda</span> <span style="color: #909183;">[</span>n<span style="color: #909183;">]</span>
    <span style="color: #909183;">(</span><span style="color: #0000FF;">cond</span>
      <span style="color: #709870;">[</span><span style="color: #907373;">(</span>= n 0<span style="color: #907373;">)</span> 0<span style="color: #709870;">]</span>
-     <span style="color: #709870;">[</span>else <span style="color: #907373;">(</span>+ n <span style="color: #6276BA;">(</span>f <span style="color: #858580;">(</span>- n 1<span style="color: #858580;">)</span><span style="color: #6276BA;">)</span><span style="color: #907373;">)</span><span style="color: #709870;">]</span><span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
+     <span style="color: #709870;">[</span>else <span style="color: #907373;">(</span>+ n <span style="color: #6276BA;">(</span>f <span style="color: #858580;">(</span>- n 1<span style="color: #858580;">)</span><span style="color: #6276BA;">)</span><span style="color: #907373;">)</span><span style="color: #709870;">]</span><span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span></pre>
 </pre>
 </div>
 
@@ -462,7 +618,7 @@ berechnet.
 </div>
 <div id="postamble" class="status">
 <p class="author">Autor: S. Jasser, J. Sauer, J. Brauer</p>
-<p class="date">Created: 2017-02-18 Sat 23:20</p>
+<p class="date">Created: 2018-03-06 Tue 14:29</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
