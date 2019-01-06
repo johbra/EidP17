@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="de" xml:lang="de">
 <head>
-<!-- 2018-03-01 Thu 10:39 -->
+<!-- 2019-01-06 Sun 20:59 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Funktionen höherer Ordnung</title>
@@ -267,9 +267,9 @@ for the JavaScript code in this tag.
 <br />
 <span class="subtitle">Einführung in die Programmierung</span>
 </h1>
-<div id="outline-container-org30b7f01" class="outline-2">
-<h2 id="org30b7f01">Erweiterung der funktionalen Abstraktion</h2>
-<div class="outline-text-2" id="text-org30b7f01">
+<div id="outline-container-org6698a77" class="outline-2">
+<h2 id="org6698a77">Erweiterung der funktionalen Abstraktion</h2>
+<div class="outline-text-2" id="text-org6698a77">
 <p>
 Historie:
 </p>
@@ -282,9 +282,9 @@ Historie:
 </ul>
 </div>
 
-<div id="outline-container-orgd4d0774" class="outline-3">
-<h3 id="orgd4d0774">Funktionen als Argumente &#x2013; Analogie zur Summenformel der Mathematik</h3>
-<div class="outline-text-3" id="text-orgd4d0774">
+<div id="outline-container-org70fde1b" class="outline-3">
+<h3 id="org70fde1b">Funktionen als Argumente &#x2013; Analogie zur Summenformel der Mathematik</h3>
+<div class="outline-text-3" id="text-org70fde1b">
 \begin{equation}
 \sum_{i=a}^b f(i) = f(a)+ \ldots +f(b) 
 \end{equation}
@@ -297,13 +297,13 @@ entspricht
     <span style="color: #909183;">(</span><span style="color: #0000FF;">if</span> <span style="color: #709870;">(</span>&gt; a b<span style="color: #709870;">)</span>
       0
       <span style="color: #709870;">(</span>+ <span style="color: #907373;">(</span>f a<span style="color: #907373;">)</span>
-         <span style="color: #907373;">(</span>sum f <span style="color: #6276BA;">(</span>next a<span style="color: #6276BA;">)</span> next b<span style="color: #907373;">)</span><span style="color: #709870;">)</span><span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span></pre>
+         <span style="color: #907373;">(</span>sum f <span style="color: #6276BA;">(</span>next a<span style="color: #6276BA;">)</span> next b<span style="color: #907373;">)</span><span style="color: #709870;">)</span><span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
 </pre>
 </div>
 </div>
-<div id="outline-container-org4c38855" class="outline-4">
-<h4 id="org4c38855">Anwendungsbeispiele:</h4>
-<div class="outline-text-4" id="text-org4c38855">
+<div id="outline-container-org566a81a" class="outline-4">
+<h4 id="org566a81a">Anwendungsbeispiele:</h4>
+<div class="outline-text-4" id="text-org566a81a">
 \begin{equation}
 \sum_{x=1}^5 x^3 
 \end{equation}
@@ -332,9 +332,9 @@ Weitere Beispiele: Integrale
 </div>
 </div>
 </div>
-<div id="outline-container-org942a3cd" class="outline-3">
-<h3 id="org942a3cd">Nutzung anonymer Funktionen (Lambda-Ausdrücke)</h3>
-<div class="outline-text-3" id="text-org942a3cd">
+<div id="outline-container-org545c3a6" class="outline-3">
+<h3 id="org545c3a6">Nutzung anonymer Funktionen (Lambda-Ausdrücke)</h3>
+<div class="outline-text-3" id="text-org545c3a6">
 <ul class="org-ul">
 <li>Lambda-Ausdrücke bereits eingeführt im Abschnitt
 <i>Funktionale Abstraktion</i></li>
@@ -356,9 +356,9 @@ oder
 </div>
 </div>
 </div>
-<div id="outline-container-org4fca6d4" class="outline-2">
-<h2 id="org4fca6d4">Funktionen höherer Ordnung</h2>
-<div class="outline-text-2" id="text-org4fca6d4">
+<div id="outline-container-org44d6c6e" class="outline-2">
+<h2 id="org44d6c6e">Funktionen höherer Ordnung</h2>
+<div class="outline-text-2" id="text-org44d6c6e">
 <blockquote>
 <p>
 The Revised<sup>6</sup> Report on the Algorithmic Language Scheme:<br />
@@ -382,9 +382,9 @@ Hoare, C. A. R.: The Emperor's Old Clothes 1980 Turing Award lecture; Comm.ACM v
 </blockquote>
 </div>
 
-<div id="outline-container-org32b4df7" class="outline-3">
-<h3 id="org32b4df7">Regelkonforme Entwicklung von Funktionen &#x2026;</h3>
-<div class="outline-text-3" id="text-org32b4df7">
+<div id="outline-container-org399faa8" class="outline-3">
+<h3 id="org399faa8">Regelkonforme Entwicklung von Funktionen &#x2026;</h3>
+<div class="outline-text-3" id="text-org399faa8">
 <p>
 führt zu ähnlichen Funktionen. Zum Beispiel
 </p>
@@ -402,15 +402,15 @@ führt zu ähnlichen Funktionen. Zum Beispiel
       <span style="color: #7388D6;">(</span><span style="color: #0000FF;">lambda</span> <span style="color: #909183;">[</span>x<span style="color: #909183;">]</span> 
        <span style="color: #909183;">(</span><span style="color: #0000FF;">cond</span> 
          <span style="color: #709870;">[</span><span style="color: #907373;">(</span>empty? x<span style="color: #907373;">)</span> 1<span style="color: #709870;">]</span>
-         <span style="color: #709870;">[</span>else <span style="color: #907373;">(</span>* <span style="color: #6276BA;">(</span>first x<span style="color: #6276BA;">)</span> <span style="color: #6276BA;">(</span>prod <span style="color: #858580;">(</span>rest x<span style="color: #858580;">)</span><span style="color: #6276BA;">)</span><span style="color: #907373;">)</span><span style="color: #709870;">]</span><span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span></pre>
+         <span style="color: #709870;">[</span>else <span style="color: #907373;">(</span>* <span style="color: #6276BA;">(</span>first x<span style="color: #6276BA;">)</span> <span style="color: #6276BA;">(</span>prod <span style="color: #858580;">(</span>rest x<span style="color: #858580;">)</span><span style="color: #6276BA;">)</span><span style="color: #907373;">)</span><span style="color: #709870;">]</span><span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
 </pre>
 </div>
 </div>
 </div>
 
-<div id="outline-container-orgab22bbc" class="outline-3">
-<h3 id="orgab22bbc">Noch zwei ähnliche Funktionen</h3>
-<div class="outline-text-3" id="text-orgab22bbc">
+<div id="outline-container-org1223871" class="outline-3">
+<h3 id="org1223871">Noch zwei ähnliche Funktionen</h3>
+<div class="outline-text-3" id="text-org1223871">
 <p>
 Beispiel: Aus einer
 ungeordneten Liste von Zahlen werden alle unterhalb/oberhalb eines
@@ -428,15 +428,15 @@ Schwellwerts heraus gefiltert:
              <span style="color: #6276BA;">[</span><span style="color: #858580;">(</span><span style="color: #6434A3;">&lt;/&gt;</span> <span style="color: #80A880;">(</span>first eineLvz<span style="color: #80A880;">)</span> schwelle<span style="color: #858580;">)</span>
               <span style="color: #858580;">(</span>cons <span style="color: #80A880;">(</span>first eineLvz<span style="color: #80A880;">)</span>
                     <span style="color: #80A880;">(</span>unterhalb/oberhalb <span style="color: #887070;">(</span>rest eineLvz<span style="color: #887070;">)</span> schwelle<span style="color: #80A880;">)</span><span style="color: #858580;">)</span><span style="color: #6276BA;">]</span>
-             <span style="color: #6276BA;">[</span>else <span style="color: #858580;">(</span>unterhalb/oberhalb <span style="color: #80A880;">(</span>rest eineLvz<span style="color: #80A880;">)</span> schwelle<span style="color: #858580;">)</span><span style="color: #6276BA;">]</span><span style="color: #907373;">)</span><span style="color: #709870;">]</span><span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span></pre>
+             <span style="color: #6276BA;">[</span>else <span style="color: #858580;">(</span>unterhalb/oberhalb <span style="color: #80A880;">(</span>rest eineLvz<span style="color: #80A880;">)</span> schwelle<span style="color: #858580;">)</span><span style="color: #6276BA;">]</span><span style="color: #907373;">)</span><span style="color: #709870;">]</span><span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
 </pre>
 </div>
 </div>
 </div>
 
-<div id="outline-container-org545fc20" class="outline-3">
-<h3 id="org545fc20">Ähnliche Funktionen vermeiden</h3>
-<div class="outline-text-3" id="text-org545fc20">
+<div id="outline-container-org21685da" class="outline-3">
+<h3 id="org21685da">Ähnliche Funktionen vermeiden</h3>
+<div class="outline-text-3" id="text-org21685da">
 <ul class="org-ul">
 <li>Die beiden Funktionen <code>unterhalb</code> und <code>oberhalb</code> unterscheiden sich
 &#x2013; abgesehen von ihrem Namen &#x2013; nur in dem Vergleichsoperator.</li>
@@ -452,9 +452,9 @@ akzeptiert: <i>Funktion höherer Ordnung</i> (Typ 1)</li>
 </div>
 </div>
 
-<div id="outline-container-org4cda930" class="outline-3">
-<h3 id="org4cda930">Eine Filterfunktion</h3>
-<div class="outline-text-3" id="text-org4cda930">
+<div id="outline-container-org3a54cc6" class="outline-3">
+<h3 id="org3a54cc6">Eine Filterfunktion</h3>
+<div class="outline-text-3" id="text-org3a54cc6">
 <div class="org-src-container">
 <pre class="src src-scheme">    <span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">filtere (number number -&gt; boolean) (list-of number) number </span>
     <span style="color: #8D8D84;">;;          </span><span style="color: #8D8D84; font-style: italic;">-&gt; (list-of number))</span>
@@ -471,7 +471,7 @@ akzeptiert: <i>Funktion höherer Ordnung</i> (Typ 1)</li>
                     <span style="color: #80A880;">(</span>filtere vglfkt
                      <span style="color: #887070;">(</span>rest eineLvz <span style="color: #887070;">)</span> schwelle<span style="color: #80A880;">)</span><span style="color: #858580;">)</span><span style="color: #6276BA;">]</span>
              <span style="color: #6276BA;">[</span>else <span style="color: #858580;">(</span>filtere vglfkt
-                    <span style="color: #80A880;">(</span>rest eineLvz <span style="color: #80A880;">)</span> schwelle<span style="color: #858580;">)</span><span style="color: #6276BA;">]</span><span style="color: #907373;">)</span><span style="color: #709870;">]</span><span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span></pre>
+                    <span style="color: #80A880;">(</span>rest eineLvz <span style="color: #80A880;">)</span> schwelle<span style="color: #858580;">)</span><span style="color: #6276BA;">]</span><span style="color: #907373;">)</span><span style="color: #709870;">]</span><span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
 </pre>
 </div>
 
@@ -488,9 +488,9 @@ Um <code>unterhalb</code> zu realisieren ruft man <code>filtere</code> so auf:
 </div>
 </div>
 
-<div id="outline-container-org7d53f49" class="outline-3">
-<h3 id="org7d53f49">Funktionen sind Werte erster Ordnung</h3>
-<div class="outline-text-3" id="text-org7d53f49">
+<div id="outline-container-orgcf68112" class="outline-3">
+<h3 id="orgcf68112">Funktionen sind Werte erster Ordnung</h3>
+<div class="outline-text-3" id="text-orgcf68112">
 <ul class="org-ul">
 <li><p>
 Die Möglichkeit, Funktionen, die andere Funktionen als Argument
@@ -519,9 +519,9 @@ werden.
 </div>
 </div>
 
-<div id="outline-container-org3e54b09" class="outline-3">
-<h3 id="org3e54b09">Verallgemeinerung der Filterfunktion</h3>
-<div class="outline-text-3" id="text-org3e54b09">
+<div id="outline-container-org443d750" class="outline-3">
+<h3 id="org443d750">Verallgemeinerung der Filterfunktion</h3>
+<div class="outline-text-3" id="text-org443d750">
 <div class="org-src-container">
 <pre class="src src-scheme"><span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">filter wendet auf jedes Element der Zahlenliste das Pr&#228;dikat an. </span>
 <span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">In die Ergebnisliste werden die Elemente aufgenommen, f&#252;r die das</span>
@@ -535,15 +535,15 @@ werden.
       <span style="color: #709870;">[</span><span style="color: #907373;">(</span>empty? eineLvz<span style="color: #907373;">)</span> empty<span style="color: #709870;">]</span>
       <span style="color: #709870;">[</span><span style="color: #907373;">(</span>praedikat <span style="color: #6276BA;">(</span>first eineLvz<span style="color: #6276BA;">)</span><span style="color: #907373;">)</span> 
          <span style="color: #907373;">(</span>cons <span style="color: #6276BA;">(</span>first eineLvz <span style="color: #6276BA;">)</span> <span style="color: #6276BA;">(</span>filter praedikat <span style="color: #858580;">(</span>rest eineLvz<span style="color: #858580;">)</span><span style="color: #6276BA;">)</span><span style="color: #907373;">)</span><span style="color: #709870;">]</span>
-      <span style="color: #709870;">[</span>else <span style="color: #907373;">(</span>filter praedikat <span style="color: #6276BA;">(</span>rest eineLvz<span style="color: #6276BA;">)</span><span style="color: #907373;">)</span><span style="color: #709870;">]</span><span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span> </pre>
+      <span style="color: #709870;">[</span>else <span style="color: #907373;">(</span>filter praedikat <span style="color: #6276BA;">(</span>rest eineLvz<span style="color: #6276BA;">)</span><span style="color: #907373;">)</span><span style="color: #709870;">]</span><span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span> 
 </pre>
 </div>
 </div>
 </div>
 
-<div id="outline-container-org90d3976" class="outline-3">
-<h3 id="org90d3976">Eine Abstraktion für <code>sum</code> und <code>prod</code></h3>
-<div class="outline-text-3" id="text-org90d3976">
+<div id="outline-container-org339abc6" class="outline-3">
+<h3 id="org339abc6">Eine Abstraktion für <code>sum</code> und <code>prod</code></h3>
+<div class="outline-text-3" id="text-org339abc6">
 <ul class="org-ul">
 <li>Es kommt häufiger vor, dass man z.B. eine Liste von Zahlen zu einem
 Wert zusammenfalten will.</li>
@@ -565,16 +565,16 @@ Man beachte auch hier wieder den Vertrag der Funktion!
       <span style="color: #709870;">[</span>else
         <span style="color: #907373;">(</span>fltfkt <span style="color: #6276BA;">(</span>first aLon<span style="color: #6276BA;">)</span>
                 <span style="color: #6276BA;">(</span>falte fltfkt basis <span style="color: #858580;">(</span>rest aLon<span style="color: #858580;">)</span><span style="color: #6276BA;">)</span><span style="color: #907373;">)</span><span style="color: #709870;">]</span><span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
-                       <span style="color: #8D8D84;">;;;;;; </span><span style="color: #8D8D84; font-style: italic;">;;;;;</span></pre>
+                       <span style="color: #8D8D84;">;;;;;; </span><span style="color: #8D8D84; font-style: italic;">;;;;;</span>
 </pre>
 </div></li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-org5b0f7a3" class="outline-3">
-<h3 id="org5b0f7a3">Ähnliche Datenstrukturen &#x2026;</h3>
-<div class="outline-text-3" id="text-org5b0f7a3">
+<div id="outline-container-org50eead5" class="outline-3">
+<h3 id="org50eead5">Ähnliche Datenstrukturen &#x2026;</h3>
+<div class="outline-text-3" id="text-org50eead5">
 <p>
 &#x2026; haben ähnliche Funktionen zur Folge.
 </p>
@@ -604,9 +604,9 @@ Vergleichsprädikat als Argument mitgeben.</li>
 </div>
 </div>
 
-<div id="outline-container-org88dcb27" class="outline-3">
-<h3 id="org88dcb27">Eine generische Funktion <code>enthaelt?</code></h3>
-<div class="outline-text-3" id="text-org88dcb27">
+<div id="outline-container-orgeb08e29" class="outline-3">
+<h3 id="orgeb08e29">Eine generische Funktion <code>enthaelt?</code></h3>
+<div class="outline-text-3" id="text-orgeb08e29">
 <div class="small">
 <div class="org-src-container">
 <pre class="src src-scheme"><span style="color: #707183;">(</span><span style="color: #0000FF;">define</span> <span style="color: #006699;">enthaelt?</span>
@@ -616,7 +616,7 @@ Vergleichsprädikat als Argument mitgeben.</li>
       <span style="color: #709870;">[</span>else
         <span style="color: #907373;">(</span><span style="color: #0000FF;">cond</span> 
           <span style="color: #6276BA;">[</span><span style="color: #858580;">(</span>gleich? <span style="color: #80A880;">(</span>first liste<span style="color: #80A880;">)</span> elem<span style="color: #858580;">)</span> #true<span style="color: #6276BA;">]</span>
-          <span style="color: #6276BA;">[</span>else <span style="color: #858580;">(</span>enthaelt? gleich? <span style="color: #80A880;">(</span>rest liste<span style="color: #80A880;">)</span> elem<span style="color: #858580;">)</span><span style="color: #6276BA;">]</span><span style="color: #907373;">)</span><span style="color: #709870;">]</span><span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span></pre>
+          <span style="color: #6276BA;">[</span>else <span style="color: #858580;">(</span>enthaelt? gleich? <span style="color: #80A880;">(</span>rest liste<span style="color: #80A880;">)</span> elem<span style="color: #858580;">)</span><span style="color: #6276BA;">]</span><span style="color: #907373;">)</span><span style="color: #709870;">]</span><span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
 </pre>
 </div>
 
@@ -639,9 +639,9 @@ Typ der Elemente spielt keine Rolle.</li>
 </div>
 </div>
 
-<div id="outline-container-org523ae25" class="outline-3">
-<h3 id="org523ae25">Parametrisierte Datenstruktur-Definitionen</h3>
-<div class="outline-text-3" id="text-org523ae25">
+<div id="outline-container-org34933cf" class="outline-3">
+<h3 id="org34933cf">Parametrisierte Datenstruktur-Definitionen</h3>
+<div class="outline-text-3" id="text-org34933cf">
 <ul class="org-ul">
 <li>Da eine generische, Listen verarbeitende Funktion Listen von
 irgendetwas akzeptiert, brauchen wir eine generische
@@ -667,13 +667,13 @@ Für das generische <code>enthaelt?</code>-Prädikat ergibt sich dann der Vertra
 </div>
 </div>
 
-<div id="outline-container-org685d6dc" class="outline-3">
-<h3 id="org685d6dc">Die Funktion <code>map</code></h3>
-<div class="outline-text-3" id="text-org685d6dc">
+<div id="outline-container-org2f64e4e" class="outline-3">
+<h3 id="org2f64e4e">Die Funktion <code>map</code></h3>
+<div class="outline-text-3" id="text-org2f64e4e">
 </div>
-<div id="outline-container-orgfa9dd2d" class="outline-4">
-<h4 id="orgfa9dd2d">Zunächst zwei Beispiele</h4>
-<div class="outline-text-4" id="text-orgfa9dd2d">
+<div id="outline-container-orge46ecc4" class="outline-4">
+<h4 id="orge46ecc4">Zunächst zwei Beispiele</h4>
+<div class="outline-text-4" id="text-orge46ecc4">
 <ol class="org-ol">
 <li><p>
 Quadrieren einer Liste von Zahlen
@@ -685,7 +685,7 @@ Quadrieren einer Liste von Zahlen
        <span style="color: #909183;">(</span><span style="color: #0000FF;">cond</span>
          <span style="color: #709870;">[</span><span style="color: #907373;">(</span>empty? lvz<span style="color: #907373;">)</span> empty<span style="color: #709870;">]</span>
          <span style="color: #709870;">[</span>else <span style="color: #907373;">(</span>cons <span style="color: #6276BA;">(</span><span style="color: #858580;">(</span><span style="color: #0000FF;">lambda</span> <span style="color: #80A880;">[</span>x<span style="color: #80A880;">]</span> <span style="color: #80A880;">(</span>* x x<span style="color: #80A880;">)</span><span style="color: #858580;">)</span> <span style="color: #858580;">(</span>first lvz<span style="color: #858580;">)</span><span style="color: #6276BA;">)</span>
-                     <span style="color: #6276BA;">(</span>quadrieren <span style="color: #858580;">(</span>rest lvz<span style="color: #858580;">)</span><span style="color: #6276BA;">)</span><span style="color: #907373;">)</span><span style="color: #709870;">]</span><span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span></pre>
+                     <span style="color: #6276BA;">(</span>quadrieren <span style="color: #858580;">(</span>rest lvz<span style="color: #858580;">)</span><span style="color: #6276BA;">)</span><span style="color: #907373;">)</span><span style="color: #709870;">]</span><span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
 </pre>
 </div></li>
 </ol>
@@ -707,16 +707,16 @@ Extrahieren von Produktnamen aus einer Preisliste
         <span style="color: #909183;">(</span><span style="color: #0000FF;">cond</span>
           <span style="color: #709870;">[</span><span style="color: #907373;">(</span>empty? pl<span style="color: #907373;">)</span> empty<span style="color: #709870;">]</span>
           <span style="color: #709870;">[</span>else <span style="color: #907373;">(</span>cons <span style="color: #6276BA;">(</span>produkt-name <span style="color: #858580;">(</span>first pl<span style="color: #858580;">)</span><span style="color: #6276BA;">)</span>
-                 <span style="color: #6276BA;">(</span>produkt-namen <span style="color: #858580;">(</span>rest pl<span style="color: #858580;">)</span><span style="color: #6276BA;">)</span><span style="color: #907373;">)</span><span style="color: #709870;">]</span><span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span></pre>
+                 <span style="color: #6276BA;">(</span>produkt-namen <span style="color: #858580;">(</span>rest pl<span style="color: #858580;">)</span><span style="color: #6276BA;">)</span><span style="color: #907373;">)</span><span style="color: #709870;">]</span><span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
 </pre>
 </div></li>
 </ol>
 </div>
 </div>
 
-<div id="outline-container-org361876e" class="outline-4">
-<h4 id="org361876e">Verallgemeinerung von <code>quadrieren</code> und <code>produkt-namen</code></h4>
-<div class="outline-text-4" id="text-org361876e">
+<div id="outline-container-org81c9fca" class="outline-4">
+<h4 id="org81c9fca">Verallgemeinerung von <code>quadrieren</code> und <code>produkt-namen</code></h4>
+<div class="outline-text-4" id="text-org81c9fca">
 <ul class="org-ul">
 <li>Die beiden Funktionen unterscheiden
 sich &#x2013; abgesehen von ihren Namen &#x2013; nur in der Funktion, die auf das
@@ -740,9 +740,9 @@ neuen abstrakten Funktion.</li>
 </div>
 </div>
 
-<div id="outline-container-org84e726a" class="outline-4">
-<h4 id="org84e726a">Die Funktion <code>map</code></h4>
-<div class="outline-text-4" id="text-org84e726a">
+<div id="outline-container-org271102b" class="outline-4">
+<h4 id="org271102b">Die Funktion <code>map</code></h4>
+<div class="outline-text-4" id="text-org271102b">
 <div class="small">
 <div class="org-src-container">
 <pre class="src src-scheme">    <span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">map: (X -&gt; Y) (list-of X) -&gt; (list-of Y)</span>
@@ -751,7 +751,7 @@ neuen abstrakten Funktion.</li>
         <span style="color: #909183;">(</span><span style="color: #0000FF;">cond</span>
           <span style="color: #709870;">[</span><span style="color: #907373;">(</span>empty? lst<span style="color: #907373;">)</span> empty<span style="color: #709870;">]</span>
           <span style="color: #709870;">[</span>else <span style="color: #907373;">(</span>cons <span style="color: #6276BA;">(</span>fun <span style="color: #858580;">(</span>first lst<span style="color: #858580;">)</span><span style="color: #6276BA;">)</span>
-                 <span style="color: #6276BA;">(</span><span style="color: #0000FF;">map</span> fun <span style="color: #858580;">(</span>rest lst<span style="color: #858580;">)</span><span style="color: #6276BA;">)</span><span style="color: #907373;">)</span><span style="color: #709870;">]</span><span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span></pre>
+                 <span style="color: #6276BA;">(</span><span style="color: #0000FF;">map</span> fun <span style="color: #858580;">(</span>rest lst<span style="color: #858580;">)</span><span style="color: #6276BA;">)</span><span style="color: #907373;">)</span><span style="color: #709870;">]</span><span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
 </pre>
 </div>
 
@@ -771,44 +771,37 @@ Originalfunktionen mithilfe der neuen abstrahierten Funktion:
 </div>
 </div>
 </div>
-<div id="outline-container-org4353ae8" class="outline-3">
-<h3 id="org4353ae8">Verallgemeinerung von <code>falte</code></h3>
-<div class="outline-text-3" id="text-org4353ae8">
+<div id="outline-container-org563feb1" class="outline-3">
+<h3 id="org563feb1">Verallgemeinerung von <code>falte</code></h3>
+<div class="outline-text-3" id="text-org563feb1">
 </div>
-<div id="outline-container-org4a24ddb" class="outline-4">
-<h4 id="org4a24ddb">Ein anderes Verständnis für <code>falte</code></h4>
-<div class="outline-text-4" id="text-org4a24ddb">
+<div id="outline-container-orged4dfd7" class="outline-4">
+<h4 id="orged4dfd7">Ein anderes Verständnis für <code>falte</code></h4>
+<div class="outline-text-4" id="text-orged4dfd7">
 <ul class="org-ul">
 <li>Die Reduktion einer Liste zu einem Wert ist eine häufig vorkommende
 Aufgabe.</li>
 <li>Als Funktion höherer Ordnung gehört die Falte-Funktion zum
 Standard-Repertoire funktionaler Programmiersysteme.</li>
-<li>häufig verwendete Bezeichner: <code>fold</code> (in Racket: <code>foldl</code>), reduce</li>
+<li>häufig verwendete Bezeichner: <code>fold</code>, <code>reduce</code></li>
+<li>In Racket gibt es <code>foldr</code> und <code>foldl</code>. Das oben definierte <code>falte</code> entspricht <code>foldr</code>.</li>
 <li>Die Wirkung von <code>(falte + 0 '(11 17 5))</code>
 kann man sich, wie folgt, veranschaulichen:
 <ul class="org-ul">
-<li><p>
-<code>falte</code> ersetzt in der Argumentliste, die dem Ausdruck
-</p>
-<pre class="example">
-(cons 11 (cons 17 (cons 5 empty)))
-
-</pre>
-<p>
+<li><code>falte</code> ersetzt in der Argumentliste, die dem Ausdruck <br />
+<code>(cons 11 (cons 17 (cons 5 empty)))</code>
 entspricht, jedes Auftreten von <code>cons</code> durch <code>+</code> und jedes Auftreten
-von <code>empty</code> durch 0: <code>(+ 11 (+ 17 (+ 5 0)))</code>
-</p></li>
-<li>Verallgemeinert: Jedes Auftreten von <code>cons</code> wird durch die
-Faltungsfunktion (<code>fltfkt</code>) und jedes Auftreten von <code>empty</code> durch
-den Basiswert ersetzt.</li>
+von <code>empty</code> durch 0: <code>(+ 11 (+ 17 (+ 5 0)))</code></li>
+<li>Verallgemeinert: <b>Jedes Auftreten von <code>cons</code> wird durch die</b>
+<b>Faltungsfunktion (<code>fltfkt</code>) und jedes Auftreten von <code>empty</code> durch</b>
+<b>den Basiswert ersetzt</b>.</li>
 </ul></li>
 </ul>
 </div>
 </div>
-
-<div id="outline-container-org2dcc358" class="outline-4">
-<h4 id="org2dcc358">Weitere Anwendungen von <code>falte</code></h4>
-<div class="outline-text-4" id="text-org2dcc358">
+<div id="outline-container-org20b922e" class="outline-4">
+<h4 id="org20b922e">Weitere Anwendungen von <code>falte</code></h4>
+<div class="outline-text-4" id="text-org20b922e">
 <ul class="org-ul">
 <li>Was liefern die Ausdrücke
 
@@ -821,12 +814,11 @@ den Basiswert ersetzt.</li>
 </div>
 </div>
 
-<div id="outline-container-orgb22bb83" class="outline-4">
-<h4 id="orgb22bb83">Ein generisches <code>falte</code>: <code>reduce</code> (<code>foldl</code>)</h4>
-<div class="outline-text-4" id="text-orgb22bb83">
+<div id="outline-container-org96fd72d" class="outline-4">
+<h4 id="org96fd72d">Generisches falte in Racket: foldr</h4>
+<div class="outline-text-4" id="text-org96fd72d">
 <ul class="org-ul">
-<li>Wir abstrahieren die Funktion <code>falte</code> bezüglich des Typs der
-Listenelemente.</li>
+<li>Abstraktion von <code>falte</code> hinsichtlich des Typs der Listenelemente</li>
 <li><p>
 Aus dem Vertrag
 </p>
@@ -838,26 +830,26 @@ Aus dem Vertrag
 wird:
 </p>
 <pre class="example">
-;; reduce: (X Y -&gt; Y) Y (list-of X) -&gt; Y
+;; foldr: (X Y -&gt; Y) Y (list-of X) -&gt; Y
 
 </pre></li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-org233bc7e" class="outline-4">
-<h4 id="org233bc7e">Die Funktionsdefinition für <code>reduce</code></h4>
-<div class="outline-text-4" id="text-org233bc7e">
+<div id="outline-container-orgf604720" class="outline-4">
+<h4 id="orgf604720">Die Funktionsdefinition für <code>foldr</code></h4>
+<div class="outline-text-4" id="text-orgf604720">
 <div class="small">
 <div class="org-src-container">
-<pre class="src src-scheme">   <span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">reduce: (X Y -&gt; Y) Y (list-of X) -&gt; Y    </span>
-   <span style="color: #707183;">(</span><span style="color: #0000FF;">define</span> <span style="color: #006699;">reduce</span> 
+<pre class="src src-scheme">   <span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">foldr: (X Y -&gt; Y) Y (list-of X) -&gt; Y    </span>
+   <span style="color: #707183;">(</span><span style="color: #0000FF;">define</span> <span style="color: #006699;">foldr</span> 
       <span style="color: #7388D6;">(</span><span style="color: #0000FF;">lambda</span> <span style="color: #909183;">[</span>combine base l<span style="color: #909183;">]</span>
         <span style="color: #909183;">(</span><span style="color: #0000FF;">cond</span>
           <span style="color: #709870;">[</span><span style="color: #907373;">(</span>empty? l<span style="color: #907373;">)</span> base<span style="color: #709870;">]</span>
           <span style="color: #709870;">[</span>else <span style="color: #907373;">(</span>combine 
                    <span style="color: #6276BA;">(</span>first l<span style="color: #6276BA;">)</span>
-                   <span style="color: #6276BA;">(</span>reduce combine base <span style="color: #858580;">(</span>rest l<span style="color: #858580;">)</span><span style="color: #6276BA;">)</span><span style="color: #907373;">)</span><span style="color: #709870;">]</span><span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span></pre>
+                   <span style="color: #6276BA;">(</span>foldr combine base <span style="color: #858580;">(</span>rest l<span style="color: #858580;">)</span><span style="color: #6276BA;">)</span><span style="color: #907373;">)</span><span style="color: #709870;">]</span><span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
 </pre>
 </div>
 
@@ -871,15 +863,15 @@ auf die Restliste den Funktionswert ermittelt, falls die Liste <code>l</code> ni
 </ul>
 </div>
 </div>
-<div id="outline-container-orgc1667ed" class="outline-4">
-<h4 id="orgc1667ed">Anwendungen von <code>reduce</code></h4>
-<div class="outline-text-4" id="text-orgc1667ed">
+<div id="outline-container-org2bb7ecc" class="outline-4">
+<h4 id="org2bb7ecc">Anwendungen von <code>foldr</code></h4>
+<div class="outline-text-4" id="text-org2bb7ecc">
 <div class="org-src-container">
 <pre class="src src-scheme">    <span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">sum: (list-of number)  -&gt;  number)</span>
-    <span style="color: #707183;">(</span><span style="color: #0000FF;">define</span> <span style="color: #006699;">sum</span> <span style="color: #7388D6;">(</span><span style="color: #0000FF;">lambda</span> <span style="color: #909183;">[</span>list<span style="color: #909183;">]</span> <span style="color: #909183;">(</span>reduce + 0 list<span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
+    <span style="color: #707183;">(</span><span style="color: #0000FF;">define</span> <span style="color: #006699;">sum</span> <span style="color: #7388D6;">(</span><span style="color: #0000FF;">lambda</span> <span style="color: #909183;">[</span>list<span style="color: #909183;">]</span> <span style="color: #909183;">(</span>foldr + 0 list<span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
 
     <span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">product: (list-of number)  -&gt;  number</span>
-    <span style="color: #707183;">(</span><span style="color: #0000FF;">define</span> <span style="color: #006699;">product</span> <span style="color: #7388D6;">(</span><span style="color: #0000FF;">lambda</span> <span style="color: #909183;">[</span>list<span style="color: #909183;">]</span> <span style="color: #909183;">(</span>reduce * 1 list<span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
+    <span style="color: #707183;">(</span><span style="color: #0000FF;">define</span> <span style="color: #006699;">product</span> <span style="color: #7388D6;">(</span><span style="color: #0000FF;">lambda</span> <span style="color: #909183;">[</span>list<span style="color: #909183;">]</span> <span style="color: #909183;">(</span>foldr * 1 list<span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
       
     <span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">erzeugt eine Liste aus all den Elementen von alox,</span>
     <span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">f&#252;r die p gilt </span>
@@ -889,21 +881,67 @@ auf die Restliste den Funktionswert ermittelt, falls die Liste <code>l</code> ni
         <span style="color: #909183;">(</span><span style="color: #0000FF;">letrec</span> <span style="color: #709870;">(</span><span style="color: #907373;">(</span>cp <span style="color: #6276BA;">(</span><span style="color: #0000FF;">lambda</span> <span style="color: #858580;">[</span>x y<span style="color: #858580;">]</span>
                        <span style="color: #858580;">(</span><span style="color: #0000FF;">cond</span> <span style="color: #80A880;">[</span><span style="color: #887070;">(</span>p x<span style="color: #887070;">)</span> <span style="color: #887070;">(</span>cons x y<span style="color: #887070;">)</span><span style="color: #80A880;">]</span> 
                              <span style="color: #80A880;">[</span>else y<span style="color: #80A880;">]</span><span style="color: #858580;">)</span><span style="color: #6276BA;">)</span><span style="color: #907373;">)</span><span style="color: #709870;">)</span>
-          <span style="color: #709870;">(</span>reduce cp empty alox<span style="color: #709870;">)</span><span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span></pre>
+          <span style="color: #709870;">(</span>foldr cp empty alox<span style="color: #709870;">)</span><span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
 </pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org4e702f6" class="outline-4">
+<h4 id="org4e702f6">Unterschied zwischen <code>foldr</code> und <code>foldl</code></h4>
+<div class="outline-text-4" id="text-org4e702f6">
+<div class="nebeneinander500">
+<div class="org-src-container">
+<pre class="src src-scheme"><span style="color: #707183;">(</span>foldl &#8211; 0 '<span style="color: #7388D6;">(</span>1 2 3 4<span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
+= <span style="color: #707183;">(</span>- 4 <span style="color: #7388D6;">(</span>- 3 <span style="color: #909183;">(</span>- 2 <span style="color: #709870;">(</span>- 1 0<span style="color: #709870;">)</span><span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
+= <span style="color: #707183;">(</span>- 4 <span style="color: #7388D6;">(</span>- 3 <span style="color: #909183;">(</span>- 2 1<span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
+= <span style="color: #707183;">(</span>- 4 <span style="color: #7388D6;">(</span>- 3 1<span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
+= <span style="color: #707183;">(</span>- 4 2<span style="color: #707183;">)</span>
+= 2
+
+<span style="color: #707183;">(</span>foldl cons '<span style="color: #7388D6;">()</span> '<span style="color: #7388D6;">(</span>1 2 3<span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
+= <span style="color: #707183;">(</span>cons 3 <span style="color: #7388D6;">(</span>cons 2 <span style="color: #909183;">(</span>cons 1 '<span style="color: #709870;">()</span><span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
+= <span style="color: #707183;">(</span>cons 3 <span style="color: #7388D6;">(</span>cons 2 '<span style="color: #909183;">(</span>1<span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
+= <span style="color: #707183;">(</span>cons 3 '<span style="color: #7388D6;">(</span>2 1<span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
+= '<span style="color: #707183;">(</span>3 2 1<span style="color: #707183;">)</span>
+</pre>
+</div>
+
+</div>
+<div class="nebeneinander500">
+<div class="org-src-container">
+<pre class="src src-scheme"><span style="color: #707183;">(</span>foldr &#8211; 0 '<span style="color: #7388D6;">(</span>1 2 3 4<span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
+= <span style="color: #707183;">(</span>- 1 <span style="color: #7388D6;">(</span>- 2 <span style="color: #909183;">(</span>- 3 <span style="color: #709870;">(</span>- 4 0<span style="color: #709870;">)</span><span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
+= <span style="color: #707183;">(</span>- 1 <span style="color: #7388D6;">(</span>- 2 <span style="color: #909183;">(</span>- 3 4<span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
+= <span style="color: #707183;">(</span>- 1 <span style="color: #7388D6;">(</span>- 2 -1<span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
+= <span style="color: #707183;">(</span>- 1 3<span style="color: #707183;">)</span>
+= -2
+
+<span style="color: #707183;">(</span>foldr cons '<span style="color: #7388D6;">()</span> '<span style="color: #7388D6;">(</span>1 2 3<span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
+= <span style="color: #707183;">(</span>cons 1 <span style="color: #7388D6;">(</span>cons 2 <span style="color: #909183;">(</span>cons 3 '<span style="color: #709870;">()</span><span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
+= <span style="color: #707183;">(</span>cons 1 <span style="color: #7388D6;">(</span>cons 2 '<span style="color: #909183;">(</span>3<span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
+= <span style="color: #707183;">(</span>cons 1 '<span style="color: #7388D6;">(</span>2 3<span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
+= '<span style="color: #707183;">(</span>1 2 3<span style="color: #707183;">)</span>
+</pre>
+</div>
+
+</div>
+<div class="clear">
+
 </div>
 </div>
 </div>
 </div>
 </div>
 
-<div id="outline-container-org695df56" class="outline-2">
-<h2 id="org695df56">Integration von Daten und Funktionen &#x2013; Einführung des Objektbegriffs</h2>
-<div class="outline-text-2" id="text-org695df56">
+
+<div id="outline-container-orgc92c961" class="outline-2">
+<h2 id="orgc92c961">Integration von Daten und Funktionen &#x2013; Einführung des Objektbegriffs</h2>
+<div class="outline-text-2" id="text-orgc92c961">
 </div>
-<div id="outline-container-org22d5f04" class="outline-3">
-<h3 id="org22d5f04">Funktionen mit Funktionen als Resultat</h3>
-<div class="outline-text-3" id="text-org22d5f04">
+<div id="outline-container-org8eeb683" class="outline-3">
+<h3 id="org8eeb683">Funktionen mit Funktionen als Resultat</h3>
+<div class="outline-text-3" id="text-org8eeb683">
 <ul class="org-ul">
 <li><p>
 Was liefert der Ausdruck <code>(inc 3)</code>, wenn die Funktion <code>inc</code> wie folgt
@@ -913,7 +951,7 @@ definiert ist?
 <div class="small">
 <div class="org-src-container">
 <pre class="src src-scheme">   <span style="color: #707183;">(</span><span style="color: #0000FF;">define</span> <span style="color: #006699;">inc</span> 
-      <span style="color: #7388D6;">(</span><span style="color: #0000FF;">lambda</span> <span style="color: #909183;">[</span>n<span style="color: #909183;">]</span> <span style="color: #909183;">(</span><span style="color: #0000FF;">lambda</span> <span style="color: #709870;">[</span>z<span style="color: #709870;">]</span> <span style="color: #709870;">(</span>+ z n<span style="color: #709870;">)</span><span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span></pre>
+      <span style="color: #7388D6;">(</span><span style="color: #0000FF;">lambda</span> <span style="color: #909183;">[</span>n<span style="color: #909183;">]</span> <span style="color: #909183;">(</span><span style="color: #0000FF;">lambda</span> <span style="color: #709870;">[</span>z<span style="color: #709870;">]</span> <span style="color: #709870;">(</span>+ z n<span style="color: #709870;">)</span><span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
 </pre>
 </div>
 
@@ -926,7 +964,7 @@ Welches Resultat liefert eine Anwendung der Funktion <code>dot</code>?
 <div class="small">
 <div class="org-src-container">
 <pre class="src src-scheme">   <span style="color: #707183;">(</span><span style="color: #0000FF;">define</span> <span style="color: #006699;">dot</span>
-      <span style="color: #7388D6;">(</span><span style="color: #0000FF;">lambda</span> <span style="color: #909183;">[</span>f g<span style="color: #909183;">]</span> <span style="color: #909183;">(</span><span style="color: #0000FF;">lambda</span> <span style="color: #709870;">[</span>x<span style="color: #709870;">]</span> <span style="color: #709870;">(</span>f <span style="color: #907373;">(</span>g x<span style="color: #907373;">)</span><span style="color: #709870;">)</span><span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span></pre>
+      <span style="color: #7388D6;">(</span><span style="color: #0000FF;">lambda</span> <span style="color: #909183;">[</span>f g<span style="color: #909183;">]</span> <span style="color: #909183;">(</span><span style="color: #0000FF;">lambda</span> <span style="color: #709870;">[</span>x<span style="color: #709870;">]</span> <span style="color: #709870;">(</span>f <span style="color: #907373;">(</span>g x<span style="color: #907373;">)</span><span style="color: #709870;">)</span><span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
 </pre>
 </div>
 
@@ -945,16 +983,16 @@ Anwendung von <code>inc</code> und <code>dot</code>:
    <span style="color: #707183;">(</span><span style="color: #0000FF;">define</span> <span style="color: #006699;">increv</span> 
       <span style="color: #7388D6;">(</span><span style="color: #0000FF;">lambda</span> <span style="color: #909183;">[</span>x<span style="color: #909183;">]</span> <span style="color: #909183;">(</span><span style="color: #709870;">(</span>dot inclist reverse<span style="color: #709870;">)</span> x<span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
           
-   <span style="color: #707183;">(</span>increv '<span style="color: #7388D6;">(</span>3 13 23 33<span style="color: #7388D6;">)</span><span style="color: #707183;">)</span> ==&gt; <span style="color: #707183;">(</span>34 24 14 4<span style="color: #707183;">)</span></pre>
+   <span style="color: #707183;">(</span>increv '<span style="color: #7388D6;">(</span>3 13 23 33<span style="color: #7388D6;">)</span><span style="color: #707183;">)</span> ==&gt; <span style="color: #707183;">(</span>34 24 14 4<span style="color: #707183;">)</span>
 </pre>
 </div></li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-org512dd71" class="outline-3">
-<h3 id="org512dd71">Was ist ein Objekt?</h3>
-<div class="outline-text-3" id="text-org512dd71">
+<div id="outline-container-org9255825" class="outline-3">
+<h3 id="org9255825">Was ist ein Objekt?</h3>
+<div class="outline-text-3" id="text-org9255825">
 <ul class="org-ul">
 <li>Objekte im Sinne der „objektorientierten Programmierung” sind
 nichts weiter als Funktionen mit „internen” Daten.</li>
@@ -978,9 +1016,9 @@ Zustandsgrößen und einer Methode.</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org22f9e84" class="outline-3">
-<h3 id="org22f9e84">Ein etwas interessanteres Objekt</h3>
-<div class="outline-text-3" id="text-org22f9e84">
+<div id="outline-container-org0839562" class="outline-3">
+<h3 id="org0839562">Ein etwas interessanteres Objekt</h3>
+<div class="outline-text-3" id="text-org0839562">
 <div class="org-src-container">
 <pre class="src src-scheme"><span style="color: #707183;">(</span><span style="color: #0000FF;">define</span> <span style="color: #006699;">person</span>
   <span style="color: #7388D6;">(</span><span style="color: #0000FF;">lambda</span> <span style="color: #909183;">[</span>name vorname<span style="color: #909183;">]</span>
@@ -994,7 +1032,7 @@ Zustandsgrößen und einer Methode.</li>
           <span style="color: #6276BA;">[</span><span style="color: #858580;">(</span>equal? nachricht 'get-vorname<span style="color: #858580;">)</span> get-vorname<span style="color: #6276BA;">]</span>
           <span style="color: #6276BA;">[</span><span style="color: #858580;">(</span>equal? nachricht 'get-vollname<span style="color: #858580;">)</span> vollname<span style="color: #6276BA;">]</span>
           <span style="color: #6276BA;">[</span><span style="color: #858580;">(</span>equal? nachricht 'gruss<span style="color: #858580;">)</span> gruss<span style="color: #6276BA;">]</span>
-          <span style="color: #6276BA;">[</span>else <span style="color: #858580;">(</span>error <span style="color: #008000;">"unbekannte Nachricht"</span><span style="color: #858580;">)</span><span style="color: #6276BA;">]</span><span style="color: #907373;">)</span><span style="color: #709870;">)</span><span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span></pre>
+          <span style="color: #6276BA;">[</span>else <span style="color: #858580;">(</span>error <span style="color: #008000;">"unbekannte Nachricht"</span><span style="color: #858580;">)</span><span style="color: #6276BA;">]</span><span style="color: #907373;">)</span><span style="color: #709870;">)</span><span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
 </pre>
 </div>
 <ul class="org-ul">
@@ -1012,9 +1050,9 @@ welche der Methoden aufzurufen ist.</li>
 </div>
 </div>
 
-<div id="outline-container-org0d9fdf6" class="outline-3">
-<h3 id="org0d9fdf6">Anwendungen des <code>person</code>-Objekts</h3>
-<div class="outline-text-3" id="text-org0d9fdf6">
+<div id="outline-container-orgb6ee176" class="outline-3">
+<h3 id="orgb6ee176">Anwendungen des <code>person</code>-Objekts</h3>
+<div class="outline-text-3" id="text-orgb6ee176">
 <div class="org-src-container">
 <pre class="src src-scheme"><span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">Objekterzeugung:</span>
 <span style="color: #707183;">(</span><span style="color: #0000FF;">define</span> <span style="color: #006699;">p1</span> <span style="color: #7388D6;">(</span>person <span style="color: #008000;">"Gans"</span> <span style="color: #008000;">"Gustav"</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
@@ -1022,15 +1060,15 @@ welche der Methoden aufzurufen ist.</li>
 <span style="color: #707183;">(</span><span style="color: #7388D6;">(</span>p1 'get-name<span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>        <span style="color: #8D8D84;">;;</span><span style="color: #8D8D84; font-style: italic;">=&gt; "Gans"</span>
 <span style="color: #707183;">(</span><span style="color: #7388D6;">(</span>p1 'get-vollname<span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>    <span style="color: #8D8D84;">;;</span><span style="color: #8D8D84; font-style: italic;">=&gt; "Gustav Gans"</span>
 <span style="color: #707183;">(</span><span style="color: #7388D6;">(</span>p1 'gruss<span style="color: #7388D6;">)</span> <span style="color: #008000;">"hallo"</span><span style="color: #707183;">)</span>   <span style="color: #8D8D84;">;;</span><span style="color: #8D8D84; font-style: italic;">=&gt; "hallo Gustav Gans"</span>
-<span style="color: #707183;">(</span>p1 'x<span style="color: #707183;">)</span>                 <span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">error</span></pre>
+<span style="color: #707183;">(</span>p1 'x<span style="color: #707183;">)</span>                 <span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">error</span>
 </pre>
 </div>
 </div>
 </div>
 
-<div id="outline-container-org1e64ba6" class="outline-3">
-<h3 id="org1e64ba6">Java-Klasse <code>Person</code></h3>
-<div class="outline-text-3" id="text-org1e64ba6">
+<div id="outline-container-org253ca18" class="outline-3">
+<h3 id="org253ca18">Java-Klasse <code>Person</code></h3>
+<div class="outline-text-3" id="text-org253ca18">
 <div class="org-src-container">
 <pre class="src src-java"> <span style="color: #0000FF;">public</span> <span style="color: #0000FF;">class</span> <span style="color: #6434A3;">Person</span>
 <span style="color: #707183;">{</span>
@@ -1058,16 +1096,16 @@ welche der Methoden aufzurufen ist.</li>
     <span style="color: #7388D6;">{</span>
         <span style="color: #0000FF;">return</span> gruss + <span style="color: #008000;">" "</span> + <span style="color: #0000FF;">this</span>.vollname<span style="color: #909183;">()</span>;
     <span style="color: #7388D6;">}</span>
-<span style="color: #707183;">}</span></pre>
+<span style="color: #707183;">}</span>
 </pre>
 </div>
 </div>
 </div>
 
 
-<div id="outline-container-orgac52cb9" class="outline-3">
-<h3 id="orgac52cb9">Zusammenfassung</h3>
-<div class="outline-text-3" id="text-orgac52cb9">
+<div id="outline-container-org373f2a0" class="outline-3">
+<h3 id="org373f2a0">Zusammenfassung</h3>
+<div class="outline-text-3" id="text-org373f2a0">
 <ul class="org-ul">
 <li>Für die objektorientierte Programmierung bedarf es keiner speziellen
 Programmiersprachen.</li>
@@ -1091,7 +1129,7 @@ aufzurufen ist.</li>
 </div>
 <div id="postamble" class="status">
 <p class="author">Autor: Johannes Brauer</p>
-<p class="date">Created: 2018-03-01 Thu 10:39</p>
+<p class="date">Created: 2019-01-06 Sun 20:59</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
