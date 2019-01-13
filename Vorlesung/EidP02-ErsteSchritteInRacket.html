@@ -3,12 +3,12 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="de" xml:lang="de">
 <head>
-<!-- 2017-01-17 Tue 19:14 -->
-<meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
-<meta  name="viewport" content="width=device-width, initial-scale=1" />
+<!-- 2019-01-13 Sun 14:08 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Erste Schritte in Racket</title>
-<meta  name="generator" content="Org-mode" />
-<meta  name="author" content="Johannes Brauer" />
+<meta name="generator" content="Org mode" />
+<meta name="author" content="Johannes Brauer" />
 <style type="text/css">
  <!--/*--><![CDATA[/*><!--*/
   .title  { text-align: center;
@@ -53,13 +53,98 @@
     border: 1px solid black;
   }
   pre.src:hover:before { display: inline;}
-  pre.src-sh:before    { content: 'sh'; }
-  pre.src-bash:before  { content: 'sh'; }
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
   pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
-  pre.src-R:before     { content: 'R'; }
-  pre.src-perl:before  { content: 'Perl'; }
-  pre.src-java:before  { content: 'Java'; }
-  pre.src-sql:before   { content: 'SQL'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
 
   table { border-collapse:collapse; }
   caption.t-above { caption-side: top; }
@@ -92,6 +177,7 @@
     { font-size: 10px; font-weight: bold; white-space: nowrap; }
   .org-info-js_search-highlight
     { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
   /*]]>*/-->
 </style>
 <link rel="stylesheet" type="text/css" href="styles/bigblow/css/htmlize.css"/>
@@ -111,7 +197,7 @@
 @licstart  The following is the entire license notice for the
 JavaScript code in this tag.
 
-Copyright (C) 2012-2013 Free Software Foundation, Inc.
+Copyright (C) 2012-2018 Free Software Foundation, Inc.
 
 The JavaScript code in this tag is free software: you can
 redistribute it and/or modify it under the terms of the GNU
@@ -178,16 +264,16 @@ for the JavaScript code in this tag.
 <body>
 <div id="content">
 <h1 class="title">Erste Schritte in Racket
-<br>
+<br />
 <span class="subtitle">Einführung in die Programmierung</span>
 </h1>
-
-<div id="outline-container-orgheadline5" class="outline-2">
-<h2 id="orgheadline5">Die Sprache <i>Racket</i></h2>
-<div class="outline-text-2" id="text-orgheadline5">
-</div><div id="outline-container-orgheadline1" class="outline-3">
-<h3 id="orgheadline1">Funktionale Programmierung</h3>
-<div class="outline-text-3" id="text-orgheadline1">
+<div id="outline-container-org7e65455" class="outline-2">
+<h2 id="org7e65455">Die Sprache <i>Racket</i></h2>
+<div class="outline-text-2" id="text-org7e65455">
+</div>
+<div id="outline-container-orgb0abd7b" class="outline-3">
+<h3 id="orgb0abd7b">Funktionale Programmierung</h3>
+<div class="outline-text-3" id="text-orgb0abd7b">
 <ul class="org-ul">
 <li>Es gibt verschiedene Programmierparadigmen, die sich in der
 Herangehensweise sehr unterscheiden.</li>
@@ -206,9 +292,9 @@ Programmierparadigmen eher an.</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-orgheadline2" class="outline-3">
-<h3 id="orgheadline2">Die funktionale Programmiersprache Racket und DrRacket</h3>
-<div class="outline-text-3" id="text-orgheadline2">
+<div id="outline-container-org3c77175" class="outline-3">
+<h3 id="org3c77175">Die funktionale Programmiersprache Racket und DrRacket</h3>
+<div class="outline-text-3" id="text-org3c77175">
 <ul class="org-ul">
 <li>Racket ist ein Dialekt von Scheme. Scheme ist eine Variante von
 Lisp. Lisp ist eine sehr alte Programmiersprache (entstanden Ende
@@ -217,7 +303,9 @@ der 1950er Jahre), ist aber noch weit verbreitet.</li>
 Programmiersprache für Einsteiger.</li>
 <li>Die Konzepte hinter Racket sind über 20 Jahre alt. Seit dem Jahr
 2010 heißt die Programmiersprache Racket.</li>
+</ul>
 
+<ul class="org-ul">
 <li><i>DrRacket</i> ist eine integrierte Entwicklungsumgebung (IDE) für
 Racket. Sie bietet alles Notwendige, ist aber trotzdem nicht
 überfrachtet.</li>
@@ -225,9 +313,9 @@ Racket. Sie bietet alles Notwendige, ist aber trotzdem nicht
 </div>
 </div>
 
-<div id="outline-container-orgheadline3" class="outline-3">
-<h3 id="orgheadline3">Installation und Einrichtung von DrRacket</h3>
-<div class="outline-text-3" id="text-orgheadline3">
+<div id="outline-container-orgbe02857" class="outline-3">
+<h3 id="orgbe02857">Installation und Einrichtung von DrRacket</h3>
+<div class="outline-text-3" id="text-orgbe02857">
 <ul class="org-ul">
 <li>Auf den NORDAKADEMIE-PCs und Virtuellen Maschinen ist DrRacket im
 Startmenü im Ordner Racket zu finden.</li>
@@ -263,9 +351,9 @@ Anschließend einmal auf „Start“ klicken.
 </div>
 </div>
 
-<div id="outline-container-orgheadline4" class="outline-3">
-<h3 id="orgheadline4">Aufbau von DrRacket</h3>
-<div class="outline-text-3" id="text-orgheadline4">
+<div id="outline-container-org4bc9aa7" class="outline-3">
+<h3 id="org4bc9aa7">Aufbau von DrRacket</h3>
+<div class="outline-text-3" id="text-org4bc9aa7">
 <ul class="org-ul">
 <li>DrRacket verwendet wie viele funktionale Sprachen eine
 read-eval-print loop (REPL).</li>
@@ -285,12 +373,13 @@ read-eval-print loop (REPL).</li>
 
 
 
-<div id="outline-container-orgheadline8" class="outline-2">
-<h2 id="orgheadline8">Elementare Ausdrücke</h2>
-<div class="outline-text-2" id="text-orgheadline8">
-</div><div id="outline-container-orgheadline6" class="outline-3">
-<h3 id="orgheadline6">Auswertung arithmetischer Ausdrücke</h3>
-<div class="outline-text-3" id="text-orgheadline6">
+<div id="outline-container-orgc1d0353" class="outline-2">
+<h2 id="orgc1d0353">Elementare Ausdrücke</h2>
+<div class="outline-text-2" id="text-orgc1d0353">
+</div>
+<div id="outline-container-org8a6bfdf" class="outline-3">
+<h3 id="org8a6bfdf">Auswertung arithmetischer Ausdrücke</h3>
+<div class="outline-text-3" id="text-org8a6bfdf">
 <ul class="org-ul">
 <li>Wir beginnen mit Zahlen</li>
 <li>Racket kennt 
@@ -306,18 +395,17 @@ den Dezimalpunkt statt des Dezimalkommas.</li>
 </ul>
 </div>
 </div>
-
-<div id="outline-container-orgheadline7" class="outline-3">
-<h3 id="orgheadline7">Grundform des arithmetischen Ausdrucks (in <i>Racket</i>):</h3>
-<div class="outline-text-3" id="text-orgheadline7">
+<div id="outline-container-org95c2013" class="outline-3">
+<h3 id="org95c2013">Grundform des arithmetischen Ausdrucks (in <i>Racket</i>):</h3>
+<div class="outline-text-3" id="text-org95c2013">
 <pre class="example">
 (operator operand-1 operand-2 ... operand-n)
+
 </pre>
 <ul class="org-ul">
 <li>Beispiele:</li>
 </ul>
 <div class="org-src-container">
-
 <pre class="src src-racket">(+ 1 2 3)
 (* 3 4 5)
 (/ 9  3)
@@ -332,12 +420,13 @@ den Dezimalpunkt statt des Dezimalkommas.</li>
 </div>
 </div>
 </div>
-<div id="outline-container-orgheadline11" class="outline-2">
-<h2 id="orgheadline11">Anwendung und Definition einfacher Funktionen in der Repl</h2>
-<div class="outline-text-2" id="text-orgheadline11">
-</div><div id="outline-container-orgheadline9" class="outline-3">
-<h3 id="orgheadline9">Funktionale Abstraktion</h3>
-<div class="outline-text-3" id="text-orgheadline9">
+<div id="outline-container-org4485f45" class="outline-2">
+<h2 id="org4485f45">Anwendung und Definition einfacher Funktionen in der Repl</h2>
+<div class="outline-text-2" id="text-org4485f45">
+</div>
+<div id="outline-container-orgae95a73" class="outline-3">
+<h3 id="orgae95a73">Funktionale Abstraktion</h3>
+<div class="outline-text-3" id="text-orgae95a73">
 <ul class="org-ul">
 <li>Problem: Berechnung der Ökosteuer bei:
 <ul class="org-ul">
@@ -347,10 +436,10 @@ den Dezimalpunkt statt des Dezimalkommas.</li>
 </ul></li>
 <li>Lösung: \(\frac{4500}{150}\cdot 7\) oder: <code>(* (/ 4500 150) 7)</code></li>
 <li>Verallgemeinerung der Berechnungsvorschrift, wenn der Preis für die
-Tankfüllung und der Literpreis als variabel sind, der
+Tankfüllung und der Literpreis variabel sind, der
 Ökosteueranteil hingegen fest ist:
 \[\frac{preis\text{-}fuer\text{-}tankfuellung}{preis\text{-}pro\text{-}liter}\cdot 7\] 
-oder: <br  />
+oder: <br />
 <code>(* (/ preis-fuer-tankfuellung preis-pro-liter) 7)</code></li>
 <li>Dieser Ausdruck ist nicht auswertbar. Warum nicht?</li>
 </ul>
@@ -366,13 +455,12 @@ f(preis\text{-}fuer\text{-}tankfuellung, preis\text{-}pro\text{-}liter) = \frac{
 <li>In <i>Racket</i> besteht die Abstraktion aus zwei Schritten.
 <ol class="org-ol">
 <li><p>
-Definition der Berechnungsvorschrift als Funktion:<br  />
+Definition der Berechnungsvorschrift als Funktion:<br />
 </p>
 <div class="smaller">
 <div class="org-src-container">
-
-<pre class="src src-scheme"><span style="color: #707183;">(</span><span style="color: #0000FF;">lambda</span> <span style="color: #7388D6;">[</span>preis-fuer-tankfuellung preis-pro-liter<span style="color: #7388D6;">]</span>
-  <span style="color: #7388D6;">(</span>* <span style="color: #909183;">(</span>/ preis-fuer-tankfuellung preis-pro-liter<span style="color: #909183;">)</span> 7<span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
+<pre class="src src-scheme">     <span style="color: #707183;">(</span><span style="color: #0000FF;">lambda</span> <span style="color: #7388D6;">[</span>preis-fuer-tankfuellung preis-pro-liter<span style="color: #7388D6;">]</span>
+       <span style="color: #7388D6;">(</span>* <span style="color: #909183;">(</span>/ preis-fuer-tankfuellung preis-pro-liter<span style="color: #909183;">)</span> 7<span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
 </pre>
 </div>
 
@@ -380,24 +468,24 @@ Definition der Berechnungsvorschrift als Funktion:<br  />
 <ul class="org-ul">
 <li>Dieser Ausdruck ist auswertbar, das Resultat ist eine Funktion.</li>
 <li><p>
-Eine Funktion kann in <i>Racket</i> wie ein Operator verwendet werden: <br  />
+Eine Funktion kann in <i>Racket</i> wie ein Operator verwendet werden: <br />
 </p>
 <pre class="example">
 (function operand-1 operand-2 ... operand-n)
+
 </pre></li>
 </ul></li>
 </ol></li>
 </ul>
 <ul class="org-ul">
 <li><p>
-Ersetzt man „function” durch obige Funktion, kann diese wie folgt angewendet werden:<br  />
+Ersetzt man „function” durch obige Funktion, kann diese wie folgt angewendet werden:<br />
 </p>
 <div class="smaller">
 <div class="org-src-container">
-
-<pre class="src src-scheme"><span style="color: #707183;">(</span> <span style="color: #7388D6;">(</span><span style="color: #0000FF;">lambda</span> <span style="color: #909183;">[</span>preis-fuer-tankfuellung preis-pro-liter<span style="color: #909183;">]</span>
-      <span style="color: #909183;">(</span>* <span style="color: #709870;">(</span>/ preis-fuer-tankfuellung preis-pro-liter<span style="color: #709870;">)</span> 7<span style="color: #909183;">)</span><span style="color: #7388D6;">)</span>
-  4500 150<span style="color: #707183;">)</span>
+<pre class="src src-scheme">       <span style="color: #707183;">(</span> <span style="color: #7388D6;">(</span><span style="color: #0000FF;">lambda</span> <span style="color: #909183;">[</span>preis-fuer-tankfuellung preis-pro-liter<span style="color: #909183;">]</span>
+             <span style="color: #909183;">(</span>* <span style="color: #709870;">(</span>/ preis-fuer-tankfuellung preis-pro-liter<span style="color: #709870;">)</span> 7<span style="color: #909183;">)</span><span style="color: #7388D6;">)</span>
+         4500 150<span style="color: #707183;">)</span>
 </pre>
 </div>
 
@@ -413,10 +501,9 @@ Bindung einer Berechnungsvorschrift (Funktion) an einen Namen:
 </p>
 <div class="smaller">
 <div class="org-src-container">
-
-<pre class="src src-scheme"><span style="color: #707183;">(</span><span style="color: #0000FF;">define</span> <span style="color: #006699;">oeko-steuer</span>
-  <span style="color: #7388D6;">(</span><span style="color: #0000FF;">lambda</span> <span style="color: #909183;">[</span>preis-fuer-tankfuellung preis-pro-liter<span style="color: #909183;">]</span>
-     <span style="color: #909183;">(</span>* <span style="color: #709870;">(</span>/ preis-fuer-tankfuellung preis-pro-liter<span style="color: #709870;">)</span> 7<span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
+<pre class="src src-scheme">     <span style="color: #707183;">(</span><span style="color: #0000FF;">define</span> <span style="color: #006699;">oeko-steuer</span>
+       <span style="color: #7388D6;">(</span><span style="color: #0000FF;">lambda</span> <span style="color: #909183;">[</span>preis-fuer-tankfuellung preis-pro-liter<span style="color: #909183;">]</span>
+          <span style="color: #909183;">(</span>* <span style="color: #709870;">(</span>/ preis-fuer-tankfuellung preis-pro-liter<span style="color: #709870;">)</span> 7<span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
 </pre>
 </div>
 
@@ -429,9 +516,9 @@ wieder den Wert 210.
 </ol>
 </div>
 </div>
-<div id="outline-container-orgheadline10" class="outline-3">
-<h3 id="orgheadline10">Ausdrücke in <i>Racket</i> (1)</h3>
-<div class="outline-text-3" id="text-orgheadline10">
+<div id="outline-container-org1817837" class="outline-3">
+<h3 id="org1817837">Ausdrücke in <i>Racket</i> (1)</h3>
+<div class="outline-text-3" id="text-org1817837">
 <p>
 Nach dem zuvor Erläuterten kann der Aufbau von Ausdrücken in
 <i>Racket</i> wie folgt präzisiert werden. Die Grundform bleibt dabei
@@ -439,6 +526,7 @@ unverändert:
 </p>
 <pre class="example">
 (operator operand-1 operand-2 ... operand-n)
+
 </pre>
 <p>
 <i>Operatoren</i> sind Namen von
@@ -472,9 +560,9 @@ nach Bedarf.
 </div>
 </div>
 
-<div id="outline-container-orgheadline12" class="outline-2">
-<h2 id="orgheadline12">Zusammenfassung</h2>
-<div class="outline-text-2" id="text-orgheadline12">
+<div id="outline-container-org82fd0d0" class="outline-2">
+<h2 id="org82fd0d0">Zusammenfassung</h2>
+<div class="outline-text-2" id="text-org82fd0d0">
 <ul class="org-ul">
 <li>Funktionale Programmierung ist ein wichtiges Programmierparadigma.</li>
 <li>Racket ist eine funktionale Programmiersprache, die einfach und
@@ -493,7 +581,7 @@ werden. Über Parameter können Funktionen Werte als Argumente übergeben werde
 </div>
 <div id="postamble" class="status">
 <p class="author">Autor: Johannes Brauer</p>
-<p class="date">Created: 2017-01-17 Tue 19:14</p>
+<p class="date">Created: 2019-01-13 Sun 14:08</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

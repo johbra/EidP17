@@ -24,20 +24,21 @@
     }
 </script>
 <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<link rel="stylesheet" type="text/css" href="mycss/mystyle.css" />
 </head>
 <body>
 <div class="reveal">
 <div class="slides">
-<section id="sec-title-slide"><h1 class="title">Erste Schritte in Racket</h1><h2 class="author">Johannes Brauer</h2><p class="date">Created: 2017-01-17 Tue 19:19</p>
+<section id="sec-title-slide"><h1 class="title">Erste Schritte in Racket</h1><h2 class="author">Johannes Brauer</h2><p class="date">Created: 2019-01-13 Sun 14:09</p>
 </section>
-
 <section>
-<section id="slide-orgheadline5">
-<h2 id="orgheadline5">Die Sprache <i>Racket</i></h2>
-<div class="outline-text-2" id="text-orgheadline5">
-</div></section>
-<section id="slide-orgheadline1">
-<h3 id="orgheadline1">Funktionale Programmierung</h3>
+<section id="org5ff1d90">
+<h2 id="org5ff1d90">Die Sprache <i>Racket</i></h2>
+<div class="outline-text-2" id="text-org5ff1d90">
+</div>
+</section>
+<section id="org8fa6edf">
+<h3 id="org8fa6edf">Funktionale Programmierung</h3>
 <ul>
 <li>Es gibt verschiedene Programmierparadigmen, die sich in der
 Herangehensweise sehr unterscheiden.</li>
@@ -56,8 +57,8 @@ Programmierparadigmen eher an.</li>
 
 </ul>
 </section>
-<section id="slide-orgheadline2">
-<h3 id="orgheadline2">Die funktionale Programmiersprache Racket und DrRacket</h3>
+<section id="orgf403180">
+<h3 id="orgf403180">Die funktionale Programmiersprache Racket und DrRacket</h3>
 <ul>
 <li>Racket ist ein Dialekt von Scheme. Scheme ist eine Variante von
 Lisp. Lisp ist eine sehr alte Programmiersprache (entstanden Ende
@@ -67,6 +68,9 @@ Programmiersprache für Einsteiger.</li>
 <li>Die Konzepte hinter Racket sind über 20 Jahre alt. Seit dem Jahr
 2010 heißt die Programmiersprache Racket.</li>
 
+</ul>
+
+<ul>
 <li><i>DrRacket</i> ist eine integrierte Entwicklungsumgebung (IDE) für
 Racket. Sie bietet alles Notwendige, ist aber trotzdem nicht
 überfrachtet.</li>
@@ -74,8 +78,8 @@ Racket. Sie bietet alles Notwendige, ist aber trotzdem nicht
 </ul>
 
 </section>
-<section id="slide-orgheadline3">
-<h3 id="orgheadline3">Installation und Einrichtung von DrRacket</h3>
+<section id="org7fbe36a">
+<h3 id="org7fbe36a">Installation und Einrichtung von DrRacket</h3>
 <ul>
 <li>Auf den NORDAKADEMIE-PCs und Virtuellen Maschinen ist DrRacket im
 Startmenü im Ordner Racket zu finden.</li>
@@ -84,7 +88,7 @@ Startmenü im Ordner Racket zu finden.</li>
 
 </ul>
 </section>
-<section>
+<section >
 <ul>
 <li>Beim ersten Aufruf ist (über das Menü <code>Sprache</code> eine Sprache zu wählen.</li>
 <li>Nehmen Sie bitte „Lehrsprachen“ -&gt; „How to Design Programs“ -&gt; „Zwischenstufe mit Lambda“.</li>
@@ -114,8 +118,8 @@ Anschließend einmal auf „Start“ klicken.
 </ul>
 
 </section>
-<section id="slide-orgheadline4">
-<h3 id="orgheadline4">Aufbau von DrRacket</h3>
+<section id="orgfbe3ed6">
+<h3 id="orgfbe3ed6">Aufbau von DrRacket</h3>
 <ul>
 <li>DrRacket verwendet wie viele funktionale Sprachen eine
 read-eval-print loop (REPL).</li>
@@ -136,12 +140,13 @@ read-eval-print loop (REPL).</li>
 </section>
 </section>
 <section>
-<section id="slide-orgheadline8">
-<h2 id="orgheadline8">Elementare Ausdrücke</h2>
-<div class="outline-text-2" id="text-orgheadline8">
-</div></section>
-<section id="slide-orgheadline6">
-<h3 id="orgheadline6">Auswertung arithmetischer Ausdrücke</h3>
+<section id="orgdfe364b">
+<h2 id="orgdfe364b">Elementare Ausdrücke</h2>
+<div class="outline-text-2" id="text-orgdfe364b">
+</div>
+</section>
+<section id="org6f95c7e">
+<h3 id="org6f95c7e">Auswertung arithmetischer Ausdrücke</h3>
 <ul>
 <li>Wir beginnen mit Zahlen</li>
 <li>Racket kennt 
@@ -157,12 +162,12 @@ den Dezimalpunkt statt des Dezimalkommas.</li>
 </ul></li>
 
 </ul>
-
 </section>
-<section id="slide-orgheadline7">
-<h3 id="orgheadline7">Grundform des arithmetischen Ausdrucks (in <i>Racket</i>):</h3>
+<section id="org6e1ddd4">
+<h3 id="org6e1ddd4">Grundform des arithmetischen Ausdrucks (in <i>Racket</i>):</h3>
 <pre class="example">
 (operator operand-1 operand-2 ... operand-n)
+
 </pre>
 <ul>
 <li>Beispiele:</li>
@@ -184,12 +189,13 @@ den Dezimalpunkt statt des Dezimalkommas.</li>
 </section>
 </section>
 <section>
-<section id="slide-orgheadline11">
-<h2 id="orgheadline11">Anwendung und Definition einfacher Funktionen in der Repl</h2>
-<div class="outline-text-2" id="text-orgheadline11">
-</div></section>
-<section id="slide-orgheadline9">
-<h3 id="orgheadline9">Funktionale Abstraktion</h3>
+<section id="orgbd1e436">
+<h2 id="orgbd1e436">Anwendung und Definition einfacher Funktionen in der Repl</h2>
+<div class="outline-text-2" id="text-orgbd1e436">
+</div>
+</section>
+<section id="orga90ad57">
+<h3 id="orga90ad57">Funktionale Abstraktion</h3>
 <ul>
 <li>Problem: Berechnung der Ökosteuer bei:
 <ul>
@@ -200,16 +206,16 @@ den Dezimalpunkt statt des Dezimalkommas.</li>
 </ul></li>
 <li>Lösung: \(\frac{4500}{150}\cdot 7\) oder: <code>(* (/ 4500 150) 7)</code></li>
 <li>Verallgemeinerung der Berechnungsvorschrift, wenn der Preis für die
-Tankfüllung und der Literpreis als variabel sind, der
+Tankfüllung und der Literpreis variabel sind, der
 Ökosteueranteil hingegen fest ist:
 \[\frac{preis\text{-}fuer\text{-}tankfuellung}{preis\text{-}pro\text{-}liter}\cdot 7\] 
-oder: <br  />
+oder: <br />
 <code>(* (/ preis-fuer-tankfuellung preis-pro-liter) 7)</code></li>
 <li>Dieser Ausdruck ist nicht auswertbar. Warum nicht?</li>
 
 </ul>
 </section>
-<section>
+<section >
 <ul>
 <li><p>
 Abstraktionsschritt: Definition der Berechnungsvorschrift als Funktion:
@@ -225,13 +231,13 @@ f(preis\text{-}fuer\text{-}tankfuellung, preis\text{-}pro\text{-}liter) = \frac{
 <li>In <i>Racket</i> besteht die Abstraktion aus zwei Schritten.
 <ol>
 <li><p>
-Definition der Berechnungsvorschrift als Funktion:<br  />
+Definition der Berechnungsvorschrift als Funktion:<br />
 </p>
 <div class="smaller">
 <div class="org-src-container">
 
-<pre  class="src src-scheme"><span style="color: #707183;">(</span><span style="color: #0000FF;">lambda</span> <span style="color: #7388D6;">[</span>preis-fuer-tankfuellung preis-pro-liter<span style="color: #7388D6;">]</span>
-  <span style="color: #7388D6;">(</span>* <span style="color: #909183;">(</span>/ preis-fuer-tankfuellung preis-pro-liter<span style="color: #909183;">)</span> 7<span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
+<pre  class="src src-scheme">     <span style="color: #707183;">(</span><span style="color: #0000FF;">lambda</span> <span style="color: #7388D6;">[</span>preis-fuer-tankfuellung preis-pro-liter<span style="color: #7388D6;">]</span>
+       <span style="color: #7388D6;">(</span>* <span style="color: #909183;">(</span>/ preis-fuer-tankfuellung preis-pro-liter<span style="color: #909183;">)</span> 7<span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
 </pre>
 </div>
 
@@ -239,10 +245,11 @@ Definition der Berechnungsvorschrift als Funktion:<br  />
 <ul>
 <li>Dieser Ausdruck ist auswertbar, das Resultat ist eine Funktion.</li>
 <li><p>
-Eine Funktion kann in <i>Racket</i> wie ein Operator verwendet werden: <br  />
+Eine Funktion kann in <i>Racket</i> wie ein Operator verwendet werden: <br />
 </p>
 <pre class="example">
 (function operand-1 operand-2 ... operand-n)
+
 </pre></li>
 
 </ul></li>
@@ -251,17 +258,17 @@ Eine Funktion kann in <i>Racket</i> wie ein Operator verwendet werden: <br  />
 
 </ul>
 </section>
-<section>
+<section >
 <ul>
 <li><p>
-Ersetzt man „function” durch obige Funktion, kann diese wie folgt angewendet werden:<br  />
+Ersetzt man „function” durch obige Funktion, kann diese wie folgt angewendet werden:<br />
 </p>
 <div class="smaller">
 <div class="org-src-container">
 
-<pre  class="src src-scheme"><span style="color: #707183;">(</span> <span style="color: #7388D6;">(</span><span style="color: #0000FF;">lambda</span> <span style="color: #909183;">[</span>preis-fuer-tankfuellung preis-pro-liter<span style="color: #909183;">]</span>
-      <span style="color: #909183;">(</span>* <span style="color: #709870;">(</span>/ preis-fuer-tankfuellung preis-pro-liter<span style="color: #709870;">)</span> 7<span style="color: #909183;">)</span><span style="color: #7388D6;">)</span>
-  4500 150<span style="color: #707183;">)</span>
+<pre  class="src src-scheme">       <span style="color: #707183;">(</span> <span style="color: #7388D6;">(</span><span style="color: #0000FF;">lambda</span> <span style="color: #909183;">[</span>preis-fuer-tankfuellung preis-pro-liter<span style="color: #909183;">]</span>
+             <span style="color: #909183;">(</span>* <span style="color: #709870;">(</span>/ preis-fuer-tankfuellung preis-pro-liter<span style="color: #709870;">)</span> 7<span style="color: #909183;">)</span><span style="color: #7388D6;">)</span>
+         4500 150<span style="color: #707183;">)</span>
 </pre>
 </div>
 
@@ -279,9 +286,9 @@ Bindung einer Berechnungsvorschrift (Funktion) an einen Namen:
 <div class="smaller">
 <div class="org-src-container">
 
-<pre  class="src src-scheme"><span style="color: #707183;">(</span><span style="color: #0000FF;">define</span> <span style="color: #006699;">oeko-steuer</span>
-  <span style="color: #7388D6;">(</span><span style="color: #0000FF;">lambda</span> <span style="color: #909183;">[</span>preis-fuer-tankfuellung preis-pro-liter<span style="color: #909183;">]</span>
-     <span style="color: #909183;">(</span>* <span style="color: #709870;">(</span>/ preis-fuer-tankfuellung preis-pro-liter<span style="color: #709870;">)</span> 7<span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
+<pre  class="src src-scheme">     <span style="color: #707183;">(</span><span style="color: #0000FF;">define</span> <span style="color: #006699;">oeko-steuer</span>
+       <span style="color: #7388D6;">(</span><span style="color: #0000FF;">lambda</span> <span style="color: #909183;">[</span>preis-fuer-tankfuellung preis-pro-liter<span style="color: #909183;">]</span>
+          <span style="color: #909183;">(</span>* <span style="color: #709870;">(</span>/ preis-fuer-tankfuellung preis-pro-liter<span style="color: #709870;">)</span> 7<span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
 </pre>
 </div>
 
@@ -294,8 +301,8 @@ wieder den Wert 210.
 
 </ol>
 </section>
-<section id="slide-orgheadline10">
-<h3 id="orgheadline10">Ausdrücke in <i>Racket</i> (1)</h3>
+<section id="orgc7657bb">
+<h3 id="orgc7657bb">Ausdrücke in <i>Racket</i> (1)</h3>
 <p>
 Nach dem zuvor Erläuterten kann der Aufbau von Ausdrücken in
 <i>Racket</i> wie folgt präzisiert werden. Die Grundform bleibt dabei
@@ -303,6 +310,7 @@ unverändert:
 </p>
 <pre class="example">
 (operator operand-1 operand-2 ... operand-n)
+
 </pre>
 <p>
 <i>Operatoren</i> sind Namen von
@@ -315,7 +323,7 @@ unverändert:
 
 </ul>
 </section>
-<section>
+<section >
 <p>
 Beispiele für <i>Operanden</i> sind (neben vielen anderen):
 </p>
@@ -340,8 +348,8 @@ nach Bedarf.
 </section>
 </section>
 <section>
-<section id="slide-orgheadline12">
-<h2 id="orgheadline12">Zusammenfassung</h2>
+<section id="org5e325c5">
+<h2 id="org5e325c5">Zusammenfassung</h2>
 <ul>
 <li>Funktionale Programmierung ist ein wichtiges Programmierparadigma.</li>
 <li>Racket ist eine funktionale Programmiersprache, die einfach und
