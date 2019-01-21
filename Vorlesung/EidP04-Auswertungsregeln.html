@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="de" xml:lang="de">
 <head>
-<!-- 2017-12-10 Sun 20:42 -->
+<!-- 2019-01-21 Mon 17:38 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Auswertungsregeln</title>
@@ -161,6 +161,19 @@
   .footdef  { margin-bottom: 1em; }
   .figure { padding: 1em; }
   .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
   .inlinetask {
     padding: 10px;
     border: 2px solid gray;
@@ -197,7 +210,7 @@
 @licstart  The following is the entire license notice for the
 JavaScript code in this tag.
 
-Copyright (C) 2012-2017 Free Software Foundation, Inc.
+Copyright (C) 2012-2018 Free Software Foundation, Inc.
 
 The JavaScript code in this tag is free software: you can
 redistribute it and/or modify it under the terms of the GNU
@@ -268,9 +281,9 @@ for the JavaScript code in this tag.
 <span class="subtitle">Einführung in die Programmierung</span>
 </h1>
 
-<div id="outline-container-orgc23d266" class="outline-2">
-<h2 id="orgc23d266">Syntax und Semantik einer mathematischen Formelsprache</h2>
-<div class="outline-text-2" id="text-orgc23d266">
+<div id="outline-container-orgb4a53a2" class="outline-2">
+<h2 id="orgb4a53a2">Syntax und Semantik einer mathematischen Formelsprache</h2>
+<div class="outline-text-2" id="text-orgb4a53a2">
 <p>
 Die Auswertung von Ausdrücken in <i>Racket</i> basiert auf der Anwendung
 einfacher äquivalenter Umformungen, wie sie aus der Schulmathematik
@@ -292,16 +305,16 @@ auch als die <i>Syntax</i> der Sprache.
 </p>
 </div>
 
-<div id="outline-container-orgf9cabcd" class="outline-3">
-<h3 id="orgf9cabcd">Syntax der mathematischen Formelsprache</h3>
-<div class="outline-text-3" id="text-orgf9cabcd">
+<div id="outline-container-org5139767" class="outline-3">
+<h3 id="org5139767">Syntax der mathematischen Formelsprache</h3>
+<div class="outline-text-3" id="text-org5139767">
 <p>
 Sie legt z. B. fest, dass
 </p>
 <ul class="org-ul">
 <li>Konstanten (Zahlen bzw. Ziffernfolgen),</li>
 <li>Variablen (\(a\), \(b\)) und</li>
-<li>bestimmte Operationszeichen (z. B. \(+\), \(-\) oder der Bruchstrich
+<li>bestimmte Operationszeichen (z. B. \(+\), \(-\) oder der Bruchstrich)
 verwendet werden dürfen.</li>
 </ul>
 <p>
@@ -328,9 +341,9 @@ Sprache.
 </div>
 </div>
 
-<div id="outline-container-org06910f9" class="outline-3">
-<h3 id="org06910f9">Semantik der mathematischen Formelsprache</h3>
-<div class="outline-text-3" id="text-org06910f9">
+<div id="outline-container-org080a3eb" class="outline-3">
+<h3 id="org080a3eb">Semantik der mathematischen Formelsprache</h3>
+<div class="outline-text-3" id="text-org080a3eb">
 <p>
 Sie bestimmt z. B., dass
 </p>
@@ -410,9 +423,9 @@ bf(3,4) & = & 3\cdot 3 + 2\cdot 3\cdot 4 + 4\cdot 4 \\
 </div>
 </div>
 
-<div id="outline-container-orgd71916c" class="outline-2">
-<h2 id="orgd71916c">Syntax und Semantik von <i>Racket</i> (vorläufig)</h2>
-<div class="outline-text-2" id="text-orgd71916c">
+<div id="outline-container-org0c3e9c6" class="outline-2">
+<h2 id="org0c3e9c6">Syntax und Semantik von <i>Racket</i> (vorläufig)</h2>
+<div class="outline-text-2" id="text-org0c3e9c6">
 <p>
 Funktionale Programmiersprachen zeichnen sich u. a. dadurch aus, dass
 sie sich hinsichtlich ihrer Semantik sehr strikt an der Mathematik
@@ -435,8 +448,8 @@ den Parametern <code>a</code> und <code>b</code> definieren, sieht das so aus:
 <pre class="example">
 (define bf
   (lambda [a b] ... ))
-
 </pre>
+
 
 <p>
 Wollen wir nun die rechte Seite der Funktionsdefinition nach <i>Racket</i>
@@ -446,8 +459,8 @@ aussieht:
 </p>
 <pre class="example">
 (operator operand-1 operand-2 ... operand-n)
-
 </pre>
+
 <p>
 Damit erhalten wir die vollständige Funktionsdefinition:
 </p>
@@ -457,7 +470,7 @@ Damit erhalten wir die vollständige Funktionsdefinition:
   <span style="color: #7388D6;">(</span><span style="color: #0000FF;">lambda</span> <span style="color: #909183;">[</span>a b<span style="color: #909183;">]</span>
     <span style="color: #909183;">(</span>+ <span style="color: #709870;">(</span>* a a<span style="color: #709870;">)</span>
        <span style="color: #709870;">(</span>* 2 a b<span style="color: #709870;">)</span>
-       <span style="color: #709870;">(</span>* b b<span style="color: #709870;">)</span><span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span></pre>
+       <span style="color: #709870;">(</span>* b b<span style="color: #709870;">)</span><span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
 </pre>
 </div>
 
@@ -476,8 +489,8 @@ Funktionsanwendung
 </p>
 <pre class="example">
 (bf 3 4)
-
 </pre>
+
 <p>
 das Resultat <code>49</code> entsteht.
 </p>
@@ -491,17 +504,17 @@ Berechnungsvorschrift <code>exp</code>:
 (define f
   (lambda [x-1 ... x-n]
     exp))
-
 </pre>
+
 
 <p>
 Für die Anwendung der Funktion gilt dann die folgende Ersetzungsregel.
 </p>
 </div>
 
-<div id="outline-container-org71d2008" class="outline-3">
-<h3 id="org71d2008">Ersetzungsmodell für Funktionsanwendungen:</h3>
-<div class="outline-text-3" id="text-org71d2008">
+<div id="outline-container-orgac99d67" class="outline-3">
+<h3 id="orgac99d67">Ersetzungsmodell für Funktionsanwendungen:</h3>
+<div class="outline-text-3" id="text-orgac99d67">
 <ul class="org-ul">
 <li><p>
 Formal: Mit <code>(define f (lambda [x-1 ... x-n] exp))</code> gilt: 
@@ -523,7 +536,6 @@ Wenden wir diese Regel auf die Anwendung der Funktion <code>bf</code> an:
 (bf 3 4) = (+ (* 3 3)
               (* 2 3 4)
               (* 4 4))
-
 </pre></li>
 
 <li>Wie in der Mathematik gehen wir davon aus, dass die Addition und
@@ -548,7 +560,6 @@ Multiplikation und Addition erforderlich ist:
               (* 4 4))
          = (+ 9 24 16)
          = 49
-
 </pre></li>
 </ul>
 <p>
@@ -558,9 +569,9 @@ Multiplikation und Addition erforderlich ist:
 </div>
 </div>
 
-<div id="outline-container-orgb979e95" class="outline-2">
-<h2 id="orgb979e95">Zusammenfassung</h2>
-<div class="outline-text-2" id="text-orgb979e95">
+<div id="outline-container-org38e56b1" class="outline-2">
+<h2 id="org38e56b1">Zusammenfassung</h2>
+<div class="outline-text-2" id="text-org38e56b1">
 <ul class="org-ul">
 <li>Die <b>Syntax</b> einer Programmiersprache legt zulässige Elemente und Strukturen fest.</li>
 <li>Die <b>Semantik</b> einer Programmiersprache legt die Bedeutung syntaktisch korrekter Ausdrücke fest.</li>
@@ -573,7 +584,7 @@ das <b>Ersetzungsmodell für Funktionsanwendungen</b> vereinfacht.</li>
 </div>
 <div id="postamble" class="status">
 <p class="author">Autor: Johannes Brauer</p>
-<p class="date">Created: 2017-12-10 Sun 20:42</p>
+<p class="date">Created: 2019-01-21 Mon 17:38</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
