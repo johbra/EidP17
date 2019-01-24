@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="de" xml:lang="de">
 <head>
-<!-- 2019-01-17 Thu 18:40 -->
+<!-- 2019-01-24 Thu 11:15 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Aufgaben &#x2013; Lösungen</title>
@@ -161,6 +161,19 @@
   .footdef  { margin-bottom: 1em; }
   .figure { padding: 1em; }
   .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
   .inlinetask {
     padding: 10px;
     border: 2px solid gray;
@@ -263,17 +276,20 @@ for the JavaScript code in this tag.
 <h2>Inhaltsverzeichnis</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org01ce533">1. Aufgabe (Erste Schritte in Racket)</a></li>
-<li><a href="#org611575b">2. Aufgabe (Auswertung arithmetischer Ausdrücke)</a></li>
-<li><a href="#orgcb186da">3. Aufgabe (Aufschreiben elementarer Funktionen)</a></li>
-<li><a href="#orgbb6b61c">4. Aufgabe (Aufschreiben elementarer Funktionen)</a></li>
-<li><a href="#org6fb44c8">5. Aufgabe (Anwenden der Aufschreibregeln)</a></li>
+<li><a href="#org3b86830">1. Aufgabe (Erste Schritte in Racket)</a></li>
+<li><a href="#orgf6c0341">2. Aufgabe (Auswertung arithmetischer Ausdrücke)</a></li>
+<li><a href="#orgc6ac7e4">3. Aufgabe (Aufschreiben elementarer Funktionen)</a></li>
+<li><a href="#org2e1d3fc">4. Aufgabe (Aufschreiben elementarer Funktionen)</a></li>
+<li><a href="#orgbf33fbc">5. Aufgabe (Anwenden der Aufschreibregeln)</a></li>
+<li><a href="#orgb51d9eb">6. Aufgabe (Profit für den Kinobesitzer)</a></li>
+<li><a href="#org46ee884">7. Aufgabe (Modifikation von <code>kino.rkt</code>)</a></li>
+<li><a href="#orgb099d7c">8. Aufgabe (Einsatz von Hilfsfunktionen)</a></li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-org01ce533" class="outline-2">
-<h2 id="org01ce533"><span class="section-number-2">1</span> Aufgabe (Erste Schritte in Racket)</h2>
+<div id="outline-container-org3b86830" class="outline-2">
+<h2 id="org3b86830"><span class="section-number-2">1</span> Aufgabe (Erste Schritte in Racket)</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 Machen Sie sich mit den NORDAKADEMIE-Rechnern vertraut und richten Sie
@@ -300,8 +316,8 @@ finden Sie alle vordefinierten mathematischen Funktionen?
 </div>
 </div>
 
-<div id="outline-container-org611575b" class="outline-2">
-<h2 id="org611575b"><span class="section-number-2">2</span> Aufgabe (Auswertung arithmetischer Ausdrücke)</h2>
+<div id="outline-container-orgf6c0341" class="outline-2">
+<h2 id="orgf6c0341"><span class="section-number-2">2</span> Aufgabe (Auswertung arithmetischer Ausdrücke)</h2>
 <div class="outline-text-2" id="text-2">
 <ol class="org-ol">
 <li>Wie wird der Ausdruck<br />
@@ -315,14 +331,13 @@ Werten Sie die folgenden Ausdrücke aus und vergleichen Sie die Resultate:
 (- 1.0 0.9)
 (- 1000.0 999.9) 
 (- #i1000.0 #i999.9)
-
 </pre></li>
 </ol>
 </div>
 </div>
 
-<div id="outline-container-orgcb186da" class="outline-2">
-<h2 id="orgcb186da"><span class="section-number-2">3</span> Aufgabe (Aufschreiben elementarer Funktionen)</h2>
+<div id="outline-container-orgc6ac7e4" class="outline-2">
+<h2 id="orgc6ac7e4"><span class="section-number-2">3</span> Aufgabe (Aufschreiben elementarer Funktionen)</h2>
 <div class="outline-text-2" id="text-3">
 <p>
 Schreiben Sie für die folgenden mathematischen Formeln Racket-Funktionsdefinitionen auf:
@@ -364,8 +379,8 @@ Funktionsaufrufe für diese Funktionen ein.
 </p>
 </div>
 </div>
-<div id="outline-container-orgbb6b61c" class="outline-2">
-<h2 id="orgbb6b61c"><span class="section-number-2">4</span> Aufgabe (Aufschreiben elementarer Funktionen)</h2>
+<div id="outline-container-org2e1d3fc" class="outline-2">
+<h2 id="org2e1d3fc"><span class="section-number-2">4</span> Aufgabe (Aufschreiben elementarer Funktionen)</h2>
 <div class="outline-text-2" id="text-4">
 <p>
 In der Praxis findet der Programmierer selten mathematische Formeln
@@ -460,8 +475,8 @@ Hinweis: Ein Aufruf <code>(expt x y)</code> liefert \(x^y\) als Ergebnis.
 </div>
 </div>
 
-<div id="outline-container-org6fb44c8" class="outline-2">
-<h2 id="org6fb44c8"><span class="section-number-2">5</span> Aufgabe (Anwenden der Aufschreibregeln)</h2>
+<div id="outline-container-orgbf33fbc" class="outline-2">
+<h2 id="orgbf33fbc"><span class="section-number-2">5</span> Aufgabe (Anwenden der Aufschreibregeln)</h2>
 <div class="outline-text-2" id="text-5">
 <p>
 Schreiben Sie die Funktion zur Berechnung der Bahnhofsmiete in
@@ -486,10 +501,123 @@ folgenden Aufgaben gemäß diesen Regeln aufzuschreiben!!!</b>
 </p>
 </div>
 </div>
+
+<div id="outline-container-orgb51d9eb" class="outline-2">
+<h2 id="orgb51d9eb"><span class="section-number-2">6</span> Aufgabe (Profit für den Kinobesitzer)</h2>
+<div class="outline-text-2" id="text-6">
+<p>
+Ein altmodisches Vorstadtkino besitzt eine einfache Formel für die
+Berechnung des Profits einer Vorstellung: Jeder Kinobesucher
+bezahlt 500 Währungseinheiten für die Eintrittskarte. Jede
+Vorstellung kostet das Kino 2000 Währungseinheiten plus 50
+Währungseinheiten pro Besucher. Schreiben Sie eine Funktion <code>profit</code> zur
+Berechnung des Profits bei gegebener Besucherzahl.
+</p>
+<div class="org-src-container">
+<pre class="src src-scheme"><span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">berechnet den Profit eine Filmvorfuehrung aus 2000 WE Fixkosten</span>
+<span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">und 50 WE Kosten pro Besucher bei gegebener Besucherzahl und</span>
+<span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">500 WE Kartenpreis</span>
+<span style="color: #707183;">(</span><span style="color: #0000FF;">define</span> <span style="color: #006699;">profit</span>
+  <span style="color: #7388D6;">(</span><span style="color: #0000FF;">lambda</span> <span style="color: #909183;">[</span>besucherzahl<span style="color: #909183;">]</span>
+    <span style="color: #909183;">(</span>- <span style="color: #709870;">(</span>* 500 besucherzahl<span style="color: #709870;">)</span>
+       <span style="color: #709870;">(</span>+ <span style="color: #907373;">(</span>* 50 besucherzahl<span style="color: #907373;">)</span> 2000<span style="color: #709870;">)</span><span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
+<span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">Beispielanwendungen</span>
+<span style="color: #707183;">(</span>= <span style="color: #7388D6;">(</span>profit 100<span style="color: #7388D6;">)</span> 43000<span style="color: #707183;">)</span>
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org46ee884" class="outline-2">
+<h2 id="org46ee884"><span class="section-number-2">7</span> Aufgabe (Modifikation von <code>kino.rkt</code>)</h2>
+<div class="outline-text-2" id="text-7">
+<ol class="org-ol">
+<li>Modifizieren Sie das Programm <code>kino.rkt</code> so, dass die Fixkosten
+einer Veranstaltung wegfallen und dafür 15 Währungseinheiten pro
+Besucher an Kosten anfallen.</li>
+<li>Nehmen Sie die gleiche Modifikation auch an der Funktion <code>profit</code>
+aus der Vorlesung vor, die ohne Hilfsfunktionen auskommt, und
+vergleichen Sie die Ergebnisse.</li>
+</ol>
+</div>
+</div>
+
+<div id="outline-container-orgb099d7c" class="outline-2">
+<h2 id="orgb099d7c"><span class="section-number-2">8</span> Aufgabe (Einsatz von Hilfsfunktionen)</h2>
+<div class="outline-text-2" id="text-8">
+<p>
+Die folgenden Aufgaben sind unter Benutzung von Hilfsfunktionen zu
+lösen. Befolgen Sie unbedingt alle in der Vorlesung angegebenen Regeln:
+</p>
+<ol class="org-ol">
+<li>Schreiben Sie ein Programm, das das Volumen eines Zylinders zu
+berechnen erlaubt. Eingangsgrößen sind der Radius und die Höhe des Zylinders.</li>
+<li>Schreiben Sie ein Programm, das die Oberfläche eines Zylinders zu
+berechnen erlaubt. Eingangsgrößen sind der Radius und die Höhe des Zylinders.</li>
+<li>Schreiben Sie ein Programm, das die Oberfläche eines Rohrs zu
+berechnen erlaubt. Eingangsgrößen sind der Innenradius, die
+Wandstärke und die Länge des Rohrs.</li>
+</ol>
+<div class="org-src-container">
+<pre class="src src-scheme"><span style="color: #8D8D84;">;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;</span>
+<span style="color: #8D8D84;">;;;;; </span><span style="color: #8D8D84; font-style: italic;">L&#246;sung von Simon Gre&#223;mann, I18b ;;;;;</span>
+<span style="color: #8D8D84;">;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;</span>
+
+<span style="color: #8D8D84;">;</span><span style="color: #8D8D84; font-style: italic;">Aufgabe 8a</span>
+<span style="color: #707183;">(</span><span style="color: #0000FF;">define</span> <span style="color: #006699;">mein-pi</span> 3.14<span style="color: #707183;">)</span>
+<span style="color: #8D8D84;">;</span><span style="color: #8D8D84; font-style: italic;">Berechnet Kreisfl&#228;che aus Radius</span>
+<span style="color: #707183;">(</span><span style="color: #0000FF;">define</span> <span style="color: #006699;">Kreisflaeche</span>
+  <span style="color: #7388D6;">(</span><span style="color: #0000FF;">lambda</span> <span style="color: #909183;">[</span>radius<span style="color: #909183;">]</span>
+    <span style="color: #909183;">(</span>* radius radius mein-pi<span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
+<span style="color: #707183;">(</span>= <span style="color: #7388D6;">(</span>Kreisflaeche 1<span style="color: #7388D6;">)</span> 3.14<span style="color: #707183;">)</span>
+<span style="color: #707183;">(</span>= <span style="color: #7388D6;">(</span>Kreisflaeche 2<span style="color: #7388D6;">)</span> 12.56<span style="color: #707183;">)</span>
+<span style="color: #8D8D84;">;</span><span style="color: #8D8D84; font-style: italic;">Berechnet das Volumen eines Zylinders in Abh&#228;ngigkeit von Radius und H&#246;he</span>
+<span style="color: #707183;">(</span><span style="color: #0000FF;">define</span> <span style="color: #006699;">Zylindervolumen</span>
+  <span style="color: #7388D6;">(</span><span style="color: #0000FF;">lambda</span> <span style="color: #909183;">[</span>willi hoehe<span style="color: #909183;">]</span>
+    <span style="color: #909183;">(</span>* <span style="color: #709870;">(</span>Kreisflaeche willi<span style="color: #709870;">)</span> hoehe<span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
+<span style="color: #707183;">(</span>= <span style="color: #7388D6;">(</span>Zylindervolumen 1 1<span style="color: #7388D6;">)</span> 3.14<span style="color: #707183;">)</span>
+
+<span style="color: #8D8D84;">;</span><span style="color: #8D8D84; font-style: italic;">Aufgabe 8b</span>
+<span style="color: #8D8D84;">;</span><span style="color: #8D8D84; font-style: italic;">Berechnet den Umfang eines Kreises in Anh&#228;ngigkeit von Pi.</span>
+<span style="color: #707183;">(</span><span style="color: #0000FF;">define</span> <span style="color: #006699;">Kreisumfang</span>
+  <span style="color: #7388D6;">(</span><span style="color: #0000FF;">lambda</span> <span style="color: #909183;">[</span>radius<span style="color: #909183;">]</span>
+    <span style="color: #909183;">(</span>* 2 mein-pi radius<span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
+<span style="color: #707183;">(</span>= <span style="color: #7388D6;">(</span>Kreisumfang 1<span style="color: #7388D6;">)</span> 6.28<span style="color: #707183;">)</span>
+
+<span style="color: #8D8D84;">;</span><span style="color: #8D8D84; font-style: italic;">Berechnet die Mantelfl&#228;che eines Zylinders in Abh&#228;ngigkeit von Radius und H&#246;he</span>
+<span style="color: #707183;">(</span><span style="color: #0000FF;">define</span> <span style="color: #006699;">Mantelflaeche</span>
+  <span style="color: #7388D6;">(</span><span style="color: #0000FF;">lambda</span> <span style="color: #909183;">(</span>radius hoehe<span style="color: #909183;">)</span>
+    <span style="color: #909183;">(</span>* <span style="color: #709870;">(</span>Kreisumfang radius<span style="color: #709870;">)</span> hoehe<span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
+<span style="color: #707183;">(</span>= <span style="color: #7388D6;">(</span>Mantelflaeche 1 1<span style="color: #7388D6;">)</span> 6.28<span style="color: #707183;">)</span>
+<span style="color: #707183;">(</span>= <span style="color: #7388D6;">(</span>Mantelflaeche 2 1<span style="color: #7388D6;">)</span> 12.56<span style="color: #707183;">)</span>
+
+<span style="color: #8D8D84;">;</span><span style="color: #8D8D84; font-style: italic;">Berechnet die Oberfl&#228;che eines Zylinders in Abh&#228;ngigkeit von Radius und H&#246;he</span>
+<span style="color: #707183;">(</span><span style="color: #0000FF;">define</span> <span style="color: #006699;">Zylinderoberflaeche</span>
+  <span style="color: #7388D6;">(</span><span style="color: #0000FF;">lambda</span> <span style="color: #909183;">[</span>radius hoehe<span style="color: #909183;">]</span>
+    <span style="color: #909183;">(</span>+ <span style="color: #709870;">(</span>* 2 <span style="color: #907373;">(</span>Kreisflaeche radius<span style="color: #907373;">)</span><span style="color: #709870;">)</span> <span style="color: #709870;">(</span>Mantelflaeche radius hoehe<span style="color: #709870;">)</span><span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
+<span style="color: #707183;">(</span>= <span style="color: #7388D6;">(</span>Zylinderoberflaeche 1 1<span style="color: #7388D6;">)</span> 12.56<span style="color: #707183;">)</span>
+
+<span style="color: #8D8D84;">;</span><span style="color: #8D8D84; font-style: italic;">Aufgabe 8c</span>
+<span style="color: #8D8D84;">;</span><span style="color: #8D8D84; font-style: italic;">Berechnet die Fl&#228;che eines Kreisrings in Abh&#228;ngigkeit von innenradius und Breite</span>
+<span style="color: #707183;">(</span><span style="color: #0000FF;">define</span> <span style="color: #006699;">Kreisringflaeche</span>
+  <span style="color: #7388D6;">(</span><span style="color: #0000FF;">lambda</span> <span style="color: #909183;">[</span>innenradius breite<span style="color: #909183;">]</span>
+    <span style="color: #909183;">(</span>- <span style="color: #709870;">(</span>Kreisflaeche <span style="color: #907373;">(</span>+ innenradius breite<span style="color: #907373;">)</span><span style="color: #709870;">)</span> <span style="color: #709870;">(</span>Kreisflaeche innenradius<span style="color: #709870;">)</span><span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
+<span style="color: #707183;">(</span>= <span style="color: #7388D6;">(</span>Kreisringflaeche 1 1<span style="color: #7388D6;">)</span> 9.42<span style="color: #707183;">)</span>
+<span style="color: #8D8D84;">;</span><span style="color: #8D8D84; font-style: italic;">Berechnet die Oberfl&#228;che eines Rohrs in Abh&#228;ngigkeit von dessen Inneradius, Wandst&#228;rke und L&#228;nge.</span>
+<span style="color: #707183;">(</span><span style="color: #0000FF;">define</span> <span style="color: #006699;">Rohroberflaeche</span>
+  <span style="color: #7388D6;">(</span><span style="color: #0000FF;">lambda</span> <span style="color: #909183;">[</span>innenradius wandstaerke laenge<span style="color: #909183;">]</span>
+    <span style="color: #909183;">(</span>+ <span style="color: #709870;">(</span>Mantelflaeche <span style="color: #907373;">(</span>+ innenradius wandstaerke<span style="color: #907373;">)</span> laenge<span style="color: #709870;">)</span>
+       <span style="color: #709870;">(</span>Mantelflaeche innenradius laenge<span style="color: #709870;">)</span>
+       <span style="color: #709870;">(</span>* 2 <span style="color: #907373;">(</span>Kreisringflaeche innenradius &lt;dstaerke<span style="color: #907373;">)</span><span style="color: #709870;">)</span><span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
+<span style="color: #707183;">(</span>= <span style="color: #7388D6;">(</span>Rohroberflaeche 1 1 1<span style="color: #7388D6;">)</span> 37.68<span style="color: #707183;">)</span>
+</pre>
+</div>
+</div>
+</div>
 </div>
 <div id="postamble" class="status">
 <p class="author">Autor: Johannes Brauer</p>
-<p class="date">Created: 2019-01-17 Thu 18:40</p>
+<p class="date">Created: 2019-01-24 Thu 11:15</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
