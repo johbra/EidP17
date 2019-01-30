@@ -29,11 +29,11 @@
 <body>
 <div class="reveal">
 <div class="slides">
-<section id="sec-title-slide"><h1 class="title">Datenabstraktion</h1><h2 class="author">Johannes Brauer</h2><p class="date">Created: 2018-01-21 Sun 17:31</p>
+<section id="sec-title-slide"><h1 class="title">Datenabstraktion</h1><h2 class="author">Johannes Brauer</h2><p class="date">Created: 2019-01-30 Wed 21:37</p>
 </section>
 <section>
-<section id="slide-orgbd682cf">
-<h2 id="orgbd682cf">Zusammengesetzte Datenstrukturen</h2>
+<section id="orgdb7b189">
+<h2 id="orgdb7b189">Zusammengesetzte Datenstrukturen</h2>
 <ul>
 <li>Im Abschnitt über die Verwendung von Hilfsfunktionen wurde der
 Begriff der <i>prozeduralen Abstraktion</i> geprägt: Eine Funktion kann
@@ -46,8 +46,8 @@ primitiveren Datenobjekten konstruiert werden.</li>
 
 </ul>
 </section>
-<section id="slide-org042068a">
-<h3 id="org042068a">Datenabstraktion</h3>
+<section id="org68f958a">
+<h3 id="org68f958a">Datenabstraktion</h3>
 <ul>
 <li>Grundgedanke: Einzelne Dinge werden zu einem neuen Ganzen. 
 <ul>
@@ -61,8 +61,8 @@ primitiveren Datenobjekten konstruiert werden.</li>
 </ul>
 
 </section>
-<section id="slide-orgd417915">
-<h3 id="orgd417915">Beispiel: Rechnen mit Punkten in der Ebene</h3>
+<section id="orgba47786">
+<h3 id="orgba47786">Beispiel: Rechnen mit Punkten in der Ebene</h3>
 <ul>
 <li>In den bisherigen Beispielen wurden nur Funktionen betrachtet, die
 atomare Daten (Zahlen) verarbeiten.</li>
@@ -71,8 +71,8 @@ atomare Daten (Zahlen) verarbeiten.</li>
 </ul>
 
 </section>
-<section id="slide-orgfdbc79e">
-<h4 id="orgfdbc79e">Defintion von Punkten</h4>
+<section id="org5fadf3a">
+<h4 id="org5fadf3a">Defintion von Punkten</h4>
 <ul>
 <li>Ein Punkt in der Ebene wird durch seine x- und seine y-Koordinate
 bestimmt (kartesisches Koordinatensystem).</li>
@@ -82,7 +82,6 @@ hätten, die einen Punkt erzeugt, z. B. so:
 </p>
 <pre class="example">
 (make-point 3 4)
-
 </pre></li>
 <li><p>
 Nehmen wir weiter an, es gäbe zwei Funktionen, die die x- bzw. die
@@ -91,13 +90,12 @@ y-Koordinate eines Punkts zugänglich macht:
 <pre class="example">
 (point-x (make-point 3 4)) ;;=&gt; 3
 (point-y (make-point 3 4)) ;;=&gt; 4
-
 </pre></li>
 
 </ul>
 </section>
-<section id="slide-org9e36f42">
-<h4 id="org9e36f42">Punkt-Funktionen</h4>
+<section id="orga67ce7b">
+<h4 id="orga67ce7b">Punkt-Funktionen</h4>
 <ul>
 <li><p>
 Unter diesen Voraussetzungen könnte eine Funktion zur Addition
@@ -109,7 +107,7 @@ zweier Punkte wie folgt definiert werden:
     <span style="color: #7388D6;">(</span><span style="color: #0000FF;">lambda</span> <span style="color: #909183;">[</span>p1 p2<span style="color: #909183;">]</span>
       <span style="color: #909183;">(</span>make-point
         <span style="color: #709870;">(</span>+ <span style="color: #907373;">(</span>point-x p1<span style="color: #907373;">)</span> <span style="color: #907373;">(</span>point-x p2<span style="color: #907373;">)</span><span style="color: #709870;">)</span>
-        <span style="color: #709870;">(</span>+ <span style="color: #907373;">(</span>point-y p1<span style="color: #907373;">)</span> <span style="color: #907373;">(</span>point-y p2<span style="color: #907373;">)</span><span style="color: #709870;">)</span><span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span></pre>
+        <span style="color: #709870;">(</span>+ <span style="color: #907373;">(</span>point-y p1<span style="color: #907373;">)</span> <span style="color: #907373;">(</span>point-y p2<span style="color: #907373;">)</span><span style="color: #709870;">)</span><span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
 </pre>
 </div></li>
 
@@ -132,7 +130,7 @@ Weitere <code>point</code>-Funktionen könnten sein:
     <span style="color: #7388D6;">(</span><span style="color: #0000FF;">lambda</span> <span style="color: #909183;">[</span>p<span style="color: #909183;">]</span>
       <span style="color: #909183;">(</span>sqrt
        <span style="color: #709870;">(</span>+ <span style="color: #907373;">(</span>sqr <span style="color: #6276BA;">(</span>point-x p<span style="color: #6276BA;">)</span><span style="color: #907373;">)</span>
-          <span style="color: #907373;">(</span>sqr <span style="color: #6276BA;">(</span>point-y p<span style="color: #6276BA;">)</span><span style="color: #907373;">)</span><span style="color: #709870;">)</span><span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span></pre>
+          <span style="color: #907373;">(</span>sqr <span style="color: #6276BA;">(</span>point-y p<span style="color: #6276BA;">)</span><span style="color: #907373;">)</span><span style="color: #709870;">)</span><span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
 </pre>
 </div></li>
 <li>Diese (und weitere) Funktionen können programmiert werden, ohne
@@ -145,8 +143,8 @@ zu haben und</li>
 
 </ul>
 </section>
-<section id="slide-org0d063ea">
-<h4 id="org0d063ea">Implementierung der Datenstruktur durch <code>pairs</code></h4>
+<section id="orgad6897f">
+<h4 id="orgad6897f">Implementierung der Datenstruktur durch <code>pairs</code></h4>
 <p>
 <b>Anmerkung:</b> Die hier gezeigte Implementierung funktioniert nicht in
 den Lehrsprachen von DrRacket.
@@ -166,13 +164,12 @@ beiden Funktionen <code>car</code> und <code>cdr</code>:
 <pre class="example">
 (car (cons 1 2)) ;;=&gt; 1
 (cdr (cons 1 2)) ;;=&gt; 2
-
 </pre></li>
 
 </ul>
 </section>
-<section id="slide-orgf0dec8e">
-<h4 id="orgf0dec8e">Die Funktionen <code>make-point</code>, <code>point-x</code> und <code>point-y</code></h4>
+<section id="org078c02f">
+<h4 id="org078c02f">Die Funktionen <code>make-point</code>, <code>point-x</code> und <code>point-y</code></h4>
 <ul>
 <li><code>make-point</code> heißt auch Konstruktionsfunktion.</li>
 <li><code>point-x</code> und <code>point-y</code> nennt man auch Selektionsfunktionen.</li>
@@ -187,20 +184,20 @@ beiden Funktionen <code>car</code> und <code>cdr</code>:
    <span style="color: #7388D6;">(</span><span style="color: #0000FF;">lambda</span> <span style="color: #909183;">[</span>p<span style="color: #909183;">]</span> <span style="color: #909183;">(</span>car p<span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
 
  <span style="color: #707183;">(</span><span style="color: #0000FF;">define</span> <span style="color: #006699;">point-y</span>
-   <span style="color: #7388D6;">(</span><span style="color: #0000FF;">lambda</span> <span style="color: #909183;">[</span>p<span style="color: #909183;">]</span> <span style="color: #909183;">(</span>cdr p<span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span></pre>
+   <span style="color: #7388D6;">(</span><span style="color: #0000FF;">lambda</span> <span style="color: #909183;">[</span>p<span style="color: #909183;">]</span> <span style="color: #909183;">(</span>cdr p<span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
 </pre>
 </div>
 </section>
-<section id="slide-org3372ed3">
-<h4 id="org3372ed3">Abstraktionsbarrieren</h4>
+<section id="org375022c">
+<h4 id="org375022c">Abstraktionsbarrieren</h4>
 
 <div class="figure">
 <p><img src="./Abbildungen/barrieren.png" alt="barrieren.png" width="400px" />
 </p>
 </div>
 </section>
-<section id="slide-org322d127">
-<h4 id="org322d127">Nutzen der Abstraktion</h4>
+<section id="org45554d4">
+<h4 id="org45554d4">Nutzen der Abstraktion</h4>
 <ul>
 <li>Programm leichter pflegbar</li>
 <li>Komplexe Datenstrukturen können auf verschieden Arten unter
@@ -209,14 +206,14 @@ primitiven Strukturen implementiert werden.</li>
 <li>Die Implementierung mithilfe von <code>pairs</code> erfordert allerdings für
 jede neu zu definierende Datenstruktur die erneute Implementierung
 von Konstruktions- und Selektionsfunktionen. („boiler plate code”)</li>
-<li>Deshalb sehen Programmiersprache häufig komfortablere Möglichkeiten
+<li>Deshalb sehen Programmiersprachen häufig komfortablere Möglichkeiten
 vor, Datenstrukturen zu definieren.</li>
 
 </ul>
 
 </section>
-<section id="slide-orgd1a29d9">
-<h3 id="orgd1a29d9">Definition von Strukturen in Racket</h3>
+<section id="orga7b1d9f">
+<h3 id="orga7b1d9f">Definition von Strukturen in Racket</h3>
 <ul>
 <li>Sprache: DrRacket-Lehrsprache „Zwischenstufe mit lambda”</li>
 <li>Für die Definition von Strukturen (Verbünde, records) steht die
@@ -227,7 +224,6 @@ könnten wie folgt definiert werden:
 </p>
 <pre class="example">
 (define-struct point [x y])
-
 </pre></li>
 <li>Mit dieser Definition stehen automatisch die folgenden Funktionen
 bereit:</li>
@@ -248,8 +244,8 @@ ist.</li>
 
 </ul>
 </section>
-<section id="slide-org9d2360d">
-<h4 id="org9d2360d">Benutzungsbeispiel in DrRacket</h4>
+<section id="org952364f">
+<h4 id="org952364f">Benutzungsbeispiel in DrRacket</h4>
 <pre class="example">
 Willkommen bei DrRacket, Version 6.7 [3m].
 Sprache: Zwischenstufe mit lambda; memory limit: 128 MB.
@@ -268,10 +264,10 @@ Sprache: Zwischenstufe mit lambda; memory limit: 128 MB.
 &gt; 
 </pre>
 </section>
-<section id="slide-orge6409a1">
-<h4 id="orge6409a1">Weiterverwendung von <code>add-point</code> &#x2026;</h4>
+<section id="orgf96b6b9">
+<h4 id="orgf96b6b9">Weiterverwendung von <code>add-point</code> &#x2026;</h4>
 <p>
-Die in Abschnitt <a href="#/slide-org9e36f42">Punkt-Funktionen</a> eingeführten Funktionen
+Die in Abschnitt <a href="#/slide-orga67ce7b">Punkt-Funktionen</a> eingeführten Funktionen
 </p>
 
 <div class="org-src-container">
@@ -290,15 +286,15 @@ Die in Abschnitt <a href="#/slide-org9e36f42">Punkt-Funktionen</a> eingeführten
     <span style="color: #7388D6;">(</span><span style="color: #0000FF;">lambda</span> <span style="color: #909183;">[</span>p<span style="color: #909183;">]</span>
       <span style="color: #909183;">(</span>sqrt
        <span style="color: #709870;">(</span>+ <span style="color: #907373;">(</span>sqr <span style="color: #6276BA;">(</span>point-x p<span style="color: #6276BA;">)</span><span style="color: #907373;">)</span>
-          <span style="color: #907373;">(</span>sqr <span style="color: #6276BA;">(</span>point-y p<span style="color: #6276BA;">)</span><span style="color: #907373;">)</span><span style="color: #709870;">)</span><span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span></pre>
+          <span style="color: #907373;">(</span>sqr <span style="color: #6276BA;">(</span>point-y p<span style="color: #6276BA;">)</span><span style="color: #907373;">)</span><span style="color: #709870;">)</span><span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
 </pre>
 </div>
 <p>
 können unverändert bleiben.
 </p>
 </section>
-<section id="slide-org80e5f31">
-<h4 id="org80e5f31">Regel (7) für das Aufschreiben von Strukturdefinitionen</h4>
+<section id="orga9e748e">
+<h4 id="orga9e748e">Regel (7) für das Aufschreiben von Strukturdefinitionen</h4>
 <ul>
 <li>Für den Entwurf einer zusammengesetzten Datenstruktur ist es
 hilfreich, ihre Zusammensetzung durch einen Kommentar genau zu beschreiben.</li>
@@ -312,7 +308,6 @@ Beispiel:
 ;; wobei a und b Zahlen sind, die die Seitenlängen eines Rechecks
 ;; beschreiben.
 (define-struct rectangle [a b])
-
 </pre></li>
 
 </ul>
@@ -333,8 +328,8 @@ Datenstruktur besteht.</li>
 
 </ol>
 </section>
-<section id="slide-orge5f0f1f">
-<h3 id="orge5f0f1f">Entwicklungsmethodik für strukturverarbeitende Funktionen</h3>
+<section id="orgca2263e">
+<h3 id="orgca2263e">Entwicklungsmethodik für strukturverarbeitende Funktionen</h3>
 <p>
 <b>Regel 8 (strukturverarbeitende Funktionen)</b>
 </p>
@@ -351,8 +346,8 @@ nimm den Aufruf des Konstruktors in die Schablone mit auf.</li>
 </ol>
 
 </section>
-<section id="slide-org29fdf78">
-<h4 id="org29fdf78">Anwendungsbeispiele für Regel 8</h4>
+<section id="org3bcb93e">
+<h4 id="org3bcb93e">Anwendungsbeispiele für Regel 8</h4>
 <p>
 Für die Funktion <code>add-point</code> ergäbe sich damit die folgenden Schablone:
 </p>
@@ -363,7 +358,7 @@ Für die Funktion <code>add-point</code> ergäbe sich damit die folgenden Schabl
       <span style="color: #7388D6;">(</span><span style="color: #0000FF;">lambda</span> <span style="color: #909183;">[</span>p1 p2<span style="color: #909183;">]</span>
          <span style="color: #909183;">(</span>make-point
             <span style="color: #709870;">(</span>... <span style="color: #907373;">(</span>point-x p1<span style="color: #907373;">)</span> <span style="color: #907373;">(</span>point-x p2<span style="color: #907373;">)</span>...
-             ... <span style="color: #907373;">(</span>point-y p1<span style="color: #907373;">)</span> <span style="color: #907373;">(</span>point-y p2<span style="color: #907373;">)</span>...<span style="color: #709870;">)</span><span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span></pre>
+             ... <span style="color: #907373;">(</span>point-y p1<span style="color: #907373;">)</span> <span style="color: #907373;">(</span>point-y p2<span style="color: #907373;">)</span>...<span style="color: #709870;">)</span><span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
 </pre>
 </div>
 
@@ -378,18 +373,18 @@ Für die Funktion <code>equal-point?</code> ergäbe sich eine Schablone ohne Kon
       <span style="color: #7388D6;">(</span><span style="color: #0000FF;">lambda</span> <span style="color: #909183;">[</span>p1 p2<span style="color: #909183;">]</span>
          <span style="color: #909183;">(</span>...
             <span style="color: #709870;">(</span>... <span style="color: #907373;">(</span>point-x p1<span style="color: #907373;">)</span> <span style="color: #907373;">(</span>point-x p2<span style="color: #907373;">)</span>...
-             ... <span style="color: #907373;">(</span>point-y p1<span style="color: #907373;">)</span> <span style="color: #907373;">(</span>point-y p2<span style="color: #907373;">)</span>...<span style="color: #709870;">)</span><span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span></pre>
+             ... <span style="color: #907373;">(</span>point-y p1<span style="color: #907373;">)</span> <span style="color: #907373;">(</span>point-y p2<span style="color: #907373;">)</span>...<span style="color: #709870;">)</span><span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
 </pre>
 </div>
 
 </section>
-<section id="slide-orgd7827ca">
-<h4 id="orgd7827ca">Regel-konforme Aufschreibung der Funktionen <code>equal-point?</code> und <code>add-point</code></h4>
-<div class="outline-text-4" id="text-orgd7827ca">
+<section id="org5496678">
+<h4 id="org5496678">Regel-konforme Aufschreibung der Funktionen <code>equal-point?</code> und <code>add-point</code></h4>
+<div class="outline-text-4" id="text-org5496678">
 </div>
 </section>
-<section id="slide-orge7ae6ec">
-<h5 id="orge7ae6ec"><code>equal-point?</code></h5>
+<section id="org9108cb0">
+<h5 id="org9108cb0"><code>equal-point?</code></h5>
 <div class="org-src-container">
 
 <pre  class="src src-scheme"><span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">ein Punkt ist ein Wert</span>
@@ -407,12 +402,12 @@ Für die Funktion <code>equal-point?</code> ergäbe sich eine Schablone ohne Kon
      <span style="color: #709870;">(</span>= <span style="color: #907373;">(</span>point-y p1<span style="color: #907373;">)</span> <span style="color: #907373;">(</span>point-y p2<span style="color: #907373;">)</span><span style="color: #709870;">)</span><span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
 <span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">Beispielanwendungen:</span>
 <span style="color: #707183;">(</span>not <span style="color: #7388D6;">(</span>equal-point? <span style="color: #909183;">(</span>make-point 2 3<span style="color: #909183;">)</span> <span style="color: #909183;">(</span>make-point 5 1<span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
-<span style="color: #707183;">(</span>equal-point? <span style="color: #7388D6;">(</span>make-point 2 3<span style="color: #7388D6;">)</span> <span style="color: #7388D6;">(</span>make-point 2 3<span style="color: #7388D6;">)</span><span style="color: #707183;">)</span></pre>
+<span style="color: #707183;">(</span>equal-point? <span style="color: #7388D6;">(</span>make-point 2 3<span style="color: #7388D6;">)</span> <span style="color: #7388D6;">(</span>make-point 2 3<span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
 </pre>
 </div>
 </section>
-<section id="slide-org9aef096">
-<h5 id="org9aef096"><code>add-point</code></h5>
+<section id="orgbe23bfb">
+<h5 id="orgbe23bfb"><code>add-point</code></h5>
 <div class="org-src-container">
 
 <pre  class="src src-scheme"><span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">Berechnung eines neuen Punktes durch die Addition zweier Punkte</span>
@@ -422,19 +417,19 @@ Für die Funktion <code>equal-point?</code> ergäbe sich eine Schablone ohne Kon
      <span style="color: #709870;">(</span>+ <span style="color: #907373;">(</span>point-x p1<span style="color: #907373;">)</span> <span style="color: #907373;">(</span>point-x p2<span style="color: #907373;">)</span><span style="color: #709870;">)</span>
      <span style="color: #709870;">(</span>+ <span style="color: #907373;">(</span>point-y p1<span style="color: #907373;">)</span> <span style="color: #907373;">(</span>point-y p2<span style="color: #907373;">)</span><span style="color: #709870;">)</span><span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
 <span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">Beispielanwendungen:</span>
-<span style="color: #707183;">(</span>equal-point? <span style="color: #7388D6;">(</span>add-point <span style="color: #909183;">(</span>make-point 2 3<span style="color: #909183;">)</span> <span style="color: #909183;">(</span>make-point 5 1<span style="color: #909183;">)</span><span style="color: #7388D6;">)</span> <span style="color: #7388D6;">(</span>make-point 7 4<span style="color: #7388D6;">)</span><span style="color: #707183;">)</span></pre>
+<span style="color: #707183;">(</span>equal-point? <span style="color: #7388D6;">(</span>add-point <span style="color: #909183;">(</span>make-point 2 3<span style="color: #909183;">)</span> <span style="color: #909183;">(</span>make-point 5 1<span style="color: #909183;">)</span><span style="color: #7388D6;">)</span> <span style="color: #7388D6;">(</span>make-point 7 4<span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
 </pre>
 </div>
 </section>
 </section>
 <section>
-<section id="slide-org22b50aa">
-<h2 id="org22b50aa">Formulierung von Tests</h2>
-<div class="outline-text-2" id="text-org22b50aa">
+<section id="org69c3321">
+<h2 id="org69c3321">Formulierung von Tests</h2>
+<div class="outline-text-2" id="text-org69c3321">
 </div>
 </section>
-<section id="slide-orge8b84ed">
-<h3 id="orge8b84ed">Tests statt Beispielanwendungen</h3>
+<section id="org57e79a1">
+<h3 id="org57e79a1">Tests statt Beispielanwendungen</h3>
 <ul>
 <li>Man beachte, dass Formulierung der Beispielanwendungen für die
 Funktion <code>add-point</code> die Existenz der Funktion <code>equal-point?</code> voraussetzt.</li>
@@ -447,8 +442,8 @@ Beispielanwendungen zu benutzen.</li>
 
 </ul>
 </section>
-<section id="slide-orgc309c64">
-<h3 id="orgc309c64">Die Funktion <code>add-point</code> mit Tests</h3>
+<section id="orgbaf1db3">
+<h3 id="orgbaf1db3">Die Funktion <code>add-point</code> mit Tests</h3>
 <ul>
 <li>Statt des selbst definierten Gleichheitsprädikats <code>equal-point?</code>
 verwenden wir für den Test die Standard-Testprozedur <code>check-expect</code>.</li>
@@ -475,7 +470,7 @@ verwenden wir für den Test die Standard-Testprozedur <code>check-expect</code>.
      <span style="color: #709870;">(</span>+ <span style="color: #907373;">(</span>point-x p1<span style="color: #907373;">)</span> <span style="color: #907373;">(</span>point-x p2<span style="color: #907373;">)</span><span style="color: #709870;">)</span>
      <span style="color: #709870;">(</span>+ <span style="color: #907373;">(</span>point-y p1<span style="color: #907373;">)</span> <span style="color: #907373;">(</span>point-y p2<span style="color: #907373;">)</span><span style="color: #709870;">)</span><span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
 <span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">Tests:</span>
-<span style="color: #707183;">(</span>check-expect <span style="color: #7388D6;">(</span>add-point <span style="color: #909183;">(</span>make-point 2 3<span style="color: #909183;">)</span> <span style="color: #909183;">(</span>make-point 5 1<span style="color: #909183;">)</span><span style="color: #7388D6;">)</span> <span style="color: #7388D6;">(</span>make-point 7 4<span style="color: #7388D6;">)</span><span style="color: #707183;">)</span></pre>
+<span style="color: #707183;">(</span>check-expect <span style="color: #7388D6;">(</span>add-point <span style="color: #909183;">(</span>make-point 2 3<span style="color: #909183;">)</span> <span style="color: #909183;">(</span>make-point 5 1<span style="color: #909183;">)</span><span style="color: #7388D6;">)</span> <span style="color: #7388D6;">(</span>make-point 7 4<span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
 </pre>
 </div>
 </section>
@@ -492,8 +487,8 @@ Der eine Test ist bestanden!
 &gt; 
 </pre>
 </section>
-<section id="slide-org223b8bc">
-<h3 id="org223b8bc">Testfälle in Racket</h3>
+<section id="orgbe58801">
+<h3 id="orgbe58801">Testfälle in Racket</h3>
 <dl>
 <dt>(check-expect expr expr)</dt><dd>Dieser Testfall überprüft, ob der erste
 expr den gleichen Wert hat wie der zweite expr, wobei das zweite
@@ -521,8 +516,8 @@ entspricht, die der Wert des zweiten expr ist.</dd>
 </dl>
 
 </section>
-<section id="slide-orgbb22674">
-<h3 id="orgbb22674">Modifikation der Regel 3</h3>
+<section id="org2fa45b6">
+<h3 id="org2fa45b6">Modifikation der Regel 3</h3>
 <p>
 <b>Regel 3neu</b>
 </p>
@@ -538,8 +533,8 @@ zu schreiben.
 </p>
 
 </section>
-<section id="slide-orgea3f12a">
-<h4 id="orgea3f12a">Anwendung auf die Funktion <code>distance-to-0</code></h4>
+<section id="orgd948e38">
+<h4 id="orgd948e38">Anwendung auf die Funktion <code>distance-to-0</code></h4>
 <div class="org-src-container">
 
 <pre  class="src src-scheme"><span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">ein Punkt ist ein Wert</span>
@@ -556,7 +551,7 @@ zu schreiben.
   <span style="color: #7388D6;">(</span><span style="color: #0000FF;">lambda</span> <span style="color: #909183;">[</span>p<span style="color: #909183;">]</span>
     <span style="color: #909183;">(</span>sqrt
      <span style="color: #709870;">(</span>+ <span style="color: #907373;">(</span>sqr <span style="color: #6276BA;">(</span>point-x p<span style="color: #6276BA;">)</span><span style="color: #907373;">)</span>
-        <span style="color: #907373;">(</span>sqr <span style="color: #6276BA;">(</span>point-y p<span style="color: #6276BA;">)</span><span style="color: #907373;">)</span><span style="color: #709870;">)</span><span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span></pre>
+        <span style="color: #907373;">(</span>sqr <span style="color: #6276BA;">(</span>point-y p<span style="color: #6276BA;">)</span><span style="color: #907373;">)</span><span style="color: #709870;">)</span><span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
 </pre>
 </div>
 <p>
@@ -570,13 +565,13 @@ zu schreiben.
 </section>
 </section>
 <section>
-<section id="slide-orgc573616">
-<h2 id="orgc573616">Gemischte Daten</h2>
-<div class="outline-text-2" id="text-orgc573616">
+<section id="orgf422fa5">
+<h2 id="orgf422fa5">Gemischte Daten</h2>
+<div class="outline-text-2" id="text-orgf422fa5">
 </div>
 </section>
-<section id="slide-org1d6a3fc">
-<h3 id="org1d6a3fc">Datenabstraktion durch Generalisierung</h3>
+<section id="orgcb17623">
+<h3 id="orgcb17623">Datenabstraktion durch Generalisierung</h3>
 <ul>
 <li>Funktionen sollen verschiedene &#x2013; aber verwandte &#x2013; Datenstrukturen
 verarbeiten.</li>
@@ -599,8 +594,8 @@ Datenstrukturdefinitionen für Rechtecke und Kreise erforderlich.</li>
 </ul>
 
 </section>
-<section id="slide-org196c3e1">
-<h3 id="org196c3e1">Definition von <code>rectangle</code></h3>
+<section id="org23675ed">
+<h3 id="org23675ed">Definition von <code>rectangle</code></h3>
 <div class="org-src-container">
 
 <pre  class="src src-scheme"><span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">Eine Rechteck ist ein Wert </span>
@@ -614,13 +609,13 @@ Datenstrukturdefinitionen für Rechtecke und Kreise erforderlich.</li>
 <span style="color: #707183;">(</span>check-within <span style="color: #7388D6;">(</span>rect-area <span style="color: #909183;">(</span>make-rectangle 2.5 3.0<span style="color: #909183;">)</span><span style="color: #7388D6;">)</span> 7.5 0.01<span style="color: #707183;">)</span>
 <span style="color: #707183;">(</span><span style="color: #0000FF;">define</span> <span style="color: #006699;">rect-area</span>
   <span style="color: #7388D6;">(</span><span style="color: #0000FF;">lambda</span> <span style="color: #909183;">[</span>r<span style="color: #909183;">]</span>
-    <span style="color: #909183;">(</span>* <span style="color: #709870;">(</span>rectangle-h r<span style="color: #709870;">)</span> <span style="color: #709870;">(</span>rectangle-w r<span style="color: #709870;">)</span><span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span></pre>
+    <span style="color: #909183;">(</span>* <span style="color: #709870;">(</span>rectangle-h r<span style="color: #709870;">)</span> <span style="color: #709870;">(</span>rectangle-w r<span style="color: #709870;">)</span><span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
 </pre>
 </div>
 
 </section>
-<section id="slide-orgdc774f4">
-<h3 id="orgdc774f4">Definition von <code>circle</code></h3>
+<section id="orga439922">
+<h3 id="orga439922">Definition von <code>circle</code></h3>
 <div class="org-src-container">
 
 <pre  class="src src-scheme"><span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">Ein Kreis ist ein Wert</span>
@@ -632,13 +627,13 @@ Datenstrukturdefinitionen für Rechtecke und Kreise erforderlich.</li>
 <span style="color: #707183;">(</span>check-within <span style="color: #7388D6;">(</span>circle-area <span style="color: #909183;">(</span>make-circle 1.0<span style="color: #909183;">)</span><span style="color: #7388D6;">)</span> pi 0.01<span style="color: #707183;">)</span>
 <span style="color: #707183;">(</span><span style="color: #0000FF;">define</span> <span style="color: #006699;">circle-area</span>
   <span style="color: #7388D6;">(</span><span style="color: #0000FF;">lambda</span> <span style="color: #909183;">[</span>r<span style="color: #909183;">]</span>
-    <span style="color: #909183;">(</span>* <span style="color: #709870;">(</span>circle-r r<span style="color: #709870;">)</span> <span style="color: #709870;">(</span>circle-r r<span style="color: #709870;">)</span> pi<span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span></pre>
+    <span style="color: #909183;">(</span>* <span style="color: #709870;">(</span>circle-r r<span style="color: #709870;">)</span> <span style="color: #709870;">(</span>circle-r r<span style="color: #709870;">)</span> pi<span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
 </pre>
 </div>
 
 </section>
-<section id="slide-org9896d77">
-<h3 id="org9896d77">Flächeninhalt von Figuren</h3>
+<section id="org0f13c3a">
+<h3 id="org0f13c3a">Flächeninhalt von Figuren</h3>
 <div class="org-src-container">
 
 <pre  class="src src-scheme"><span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">Eine Figur ist entweder</span>
@@ -653,13 +648,13 @@ Datenstrukturdefinitionen für Rechtecke und Kreise erforderlich.</li>
   <span style="color: #7388D6;">(</span><span style="color: #0000FF;">lambda</span> <span style="color: #909183;">[</span>s<span style="color: #909183;">]</span>
     <span style="color: #909183;">(</span><span style="color: #0000FF;">cond</span>
       <span style="color: #709870;">[</span><span style="color: #907373;">(</span>circle? s<span style="color: #907373;">)</span>    <span style="color: #907373;">(</span>circle-area s<span style="color: #907373;">)</span><span style="color: #709870;">]</span>
-      <span style="color: #709870;">[</span><span style="color: #907373;">(</span>rectangle? s<span style="color: #907373;">)</span> <span style="color: #907373;">(</span>rect-area s<span style="color: #907373;">)</span><span style="color: #709870;">]</span><span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span></pre>
+      <span style="color: #709870;">[</span><span style="color: #907373;">(</span>rectangle? s<span style="color: #907373;">)</span> <span style="color: #907373;">(</span>rect-area s<span style="color: #907373;">)</span><span style="color: #709870;">]</span><span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
 </pre>
 </div>
 
 </section>
-<section id="slide-orgaf787bd">
-<h3 id="orgaf787bd">Entwurfsmethodik für Funktionen zur Verarbeitung gemischter Daten</h3>
+<section id="org680f5aa">
+<h3 id="org680f5aa">Entwurfsmethodik für Funktionen zur Verarbeitung gemischter Daten</h3>
 <p>
 <b>Regel 9 (Funktionen für gemischte Daten)</b>  
 </p>
@@ -705,15 +700,15 @@ sich für eine \(s\) -verarbeitende Funktion die folgende Funktionsschablone:
 </section>
 </section>
 <section>
-<section id="slide-orgd98dcef">
-<h2 id="orgd98dcef">Exkurs: Algebraische Datentypen</h2>
-<div class="outline-text-2" id="text-orgd98dcef">
+<section id="org6c091bd">
+<h2 id="org6c091bd">Exkurs: Algebraische Datentypen</h2>
+<div class="outline-text-2" id="text-org6c091bd">
 </div>
 </section>
-<section id="slide-org8ad8a8e">
-<h3 id="org8ad8a8e">Produkttypen</h3>
+<section id="org47e70b0">
+<h3 id="org47e70b0">Produkttypen</h3>
 <ul>
-<li>Die in Kapitel <a href="#/slide-orgd1a29d9">Definition von Strukturen in Racket</a> erläuterten Strukturdefinitionen
+<li>Die in Kapitel <a href="#/slide-orga7b1d9f">Definition von Strukturen in Racket</a> erläuterten Strukturdefinitionen
 nennt man oft auch <i>Produkte</i>.</li>
 <li>Die Menge aller Exemplare der Strukturdefinition <code>point</code>
 kann man als Teilmenge des kartesischen Produkts 
@@ -723,11 +718,11 @@ angesehen werden.</li>
 
 </ul>
 </section>
-<section id="slide-orgfebaf05">
-<h3 id="orgfebaf05">Summentypen</h3>
+<section id="org540d7c7">
+<h3 id="org540d7c7">Summentypen</h3>
 <ul>
 <li><p>
-Die in Kapitel <a href="#/slide-orgc573616">Gemischte Daten</a> eingeführten varianten Typen
+Die in Kapitel <a href="#/slide-orgf422fa5">Gemischte Daten</a> eingeführten varianten Typen
 </p>
 <blockquote nil>
 <p>
@@ -746,8 +741,8 @@ bezeichnet.</li>
 </ul>
 
 </section>
-<section id="slide-org9784d21">
-<h3 id="org9784d21">Haskell</h3>
+<section id="org1651ef8">
+<h3 id="org1651ef8">Haskell</h3>
 <p>
 Der Begriff der algebraischen Datentypen ist inbesondere im Kontext
 der Programmiersprache <a href="https://www.haskell.org">Haskell</a> sehr gebräuchlich.
