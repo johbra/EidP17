@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="de" xml:lang="de">
 <head>
-<!-- 2019-01-21 Mon 17:47 -->
+<!-- 2019-12-31 Tue 22:58 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Auswertungsregeln</title>
@@ -210,7 +210,7 @@
 @licstart  The following is the entire license notice for the
 JavaScript code in this tag.
 
-Copyright (C) 2012-2018 Free Software Foundation, Inc.
+Copyright (C) 2012-2019 Free Software Foundation, Inc.
 
 The JavaScript code in this tag is free software: you can
 redistribute it and/or modify it under the terms of the GNU
@@ -281,9 +281,9 @@ for the JavaScript code in this tag.
 <span class="subtitle">Einführung in die Programmierung</span>
 </h1>
 
-<div id="outline-container-orgbbabc53" class="outline-2">
-<h2 id="orgbbabc53">Syntax und Semantik einer mathematischen Formelsprache</h2>
-<div class="outline-text-2" id="text-orgbbabc53">
+<div id="outline-container-org1e8b3d6" class="outline-2">
+<h2 id="org1e8b3d6">Syntax und Semantik einer mathematischen Formelsprache</h2>
+<div class="outline-text-2" id="text-org1e8b3d6">
 <p>
 Die Auswertung von Ausdrücken in <i>Racket</i> basiert auf der Anwendung
 einfacher äquivalenter Umformungen, wie sie aus der Schulmathematik
@@ -305,9 +305,9 @@ auch als die <i>Syntax</i> der Sprache.
 </p>
 </div>
 
-<div id="outline-container-org11615f3" class="outline-3">
-<h3 id="org11615f3">Syntax der mathematischen Formelsprache</h3>
-<div class="outline-text-3" id="text-org11615f3">
+<div id="outline-container-org4001839" class="outline-3">
+<h3 id="org4001839">Syntax der mathematischen Formelsprache</h3>
+<div class="outline-text-3" id="text-org4001839">
 <p>
 Sie legt z. B. fest, dass
 </p>
@@ -341,9 +341,9 @@ Sprache.
 </div>
 </div>
 
-<div id="outline-container-orgd104dee" class="outline-3">
-<h3 id="orgd104dee">Semantik der mathematischen Formelsprache</h3>
-<div class="outline-text-3" id="text-orgd104dee">
+<div id="outline-container-org25edd46" class="outline-3">
+<h3 id="org25edd46">Semantik der mathematischen Formelsprache</h3>
+<div class="outline-text-3" id="text-org25edd46">
 <p>
 Sie bestimmt z. B., dass
 </p>
@@ -423,9 +423,9 @@ bf(3,4) & = & 3\cdot 3 + 2\cdot 3\cdot 4 + 4\cdot 4 \\
 </div>
 </div>
 
-<div id="outline-container-org093b066" class="outline-2">
-<h2 id="org093b066">Syntax und Semantik von <i>Racket</i> (vorläufig)</h2>
-<div class="outline-text-2" id="text-org093b066">
+<div id="outline-container-org3df81fb" class="outline-2">
+<h2 id="org3df81fb">Syntax und Semantik von <i>Racket</i> (vorläufig)</h2>
+<div class="outline-text-2" id="text-org3df81fb">
 <p>
 Funktionale Programmiersprachen zeichnen sich u. a. dadurch aus, dass
 sie sich hinsichtlich ihrer Semantik sehr strikt an der Mathematik
@@ -443,13 +443,9 @@ bf(a,b) = a\cdot a + 2ab + b\cdot b
 \end{equation}
 <p>
 umschreiben. Wollen wir in <i>Racket</i> eine Funktion mit Namen <code>bf</code> und
-den Parametern <code>a</code> und <code>b</code> definieren, sieht das so aus:
+den Parametern <code>a</code> und <code>b</code> definieren, sieht das so aus:<br />
+<code class="src src-scheme"><span style="color: #707183;">(</span><span style="color: #0000FF;">define</span> <span style="color: #006699;">bf</span> <span style="color: #7388D6;">(</span><span style="color: #0000FF;">lambda</span> <span style="color: #909183;">[</span>a b<span style="color: #909183;">]</span> ... <span style="color: #7388D6;">)</span><span style="color: #707183;">)</span></code>
 </p>
-<pre class="example">
-(define bf
-  (lambda [a b] ... ))
-</pre>
-
 
 <p>
 Wollen wir nun die rechte Seite der Funktionsdefinition nach <i>Racket</i>
@@ -485,36 +481,26 @@ mathematischen Formelsprache können durch die Anwendung einfacher
 Regeln Ausdrücke in <i>Racket</i> in einfachere Ausdrücke äquivalent
 umgeformt werden. 
 Die Frage lautet also z. B., wie aus der
-Funktionsanwendung 
-</p>
-<pre class="example">
-(bf 3 4)
-</pre>
-
-<p>
+Funktionsanwendung<br />
+<code class="src src-scheme"> <span style="color: #707183;">(</span>bf 3 4<span style="color: #707183;">)</span></code><br />
 das Resultat <code>49</code> entsteht.
 </p>
 
 <p>
 Betrachten wir dazu eine verallgemeinerte Definition einer
 Funktion <code>f</code> mit den formalen Parametern <code>x-1 ... x-n</code> und der
-Berechnungsvorschrift <code>exp</code>:
+Berechnungsvorschrift <code>exp</code>:<br />
+<code class="src src-scheme"> <span style="color: #707183;">(</span><span style="color: #0000FF;">define</span> <span style="color: #006699;">f</span> <span style="color: #7388D6;">(</span><span style="color: #0000FF;">lambda</span> <span style="color: #909183;">[</span>x-1 ... x-n<span style="color: #909183;">]</span> exp<span style="color: #7388D6;">)</span><span style="color: #707183;">)</span></code>
 </p>
-<pre class="example">
-(define f
-  (lambda [x-1 ... x-n]
-    exp))
-</pre>
-
 
 <p>
 Für die Anwendung der Funktion gilt dann die folgende Ersetzungsregel.
 </p>
 </div>
 
-<div id="outline-container-orgbf071a7" class="outline-3">
-<h3 id="orgbf071a7">Ersetzungsmodell für Funktionsanwendungen:</h3>
-<div class="outline-text-3" id="text-orgbf071a7">
+<div id="outline-container-org890c8a5" class="outline-3">
+<h3 id="org890c8a5">Ersetzungsmodell für Funktionsanwendungen:</h3>
+<div class="outline-text-3" id="text-org890c8a5">
 <ul class="org-ul">
 <li><p>
 Formal: Mit <code>(define f (lambda [x-1 ... x-n] exp))</code> gilt: 
@@ -569,9 +555,9 @@ Multiplikation und Addition erforderlich ist:
 </div>
 </div>
 
-<div id="outline-container-orgf6ac7a1" class="outline-2">
-<h2 id="orgf6ac7a1">Zusammenfassung</h2>
-<div class="outline-text-2" id="text-orgf6ac7a1">
+<div id="outline-container-org7054dd0" class="outline-2">
+<h2 id="org7054dd0">Zusammenfassung</h2>
+<div class="outline-text-2" id="text-org7054dd0">
 <ul class="org-ul">
 <li>Die <b>Syntax</b> einer Programmiersprache legt zulässige Elemente und Strukturen fest.</li>
 <li>Die <b>Semantik</b> einer Programmiersprache legt die Bedeutung syntaktisch korrekter Ausdrücke fest.</li>
@@ -584,7 +570,7 @@ das <b>Ersetzungsmodell für Funktionsanwendungen</b> vereinfacht.</li>
 </div>
 <div id="postamble" class="status">
 <p class="author">Autor: Johannes Brauer</p>
-<p class="date">Created: 2019-01-21 Mon 17:47</p>
+<p class="date">Created: 2019-12-31 Tue 22:58</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
