@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8"/>
+<title>Einführung</title>
+<meta name="author" content="Johannes Brauer"/>
+<style type="text/css">
+.underline { text-decoration: underline; }
+</style>
+<link rel="stylesheet" href="./reveal.js/css/reveal.css"/>
+
+<link rel="stylesheet" href="./reveal.js/css/theme/simple.css" id="theme"/>
+
+<link rel="stylesheet" href="./mycss/myrevealstyle.css"/>
+
+<!-- If the query includes 'print-pdf', include the PDF print sheet -->
+<script>
+    if( window.location.search.match( /print-pdf/gi ) ) {
+        var link = document.createElement( 'link' );
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = './reveal.js/css/print/pdf.css';
+        document.getElementsByTagName( 'head' )[0].appendChild( link );
+    }
+</script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<link rel="stylesheet" type="text/css" href="mycss/mystyle.css" />
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+<section id="sec-title-slide">
+<h1 class="title">Einführung</h1><h3 class="subtitle">Einführung in die Programmierung</h3><h2 class="author">Johannes Brauer</h2><h2 class="date"></h2>
+</section>
+<section>
+<section id="slide-org2f95ea2">
+<h2 id="org2f95ea2">Programme für Computer</h2>
+<p>
+Ein Programm ist eine Folge von Anweisungen (Befehlen) an eine Maschine
+(Rechner, Computer), die von dieser „verstanden” wird und damit
+ausgeführt werden kann.
+</p>
+
+</section>
+<section id="slide-org1fc89cd">
+<h3 id="org1fc89cd">Aufbau von Computern</h3>
+
+<div class="figure">
+<p><img src="./Abbildungen/Computermodell.png" alt="Computermodell.png" />
+</p>
+</div>
+</section>
+<section id="slide-org8feed0d">
+<h3 id="org8feed0d">Computer im Wandel der Jahrzehnte</h3>
+
+<div class="figure">
+<p><img src="./Abbildungen/computervon60Jahrenundjetzt.jpg" alt="computervon60Jahrenundjetzt.jpg" width="400px" />
+</p>
+</div>
+</section>
+<section>
+<ul>
+<li>Ein iPhone enthält ca. 1 Milliarde Transistoren.</li>
+<li>Um diese Rechenleistung mit der Technologie der 1950er Jahre zu
+bauen, bräuchte es:
+<ul>
+<li>1 Milliarde Elektronenröhren</li>
+<li>170 vehicle assembly buildings, um sie unterzubringen</li>
+<li>1 Terawatt Leistung, um sie zu betreiben</li>
+<li>das entspräche 500 2-Gigawatt-Kernkraftwerken für ca. 50 Milliarden Euro</li>
+<li>das entspräche dem Weltbruttosozialprodukt von 60 Jahren</li>
+
+</ul></li>
+<li>Smartphones realisieren eine Steigerung der Rechenleistung um den
+Faktor \(10^{22}\) verglichen mit der Technologie vor 60 Jahren.</li>
+
+</ul>
+
+<p>
+Welche Fortschritte gibt es in dieser Zeit in der Software?
+</p>
+
+</section>
+<section id="slide-orga40bc35">
+<h3 id="orga40bc35">Was können Computer?</h3>
+<ul>
+<li><b>Problem:</b> Computer können nur sehr simple Dinge tun.</li>
+<li><p>
+Beispiel: Der Computer soll 10 mal „piepen”.
+Pseudo-Maschinenprogramm
+</p>
+<pre class="example">
+       put the number 10 into memory location 0
+    a  if contents of location 0 is negative go to line b
+       beep
+       subtract 1 from the number in location 0
+       go to line a
+    b  ...  rest of program ...
+</pre></li>
+<li>Man stelle sich vor, auf diese Weise ein Programm für die
+Tourenplanung einer Spedition zu schreiben.</li>
+<li>Fällt Ihnen an dem Programm etwas auf?</li>
+<li><p>
+Besser wäre, man könnte z. B. schreiben:
+</p>
+<pre class="example">
+(dotimes [n 10] (beep))
+</pre></li>
+
+</ul>
+
+</section>
+</section>
+<section>
+<section id="slide-org8eb8ef1">
+<h2 id="org8eb8ef1">Programmiersprachen</h2>
+<div class="outline-text-2" id="text-org8eb8ef1">
+</div>
+</section>
+<section id="slide-org16f30dd">
+<h3 id="org16f30dd">Was ist eine Programmiersprache?</h3>
+<ul>
+<li>Damit die Maschine uns „versteht”, müssen Programme in einer für sie
+verständlichen Sprache formuliert werden.</li>
+<li>Programmiersprachen sind <i>formale Sprachen</i> zur Formulierung von
+Programmen, die auf Rechnern ausführbar sind.</li>
+
+</ul>
+</section>
+<section id="slide-org1cb39bd">
+<h3 id="org1cb39bd">Maschinenorientierte Programmiersprachen</h3>
+<ul>
+<li>Zu jeder Maschine gehört eine Liste von Dingen, die sie tun kann:
+<ul>
+<li>Wasserkocher?</li>
+<li>MP3-Player?</li>
+<li>Computer?</li>
+
+</ul></li>
+<li>Die vollständige Liste der Dinge (Befehle), die ein Computer tun
+kann, kann als seine <i>Maschinensprache</i> (machine language) bezeichnet
+werden.</li>
+<li>Maschinencode: interne (ausführbare) Darstellung eines
+Maschinenprogramms als Bitmuster.</li>
+
+</ul>
+</section>
+<section>
+<ul>
+<li>Assemblersprache (assembly language): Symbolische, textorientierte
+Darstellung einer Maschinensprache. Ihre Merkmale sind:
+<ul>
+<li>Die Liste der Befehle ist dieselbe, wie die der Maschinensprache.</li>
+<li>Symbolische Namen der Befehle</li>
+<li>Dezimalzahlen, symbolische Adressen.</li>
+
+</ul></li>
+<li>Assemblerprogramm, Assemblercode: Programm in Assemblersprache.</li>
+
+</ul>
+</section>
+<section>
+
+<div class="figure">
+<p><img src="./Abbildungen/binaervsassembler.png" alt="binaervsassembler.png" width="700px" />
+</p>
+</div>
+</section>
+<section id="slide-org14ee980">
+<h3 id="org14ee980">Problemorientierte Programmiersprachen</h3>
+<ul>
+<li>Höhere, problemorientierte Programmiersprache: Formale Sprache zur
+textuellen Darstellung von Programmen, deren Konstrukte
+<ul>
+<li>mächtiger als einzelne Maschinenbefehle sind (kürzere
+„Befehlsliste”),</li>
+<li>Details der von-Neumann-Architektur verbergen,</li>
+<li>die Formulierung von Algorithmen unabhängig von einem bestimmten
+Rechensystem ermöglichen,</li>
+<li>sich an den Bedürfnissen eines Anwendungsbereichs orientieren.</li>
+
+</ul></li>
+<li>Quellprogramm (source code): Programm in Hochsprache.</li>
+
+</ul>
+</section>
+<section>
+
+<div class="figure">
+<p><img src="./Abbildungen/assemblervsfortran.png" alt="assemblervsfortran.png" width="700px" />
+</p>
+</div>
+</section>
+<section id="slide-orga20bb75">
+<h3 id="orga20bb75">Die Entwicklung von Programmiersprachen</h3>
+
+<div class="figure">
+<p><img src="./Abbildungen/programmiersprachen.png" alt="programmiersprachen.png" width="700px" />
+</p>
+</div>
+
+</section>
+<section id="slide-org7e2414f">
+<h4 id="org7e2414f">Wichtige Programmiersprachen</h4>
+<dl>
+<dt>1954 - 57</dt><dd><b>Fortran</b> (Formula Translation) von J. W. Backus, IBM.</dd>
+<dt>1956 - 62</dt><dd><b>Lisp</b> (List Processing Language) von J. McCarthy.
+Funktional, Hauptsprache der Künstlichen Intelligenz</dd>
+<dt>1958 - 60</dt><dd><b>Algol 60</b> (Algorithmic Language) von P. Naur u.a.</dd>
+<dt>1959 - 61</dt><dd><b>Cobol</b> (Common Business Oriented Language), noch heute
+weit verbreitete Sprache für kommerzielle Anwendungen.</dd>
+<dt>1967</dt><dd><b>Simula 67</b> von Dahl/Nygaard, erste objektorientierte Sprache</dd>
+<dt>1968 - 71</dt><dd><b>Pascal</b> von N. Wirth, einfach, strukturierte
+Programmierung, strenges Typkonzept</dd>
+
+</dl>
+</section>
+<section>
+<dl>
+<dt>1970 - 72</dt><dd><b>C</b> von D. Ritchie, maschinennah, mit Unixverbunden, für
+Betriebssystemprogrammierung.</dd>
+<dt>1970 - 80</dt><dd><b>Smalltalk</b> von Kay/Goldberg/Ingalls, rein
+objektorientiert.</dd>
+<dt>1975 - 80</dt><dd><b>Ada</b> von J. Ichbiah/DoD, modular, Prozesse,
+Ausnahmebehandlung, komplex, militärische Anwendungen.</dd>
+<dt>1975 - 82</dt><dd><b>Prolog</b> (Programming in Logic) von Colmerauer/Warren,
+modelliert logisches Schließen, KI-Sprache.</dd>
+<dt>1980</dt><dd><b>Modula-2</b> von N. Wirth, modular, für Systemprogrammierung.</dd>
+<dt>1980 - 86</dt><dd><b>C++</b> von B. Stroustrup, objektorientierte Erweiterung
+von C.</dd>
+<dt>1985 - 86</dt><dd><b>Oberon</b> von N. Wirth, objektorientiert, für
+Systemprogrammierung.</dd>
+
+</dl>
+</section>
+<section>
+<dl>
+<dt>1985 - 88</dt><dd><b>Eiffel</b> von B. Meyer, objektorientiert</dd>
+<dt>1996 -</dt><dd><b>Java</b> objektorientiert, ursprünglich eingetragenes
+Warenzeichen der Firma Sun Microsystems, heute im Besitz von Oracle</dd>
+<dt>neuere</dt><dd><dl>
+<dt><b>C#</b></dt><dd>ähnlich Java. Microsoft, .Net-Plattform</dd>
+<dt><b>F#</b></dt><dd>funktional. Microsoft, .Net-Plattform</dd>
+<dt><b>Scala</b></dt><dd>funktionale Erweiterung von Java</dd>
+<dt><b>Dart</b></dt><dd>Googles JavaScript-Alternative</dd>
+<dt><b>Clojure</b></dt><dd>Lisp-Dialekt auf der JVM</dd>
+
+</dl></dd>
+<dt>u.v.a.m.</dt><dd></dd>
+
+</dl>
+
+</section>
+<section id="slide-orge16b68e">
+<h3 id="orge16b68e">Syntax, Semantik, Pragmatik von Programmiersprachen</h3>
+<ul>
+<li>Syntax legt fest,
+<ul>
+<li>welche Sprachelemente und -konstrukte es gibt und</li>
+<li>wie mit ihrer Hilfe korrekte Sätze in der Sprache formuliert werden</li>
+<li>Syntax = Menge von Regeln, die die Struktur von Programmen
+bestimmen.</li>
+
+</ul></li>
+<li>Semantik einer Programmiersprache
+<ul>
+<li>legt die Bedeutung syntaktisch korrekter Sätze fest</li>
+<li>legt fest, welche Wirkung jedes Sprachelement oder -konstrukt im
+Programmablauf hervorruft.</li>
+<li>Semantik = Menge von Verhaltensregeln, die die Funktionsweise von
+Programmen bestimmen.</li>
+
+</ul></li>
+
+</ul>
+</section>
+<section>
+<ul>
+<li>Pragmatik
+<ul>
+<li>Intention des Programmierers mit einem Programm</li>
+<li>Nutzen der Ausdrucksmöglichkeiten einer Programmiersprache für die
+Formulierung von Lösungen</li>
+
+</ul></li>
+
+</ul>
+
+</section>
+</section>
+<section>
+<section id="slide-orge67eed9">
+<h2 id="orge67eed9">Zusammenfassung</h2>
+<ul>
+<li><b>Programmiersprachen</b> sind formale Sprachen, in denen sich für den
+Menschen verständliche Programme für Rechenmaschinen formulieren
+lassen. Wichtig sind ihre Syntax, Semantik und Pragmatik.</li>
+
+</ul>
+</section>
+</section>
+</div>
+</div>
+<script src="./reveal.js/js/reveal.js"></script>
+<script>
+// Full list of configuration options available here:
+// https://github.com/hakimel/reveal.js#configuration
+Reveal.initialize({
+
+controls: true,
+progress: true,
+history: true,
+center: true,
+slideNumber: 'c',
+rollingLinks: false,
+keyboard: true,
+mouseWheel: false,
+fragmentInURL: true,
+hashOneBasedIndex: false,
+pdfSeparateFragments: true,
+
+overview: true,
+margin: 0.05,
+
+theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+transition: Reveal.getQueryHash().transition || 'slide', // see README of reveal.js for options
+transitionSpeed: 'default',
+
+// Optional libraries used to extend reveal.js
+dependencies: [
+ { src: './reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+ { src: './reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+ { src: './reveal.js/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } },
+ { src: './reveal.js/plugin/search/search.js', async: true, condition: function() { return !!document.body.classList; } },
+ { src: './reveal.js/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } }]
+
+,dependencies: [ { src: 'plugin/menu/menu.js', async: true }, { src: 'reveal.js/plugin/zoom-js/zoom.js', async: true }, { src: 'reveal.js/plugin/search/search.js', async: true }] , menu: {hideMissingTitles: true}});
+</script>
+</body>
+</html>
