@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="de" xml:lang="de">
 <head>
-<!-- 2019-02-03 Sun 15:05 -->
+<!-- 2020-01-01 Wed 16:01 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Formale Aspekte der Programmierung</title>
@@ -280,9 +280,9 @@ for the JavaScript code in this tag.
 <br />
 <span class="subtitle">Einführung in die Programmierung</span>
 </h1>
-<div id="outline-container-orgde1ef06" class="outline-2">
-<h2 id="orgde1ef06">Syntax und Semantik einer Programmiersprache</h2>
-<div class="outline-text-2" id="text-orgde1ef06">
+<div id="outline-container-org0127a28" class="outline-2">
+<h2 id="org0127a28">Syntax und Semantik einer Programmiersprache</h2>
+<div class="outline-text-2" id="text-org0127a28">
 <ul class="org-ul">
 <li>zur Wiederholung:</li>
 </ul>
@@ -294,9 +294,9 @@ Was bedeuten die Begriffe <i>Syntax</i> und <i>Semantik</i>?
 </blockquote>
 </div>
 
-<div id="outline-container-orgfd23ddb" class="outline-3">
-<h3 id="orgfd23ddb">(Vereinfachte) Syntax von Racket</h3>
-<div class="outline-text-3" id="text-orgfd23ddb">
+<div id="outline-container-orge9e84b7" class="outline-3">
+<h3 id="orge9e84b7">(Vereinfachte) Syntax von Racket</h3>
+<div class="outline-text-3" id="text-orge9e84b7">
 <div class="small">
 <div class="org-src-container">
 <pre class="src src-scheme">    <span style="color: #6434A3;">&lt;def&gt;</span> = <span style="color: #707183;">(</span><span style="color: #0000FF;">define</span> <span style="color: #006699;">&lt;var&gt;</span> <span style="color: #6434A3;">&lt;exp&gt;</span><span style="color: #707183;">)</span>
@@ -325,9 +325,9 @@ Ausdrücken (<code>&lt;exp&gt;</code>)</li>
 </div>
 </div>
 
-<div id="outline-container-orgdafe2e6" class="outline-3">
-<h3 id="orgdafe2e6">Semantik einer Programmiersprache</h3>
-<div class="outline-text-3" id="text-orgdafe2e6">
+<div id="outline-container-org660a172" class="outline-3">
+<h3 id="org660a172">Semantik einer Programmiersprache</h3>
+<div class="outline-text-3" id="text-org660a172">
 <ul class="org-ul">
 <li>Die Syntax beschreibt den Aufbau grammatikalisch korrekter Sätze</li>
 <li>Die Semantik beschreibt die Bedeutung grammatikalisch korrekter Sätze</li>
@@ -350,9 +350,9 @@ erfolgen</li>
 </ul>
 </div>
 
-<div id="outline-container-orgad39549" class="outline-4">
-<h4 id="orgad39549">(Vereinfachte) Semantik von Racket</h4>
-<div class="outline-text-4" id="text-orgad39549">
+<div id="outline-container-org94cafc3" class="outline-4">
+<h4 id="org94cafc3">(Vereinfachte) Semantik von Racket</h4>
+<div class="outline-text-4" id="text-org94cafc3">
 <ul class="org-ul">
 <li>Für die Beschreibung der Semantik von Racket greifen wir auf einfache
 Regeln der Algebra zurück.</li>
@@ -374,9 +374,9 @@ selbst ausgewertet werden (self evaluating expressions).</li>
 </div>
 </div>
 
-<div id="outline-container-org25adce4" class="outline-4">
-<h4 id="org25adce4">Semantik der Funktionsanwendung</h4>
-<div class="outline-text-4" id="text-org25adce4">
+<div id="outline-container-orgeae1ed0" class="outline-4">
+<h4 id="orgeae1ed0">Semantik der Funktionsanwendung</h4>
+<div class="outline-text-4" id="text-orgeae1ed0">
 <ul class="org-ul">
 <li>Dieses Thema wurde bereits in Kapitel <a href="EidP04-Auswertungsregeln.html">EidP04-Auswertungsregeln</a>
 behandelt.</li>
@@ -384,9 +384,9 @@ behandelt.</li>
 </div>
 </div>
 
-<div id="outline-container-org9af910e" class="outline-4">
-<h4 id="org9af910e">Auswertungsregeln für Racket-Pseudofunktionen</h4>
-<div class="outline-text-4" id="text-org9af910e">
+<div id="outline-container-org9d5f82f" class="outline-4">
+<h4 id="org9d5f82f">Auswertungsregeln für Racket-Pseudofunktionen</h4>
+<div class="outline-text-4" id="text-org9d5f82f">
 <ul class="org-ul">
 <li><i>Pseudofunktionen</i> (in der Lisp-Terminologie auch <i>special forms</i>
 genannt) heißen so, weil
@@ -404,9 +404,9 @@ genannt) heißen so, weil
 </ul>
 </div>
 
-<div id="outline-container-org0423622" class="outline-5">
-<h5 id="org0423622">Auswertungsregeln für <code>define</code> und <code>lambda</code></h5>
-<div class="outline-text-5" id="text-org0423622">
+<div id="outline-container-org111e7a4" class="outline-5">
+<h5 id="org111e7a4">Auswertungsregeln für <code>define</code> und <code>lambda</code></h5>
+<div class="outline-text-5" id="text-org111e7a4">
 <dl class="org-dl">
 <dt><code>define</code></dt><dd>Der Ausdruck <code>(define var exp)</code> liefert keinen Wert,
 sondern hat lediglich den Effekt, dass der Variablen <code>var</code> der Wert
@@ -419,9 +419,9 @@ der Berechnungsvorschrift <code>exp</code>.</dd>
 </div>
 </div>
 
-<div id="outline-container-org92387f4" class="outline-5">
-<h5 id="org92387f4">Auswertungsregel für <code>cond</code> ohne <code>else</code></h5>
-<div class="outline-text-5" id="text-org92387f4">
+<div id="outline-container-org1bba5d2" class="outline-5">
+<h5 id="org1bba5d2">Auswertungsregel für <code>cond</code> ohne <code>else</code></h5>
+<div class="outline-text-5" id="text-org1bba5d2">
 <p>
 Zwei Fälle sind zu unterscheiden:
 </p>
@@ -475,9 +475,9 @@ Es ist ein Fehler, wenn keine Frage <code>#true</code> liefert.
 </div>
 </div>
 
-<div id="outline-container-org130bd31" class="outline-5">
-<h5 id="org130bd31">Auswertungsregel für <code>cond</code> mit <code>else</code></h5>
-<div class="outline-text-5" id="text-org130bd31">
+<div id="outline-container-org9440501" class="outline-5">
+<h5 id="org9440501">Auswertungsregel für <code>cond</code> mit <code>else</code></h5>
+<div class="outline-text-5" id="text-org9440501">
 <ul class="org-ul">
 <li><p>
 Die Auswertung erfolgt wie bei <code>cond</code> ohne <code>else</code>. Wenn dabei als
@@ -505,9 +505,9 @@ Das heißt, der Wert des ganzen <code>cond</code>-Ausdrucks ist die Antwort hint
 </div>
 </div>
 
-<div id="outline-container-org2d90d3a" class="outline-2">
-<h2 id="org2d90d3a">Korrektheit von Funktionen</h2>
-<div class="outline-text-2" id="text-org2d90d3a">
+<div id="outline-container-orgb32bd5a" class="outline-2">
+<h2 id="orgb32bd5a">Korrektheit von Funktionen</h2>
+<div class="outline-text-2" id="text-orgb32bd5a">
 <p>
 Frage: 
 </p>
@@ -554,9 +554,9 @@ DAVID L. PARNAS
 </ul>
 </div>
 
-<div id="outline-container-org9545ed6" class="outline-3">
-<h3 id="org9545ed6">Korrektheit rekursiver Funktionen</h3>
-<div class="outline-text-3" id="text-org9545ed6">
+<div id="outline-container-orgc632613" class="outline-3">
+<h3 id="orgc632613">Korrektheit rekursiver Funktionen</h3>
+<div class="outline-text-3" id="text-orgc632613">
 <p>
 Beweis mittels rekursiver Induktion:
 </p>
@@ -571,9 +571,9 @@ mit Rekursionstiefe \(n+1\) folgt.</li>
 </ol>
 </div>
 
-<div id="outline-container-orgfb13f15" class="outline-4">
-<h4 id="orgfb13f15">Definition der Rekursionstiefe</h4>
-<div class="outline-text-4" id="text-orgfb13f15">
+<div id="outline-container-org9046922" class="outline-4">
+<h4 id="org9046922">Definition der Rekursionstiefe</h4>
+<div class="outline-text-4" id="text-org9046922">
 <blockquote>
 <p>
 Findet beim Ausführen des Aufrufs kein rekursiver Aufruf statt, dann
@@ -585,9 +585,9 @@ verursacht werden.
 </div>
 </div>
 
-<div id="outline-container-orgbe655ee" class="outline-4">
-<h4 id="orgbe655ee">Beispiel: Funktion <code>len</code></h4>
-<div class="outline-text-4" id="text-orgbe655ee">
+<div id="outline-container-orgccbbb68" class="outline-4">
+<h4 id="orgccbbb68">Beispiel: Funktion <code>len</code></h4>
+<div class="outline-text-4" id="text-orgccbbb68">
 <div class="small">
 <div class="org-src-container">
 <pre class="src src-scheme"><span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">berechnet die Laenge einer Liste</span>
@@ -675,27 +675,19 @@ Rekursionstiefe \(m\) und liefert gemäß Induktionsannahme \(m\):<br />
 </div>
 
 
-<div id="outline-container-orge65b015" class="outline-2">
-<h2 id="orge65b015">Lokale Definitionen</h2>
-<div class="outline-text-2" id="text-orge65b015">
+<div id="outline-container-orgf74c8cc" class="outline-2">
+<h2 id="orgf74c8cc">Lokale Definitionen</h2>
+<div class="outline-text-2" id="text-orgf74c8cc">
 </div>
-<div id="outline-container-orgfc98d6a" class="outline-3">
-<h3 id="orgfc98d6a">Die globale Umgebung</h3>
-<div class="outline-text-3" id="text-orgfc98d6a">
+<div id="outline-container-org8f83895" class="outline-3">
+<h3 id="org8f83895">Die globale Umgebung</h3>
+<div class="outline-text-3" id="text-org8f83895">
 <ul class="org-ul">
-<li><p>
-Man beachte, dass Ausdrücke wie
-</p>
-
-<p>
+<li>Man beachte, dass Ausdrücke wie
 <code>(+ x 2)</code> oder <code>(f 7 8)</code>
-</p>
-
-<p>
 &#x2013; jeweils isoliert betrachtet &#x2013; nicht ausgewertet werden können, da
 nicht klar ist, wozu <code>x</code> bzw. welche Funktion <code>f</code> ausgewertet werden
-soll.
-</p></li>
+soll.</li>
 <li>Die Auswertung ist nur in einer <i>Umgebung</i> möglich, in der die Werte
 aller Variablen definiert sind.</li>
 <li>Durch die Pseudofunktion <code>define</code> wird einer Variablen ein Wert
@@ -710,13 +702,13 @@ Umgebung übernommen.</li>
 </div>
 </div>
 
-<div id="outline-container-org014addc" class="outline-3">
-<h3 id="org014addc">Lokale Umgebungen</h3>
-<div class="outline-text-3" id="text-org014addc">
+<div id="outline-container-org082175e" class="outline-3">
+<h3 id="org082175e">Lokale Umgebungen</h3>
+<div class="outline-text-3" id="text-org082175e">
 </div>
-<div id="outline-container-org43669bd" class="outline-4">
-<h4 id="org43669bd">Ineffiziente Funktion <code>sumprod</code></h4>
-<div class="outline-text-4" id="text-org43669bd">
+<div id="outline-container-org1921f44" class="outline-4">
+<h4 id="org1921f44">Ineffiziente Funktion <code>sumprod</code></h4>
+<div class="outline-text-4" id="text-org1921f44">
 <div class="org-src-container">
 <pre class="src src-scheme">    <span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">berechnet eine zweielementige Liste, bestehend </span>
     <span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">aus der Summe und dem Produkt der </span>
@@ -742,9 +734,9 @@ Umgebung übernommen.</li>
 </div>
 </div>
 
-<div id="outline-container-orgf554800" class="outline-4">
-<h4 id="orgf554800">Verwendung einer <i>lokalen Definition</i></h4>
-<div class="outline-text-4" id="text-orgf554800">
+<div id="outline-container-org5db8ae7" class="outline-4">
+<h4 id="org5db8ae7">Verwendung einer <i>lokalen Definition</i></h4>
+<div class="outline-text-4" id="text-org5db8ae7">
 <div class="org-src-container">
 <pre class="src src-scheme">    <span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">berechnet ... </span>
     <span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">sumprod: (list-of number) -&gt; (list-of number)</span>
@@ -773,9 +765,9 @@ Ausdrucks zum Zweck der Vermeidung von Mehrfachberechnungen.
 </div>
 </div>
 
-<div id="outline-container-orgf86b5a1" class="outline-4">
-<h4 id="orgf86b5a1">Syntax und Semantik von <code>let</code></h4>
-<div class="outline-text-4" id="text-orgf86b5a1">
+<div id="outline-container-org408eb99" class="outline-4">
+<h4 id="org408eb99">Syntax und Semantik von <code>let</code></h4>
+<div class="outline-text-4" id="text-org408eb99">
 <ul class="org-ul">
 <li>Die Syntax der Anwendung der Pseudofunktion <code>let</code>, ein so genannter
 <code>let</code>-Ausdruck, hat die folgende Form:<br />
@@ -802,9 +794,9 @@ durch den folgenden <code>lambda</code>-Ausdruck ersetzt werden kann:<br />
 </div>
 </div>
 
-<div id="outline-container-org7c03c0c" class="outline-4">
-<h4 id="org7c03c0c">Pragmatik von <code>let</code></h4>
-<div class="outline-text-4" id="text-org7c03c0c">
+<div id="outline-container-orgf47fe45" class="outline-4">
+<h4 id="orgf47fe45">Pragmatik von <code>let</code></h4>
+<div class="outline-text-4" id="text-orgf47fe45">
 <ul class="org-ul">
 <li>Einen Anwendungszweck von <code>let</code> haben wir in der Funktion <code>sumprod</code>
 bereits gesehen: Benennung eines Zwischenergebnisses zur Vermeidung
@@ -831,9 +823,9 @@ Die Benennung von Werten kann ein Programm besser lesbar machen:
 </div>
 </div>
 
-<div id="outline-container-org28bd4e8" class="outline-4">
-<h4 id="org28bd4e8">Unterschied zwischen <code>let</code> und <code>let*</code></h4>
-<div class="outline-text-4" id="text-org28bd4e8">
+<div id="outline-container-orgeca9894" class="outline-4">
+<h4 id="orgeca9894">Unterschied zwischen <code>let</code> und <code>let*</code></h4>
+<div class="outline-text-4" id="text-orgeca9894">
 <ul class="org-ul">
 <li>Die Variablen \(v_{i}\) in einem <code>let</code>-Ausdruck sind nur im Rumpf
 sichtbar aber nicht in den \(e_{i}\).</li>
@@ -851,9 +843,9 @@ ist äquivalent zu
 </div>
 </div>
 
-<div id="outline-container-org0cfcfef" class="outline-4">
-<h4 id="org0cfcfef">Lokale Hilfsfunktionen</h4>
-<div class="outline-text-4" id="text-org0cfcfef">
+<div id="outline-container-orgfcd63b4" class="outline-4">
+<h4 id="orgfcd63b4">Lokale Hilfsfunktionen</h4>
+<div class="outline-text-4" id="text-orgfcd63b4">
 <ul class="org-ul">
 <li>Wenn Hilfsfunktionen nur reinen Hilfscharakter haben, d.h. nur im
 Kontext der Hauptfunktion sinnvoll sind, kann es &#x2013; schon zur
@@ -865,9 +857,9 @@ Hilfsfunktionen.</li>
 </ul>
 </div>
 
-<div id="outline-container-orgd8a8e88" class="outline-5">
-<h5 id="orgd8a8e88"><code>sumprod</code> mit Hilfsfunktionen</h5>
-<div class="outline-text-5" id="text-orgd8a8e88">
+<div id="outline-container-org2b7659a" class="outline-5">
+<h5 id="org2b7659a"><code>sumprod</code> mit Hilfsfunktionen</h5>
+<div class="outline-text-5" id="text-org2b7659a">
 <div class="org-src-container">
 <pre class="src src-scheme">    <span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">berechnet ...</span>
     <span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">sumprod: (list-of number) -&gt; (list-of number)</span>
@@ -890,9 +882,9 @@ Hilfsfunktionen.</li>
 </div>
 </div>
 
-<div id="outline-container-orge5269a8" class="outline-5">
-<h5 id="orge5269a8"><code>sumprod</code> mit lokalen Hilfsfunktionen</h5>
-<div class="outline-text-5" id="text-orge5269a8">
+<div id="outline-container-orga78a9e9" class="outline-5">
+<h5 id="orga78a9e9"><code>sumprod</code> mit lokalen Hilfsfunktionen</h5>
+<div class="outline-text-5" id="text-orga78a9e9">
 <div class="org-src-container">
 <pre class="src src-scheme">    <span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">sumprod: (list-of number) -&gt; (list-of number)</span>
     <span style="color: #707183;">(</span><span style="color: #0000FF;">define</span> <span style="color: #006699;">sumprod</span>
@@ -923,7 +915,7 @@ Bei der dritten <code>let</code>-Variante <b><code>letrec</code></b> sind alle \
 </div>
 <div id="postamble" class="status">
 <p class="author">Autor: Johannes Brauer</p>
-<p class="date">Created: 2019-02-03 Sun 15:05</p>
+<p class="date">Created: 2020-01-01 Wed 16:01</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

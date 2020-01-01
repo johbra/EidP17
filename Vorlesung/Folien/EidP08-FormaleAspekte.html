@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8"/>
 <title>Formale Aspekte der Programmierung</title>
-<meta name="author" content="(Johannes Brauer)"/>
+<meta name="author" content="Johannes Brauer"/>
 <style type="text/css">
 .underline { text-decoration: underline; }
 </style>
@@ -23,31 +23,32 @@
         document.getElementsByTagName( 'head' )[0].appendChild( link );
     }
 </script>
-<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 <link rel="stylesheet" type="text/css" href="mycss/mystyle.css" />
 </head>
 <body>
 <div class="reveal">
 <div class="slides">
-<section id="sec-title-slide"><h1 class="title">Formale Aspekte der Programmierung</h1><h2 class="author">Johannes Brauer</h2><p class="date">Created: 2019-02-03 Sun 15:07</p>
+<section id="sec-title-slide">
+<h1 class="title">Formale Aspekte der Programmierung</h1><h3 class="subtitle">Einführung in die Programmierung</h3><h2 class="author">Johannes Brauer</h2><h2 class="date"></h2>
 </section>
 <section>
-<section id="orgbf4a6e7">
-<h2 id="orgbf4a6e7">Syntax und Semantik einer Programmiersprache</h2>
+<section id="slide-org1d8a1b5">
+<h2 id="org1d8a1b5">Syntax und Semantik einer Programmiersprache</h2>
 <ul>
 <li>zur Wiederholung:</li>
 
 </ul>
 
-<blockquote nil>
+<blockquote>
 <p>
 Was bedeuten die Begriffe <i>Syntax</i> und <i>Semantik</i>?
 </p>
 </blockquote>
 
 </section>
-<section id="org2c651b4">
-<h3 id="org2c651b4">(Vereinfachte) Syntax von Racket</h3>
+<section id="slide-org14c793d">
+<h3 id="org14c793d">(Vereinfachte) Syntax von Racket</h3>
 <div class="small">
 <div class="org-src-container">
 
@@ -78,8 +79,8 @@ Ausdrücken (<code>&lt;exp&gt;</code>)</li>
 </ul>
 
 </section>
-<section id="org06f3a02">
-<h3 id="org06f3a02">Semantik einer Programmiersprache</h3>
+<section id="slide-org0c4e933">
+<h3 id="org0c4e933">Semantik einer Programmiersprache</h3>
 <ul>
 <li>Die Syntax beschreibt den Aufbau grammatikalisch korrekter Sätze</li>
 <li>Die Semantik beschreibt die Bedeutung grammatikalisch korrekter Sätze</li>
@@ -105,8 +106,8 @@ erfolgen</li>
 </ul>
 
 </section>
-<section id="org6fda0fb">
-<h4 id="org6fda0fb">(Vereinfachte) Semantik von Racket</h4>
+<section id="slide-org0582ece">
+<h4 id="org0582ece">(Vereinfachte) Semantik von Racket</h4>
 <ul>
 <li>Für die Beschreibung der Semantik von Racket greifen wir auf einfache
 Regeln der Algebra zurück.</li>
@@ -129,8 +130,8 @@ selbst ausgewertet werden (self evaluating expressions).</li>
 </ul>
 
 </section>
-<section id="org5e512f1">
-<h4 id="org5e512f1">Semantik der Funktionsanwendung</h4>
+<section id="slide-orgb9ddf0d">
+<h4 id="orgb9ddf0d">Semantik der Funktionsanwendung</h4>
 <ul>
 <li>Dieses Thema wurde bereits in Kapitel <a href="EidP04-Auswertungsregeln.html">EidP04-Auswertungsregeln</a>
 behandelt.</li>
@@ -138,8 +139,8 @@ behandelt.</li>
 </ul>
 
 </section>
-<section id="org60cca34">
-<h4 id="org60cca34">Auswertungsregeln für Racket-Pseudofunktionen</h4>
+<section id="slide-orgf1cbfca">
+<h4 id="orgf1cbfca">Auswertungsregeln für Racket-Pseudofunktionen</h4>
 <ul>
 <li><i>Pseudofunktionen</i> (in der Lisp-Terminologie auch <i>special forms</i>
 genannt) heißen so, weil
@@ -160,8 +161,8 @@ genannt) heißen so, weil
 </ul>
 
 </section>
-<section id="org24e62de">
-<h5 id="org24e62de">Auswertungsregeln für <code>define</code> und <code>lambda</code></h5>
+<section id="slide-org8a7a97d">
+<h5 id="org8a7a97d">Auswertungsregeln für <code>define</code> und <code>lambda</code></h5>
 <dl>
 <dt><code>define</code></dt><dd>Der Ausdruck <code>(define var exp)</code> liefert keinen Wert,
 sondern hat lediglich den Effekt, dass der Variablen <code>var</code> der Wert
@@ -174,8 +175,8 @@ der Berechnungsvorschrift <code>exp</code>.</dd>
 </dl>
 
 </section>
-<section id="org4827c96">
-<h5 id="org4827c96">Auswertungsregel für <code>cond</code> ohne <code>else</code></h5>
+<section id="slide-org47ccde4">
+<h5 id="org47ccde4">Auswertungsregel für <code>cond</code> ohne <code>else</code></h5>
 <p>
 Zwei Fälle sind zu unterscheiden:
 </p>
@@ -206,7 +207,7 @@ Das heißt, die erste Frage-Antwort-Kombination wird eliminiert.
 </ol>
 
 </section>
-<section >
+<section>
 
 <ol>
 <li value="2"><p>
@@ -235,8 +236,8 @@ Es ist ein Fehler, wenn keine Frage <code>#true</code> liefert.
 </p>
 
 </section>
-<section id="orgcb76ab4">
-<h5 id="orgcb76ab4">Auswertungsregel für <code>cond</code> mit <code>else</code></h5>
+<section id="slide-org8e73c29">
+<h5 id="org8e73c29">Auswertungsregel für <code>cond</code> mit <code>else</code></h5>
 <ul>
 <li><p>
 Die Auswertung erfolgt wie bei <code>cond</code> ohne <code>else</code>. Wenn dabei als
@@ -264,12 +265,12 @@ Das heißt, der Wert des ganzen <code>cond</code>-Ausdrucks ist die Antwort hint
 </section>
 </section>
 <section>
-<section id="org4b91be1">
-<h2 id="org4b91be1">Korrektheit von Funktionen</h2>
+<section id="slide-orga5063ba">
+<h2 id="orga5063ba">Korrektheit von Funktionen</h2>
 <p>
 Frage: 
 </p>
-<blockquote nil>
+<blockquote>
 <p>
 Was sagt uns die Mitteilung von DrRacket: 
 </p>
@@ -283,8 +284,8 @@ Alle 4 Tests bestanden!
 </p>
 </blockquote>
 </section>
-<section >
-<blockquote nil>
+<section>
+<blockquote>
 <p>
 Software wird zur Benutzung freigegeben, nicht wenn sie nachweislich
 korrekt ist, sondern wenn die Häufigkeit, mit der neue Fehler entdeckt
@@ -297,7 +298,7 @@ DAVID L. PARNAS
 </p>
 </blockquote>
 </section>
-<section >
+<section>
 <ul>
 <li>Voraussetzungen für den <b>Beweis</b> der Korrektheit einer Funktion:
 <ul>
@@ -320,8 +321,8 @@ DAVID L. PARNAS
 </ul>
 
 </section>
-<section id="org7e7e0a2">
-<h3 id="org7e7e0a2">Korrektheit rekursiver Funktionen</h3>
+<section id="slide-org2c27e35">
+<h3 id="org2c27e35">Korrektheit rekursiver Funktionen</h3>
 <p>
 Beweis mittels rekursiver Induktion:
 </p>
@@ -337,9 +338,9 @@ mit Rekursionstiefe \(n+1\) folgt.</li>
 </ol>
 
 </section>
-<section id="orgb4bd17c">
-<h4 id="orgb4bd17c">Definition der Rekursionstiefe</h4>
-<blockquote nil>
+<section id="slide-orgbb23ee3">
+<h4 id="orgbb23ee3">Definition der Rekursionstiefe</h4>
+<blockquote>
 <p>
 Findet beim Ausführen des Aufrufs kein rekursiver Aufruf statt, dann
 ist die Rekursionstiefe 0, und sonst ist sie um 1 größer als die
@@ -349,8 +350,8 @@ verursacht werden.
 </blockquote>
 
 </section>
-<section id="orgd3516bc">
-<h4 id="orgd3516bc">Beispiel: Funktion <code>len</code></h4>
+<section id="slide-orgbdcb22c">
+<h4 id="orgbdcb22c">Beispiel: Funktion <code>len</code></h4>
 <div class="small">
 <div class="org-src-container">
 
@@ -381,7 +382,7 @@ liefert die Anzahl \(n\) der Elemente der Argumentliste.
 </dl>
 
 </section>
-<section >
+<section>
 
 <dl>
 <dt>Verankerung:</dt><dd><p>
@@ -412,7 +413,7 @@ die Länge der leeren Liste.
 </dl>
 
 </section>
-<section >
+<section>
 <dl>
 <dt>Induktionsannahme:</dt><dd>Die Behauptung gilt für Rekursionstiefe
 \(k = m\).</dd>
@@ -436,7 +437,7 @@ Dieser Aufruf wird gemäß Ersetzungmodell ausgewertet als<br />
 
 </dl>
 </section>
-<section >
+<section>
 <p>
 Der Aufruf <code>(len ’</code> \((e_{2}\ \ldots\ e_{m+1})\) <code>)</code> besitzt die
 Rekursionstiefe \(m\) und liefert gemäß Induktionsannahme \(m\):<br />
@@ -449,27 +450,19 @@ Rekursionstiefe \(m\) und liefert gemäß Induktionsannahme \(m\):<br />
 </section>
 </section>
 <section>
-<section id="org44388d8">
-<h2 id="org44388d8">Lokale Definitionen</h2>
-<div class="outline-text-2" id="text-org44388d8">
+<section id="slide-org53e4e60">
+<h2 id="org53e4e60">Lokale Definitionen</h2>
+<div class="outline-text-2" id="text-org53e4e60">
 </div>
 </section>
-<section id="orge1a76f3">
-<h3 id="orge1a76f3">Die globale Umgebung</h3>
+<section id="slide-orgec9a75c">
+<h3 id="orgec9a75c">Die globale Umgebung</h3>
 <ul>
-<li><p>
-Man beachte, dass Ausdrücke wie
-</p>
-
-<p>
+<li>Man beachte, dass Ausdrücke wie
 <code>(+ x 2)</code> oder <code>(f 7 8)</code>
-</p>
-
-<p>
 &#x2013; jeweils isoliert betrachtet &#x2013; nicht ausgewertet werden können, da
 nicht klar ist, wozu <code>x</code> bzw. welche Funktion <code>f</code> ausgewertet werden
-soll.
-</p></li>
+soll.</li>
 <li>Die Auswertung ist nur in einer <i>Umgebung</i> möglich, in der die Werte
 aller Variablen definiert sind.</li>
 <li>Durch die Pseudofunktion <code>define</code> wird einer Variablen ein Wert
@@ -484,13 +477,13 @@ Umgebung übernommen.</li>
 </ul>
 
 </section>
-<section id="org5206396">
-<h3 id="org5206396">Lokale Umgebungen</h3>
-<div class="outline-text-3" id="text-org5206396">
+<section id="slide-orgfcd33e5">
+<h3 id="orgfcd33e5">Lokale Umgebungen</h3>
+<div class="outline-text-3" id="text-orgfcd33e5">
 </div>
 </section>
-<section id="orgea4257b">
-<h4 id="orgea4257b">Ineffiziente Funktion <code>sumprod</code></h4>
+<section id="slide-org15585c3">
+<h4 id="org15585c3">Ineffiziente Funktion <code>sumprod</code></h4>
 <div class="org-src-container">
 
 <pre  class="src src-scheme">    <span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">berechnet eine zweielementige Liste, bestehend </span>
@@ -516,8 +509,8 @@ Umgebung übernommen.</li>
 </p>
 
 </section>
-<section id="orgb1dbad5">
-<h4 id="orgb1dbad5">Verwendung einer <i>lokalen Definition</i></h4>
+<section id="slide-orgb707b81">
+<h4 id="orgb707b81">Verwendung einer <i>lokalen Definition</i></h4>
 <div class="org-src-container">
 
 <pre  class="src src-scheme">    <span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">berechnet ... </span>
@@ -546,8 +539,8 @@ Ausdrucks zum Zweck der Vermeidung von Mehrfachberechnungen.
 </p>
 
 </section>
-<section id="org747f5f6">
-<h4 id="org747f5f6">Syntax und Semantik von <code>let</code></h4>
+<section id="slide-orga9dab51">
+<h4 id="orga9dab51">Syntax und Semantik von <code>let</code></h4>
 <ul>
 <li>Die Syntax der Anwendung der Pseudofunktion <code>let</code>, ein so genannter
 <code>let</code>-Ausdruck, hat die folgende Form:<br />
@@ -566,7 +559,7 @@ ersetzt werden.</li>
 
 </ul>
 </section>
-<section >
+<section>
 <ul>
 <li>Für die formale Definition der Semantik genügt es hier festzuhalten,
 dass der Ausdruck<br />
@@ -578,8 +571,8 @@ durch den folgenden <code>lambda</code>-Ausdruck ersetzt werden kann:<br />
 </ul>
 
 </section>
-<section id="orgd1e1f02">
-<h4 id="orgd1e1f02">Pragmatik von <code>let</code></h4>
+<section id="slide-org76b3b08">
+<h4 id="org76b3b08">Pragmatik von <code>let</code></h4>
 <ul>
 <li>Einen Anwendungszweck von <code>let</code> haben wir in der Funktion <code>sumprod</code>
 bereits gesehen: Benennung eines Zwischenergebnisses zur Vermeidung
@@ -607,8 +600,8 @@ Die Benennung von Werten kann ein Programm besser lesbar machen:
 </ul>
 
 </section>
-<section id="org50fa12e">
-<h4 id="org50fa12e">Unterschied zwischen <code>let</code> und <code>let*</code></h4>
+<section id="slide-orge843a30">
+<h4 id="orge843a30">Unterschied zwischen <code>let</code> und <code>let*</code></h4>
 <ul>
 <li>Die Variablen \(v_{i}\) in einem <code>let</code>-Ausdruck sind nur im Rumpf
 sichtbar aber nicht in den \(e_{i}\).</li>
@@ -626,8 +619,8 @@ ist äquivalent zu
 </ul>
 
 </section>
-<section id="org48a97e6">
-<h4 id="org48a97e6">Lokale Hilfsfunktionen</h4>
+<section id="slide-org8aa6634">
+<h4 id="org8aa6634">Lokale Hilfsfunktionen</h4>
 <ul>
 <li>Wenn Hilfsfunktionen nur reinen Hilfscharakter haben, d.h. nur im
 Kontext der Hauptfunktion sinnvoll sind, kann es &#x2013; schon zur
@@ -640,8 +633,8 @@ Hilfsfunktionen.</li>
 </ul>
 
 </section>
-<section id="orgb0b65bb">
-<h5 id="orgb0b65bb"><code>sumprod</code> mit Hilfsfunktionen</h5>
+<section id="slide-orgf3ef1c7">
+<h5 id="orgf3ef1c7"><code>sumprod</code> mit Hilfsfunktionen</h5>
 <div class="org-src-container">
 
 <pre  class="src src-scheme">    <span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">berechnet ...</span>
@@ -664,8 +657,8 @@ Hilfsfunktionen.</li>
 </div>
 
 </section>
-<section id="orgc47e7da">
-<h5 id="orgc47e7da"><code>sumprod</code> mit lokalen Hilfsfunktionen</h5>
+<section id="slide-org8a32bac">
+<h5 id="org8a32bac"><code>sumprod</code> mit lokalen Hilfsfunktionen</h5>
 <div class="org-src-container">
 
 <pre  class="src src-scheme">    <span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">sumprod: (list-of number) -&gt; (list-of number)</span>
@@ -693,9 +686,7 @@ Bei der dritten <code>let</code>-Variante <b><code>letrec</code></b> sind alle \
 </section>
 </div>
 </div>
-<script src="./reveal.js/lib/js/head.min.js"></script>
 <script src="./reveal.js/js/reveal.js"></script>
-
 <script>
 // Full list of configuration options available here:
 // https://github.com/hakimel/reveal.js#configuration
@@ -703,31 +694,32 @@ Reveal.initialize({
 
 controls: true,
 progress: true,
-history: false,
+history: true,
 center: true,
 slideNumber: 'c',
 rollingLinks: false,
 keyboard: true,
+mouseWheel: false,
+fragmentInURL: true,
+hashOneBasedIndex: false,
+pdfSeparateFragments: true,
+
 overview: true,
 margin: 0.05,
 
 theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
-transition: Reveal.getQueryHash().transition || 'slide', // default/cube/page/concave/zoom/linear/fade/none
+transition: Reveal.getQueryHash().transition || 'slide', // see README of reveal.js for options
 transitionSpeed: 'default',
-multiplex: {
-    secret: '', // null if client
-    id: '', // id, obtained from socket.io server
-    url: '' // Location of socket.io server
-},
 
-// Optional libraries used to extend on reveal.js
+// Optional libraries used to extend reveal.js
 dependencies: [
- { src: './reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
  { src: './reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
  { src: './reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
- { src: './reveal.js/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
- { src: './reveal.js/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }]
-,dependencies: [ { src: 'plugin/menu/menu.js', async: true }, { src: 'reveal.js/plugin/zoom-js/zoom.js', async: true } ]});
+ { src: './reveal.js/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } },
+ { src: './reveal.js/plugin/search/search.js', async: true, condition: function() { return !!document.body.classList; } },
+ { src: './reveal.js/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } }]
+
+,dependencies: [ { src: 'plugin/menu/menu.js', async: true }, { src: 'reveal.js/plugin/zoom-js/zoom.js', async: true }, { src: 'reveal.js/plugin/search/search.js', async: true }] , menu: {hideMissingTitles: true}});
 </script>
 </body>
 </html>
