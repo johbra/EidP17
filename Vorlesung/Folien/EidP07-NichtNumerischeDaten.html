@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8"/>
 <title>Nicht-numerische Daten</title>
-<meta name="author" content="(Johannes Brauer)"/>
+<meta name="author" content="Johannes Brauer"/>
 <style type="text/css">
 .underline { text-decoration: underline; }
 </style>
@@ -23,17 +23,18 @@
         document.getElementsByTagName( 'head' )[0].appendChild( link );
     }
 </script>
-<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 <link rel="stylesheet" type="text/css" href="mycss/mystyle.css" />
 </head>
 <body>
 <div class="reveal">
 <div class="slides">
-<section id="sec-title-slide"><h1 class="title">Nicht-numerische Daten</h1><h2 class="author">Johannes Brauer</h2><p class="date">Created: 2019-02-14 Thu 13:24</p>
+<section id="sec-title-slide">
+<h1 class="title">Nicht-numerische Daten</h1><h3 class="subtitle">Einführung in die Programmierung</h3><h2 class="author">Johannes Brauer</h2><h2 class="date"></h2>
 </section>
 <section>
-<section id="org7f923dd">
-<h2 id="org7f923dd">Was sind nicht numerische Daten?</h2>
+<section id="slide-orgebb913f">
+<h2 id="orgebb913f">Was sind nicht numerische Daten?</h2>
 <ul>
 <li>Zeichen</li>
 <li>Zeichenketten</li>
@@ -46,13 +47,13 @@
 </section>
 </section>
 <section>
-<section id="org9a63a89">
-<h2 id="org9a63a89">Symbolische Ausdrücke</h2>
-<div class="outline-text-2" id="text-org9a63a89">
+<section id="slide-org006cd77">
+<h2 id="org006cd77">Symbolische Ausdrücke</h2>
+<div class="outline-text-2" id="text-org006cd77">
 </div>
 </section>
-<section id="orge547679">
-<h3 id="orge547679">Symbole</h3>
+<section id="slide-org42e65a5">
+<h3 id="org42e65a5">Symbole</h3>
 <ul>
 <li><i>Symbole</i> sind eine einfache Möglichkeit für die Repräsentation
 nicht-numerischer Daten.</li>
@@ -71,7 +72,7 @@ Beispiele:
 
 </ul>
 </section>
-<section >
+<section>
 <ul>
 <li><p>
 Einzige Operation auf symbolischen Atomen ist die Prüfung auf
@@ -89,8 +90,8 @@ Gleichheit: <code>equal?</code> erwartet zwei Symbole als Argumente und liefert
 </ul>
 
 </section>
-<section id="orgc804bf6">
-<h3 id="orgc804bf6">S-Ausdrücke</h3>
+<section id="slide-org445e379">
+<h3 id="org445e379">S-Ausdrücke</h3>
 <ul>
 <li><i>Symbolische Ausdrücke</i> (kurz: S-Ausdrücke) wurden erfunden von McCarthy für LISP.</li>
 <li><b>Definition:</b> (vorläufig)<br />
@@ -116,8 +117,8 @@ Solche S-Ausdrücke heißen <i>Listen</i>.
 </ul>
 
 </section>
-<section id="org33e62e5">
-<h4 id="org33e62e5">Darstellung von Formeln als S-Ausdrücke</h4>
+<section id="slide-org2ebb0b3">
+<h4 id="org2ebb0b3">Darstellung von Formeln als S-Ausdrücke</h4>
 <ul>
 <li><p>
 Bestandteile einer Formel:
@@ -126,7 +127,6 @@ Bestandteile einer Formel:
 <li>Konstanten, Variablen und duale Operatoren</li>
 
 </ul>
-
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
 
@@ -181,21 +181,15 @@ Bestandteile einer Formel:
 <td class="org-left">\(p^q\)</td>
 <td class="org-left">(EXP \(p\) \(q\))</td>
 </tr>
-
-<tr>
-<td class="org-left">&#xa0;</td>
-<td class="org-left">&#xa0;</td>
-</tr>
 </tbody>
 </table>
-
 <p>
 \(p\) und \(q\) stehen für Teile einer Formel
 </p></li>
 
 </ul>
 </section>
-<section >
+<section>
 <ul>
 <li><p>
 Die Formel \(x^2+3y-5\) wird durch den S-Ausdruck
@@ -212,8 +206,8 @@ dargestellt.
 </ul>
 
 </section>
-<section id="org3680e92">
-<h4 id="org3680e92">Konstruktion von Listen</h4>
+<section id="slide-org556b418">
+<h4 id="org556b418">Konstruktion von Listen</h4>
 <ul>
 <li><p>
 Ausgangspunkt für die Konstruktion einer Liste ist die leere Liste,
@@ -248,7 +242,7 @@ Mit der Funktion <code>cons</code> kann ein Element als neues erstes Element ein
 </ul>
 
 </section>
-<section >
+<section>
 
 <ul>
 <li>Die Standardfunktion <code>cons</code> erwartet zwei Argumente:
@@ -283,7 +277,7 @@ Mit der Funktion <code>cons</code> kann ein Element als neues erstes Element ein
 </div>
 
 </section>
-<section >
+<section>
 
 <ul>
 <li>eine andere gebräuchliche Darstellung für Listen:</li>
@@ -296,8 +290,8 @@ Mit der Funktion <code>cons</code> kann ein Element als neues erstes Element ein
 </div>
 
 </section>
-<section id="orgef195b0">
-<h4 id="orgef195b0">Zerlegung von Listen</h4>
+<section id="slide-org6e150c5">
+<h4 id="org6e150c5">Zerlegung von Listen</h4>
 <ul>
 <li>Racket stellt zwei Funktionen bereit zum Zugriff auf die beiden
 Komponenten einer Liste:
@@ -331,13 +325,13 @@ Beispiele:
 </section>
 </section>
 <section>
-<section id="orgf88c786">
-<h2 id="orgf88c786">Funktionen für die Verarbeitung rekursiv definierter Datenstrukturen</h2>
-<div class="outline-text-2" id="text-orgf88c786">
+<section id="slide-orgc76febf">
+<h2 id="orgc76febf">Funktionen für die Verarbeitung rekursiv definierter Datenstrukturen</h2>
+<div class="outline-text-2" id="text-orgc76febf">
 </div>
 </section>
-<section id="org3f250e8">
-<h3 id="org3f250e8">Rekursive Datenstrukturen</h3>
+<section id="slide-orga6dcdd7">
+<h3 id="orga6dcdd7">Rekursive Datenstrukturen</h3>
 <ul>
 <li><p>
 Für einen Gebrauchtwagenhändler repräsentieren wir die Menge der im
@@ -369,8 +363,8 @@ nicht-leere Liste mit dem Prädikat <code>cons?</code> erkannt werden.</li>
 </ul>
 
 </section>
-<section id="org47ef34d">
-<h3 id="org47ef34d">Verarbeitung beliebig langer Listen</h3>
+<section id="slide-org665748b">
+<h3 id="org665748b">Verarbeitung beliebig langer Listen</h3>
 <ul>
 <li>Es soll geprüft werden können, ob in der Liste mit den Automarken
 <code>’BMW</code> vorkommt.</li>
@@ -390,8 +384,8 @@ und einen passenden Funktionskopf auf:
 </ul>
 
 </section>
-<section id="orgadd2682">
-<h3 id="orgadd2682">Verträge für Funktionen (Regel 10)</h3>
+<section id="slide-org103cd17">
+<h3 id="org103cd17">Verträge für Funktionen (Regel 10)</h3>
 <p>
 <b>Regel 10</b>: Von nun an schreiben wir vor jeden Funktionskopf einen <i>Vertrag</i> als
   Kommentar. 
@@ -426,8 +420,8 @@ Den Vertrag fügen wir hinter die Zweckbestimmung ein:
 </ul>
 
 </section>
-<section id="org7b700ea">
-<h3 id="org7b700ea">Angabe von Tests für <code>enthaelt-bmw?</code></h3>
+<section id="slide-org06f2178">
+<h3 id="org06f2178">Angabe von Tests für <code>enthaelt-bmw?</code></h3>
 <div class="org-src-container">
 
 <pre  class="src src-scheme">           
@@ -446,8 +440,8 @@ Den Vertrag fügen wir hinter die Zweckbestimmung ein:
 </div>
 
 </section>
-<section id="orgd177273">
-<h3 id="orgd177273">Anlegen einer Funktionsschablone</h3>
+<section id="slide-org17b3339">
+<h3 id="org17b3339">Anlegen einer Funktionsschablone</h3>
 <ul>
 <li>Nun definieren wir eine <i>Funktionsschablone</i> gemäß Regel 9 
 (für die Verarbeitung gemischter Daten), die der Struktur der
@@ -469,7 +463,7 @@ unterscheidet, ergibt sich folgende Schablone:
 </ul>
 
 </section>
-<section >
+<section>
 <ul>
 <li><p>
 Eine nicht-leere Liste ist eine aus zwei Komponenten zusammengesetzte
@@ -504,7 +498,7 @@ Aus diesen Überlegungen ergibt sich folgende Schablone:
 
 </ul>
 </section>
-<section >
+<section>
 <ul>
 <li>Die Auslassungszeichen sind dann entsprechend der Zweckbestimmung
 auszufüllen, d. h. die Lösung muss aus den Zugriffen auf das erste
@@ -514,8 +508,8 @@ Element und die Restliste geeignet kombiniert werden.</li>
 </ul>
 
 </section>
-<section id="org91073b8">
-<h3 id="org91073b8">Benutzung der Schablone für <code>enthaelt-bmw?</code></h3>
+<section id="slide-org38c1377">
+<h3 id="org38c1377">Benutzung der Schablone für <code>enthaelt-bmw?</code></h3>
 <ul>
 <li><p>
 Die Schablone angewendet auf <code>enthaelt-bmw?</code>, wobei die Lösung für
@@ -538,8 +532,8 @@ den Fall der leeren Liste bereits eingetragen ist:
 </ul>
 
 </section>
-<section id="org9ff526d">
-<h3 id="org9ff526d">Ausfüllen der Schablone für <code>enthaelt-bmw?</code></h3>
+<section id="slide-org970df1d">
+<h3 id="org970df1d">Ausfüllen der Schablone für <code>enthaelt-bmw?</code></h3>
 <ul>
 <li><p>
 Nun betrachten wir die Komponenten der nicht-leeren Liste. Falls das
@@ -562,7 +556,7 @@ erste Element das gesuchte ist, muss die Funktion <code>#true</code> liefern:
 </ul>
 
 </section>
-<section >
+<section>
 
 <ul>
 <li><p>
@@ -591,13 +585,13 @@ auf sie die Funktion <code>enthaelt-bmw?</code> anwendbar:
 </section>
 </section>
 <section>
-<section id="org6177eb7">
-<h2 id="org6177eb7">Systematisierung des Entwurfs rekursiver Funktionen</h2>
-<div class="outline-text-2" id="text-org6177eb7">
+<section id="slide-org001b8c3">
+<h2 id="org001b8c3">Systematisierung des Entwurfs rekursiver Funktionen</h2>
+<div class="outline-text-2" id="text-org001b8c3">
 </div>
 </section>
-<section id="org27a840f">
-<h3 id="org27a840f">Datendefinition</h3>
+<section id="slide-orgd2af561">
+<h3 id="orgd2af561">Datendefinition</h3>
 <ul>
 <li>Die Funktion <code>enthaelt-bmw?</code> wurde unter Verwendung der
 Regeln 8 und 9 (ergänzt um Regel 10) entwickelt.</li>
@@ -612,7 +606,7 @@ auf die Definition aufweist.</li>
 
 </ul>
 </section>
-<section >
+<section>
 <ul>
 <li>Betrachten wir dazu noch einmal die Definition der Liste von
 Symbolen:</li>
@@ -631,8 +625,8 @@ Symbolen:</li>
 </ul>
 
 </section>
-<section id="orgf751cdf">
-<h3 id="orgf751cdf">Funktionsschablone</h3>
+<section id="slide-orgc3288b5">
+<h3 id="orgc3288b5">Funktionsschablone</h3>
 <ul>
 <li>Die Funktionsschablone wird als bedingte Funktion aufgeschrieben,
 die für jeden Satz der Definition der rekursiven Datenstruktur eine
@@ -658,7 +652,7 @@ im Folgenden) durch <code>else</code> ersetzt.
 </p>
 
 </section>
-<section >
+<section>
 
 <ul>
 <li>Dieser Rückwärtspfeil wird durch eine rekursive Anwendung der
@@ -685,8 +679,8 @@ Listen von Symbolen die folgende Funktionsschablone:
 </ul>
 
 </section>
-<section id="org5e6a213">
-<h3 id="org5e6a213">Ausfüllen der Schablone</h3>
+<section id="slide-org0ac3103">
+<h3 id="org0ac3103">Ausfüllen der Schablone</h3>
 <ul>
 <li>Die Entwicklung des Funktionsrumpfs beginnt mit den
 Frage-Antwort-Kombinationen, die keine rekursiven Aufrufe enthalten.
@@ -709,16 +703,16 @@ weiteren Fallunterscheidung.</li>
 </ul>
 
 </section>
-<section id="org5030d0e">
-<h3 id="org5030d0e">Erweiterung des Regelsatzes für die Entwicklung rekursiver Funktionen</h3>
+<section id="slide-org81d3331">
+<h3 id="org81d3331">Erweiterung des Regelsatzes für die Entwicklung rekursiver Funktionen</h3>
 <p>
 <b>Regel 11</b>:
 </p>
 
-<p>
+<p class="backwardlink">
 Schreibe eine präzise Datendefinition für die zu verarbeitende
 rekursive Datenstruktur auf. Folge dabei dem im Abschnitt
-<a href="#/slide-org27a840f">Datendefinition</a> angegebenen Muster.
+<a href="#/slide-orgd2af561" class="backwardlink">Datendefinition</a> angegebenen Muster.
 </p>
 
 <p>
@@ -739,7 +733,7 @@ Formuliere mindestens einen Test für den Fall, dass die rekursive
 enthält!
 </p>
 </section>
-<section >
+<section>
 <p>
 <b>Regel 13</b> (Funktionsschablone)
 </p>
@@ -762,8 +756,8 @@ entwickelnde Funktion <b>rekursiv anzuwenden</b> ist.</li>
 </ul>
 
 </section>
-<section id="orgf045049">
-<h3 id="orgf045049">Listen als Resultate</h3>
+<section id="slide-orgd6dbd8a">
+<h3 id="orgd6dbd8a">Listen als Resultate</h3>
 <ul>
 <li>Anwendung der Regeln für die Entwicklung rekursiver Funktionen auf
 Funktionen, die eine Liste als Resultat liefern.</li>
@@ -773,8 +767,8 @@ kann.</li>
 
 </ul>
 </section>
-<section id="org11578b4">
-<h4 id="org11578b4">Vertrag, Funktionskopf, Zweckbestimmung</h4>
+<section id="slide-org22b1156">
+<h4 id="org22b1156">Vertrag, Funktionskopf, Zweckbestimmung</h4>
 <div class="org-src-container">
 
 <pre  class="src src-scheme">  <span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">entfernt eine Modell (symbol) aus der  </span>
@@ -786,8 +780,8 @@ kann.</li>
 </div>
 
 </section>
-<section id="org985fa4b">
-<h4 id="org985fa4b">Hinzufügen der Tests</h4>
+<section id="slide-org966b65d">
+<h4 id="org966b65d">Hinzufügen der Tests</h4>
 <div class="org-src-container">
 
 <pre  class="src src-scheme"><span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">entfernt eine Modell (symbol) aus der  </span>
@@ -804,8 +798,8 @@ kann.</li>
 </div>
 
 </section>
-<section id="orgc7f9d02">
-<h4 id="orgc7f9d02">Hinzufügen der Funktionsschablone</h4>
+<section id="slide-orgf0c9121">
+<h4 id="orgf0c9121">Hinzufügen der Funktionsschablone</h4>
 <div class="org-src-container">
 
 <pre  class="src src-scheme"><span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">entfernt eine Modell (symbol) aus der  </span>
@@ -826,8 +820,8 @@ kann.</li>
 </div>
 
 </section>
-<section id="org120a6f6">
-<h4 id="org120a6f6">Vervollständigung des Funktionsrumpfs</h4>
+<section id="slide-org209d4f3">
+<h4 id="org209d4f3">Vervollständigung des Funktionsrumpfs</h4>
 <ul>
 <li>Folgende Fälle sind zu unterscheiden:
 <ol>
@@ -843,8 +837,7 @@ der Restliste, aus der das zu entfernende Modell entfernt wurde.</li>
 </ul>
 <div class="org-src-container">
 
-<pre  class="src src-scheme"><span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">entfernt eine Modell (symbol) aus der  </span>
-<span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">Modellpalette (liste-von-symbolen)</span>
+<pre  class="src src-scheme"><span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">entfernt eine Modell (symbol) aus der Modellpalette (liste-von-symbolen)</span>
 <span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">entferne-modell: (list-of symbol) symbol -&gt; (list-of symbol)</span>
 <span style="color: #707183;">(</span>check-expect <span style="color: #7388D6;">(</span>entferne-modell empty 'BMW<span style="color: #7388D6;">)</span> empty<span style="color: #707183;">)</span>
 <span style="color: #707183;">(</span>check-expect <span style="color: #7388D6;">(</span>entferne-modell '<span style="color: #909183;">(</span>BMW<span style="color: #909183;">)</span> 'BMW<span style="color: #7388D6;">)</span> empty<span style="color: #707183;">)</span>
@@ -853,11 +846,10 @@ der Restliste, aus der das zu entfernende Modell entfernt wurde.</li>
 <span style="color: #707183;">(</span>check-expect <span style="color: #7388D6;">(</span>entferne-modell '<span style="color: #909183;">(</span>BMW OPEL FORD<span style="color: #909183;">)</span> 'OPEL<span style="color: #7388D6;">)</span> '<span style="color: #7388D6;">(</span>BMW FORD<span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
 <span style="color: #707183;">(</span><span style="color: #0000FF;">define</span> <span style="color: #006699;">entferne-modell</span>
   <span style="color: #7388D6;">(</span><span style="color: #0000FF;">lambda</span> <span style="color: #909183;">[</span>modellpalette modell<span style="color: #909183;">]</span>
-    <span style="color: #909183;">(</span><span style="color: #0000FF;">cond</span> 
-      <span style="color: #709870;">[</span><span style="color: #907373;">(</span>empty? modellpalette<span style="color: #907373;">)</span> empty<span style="color: #709870;">]</span>
-      <span style="color: #709870;">[</span><span style="color: #907373;">(</span>equal? <span style="color: #6276BA;">(</span>first modellpalette<span style="color: #6276BA;">)</span> modell<span style="color: #907373;">)</span> <span style="color: #907373;">(</span>rest modellpalette<span style="color: #907373;">)</span><span style="color: #709870;">]</span>
-      <span style="color: #709870;">[</span>else <span style="color: #907373;">(</span>cons <span style="color: #6276BA;">(</span>first modellpalette<span style="color: #6276BA;">)</span>
-                  <span style="color: #6276BA;">(</span>entferne-modell <span style="color: #858580;">(</span>rest modellpalette<span style="color: #858580;">)</span> modell<span style="color: #6276BA;">)</span><span style="color: #907373;">)</span><span style="color: #709870;">]</span><span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
+    <span style="color: #909183;">(</span><span style="color: #0000FF;">cond</span> <span style="color: #709870;">[</span><span style="color: #907373;">(</span>empty? modellpalette<span style="color: #907373;">)</span> empty<span style="color: #709870;">]</span>
+          <span style="color: #709870;">[</span><span style="color: #907373;">(</span>equal? <span style="color: #6276BA;">(</span>first modellpalette<span style="color: #6276BA;">)</span> modell<span style="color: #907373;">)</span> <span style="color: #907373;">(</span>rest modellpalette<span style="color: #907373;">)</span><span style="color: #709870;">]</span>
+          <span style="color: #709870;">[</span>else <span style="color: #907373;">(</span>cons <span style="color: #6276BA;">(</span>first modellpalette<span style="color: #6276BA;">)</span>
+                      <span style="color: #6276BA;">(</span>entferne-modell <span style="color: #858580;">(</span>rest modellpalette<span style="color: #858580;">)</span> modell<span style="color: #6276BA;">)</span><span style="color: #907373;">)</span><span style="color: #709870;">]</span><span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
 </pre>
 </div>
 
@@ -865,13 +857,13 @@ der Restliste, aus der das zu entfernende Modell entfernt wurde.</li>
 </section>
 </section>
 <section>
-<section id="orgf17fbbc">
-<h2 id="orgf17fbbc">Rekursive Funktionen und Hilfsfunktionen</h2>
-<div class="outline-text-2" id="text-orgf17fbbc">
+<section id="slide-org9575da1">
+<h2 id="org9575da1">Rekursive Funktionen und Hilfsfunktionen</h2>
+<div class="outline-text-2" id="text-org9575da1">
 </div>
 </section>
-<section id="org99e5a0b">
-<h3 id="org99e5a0b">Top-down-Entwurf</h3>
+<section id="slide-org8b53c01">
+<h3 id="org8b53c01">Top-down-Entwurf</h3>
 <ul>
 <li>Anhand eines weiteren Beispiels soll die Anwendung der Regeln für
 die Entwicklung rekursiver Funktionen V demonstriert werden.</li>
@@ -896,8 +888,8 @@ bezeichnet.
 </ul>
 
 </section>
-<section id="orgdfd7dd1">
-<h4 id="orgdfd7dd1">Literaturhinweise</h4>
+<section id="slide-org4c33acb">
+<h4 id="org4c33acb">Literaturhinweise</h4>
 <ul>
 <li>Gelegentlich werden auch die Begriffe Wunschdenken oder Wunschliste
 benutzt, z.B. in
@@ -917,8 +909,8 @@ of Computer Programs. The MIT Press, 1999</li>
 </ul>
 
 </section>
-<section id="org138bbfe">
-<h4 id="org138bbfe">Top-down-Entwurf &#x2013; Beispiel</h4>
+<section id="slide-org9cc4180">
+<h4 id="org9cc4180">Top-down-Entwurf &#x2013; Beispiel</h4>
 <ul>
 <li><p>
 Die Funktion <code>(symbolsin x)</code> liefere, angewandt auf eine Liste von
@@ -972,7 +964,7 @@ folgende Funktionsschablone:
 </ul>
 
 </section>
-<section >
+<section>
 
 <ul>
 <li>Das Resultat von <code>symbolsin</code> ist <code>empty</code>, wenn das Argument die leere
@@ -996,8 +988,8 @@ hinzufügt, wenn es in ihr nicht bereits enthalten ist.</li>
 </ul>
 
 </section>
-<section id="orgbc36be6">
-<h4 id="orgbc36be6">Funktionsschablone für <code>addtoset</code></h4>
+<section id="slide-org397999f">
+<h4 id="org397999f">Funktionsschablone für <code>addtoset</code></h4>
 <div class="org-src-container">
 
 <pre  class="src src-scheme"><span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">f&#252;gt einer Liste von Symbolen ein weiteres hinzu, </span>
@@ -1019,8 +1011,8 @@ Mit dieser Funktion kann <code>symbolsin</code> vervollständigt werden.
 </p>
 
 </section>
-<section id="org4ff8f7c">
-<h4 id="org4ff8f7c">Funktion <code>symbolsin</code></h4>
+<section id="slide-org31487c3">
+<h4 id="org31487c3">Funktion <code>symbolsin</code></h4>
 <div class="org-src-container">
 
 <pre  class="src src-scheme"><span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">entfernt aus eine Liste von Symbolen jedes </span>
@@ -1037,8 +1029,8 @@ Mit dieser Funktion kann <code>symbolsin</code> vervollständigt werden.
 </div>
 
 </section>
-<section id="org5b439da">
-<h4 id="org5b439da">Funktion <code>addtoset</code></h4>
+<section id="slide-orge8bd80b">
+<h4 id="orge8bd80b">Funktion <code>addtoset</code></h4>
 <ul>
 <li>Für die Funktion <code>addtoset</code> stellen wir folgende Überlegungen an:
 <ul>
@@ -1063,8 +1055,8 @@ bereits in der Liste enthalten ist.</li>
 </div>
 
 </section>
-<section id="org7a0368d">
-<h4 id="org7a0368d">Funktion <code>member?</code></h4>
+<section id="slide-orgd7da3bb">
+<h4 id="orgd7da3bb">Funktion <code>member?</code></h4>
 <p>
 Die Logik der Funktion <code>member</code>? entspricht im Wesentlichen der der
 Funktion <code>enthaelt-bmw</code>:
@@ -1096,8 +1088,8 @@ symbolsin.rkt in Moodle zu finden.
 </section>
 </section>
 <section>
-<section id="orgee02a92">
-<h2 id="orgee02a92">Funktionen für die Verarbeitung mehrerer Listen</h2>
+<section id="slide-orga1fe7be">
+<h2 id="orga1fe7be">Funktionen für die Verarbeitung mehrerer Listen</h2>
 <p>
 Falls eine Funktion zwei Listenparameter zu verarbeiten hat, sind
 grundsätzlich drei Fälle zu unterscheiden:
@@ -1114,8 +1106,8 @@ auf das erste Element und die Restliste notwendig.</li>
 </ol>
 
 </section>
-<section id="org1df7894">
-<h3 id="org1df7894">Behandlung der drei Fälle:</h3>
+<section id="slide-orgad940a3">
+<h3 id="orgad940a3">Behandlung der drei Fälle:</h3>
 <dl>
 <dt>Fall 1</dt><dd>Die bekannten Regeln (insbesondere was die
 Funktionsschablone anbelangt) können wie bisher angewendet, weil das
@@ -1131,8 +1123,8 @@ Funktionsschablone:</dd>
 </dl>
 
 </section>
-<section id="orgc20c586">
-<h4 id="orgc20c586">Funktionsschablone für Fall 2</h4>
+<section id="slide-org12d0163">
+<h4 id="org12d0163">Funktionsschablone für Fall 2</h4>
 <div class="org-src-container">
 
 <pre  class="src src-scheme"><span style="color: #707183;">(</span><span style="color: #0000FF;">define</span> <span style="color: #006699;">listen-funktion</span>
@@ -1147,8 +1139,8 @@ Funktionsschablone:</dd>
 </div>
 
 </section>
-<section id="org757e801">
-<h4 id="org757e801">Behandlung von Fall 3</h4>
+<section id="slide-org60607c0">
+<h4 id="org60607c0">Behandlung von Fall 3</h4>
 <p>
 Es gibt keine nutzbare Abhängigkeit der beiden Parameter. Hier müssen
 grundsätzlich alle (vier) Fälle (Liste ist leer oder nicht.)
@@ -1172,8 +1164,8 @@ berücksichtigt werden:
 </div>
 
 </section>
-<section id="org19525ad">
-<h5 id="org19525ad">Drei mögliche Rekursionsschemata</h5>
+<section id="slide-org4db520a">
+<h5 id="org4db520a">Drei mögliche Rekursionsschemata</h5>
 <p>
 Man beachte, dass die
 Schablone noch keine rekursiven Aufrufe enthält. Nur für den Fall, dass
@@ -1201,9 +1193,7 @@ entschieden werden.
 </section>
 </div>
 </div>
-<script src="./reveal.js/lib/js/head.min.js"></script>
 <script src="./reveal.js/js/reveal.js"></script>
-
 <script>
 // Full list of configuration options available here:
 // https://github.com/hakimel/reveal.js#configuration
@@ -1211,31 +1201,32 @@ Reveal.initialize({
 
 controls: true,
 progress: true,
-history: false,
+history: true,
 center: true,
 slideNumber: 'c',
 rollingLinks: false,
 keyboard: true,
+mouseWheel: false,
+fragmentInURL: true,
+hashOneBasedIndex: false,
+pdfSeparateFragments: true,
+
 overview: true,
 margin: 0.05,
 
 theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
-transition: Reveal.getQueryHash().transition || 'slide', // default/cube/page/concave/zoom/linear/fade/none
+transition: Reveal.getQueryHash().transition || 'slide', // see README of reveal.js for options
 transitionSpeed: 'default',
-multiplex: {
-    secret: '', // null if client
-    id: '', // id, obtained from socket.io server
-    url: '' // Location of socket.io server
-},
 
-// Optional libraries used to extend on reveal.js
+// Optional libraries used to extend reveal.js
 dependencies: [
- { src: './reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
  { src: './reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
  { src: './reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
- { src: './reveal.js/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
- { src: './reveal.js/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }]
-,dependencies: [ { src: 'plugin/menu/menu.js', async: true }, { src: 'reveal.js/plugin/zoom-js/zoom.js', async: true } ]});
+ { src: './reveal.js/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } },
+ { src: './reveal.js/plugin/search/search.js', async: true, condition: function() { return !!document.body.classList; } },
+ { src: './reveal.js/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } }]
+
+,dependencies: [ { src: 'plugin/menu/menu.js', async: true }, { src: 'reveal.js/plugin/zoom-js/zoom.js', async: true }, { src: 'reveal.js/plugin/search/search.js', async: true }] , menu: {hideMissingTitles: true}});
 </script>
 </body>
 </html>

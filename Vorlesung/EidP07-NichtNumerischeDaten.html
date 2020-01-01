@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="de" xml:lang="de">
 <head>
-<!-- 2019-02-14 Thu 13:25 -->
+<!-- 2020-01-01 Wed 15:35 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Nicht-numerische Daten</title>
@@ -280,9 +280,9 @@ for the JavaScript code in this tag.
 <br />
 <span class="subtitle">Einführung in die Programmierung</span>
 </h1>
-<div id="outline-container-org51d5e9a" class="outline-2">
-<h2 id="org51d5e9a">Was sind nicht numerische Daten?</h2>
-<div class="outline-text-2" id="text-org51d5e9a">
+<div id="outline-container-orgc403cc3" class="outline-2">
+<h2 id="orgc403cc3">Was sind nicht numerische Daten?</h2>
+<div class="outline-text-2" id="text-orgc403cc3">
 <ul class="org-ul">
 <li>Zeichen</li>
 <li>Zeichenketten</li>
@@ -293,13 +293,13 @@ for the JavaScript code in this tag.
 </ul>
 </div>
 </div>
-<div id="outline-container-org4f7dca9" class="outline-2">
-<h2 id="org4f7dca9">Symbolische Ausdrücke</h2>
-<div class="outline-text-2" id="text-org4f7dca9">
+<div id="outline-container-org57a8868" class="outline-2">
+<h2 id="org57a8868">Symbolische Ausdrücke</h2>
+<div class="outline-text-2" id="text-org57a8868">
 </div>
-<div id="outline-container-orgb82409f" class="outline-3">
-<h3 id="orgb82409f">Symbole</h3>
-<div class="outline-text-3" id="text-orgb82409f">
+<div id="outline-container-orgff9698d" class="outline-3">
+<h3 id="orgff9698d">Symbole</h3>
+<div class="outline-text-3" id="text-orgff9698d">
 <ul class="org-ul">
 <li><i>Symbole</i> sind eine einfache Möglichkeit für die Repräsentation
 nicht-numerischer Daten.</li>
@@ -332,9 +332,9 @@ Gleichheit: <code>equal?</code> erwartet zwei Symbole als Argumente und liefert
 </div>
 </div>
 
-<div id="outline-container-org0008a28" class="outline-3">
-<h3 id="org0008a28">S-Ausdrücke</h3>
-<div class="outline-text-3" id="text-org0008a28">
+<div id="outline-container-org1399c53" class="outline-3">
+<h3 id="org1399c53">S-Ausdrücke</h3>
+<div class="outline-text-3" id="text-org1399c53">
 <ul class="org-ul">
 <li><i>Symbolische Ausdrücke</i> (kurz: S-Ausdrücke) wurden erfunden von McCarthy für LISP.</li>
 <li><b>Definition:</b> (vorläufig)<br />
@@ -357,9 +357,9 @@ Solche S-Ausdrücke heißen <i>Listen</i>.
 </ul>
 </div>
 
-<div id="outline-container-org80f978c" class="outline-4">
-<h4 id="org80f978c">Darstellung von Formeln als S-Ausdrücke</h4>
-<div class="outline-text-4" id="text-org80f978c">
+<div id="outline-container-org9cdacac" class="outline-4">
+<h4 id="org9cdacac">Darstellung von Formeln als S-Ausdrücke</h4>
+<div class="outline-text-4" id="text-org9cdacac">
 <ul class="org-ul">
 <li><p>
 Bestandteile einer Formel:
@@ -367,7 +367,6 @@ Bestandteile einer Formel:
 <ul class="org-ul">
 <li>Konstanten, Variablen und duale Operatoren</li>
 </ul>
-
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
 
@@ -422,14 +421,8 @@ Bestandteile einer Formel:
 <td class="org-left">\(p^q\)</td>
 <td class="org-left">(EXP \(p\) \(q\))</td>
 </tr>
-
-<tr>
-<td class="org-left">&#xa0;</td>
-<td class="org-left">&#xa0;</td>
-</tr>
 </tbody>
 </table>
-
 <p>
 \(p\) und \(q\) stehen für Teile einer Formel
 </p></li>
@@ -450,9 +443,9 @@ dargestellt.
 </div>
 </div>
 
-<div id="outline-container-org34c1759" class="outline-4">
-<h4 id="org34c1759">Konstruktion von Listen</h4>
-<div class="outline-text-4" id="text-org34c1759">
+<div id="outline-container-orgcbd7591" class="outline-4">
+<h4 id="orgcbd7591">Konstruktion von Listen</h4>
+<div class="outline-text-4" id="text-orgcbd7591">
 <ul class="org-ul">
 <li><p>
 Ausgangspunkt für die Konstruktion einer Liste ist die leere Liste,
@@ -525,9 +518,9 @@ Mit der Funktion <code>cons</code> kann ein Element als neues erstes Element ein
 </div>
 </div>
 
-<div id="outline-container-org99e5653" class="outline-4">
-<h4 id="org99e5653">Zerlegung von Listen</h4>
-<div class="outline-text-4" id="text-org99e5653">
+<div id="outline-container-orgeda736d" class="outline-4">
+<h4 id="orgeda736d">Zerlegung von Listen</h4>
+<div class="outline-text-4" id="text-orgeda736d">
 <ul class="org-ul">
 <li>Racket stellt zwei Funktionen bereit zum Zugriff auf die beiden
 Komponenten einer Liste:
@@ -559,13 +552,13 @@ Beispiele:
 </div>
 
 
-<div id="outline-container-org11d5e21" class="outline-2">
-<h2 id="org11d5e21">Funktionen für die Verarbeitung rekursiv definierter Datenstrukturen</h2>
-<div class="outline-text-2" id="text-org11d5e21">
+<div id="outline-container-orgc5d2173" class="outline-2">
+<h2 id="orgc5d2173">Funktionen für die Verarbeitung rekursiv definierter Datenstrukturen</h2>
+<div class="outline-text-2" id="text-orgc5d2173">
 </div>
-<div id="outline-container-org4b880c5" class="outline-3">
-<h3 id="org4b880c5">Rekursive Datenstrukturen</h3>
-<div class="outline-text-3" id="text-org4b880c5">
+<div id="outline-container-org66c7f4c" class="outline-3">
+<h3 id="org66c7f4c">Rekursive Datenstrukturen</h3>
+<div class="outline-text-3" id="text-org66c7f4c">
 <ul class="org-ul">
 <li><p>
 Für einen Gebrauchtwagenhändler repräsentieren wir die Menge der im
@@ -594,9 +587,9 @@ nicht-leere Liste mit dem Prädikat <code>cons?</code> erkannt werden.</li>
 </div>
 </div>
 
-<div id="outline-container-org6e1a92d" class="outline-3">
-<h3 id="org6e1a92d">Verarbeitung beliebig langer Listen</h3>
-<div class="outline-text-3" id="text-org6e1a92d">
+<div id="outline-container-org32dbab4" class="outline-3">
+<h3 id="org32dbab4">Verarbeitung beliebig langer Listen</h3>
+<div class="outline-text-3" id="text-org32dbab4">
 <ul class="org-ul">
 <li>Es soll geprüft werden können, ob in der Liste mit den Automarken
 <code>’BMW</code> vorkommt.</li>
@@ -615,9 +608,9 @@ und einen passenden Funktionskopf auf:
 </div>
 </div>
 
-<div id="outline-container-org55d6283" class="outline-3">
-<h3 id="org55d6283">Verträge für Funktionen (Regel 10)</h3>
-<div class="outline-text-3" id="text-org55d6283">
+<div id="outline-container-org556619d" class="outline-3">
+<h3 id="org556619d">Verträge für Funktionen (Regel 10)</h3>
+<div class="outline-text-3" id="text-org556619d">
 <p>
 <b>Regel 10</b>: Von nun an schreiben wir vor jeden Funktionskopf einen <i>Vertrag</i> als
   Kommentar. 
@@ -651,9 +644,9 @@ Den Vertrag fügen wir hinter die Zweckbestimmung ein:
 </div>
 </div>
 
-<div id="outline-container-orgd12464b" class="outline-3">
-<h3 id="orgd12464b">Angabe von Tests für <code>enthaelt-bmw?</code></h3>
-<div class="outline-text-3" id="text-orgd12464b">
+<div id="outline-container-org6b162e8" class="outline-3">
+<h3 id="org6b162e8">Angabe von Tests für <code>enthaelt-bmw?</code></h3>
+<div class="outline-text-3" id="text-org6b162e8">
 <div class="org-src-container">
 <pre class="src src-scheme">           
    <span style="color: #707183;">(</span>check-expect <span style="color: #7388D6;">(</span>enthaelt-bmw? empty<span style="color: #7388D6;">)</span> #false<span style="color: #707183;">)</span>
@@ -672,9 +665,9 @@ Den Vertrag fügen wir hinter die Zweckbestimmung ein:
 </div>
 </div>
 
-<div id="outline-container-orgb91546a" class="outline-3">
-<h3 id="orgb91546a">Anlegen einer Funktionsschablone</h3>
-<div class="outline-text-3" id="text-orgb91546a">
+<div id="outline-container-orgc6b4782" class="outline-3">
+<h3 id="orgc6b4782">Anlegen einer Funktionsschablone</h3>
+<div class="outline-text-3" id="text-orgc6b4782">
 <ul class="org-ul">
 <li>Nun definieren wir eine <i>Funktionsschablone</i> gemäß Regel 9 
 (für die Verarbeitung gemischter Daten), die der Struktur der
@@ -732,9 +725,9 @@ Element und die Restliste geeignet kombiniert werden.</li>
 </div>
 </div>
 
-<div id="outline-container-orgcb1a1bf" class="outline-3">
-<h3 id="orgcb1a1bf">Benutzung der Schablone für <code>enthaelt-bmw?</code></h3>
-<div class="outline-text-3" id="text-orgcb1a1bf">
+<div id="outline-container-org0431a3a" class="outline-3">
+<h3 id="org0431a3a">Benutzung der Schablone für <code>enthaelt-bmw?</code></h3>
+<div class="outline-text-3" id="text-org0431a3a">
 <ul class="org-ul">
 <li><p>
 Die Schablone angewendet auf <code>enthaelt-bmw?</code>, wobei die Lösung für
@@ -756,9 +749,9 @@ den Fall der leeren Liste bereits eingetragen ist:
 </div>
 </div>
 
-<div id="outline-container-orgce53c34" class="outline-3">
-<h3 id="orgce53c34">Ausfüllen der Schablone für <code>enthaelt-bmw?</code></h3>
-<div class="outline-text-3" id="text-orgce53c34">
+<div id="outline-container-orgfc636c3" class="outline-3">
+<h3 id="orgfc636c3">Ausfüllen der Schablone für <code>enthaelt-bmw?</code></h3>
+<div class="outline-text-3" id="text-orgfc636c3">
 <ul class="org-ul">
 <li><p>
 Nun betrachten wir die Komponenten der nicht-leeren Liste. Falls das
@@ -803,13 +796,13 @@ auf sie die Funktion <code>enthaelt-bmw?</code> anwendbar:
 </div>
 </div>
 
-<div id="outline-container-org93c73f7" class="outline-2">
-<h2 id="org93c73f7">Systematisierung des Entwurfs rekursiver Funktionen</h2>
-<div class="outline-text-2" id="text-org93c73f7">
+<div id="outline-container-orgf87ffd1" class="outline-2">
+<h2 id="orgf87ffd1">Systematisierung des Entwurfs rekursiver Funktionen</h2>
+<div class="outline-text-2" id="text-orgf87ffd1">
 </div>
-<div id="outline-container-org315cbff" class="outline-3">
-<h3 id="org315cbff">Datendefinition</h3>
-<div class="outline-text-3" id="text-org315cbff">
+<div id="outline-container-org423c025" class="outline-3">
+<h3 id="org423c025">Datendefinition</h3>
+<div class="outline-text-3" id="text-org423c025">
 <ul class="org-ul">
 <li>Die Funktion <code>enthaelt-bmw?</code> wurde unter Verwendung der
 Regeln 8 und 9 (ergänzt um Regel 10) entwickelt.</li>
@@ -839,9 +832,9 @@ Symbolen:</li>
 </div>
 </div>
 
-<div id="outline-container-org5bfa3f9" class="outline-3">
-<h3 id="org5bfa3f9">Funktionsschablone</h3>
-<div class="outline-text-3" id="text-org5bfa3f9">
+<div id="outline-container-org1f96503" class="outline-3">
+<h3 id="org1f96503">Funktionsschablone</h3>
+<div class="outline-text-3" id="text-org1f96503">
 <ul class="org-ul">
 <li>Die Funktionsschablone wird als bedingte Funktion aufgeschrieben,
 die für jeden Satz der Definition der rekursiven Datenstruktur eine
@@ -889,9 +882,9 @@ Listen von Symbolen die folgende Funktionsschablone:
 </div>
 </div>
 
-<div id="outline-container-orgfa2ec01" class="outline-3">
-<h3 id="orgfa2ec01">Ausfüllen der Schablone</h3>
-<div class="outline-text-3" id="text-orgfa2ec01">
+<div id="outline-container-orge2af979" class="outline-3">
+<h3 id="orge2af979">Ausfüllen der Schablone</h3>
+<div class="outline-text-3" id="text-orge2af979">
 <ul class="org-ul">
 <li>Die Entwicklung des Funktionsrumpfs beginnt mit den
 Frage-Antwort-Kombinationen, die keine rekursiven Aufrufe enthalten.
@@ -912,9 +905,9 @@ weiteren Fallunterscheidung.</li>
 </div>
 </div>
 
-<div id="outline-container-org6857251" class="outline-3">
-<h3 id="org6857251">Erweiterung des Regelsatzes für die Entwicklung rekursiver Funktionen</h3>
-<div class="outline-text-3" id="text-org6857251">
+<div id="outline-container-org86eb9a7" class="outline-3">
+<h3 id="org86eb9a7">Erweiterung des Regelsatzes für die Entwicklung rekursiver Funktionen</h3>
+<div class="outline-text-3" id="text-org86eb9a7">
 <p>
 <b>Regel 11</b>:
 </p>
@@ -922,7 +915,7 @@ weiteren Fallunterscheidung.</li>
 <p>
 Schreibe eine präzise Datendefinition für die zu verarbeitende
 rekursive Datenstruktur auf. Folge dabei dem im Abschnitt
-<a href="#org315cbff">Datendefinition</a> angegebenen Muster.
+<a href="#org423c025">Datendefinition</a> angegebenen Muster.
 </p>
 
 <p>
@@ -962,9 +955,9 @@ entwickelnde Funktion <b>rekursiv anzuwenden</b> ist.</li>
 </div>
 </div>
 
-<div id="outline-container-orgd348174" class="outline-3">
-<h3 id="orgd348174">Listen als Resultate</h3>
-<div class="outline-text-3" id="text-orgd348174">
+<div id="outline-container-orgc452be0" class="outline-3">
+<h3 id="orgc452be0">Listen als Resultate</h3>
+<div class="outline-text-3" id="text-orgc452be0">
 <ul class="org-ul">
 <li>Anwendung der Regeln für die Entwicklung rekursiver Funktionen auf
 Funktionen, die eine Liste als Resultat liefern.</li>
@@ -973,9 +966,9 @@ werden, mit dem er ein Modell aus seiner Angebotspalette entfernen
 kann.</li>
 </ul>
 </div>
-<div id="outline-container-org223bf02" class="outline-4">
-<h4 id="org223bf02">Vertrag, Funktionskopf, Zweckbestimmung</h4>
-<div class="outline-text-4" id="text-org223bf02">
+<div id="outline-container-orgde848eb" class="outline-4">
+<h4 id="orgde848eb">Vertrag, Funktionskopf, Zweckbestimmung</h4>
+<div class="outline-text-4" id="text-orgde848eb">
 <div class="org-src-container">
 <pre class="src src-scheme">  <span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">entfernt eine Modell (symbol) aus der  </span>
   <span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">Modellpalette (liste-von-symbolen)</span>
@@ -987,9 +980,9 @@ kann.</li>
 </div>
 </div>
 
-<div id="outline-container-orgf705917" class="outline-4">
-<h4 id="orgf705917">Hinzufügen der Tests</h4>
-<div class="outline-text-4" id="text-orgf705917">
+<div id="outline-container-org64e0299" class="outline-4">
+<h4 id="org64e0299">Hinzufügen der Tests</h4>
+<div class="outline-text-4" id="text-org64e0299">
 <div class="org-src-container">
 <pre class="src src-scheme"><span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">entfernt eine Modell (symbol) aus der  </span>
 <span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">Modellpalette (liste-von-symbolen)</span>
@@ -1006,9 +999,9 @@ kann.</li>
 </div>
 </div>
 
-<div id="outline-container-org4b1da01" class="outline-4">
-<h4 id="org4b1da01">Hinzufügen der Funktionsschablone</h4>
-<div class="outline-text-4" id="text-org4b1da01">
+<div id="outline-container-org22de6f9" class="outline-4">
+<h4 id="org22de6f9">Hinzufügen der Funktionsschablone</h4>
+<div class="outline-text-4" id="text-org22de6f9">
 <div class="org-src-container">
 <pre class="src src-scheme"><span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">entfernt eine Modell (symbol) aus der  </span>
 <span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">Modellpalette (liste-von-symbolen)</span>
@@ -1029,9 +1022,9 @@ kann.</li>
 </div>
 </div>
 
-<div id="outline-container-orgaa9e145" class="outline-4">
-<h4 id="orgaa9e145">Vervollständigung des Funktionsrumpfs</h4>
-<div class="outline-text-4" id="text-orgaa9e145">
+<div id="outline-container-orga4eb559" class="outline-4">
+<h4 id="orga4eb559">Vervollständigung des Funktionsrumpfs</h4>
+<div class="outline-text-4" id="text-orga4eb559">
 <ul class="org-ul">
 <li>Folgende Fälle sind zu unterscheiden:
 <ol class="org-ol">
@@ -1044,8 +1037,7 @@ der Restliste, aus der das zu entfernende Modell entfernt wurde.</li>
 </ol></li>
 </ul>
 <div class="org-src-container">
-<pre class="src src-scheme"><span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">entfernt eine Modell (symbol) aus der  </span>
-<span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">Modellpalette (liste-von-symbolen)</span>
+<pre class="src src-scheme"><span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">entfernt eine Modell (symbol) aus der Modellpalette (liste-von-symbolen)</span>
 <span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">entferne-modell: (list-of symbol) symbol -&gt; (list-of symbol)</span>
 <span style="color: #707183;">(</span>check-expect <span style="color: #7388D6;">(</span>entferne-modell empty 'BMW<span style="color: #7388D6;">)</span> empty<span style="color: #707183;">)</span>
 <span style="color: #707183;">(</span>check-expect <span style="color: #7388D6;">(</span>entferne-modell '<span style="color: #909183;">(</span>BMW<span style="color: #909183;">)</span> 'BMW<span style="color: #7388D6;">)</span> empty<span style="color: #707183;">)</span>
@@ -1054,11 +1046,10 @@ der Restliste, aus der das zu entfernende Modell entfernt wurde.</li>
 <span style="color: #707183;">(</span>check-expect <span style="color: #7388D6;">(</span>entferne-modell '<span style="color: #909183;">(</span>BMW OPEL FORD<span style="color: #909183;">)</span> 'OPEL<span style="color: #7388D6;">)</span> '<span style="color: #7388D6;">(</span>BMW FORD<span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
 <span style="color: #707183;">(</span><span style="color: #0000FF;">define</span> <span style="color: #006699;">entferne-modell</span>
   <span style="color: #7388D6;">(</span><span style="color: #0000FF;">lambda</span> <span style="color: #909183;">[</span>modellpalette modell<span style="color: #909183;">]</span>
-    <span style="color: #909183;">(</span><span style="color: #0000FF;">cond</span> 
-      <span style="color: #709870;">[</span><span style="color: #907373;">(</span>empty? modellpalette<span style="color: #907373;">)</span> empty<span style="color: #709870;">]</span>
-      <span style="color: #709870;">[</span><span style="color: #907373;">(</span>equal? <span style="color: #6276BA;">(</span>first modellpalette<span style="color: #6276BA;">)</span> modell<span style="color: #907373;">)</span> <span style="color: #907373;">(</span>rest modellpalette<span style="color: #907373;">)</span><span style="color: #709870;">]</span>
-      <span style="color: #709870;">[</span>else <span style="color: #907373;">(</span>cons <span style="color: #6276BA;">(</span>first modellpalette<span style="color: #6276BA;">)</span>
-                  <span style="color: #6276BA;">(</span>entferne-modell <span style="color: #858580;">(</span>rest modellpalette<span style="color: #858580;">)</span> modell<span style="color: #6276BA;">)</span><span style="color: #907373;">)</span><span style="color: #709870;">]</span><span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
+    <span style="color: #909183;">(</span><span style="color: #0000FF;">cond</span> <span style="color: #709870;">[</span><span style="color: #907373;">(</span>empty? modellpalette<span style="color: #907373;">)</span> empty<span style="color: #709870;">]</span>
+          <span style="color: #709870;">[</span><span style="color: #907373;">(</span>equal? <span style="color: #6276BA;">(</span>first modellpalette<span style="color: #6276BA;">)</span> modell<span style="color: #907373;">)</span> <span style="color: #907373;">(</span>rest modellpalette<span style="color: #907373;">)</span><span style="color: #709870;">]</span>
+          <span style="color: #709870;">[</span>else <span style="color: #907373;">(</span>cons <span style="color: #6276BA;">(</span>first modellpalette<span style="color: #6276BA;">)</span>
+                      <span style="color: #6276BA;">(</span>entferne-modell <span style="color: #858580;">(</span>rest modellpalette<span style="color: #858580;">)</span> modell<span style="color: #6276BA;">)</span><span style="color: #907373;">)</span><span style="color: #709870;">]</span><span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
 </pre>
 </div>
 </div>
@@ -1067,13 +1058,13 @@ der Restliste, aus der das zu entfernende Modell entfernt wurde.</li>
 </div>
 
 
-<div id="outline-container-orgcf46a99" class="outline-2">
-<h2 id="orgcf46a99">Rekursive Funktionen und Hilfsfunktionen</h2>
-<div class="outline-text-2" id="text-orgcf46a99">
+<div id="outline-container-orgb938ba8" class="outline-2">
+<h2 id="orgb938ba8">Rekursive Funktionen und Hilfsfunktionen</h2>
+<div class="outline-text-2" id="text-orgb938ba8">
 </div>
-<div id="outline-container-orgf2ae7da" class="outline-3">
-<h3 id="orgf2ae7da">Top-down-Entwurf</h3>
-<div class="outline-text-3" id="text-orgf2ae7da">
+<div id="outline-container-orgc1aec9d" class="outline-3">
+<h3 id="orgc1aec9d">Top-down-Entwurf</h3>
+<div class="outline-text-3" id="text-orgc1aec9d">
 <ul class="org-ul">
 <li>Anhand eines weiteren Beispiels soll die Anwendung der Regeln für
 die Entwicklung rekursiver Funktionen V demonstriert werden.</li>
@@ -1096,9 +1087,9 @@ bezeichnet.
 </ul>
 </div>
 
-<div id="outline-container-orge3038d0" class="outline-4">
-<h4 id="orge3038d0">Literaturhinweise</h4>
-<div class="outline-text-4" id="text-orge3038d0">
+<div id="outline-container-org654a857" class="outline-4">
+<h4 id="org654a857">Literaturhinweise</h4>
+<div class="outline-text-4" id="text-org654a857">
 <ul class="org-ul">
 <li>Gelegentlich werden auch die Begriffe Wunschdenken oder Wunschliste
 benutzt, z.B. in
@@ -1116,9 +1107,9 @@ of Computer Programs. The MIT Press, 1999</li>
 </div>
 </div>
 
-<div id="outline-container-org490f0da" class="outline-4">
-<h4 id="org490f0da">Top-down-Entwurf &#x2013; Beispiel</h4>
-<div class="outline-text-4" id="text-org490f0da">
+<div id="outline-container-org71b7aa4" class="outline-4">
+<h4 id="org71b7aa4">Top-down-Entwurf &#x2013; Beispiel</h4>
+<div class="outline-text-4" id="text-org71b7aa4">
 <ul class="org-ul">
 <li><p>
 Die Funktion <code>(symbolsin x)</code> liefere, angewandt auf eine Liste von
@@ -1190,9 +1181,9 @@ hinzufügt, wenn es in ihr nicht bereits enthalten ist.</li>
 </div>
 </div>
 
-<div id="outline-container-orgd3e8487" class="outline-4">
-<h4 id="orgd3e8487">Funktionsschablone für <code>addtoset</code></h4>
-<div class="outline-text-4" id="text-orgd3e8487">
+<div id="outline-container-orgdc44156" class="outline-4">
+<h4 id="orgdc44156">Funktionsschablone für <code>addtoset</code></h4>
+<div class="outline-text-4" id="text-orgdc44156">
 <div class="org-src-container">
 <pre class="src src-scheme"><span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">f&#252;gt einer Liste von Symbolen ein weiteres hinzu, </span>
 <span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">falls es nicht bereits enthalten ist.</span>
@@ -1214,9 +1205,9 @@ Mit dieser Funktion kann <code>symbolsin</code> vervollständigt werden.
 </div>
 </div>
 
-<div id="outline-container-org131b9b9" class="outline-4">
-<h4 id="org131b9b9">Funktion <code>symbolsin</code></h4>
-<div class="outline-text-4" id="text-org131b9b9">
+<div id="outline-container-org9a2a5ee" class="outline-4">
+<h4 id="org9a2a5ee">Funktion <code>symbolsin</code></h4>
+<div class="outline-text-4" id="text-org9a2a5ee">
 <div class="org-src-container">
 <pre class="src src-scheme"><span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">entfernt aus eine Liste von Symbolen jedes </span>
 <span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">mehrfache Autreten eines Symbols</span>
@@ -1233,9 +1224,9 @@ Mit dieser Funktion kann <code>symbolsin</code> vervollständigt werden.
 </div>
 </div>
 
-<div id="outline-container-org92e659f" class="outline-4">
-<h4 id="org92e659f">Funktion <code>addtoset</code></h4>
-<div class="outline-text-4" id="text-org92e659f">
+<div id="outline-container-orge969067" class="outline-4">
+<h4 id="orge969067">Funktion <code>addtoset</code></h4>
+<div class="outline-text-4" id="text-orge969067">
 <ul class="org-ul">
 <li>Für die Funktion <code>addtoset</code> stellen wir folgende Überlegungen an:
 <ul class="org-ul">
@@ -1258,9 +1249,9 @@ bereits in der Liste enthalten ist.</li>
 </div>
 </div>
 
-<div id="outline-container-orgcc41274" class="outline-4">
-<h4 id="orgcc41274">Funktion <code>member?</code></h4>
-<div class="outline-text-4" id="text-orgcc41274">
+<div id="outline-container-org2ea2593" class="outline-4">
+<h4 id="org2ea2593">Funktion <code>member?</code></h4>
+<div class="outline-text-4" id="text-org2ea2593">
 <p>
 Die Logik der Funktion <code>member</code>? entspricht im Wesentlichen der der
 Funktion <code>enthaelt-bmw</code>:
@@ -1292,9 +1283,9 @@ symbolsin.rkt in Moodle zu finden.
 </div>
 </div>
 
-<div id="outline-container-org0036b2b" class="outline-2">
-<h2 id="org0036b2b">Funktionen für die Verarbeitung mehrerer Listen</h2>
-<div class="outline-text-2" id="text-org0036b2b">
+<div id="outline-container-org59dd29b" class="outline-2">
+<h2 id="org59dd29b">Funktionen für die Verarbeitung mehrerer Listen</h2>
+<div class="outline-text-2" id="text-org59dd29b">
 <p>
 Falls eine Funktion zwei Listenparameter zu verarbeiten hat, sind
 grundsätzlich drei Fälle zu unterscheiden:
@@ -1310,9 +1301,9 @@ auf das erste Element und die Restliste notwendig.</li>
 </ol>
 </div>
 
-<div id="outline-container-org90d1852" class="outline-3">
-<h3 id="org90d1852">Behandlung der drei Fälle:</h3>
-<div class="outline-text-3" id="text-org90d1852">
+<div id="outline-container-orgb6686b3" class="outline-3">
+<h3 id="orgb6686b3">Behandlung der drei Fälle:</h3>
+<div class="outline-text-3" id="text-orgb6686b3">
 <dl class="org-dl">
 <dt>Fall 1</dt><dd>Die bekannten Regeln (insbesondere was die
 Funktionsschablone anbelangt) können wie bisher angewendet, weil das
@@ -1327,9 +1318,9 @@ Funktionsschablone:</dd>
 </dl>
 </div>
 
-<div id="outline-container-orgcb61563" class="outline-4">
-<h4 id="orgcb61563">Funktionsschablone für Fall 2</h4>
-<div class="outline-text-4" id="text-orgcb61563">
+<div id="outline-container-orge338dad" class="outline-4">
+<h4 id="orge338dad">Funktionsschablone für Fall 2</h4>
+<div class="outline-text-4" id="text-orge338dad">
 <div class="org-src-container">
 <pre class="src src-scheme"><span style="color: #707183;">(</span><span style="color: #0000FF;">define</span> <span style="color: #006699;">listen-funktion</span>
   <span style="color: #7388D6;">(</span><span style="color: #0000FF;">lambda</span> <span style="color: #909183;">[</span>lst1 lst2<span style="color: #909183;">]</span>
@@ -1344,9 +1335,9 @@ Funktionsschablone:</dd>
 </div>
 </div>
 
-<div id="outline-container-orgf2c274f" class="outline-4">
-<h4 id="orgf2c274f">Behandlung von Fall 3</h4>
-<div class="outline-text-4" id="text-orgf2c274f">
+<div id="outline-container-orge48f622" class="outline-4">
+<h4 id="orge48f622">Behandlung von Fall 3</h4>
+<div class="outline-text-4" id="text-orge48f622">
 <p>
 Es gibt keine nutzbare Abhängigkeit der beiden Parameter. Hier müssen
 grundsätzlich alle (vier) Fälle (Liste ist leer oder nicht.)
@@ -1369,9 +1360,9 @@ berücksichtigt werden:
 </div>
 </div>
 
-<div id="outline-container-orgbad25a9" class="outline-5">
-<h5 id="orgbad25a9">Drei mögliche Rekursionsschemata</h5>
-<div class="outline-text-5" id="text-orgbad25a9">
+<div id="outline-container-org0e49e7b" class="outline-5">
+<h5 id="org0e49e7b">Drei mögliche Rekursionsschemata</h5>
+<div class="outline-text-5" id="text-org0e49e7b">
 <p>
 Man beachte, dass die
 Schablone noch keine rekursiven Aufrufe enthält. Nur für den Fall, dass
@@ -1402,7 +1393,7 @@ entschieden werden.
 </div>
 <div id="postamble" class="status">
 <p class="author">Autor: Johannes Brauer</p>
-<p class="date">Created: 2019-02-14 Thu 13:25</p>
+<p class="date">Created: 2020-01-01 Wed 15:35</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
