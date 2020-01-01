@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="de" xml:lang="de">
 <head>
-<!-- 2017-12-10 Sun 20:44 -->
+<!-- 2020-01-01 Wed 13:38 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Fallunterscheidungen</title>
@@ -161,6 +161,19 @@
   .footdef  { margin-bottom: 1em; }
   .figure { padding: 1em; }
   .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
   .inlinetask {
     padding: 10px;
     border: 2px solid gray;
@@ -197,7 +210,7 @@
 @licstart  The following is the entire license notice for the
 JavaScript code in this tag.
 
-Copyright (C) 2012-2017 Free Software Foundation, Inc.
+Copyright (C) 2012-2019 Free Software Foundation, Inc.
 
 The JavaScript code in this tag is free software: you can
 redistribute it and/or modify it under the terms of the GNU
@@ -267,25 +280,25 @@ for the JavaScript code in this tag.
 <br />
 <span class="subtitle">Einführung in die Programmierung</span>
 </h1>
-<div id="outline-container-org44d964d" class="outline-2">
-<h2 id="org44d964d">Fallunterscheidungen aus der Mathematik</h2>
-<div class="outline-text-2" id="text-org44d964d">
+<div id="outline-container-orgcb29964" class="outline-2">
+<h2 id="orgcb29964">Fallunterscheidungen aus der Mathematik</h2>
+<div class="outline-text-2" id="text-orgcb29964">
 <p>
 Zwei Beispiele
 </p>
 </div>
-<div id="outline-container-org720ecea" class="outline-3">
-<h3 id="org720ecea">Definition der Fakultät</h3>
-<div class="outline-text-3" id="text-org720ecea">
+<div id="outline-container-orga4ab7a1" class="outline-3">
+<h3 id="orga4ab7a1">Definition der Fakultät</h3>
+<div class="outline-text-3" id="text-orga4ab7a1">
 <p>
 \[n! = \left\{\begin{array}{l}1, \mbox{falls } n=0\\n\cdot (n-1)!, 
 \mbox{falls } n\geq 1 \end{array}\right.\]
 </p>
 </div>
 </div>
-<div id="outline-container-org4199981" class="outline-3">
-<h3 id="org4199981">Definition der Fibonacci-Folge</h3>
-<div class="outline-text-3" id="text-org4199981">
+<div id="outline-container-orgb1a0e25" class="outline-3">
+<h3 id="orgb1a0e25">Definition der Fibonacci-Folge</h3>
+<div class="outline-text-3" id="text-orgb1a0e25">
 <p>
 Die Fibonacci-Folge \(f_{1},\,f_{2},\,f_{3},\ldots\) ist wie folgt
 definiert:
@@ -293,18 +306,18 @@ definiert:
 \begin{eqnarray} 
 f_{1} &= & 1\\
 f_{2} &= & 1\\
-f_{n} &= & f_{{n-1}}+f_{{n-2}} & \mbox{ für } n>2\\
+f_{n} &= & f_{{n-1}}+f_{{n-2}} \mbox{ für } n>2
 \end{eqnarray}
 </div>
 </div>
 </div>
-<div id="outline-container-org5ad7205" class="outline-2">
-<h2 id="org5ad7205">Bedingte Funktionen</h2>
-<div class="outline-text-2" id="text-org5ad7205">
+<div id="outline-container-orgaff13bd" class="outline-2">
+<h2 id="orgaff13bd">Bedingte Funktionen</h2>
+<div class="outline-text-2" id="text-orgaff13bd">
 </div>
-<div id="outline-container-org830dd31" class="outline-3">
-<h3 id="org830dd31">Vergleichsausdrücke und Boolesche Ausdrücke</h3>
-<div class="outline-text-3" id="text-org830dd31">
+<div id="outline-container-orgcb50f5e" class="outline-3">
+<h3 id="orgcb50f5e">Vergleichsausdrücke und Boolesche Ausdrücke</h3>
+<div class="outline-text-3" id="text-orgcb50f5e">
 <ul class="org-ul">
 <li><p>
 Numerische Vergleichsausdrücke der Art
@@ -320,7 +333,6 @@ werden in Racket so aufgeschrieben:
 
 <pre class="example">
 (&lt; a b) (&gt;= x y ) (&lt; r s t)
-
 </pre></li>
 
 <li>Die Auswertung ergibt <code>#true</code> oder <code>#false</code>.</li>
@@ -331,8 +343,8 @@ Den Racket-Ausdruck <code>(&lt; r s t)</code> kann man als Abkürzung für
 
 <pre class="example">
 (and (&lt; r s) (&lt; s t))
-
 </pre>
+
 
 <p>
 betrachten.
@@ -344,9 +356,9 @@ Die Anzahl der Argumente von <code>and</code> und <code>or</code> ist dabei beli
 </div>
 </div>
 
-<div id="outline-container-orgca444eb" class="outline-3">
-<h3 id="orgca444eb">Anwendungsbeispiel</h3>
-<div class="outline-text-3" id="text-orgca444eb">
+<div id="outline-container-orga3e3346" class="outline-3">
+<h3 id="orga3e3346">Anwendungsbeispiel</h3>
+<div class="outline-text-3" id="text-orga3e3346">
 <ul class="org-ul">
 <li>Wir nennen eine Funktion <i>bedingt</i>, wenn für die Ermittlung ihres
 Resultats eine <i>Fallunterscheidung</i> erforderlich ist.</li>
@@ -395,16 +407,16 @@ Gesucht: Funktion, die aus der Stückzahl den Stückpreis ermittelt
 </div>
 </div>
 
-<div id="outline-container-orga12ea52" class="outline-3">
-<h3 id="orga12ea52">Racket-Pseudofunktion für Fallunterscheidungen</h3>
-<div class="outline-text-3" id="text-orga12ea52">
+<div id="outline-container-orga5953f6" class="outline-3">
+<h3 id="orga5953f6">Racket-Pseudofunktion für Fallunterscheidungen</h3>
+<div class="outline-text-3" id="text-orga5953f6">
 <div class="nebeneinander">
 <div class="small">
 <div class="org-src-container">
 <pre class="src src-scheme">        <span style="color: #707183;">(</span><span style="color: #0000FF;">cond</span>
            <span style="color: #7388D6;">[</span>frage antwort<span style="color: #7388D6;">]</span>
            ...
-           <span style="color: #7388D6;">[</span>frage antwort<span style="color: #7388D6;">]</span><span style="color: #707183;">)</span></pre>
+           <span style="color: #7388D6;">[</span>frage antwort<span style="color: #7388D6;">]</span><span style="color: #707183;">)</span>
 </pre>
 </div>
 
@@ -419,7 +431,7 @@ Gesucht: Funktion, die aus der Stückzahl den Stückpreis ermittelt
 <pre class="src src-scheme">        <span style="color: #707183;">(</span><span style="color: #0000FF;">cond</span>
            <span style="color: #7388D6;">[</span>frage antwort<span style="color: #7388D6;">]</span>
            ...
-           <span style="color: #7388D6;">[</span>else antwort<span style="color: #7388D6;">]</span><span style="color: #707183;">)</span></pre>
+           <span style="color: #7388D6;">[</span>else antwort<span style="color: #7388D6;">]</span><span style="color: #707183;">)</span>
 </pre>
 </div>
 
@@ -440,9 +452,9 @@ deren Auswertung <code>#true</code> liefert.</li>
 </div>
 </div>
 
-<div id="outline-container-orgb8f79b4" class="outline-3">
-<h3 id="orgb8f79b4">Entwurf bedingter Funktionen &#x2013; Regel 6</h3>
-<div class="outline-text-3" id="text-orgb8f79b4">
+<div id="outline-container-orgf18ef2c" class="outline-3">
+<h3 id="orgf18ef2c">Entwurf bedingter Funktionen &#x2013; Regel 6</h3>
+<div class="outline-text-3" id="text-orgf18ef2c">
 <ul class="org-ul">
 <li>Für den Entwurf einer bedingten Funktion sind in der Problembeschreibung alle zu
 unterscheidenden Fälle zu identifizieren.</li>
@@ -474,13 +486,13 @@ zu ermitteln.</li>
 </div>
 </div>
 
-<div id="outline-container-orgc8dfadd" class="outline-3">
-<h3 id="orgc8dfadd">Entwurf der Funktion <code>stueckpreis</code></h3>
-<div class="outline-text-3" id="text-orgc8dfadd">
+<div id="outline-container-org8810cf7" class="outline-3">
+<h3 id="org8810cf7">Entwurf der Funktion <code>stueckpreis</code></h3>
+<div class="outline-text-3" id="text-org8810cf7">
 </div>
-<div id="outline-container-orgf7e4905" class="outline-4">
-<h4 id="orgf7e4905">Das <code>cond</code>-Skelett</h4>
-<div class="outline-text-4" id="text-orgf7e4905">
+<div id="outline-container-org570ad08" class="outline-4">
+<h4 id="org570ad08">Das <code>cond</code>-Skelett</h4>
+<div class="outline-text-4" id="text-org570ad08">
 <p>
 Für das Beispiel des Chipherstellers ergibt sich folgendes
 Funktionsskelett:
@@ -495,15 +507,15 @@ Funktionsskelett:
          <span style="color: #909183;">(</span><span style="color: #0000FF;">cond</span>
             <span style="color: #709870;">[</span>... ...<span style="color: #709870;">]</span>
             <span style="color: #709870;">[</span>... ...<span style="color: #709870;">]</span>
-            <span style="color: #709870;">[</span>... ...<span style="color: #709870;">]</span><span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span></pre>
+            <span style="color: #709870;">[</span>... ...<span style="color: #709870;">]</span><span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
 </pre>
 </div>
 </div>
 </div>
 
-<div id="outline-container-org464fce5" class="outline-4">
-<h4 id="org464fce5">Formulierung der Fragen</h4>
-<div class="outline-text-4" id="text-org464fce5">
+<div id="outline-container-org6e617a1" class="outline-4">
+<h4 id="org6e617a1">Formulierung der Fragen</h4>
+<div class="outline-text-4" id="text-org6e617a1">
 <p>
 Aus der Tabelle für die Preisstaffelung ergeben sich folgende
 Bedingungen/Fragen:
@@ -519,7 +531,7 @@ Bedingungen/Fragen:
                   <span style="color: #6276BA;">(</span>&lt;= stueckzahl 1000<span style="color: #6276BA;">)</span><span style="color: #907373;">)</span>  ...<span style="color: #709870;">]</span>
             <span style="color: #709870;">[</span><span style="color: #907373;">(</span><span style="color: #0000FF;">and</span> <span style="color: #6276BA;">(</span>&gt; stueckzahl 1000<span style="color: #6276BA;">)</span>
                   <span style="color: #6276BA;">(</span>&lt;= stueckzahl 10000<span style="color: #6276BA;">)</span><span style="color: #907373;">)</span> ...<span style="color: #709870;">]</span>
-            <span style="color: #709870;">[</span><span style="color: #907373;">(</span>&gt; stueckzahl 10000<span style="color: #907373;">)</span>        ...<span style="color: #709870;">]</span><span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span></pre>
+            <span style="color: #709870;">[</span><span style="color: #907373;">(</span>&gt; stueckzahl 10000<span style="color: #907373;">)</span>        ...<span style="color: #709870;">]</span><span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
 </pre>
 </div>
 
@@ -530,9 +542,9 @@ aus dem Innern der Intervalle (z. B. 500, 2000, 20000) verwendet werden.
 </div>
 </div>
 
-<div id="outline-container-org29e21c8" class="outline-4">
-<h4 id="org29e21c8">Formulierung der Antworten</h4>
-<div class="outline-text-4" id="text-org29e21c8">
+<div id="outline-container-orgd7b6866" class="outline-4">
+<h4 id="orgd7b6866">Formulierung der Antworten</h4>
+<div class="outline-text-4" id="text-orgd7b6866">
 <p>
 Die Ausdrücke für die Berechnung der Antworten ergeben sich
 direkt aus der Tabelle für die Preisstaffelung:
@@ -548,15 +560,15 @@ direkt aus der Tabelle für die Preisstaffelung:
                   <span style="color: #6276BA;">(</span>&lt;= stueckzahl 1000<span style="color: #6276BA;">)</span><span style="color: #907373;">)</span>  1500<span style="color: #709870;">]</span>
             <span style="color: #709870;">[</span><span style="color: #907373;">(</span><span style="color: #0000FF;">and</span> <span style="color: #6276BA;">(</span>&gt; stueckzahl 1000<span style="color: #6276BA;">)</span>
                   <span style="color: #6276BA;">(</span>&lt;= stueckzahl 10000<span style="color: #6276BA;">)</span><span style="color: #907373;">)</span> 1250<span style="color: #709870;">]</span>
-            <span style="color: #709870;">[</span><span style="color: #907373;">(</span>&gt; stueckzahl 10000<span style="color: #907373;">)</span>        975<span style="color: #709870;">]</span><span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span></pre>
+            <span style="color: #709870;">[</span><span style="color: #907373;">(</span>&gt; stueckzahl 10000<span style="color: #907373;">)</span>        975<span style="color: #709870;">]</span><span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
 </pre>
 </div>
 </div>
 </div>
 
-<div id="outline-container-org0ae1bac" class="outline-4">
-<h4 id="org0ae1bac">Vereinfachung der Bedingungen</h4>
-<div class="outline-text-4" id="text-org0ae1bac">
+<div id="outline-container-org1fa00ab" class="outline-4">
+<h4 id="org1fa00ab">Vereinfachung der Bedingungen</h4>
+<div class="outline-text-4" id="text-org1fa00ab">
 <p>
 Nachdem die Funktion getestet wurde, können die Bedingungen
 vereinfacht werden:
@@ -569,7 +581,7 @@ vereinfacht werden:
           <span style="color: #909183;">(</span><span style="color: #0000FF;">cond</span>
             <span style="color: #709870;">[</span><span style="color: #907373;">(</span>&lt;= stueckzahl 1000<span style="color: #907373;">)</span> 1500<span style="color: #709870;">]</span>
             <span style="color: #709870;">[</span><span style="color: #907373;">(</span>&lt;= stueckzahl 10000<span style="color: #907373;">)</span> 1250<span style="color: #709870;">]</span>
-            <span style="color: #709870;">[</span>else 975<span style="color: #709870;">]</span><span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span></pre>
+            <span style="color: #709870;">[</span>else 975<span style="color: #709870;">]</span><span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
 </pre>
 </div>
 
@@ -589,7 +601,7 @@ vereinfacht werden:
 </div>
 <div id="postamble" class="status">
 <p class="author">Autor: Johannes Brauer</p>
-<p class="date">Created: 2017-12-10 Sun 20:44</p>
+<p class="date">Created: 2020-01-01 Wed 13:38</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
