@@ -8,8 +8,49 @@
     clear: left;
 }
 
-.section-number-3:after {
+.section-number-2:after {
     content: ".";
+}
+
+html {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 1em;
+    line-height: 1.5em;
+    margin-left: 3em;
+    margin-right: 3em;
+}
+.title {
+    text-align: left;
+    font-size: 150%;
+    margin-top: 20px;
+    padding-bottom: 0.5em;
+    border-bottom: 1px solid;
+}
+h2 {
+    font-size: 130%;
+}
+h3 {
+    font-size: 120%;
+}
+#table-of-contents {
+    float: right;
+    width: 200px;
+    margin-left: 1em;
+    border: 1px solid;
+    padding: 1em;
+    background-color: #eee;
+}
+div.figure {
+    padding: 0.5em;
+}
+div.figure p {
+    text-align: center;
+    font-style: italic;
+}
+#postamble {
+    font-size: 90%;
+    border-top: 1px solid;
+    margin-top: 20px;
 }
 
 
