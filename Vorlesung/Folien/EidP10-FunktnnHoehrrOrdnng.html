@@ -33,8 +33,8 @@
 <h1 class="title">Funktionen höherer Ordnung</h1><h3 class="subtitle">Einführung in die Programmierung</h3><h2 class="author">Johannes Brauer</h2><h2 class="date"></h2>
 </section>
 <section>
-<section id="slide-org9ddda49">
-<h2 id="org9ddda49">Erweiterung der funktionalen Abstraktion</h2>
+<section id="slide-org5c3d03c">
+<h2 id="org5c3d03c">Erweiterung der funktionalen Abstraktion</h2>
 <p>
 Historie:
 </p>
@@ -48,8 +48,8 @@ Historie:
 </ul>
 
 </section>
-<section id="slide-org5d2407d">
-<h3 id="org5d2407d">Funktionen als Argumente &#x2013; Analogie zur Summenformel der Mathematik</h3>
+<section id="slide-orgec68865">
+<h3 id="orgec68865">Funktionen als Argumente &#x2013; Analogie zur Summenformel der Mathematik</h3>
 <div>
 \begin{equation}
 \sum_{i=a}^b f(i) = f(a)+ \ldots +f(b) 
@@ -70,8 +70,8 @@ entspricht
 </pre>
 </div>
 </section>
-<section id="slide-org8966f9c">
-<h4 id="org8966f9c">Anwendungsbeispiele:</h4>
+<section id="slide-orgd80cbb0">
+<h4 id="orgd80cbb0">Anwendungsbeispiele:</h4>
 <div>
 \begin{equation}
 \sum_{x=1}^5 x^3 
@@ -98,31 +98,22 @@ entspricht <br />
 Weitere Beispiele: Integrale
 </p>
 </section>
-<section id="slide-orga27ca31">
-<h3 id="orga27ca31">Nutzung anonymer Funktionen (Lambda-Ausdrücke)</h3>
+<section id="slide-org6e962ab">
+<h3 id="org6e962ab">Nutzung anonymer Funktionen (Lambda-Ausdrücke)</h3>
 <ul>
 <li>Lambda-Ausdrücke bereits eingeführt im Abschnitt
 <i>Funktionale Abstraktion</i></li>
-<li><p>
-Beispiele aus dem vorigen Abschnitt:
-</p>
-<pre class="example">
-(sum (lambda [x] (* x x x)) 1 (lambda [i] (+ i 1)) 5)
-</pre>
-
-<p>
-oder
-</p>
-<pre class="example">
-src_scheme{ (sum (lambda [x] x) 1 (lambda [i] (+ i 1)) 10)
-</pre></li>
+<li>Beispiele aus dem vorigen Abschnitt:<br />
+<code class="src src-scheme"> <span style="color: #707183;">(</span>sum <span style="color: #7388D6;">(</span><span style="color: #0000FF;">&#955;</span> <span style="color: #909183;">[</span>x<span style="color: #909183;">]</span> <span style="color: #909183;">(</span>* x x x<span style="color: #909183;">)</span><span style="color: #7388D6;">)</span> 1 <span style="color: #7388D6;">(</span><span style="color: #0000FF;">&#955;</span> <span style="color: #909183;">[</span>i<span style="color: #909183;">]</span> <span style="color: #909183;">(</span>+ i 1<span style="color: #909183;">)</span><span style="color: #7388D6;">)</span> 5<span style="color: #707183;">)</span></code> <br />
+oder <br />
+<code class="src src-scheme"> <span style="color: #707183;">(</span>sum <span style="color: #7388D6;">(</span><span style="color: #0000FF;">&#955;</span> <span style="color: #909183;">[</span>x<span style="color: #909183;">]</span> x<span style="color: #7388D6;">)</span> 1 <span style="color: #7388D6;">(</span><span style="color: #0000FF;">&#955;</span> <span style="color: #909183;">[</span>i<span style="color: #909183;">]</span> <span style="color: #909183;">(</span>+ i 1<span style="color: #909183;">)</span><span style="color: #7388D6;">)</span> 10<span style="color: #707183;">)</span></code></li>
 
 </ul>
 </section>
 </section>
 <section>
-<section id="slide-orgd7c9bfb">
-<h2 id="orgd7c9bfb">Funktionen höherer Ordnung</h2>
+<section id="slide-org8d25fd2">
+<h2 id="org8d25fd2">Funktionen höherer Ordnung</h2>
 <blockquote>
 <p>
 The Revised<sup>6</sup> Report on the Algorithmic Language Scheme:<br />
@@ -148,8 +139,8 @@ Hoare, C. A. R.: The Emperor's Old Clothes 1980 Turing Award lecture; Comm.ACM v
 </blockquote>
 
 </section>
-<section id="slide-orgda6e967">
-<h3 id="orgda6e967">Regelkonforme Entwicklung von Funktionen &#x2026;</h3>
+<section id="slide-orgd5df59c">
+<h3 id="orgd5df59c">Regelkonforme Entwicklung von Funktionen &#x2026;</h3>
 <p>
 führt zu ähnlichen Funktionen. Zum Beispiel
 </p>
@@ -173,8 +164,8 @@ führt zu ähnlichen Funktionen. Zum Beispiel
 </div>
 
 </section>
-<section id="slide-org63f38b7">
-<h3 id="org63f38b7">Noch zwei ähnliche Funktionen</h3>
+<section id="slide-orgb9c7135">
+<h3 id="orgb9c7135">Noch zwei ähnliche Funktionen</h3>
 <p>
 Beispiel: Aus einer
 ungeordneten Liste von Zahlen werden alle unterhalb/oberhalb eines
@@ -198,8 +189,8 @@ Schwellwerts heraus gefiltert:
 </div>
 
 </section>
-<section id="slide-org780570a">
-<h3 id="org780570a">Ähnliche Funktionen vermeiden</h3>
+<section id="slide-orgaa9333e">
+<h3 id="orgaa9333e">Ähnliche Funktionen vermeiden</h3>
 <ul>
 <li>Die beiden Funktionen <code>unterhalb</code> und <code>oberhalb</code> unterscheiden sich
 &#x2013; abgesehen von ihrem Namen &#x2013; nur in dem Vergleichsoperator.</li>
@@ -215,8 +206,8 @@ akzeptiert: <i>Funktion höherer Ordnung</i> (Typ 1)</li>
 </ul>
 
 </section>
-<section id="slide-org06d5e67">
-<h3 id="org06d5e67">Eine Filterfunktion</h3>
+<section id="slide-org90b7234">
+<h3 id="org90b7234">Eine Filterfunktion</h3>
 <div class="org-src-container">
 
 <pre  class="src src-scheme">    <span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">filtere (number number -&gt; boolean) (list-of number) number </span>
@@ -250,8 +241,8 @@ Um <code>unterhalb</code> zu realisieren ruft man <code>filtere</code> so auf:
 </ul>
 
 </section>
-<section id="slide-org0b43153">
-<h3 id="org0b43153">Funktionen sind Werte erster Ordnung</h3>
+<section id="slide-org99b4d35">
+<h3 id="org99b4d35">Funktionen sind Werte erster Ordnung</h3>
 <ul>
 <li><p>
 Die Möglichkeit, Funktionen, die andere Funktionen als Argument
@@ -281,8 +272,8 @@ werden.
 </ul>
 
 </section>
-<section id="slide-org6468c02">
-<h3 id="org6468c02">Verallgemeinerung der Filterfunktion</h3>
+<section id="slide-org1fae39e">
+<h3 id="org1fae39e">Verallgemeinerung der Filterfunktion</h3>
 <div class="org-src-container">
 
 <pre  class="src src-scheme"><span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">filter wendet auf jedes Element der Zahlenliste das Pr&#228;dikat an. </span>
@@ -302,8 +293,8 @@ werden.
 </div>
 
 </section>
-<section id="slide-orgcb261ec">
-<h3 id="orgcb261ec">Eine Abstraktion für <code>sum</code> und <code>prod</code></h3>
+<section id="slide-org4783c7e">
+<h3 id="org4783c7e">Eine Abstraktion für <code>sum</code> und <code>prod</code></h3>
 <ul>
 <li>Es kommt häufiger vor, dass man z.B. eine Liste von Zahlen zu einem
 Wert zusammenfalten will.</li>
@@ -333,8 +324,8 @@ Man beachte auch hier wieder den Vertrag der Funktion!
 </ul>
 
 </section>
-<section id="slide-org102e4c6">
-<h3 id="org102e4c6">Ähnliche Datenstrukturen &#x2026;</h3>
+<section id="slide-orge7c233a">
+<h3 id="orge7c233a">Ähnliche Datenstrukturen &#x2026;</h3>
 <p>
 &#x2026; haben ähnliche Funktionen zur Folge.
 </p>
@@ -367,8 +358,8 @@ Vergleichsprädikat als Argument mitgeben.</li>
 </ul>
 
 </section>
-<section id="slide-org6a7327c">
-<h3 id="org6a7327c">Eine generische Funktion <code>enthaelt?</code></h3>
+<section id="slide-orgd1be1fb">
+<h3 id="orgd1be1fb">Eine generische Funktion <code>enthaelt?</code></h3>
 <div class="small">
 <div class="org-src-container">
 
@@ -402,8 +393,8 @@ Typ der Elemente spielt keine Rolle.</li>
 </ul>
 
 </section>
-<section id="slide-org64a4e09">
-<h3 id="org64a4e09">Parametrisierte Datenstruktur-Definitionen</h3>
+<section id="slide-orga47d0c8">
+<h3 id="orga47d0c8">Parametrisierte Datenstruktur-Definitionen</h3>
 <ul>
 <li>Da eine generische, Listen verarbeitende Funktion Listen von
 irgendetwas akzeptiert, brauchen wir eine generische
@@ -429,13 +420,13 @@ Für das generische <code>enthaelt?</code>-Prädikat ergibt sich dann der Vertra
 </ul>
 
 </section>
-<section id="slide-orgde81599">
-<h3 id="orgde81599">Die Funktion <code>map</code></h3>
-<div class="outline-text-3" id="text-orgde81599">
+<section id="slide-org8abaab7">
+<h3 id="org8abaab7">Die Funktion <code>map</code></h3>
+<div class="outline-text-3" id="text-org8abaab7">
 </div>
 </section>
-<section id="slide-org446497d">
-<h4 id="org446497d">Zunächst zwei Beispiele</h4>
+<section id="slide-orga6a39d1">
+<h4 id="orga6a39d1">Zunächst zwei Beispiele</h4>
 <ol>
 <li><p>
 Quadrieren einer Liste von Zahlen
@@ -482,8 +473,8 @@ Extrahieren von Produktnamen aus einer Preisliste
 </ol>
 
 </section>
-<section id="slide-org0fbce0e">
-<h4 id="org0fbce0e">Verallgemeinerung von <code>quadrieren</code> und <code>produkt-namen</code></h4>
+<section id="slide-org4cb6c75">
+<h4 id="org4cb6c75">Verallgemeinerung von <code>quadrieren</code> und <code>produkt-namen</code></h4>
 <ul>
 <li>Die beiden Funktionen unterscheiden
 sich &#x2013; abgesehen von ihren Namen &#x2013; nur in der Funktion, die auf das
@@ -540,13 +531,13 @@ Originalfunktionen mithilfe der neuen abstrahierten Funktion:
 
 </ul>
 </section>
-<section id="slide-org16ddd72">
-<h3 id="org16ddd72">Verallgemeinerung von <code>falte</code></h3>
-<div class="outline-text-3" id="text-org16ddd72">
+<section id="slide-org53a7803">
+<h3 id="org53a7803">Verallgemeinerung von <code>falte</code></h3>
+<div class="outline-text-3" id="text-org53a7803">
 </div>
 </section>
-<section id="slide-org632048e">
-<h4 id="org632048e">Ein anderes Verständnis für <code>falte</code></h4>
+<section id="slide-orgc19d74b">
+<h4 id="orgc19d74b">Ein anderes Verständnis für <code>falte</code></h4>
 <ul>
 <li>Die Reduktion einer Liste zu einem Wert ist eine häufig vorkommende
 Aufgabe.</li>
@@ -569,8 +560,8 @@ von <code>empty</code> durch 0: <code>(+ 11 (+ 17 (+ 5 0)))</code></li>
 
 </ul>
 </section>
-<section id="slide-org794a864">
-<h4 id="org794a864">Weitere Anwendungen von <code>falte</code></h4>
+<section id="slide-org40b7077">
+<h4 id="org40b7077">Weitere Anwendungen von <code>falte</code></h4>
 <ul>
 <li>Was liefern die Ausdrücke
 
@@ -584,8 +575,8 @@ von <code>empty</code> durch 0: <code>(+ 11 (+ 17 (+ 5 0)))</code></li>
 </ul>
 
 </section>
-<section id="slide-org45da8cc">
-<h4 id="org45da8cc">Generisches falte in Racket: foldr</h4>
+<section id="slide-org150305e">
+<h4 id="org150305e">Generisches falte in Racket: foldr</h4>
 <ul>
 <li>Abstraktion von <code>falte</code> hinsichtlich des Typs der Listenelemente</li>
 <li><p>
@@ -605,8 +596,8 @@ wird:
 </ul>
 
 </section>
-<section id="slide-orgbed09ae">
-<h4 id="orgbed09ae">Die Funktionsdefinition für <code>foldr</code></h4>
+<section id="slide-orgd2fcaf2">
+<h4 id="orgd2fcaf2">Die Funktionsdefinition für <code>foldr</code></h4>
 <div class="small">
 <div class="org-src-container">
 
@@ -631,8 +622,8 @@ auf die Restliste den Funktionswert ermittelt, falls die Liste <code>l</code> ni
 
 </ul>
 </section>
-<section id="slide-orgd0466ad">
-<h4 id="orgd0466ad">Anwendungen von <code>foldr</code></h4>
+<section id="slide-orgc9c50ff">
+<h4 id="orgc9c50ff">Anwendungen von <code>foldr</code></h4>
 <div class="org-src-container">
 
 <pre  class="src src-scheme">    <span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">sum: (list-of number)  -&gt;  number)</span>
@@ -654,8 +645,8 @@ auf die Restliste den Funktionswert ermittelt, falls die Liste <code>l</code> ni
 </div>
 
 </section>
-<section id="slide-orga182c73">
-<h4 id="orga182c73">Unterschied zwischen <code>foldr</code> und <code>foldl</code></h4>
+<section id="slide-org2e7dcec">
+<h4 id="org2e7dcec">Unterschied zwischen <code>foldr</code> und <code>foldl</code></h4>
 <div class="nebeneinander500">
 <div class="org-src-container">
 
@@ -701,13 +692,13 @@ auf die Restliste den Funktionswert ermittelt, falls die Liste <code>l</code> ni
 </section>
 </section>
 <section>
-<section id="slide-orge2d807e">
-<h2 id="orge2d807e">Integration von Daten und Funktionen &#x2013; Einführung des Objektbegriffs</h2>
-<div class="outline-text-2" id="text-orge2d807e">
+<section id="slide-org426eace">
+<h2 id="org426eace">Integration von Daten und Funktionen &#x2013; Einführung des Objektbegriffs</h2>
+<div class="outline-text-2" id="text-org426eace">
 </div>
 </section>
-<section id="slide-org1cb014c">
-<h3 id="org1cb014c">Funktionen mit Funktionen als Resultat</h3>
+<section id="slide-orgb05c13b">
+<h3 id="orgb05c13b">Funktionen mit Funktionen als Resultat</h3>
 <ul>
 <li><p>
 Was liefert der Ausdruck <code>(inc 3)</code>, wenn die Funktion <code>inc</code> wie folgt
@@ -763,8 +754,8 @@ Anwendung von <code>inc</code> und <code>dot</code>:
 </ul>
 
 </section>
-<section id="slide-org62f8afb">
-<h3 id="org62f8afb">Was ist ein Objekt?</h3>
+<section id="slide-org29a393b">
+<h3 id="org29a393b">Was ist ein Objekt?</h3>
 <ul>
 <li>Objekte im Sinne der „objektorientierten Programmierung” sind
 nichts weiter als Funktionen mit „internen” Daten.</li>
@@ -781,8 +772,8 @@ Zustandsgrößen und einer Methode.</li>
 
 </ul>
 </section>
-<section id="slide-orgeb43d82">
-<h3 id="orgeb43d82">Ein etwas interessanteres Objekt</h3>
+<section id="slide-orgf958c96">
+<h3 id="orgf958c96">Ein etwas interessanteres Objekt</h3>
 <div class="org-src-container">
 
 <pre  class="src src-scheme"><span style="color: #707183;">(</span><span style="color: #0000FF;">define</span> <span style="color: #006699;">person</span>
@@ -819,8 +810,8 @@ welche der Methoden aufzurufen ist.</li>
 </ul>
 
 </section>
-<section id="slide-orgd1dfca3">
-<h3 id="orgd1dfca3">Anwendungen des <code>person</code>-Objekts</h3>
+<section id="slide-org61e83bd">
+<h3 id="org61e83bd">Anwendungen des <code>person</code>-Objekts</h3>
 <div class="org-src-container">
 
 <pre  class="src src-scheme"><span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">Objekterzeugung:</span>
@@ -834,8 +825,8 @@ welche der Methoden aufzurufen ist.</li>
 </div>
 
 </section>
-<section id="slide-orgfc0c308">
-<h3 id="orgfc0c308">Java-Klasse <code>Person</code></h3>
+<section id="slide-orga8b5ed8">
+<h3 id="orga8b5ed8">Java-Klasse <code>Person</code></h3>
 <div class="org-src-container">
 
 <pre  class="src src-java"> <span style="color: #0000FF;">public</span> <span style="color: #0000FF;">class</span> <span style="color: #6434A3;">Person</span>
@@ -870,8 +861,8 @@ welche der Methoden aufzurufen ist.</li>
 
 
 </section>
-<section id="slide-org2c3023e">
-<h3 id="org2c3023e">Zusammenfassung</h3>
+<section id="slide-org824535e">
+<h3 id="org824535e">Zusammenfassung</h3>
 <ul>
 <li>Für die objektorientierte Programmierung bedarf es keiner speziellen
 Programmiersprachen.</li>

@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="de" xml:lang="de">
 <head>
-<!-- 2020-01-01 Wed 21:12 -->
+<!-- 2020-02-21 Fri 22:27 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Funktionen höherer Ordnung</title>
@@ -210,7 +210,7 @@
 @licstart  The following is the entire license notice for the
 JavaScript code in this tag.
 
-Copyright (C) 2012-2019 Free Software Foundation, Inc.
+Copyright (C) 2012-2020 Free Software Foundation, Inc.
 
 The JavaScript code in this tag is free software: you can
 redistribute it and/or modify it under the terms of the GNU
@@ -280,9 +280,9 @@ for the JavaScript code in this tag.
 <br />
 <span class="subtitle">Einführung in die Programmierung</span>
 </h1>
-<div id="outline-container-org09e4a20" class="outline-2">
-<h2 id="org09e4a20">Erweiterung der funktionalen Abstraktion</h2>
-<div class="outline-text-2" id="text-org09e4a20">
+<div id="outline-container-org87918c3" class="outline-2">
+<h2 id="org87918c3">Erweiterung der funktionalen Abstraktion</h2>
+<div class="outline-text-2" id="text-org87918c3">
 <p>
 Historie:
 </p>
@@ -295,9 +295,9 @@ Historie:
 </ul>
 </div>
 
-<div id="outline-container-org158dfbe" class="outline-3">
-<h3 id="org158dfbe">Funktionen als Argumente &#x2013; Analogie zur Summenformel der Mathematik</h3>
-<div class="outline-text-3" id="text-org158dfbe">
+<div id="outline-container-org8e558cc" class="outline-3">
+<h3 id="org8e558cc">Funktionen als Argumente &#x2013; Analogie zur Summenformel der Mathematik</h3>
+<div class="outline-text-3" id="text-org8e558cc">
 \begin{equation}
 \sum_{i=a}^b f(i) = f(a)+ \ldots +f(b) 
 \end{equation}
@@ -314,9 +314,9 @@ entspricht
 </pre>
 </div>
 </div>
-<div id="outline-container-org2d9a823" class="outline-4">
-<h4 id="org2d9a823">Anwendungsbeispiele:</h4>
-<div class="outline-text-4" id="text-org2d9a823">
+<div id="outline-container-org2e47611" class="outline-4">
+<h4 id="org2e47611">Anwendungsbeispiele:</h4>
+<div class="outline-text-4" id="text-org2e47611">
 \begin{equation}
 \sum_{x=1}^5 x^3 
 \end{equation}
@@ -339,32 +339,23 @@ Weitere Beispiele: Integrale
 </div>
 </div>
 </div>
-<div id="outline-container-org7b6211b" class="outline-3">
-<h3 id="org7b6211b">Nutzung anonymer Funktionen (Lambda-Ausdrücke)</h3>
-<div class="outline-text-3" id="text-org7b6211b">
+<div id="outline-container-org9b3e6f2" class="outline-3">
+<h3 id="org9b3e6f2">Nutzung anonymer Funktionen (Lambda-Ausdrücke)</h3>
+<div class="outline-text-3" id="text-org9b3e6f2">
 <ul class="org-ul">
 <li>Lambda-Ausdrücke bereits eingeführt im Abschnitt
 <i>Funktionale Abstraktion</i></li>
-<li><p>
-Beispiele aus dem vorigen Abschnitt:
-</p>
-<pre class="example">
-(sum (lambda [x] (* x x x)) 1 (lambda [i] (+ i 1)) 5)
-</pre>
-
-<p>
-oder
-</p>
-<pre class="example">
-(sum (lambda [x] x) 1 (lambda [i] (+ i 1)) 10)
-</pre></li>
+<li>Beispiele aus dem vorigen Abschnitt:<br />
+<code class="src src-scheme"> <span style="color: #707183;">(</span>sum <span style="color: #7388D6;">(</span><span style="color: #0000FF;">&#955;</span> <span style="color: #909183;">[</span>x<span style="color: #909183;">]</span> <span style="color: #909183;">(</span>* x x x<span style="color: #909183;">)</span><span style="color: #7388D6;">)</span> 1 <span style="color: #7388D6;">(</span><span style="color: #0000FF;">&#955;</span> <span style="color: #909183;">[</span>i<span style="color: #909183;">]</span> <span style="color: #909183;">(</span>+ i 1<span style="color: #909183;">)</span><span style="color: #7388D6;">)</span> 5<span style="color: #707183;">)</span></code> <br />
+oder <br />
+<code class="src src-scheme"> <span style="color: #707183;">(</span>sum <span style="color: #7388D6;">(</span><span style="color: #0000FF;">&#955;</span> <span style="color: #909183;">[</span>x<span style="color: #909183;">]</span> x<span style="color: #7388D6;">)</span> 1 <span style="color: #7388D6;">(</span><span style="color: #0000FF;">&#955;</span> <span style="color: #909183;">[</span>i<span style="color: #909183;">]</span> <span style="color: #909183;">(</span>+ i 1<span style="color: #909183;">)</span><span style="color: #7388D6;">)</span> 10<span style="color: #707183;">)</span></code></li>
 </ul>
 </div>
 </div>
 </div>
-<div id="outline-container-org72390c0" class="outline-2">
-<h2 id="org72390c0">Funktionen höherer Ordnung</h2>
-<div class="outline-text-2" id="text-org72390c0">
+<div id="outline-container-org3f68168" class="outline-2">
+<h2 id="org3f68168">Funktionen höherer Ordnung</h2>
+<div class="outline-text-2" id="text-org3f68168">
 <blockquote>
 <p>
 The Revised<sup>6</sup> Report on the Algorithmic Language Scheme:<br />
@@ -388,9 +379,9 @@ Hoare, C. A. R.: The Emperor's Old Clothes 1980 Turing Award lecture; Comm.ACM v
 </blockquote>
 </div>
 
-<div id="outline-container-org910389e" class="outline-3">
-<h3 id="org910389e">Regelkonforme Entwicklung von Funktionen &#x2026;</h3>
-<div class="outline-text-3" id="text-org910389e">
+<div id="outline-container-orge8bfea1" class="outline-3">
+<h3 id="orge8bfea1">Regelkonforme Entwicklung von Funktionen &#x2026;</h3>
+<div class="outline-text-3" id="text-orge8bfea1">
 <p>
 führt zu ähnlichen Funktionen. Zum Beispiel
 </p>
@@ -414,9 +405,9 @@ führt zu ähnlichen Funktionen. Zum Beispiel
 </div>
 </div>
 
-<div id="outline-container-orga5a4cd7" class="outline-3">
-<h3 id="orga5a4cd7">Noch zwei ähnliche Funktionen</h3>
-<div class="outline-text-3" id="text-orga5a4cd7">
+<div id="outline-container-orgdd8d103" class="outline-3">
+<h3 id="orgdd8d103">Noch zwei ähnliche Funktionen</h3>
+<div class="outline-text-3" id="text-orgdd8d103">
 <p>
 Beispiel: Aus einer
 ungeordneten Liste von Zahlen werden alle unterhalb/oberhalb eines
@@ -440,9 +431,9 @@ Schwellwerts heraus gefiltert:
 </div>
 </div>
 
-<div id="outline-container-org2dbbdbb" class="outline-3">
-<h3 id="org2dbbdbb">Ähnliche Funktionen vermeiden</h3>
-<div class="outline-text-3" id="text-org2dbbdbb">
+<div id="outline-container-orgec866d7" class="outline-3">
+<h3 id="orgec866d7">Ähnliche Funktionen vermeiden</h3>
+<div class="outline-text-3" id="text-orgec866d7">
 <ul class="org-ul">
 <li>Die beiden Funktionen <code>unterhalb</code> und <code>oberhalb</code> unterscheiden sich
 &#x2013; abgesehen von ihrem Namen &#x2013; nur in dem Vergleichsoperator.</li>
@@ -458,9 +449,9 @@ akzeptiert: <i>Funktion höherer Ordnung</i> (Typ 1)</li>
 </div>
 </div>
 
-<div id="outline-container-org162b080" class="outline-3">
-<h3 id="org162b080">Eine Filterfunktion</h3>
-<div class="outline-text-3" id="text-org162b080">
+<div id="outline-container-org469dd50" class="outline-3">
+<h3 id="org469dd50">Eine Filterfunktion</h3>
+<div class="outline-text-3" id="text-org469dd50">
 <div class="org-src-container">
 <pre class="src src-scheme">    <span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">filtere (number number -&gt; boolean) (list-of number) number </span>
     <span style="color: #8D8D84;">;;          </span><span style="color: #8D8D84; font-style: italic;">-&gt; (list-of number))</span>
@@ -493,9 +484,9 @@ Um <code>unterhalb</code> zu realisieren ruft man <code>filtere</code> so auf:
 </div>
 </div>
 
-<div id="outline-container-org0e7cb60" class="outline-3">
-<h3 id="org0e7cb60">Funktionen sind Werte erster Ordnung</h3>
-<div class="outline-text-3" id="text-org0e7cb60">
+<div id="outline-container-org0d49444" class="outline-3">
+<h3 id="org0d49444">Funktionen sind Werte erster Ordnung</h3>
+<div class="outline-text-3" id="text-org0d49444">
 <ul class="org-ul">
 <li><p>
 Die Möglichkeit, Funktionen, die andere Funktionen als Argument
@@ -524,9 +515,9 @@ werden.
 </div>
 </div>
 
-<div id="outline-container-org73dd8f9" class="outline-3">
-<h3 id="org73dd8f9">Verallgemeinerung der Filterfunktion</h3>
-<div class="outline-text-3" id="text-org73dd8f9">
+<div id="outline-container-orgb936f1b" class="outline-3">
+<h3 id="orgb936f1b">Verallgemeinerung der Filterfunktion</h3>
+<div class="outline-text-3" id="text-orgb936f1b">
 <div class="org-src-container">
 <pre class="src src-scheme"><span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">filter wendet auf jedes Element der Zahlenliste das Pr&#228;dikat an. </span>
 <span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">In die Ergebnisliste werden die Elemente aufgenommen, f&#252;r die das</span>
@@ -546,9 +537,9 @@ werden.
 </div>
 </div>
 
-<div id="outline-container-orge00a162" class="outline-3">
-<h3 id="orge00a162">Eine Abstraktion für <code>sum</code> und <code>prod</code></h3>
-<div class="outline-text-3" id="text-orge00a162">
+<div id="outline-container-orgccb7fd4" class="outline-3">
+<h3 id="orgccb7fd4">Eine Abstraktion für <code>sum</code> und <code>prod</code></h3>
+<div class="outline-text-3" id="text-orgccb7fd4">
 <ul class="org-ul">
 <li>Es kommt häufiger vor, dass man z.B. eine Liste von Zahlen zu einem
 Wert zusammenfalten will.</li>
@@ -577,9 +568,9 @@ Man beachte auch hier wieder den Vertrag der Funktion!
 </div>
 </div>
 
-<div id="outline-container-org62649cb" class="outline-3">
-<h3 id="org62649cb">Ähnliche Datenstrukturen &#x2026;</h3>
-<div class="outline-text-3" id="text-org62649cb">
+<div id="outline-container-orgc193719" class="outline-3">
+<h3 id="orgc193719">Ähnliche Datenstrukturen &#x2026;</h3>
+<div class="outline-text-3" id="text-orgc193719">
 <p>
 &#x2026; haben ähnliche Funktionen zur Folge.
 </p>
@@ -609,9 +600,9 @@ Vergleichsprädikat als Argument mitgeben.</li>
 </div>
 </div>
 
-<div id="outline-container-org7fc2a11" class="outline-3">
-<h3 id="org7fc2a11">Eine generische Funktion <code>enthaelt?</code></h3>
-<div class="outline-text-3" id="text-org7fc2a11">
+<div id="outline-container-org5358ae4" class="outline-3">
+<h3 id="org5358ae4">Eine generische Funktion <code>enthaelt?</code></h3>
+<div class="outline-text-3" id="text-org5358ae4">
 <div class="small">
 <div class="org-src-container">
 <pre class="src src-scheme"><span style="color: #707183;">(</span><span style="color: #0000FF;">define</span> <span style="color: #006699;">enthaelt?</span>
@@ -644,9 +635,9 @@ Typ der Elemente spielt keine Rolle.</li>
 </div>
 </div>
 
-<div id="outline-container-orgdddc7c1" class="outline-3">
-<h3 id="orgdddc7c1">Parametrisierte Datenstruktur-Definitionen</h3>
-<div class="outline-text-3" id="text-orgdddc7c1">
+<div id="outline-container-org661afc3" class="outline-3">
+<h3 id="org661afc3">Parametrisierte Datenstruktur-Definitionen</h3>
+<div class="outline-text-3" id="text-org661afc3">
 <ul class="org-ul">
 <li>Da eine generische, Listen verarbeitende Funktion Listen von
 irgendetwas akzeptiert, brauchen wir eine generische
@@ -671,13 +662,13 @@ Für das generische <code>enthaelt?</code>-Prädikat ergibt sich dann der Vertra
 </div>
 </div>
 
-<div id="outline-container-orgab17b10" class="outline-3">
-<h3 id="orgab17b10">Die Funktion <code>map</code></h3>
-<div class="outline-text-3" id="text-orgab17b10">
+<div id="outline-container-orgd4d9522" class="outline-3">
+<h3 id="orgd4d9522">Die Funktion <code>map</code></h3>
+<div class="outline-text-3" id="text-orgd4d9522">
 </div>
-<div id="outline-container-org10cb046" class="outline-4">
-<h4 id="org10cb046">Zunächst zwei Beispiele</h4>
-<div class="outline-text-4" id="text-org10cb046">
+<div id="outline-container-orga25e5e8" class="outline-4">
+<h4 id="orga25e5e8">Zunächst zwei Beispiele</h4>
+<div class="outline-text-4" id="text-orga25e5e8">
 <ol class="org-ol">
 <li><p>
 Quadrieren einer Liste von Zahlen
@@ -718,9 +709,9 @@ Extrahieren von Produktnamen aus einer Preisliste
 </div>
 </div>
 
-<div id="outline-container-org9077774" class="outline-4">
-<h4 id="org9077774">Verallgemeinerung von <code>quadrieren</code> und <code>produkt-namen</code></h4>
-<div class="outline-text-4" id="text-org9077774">
+<div id="outline-container-org5990de9" class="outline-4">
+<h4 id="org5990de9">Verallgemeinerung von <code>quadrieren</code> und <code>produkt-namen</code></h4>
+<div class="outline-text-4" id="text-org5990de9">
 <ul class="org-ul">
 <li>Die beiden Funktionen unterscheiden
 sich &#x2013; abgesehen von ihren Namen &#x2013; nur in der Funktion, die auf das
@@ -773,13 +764,13 @@ Originalfunktionen mithilfe der neuen abstrahierten Funktion:
 </div>
 </div>
 </div>
-<div id="outline-container-org5d757fb" class="outline-3">
-<h3 id="org5d757fb">Verallgemeinerung von <code>falte</code></h3>
-<div class="outline-text-3" id="text-org5d757fb">
+<div id="outline-container-org55e7961" class="outline-3">
+<h3 id="org55e7961">Verallgemeinerung von <code>falte</code></h3>
+<div class="outline-text-3" id="text-org55e7961">
 </div>
-<div id="outline-container-org06294a0" class="outline-4">
-<h4 id="org06294a0">Ein anderes Verständnis für <code>falte</code></h4>
-<div class="outline-text-4" id="text-org06294a0">
+<div id="outline-container-org7451f16" class="outline-4">
+<h4 id="org7451f16">Ein anderes Verständnis für <code>falte</code></h4>
+<div class="outline-text-4" id="text-org7451f16">
 <ul class="org-ul">
 <li>Die Reduktion einer Liste zu einem Wert ist eine häufig vorkommende
 Aufgabe.</li>
@@ -801,9 +792,9 @@ von <code>empty</code> durch 0: <code>(+ 11 (+ 17 (+ 5 0)))</code></li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org2ddf9d1" class="outline-4">
-<h4 id="org2ddf9d1">Weitere Anwendungen von <code>falte</code></h4>
-<div class="outline-text-4" id="text-org2ddf9d1">
+<div id="outline-container-org7032340" class="outline-4">
+<h4 id="org7032340">Weitere Anwendungen von <code>falte</code></h4>
+<div class="outline-text-4" id="text-org7032340">
 <ul class="org-ul">
 <li>Was liefern die Ausdrücke
 
@@ -816,9 +807,9 @@ von <code>empty</code> durch 0: <code>(+ 11 (+ 17 (+ 5 0)))</code></li>
 </div>
 </div>
 
-<div id="outline-container-org00d940f" class="outline-4">
-<h4 id="org00d940f">Generisches falte in Racket: foldr</h4>
-<div class="outline-text-4" id="text-org00d940f">
+<div id="outline-container-org7f50b52" class="outline-4">
+<h4 id="org7f50b52">Generisches falte in Racket: foldr</h4>
+<div class="outline-text-4" id="text-org7f50b52">
 <ul class="org-ul">
 <li>Abstraktion von <code>falte</code> hinsichtlich des Typs der Listenelemente</li>
 <li><p>
@@ -838,9 +829,9 @@ wird:
 </div>
 </div>
 
-<div id="outline-container-orgc4a3fb5" class="outline-4">
-<h4 id="orgc4a3fb5">Die Funktionsdefinition für <code>foldr</code></h4>
-<div class="outline-text-4" id="text-orgc4a3fb5">
+<div id="outline-container-org23e7af7" class="outline-4">
+<h4 id="org23e7af7">Die Funktionsdefinition für <code>foldr</code></h4>
+<div class="outline-text-4" id="text-org23e7af7">
 <div class="small">
 <div class="org-src-container">
 <pre class="src src-scheme">   <span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">foldr: (X Y -&gt; Y) Y (list-of X) -&gt; Y    </span>
@@ -864,9 +855,9 @@ auf die Restliste den Funktionswert ermittelt, falls die Liste <code>l</code> ni
 </ul>
 </div>
 </div>
-<div id="outline-container-orgde0b5ce" class="outline-4">
-<h4 id="orgde0b5ce">Anwendungen von <code>foldr</code></h4>
-<div class="outline-text-4" id="text-orgde0b5ce">
+<div id="outline-container-org9d15823" class="outline-4">
+<h4 id="org9d15823">Anwendungen von <code>foldr</code></h4>
+<div class="outline-text-4" id="text-org9d15823">
 <div class="org-src-container">
 <pre class="src src-scheme">    <span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">sum: (list-of number)  -&gt;  number)</span>
     <span style="color: #707183;">(</span><span style="color: #0000FF;">define</span> <span style="color: #006699;">sum</span> <span style="color: #7388D6;">(</span><span style="color: #0000FF;">lambda</span> <span style="color: #909183;">[</span>list<span style="color: #909183;">]</span> <span style="color: #909183;">(</span>foldr + 0 list<span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
@@ -888,9 +879,9 @@ auf die Restliste den Funktionswert ermittelt, falls die Liste <code>l</code> ni
 </div>
 </div>
 
-<div id="outline-container-org9978859" class="outline-4">
-<h4 id="org9978859">Unterschied zwischen <code>foldr</code> und <code>foldl</code></h4>
-<div class="outline-text-4" id="text-org9978859">
+<div id="outline-container-orgd44cc57" class="outline-4">
+<h4 id="orgd44cc57">Unterschied zwischen <code>foldr</code> und <code>foldl</code></h4>
+<div class="outline-text-4" id="text-orgd44cc57">
 <div class="nebeneinander500">
 <div class="org-src-container">
 <pre class="src src-scheme"><span style="color: #707183;">(</span>foldl &#8211; 0 '<span style="color: #7388D6;">(</span>1 2 3 4<span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
@@ -935,13 +926,13 @@ auf die Restliste den Funktionswert ermittelt, falls die Liste <code>l</code> ni
 </div>
 </div>
 
-<div id="outline-container-org90d8918" class="outline-2">
-<h2 id="org90d8918">Integration von Daten und Funktionen &#x2013; Einführung des Objektbegriffs</h2>
-<div class="outline-text-2" id="text-org90d8918">
+<div id="outline-container-orgf1fd10d" class="outline-2">
+<h2 id="orgf1fd10d">Integration von Daten und Funktionen &#x2013; Einführung des Objektbegriffs</h2>
+<div class="outline-text-2" id="text-orgf1fd10d">
 </div>
-<div id="outline-container-org86b4ed6" class="outline-3">
-<h3 id="org86b4ed6">Funktionen mit Funktionen als Resultat</h3>
-<div class="outline-text-3" id="text-org86b4ed6">
+<div id="outline-container-org7983646" class="outline-3">
+<h3 id="org7983646">Funktionen mit Funktionen als Resultat</h3>
+<div class="outline-text-3" id="text-org7983646">
 <ul class="org-ul">
 <li><p>
 Was liefert der Ausdruck <code>(inc 3)</code>, wenn die Funktion <code>inc</code> wie folgt
@@ -990,9 +981,9 @@ Anwendung von <code>inc</code> und <code>dot</code>:
 </div>
 </div>
 
-<div id="outline-container-org67686db" class="outline-3">
-<h3 id="org67686db">Was ist ein Objekt?</h3>
-<div class="outline-text-3" id="text-org67686db">
+<div id="outline-container-org7a171bf" class="outline-3">
+<h3 id="org7a171bf">Was ist ein Objekt?</h3>
+<div class="outline-text-3" id="text-org7a171bf">
 <ul class="org-ul">
 <li>Objekte im Sinne der „objektorientierten Programmierung” sind
 nichts weiter als Funktionen mit „internen” Daten.</li>
@@ -1009,9 +1000,9 @@ Zustandsgrößen und einer Methode.</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-orgda6912b" class="outline-3">
-<h3 id="orgda6912b">Ein etwas interessanteres Objekt</h3>
-<div class="outline-text-3" id="text-orgda6912b">
+<div id="outline-container-org70e95db" class="outline-3">
+<h3 id="org70e95db">Ein etwas interessanteres Objekt</h3>
+<div class="outline-text-3" id="text-org70e95db">
 <div class="org-src-container">
 <pre class="src src-scheme"><span style="color: #707183;">(</span><span style="color: #0000FF;">define</span> <span style="color: #006699;">person</span>
   <span style="color: #7388D6;">(</span><span style="color: #0000FF;">lambda</span> <span style="color: #909183;">[</span>name vorname<span style="color: #909183;">]</span>
@@ -1043,9 +1034,9 @@ welche der Methoden aufzurufen ist.</li>
 </div>
 </div>
 
-<div id="outline-container-org14b6b86" class="outline-3">
-<h3 id="org14b6b86">Anwendungen des <code>person</code>-Objekts</h3>
-<div class="outline-text-3" id="text-org14b6b86">
+<div id="outline-container-org0505ffc" class="outline-3">
+<h3 id="org0505ffc">Anwendungen des <code>person</code>-Objekts</h3>
+<div class="outline-text-3" id="text-org0505ffc">
 <div class="org-src-container">
 <pre class="src src-scheme"><span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">Objekterzeugung:</span>
 <span style="color: #707183;">(</span><span style="color: #0000FF;">define</span> <span style="color: #006699;">p1</span> <span style="color: #7388D6;">(</span>person <span style="color: #008000;">"Gans"</span> <span style="color: #008000;">"Gustav"</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
@@ -1059,9 +1050,9 @@ welche der Methoden aufzurufen ist.</li>
 </div>
 </div>
 
-<div id="outline-container-orgb352fd8" class="outline-3">
-<h3 id="orgb352fd8">Java-Klasse <code>Person</code></h3>
-<div class="outline-text-3" id="text-orgb352fd8">
+<div id="outline-container-org6851f9a" class="outline-3">
+<h3 id="org6851f9a">Java-Klasse <code>Person</code></h3>
+<div class="outline-text-3" id="text-org6851f9a">
 <div class="org-src-container">
 <pre class="src src-java"> <span style="color: #0000FF;">public</span> <span style="color: #0000FF;">class</span> <span style="color: #6434A3;">Person</span>
 <span style="color: #707183;">{</span>
@@ -1096,9 +1087,9 @@ welche der Methoden aufzurufen ist.</li>
 </div>
 
 
-<div id="outline-container-orgfb120e5" class="outline-3">
-<h3 id="orgfb120e5">Zusammenfassung</h3>
-<div class="outline-text-3" id="text-orgfb120e5">
+<div id="outline-container-org0732e9c" class="outline-3">
+<h3 id="org0732e9c">Zusammenfassung</h3>
+<div class="outline-text-3" id="text-org0732e9c">
 <ul class="org-ul">
 <li>Für die objektorientierte Programmierung bedarf es keiner speziellen
 Programmiersprachen.</li>
@@ -1122,7 +1113,7 @@ aufzurufen ist.</li>
 </div>
 <div id="postamble" class="status">
 <p class="author">Autor: Johannes Brauer</p>
-<p class="date">Created: 2020-01-01 Wed 21:12</p>
+<p class="date">Created: 2020-02-21 Fri 22:27</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
