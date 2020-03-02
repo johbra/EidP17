@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="de" xml:lang="de">
 <head>
-<!-- 2020-03-02 Mon 13:35 -->
+<!-- 2020-03-02 Mon 19:56 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Aufgaben</title>
@@ -276,47 +276,48 @@ for the JavaScript code in this tag.
 <h2>Inhaltsverzeichnis</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org8f72918">1. Erste Schritte in Racket</a></li>
-<li><a href="#orga15d646">2. Auswertung arithmetischer Ausdrücke</a></li>
-<li><a href="#org4009223">3. Aufschreiben elementarer Funktionen</a></li>
-<li><a href="#org855cd43">4. Aufschreiben elementarer Funktionen</a></li>
-<li><a href="#org153cf9f">5. Anwenden der Aufschreibregeln</a></li>
-<li><a href="#org1f57398">6. Profit für den Kinobesitzer</a></li>
-<li><a href="#org56df3dc">7. Modifikation von <code>kino.rkt</code></a></li>
-<li><a href="#orgda9f868">8. Einsatz von Hilfsfunktionen</a></li>
-<li><a href="#orga93e68a">9. Ersetzungsmodell</a></li>
-<li><a href="#orgc7177ca">10. Bedingte Funktion</a></li>
-<li><a href="#org55fe1cc">11. Zusatzaufgaben zu bedingten Funktionen</a></li>
+<li><a href="#orgf63b437">1. Erste Schritte in Racket</a></li>
+<li><a href="#orge837485">2. Auswertung arithmetischer Ausdrücke</a></li>
+<li><a href="#org9c0ce3b">3. Aufschreiben elementarer Funktionen</a></li>
+<li><a href="#org9566d4b">4. Aufschreiben elementarer Funktionen</a></li>
+<li><a href="#org723a7ee">5. Anwenden der Aufschreibregeln</a></li>
+<li><a href="#org9c897ed">6. Profit für den Kinobesitzer</a></li>
+<li><a href="#org7a8d26b">7. Modifikation von <code>kino.rkt</code></a></li>
+<li><a href="#orgad5856d">8. Einsatz von Hilfsfunktionen</a></li>
+<li><a href="#orge7bdbc6">9. Ersetzungsmodell</a></li>
+<li><a href="#org1480eed">10. Bedingte Funktion</a></li>
+<li><a href="#org1392454">11. Zusatzaufgaben zu bedingten Funktionen</a></li>
 <li><a href="#datenabstraktion">12. Datenabstraktion</a></li>
-<li><a href="#orgddb412a">13. Datenabstraktion &#x2013; Zusatzaufgabe</a>
+<li><a href="#orgfc2372f">13. Datenabstraktion &#x2013; Zusatzaufgabe</a>
 <ul>
-<li><a href="#org44f452d">13.1. Vorbemerkungen</a></li>
-<li><a href="#orga6aca0c">13.2. Aufgabenstellungen</a></li>
+<li><a href="#org7fdc087">13.1. Vorbemerkungen</a></li>
+<li><a href="#org2e7d2bd">13.2. Aufgabenstellungen</a></li>
 </ul>
 </li>
-<li><a href="#orgec5b9cd">14. Datenabstraktion &#x2013; gemischte Daten</a></li>
-<li><a href="#orgb5d22a0">15. Datenabstraktion &#x2013; gemischte Daten &#x2013; Zusatzaufgabe</a>
+<li><a href="#org3822658">14. Datenabstraktion &#x2013; gemischte Daten</a></li>
+<li><a href="#org04c6dff">15. Datenabstraktion &#x2013; gemischte Daten &#x2013; Zusatzaufgabe</a>
 <ul>
-<li><a href="#orgbed2e72">15.1. Vorbemerkung</a></li>
-<li><a href="#orgac07145">15.2. Aufgabenstellungen</a></li>
+<li><a href="#org45845d8">15.1. Vorbemerkung</a></li>
+<li><a href="#orgcfd41f5">15.2. Aufgabenstellungen</a></li>
 </ul>
 </li>
 <li><a href="#listenkonstruktion">16. Listenkonstruktion und -zerlegung</a></li>
 <li><a href="#listenverarbeitung">17. Listenverarbeitung</a></li>
-<li><a href="#org28c62de">18. Funktionen über zwei Listen</a></li>
+<li><a href="#org525ba14">18. Funktionen über zwei Listen</a></li>
 <li><a href="#formaleaspekte">19. Formale Aspekte</a></li>
-<li><a href="#orga3bed60">20. Lokale Definitionen</a></li>
-<li><a href="#org97c9f32">21. Listen über gemischten Daten (Zusatzaufgabe)</a></li>
+<li><a href="#org3cfefa7">20. Lokale Definitionen</a></li>
+<li><a href="#org448dfe1">21. Listen über gemischten Daten (Zusatzaufgabe)</a></li>
 <li><a href="#akkumulierendeparameter">22. Hilfsfunktionen mit akkumulierenden Parametern</a></li>
 <li><a href="#abstraktionvonfunktionen">23. Abstraktion von Funktionen</a></li>
 <li><a href="#fho">24. Anwendung von <code>map</code>, <code>filter</code> und <code>foldr</code></a></li>
-<li><a href="#org67a4c98">25. Definition von Funktionen höherer Ordnung</a></li>
+<li><a href="#org9c9f8b1">25. Definition von Funktionen höherer Ordnung</a></li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-org8f72918" class="outline-2">
-<h2 id="org8f72918"><span class="section-number-2">1</span> Erste Schritte in Racket</h2>
+
+<div id="outline-container-orgf63b437" class="outline-2">
+<h2 id="orgf63b437"><span class="section-number-2">1</span> Erste Schritte in Racket</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 Machen Sie sich mit den NORDAKADEMIE-Rechnern vertraut und richten Sie
@@ -343,8 +344,8 @@ finden Sie alle vordefinierten mathematischen Funktionen?
 </div>
 </div>
 
-<div id="outline-container-orga15d646" class="outline-2">
-<h2 id="orga15d646"><span class="section-number-2">2</span> Auswertung arithmetischer Ausdrücke</h2>
+<div id="outline-container-orge837485" class="outline-2">
+<h2 id="orge837485"><span class="section-number-2">2</span> Auswertung arithmetischer Ausdrücke</h2>
 <div class="outline-text-2" id="text-2">
 <ol class="org-ol">
 <li>Wie wird der Ausdruck<br />
@@ -363,8 +364,8 @@ Werten Sie die folgenden Ausdrücke aus und vergleichen Sie die Resultate:
 </div>
 </div>
 
-<div id="outline-container-org4009223" class="outline-2">
-<h2 id="org4009223"><span class="section-number-2">3</span> Aufschreiben elementarer Funktionen</h2>
+<div id="outline-container-org9c0ce3b" class="outline-2">
+<h2 id="org9c0ce3b"><span class="section-number-2">3</span> Aufschreiben elementarer Funktionen</h2>
 <div class="outline-text-2" id="text-3">
 <p>
 Schreiben Sie für die folgenden mathematischen Formeln Racket-Funktions&#x00ad;definitionen auf:
@@ -382,8 +383,8 @@ Funktionsaufrufe für diese Funktionen ein.
 </p>
 </div>
 </div>
-<div id="outline-container-org855cd43" class="outline-2">
-<h2 id="org855cd43"><span class="section-number-2">4</span> Aufschreiben elementarer Funktionen</h2>
+<div id="outline-container-org9566d4b" class="outline-2">
+<h2 id="org9566d4b"><span class="section-number-2">4</span> Aufschreiben elementarer Funktionen</h2>
 <div class="outline-text-2" id="text-4">
 <p>
 In der Praxis findet der Programmierer selten mathematische Formeln
@@ -456,8 +457,8 @@ Hinweis: Ein Aufruf <code>(expt x y)</code> liefert \(x^y\) als Ergebnis.
 </div>
 </div>
 
-<div id="outline-container-org153cf9f" class="outline-2">
-<h2 id="org153cf9f"><span class="section-number-2">5</span> Anwenden der Aufschreibregeln</h2>
+<div id="outline-container-org723a7ee" class="outline-2">
+<h2 id="org723a7ee"><span class="section-number-2">5</span> Anwenden der Aufschreibregeln</h2>
 <div class="outline-text-2" id="text-5">
 <p>
 Schreiben Sie die Funktion zur Berechnung der Bahnhofsmiete in
@@ -470,8 +471,8 @@ folgenden Aufgaben gemäß diesen Regeln aufzuschreiben!!!</b>
 </div>
 </div>
 
-<div id="outline-container-org1f57398" class="outline-2">
-<h2 id="org1f57398"><span class="section-number-2">6</span> Profit für den Kinobesitzer</h2>
+<div id="outline-container-org9c897ed" class="outline-2">
+<h2 id="org9c897ed"><span class="section-number-2">6</span> Profit für den Kinobesitzer</h2>
 <div class="outline-text-2" id="text-6">
 <p>
 Ein altmodisches Vorstadtkino besitzt eine einfache Formel für die
@@ -483,8 +484,8 @@ Berechnung des Profits bei gegebener Besucherzahl.
 </p>
 </div>
 </div>
-<div id="outline-container-org56df3dc" class="outline-2">
-<h2 id="org56df3dc"><span class="section-number-2">7</span> Modifikation von <code>kino.rkt</code></h2>
+<div id="outline-container-org7a8d26b" class="outline-2">
+<h2 id="org7a8d26b"><span class="section-number-2">7</span> Modifikation von <code>kino.rkt</code></h2>
 <div class="outline-text-2" id="text-7">
 <ol class="org-ol">
 <li>Modifizieren Sie das Programm <code>kino.rkt</code> so, dass die Fixkosten
@@ -497,8 +498,8 @@ vergleichen Sie die Ergebnisse.</li>
 </div>
 </div>
 
-<div id="outline-container-orgda9f868" class="outline-2">
-<h2 id="orgda9f868"><span class="section-number-2">8</span> Einsatz von Hilfsfunktionen</h2>
+<div id="outline-container-orgad5856d" class="outline-2">
+<h2 id="orgad5856d"><span class="section-number-2">8</span> Einsatz von Hilfsfunktionen</h2>
 <div class="outline-text-2" id="text-8">
 <p>
 Die folgenden Aufgaben sind unter Benutzung von Hilfsfunktionen zu
@@ -516,8 +517,8 @@ Wandstärke und die Länge des Rohrs.</li>
 </div>
 </div>
 
-<div id="outline-container-orga93e68a" class="outline-2">
-<h2 id="orga93e68a"><span class="section-number-2">9</span> Ersetzungsmodell</h2>
+<div id="outline-container-orge7bdbc6" class="outline-2">
+<h2 id="orge7bdbc6"><span class="section-number-2">9</span> Ersetzungsmodell</h2>
 <div class="outline-text-2" id="text-9">
 <p>
 Gegeben sei die folgende Funktionsdefinition:
@@ -540,8 +541,8 @@ des Ersetzungsmodells aus:
 </div>
 </div>
 
-<div id="outline-container-orgc7177ca" class="outline-2">
-<h2 id="orgc7177ca"><span class="section-number-2">10</span> Bedingte Funktion</h2>
+<div id="outline-container-org1480eed" class="outline-2">
+<h2 id="org1480eed"><span class="section-number-2">10</span> Bedingte Funktion</h2>
 <div class="outline-text-2" id="text-10">
 <p>
 Schreiben Sie ein Programm, das aus dem Bruttoeinkommen eines
@@ -629,8 +630,8 @@ Konstanten, Regel 5) Gebrauch.</li>
 </div>
 </div>
 
-<div id="outline-container-org55fe1cc" class="outline-2">
-<h2 id="org55fe1cc"><span class="section-number-2">11</span> Zusatzaufgaben zu bedingten Funktionen</h2>
+<div id="outline-container-org1392454" class="outline-2">
+<h2 id="org1392454"><span class="section-number-2">11</span> Zusatzaufgaben zu bedingten Funktionen</h2>
 <div class="outline-text-2" id="text-11">
 <ol class="org-ol">
 <li><p>
@@ -683,7 +684,7 @@ behandelt wird.</li>
 </ol>
 </div>
 </div>
-<div id="outline-container-orgbad9b8f" class="outline-2">
+<div id="outline-container-orgec0b7aa" class="outline-2">
 <h2 id="datenabstraktion"><span class="section-number-2">12</span> Datenabstraktion</h2>
 <div class="outline-text-2" id="text-datenabstraktion">
 <p>
@@ -734,12 +735,12 @@ weiblicher Vegetarier ist.
 </div>
 </div>
 
-<div id="outline-container-orgddb412a" class="outline-2">
-<h2 id="orgddb412a"><span class="section-number-2">13</span> Datenabstraktion &#x2013; Zusatzaufgabe</h2>
+<div id="outline-container-orgfc2372f" class="outline-2">
+<h2 id="orgfc2372f"><span class="section-number-2">13</span> Datenabstraktion &#x2013; Zusatzaufgabe</h2>
 <div class="outline-text-2" id="text-13">
 </div>
-<div id="outline-container-org44f452d" class="outline-3">
-<h3 id="org44f452d"><span class="section-number-3">13.1</span> Vorbemerkungen</h3>
+<div id="outline-container-org7fdc087" class="outline-3">
+<h3 id="org7fdc087"><span class="section-number-3">13.1</span> Vorbemerkungen</h3>
 <div class="outline-text-3" id="text-13-1">
 <p>
 In den Lehrsprachen von DrRacket gibt es ein vordefinierte
@@ -831,8 +832,8 @@ Mit <code>(stop)</code> wird die Zeichenfläche geschlossen.
 </div>
 </div>
 
-<div id="outline-container-orga6aca0c" class="outline-3">
-<h3 id="orga6aca0c"><span class="section-number-3">13.2</span> Aufgabenstellungen</h3>
+<div id="outline-container-org2e7d2bd" class="outline-3">
+<h3 id="org2e7d2bd"><span class="section-number-3">13.2</span> Aufgabenstellungen</h3>
 <div class="outline-text-3" id="text-13-2">
 <ol class="org-ol">
 <li>Experimentieren Sie mit den o. g. Funktionen.</li>
@@ -916,8 +917,8 @@ Das sei nur ein kleine Anregung für eigene „Animationen“.
 </div>
 </div>
 </div>
-<div id="outline-container-orgec5b9cd" class="outline-2">
-<h2 id="orgec5b9cd"><span class="section-number-2">14</span> Datenabstraktion &#x2013; gemischte Daten</h2>
+<div id="outline-container-org3822658" class="outline-2">
+<h2 id="org3822658"><span class="section-number-2">14</span> Datenabstraktion &#x2013; gemischte Daten</h2>
 <div class="outline-text-2" id="text-14">
 <p>
 Lösen Sie die Aufgabe unter Anwendung der passenden Regeln!
@@ -975,12 +976,12 @@ sich aus dem Grundgehalt und der monatlichen Sollarbeitszeit plus
 </div>
 </div>
 
-<div id="outline-container-orgb5d22a0" class="outline-2">
-<h2 id="orgb5d22a0"><span class="section-number-2">15</span> Datenabstraktion &#x2013; gemischte Daten &#x2013; Zusatzaufgabe</h2>
+<div id="outline-container-org04c6dff" class="outline-2">
+<h2 id="org04c6dff"><span class="section-number-2">15</span> Datenabstraktion &#x2013; gemischte Daten &#x2013; Zusatzaufgabe</h2>
 <div class="outline-text-2" id="text-15">
 </div>
-<div id="outline-container-orgbed2e72" class="outline-3">
-<h3 id="orgbed2e72"><span class="section-number-3">15.1</span> Vorbemerkung</h3>
+<div id="outline-container-org45845d8" class="outline-3">
+<h3 id="org45845d8"><span class="section-number-3">15.1</span> Vorbemerkung</h3>
 <div class="outline-text-3" id="text-15-1">
 <p>
 Diese Aufgabe stellt eine Fortführung von Aufgabe 13 dar. Falls Sie
@@ -988,8 +989,8 @@ diese noch nicht bearbeitet haben, sollten Sie zunächst damit beginnen.
 </p>
 </div>
 </div>
-<div id="outline-container-orgac07145" class="outline-3">
-<h3 id="orgac07145"><span class="section-number-3">15.2</span> Aufgabenstellungen</h3>
+<div id="outline-container-orgcfd41f5" class="outline-3">
+<h3 id="orgcfd41f5"><span class="section-number-3">15.2</span> Aufgabenstellungen</h3>
 <div class="outline-text-3" id="text-15-2">
 <ol class="org-ol">
 <li>Enwtickeln Sie eine Datenstrukturdefinition für farbige
@@ -1024,7 +1025,7 @@ Figuren verarbeiten, auf.</li>
 </div>
 </div>
 
-<div id="outline-container-org57dce34" class="outline-2">
+<div id="outline-container-org89bdffd" class="outline-2">
 <h2 id="listenkonstruktion"><span class="section-number-2">16</span> Listenkonstruktion und -zerlegung</h2>
 <div class="outline-text-2" id="text-listenkonstruktion">
 <p>
@@ -1136,7 +1137,7 @@ Werten Sie die folgenden Funktionsaufrufe aus:
 </table>
 </div>
 </div>
-<div id="outline-container-org8bd5a6e" class="outline-2">
+<div id="outline-container-org4b0506a" class="outline-2">
 <h2 id="listenverarbeitung"><span class="section-number-2">17</span> Listenverarbeitung</h2>
 <div class="outline-text-2" id="text-listenverarbeitung">
 <ol class="org-ol">
@@ -1330,7 +1331,7 @@ Zeichenkette und könnte z. B. so benutzt werden:
 <li>Lösen Sie die Aufgabe, ohne die Summe der Listenelemente zu berechnen.</li>
 </ol></li>
 <li><p>
-<a id="orgffc615b"></a>Gegeben sei die Datenstrukturdefinition <code>gast</code> aus Aufgabe
+<a id="org43e5864"></a>Gegeben sei die Datenstrukturdefinition <code>gast</code> aus Aufgabe
 12 und z.&nbsp;B.  die folgende Gästeliste:
 </p>
 <div class="org-src-container">
@@ -1359,8 +1360,8 @@ eine Liste mit den weiblichen Gästen bildet.</li>
 </ol>
 </div>
 </div>
-<div id="outline-container-org28c62de" class="outline-2">
-<h2 id="org28c62de"><span class="section-number-2">18</span> Funktionen über zwei Listen</h2>
+<div id="outline-container-org525ba14" class="outline-2">
+<h2 id="org525ba14"><span class="section-number-2">18</span> Funktionen über zwei Listen</h2>
 <div class="outline-text-2" id="text-18">
 <p>
 Die in den folgenden Aufgaben zu entwickelnden Funktionen haben alle 2
@@ -1402,7 +1403,7 @@ auftauchen. Beispiel:
 </div>
 </div>
 
-<div id="outline-container-org9e95b10" class="outline-2">
+<div id="outline-container-org74c8799" class="outline-2">
 <h2 id="formaleaspekte"><span class="section-number-2">19</span> Formale Aspekte</h2>
 <div class="outline-text-2" id="text-formaleaspekte">
 <ol class="org-ol">
@@ -1447,8 +1448,8 @@ berechnet.
 </ol>
 </div>
 </div>
-<div id="outline-container-orga3bed60" class="outline-2">
-<h2 id="orga3bed60"><span class="section-number-2">20</span> Lokale Definitionen</h2>
+<div id="outline-container-org3cfefa7" class="outline-2">
+<h2 id="org3cfefa7"><span class="section-number-2">20</span> Lokale Definitionen</h2>
 <div class="outline-text-2" id="text-20">
 <ol class="org-ol">
 <li><p>
@@ -1546,8 +1547,8 @@ korrekten Teil der Formel eingeschachtelt erscheint.</li>
 </ol>
 </div>
 </div>
-<div id="outline-container-org97c9f32" class="outline-2">
-<h2 id="org97c9f32"><span class="section-number-2">21</span> Listen über gemischten Daten (Zusatzaufgabe)</h2>
+<div id="outline-container-org448dfe1" class="outline-2">
+<h2 id="org448dfe1"><span class="section-number-2">21</span> Listen über gemischten Daten (Zusatzaufgabe)</h2>
 <div class="outline-text-2" id="text-21">
 <p>
 Diese Aufgabe ist eine Fortführung der Aufgaben 13 und 15. Dort haben
@@ -1668,7 +1669,7 @@ Testen Sie die Funktion z. B. so
 </ol>
 </div>
 </div>
-<div id="outline-container-org2722c9e" class="outline-2">
+<div id="outline-container-orgd604c58" class="outline-2">
 <h2 id="akkumulierendeparameter"><span class="section-number-2">22</span> Hilfsfunktionen mit akkumulierenden Parametern</h2>
 <div class="outline-text-2" id="text-akkumulierendeparameter">
 <ol class="org-ol">
@@ -1715,11 +1716,11 @@ auftreten.</li>
 </ol>
 </div>
 </div>
-<div id="outline-container-orgf57c678" class="outline-2">
+<div id="outline-container-orgf17f9f9" class="outline-2">
 <h2 id="abstraktionvonfunktionen"><span class="section-number-2">23</span> Abstraktion von Funktionen</h2>
 <div class="outline-text-2" id="text-abstraktionvonfunktionen">
 <p>
-Wenn Sie die Funktionen <code>vegetarier</code> und <code>frauen</code> aus Aufgabe <a href="#orgffc615b">17i</a>
+Wenn Sie die Funktionen <code>vegetarier</code> und <code>frauen</code> aus Aufgabe <a href="#org43e5864">17i</a>
 regelkonform entwickelt haben, dürften sie sich nur an einer Stelle
 <i>wesentlich</i> unterscheiden. 
 Überlegen Sie, wie diese „Verschiedenheit“ in Form eines Parameters
@@ -1740,7 +1741,7 @@ regelkonform entwickelt haben, dürften sie sich nur an einer Stelle
 </ol>
 </div>
 </div>
-<div id="outline-container-org5d109cc" class="outline-2">
+<div id="outline-container-orgdade967" class="outline-2">
 <h2 id="fho"><span class="section-number-2">24</span> Anwendung von <code>map</code>, <code>filter</code> und <code>foldr</code></h2>
 <div class="outline-text-2" id="text-fho">
 <p>
@@ -1773,8 +1774,8 @@ zusätzlichen Parameter die Sortierreihenfolge bestimmt werden kann.</li>
 </ol>
 </div>
 </div>
-<div id="outline-container-org67a4c98" class="outline-2">
-<h2 id="org67a4c98"><span class="section-number-2">25</span> Definition von Funktionen höherer Ordnung</h2>
+<div id="outline-container-org9c9f8b1" class="outline-2">
+<h2 id="org9c9f8b1"><span class="section-number-2">25</span> Definition von Funktionen höherer Ordnung</h2>
 <div class="outline-text-2" id="text-25">
 <p>
 Definieren Sie die folgenden Funktionen höherer Ordnung rekursiv oder
@@ -1806,7 +1807,7 @@ Eine Funktion
 die zwei Funktionen als Argument erhält und die kleinste natürliche
 Zahl sucht, für die diese beiden Funktionen dasselbe Ergebnis
 liefern. Begrenzen Sie die Suche auf Zahlen bis 1000 und geben Sie
-<code>nil</code> zurück, wenn keine passende Zahl gefunden wurde.
+-1 zurück, wenn keine passende Zahl gefunden wurde.
 </p></li>
 </ol>
 </div>
@@ -1814,7 +1815,7 @@ liefern. Begrenzen Sie die Suche auf Zahlen bis 1000 und geben Sie
 </div>
 <div id="postamble" class="status">
 <p class="author">Autor: Johannes Brauer</p>
-<p class="date">Created: 2020-03-02 Mon 13:35</p>
+<p class="date">Created: 2020-03-02 Mon 19:56</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
