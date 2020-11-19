@@ -7,22 +7,12 @@
 <style type="text/css">
 .underline { text-decoration: underline; }
 </style>
-<link rel="stylesheet" href="./reveal.js/css/reveal.css"/>
+<link rel="stylesheet" href="reveal.js-master/dist/reveal.css"/>
 
-<link rel="stylesheet" href="./reveal.js/css/theme/simple.css" id="theme"/>
+<link rel="stylesheet" href="reveal.js-master/dist/theme/simple.css" id="theme"/>
 
 <link rel="stylesheet" href="./mycss/myrevealstyle.css"/>
-
-<!-- If the query includes 'print-pdf', include the PDF print sheet -->
-<script>
-    if( window.location.search.match( /print-pdf/gi ) ) {
-        var link = document.createElement( 'link' );
-        link.rel = 'stylesheet';
-        link.type = 'text/css';
-        link.href = './reveal.js/css/print/pdf.css';
-        document.getElementsByTagName( 'head' )[0].appendChild( link );
-    }
-</script>
+<link rel="stylesheet" href="reveal.js-master/plugin/highlight/vs.css"/>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 <link rel="stylesheet" type="text/css" href="mycss/mystyle.css" />
 </head>
@@ -30,11 +20,13 @@
 <div class="reveal">
 <div class="slides">
 <section id="sec-title-slide">
-<h1 class="title">Einführung</h1><h3 class="subtitle">Einführung in die Programmierung</h3><h2 class="author">Johannes Brauer</h2><h2 class="date"></h2>
+<h1 class="title">Einführung</h1><h3 class="subtitle">Einführung in die Programmierung</h3><h2 class="author">Johannes Brauer</h2><h3 class="date">2020-11-19 Thu 16:15</h3>
 </section>
+
+
 <section>
-<section id="slide-org2f95ea2">
-<h2 id="org2f95ea2">Programme für Computer</h2>
+<section id="slide-orgb13f5ab">
+<h2 id="orgb13f5ab">Programme für Computer</h2>
 <p>
 Ein Programm ist eine Folge von Anweisungen (Befehlen) an eine Maschine
 (Rechner, Computer), die von dieser „verstanden” wird und damit
@@ -42,16 +34,16 @@ ausgeführt werden kann.
 </p>
 
 </section>
-<section id="slide-org1fc89cd">
-<h3 id="org1fc89cd">Aufbau von Computern</h3>
+<section id="slide-orga363af9">
+<h3 id="orga363af9">Aufbau von Computern</h3>
 
 <div class="figure">
 <p><img src="./Abbildungen/Computermodell.png" alt="Computermodell.png" />
 </p>
 </div>
 </section>
-<section id="slide-org8feed0d">
-<h3 id="org8feed0d">Computer im Wandel der Jahrzehnte</h3>
+<section id="slide-org625bd5c">
+<h3 id="org625bd5c">Computer im Wandel der Jahrzehnte</h3>
 
 <div class="figure">
 <p><img src="./Abbildungen/computervon60Jahrenundjetzt.jpg" alt="computervon60Jahrenundjetzt.jpg" width="400px" />
@@ -81,8 +73,8 @@ Welche Fortschritte gibt es in dieser Zeit in der Software?
 </p>
 
 </section>
-<section id="slide-orga40bc35">
-<h3 id="orga40bc35">Was können Computer?</h3>
+<section id="slide-orga6dae81">
+<h3 id="orga6dae81">Was können Computer?</h3>
 <ul>
 <li><b>Problem:</b> Computer können nur sehr simple Dinge tun.</li>
 <li><p>
@@ -112,13 +104,13 @@ Besser wäre, man könnte z. B. schreiben:
 </section>
 </section>
 <section>
-<section id="slide-org8eb8ef1">
-<h2 id="org8eb8ef1">Programmiersprachen</h2>
-<div class="outline-text-2" id="text-org8eb8ef1">
+<section id="slide-org884c541">
+<h2 id="org884c541">Programmiersprachen</h2>
+<div class="outline-text-2" id="text-org884c541">
 </div>
 </section>
-<section id="slide-org16f30dd">
-<h3 id="org16f30dd">Was ist eine Programmiersprache?</h3>
+<section id="slide-org55475d1">
+<h3 id="org55475d1">Was ist eine Programmiersprache?</h3>
 <ul>
 <li>Damit die Maschine uns „versteht”, müssen Programme in einer für sie
 verständlichen Sprache formuliert werden.</li>
@@ -127,8 +119,8 @@ Programmen, die auf Rechnern ausführbar sind.</li>
 
 </ul>
 </section>
-<section id="slide-org1cb39bd">
-<h3 id="org1cb39bd">Maschinenorientierte Programmiersprachen</h3>
+<section id="slide-org2586678">
+<h3 id="org2586678">Maschinenorientierte Programmiersprachen</h3>
 <ul>
 <li>Zu jeder Maschine gehört eine Liste von Dingen, die sie tun kann:
 <ul>
@@ -144,8 +136,7 @@ werden.</li>
 Maschinenprogramms als Bitmuster.</li>
 
 </ul>
-</section>
-<section>
+
 <ul>
 <li>Assemblersprache (assembly language): Symbolische, textorientierte
 Darstellung einer Maschinensprache. Ihre Merkmale sind:
@@ -166,8 +157,8 @@ Darstellung einer Maschinensprache. Ihre Merkmale sind:
 </p>
 </div>
 </section>
-<section id="slide-org14ee980">
-<h3 id="org14ee980">Problemorientierte Programmiersprachen</h3>
+<section id="slide-org0fe9001">
+<h3 id="org0fe9001">Problemorientierte Programmiersprachen</h3>
 <ul>
 <li>Höhere, problemorientierte Programmiersprache: Formale Sprache zur
 textuellen Darstellung von Programmen, deren Konstrukte
@@ -191,8 +182,8 @@ Rechensystem ermöglichen,</li>
 </p>
 </div>
 </section>
-<section id="slide-orga20bb75">
-<h3 id="orga20bb75">Die Entwicklung von Programmiersprachen</h3>
+<section id="slide-org7740997">
+<h3 id="org7740997">Die Entwicklung von Programmiersprachen</h3>
 
 <div class="figure">
 <p><img src="./Abbildungen/programmiersprachen.png" alt="programmiersprachen.png" width="700px" />
@@ -200,8 +191,8 @@ Rechensystem ermöglichen,</li>
 </div>
 
 </section>
-<section id="slide-org7e2414f">
-<h4 id="org7e2414f">Wichtige Programmiersprachen</h4>
+<section id="slide-org7d4ad36">
+<h4 id="org7d4ad36">Wichtige Programmiersprachen</h4>
 <dl>
 <dt>1954 - 57</dt><dd><b>Fortran</b> (Formula Translation) von J. W. Backus, IBM.</dd>
 <dt>1956 - 62</dt><dd><b>Lisp</b> (List Processing Language) von J. McCarthy.
@@ -251,8 +242,8 @@ Warenzeichen der Firma Sun Microsystems, heute im Besitz von Oracle</dd>
 </dl>
 
 </section>
-<section id="slide-orge16b68e">
-<h3 id="orge16b68e">Syntax, Semantik, Pragmatik von Programmiersprachen</h3>
+<section id="slide-org7c1a0c2">
+<h3 id="org7c1a0c2">Syntax, Semantik, Pragmatik von Programmiersprachen</h3>
 <ul>
 <li>Syntax legt fest,
 <ul>
@@ -273,8 +264,7 @@ Programmen bestimmen.</li>
 </ul></li>
 
 </ul>
-</section>
-<section>
+
 <ul>
 <li>Pragmatik
 <ul>
@@ -289,8 +279,8 @@ Formulierung von Lösungen</li>
 </section>
 </section>
 <section>
-<section id="slide-orge67eed9">
-<h2 id="orge67eed9">Zusammenfassung</h2>
+<section id="slide-org17b0b70">
+<h2 id="org17b0b70">Zusammenfassung</h2>
 <ul>
 <li><b>Programmiersprachen</b> sind formale Sprachen, in denen sich für den
 Menschen verständliche Programme für Rechenmaschinen formulieren
@@ -301,7 +291,11 @@ lassen. Wichtig sind ihre Syntax, Semantik und Pragmatik.</li>
 </section>
 </div>
 </div>
-<script src="./reveal.js/js/reveal.js"></script>
+<script src="reveal.js-master/dist/reveal.js"></script>
+<script src="reveal.js-master/plugin/highlight/highlight.js"></script>
+<script src="reveal.js-master/plugin/zoom/zoom.js"></script>
+<script src="reveal.js-master/plugin/search/search.js"></script>
+<script src="reveal.js-master/plugin/menu/menu.js"></script>
 <script>
 // Full list of configuration options available here:
 // https://github.com/hakimel/reveal.js#configuration
@@ -320,21 +314,21 @@ hashOneBasedIndex: false,
 pdfSeparateFragments: true,
 
 overview: true,
+width: 1120,
+height: 800,
 margin: 0.05,
 
-theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
-transition: Reveal.getQueryHash().transition || 'slide', // see README of reveal.js for options
+transition: 'slide',
 transitionSpeed: 'default',
+
+// Plugins with reveal.js 4.x
+plugins: [ RevealHighlight, RevealZoom, RevealSearch, RevealMenu ],
 
 // Optional libraries used to extend reveal.js
 dependencies: [
- { src: './reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
- { src: './reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
- { src: './reveal.js/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } },
- { src: './reveal.js/plugin/search/search.js', async: true, condition: function() { return !!document.body.classList; } },
- { src: './reveal.js/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } }]
+]
 
-,dependencies: [ { src: 'plugin/menu/menu.js', async: true }, { src: 'reveal.js/plugin/zoom-js/zoom.js', async: true }, { src: 'reveal.js/plugin/search/search.js', async: true }] , menu: {hideMissingTitles: true}});
+,menu: {hideMissingTitles: true, markers: false, themes: true }});
 </script>
 </body>
 </html>
