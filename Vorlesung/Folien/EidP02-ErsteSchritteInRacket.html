@@ -3,42 +3,34 @@
 <head>
 <meta charset="utf-8"/>
 <title>Erste Schritte in Racket</title>
-<meta name="author" content="(Johannes Brauer)"/>
+<meta name="author" content="Johannes Brauer"/>
 <style type="text/css">
 .underline { text-decoration: underline; }
 </style>
-<link rel="stylesheet" href="./reveal.js/css/reveal.css"/>
+<link rel="stylesheet" href="reveal.js-master/dist/reveal.css"/>
 
-<link rel="stylesheet" href="./reveal.js/css/theme/simple.css" id="theme"/>
+<link rel="stylesheet" href="reveal.js-master/dist/theme/simple.css" id="theme"/>
 
 <link rel="stylesheet" href="./mycss/myrevealstyle.css"/>
-
-<!-- If the query includes 'print-pdf', include the PDF print sheet -->
-<script>
-    if( window.location.search.match( /print-pdf/gi ) ) {
-        var link = document.createElement( 'link' );
-        link.rel = 'stylesheet';
-        link.type = 'text/css';
-        link.href = './reveal.js/css/print/pdf.css';
-        document.getElementsByTagName( 'head' )[0].appendChild( link );
-    }
-</script>
-<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<link rel="stylesheet" href="reveal.js-master/plugin/highlight/vs.css"/>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 <link rel="stylesheet" type="text/css" href="mycss/mystyle.css" />
 </head>
 <body>
 <div class="reveal">
 <div class="slides">
-<section id="sec-title-slide"><h1 class="title">Erste Schritte in Racket</h1><h2 class="author">Johannes Brauer</h2><p class="date">Created: 2019-01-13 Sun 14:09</p>
+<section id="sec-title-slide">
+<h1 class="title">Erste Schritte in Racket</h1><h3 class="subtitle">Einführung in die Programmierung</h3><h2 class="author">Johannes Brauer</h2><h3 class="date">21. 11. 2020</h3>
 </section>
+
 <section>
-<section id="org5ff1d90">
-<h2 id="org5ff1d90">Die Sprache <i>Racket</i></h2>
-<div class="outline-text-2" id="text-org5ff1d90">
+<section id="slide-org3123ba9">
+<h2 id="org3123ba9">Die Sprache <i>Racket</i></h2>
+<div class="outline-text-2" id="text-org3123ba9">
 </div>
 </section>
-<section id="org8fa6edf">
-<h3 id="org8fa6edf">Funktionale Programmierung</h3>
+<section id="slide-orgfbe5018">
+<h3 id="orgfbe5018">Funktionale Programmierung</h3>
 <ul>
 <li>Es gibt verschiedene Programmierparadigmen, die sich in der
 Herangehensweise sehr unterscheiden.</li>
@@ -57,8 +49,8 @@ Programmierparadigmen eher an.</li>
 
 </ul>
 </section>
-<section id="orgf403180">
-<h3 id="orgf403180">Die funktionale Programmiersprache Racket und DrRacket</h3>
+<section id="slide-orgbcdd0ad">
+<h3 id="orgbcdd0ad">Die funktionale Programmiersprache Racket und DrRacket</h3>
 <ul>
 <li>Racket ist ein Dialekt von Scheme. Scheme ist eine Variante von
 Lisp. Lisp ist eine sehr alte Programmiersprache (entstanden Ende
@@ -78,8 +70,8 @@ Racket. Sie bietet alles Notwendige, ist aber trotzdem nicht
 </ul>
 
 </section>
-<section id="org7fbe36a">
-<h3 id="org7fbe36a">Installation und Einrichtung von DrRacket</h3>
+<section id="slide-org3c6783f">
+<h3 id="org3c6783f">Installation und Einrichtung von DrRacket</h3>
 <ul>
 <li>Auf den NORDAKADEMIE-PCs und Virtuellen Maschinen ist DrRacket im
 Startmenü im Ordner Racket zu finden.</li>
@@ -88,7 +80,7 @@ Startmenü im Ordner Racket zu finden.</li>
 
 </ul>
 </section>
-<section >
+<section>
 <ul>
 <li>Beim ersten Aufruf ist (über das Menü <code>Sprache</code> eine Sprache zu wählen.</li>
 <li>Nehmen Sie bitte „Lehrsprachen“ -&gt; „How to Design Programs“ -&gt; „Zwischenstufe mit Lambda“.</li>
@@ -118,8 +110,8 @@ Anschließend einmal auf „Start“ klicken.
 </ul>
 
 </section>
-<section id="orgfbe3ed6">
-<h3 id="orgfbe3ed6">Aufbau von DrRacket</h3>
+<section id="slide-orga99f88f">
+<h3 id="orga99f88f">Aufbau von DrRacket</h3>
 <ul>
 <li>DrRacket verwendet wie viele funktionale Sprachen eine
 read-eval-print loop (REPL).</li>
@@ -140,13 +132,13 @@ read-eval-print loop (REPL).</li>
 </section>
 </section>
 <section>
-<section id="orgdfe364b">
-<h2 id="orgdfe364b">Elementare Ausdrücke</h2>
-<div class="outline-text-2" id="text-orgdfe364b">
+<section id="slide-org9c66fe2">
+<h2 id="org9c66fe2">Elementare Ausdrücke</h2>
+<div class="outline-text-2" id="text-org9c66fe2">
 </div>
 </section>
-<section id="org6f95c7e">
-<h3 id="org6f95c7e">Auswertung arithmetischer Ausdrücke</h3>
+<section id="slide-orgacc9c5a">
+<h3 id="orgacc9c5a">Auswertung arithmetischer Ausdrücke</h3>
 <ul>
 <li>Wir beginnen mit Zahlen</li>
 <li>Racket kennt 
@@ -163,39 +155,38 @@ den Dezimalpunkt statt des Dezimalkommas.</li>
 
 </ul>
 </section>
-<section id="org6e1ddd4">
-<h3 id="org6e1ddd4">Grundform des arithmetischen Ausdrucks (in <i>Racket</i>):</h3>
-<pre class="example">
-(operator operand-1 operand-2 ... operand-n)
-
-</pre>
+<section id="slide-orgeea4059">
+<h3 id="orgeea4059">Grundform des arithmetischen Ausdrucks (in <i>Racket</i>):</h3>
 <ul>
-<li>Beispiele:</li>
-
-</ul>
+<li><code>(operator operand-1 operand-2 ... operand-n)</code></li>
+<li><p>
+Beispiele: 
+</p>
 <div class="org-src-container">
 
-<pre  class="src src-racket">(+ 1 2 3)
+<pre><code class="racket" >(+ 1 2 3)
 (* 3 4 5)
 (/ 9  3)
 (/ 3 9)
 (/ 1.0 3.0)
 (* (+ 2 2) (/ (* (+ 3 5) (/ 30 10)) 2))
-</pre>
-</div>
+</code></pre>
+</div></li>
+
+</ul>
 <p>
 (vgl. 2. Aufgabe) 
 </p>
 </section>
 </section>
 <section>
-<section id="orgbd1e436">
-<h2 id="orgbd1e436">Anwendung und Definition einfacher Funktionen in der Repl</h2>
-<div class="outline-text-2" id="text-orgbd1e436">
+<section id="slide-org921c452">
+<h2 id="org921c452">Anwendung und Definition einfacher Funktionen in der Repl</h2>
+<div class="outline-text-2" id="text-org921c452">
 </div>
 </section>
-<section id="orga90ad57">
-<h3 id="orga90ad57">Funktionale Abstraktion</h3>
+<section id="slide-orgb6e5d97">
+<h3 id="orgb6e5d97">Funktionale Abstraktion</h3>
 <ul>
 <li>Problem: Berechnung der Ökosteuer bei:
 <ul>
@@ -215,7 +206,7 @@ oder: <br />
 
 </ul>
 </section>
-<section >
+<section>
 <ul>
 <li><p>
 Abstraktionsschritt: Definition der Berechnungsvorschrift als Funktion:
@@ -236,9 +227,9 @@ Definition der Berechnungsvorschrift als Funktion:<br />
 <div class="smaller">
 <div class="org-src-container">
 
-<pre  class="src src-scheme">     <span style="color: #707183;">(</span><span style="color: #0000FF;">lambda</span> <span style="color: #7388D6;">[</span>preis-fuer-tankfuellung preis-pro-liter<span style="color: #7388D6;">]</span>
-       <span style="color: #7388D6;">(</span>* <span style="color: #909183;">(</span>/ preis-fuer-tankfuellung preis-pro-liter<span style="color: #909183;">)</span> 7<span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
-</pre>
+<pre><code class="scheme" >     (lambda [preis-fuer-tankfuellung preis-pro-liter]
+       (* (/ preis-fuer-tankfuellung preis-pro-liter) 7))
+</code></pre>
 </div>
 
 </div>
@@ -249,7 +240,6 @@ Eine Funktion kann in <i>Racket</i> wie ein Operator verwendet werden: <br />
 </p>
 <pre class="example">
 (function operand-1 operand-2 ... operand-n)
-
 </pre></li>
 
 </ul></li>
@@ -258,7 +248,7 @@ Eine Funktion kann in <i>Racket</i> wie ein Operator verwendet werden: <br />
 
 </ul>
 </section>
-<section >
+<section>
 <ul>
 <li><p>
 Ersetzt man „function” durch obige Funktion, kann diese wie folgt angewendet werden:<br />
@@ -266,10 +256,10 @@ Ersetzt man „function” durch obige Funktion, kann diese wie folgt angewendet
 <div class="smaller">
 <div class="org-src-container">
 
-<pre  class="src src-scheme">       <span style="color: #707183;">(</span> <span style="color: #7388D6;">(</span><span style="color: #0000FF;">lambda</span> <span style="color: #909183;">[</span>preis-fuer-tankfuellung preis-pro-liter<span style="color: #909183;">]</span>
-             <span style="color: #909183;">(</span>* <span style="color: #709870;">(</span>/ preis-fuer-tankfuellung preis-pro-liter<span style="color: #709870;">)</span> 7<span style="color: #909183;">)</span><span style="color: #7388D6;">)</span>
-         4500 150<span style="color: #707183;">)</span>
-</pre>
+<pre><code class="scheme" >       ( (lambda [preis-fuer-tankfuellung preis-pro-liter]
+             (* (/ preis-fuer-tankfuellung preis-pro-liter) 7))
+         4500 150)
+</code></pre>
 </div>
 
 </div></li>
@@ -286,10 +276,10 @@ Bindung einer Berechnungsvorschrift (Funktion) an einen Namen:
 <div class="smaller">
 <div class="org-src-container">
 
-<pre  class="src src-scheme">     <span style="color: #707183;">(</span><span style="color: #0000FF;">define</span> <span style="color: #006699;">oeko-steuer</span>
-       <span style="color: #7388D6;">(</span><span style="color: #0000FF;">lambda</span> <span style="color: #909183;">[</span>preis-fuer-tankfuellung preis-pro-liter<span style="color: #909183;">]</span>
-          <span style="color: #909183;">(</span>* <span style="color: #709870;">(</span>/ preis-fuer-tankfuellung preis-pro-liter<span style="color: #709870;">)</span> 7<span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
-</pre>
+<pre><code class="scheme" >     (define oeko-steuer
+       (lambda [preis-fuer-tankfuellung preis-pro-liter]
+          (* (/ preis-fuer-tankfuellung preis-pro-liter) 7)))
+</code></pre>
 </div>
 
 </div>
@@ -301,8 +291,8 @@ wieder den Wert 210.
 
 </ol>
 </section>
-<section id="orgc7657bb">
-<h3 id="orgc7657bb">Ausdrücke in <i>Racket</i> (1)</h3>
+<section id="slide-orgc47328d">
+<h3 id="orgc47328d">Ausdrücke in <i>Racket</i> (1)</h3>
 <p>
 Nach dem zuvor Erläuterten kann der Aufbau von Ausdrücken in
 <i>Racket</i> wie folgt präzisiert werden. Die Grundform bleibt dabei
@@ -310,8 +300,8 @@ unverändert:
 </p>
 <pre class="example">
 (operator operand-1 operand-2 ... operand-n)
-
 </pre>
+
 <p>
 <i>Operatoren</i> sind Namen von
 </p>
@@ -323,7 +313,7 @@ unverändert:
 
 </ul>
 </section>
-<section >
+<section>
 <p>
 Beispiele für <i>Operanden</i> sind (neben vielen anderen):
 </p>
@@ -348,19 +338,19 @@ nach Bedarf.
 </section>
 </section>
 <section>
-<section id="org5e325c5">
-<h2 id="org5e325c5">Zusammenfassung</h2>
+<section id="slide-org238ffe5">
+<h2 id="org238ffe5">Zusammenfassung</h2>
 <ul>
 <li>Funktionale Programmierung ist ein wichtiges Programmierparadigma.</li>
 <li>Racket ist eine funktionale Programmiersprache, die einfach und
-somit sehr gut für Einsteiger geeignet ist.</li>
-<li>DrRacket ist eine integrierte Entwicklungsumgebung für Racket. Sie
+somit sehr gut für Einsteiger geeignet ist.</li>
+<li>DrRacket ist eine integrierte Entwicklungsumgebung für Racket. Sie
 folgt dem REPL-Prinzip(read-eval-print loop).</li>
 <li>Racket versteht verschiedene Zahlenformate. In runden Klammern
 werden zuerst ein Operator(z. B. eine arithmetische Funktion) und
 dann beliebig viele Operanden zusammengefasst.</li>
 <li>Mit dem Lambda-Operator können eigene Funktionen definiert
-werden. Über Parameter können Funktionen Werte als Argumente übergeben werden.</li>
+werden. Über Parameter können Funktionen Werte als Argumente übergeben werden.</li>
 <li>Mit der Pseudofunktion <code>define</code> kann eine Funktion an einen Namen gebunden werden.</li>
 
 </ul>
@@ -368,9 +358,11 @@ werden. Über Parameter können Funktionen Werte als Argumente übergeben werde
 </section>
 </div>
 </div>
-<script src="./reveal.js/lib/js/head.min.js"></script>
-<script src="./reveal.js/js/reveal.js"></script>
-
+<script src="reveal.js-master/dist/reveal.js"></script>
+<script src="reveal.js-master/plugin/highlight/highlight.js"></script>
+<script src="reveal.js-master/plugin/zoom/zoom.js"></script>
+<script src="reveal.js-master/plugin/search/search.js"></script>
+<script src="reveal.js-master/plugin/menu/menu.js"></script>
 <script>
 // Full list of configuration options available here:
 // https://github.com/hakimel/reveal.js#configuration
@@ -378,31 +370,32 @@ Reveal.initialize({
 
 controls: true,
 progress: true,
-history: false,
+history: true,
 center: true,
 slideNumber: 'c',
 rollingLinks: false,
 keyboard: true,
+mouseWheel: false,
+fragmentInURL: true,
+hashOneBasedIndex: false,
+pdfSeparateFragments: true,
+
 overview: true,
+width: 1120,
+height: 800,
 margin: 0.05,
 
-theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
-transition: Reveal.getQueryHash().transition || 'slide', // default/cube/page/concave/zoom/linear/fade/none
+transition: 'slide',
 transitionSpeed: 'default',
-multiplex: {
-    secret: '', // null if client
-    id: '', // id, obtained from socket.io server
-    url: '' // Location of socket.io server
-},
 
-// Optional libraries used to extend on reveal.js
+// Plugins with reveal.js 4.x
+plugins: [ RevealHighlight, RevealZoom, RevealSearch, RevealMenu ],
+
+// Optional libraries used to extend reveal.js
 dependencies: [
- { src: './reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
- { src: './reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
- { src: './reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
- { src: './reveal.js/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
- { src: './reveal.js/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }]
-,dependencies: [ { src: 'plugin/menu/menu.js', async: true }, { src: 'reveal.js/plugin/zoom-js/zoom.js', async: true } ]});
+]
+
+,menu: {hideMissingTitles: true, markers: false, themes: true }});
 </script>
 </body>
 </html>

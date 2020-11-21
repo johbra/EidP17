@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="de" xml:lang="de">
 <head>
-<!-- 2019-01-13 Sun 14:08 -->
+<!-- 2020-11-21 Sat 19:03 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Erste Schritte in Racket</title>
@@ -161,6 +161,19 @@
   .footdef  { margin-bottom: 1em; }
   .figure { padding: 1em; }
   .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
   .inlinetask {
     padding: 10px;
     border: 2px solid gray;
@@ -197,7 +210,7 @@
 @licstart  The following is the entire license notice for the
 JavaScript code in this tag.
 
-Copyright (C) 2012-2018 Free Software Foundation, Inc.
+Copyright (C) 2012-2020 Free Software Foundation, Inc.
 
 The JavaScript code in this tag is free software: you can
 redistribute it and/or modify it under the terms of the GNU
@@ -267,13 +280,14 @@ for the JavaScript code in this tag.
 <br />
 <span class="subtitle">Einführung in die Programmierung</span>
 </h1>
-<div id="outline-container-org7e65455" class="outline-2">
-<h2 id="org7e65455">Die Sprache <i>Racket</i></h2>
-<div class="outline-text-2" id="text-org7e65455">
+
+<div id="outline-container-org8734c2d" class="outline-2">
+<h2 id="org8734c2d">Die Sprache <i>Racket</i></h2>
+<div class="outline-text-2" id="text-org8734c2d">
 </div>
-<div id="outline-container-orgb0abd7b" class="outline-3">
-<h3 id="orgb0abd7b">Funktionale Programmierung</h3>
-<div class="outline-text-3" id="text-orgb0abd7b">
+<div id="outline-container-org834ab23" class="outline-3">
+<h3 id="org834ab23">Funktionale Programmierung</h3>
+<div class="outline-text-3" id="text-org834ab23">
 <ul class="org-ul">
 <li>Es gibt verschiedene Programmierparadigmen, die sich in der
 Herangehensweise sehr unterscheiden.</li>
@@ -292,9 +306,9 @@ Programmierparadigmen eher an.</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org3c77175" class="outline-3">
-<h3 id="org3c77175">Die funktionale Programmiersprache Racket und DrRacket</h3>
-<div class="outline-text-3" id="text-org3c77175">
+<div id="outline-container-orgd260abe" class="outline-3">
+<h3 id="orgd260abe">Die funktionale Programmiersprache Racket und DrRacket</h3>
+<div class="outline-text-3" id="text-orgd260abe">
 <ul class="org-ul">
 <li>Racket ist ein Dialekt von Scheme. Scheme ist eine Variante von
 Lisp. Lisp ist eine sehr alte Programmiersprache (entstanden Ende
@@ -313,9 +327,9 @@ Racket. Sie bietet alles Notwendige, ist aber trotzdem nicht
 </div>
 </div>
 
-<div id="outline-container-orgbe02857" class="outline-3">
-<h3 id="orgbe02857">Installation und Einrichtung von DrRacket</h3>
-<div class="outline-text-3" id="text-orgbe02857">
+<div id="outline-container-orgf0265f7" class="outline-3">
+<h3 id="orgf0265f7">Installation und Einrichtung von DrRacket</h3>
+<div class="outline-text-3" id="text-orgf0265f7">
 <ul class="org-ul">
 <li>Auf den NORDAKADEMIE-PCs und Virtuellen Maschinen ist DrRacket im
 Startmenü im Ordner Racket zu finden.</li>
@@ -351,9 +365,9 @@ Anschließend einmal auf „Start“ klicken.
 </div>
 </div>
 
-<div id="outline-container-org4bc9aa7" class="outline-3">
-<h3 id="org4bc9aa7">Aufbau von DrRacket</h3>
-<div class="outline-text-3" id="text-org4bc9aa7">
+<div id="outline-container-org4e1f366" class="outline-3">
+<h3 id="org4e1f366">Aufbau von DrRacket</h3>
+<div class="outline-text-3" id="text-org4e1f366">
 <ul class="org-ul">
 <li>DrRacket verwendet wie viele funktionale Sprachen eine
 read-eval-print loop (REPL).</li>
@@ -373,13 +387,13 @@ read-eval-print loop (REPL).</li>
 
 
 
-<div id="outline-container-orgc1d0353" class="outline-2">
-<h2 id="orgc1d0353">Elementare Ausdrücke</h2>
-<div class="outline-text-2" id="text-orgc1d0353">
+<div id="outline-container-org7aedf37" class="outline-2">
+<h2 id="org7aedf37">Elementare Ausdrücke</h2>
+<div class="outline-text-2" id="text-org7aedf37">
 </div>
-<div id="outline-container-org8a6bfdf" class="outline-3">
-<h3 id="org8a6bfdf">Auswertung arithmetischer Ausdrücke</h3>
-<div class="outline-text-3" id="text-org8a6bfdf">
+<div id="outline-container-org1b5ffb7" class="outline-3">
+<h3 id="org1b5ffb7">Auswertung arithmetischer Ausdrücke</h3>
+<div class="outline-text-3" id="text-org1b5ffb7">
 <ul class="org-ul">
 <li>Wir beginnen mit Zahlen</li>
 <li>Racket kennt 
@@ -395,16 +409,14 @@ den Dezimalpunkt statt des Dezimalkommas.</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org95c2013" class="outline-3">
-<h3 id="org95c2013">Grundform des arithmetischen Ausdrucks (in <i>Racket</i>):</h3>
-<div class="outline-text-3" id="text-org95c2013">
-<pre class="example">
-(operator operand-1 operand-2 ... operand-n)
-
-</pre>
+<div id="outline-container-org3e53d0b" class="outline-3">
+<h3 id="org3e53d0b">Grundform des arithmetischen Ausdrucks (in <i>Racket</i>):</h3>
+<div class="outline-text-3" id="text-org3e53d0b">
 <ul class="org-ul">
-<li>Beispiele:</li>
-</ul>
+<li><code>(operator operand-1 operand-2 ... operand-n)</code></li>
+<li><p>
+Beispiele: 
+</p>
 <div class="org-src-container">
 <pre class="src src-racket">(+ 1 2 3)
 (* 3 4 5)
@@ -413,20 +425,21 @@ den Dezimalpunkt statt des Dezimalkommas.</li>
 (/ 1.0 3.0)
 (* (+ 2 2) (/ (* (+ 3 5) (/ 30 10)) 2))
 </pre>
-</div>
+</div></li>
+</ul>
 <p>
 (vgl. 2. Aufgabe) 
 </p>
 </div>
 </div>
 </div>
-<div id="outline-container-org4485f45" class="outline-2">
-<h2 id="org4485f45">Anwendung und Definition einfacher Funktionen in der Repl</h2>
-<div class="outline-text-2" id="text-org4485f45">
+<div id="outline-container-org8e0a521" class="outline-2">
+<h2 id="org8e0a521">Anwendung und Definition einfacher Funktionen in der Repl</h2>
+<div class="outline-text-2" id="text-org8e0a521">
 </div>
-<div id="outline-container-orgae95a73" class="outline-3">
-<h3 id="orgae95a73">Funktionale Abstraktion</h3>
-<div class="outline-text-3" id="text-orgae95a73">
+<div id="outline-container-org376d106" class="outline-3">
+<h3 id="org376d106">Funktionale Abstraktion</h3>
+<div class="outline-text-3" id="text-org376d106">
 <ul class="org-ul">
 <li>Problem: Berechnung der Ökosteuer bei:
 <ul class="org-ul">
@@ -472,7 +485,6 @@ Eine Funktion kann in <i>Racket</i> wie ein Operator verwendet werden: <br />
 </p>
 <pre class="example">
 (function operand-1 operand-2 ... operand-n)
-
 </pre></li>
 </ul></li>
 </ol></li>
@@ -516,9 +528,9 @@ wieder den Wert 210.
 </ol>
 </div>
 </div>
-<div id="outline-container-org1817837" class="outline-3">
-<h3 id="org1817837">Ausdrücke in <i>Racket</i> (1)</h3>
-<div class="outline-text-3" id="text-org1817837">
+<div id="outline-container-org9205c32" class="outline-3">
+<h3 id="org9205c32">Ausdrücke in <i>Racket</i> (1)</h3>
+<div class="outline-text-3" id="text-org9205c32">
 <p>
 Nach dem zuvor Erläuterten kann der Aufbau von Ausdrücken in
 <i>Racket</i> wie folgt präzisiert werden. Die Grundform bleibt dabei
@@ -526,8 +538,8 @@ unverändert:
 </p>
 <pre class="example">
 (operator operand-1 operand-2 ... operand-n)
-
 </pre>
+
 <p>
 <i>Operatoren</i> sind Namen von
 </p>
@@ -560,28 +572,29 @@ nach Bedarf.
 </div>
 </div>
 
-<div id="outline-container-org82fd0d0" class="outline-2">
-<h2 id="org82fd0d0">Zusammenfassung</h2>
-<div class="outline-text-2" id="text-org82fd0d0">
+<div id="outline-container-orged8d5aa" class="outline-2">
+<h2 id="orged8d5aa">Zusammenfassung</h2>
+<div class="outline-text-2" id="text-orged8d5aa">
 <ul class="org-ul">
 <li>Funktionale Programmierung ist ein wichtiges Programmierparadigma.</li>
 <li>Racket ist eine funktionale Programmiersprache, die einfach und
-somit sehr gut für Einsteiger geeignet ist.</li>
-<li>DrRacket ist eine integrierte Entwicklungsumgebung für Racket. Sie
+somit sehr gut für Einsteiger geeignet ist.</li>
+<li>DrRacket ist eine integrierte Entwicklungsumgebung für Racket. Sie
 folgt dem REPL-Prinzip(read-eval-print loop).</li>
 <li>Racket versteht verschiedene Zahlenformate. In runden Klammern
 werden zuerst ein Operator(z. B. eine arithmetische Funktion) und
 dann beliebig viele Operanden zusammengefasst.</li>
 <li>Mit dem Lambda-Operator können eigene Funktionen definiert
-werden. Über Parameter können Funktionen Werte als Argumente übergeben werden.</li>
+werden. Über Parameter können Funktionen Werte als Argumente übergeben werden.</li>
 <li>Mit der Pseudofunktion <code>define</code> kann eine Funktion an einen Namen gebunden werden.</li>
 </ul>
 </div>
 </div>
 </div>
 <div id="postamble" class="status">
+<p class="date">Datum: 21. 11. 2020</p>
 <p class="author">Autor: Johannes Brauer</p>
-<p class="date">Created: 2019-01-13 Sun 14:08</p>
+<p class="date">Created: 2020-11-21 Sat 19:03</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
