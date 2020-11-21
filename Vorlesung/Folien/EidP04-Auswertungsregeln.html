@@ -7,22 +7,12 @@
 <style type="text/css">
 .underline { text-decoration: underline; }
 </style>
-<link rel="stylesheet" href="./reveal.js/css/reveal.css"/>
+<link rel="stylesheet" href="reveal.js-master/dist/reveal.css"/>
 
-<link rel="stylesheet" href="./reveal.js/css/theme/simple.css" id="theme"/>
+<link rel="stylesheet" href="reveal.js-master/dist/theme/simple.css" id="theme"/>
 
 <link rel="stylesheet" href="./mycss/myrevealstyle.css"/>
-
-<!-- If the query includes 'print-pdf', include the PDF print sheet -->
-<script>
-    if( window.location.search.match( /print-pdf/gi ) ) {
-        var link = document.createElement( 'link' );
-        link.rel = 'stylesheet';
-        link.type = 'text/css';
-        link.href = './reveal.js/css/print/pdf.css';
-        document.getElementsByTagName( 'head' )[0].appendChild( link );
-    }
-</script>
+<link rel="stylesheet" href="reveal.js-master/plugin/highlight/vs.css"/>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 <link rel="stylesheet" type="text/css" href="mycss/mystyle.css" />
 </head>
@@ -30,12 +20,12 @@
 <div class="reveal">
 <div class="slides">
 <section id="sec-title-slide">
-<h1 class="title">Auswertungsregeln</h1><h3 class="subtitle">Einführung in die Programmierung</h3><h2 class="author">Johannes Brauer</h2><h2 class="date"></h2>
+<h1 class="title">Auswertungsregeln</h1><h3 class="subtitle">Einführung in die Programmierung</h3><h2 class="author">Johannes Brauer</h2><h3 class="date">21. 11. 2020</h3>
 </section>
 
 <section>
-<section id="slide-org08436a6">
-<h2 id="org08436a6">Syntax und Semantik einer mathematischen Formelsprache</h2>
+<section id="slide-orgfb76147">
+<h2 id="orgfb76147">Syntax und Semantik einer mathematischen Formelsprache</h2>
 <p>
 Die Auswertung von Ausdrücken in <i>Racket</i> basiert auf der Anwendung
 einfacher äquivalenter Umformungen, wie sie aus der Schulmathematik
@@ -60,8 +50,8 @@ auch als die <i>Syntax</i> der Sprache.
 </p>
 
 </section>
-<section id="slide-orga88d080">
-<h3 id="orga88d080">Syntax der mathematischen Formelsprache</h3>
+<section id="slide-orgf2c2b29">
+<h3 id="orgf2c2b29">Syntax der mathematischen Formelsprache</h3>
 <p>
 Sie legt z. B. fest, dass
 </p>
@@ -78,14 +68,9 @@ Zu den Syntaxregeln gehört aber z. B auch, dass
 <ul>
 <li>links und rechts von Operationszeichen \(+\) jeweils ein Operand
 stehen muss und dass</li>
-<li><p>
-die Zeichenfolge \(2ab\) als Abkürzung für \(2\cdot a\cdot b\)
+<li>die Zeichenfolge \(2ab\) als Abkürzung für \(2\cdot a\cdot b\)
 geschrieben werden darf, das Operationszeichen \(\cdot\) also in
-bestimmten Situationen weggelassen werden darf.
-</p>
-
-</section>
-<section></li>
+bestimmten Situationen weggelassen werden darf.</li>
 
 </ul>
 
@@ -99,8 +84,8 @@ Sprache.
 </p>
 
 </section>
-<section id="slide-orgce932b4">
-<h3 id="orgce932b4">Semantik der mathematischen Formelsprache</h3>
+<section id="slide-org97e5280">
+<h3 id="org97e5280">Semantik der mathematischen Formelsprache</h3>
 <p>
 Sie bestimmt z. B., dass
 </p>
@@ -194,8 +179,8 @@ bf(3,4) & = & 3\cdot 3 + 2\cdot 3\cdot 4 + 4\cdot 4 \\
 </section>
 </section>
 <section>
-<section id="slide-org5a7565e">
-<h2 id="org5a7565e">Syntax und Semantik von <i>Racket</i> (vorläufig)</h2>
+<section id="slide-org20d5bb9">
+<h2 id="org20d5bb9">Syntax und Semantik von <i>Racket</i> (vorläufig)</h2>
 <p>
 Funktionale Programmiersprachen zeichnen sich u. a. dadurch aus, dass
 sie sich hinsichtlich ihrer Semantik sehr strikt an der Mathematik
@@ -238,12 +223,12 @@ Damit erhalten wir die vollständige Funktionsdefinition:
 <div class="small">
 <div class="org-src-container">
 
-<pre  class="src src-scheme"><span style="color: #707183;">(</span><span style="color: #0000FF;">define</span> <span style="color: #006699;">bf</span>
-  <span style="color: #7388D6;">(</span><span style="color: #0000FF;">lambda</span> <span style="color: #909183;">[</span>a b<span style="color: #909183;">]</span>
-    <span style="color: #909183;">(</span>+ <span style="color: #709870;">(</span>* a a<span style="color: #709870;">)</span>
-       <span style="color: #709870;">(</span>* 2 a b<span style="color: #709870;">)</span>
-       <span style="color: #709870;">(</span>* b b<span style="color: #709870;">)</span><span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
-</pre>
+<pre><code class="scheme" >(define bf
+  (lambda [a b]
+    (+ (* a a)
+       (* 2 a b)
+       (* b b))))
+</code></pre>
 </div>
 
 </div>
@@ -276,8 +261,8 @@ Für die Anwendung der Funktion gilt dann die folgende Ersetzungsregel.
 </p>
 
 </section>
-<section id="slide-org61f5796">
-<h3 id="org61f5796">Ersetzungsmodell für Funktionsanwendungen:</h3>
+<section id="slide-org8741556">
+<h3 id="org8741556">Ersetzungsmodell für Funktionsanwendungen:</h3>
 <ul>
 <li><p>
 Formal: Mit <code>(define f (lambda [x-1 ... x-n] exp))</code> gilt: 
@@ -339,21 +324,25 @@ Multiplikation und Addition erforderlich ist:
 </section>
 </section>
 <section>
-<section id="slide-org64b281a">
-<h2 id="org64b281a">Zusammenfassung</h2>
+<section id="slide-org7b0e0d3">
+<h2 id="org7b0e0d3">Zusammenfassung</h2>
 <ul>
 <li>Die <b>Syntax</b> einer Programmiersprache legt zulässige Elemente und Strukturen fest.</li>
-<li>Die <b>Semantik</b> einer Programmiersprache legt die Bedeutung syntaktisch korrekter Ausdrücke fest.</li>
+<li>Die <b>Semantik</b> einer Programmiersprache legt die Bedeutung syntaktisch korrekter Ausdrücke fest.</li>
 <li>Die Semantik funktionaler Programmiersprachen orientiert sich an der Mathematik.</li>
-<li>Ausdrücke werden schrittweise über <b>äquivalente Umformungen</b> durch
-das <b>Ersetzungsmodell für Funktionsanwendungen</b> vereinfacht.</li>
+<li>Ausdrücke werden schrittweise über <b>äquivalente Umformungen</b> durch
+das <b>Ersetzungsmodell für Funktionsanwendungen</b> vereinfacht.</li>
 
 </ul>
 </section>
 </section>
 </div>
 </div>
-<script src="./reveal.js/js/reveal.js"></script>
+<script src="reveal.js-master/dist/reveal.js"></script>
+<script src="reveal.js-master/plugin/highlight/highlight.js"></script>
+<script src="reveal.js-master/plugin/zoom/zoom.js"></script>
+<script src="reveal.js-master/plugin/search/search.js"></script>
+<script src="reveal.js-master/plugin/menu/menu.js"></script>
 <script>
 // Full list of configuration options available here:
 // https://github.com/hakimel/reveal.js#configuration
@@ -372,21 +361,21 @@ hashOneBasedIndex: false,
 pdfSeparateFragments: true,
 
 overview: true,
+width: 1120,
+height: 800,
 margin: 0.05,
 
-theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
-transition: Reveal.getQueryHash().transition || 'slide', // see README of reveal.js for options
+transition: 'slide',
 transitionSpeed: 'default',
+
+// Plugins with reveal.js 4.x
+plugins: [ RevealHighlight, RevealZoom, RevealSearch, RevealMenu ],
 
 // Optional libraries used to extend reveal.js
 dependencies: [
- { src: './reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
- { src: './reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
- { src: './reveal.js/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } },
- { src: './reveal.js/plugin/search/search.js', async: true, condition: function() { return !!document.body.classList; } },
- { src: './reveal.js/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } }]
+]
 
-,dependencies: [ { src: 'plugin/menu/menu.js', async: true }, { src: 'reveal.js/plugin/zoom-js/zoom.js', async: true }, { src: 'reveal.js/plugin/search/search.js', async: true }] , menu: {hideMissingTitles: true}});
+,menu: {hideMissingTitles: true, markers: false, themes: true }});
 </script>
 </body>
 </html>
