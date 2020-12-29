@@ -12,7 +12,6 @@
 <link rel="stylesheet" href="reveal.js-master/dist/theme/simple.css" id="theme"/>
 
 <link rel="stylesheet" href="./mycss/myrevealstyle.css"/>
-<link rel="stylesheet" href="reveal.js-master/plugin/highlight/vs.css"/>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 <link rel="stylesheet" type="text/css" href="mycss/mystyle.css" />
 </head>
@@ -20,12 +19,12 @@
 <div class="reveal">
 <div class="slides">
 <section id="sec-title-slide">
-<h1 class="title">Auswertungsregeln</h1><h3 class="subtitle">Einführung in die Programmierung</h3><h2 class="author">Johannes Brauer</h2><h3 class="date">21. 11. 2020</h3>
+<h1 class="title">Auswertungsregeln</h1><h3 class="subtitle">Einführung in die Programmierung</h3><h2 class="author">Johannes Brauer</h2><h3 class="date">29. 12. 2020</h3>
 </section>
 
 <section>
-<section id="slide-orgfb76147">
-<h2 id="orgfb76147">Syntax und Semantik einer mathematischen Formelsprache</h2>
+<section id="slide-orgf4b02ce">
+<h2 id="orgf4b02ce">Syntax und Semantik einer mathematischen Formelsprache</h2>
 <p>
 Die Auswertung von Ausdrücken in <i>Racket</i> basiert auf der Anwendung
 einfacher äquivalenter Umformungen, wie sie aus der Schulmathematik
@@ -50,8 +49,8 @@ auch als die <i>Syntax</i> der Sprache.
 </p>
 
 </section>
-<section id="slide-orgf2c2b29">
-<h3 id="orgf2c2b29">Syntax der mathematischen Formelsprache</h3>
+<section id="slide-org16a53ff">
+<h3 id="org16a53ff">Syntax der mathematischen Formelsprache</h3>
 <p>
 Sie legt z. B. fest, dass
 </p>
@@ -84,8 +83,8 @@ Sprache.
 </p>
 
 </section>
-<section id="slide-org97e5280">
-<h3 id="org97e5280">Semantik der mathematischen Formelsprache</h3>
+<section id="slide-orgbf90e42">
+<h3 id="orgbf90e42">Semantik der mathematischen Formelsprache</h3>
 <p>
 Sie bestimmt z. B., dass
 </p>
@@ -179,8 +178,8 @@ bf(3,4) & = & 3\cdot 3 + 2\cdot 3\cdot 4 + 4\cdot 4 \\
 </section>
 </section>
 <section>
-<section id="slide-org20d5bb9">
-<h2 id="org20d5bb9">Syntax und Semantik von <i>Racket</i> (vorläufig)</h2>
+<section id="slide-orgba8f650">
+<h2 id="orgba8f650">Syntax und Semantik von <i>Racket</i> (vorläufig)</h2>
 <p>
 Funktionale Programmiersprachen zeichnen sich u. a. dadurch aus, dass
 sie sich hinsichtlich ihrer Semantik sehr strikt an der Mathematik
@@ -223,12 +222,12 @@ Damit erhalten wir die vollständige Funktionsdefinition:
 <div class="small">
 <div class="org-src-container">
 
-<pre><code class="scheme" >(define bf
-  (lambda [a b]
-    (+ (* a a)
-       (* 2 a b)
-       (* b b))))
-</code></pre>
+<pre class="src src-scheme"><span style="color: #707183;">(</span><span style="color: #0000FF;">define</span> <span style="color: #006699;">bf</span>
+  <span style="color: #7388D6;">(</span><span style="color: #0000FF;">lambda</span> <span style="color: #909183;">[</span>a b<span style="color: #909183;">]</span>
+    <span style="color: #909183;">(</span>+ <span style="color: #709870;">(</span>* a a<span style="color: #709870;">)</span>
+       <span style="color: #709870;">(</span>* 2 a b<span style="color: #709870;">)</span>
+       <span style="color: #709870;">(</span>* b b<span style="color: #709870;">)</span><span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
+</pre>
 </div>
 
 </div>
@@ -261,8 +260,8 @@ Für die Anwendung der Funktion gilt dann die folgende Ersetzungsregel.
 </p>
 
 </section>
-<section id="slide-org8741556">
-<h3 id="org8741556">Ersetzungsmodell für Funktionsanwendungen:</h3>
+<section id="slide-org46f76a0">
+<h3 id="org46f76a0">Ersetzungsmodell für Funktionsanwendungen:</h3>
 <ul>
 <li><p>
 Formal: Mit <code>(define f (lambda [x-1 ... x-n] exp))</code> gilt: 
@@ -324,8 +323,8 @@ Multiplikation und Addition erforderlich ist:
 </section>
 </section>
 <section>
-<section id="slide-org7b0e0d3">
-<h2 id="org7b0e0d3">Zusammenfassung</h2>
+<section id="slide-org7d21b13">
+<h2 id="org7d21b13">Zusammenfassung</h2>
 <ul>
 <li>Die <b>Syntax</b> einer Programmiersprache legt zulässige Elemente und Strukturen fest.</li>
 <li>Die <b>Semantik</b> einer Programmiersprache legt die Bedeutung syntaktisch korrekter Ausdrücke fest.</li>
@@ -339,7 +338,6 @@ das <b>Ersetzungsmodell für Funktionsanwendungen</b> vereinfacht.</li>
 </div>
 </div>
 <script src="reveal.js-master/dist/reveal.js"></script>
-<script src="reveal.js-master/plugin/highlight/highlight.js"></script>
 <script src="reveal.js-master/plugin/zoom/zoom.js"></script>
 <script src="reveal.js-master/plugin/search/search.js"></script>
 <script src="reveal.js-master/plugin/menu/menu.js"></script>
@@ -369,7 +367,7 @@ transition: 'slide',
 transitionSpeed: 'default',
 
 // Plugins with reveal.js 4.x
-plugins: [ RevealHighlight, RevealZoom, RevealSearch, RevealMenu ],
+plugins: [ RevealZoom, RevealSearch, RevealMenu ],
 
 // Optional libraries used to extend reveal.js
 dependencies: [

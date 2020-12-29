@@ -12,7 +12,6 @@
 <link rel="stylesheet" href="reveal.js-master/dist/theme/simple.css" id="theme"/>
 
 <link rel="stylesheet" href="./mycss/myrevealstyle.css"/>
-<link rel="stylesheet" href="reveal.js-master/plugin/highlight/vs.css"/>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 <link rel="stylesheet" type="text/css" href="mycss/mystyle.css" />
 </head>
@@ -20,17 +19,17 @@
 <div class="reveal">
 <div class="slides">
 <section id="sec-title-slide">
-<h1 class="title">Erste Schritte in Racket</h1><h3 class="subtitle">Einführung in die Programmierung</h3><h2 class="author">Johannes Brauer</h2><h3 class="date">21. 11. 2020</h3>
+<h1 class="title">Erste Schritte in Racket</h1><h3 class="subtitle">Einführung in die Programmierung</h3><h2 class="author">Johannes Brauer</h2><h3 class="date">29. 12. 2020</h3>
 </section>
 
 <section>
-<section id="slide-org3123ba9">
-<h2 id="org3123ba9">Die Sprache <i>Racket</i></h2>
-<div class="outline-text-2" id="text-org3123ba9">
+<section id="slide-org200fe6d">
+<h2 id="org200fe6d">Die Sprache <i>Racket</i></h2>
+<div class="outline-text-2" id="text-org200fe6d">
 </div>
 </section>
-<section id="slide-orgfbe5018">
-<h3 id="orgfbe5018">Funktionale Programmierung</h3>
+<section id="slide-orgece3cba">
+<h3 id="orgece3cba">Funktionale Programmierung</h3>
 <ul>
 <li>Es gibt verschiedene Programmierparadigmen, die sich in der
 Herangehensweise sehr unterscheiden.</li>
@@ -49,8 +48,8 @@ Programmierparadigmen eher an.</li>
 
 </ul>
 </section>
-<section id="slide-orgbcdd0ad">
-<h3 id="orgbcdd0ad">Die funktionale Programmiersprache Racket und DrRacket</h3>
+<section id="slide-org3738b4b">
+<h3 id="org3738b4b">Die funktionale Programmiersprache Racket und DrRacket</h3>
 <ul>
 <li>Racket ist ein Dialekt von Scheme. Scheme ist eine Variante von
 Lisp. Lisp ist eine sehr alte Programmiersprache (entstanden Ende
@@ -70,8 +69,8 @@ Racket. Sie bietet alles Notwendige, ist aber trotzdem nicht
 </ul>
 
 </section>
-<section id="slide-org3c6783f">
-<h3 id="org3c6783f">Installation und Einrichtung von DrRacket</h3>
+<section id="slide-org915cfe0">
+<h3 id="org915cfe0">Installation und Einrichtung von DrRacket</h3>
 <ul>
 <li>Auf den NORDAKADEMIE-PCs und Virtuellen Maschinen ist DrRacket im
 Startmenü im Ordner Racket zu finden.</li>
@@ -110,8 +109,8 @@ Anschließend einmal auf „Start“ klicken.
 </ul>
 
 </section>
-<section id="slide-orga99f88f">
-<h3 id="orga99f88f">Aufbau von DrRacket</h3>
+<section id="slide-org2085ea1">
+<h3 id="org2085ea1">Aufbau von DrRacket</h3>
 <ul>
 <li>DrRacket verwendet wie viele funktionale Sprachen eine
 read-eval-print loop (REPL).</li>
@@ -132,13 +131,13 @@ read-eval-print loop (REPL).</li>
 </section>
 </section>
 <section>
-<section id="slide-org9c66fe2">
-<h2 id="org9c66fe2">Elementare Ausdrücke</h2>
-<div class="outline-text-2" id="text-org9c66fe2">
+<section id="slide-org450f44e">
+<h2 id="org450f44e">Elementare Ausdrücke</h2>
+<div class="outline-text-2" id="text-org450f44e">
 </div>
 </section>
-<section id="slide-orgacc9c5a">
-<h3 id="orgacc9c5a">Auswertung arithmetischer Ausdrücke</h3>
+<section id="slide-org76c6f16">
+<h3 id="org76c6f16">Auswertung arithmetischer Ausdrücke</h3>
 <ul>
 <li>Wir beginnen mit Zahlen</li>
 <li>Racket kennt 
@@ -155,8 +154,8 @@ den Dezimalpunkt statt des Dezimalkommas.</li>
 
 </ul>
 </section>
-<section id="slide-orgeea4059">
-<h3 id="orgeea4059">Grundform des arithmetischen Ausdrucks (in <i>Racket</i>):</h3>
+<section id="slide-orgd9c6cb2">
+<h3 id="orgd9c6cb2">Grundform des arithmetischen Ausdrucks (in <i>Racket</i>):</h3>
 <ul>
 <li><code>(operator operand-1 operand-2 ... operand-n)</code></li>
 <li><p>
@@ -164,13 +163,13 @@ Beispiele:
 </p>
 <div class="org-src-container">
 
-<pre><code class="racket" >(+ 1 2 3)
+<pre class="src src-racket">(+ 1 2 3)
 (* 3 4 5)
 (/ 9  3)
 (/ 3 9)
 (/ 1.0 3.0)
 (* (+ 2 2) (/ (* (+ 3 5) (/ 30 10)) 2))
-</code></pre>
+</pre>
 </div></li>
 
 </ul>
@@ -180,13 +179,13 @@ Beispiele:
 </section>
 </section>
 <section>
-<section id="slide-org921c452">
-<h2 id="org921c452">Anwendung und Definition einfacher Funktionen in der Repl</h2>
-<div class="outline-text-2" id="text-org921c452">
+<section id="slide-org187babf">
+<h2 id="org187babf">Anwendung und Definition einfacher Funktionen in der Repl</h2>
+<div class="outline-text-2" id="text-org187babf">
 </div>
 </section>
-<section id="slide-orgb6e5d97">
-<h3 id="orgb6e5d97">Funktionale Abstraktion</h3>
+<section id="slide-org5aa2f37">
+<h3 id="org5aa2f37">Funktionale Abstraktion</h3>
 <ul>
 <li>Problem: Berechnung der Ökosteuer bei:
 <ul>
@@ -227,9 +226,9 @@ Definition der Berechnungsvorschrift als Funktion:<br />
 <div class="smaller">
 <div class="org-src-container">
 
-<pre><code class="scheme" >     (lambda [preis-fuer-tankfuellung preis-pro-liter]
-       (* (/ preis-fuer-tankfuellung preis-pro-liter) 7))
-</code></pre>
+<pre class="src src-scheme">     <span style="color: #707183;">(</span><span style="color: #0000FF;">lambda</span> <span style="color: #7388D6;">[</span>preis-fuer-tankfuellung preis-pro-liter<span style="color: #7388D6;">]</span>
+       <span style="color: #7388D6;">(</span>* <span style="color: #909183;">(</span>/ preis-fuer-tankfuellung preis-pro-liter<span style="color: #909183;">)</span> 7<span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
+</pre>
 </div>
 
 </div>
@@ -256,10 +255,10 @@ Ersetzt man „function” durch obige Funktion, kann diese wie folgt angewendet
 <div class="smaller">
 <div class="org-src-container">
 
-<pre><code class="scheme" >       ( (lambda [preis-fuer-tankfuellung preis-pro-liter]
-             (* (/ preis-fuer-tankfuellung preis-pro-liter) 7))
-         4500 150)
-</code></pre>
+<pre class="src src-scheme">       <span style="color: #707183;">(</span> <span style="color: #7388D6;">(</span><span style="color: #0000FF;">lambda</span> <span style="color: #909183;">[</span>preis-fuer-tankfuellung preis-pro-liter<span style="color: #909183;">]</span>
+             <span style="color: #909183;">(</span>* <span style="color: #709870;">(</span>/ preis-fuer-tankfuellung preis-pro-liter<span style="color: #709870;">)</span> 7<span style="color: #909183;">)</span><span style="color: #7388D6;">)</span>
+         4500 150<span style="color: #707183;">)</span>
+</pre>
 </div>
 
 </div></li>
@@ -276,10 +275,10 @@ Bindung einer Berechnungsvorschrift (Funktion) an einen Namen:
 <div class="smaller">
 <div class="org-src-container">
 
-<pre><code class="scheme" >     (define oeko-steuer
-       (lambda [preis-fuer-tankfuellung preis-pro-liter]
-          (* (/ preis-fuer-tankfuellung preis-pro-liter) 7)))
-</code></pre>
+<pre class="src src-scheme">     <span style="color: #707183;">(</span><span style="color: #0000FF;">define</span> <span style="color: #006699;">oeko-steuer</span>
+       <span style="color: #7388D6;">(</span><span style="color: #0000FF;">lambda</span> <span style="color: #909183;">[</span>preis-fuer-tankfuellung preis-pro-liter<span style="color: #909183;">]</span>
+          <span style="color: #909183;">(</span>* <span style="color: #709870;">(</span>/ preis-fuer-tankfuellung preis-pro-liter<span style="color: #709870;">)</span> 7<span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
+</pre>
 </div>
 
 </div>
@@ -291,8 +290,8 @@ wieder den Wert 210.
 
 </ol>
 </section>
-<section id="slide-orgc47328d">
-<h3 id="orgc47328d">Ausdrücke in <i>Racket</i> (1)</h3>
+<section id="slide-orgfab4ce8">
+<h3 id="orgfab4ce8">Ausdrücke in <i>Racket</i> (1)</h3>
 <p>
 Nach dem zuvor Erläuterten kann der Aufbau von Ausdrücken in
 <i>Racket</i> wie folgt präzisiert werden. Die Grundform bleibt dabei
@@ -338,8 +337,8 @@ nach Bedarf.
 </section>
 </section>
 <section>
-<section id="slide-org238ffe5">
-<h2 id="org238ffe5">Zusammenfassung</h2>
+<section id="slide-orgc99eb05">
+<h2 id="orgc99eb05">Zusammenfassung</h2>
 <ul>
 <li>Funktionale Programmierung ist ein wichtiges Programmierparadigma.</li>
 <li>Racket ist eine funktionale Programmiersprache, die einfach und
@@ -359,7 +358,6 @@ werden. Über Parameter können Funktionen Werte als Argumente übergeben werden
 </div>
 </div>
 <script src="reveal.js-master/dist/reveal.js"></script>
-<script src="reveal.js-master/plugin/highlight/highlight.js"></script>
 <script src="reveal.js-master/plugin/zoom/zoom.js"></script>
 <script src="reveal.js-master/plugin/search/search.js"></script>
 <script src="reveal.js-master/plugin/menu/menu.js"></script>
@@ -389,7 +387,7 @@ transition: 'slide',
 transitionSpeed: 'default',
 
 // Plugins with reveal.js 4.x
-plugins: [ RevealHighlight, RevealZoom, RevealSearch, RevealMenu ],
+plugins: [ RevealZoom, RevealSearch, RevealMenu ],
 
 // Optional libraries used to extend reveal.js
 dependencies: [

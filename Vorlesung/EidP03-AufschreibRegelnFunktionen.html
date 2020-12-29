@@ -3,12 +3,12 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="de" xml:lang="de">
 <head>
-<!-- 2017-01-20 Fri 11:08 -->
-<meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
-<meta  name="viewport" content="width=device-width, initial-scale=1" />
+<!-- 2020-12-29 Tue 20:11 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Aufschreibregeln für Funktionen</title>
-<meta  name="generator" content="Org-mode" />
-<meta  name="author" content="Johannes Brauer" />
+<meta name="generator" content="Org mode" />
+<meta name="author" content="Johannes Brauer" />
 <style type="text/css">
  <!--/*--><![CDATA[/*><!--*/
   .title  { text-align: center;
@@ -53,13 +53,98 @@
     border: 1px solid black;
   }
   pre.src:hover:before { display: inline;}
-  pre.src-sh:before    { content: 'sh'; }
-  pre.src-bash:before  { content: 'sh'; }
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
   pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
-  pre.src-R:before     { content: 'R'; }
-  pre.src-perl:before  { content: 'Perl'; }
-  pre.src-java:before  { content: 'Java'; }
-  pre.src-sql:before   { content: 'SQL'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
 
   table { border-collapse:collapse; }
   caption.t-above { caption-side: top; }
@@ -76,6 +161,19 @@
   .footdef  { margin-bottom: 1em; }
   .figure { padding: 1em; }
   .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
   .inlinetask {
     padding: 10px;
     border: 2px solid gray;
@@ -92,6 +190,7 @@
     { font-size: 10px; font-weight: bold; white-space: nowrap; }
   .org-info-js_search-highlight
     { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
   /*]]>*/-->
 </style>
 <link rel="stylesheet" type="text/css" href="styles/bigblow/css/htmlize.css"/>
@@ -111,7 +210,7 @@
 @licstart  The following is the entire license notice for the
 JavaScript code in this tag.
 
-Copyright (C) 2012-2013 Free Software Foundation, Inc.
+Copyright (C) 2012-2020 Free Software Foundation, Inc.
 
 The JavaScript code in this tag is free software: you can
 redistribute it and/or modify it under the terms of the GNU
@@ -178,27 +277,27 @@ for the JavaScript code in this tag.
 <body>
 <div id="content">
 <h1 class="title">Aufschreibregeln für Funktionen
-<br>
+<br />
 <span class="subtitle">Einführung in die Programmierung</span>
 </h1>
 
-<div id="outline-container-orgheadline4" class="outline-2">
-<h2 id="orgheadline4">Regeln 1 bis 3 zum Aufschreiben von Funktionen</h2>
-<div class="outline-text-2" id="text-orgheadline4">
-</div><div id="outline-container-orgheadline1" class="outline-3">
-<h3 id="orgheadline1">Regel 1</h3>
-<div class="outline-text-3" id="text-orgheadline1">
+<div id="outline-container-org4df6f4d" class="outline-2">
+<h2 id="org4df6f4d">Regeln 1 bis 3 zum Aufschreiben von Funktionen</h2>
+<div class="outline-text-2" id="text-org4df6f4d">
+</div>
+<div id="outline-container-org43c3577" class="outline-3">
+<h3 id="org43c3577">Regel 1</h3>
+<div class="outline-text-3" id="text-org43c3577">
 <p>
 Was tut diese Funktion?
 </p>
 <div class="small">
 <div class="org-src-container">
-
-<pre class="src src-racket">(define e
-  (lambda [a z l]
-    (+ a 
-       (* a 
-          (/ z 100 12) l))))
+<pre class="src src-scheme"><span style="color: #707183;">(</span><span style="color: #0000FF;">define</span> <span style="color: #006699;">e</span>
+  <span style="color: #7388D6;">(</span><span style="color: #0000FF;">lambda</span> <span style="color: #909183;">[</span>a z l<span style="color: #909183;">]</span>
+    <span style="color: #909183;">(</span>+ a 
+       <span style="color: #709870;">(</span>* a 
+          <span style="color: #907373;">(</span>/ z 100 12<span style="color: #907373;">)</span> l<span style="color: #709870;">)</span><span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
 </pre>
 </div>
 
@@ -210,7 +309,6 @@ Was tut diese Funktion?
 </p>
 <div class="small">
 <div class="org-src-container">
-
 <pre class="src src-scheme"><span style="color: #707183;">(</span><span style="color: #0000FF;">define</span> <span style="color: #006699;">endkapital</span> 
   <span style="color: #7388D6;">(</span><span style="color: #0000FF;">lambda</span> <span style="color: #909183;">[</span>anfangskapital jahreszinssatz laufzeit-in-monaten<span style="color: #909183;">]</span>
     <span style="color: #909183;">(</span>+ anfangskapital 
@@ -223,50 +321,48 @@ Was tut diese Funktion?
 </div>
 </div>
 
-<div id="outline-container-orgheadline2" class="outline-3">
-<h3 id="orgheadline2">Regel 2</h3>
-<div class="outline-text-3" id="text-orgheadline2">
+<div id="outline-container-orgfdae53a" class="outline-3">
+<h3 id="orgfdae53a">Regel 2</h3>
+<div class="outline-text-3" id="text-orgfdae53a">
 <p>
 <b>Regel 2:</b> Beschreibe den <b>Zweck der Funktion</b> durch einen Satz, der das
 Resultat der Funktion <b>in Abhängigkeit von ihren Argumenten</b> beschreibt.
 </p>
 <div class="org-src-container">
-
-<pre class="src src-racket">;; Aus dem anfangskapital, einem jahreszinssatz  und einer laufzeit-in-monaten wird
-;; das Endkapital ermittelt, wobei die Zinsgutschrift einmalig am Ende der Laufzeit 
-;; erfolgt.
-(define endkapital 
-  (lambda [anfangskapital jahreszinssatz laufzeit-in-monaten]
-    (+ anfangskapital 
-       (* anfangskapital
-          (/ jahreszinssatz 100 12) laufzeit-in-monaten))))
+<pre class="src src-scheme"><span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">Aus dem anfangskapital, einem jahreszinssatz  und einer laufzeit-in-monaten wird</span>
+<span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">das Endkapital ermittelt, wobei die Zinsgutschrift einmalig am Ende der Laufzeit </span>
+<span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">erfolgt.</span>
+<span style="color: #707183;">(</span><span style="color: #0000FF;">define</span> <span style="color: #006699;">endkapital</span> 
+  <span style="color: #7388D6;">(</span><span style="color: #0000FF;">lambda</span> <span style="color: #909183;">[</span>anfangskapital jahreszinssatz laufzeit-in-monaten<span style="color: #909183;">]</span>
+    <span style="color: #909183;">(</span>+ anfangskapital 
+       <span style="color: #709870;">(</span>* anfangskapital
+          <span style="color: #907373;">(</span>/ jahreszinssatz 100 12<span style="color: #907373;">)</span> laufzeit-in-monaten<span style="color: #709870;">)</span><span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
 </pre>
 </div>
 </div>
 </div>
 
-<div id="outline-container-orgheadline3" class="outline-3">
-<h3 id="orgheadline3">Regel 3</h3>
-<div class="outline-text-3" id="text-orgheadline3">
+<div id="outline-container-orgc9481fb" class="outline-3">
+<h3 id="orgc9481fb">Regel 3</h3>
+<div class="outline-text-3" id="text-orgc9481fb">
 <p>
 <b>Regel 3:</b> Schreibe Beispielanwendungen der Funktion auf, die das
 Resultat der Funktion mit dem Erwartungswert vergleicht. Die
 Auswertung der Ausdrücke muss dabei immer den Wahrheitswert <code>#true</code> liefern:
 </p>
 <div class="org-src-container">
-
-<pre class="src src-racket">;; Aus dem anfangskapital, einem jahreszinssatz  und einer laufzeit-in-monaten wird
-;; das Endkapital ermittelt, wobei die Zinsgutschrift einmalig am Ende der Laufzeit 
-;; erfolgt.
-(define endkapital 
-  (lambda [anfangskapital jahreszinssatz laufzeit-in-monaten]
-    (+ anfangskapital 
-       (* anfangskapital
-          (/ jahreszinssatz 100 12) laufzeit-in-monaten))))
-;; Beispielanwendungen:
-(= (endkapital 1000 0 24) 1000)   ;; =&gt; #true
-(= (endkapital 1000 12 12) 1120)  ;; =&gt; #true
-(= (endkapital 1000 12 24) 1240)  ;; =&gt; #true
+<pre class="src src-scheme"><span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">Aus dem anfangskapital, einem jahreszinssatz  und einer laufzeit-in-monaten wird</span>
+<span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">das Endkapital ermittelt, wobei die Zinsgutschrift einmalig am Ende der Laufzeit </span>
+<span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">erfolgt.</span>
+<span style="color: #707183;">(</span><span style="color: #0000FF;">define</span> <span style="color: #006699;">endkapital</span> 
+  <span style="color: #7388D6;">(</span><span style="color: #0000FF;">lambda</span> <span style="color: #909183;">[</span>anfangskapital jahreszinssatz laufzeit-in-monaten<span style="color: #909183;">]</span>
+    <span style="color: #909183;">(</span>+ anfangskapital 
+       <span style="color: #709870;">(</span>* anfangskapital
+          <span style="color: #907373;">(</span>/ jahreszinssatz 100 12<span style="color: #907373;">)</span> laufzeit-in-monaten<span style="color: #709870;">)</span><span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
+<span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">Beispielanwendungen:</span>
+<span style="color: #707183;">(</span>= <span style="color: #7388D6;">(</span>endkapital 1000 0 24<span style="color: #7388D6;">)</span> 1000<span style="color: #707183;">)</span>   <span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">=&gt; #true</span>
+<span style="color: #707183;">(</span>= <span style="color: #7388D6;">(</span>endkapital 1000 12 12<span style="color: #7388D6;">)</span> 1120<span style="color: #707183;">)</span>  <span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">=&gt; #true</span>
+<span style="color: #707183;">(</span>= <span style="color: #7388D6;">(</span>endkapital 1000 12 24<span style="color: #7388D6;">)</span> 1240<span style="color: #707183;">)</span>  <span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">=&gt; #true</span>
 </pre>
 </div>
 
@@ -282,12 +378,12 @@ unzulässig!</b>
 </div>
 </div>
 
-<div id="outline-container-orgheadline5" class="outline-2">
-<h2 id="orgheadline5">Ausdrücke in <i>Racket</i> (2)</h2>
-<div class="outline-text-2" id="text-orgheadline5">
+<div id="outline-container-orgc8d5d8e" class="outline-2">
+<h2 id="orgc8d5d8e">Ausdrücke in <i>Racket</i> (2)</h2>
+<div class="outline-text-2" id="text-orgc8d5d8e">
 <p>
 Die in Abschnitt 
-<a href="EidP02-ErsteSchritteInRacket.html#MissingReference">Ausdrücke in <i>Racket</i> (1)</a> beschriebenen Operatoren und Operanden
+<a href="EidP02-ErsteSchritteInRacket.html">Ausdrücke in <i>Racket</i> (1)</a> beschriebenen Operatoren und Operanden
 werden wie folgt ergänzt:
 </p>
 <ul class="org-ul">
@@ -302,9 +398,9 @@ Zum Vergleich von Zahlen gibt es außerdem die Standardfunktionen
 </ul>
 </div>
 </div>
-<div id="outline-container-orgheadline6" class="outline-2">
-<h2 id="orgheadline6">Zusammengesetzte Funktionen (Regeln 4 und 5)</h2>
-<div class="outline-text-2" id="text-orgheadline6">
+<div id="outline-container-org38c838f" class="outline-2">
+<h2 id="org38c838f">Zusammengesetzte Funktionen (Regeln 4 und 5)</h2>
+<div class="outline-text-2" id="text-org38c838f">
 <p>
 Bei der Definition unserer bisherigen Funktionen waren wir darauf
 angewiesen, bereits existierende Funktionen (in Form der
@@ -327,7 +423,6 @@ eines Kreisrings berechnet:
 
 <div class="smaller">
 <div class="org-src-container">
-
 <pre class="src src-scheme"><span style="color: #707183;">(</span><span style="color: #0000FF;">define</span> <span style="color: #006699;">kreisring-flaeche</span>
   <span style="color: #7388D6;">(</span><span style="color: #0000FF;">lambda</span> <span style="color: #909183;">[</span>radius-aussen radius-innen<span style="color: #909183;">]</span>
     <span style="color: #909183;">(</span>- <span style="color: #709870;">(</span>* 3.14 <span style="color: #907373;">(</span>* radius-aussen radius-aussen<span style="color: #907373;">)</span><span style="color: #709870;">)</span>
@@ -342,7 +437,6 @@ der Kreisfläche zur Verfügung steht &#x2013; wie z. B. diese:
 </p>
 <div class="smaller">
 <div class="org-src-container">
-
 <pre class="src src-scheme"><span style="color: #707183;">(</span><span style="color: #0000FF;">define</span> <span style="color: #006699;">kreis-flaeche</span>
   <span style="color: #7388D6;">(</span><span style="color: #0000FF;">lambda</span> <span style="color: #909183;">[</span>radius<span style="color: #909183;">]</span>
     <span style="color: #909183;">(</span>* 3.14 <span style="color: #709870;">(</span>* radius radius<span style="color: #709870;">)</span><span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
@@ -354,7 +448,6 @@ der Kreisfläche zur Verfügung steht &#x2013; wie z. B. diese:
 &#x2013;, kann die Funktion <code>kreisring-flaeche</code> auch so geschrieben werden: 
 </p>
 <div class="org-src-container">
-
 <pre class="src src-scheme"><span style="color: #707183;">(</span><span style="color: #0000FF;">define</span> <span style="color: #006699;">kreisring-flaeche</span>
   <span style="color: #7388D6;">(</span><span style="color: #0000FF;">lambda</span> <span style="color: #909183;">[</span>radius-aussen radius-innen<span style="color: #909183;">]</span>
     <span style="color: #909183;">(</span>- <span style="color: #709870;">(</span>kreis-flaeche radius-aussen<span style="color: #709870;">)</span>
@@ -377,9 +470,9 @@ Vorstadtkinos.
 </p>
 </div>
 
-<div id="outline-container-orgheadline7" class="outline-3">
-<h3 id="orgheadline7">Beispiel für die Nutzung von Hilfsfunktionen</h3>
-<div class="outline-text-3" id="text-orgheadline7">
+<div id="outline-container-orgbdc4c23" class="outline-3">
+<h3 id="orgbdc4c23">Beispiel für die Nutzung von Hilfsfunktionen</h3>
+<div class="outline-text-3" id="text-orgbdc4c23">
 <blockquote>
 <p>
 Er kann die Preise für die Eintrittskarten frei festlegen. Er hat
@@ -396,9 +489,9 @@ bei einem bestimmten Kartenpreis ist.
 </blockquote>
 </div>
 
-<div id="outline-container-orgheadline8" class="outline-4">
-<h4 id="orgheadline8">Lösungsansatz</h4>
-<div class="outline-text-4" id="text-orgheadline8">
+<div id="outline-container-orgea9e2fe" class="outline-4">
+<h4 id="orgea9e2fe">Lösungsansatz</h4>
+<div class="outline-text-4" id="text-orgea9e2fe">
 <ul class="org-ul">
 <li>Können wir dem Kinoeigentümer helfen?</li>
 <li><p>
@@ -417,9 +510,9 @@ Produkt aus Besucheranzahl und den Kosten pro Besucher (5 Währungseinheiten).</
 </div>
 </div>
 
-<div id="outline-container-orgheadline9" class="outline-4">
-<h4 id="orgheadline9">Vorgehensweise</h4>
-<div class="outline-text-4" id="text-orgheadline9">
+<div id="outline-container-org3f03396" class="outline-4">
+<h4 id="org3f03396">Vorgehensweise</h4>
+<div class="outline-text-4" id="text-org3f03396">
 <p>
 Die weitere Vorgehensweise ist nun dadurch gekennzeichnet, dass für
 jeden der ermittelten Zusammenhänge je eine Funktion geschrieben
@@ -435,16 +528,15 @@ Funktionrumpf, ermittelt.</li>
 </ol>
 </div>
 
-<div id="outline-container-orgheadline10" class="outline-5">
-<h5 id="orgheadline10">Schritt 1 für die Funktion <code>profit</code> und ihre Hilfsfunktionen</h5>
-<div class="outline-text-5" id="text-orgheadline10">
+<div id="outline-container-orgc871b9e" class="outline-5">
+<h5 id="orgc871b9e">Schritt 1 für die Funktion <code>profit</code> und ihre Hilfsfunktionen</h5>
+<div class="outline-text-5" id="text-orgc871b9e">
 <p>
 <b>Die Funktion <code>profit</code>:</b>
 </p>
 
 <div class="small">
 <div class="org-src-container">
-
 <pre class="src src-scheme"><span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">berechnet den Profit aus der Differenz zwischen</span>
 <span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">Einnahmen und Kosten bei gegebenem Kartenpreis</span>
 <span style="color: #707183;">(</span><span style="color: #0000FF;">define</span> <span style="color: #006699;">profit</span>
@@ -466,7 +558,6 @@ bestimmenden Funktionsrumpf.
 
 <div class="small">
 <div class="org-src-container">
-
 <pre class="src src-scheme"><span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">berechnet die Einnahmen aus dem Produkt von </span>
 <span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">Besucherzahl und Kartenpreis</span>
 <span style="color: #707183;">(</span><span style="color: #0000FF;">define</span> <span style="color: #006699;">einnahmen</span>
@@ -482,7 +573,6 @@ bestimmenden Funktionsrumpf.
 </p>
 
 <div class="org-src-container">
-
 <pre class="src src-scheme"><span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">berechnet die entstehenden Kosten bei gegebenem</span>
 <span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">Kartenpreis aus Fixkosten und variablen Kosten</span>
 <span style="color: #707183;">(</span><span style="color: #0000FF;">define</span> <span style="color: #006699;">kosten</span>
@@ -496,7 +586,6 @@ bestimmenden Funktionsrumpf.
 </p>
 
 <div class="org-src-container">
-
 <pre class="src src-scheme"><span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">berechnet die Besucherzahl bei gegebenem</span>
 <span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">Kartenpreis nach empirisch ermittelter Formel</span>
 <span style="color: #707183;">(</span><span style="color: #0000FF;">define</span> <span style="color: #006699;">besucherzahl</span>
@@ -507,9 +596,9 @@ bestimmenden Funktionsrumpf.
 </div>
 </div>
 
-<div id="outline-container-orgheadline11" class="outline-5">
-<h5 id="orgheadline11">Schritt 2 für die Funktion <code>profit</code> und ihre Hilfsfunktionen</h5>
-<div class="outline-text-5" id="text-orgheadline11">
+<div id="outline-container-org70b8e15" class="outline-5">
+<h5 id="org70b8e15">Schritt 2 für die Funktion <code>profit</code> und ihre Hilfsfunktionen</h5>
+<div class="outline-text-5" id="text-org70b8e15">
 <p>
 In diesem Schritt versuchen wir Beispielanwendungen zu finden;
 beginnen wir mit der Funktion <code>besucherzahl</code>.
@@ -551,7 +640,6 @@ Ein linearer Zusammenhang ergäbe die folgende Geradengleichung:
 </p>
 
 <div class="org-src-container">
-
 <pre class="src src-scheme"><span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">berechnet die Besucherzahl bei gegebenem</span>
 <span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">Kartenpreis nach empirisch ermittelter Formel</span>
 <span style="color: #707183;">(</span><span style="color: #0000FF;">define</span> <span style="color: #006699;">besucherzahl</span>
@@ -571,7 +659,6 @@ Ein linearer Zusammenhang ergäbe die folgende Geradengleichung:
 </p>
 
 <div class="org-src-container">
-
 <pre class="src src-scheme"><span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">berechnet die entstehenden Kosten bei gegebenem</span>
 <span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">Kartenpreis aus Fixkosten und variablen Kosten</span>
 <span style="color: #707183;">(</span><span style="color: #0000FF;">define</span> <span style="color: #006699;">kosten</span>
@@ -589,7 +676,6 @@ Ein linearer Zusammenhang ergäbe die folgende Geradengleichung:
 </p>
 
 <div class="org-src-container">
-
 <pre class="src src-scheme"><span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">berechnet die Einnahmen aus dem Produkt von </span>
 <span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">Besucherzahl und Kartenpreis</span>
 <span style="color: #707183;">(</span><span style="color: #0000FF;">define</span> <span style="color: #006699;">einnahmen</span>
@@ -607,7 +693,6 @@ Ein linearer Zusammenhang ergäbe die folgende Geradengleichung:
 </p>
 
 <div class="org-src-container">
-
 <pre class="src src-scheme"><span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">berechnet den Profit aus der Differenz zwischen</span>
 <span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">Einnahmen und Kosten bei gegebenem Kartenpreis</span>
 <span style="color: #707183;">(</span><span style="color: #0000FF;">define</span> <span style="color: #006699;">profit</span>
@@ -622,9 +707,9 @@ Ein linearer Zusammenhang ergäbe die folgende Geradengleichung:
 </div>
 </div>
 
-<div id="outline-container-orgheadline12" class="outline-5">
-<h5 id="orgheadline12">Schritt 3: Ermittlung des Funktionsrumpfs für die Funktion <code>profit</code> und ihre Hilfsfunktionen</h5>
-<div class="outline-text-5" id="text-orgheadline12">
+<div id="outline-container-org25f9eb4" class="outline-5">
+<h5 id="org25f9eb4">Schritt 3: Ermittlung des Funktionsrumpfs für die Funktion <code>profit</code> und ihre Hilfsfunktionen</h5>
+<div class="outline-text-5" id="text-org25f9eb4">
 <p>
 Beginnen wir wieder mit der <b>Funktion <code>besucherzahl</code></b>. Der für die
 Ermittlung der Beispielanwendungen zugrunde gelegte lineare
@@ -633,7 +718,6 @@ Berechnungsvorschrift für die Funktion genutzt:
 </p>
 
 <div class="org-src-container">
-
 <pre class="src src-scheme"><span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">berechnet die Besucherzahl bei gegebenem</span>
 <span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">Kartenpreis nach empirisch ermittelter Formel</span>
 <span style="color: #707183;">(</span><span style="color: #0000FF;">define</span> <span style="color: #006699;">besucherzahl</span>
@@ -657,7 +741,6 @@ und den Kosten pro Besucher (5 Währungseinheiten).):
 
 <div class="small">
 <div class="org-src-container">
-
 <pre class="src src-scheme"><span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">berechnet die entstehenden Kosten bei gegebenem</span>
 <span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">Kartenpreis aus Fixkosten und variablen Kosten</span>
 <span style="color: #707183;">(</span><span style="color: #0000FF;">define</span> <span style="color: #006699;">kosten</span>
@@ -684,7 +767,6 @@ aus Besucherzahl und Kartenpreis:
 
 <div class="small">
 <div class="org-src-container">
-
 <pre class="src src-scheme"><span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">berechnet die Einnahmen aus dem Produkt von </span>
 <span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">Besucherzahl und Kartenpreis</span>
 <span style="color: #707183;">(</span><span style="color: #0000FF;">define</span> <span style="color: #006699;">einnahmen</span>
@@ -710,7 +792,6 @@ Funktionen <code>einnahmen</code> und <code>kosten</code> benutzt:
 </p>
 
 <div class="org-src-container">
-
 <pre class="src src-scheme"><span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">berechnet den Profit aus der Differenz zwischen</span>
 <span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">Einnahmen und Kosten bei gegebenem Kartenpreis</span>
 <span style="color: #707183;">(</span><span style="color: #0000FF;">define</span> <span style="color: #006699;">profit</span>
@@ -726,9 +807,9 @@ Funktionen <code>einnahmen</code> und <code>kosten</code> benutzt:
 </div>
 </div>
 
-<div id="outline-container-orgheadline13" class="outline-5">
-<h5 id="orgheadline13">Zusammenfassung</h5>
-<div class="outline-text-5" id="text-orgheadline13">
+<div id="outline-container-org0e24c74" class="outline-5">
+<h5 id="org0e24c74">Zusammenfassung</h5>
+<div class="outline-text-5" id="text-org0e24c74">
 <p>
 <b>Regel 4 (Hilfsfunktionen):</b>
 </p>
@@ -757,7 +838,6 @@ Hilfsfunktionen aufschreiben:
 </p>
 
 <div class="org-src-container">
-
 <pre class="src src-scheme"><span style="color: #707183;">(</span><span style="color: #0000FF;">define</span> <span style="color: #006699;">profit</span>
   <span style="color: #7388D6;">(</span><span style="color: #0000FF;">lambda</span> <span style="color: #909183;">[</span>kartenpreis<span style="color: #909183;">]</span>
     <span style="color: #909183;">(</span>- <span style="color: #709870;">(</span>* <span style="color: #907373;">(</span>+ 120 <span style="color: #6276BA;">(</span>* <span style="color: #858580;">(</span>/ 15 10 <span style="color: #858580;">)</span>
@@ -780,9 +860,9 @@ müssen, wäre dies eine nur schwer lösbare Aufgabe.
 </div>
 
 
-<div id="outline-container-orgheadline14" class="outline-5">
-<h5 id="orgheadline14">Konstantendefinitionen</h5>
-<div class="outline-text-5" id="text-orgheadline14">
+<div id="outline-container-orgac617e2" class="outline-5">
+<h5 id="orgac617e2">Konstantendefinitionen</h5>
+<div class="outline-text-5" id="text-orgac617e2">
 <p>
 Die Lesbarkeit der Funktion <code>profit</code> (in beiden Varianten) und ihrer
 Hilfsfunktionen ist auch dadurch eingeschränkt, dass in den
@@ -807,12 +887,11 @@ Funktion <code>profit</code> und ihre Hilfsfunktionen:
 </p>
 
 <div class="org-src-container">
-
 <pre class="src src-scheme"><span style="color: #707183;">(</span><span style="color: #0000FF;">define</span> <span style="color: #006699;">fixkosten</span> 18000<span style="color: #707183;">)</span>
 <span style="color: #707183;">(</span><span style="color: #0000FF;">define</span> <span style="color: #006699;">kosten-pro-besucher</span> 5<span style="color: #707183;">)</span>
 <span style="color: #707183;">(</span><span style="color: #0000FF;">define</span> <span style="color: #006699;">basis-besucherzahl</span> 120<span style="color: #707183;">)</span>
 <span style="color: #707183;">(</span><span style="color: #0000FF;">define</span> <span style="color: #006699;">besucher-preis-faktor</span> <span style="color: #7388D6;">(</span>/ 15 10<span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
-<span style="color: #707183;">(</span><span style="color: #0000FF;">define</span> <span style="color: #006699;">preis-fuer-basis-besucherzahl</span> 500<span style="color: #707183;">)</span>
+<span style="color: #707183;">(</span><span style="color: #0000FF;">define</span> <span style="color: #006699;">preis-fuer-basis-besucherzahl</span> 500<span style="color: #707183;">)</span>        
 </pre>
 </div>
 
@@ -829,6 +908,7 @@ Funktion <code>profit</code> und ihre Hilfsfunktionen:
 (/ (* grundseite hoehe) 2)
 </pre>
 
+
 <p>
 <b>nicht</b> die Konstante 2 durch eine eine benannte Konstante <code>zwei</code> ersetzen.
 </p>
@@ -842,18 +922,20 @@ Funktion <code>profit</code> und ihre Hilfsfunktionen:
 </div>
 </div>
 
-<div id="outline-container-orgheadline15" class="outline-2">
-<h2 id="orgheadline15">Fünf Regeln</h2>
-<div class="outline-text-2" id="text-orgheadline15">
+<div id="outline-container-orgdf85334" class="outline-2">
+<h2 id="orgdf85334">Fünf Regeln</h2>
+<div class="outline-text-2" id="text-orgdf85334">
 <dl class="org-dl">
-<dt>Regel 1</dt><dd>Verwende aussagekräftige Namen für Funktionen und
+<dt>Regel 1</dt><dd>Verwende aussagekräftige Namen für Funktionen und
 Variablen („sprechende Bezeichner“).</dd>
 <dt>Regel 2</dt><dd>Beschreibe den Zweck der Funktion durch einen Satz, der
 das Resultat der Funktion in Abhängigkeit von ihren Argumenten
 beschreibt.</dd>
 <dt>Regel 3</dt><dd>Schreibe Beispielanwendungen der Funktion auf, die das
 Resultat der Funktion mit dem Erwartungswert vergleichen.</dd>
-<dt>Regel 4</dt><dd>Definiere für jeden Zusammenhang zwischen Größen, die sich
+</dl>
+<dl class="org-dl">
+<dt>Regel 4</dt><dd>Definiere für jeden Zusammenhang zwischen Größen, die sich
 aus der Problembeschreibung ergeben, eine Funktion.</dd>
 <dt>Regel 5</dt><dd>Ersetze jede Konstante, deren Bedeutung sich nicht aus dem
 Kontext ergibt, durch einen sprechenden Variablennamen.</dd>
@@ -862,8 +944,9 @@ Kontext ergibt, durch einen sprechenden Variablennamen.</dd>
 </div>
 </div>
 <div id="postamble" class="status">
+<p class="date">Datum: 29. 12. 2020</p>
 <p class="author">Autor: Johannes Brauer</p>
-<p class="date">Created: 2017-01-20 Fri 11:08</p>
+<p class="date">Created: 2020-12-29 Tue 20:11</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
