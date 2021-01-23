@@ -19,17 +19,17 @@
 <div class="reveal">
 <div class="slides">
 <section id="sec-title-slide">
-<h1 class="title">Akkumulierende Parameter</h1><h3 class="subtitle">Einführung in die Programmierung</h3><h2 class="author">Johannes Brauer</h2><h3 class="date">29. 12. 2020</h3>
+<h1 class="title">Akkumulierende Parameter</h1><h3 class="subtitle">Einführung in die Programmierung</h3><h2 class="author">Johannes Brauer</h2><h3 class="date">23. 01. 2021</h3>
 </section>
 
 <section>
-<section id="slide-org2db7663">
-<h2 id="org2db7663">Rekursive und iterative Prozesse</h2>
-<div class="outline-text-2" id="text-org2db7663">
+<section id="slide-orgfbe826a">
+<h2 id="orgfbe826a">Rekursive und iterative Prozesse</h2>
+<div class="outline-text-2" id="text-orgfbe826a">
 </div>
 </section>
-<section id="slide-org801815d">
-<h3 id="org801815d">Fakultät rekursiv</h3>
+<section id="slide-orgd3b6db9">
+<h3 id="orgd3b6db9">Fakultät rekursiv</h3>
 <p>
 Ausgehend von der mathematischen Definition:
 </p>
@@ -58,8 +58,8 @@ Abarbeitungsprozess:
 </p>
 
 </section>
-<section id="slide-orgab4b555">
-<h3 id="orgab4b555">rekursive Abarbeitung der Fakultät</h3>
+<section id="slide-org9bd3214">
+<h3 id="org9bd3214">rekursive Abarbeitung der Fakultät</h3>
 
 <div class="figure">
 <p><img src="./Abbildungen/faktreku.png" alt="faktreku.png" width="600px" />
@@ -67,8 +67,8 @@ Abarbeitungsprozess:
 </div>
 
 </section>
-<section id="slide-orgea48fea">
-<h3 id="orgea48fea">Fakultät iterativ</h3>
+<section id="slide-org45912d6">
+<h3 id="org45912d6">Fakultät iterativ</h3>
 <p>
 \(n! = 1  \cdot 2 \cdot\cdot\cdot (n-1) \cdot n\)
 </p>
@@ -106,15 +106,15 @@ Berechnung der Fakultät im Vorwärtsgang mit zwei Hilfsvariablen:
 </div>
 
 </section>
-<section id="slide-orgaa1e737">
-<h3 id="orgaa1e737">iterative Abarbeitung der Fakultät</h3>
+<section id="slide-org8d5fa2f">
+<h3 id="org8d5fa2f">iterative Abarbeitung der Fakultät</h3>
 <p width="500px">
 <img src="./Abbildungen/faktiter.png" alt="faktiter.png" width="500px" /> 
 </p>
 
 </section>
-<section id="slide-orgfc2f948">
-<h3 id="orgfc2f948">Fakultät iterativ mit lokaler Hilfsfunktion</h3>
+<section id="slide-org59f5f3c">
+<h3 id="org59f5f3c">Fakultät iterativ mit lokaler Hilfsfunktion</h3>
 <ul>
 <li>Die Funktion <code>fact-iter</code> hat reinen Hilfscharakter, d.h. sollte nur
 von <code>factorial</code> aufgerufen werden.</li>
@@ -141,8 +141,8 @@ geworden.</li>
 </ul>
 
 </section>
-<section id="slide-orgf9eadef">
-<h3 id="orgf9eadef">Akkumulierende Parameter</h3>
+<section id="slide-org724827c">
+<h3 id="org724827c">Akkumulierende Parameter</h3>
 <ul>
 <li>Ein <i>rekursiver Prozess</i> ist durch eine Folge von verzögerten
 Operationen gekennzeichnet.</li>
@@ -166,13 +166,13 @@ rekursiver Funktionen.</li>
 </section>
 </section>
 <section>
-<section id="slide-orgeb02303">
-<h2 id="orgeb02303">Akkumulierende Parameter</h2>
-<div class="outline-text-2" id="text-orgeb02303">
+<section id="slide-org8394e6f">
+<h2 id="org8394e6f">Akkumulierende Parameter</h2>
+<div class="outline-text-2" id="text-org8394e6f">
 </div>
 </section>
-<section id="slide-org88a81ac">
-<h3 id="org88a81ac">Invertieren einer Liste</h3>
+<section id="slide-org0965f91">
+<h3 id="org0965f91">Invertieren einer Liste</h3>
 <div class="org-src-container">
 
 <pre class="src src-scheme">    <span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">kehrt die Reihenfolge der Symbole einer Liste um</span>
@@ -196,8 +196,8 @@ rekursiver Funktionen.</li>
 </div>
 
 </section>
-<section id="slide-orge90cf83">
-<h3 id="orge90cf83">Effizienzbetrachtung:</h3>
+<section id="slide-orgcb83d3b">
+<h3 id="orgcb83d3b">Effizienzbetrachtung:</h3>
 <ul>
 <li>Vorbemerkung: Beide Funktionen entstehen durch Anwendung der
 bekannten Regeln für den Entwurf listenverarbeitender Funktionen.</li>
@@ -223,8 +223,8 @@ erfordern.</li>
 </ul>
 
 </section>
-<section id="slide-org3b889b5">
-<h3 id="org3b889b5">Invertieren einer Liste (2)</h3>
+<section id="slide-orgbc154ed">
+<h3 id="orgbc154ed">Invertieren einer Liste (2)</h3>
 <div class="org-src-container">
 
 <pre class="src src-scheme">    <span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">kehrt die Reihenfolge der Symbole einer Liste um</span>
@@ -250,8 +250,8 @@ der Liste.</li>
 </ul>
 
 </section>
-<section id="slide-orgcdd1baf">
-<h3 id="orgcdd1baf">Einsatz von akkumulierenden Parametern</h3>
+<section id="slide-org994862c">
+<h3 id="org994862c">Einsatz von akkumulierenden Parametern</h3>
 <ul>
 <li>Im Zusammenhang mit akkumulierenden Parametern sind zwei Fragen
 interessant:
@@ -268,8 +268,8 @@ Regeln sind nicht ohne weiteres anwendbar.</li>
 </ul>
 
 </section>
-<section id="slide-org71fc0d3">
-<h3 id="org71fc0d3">Vorgehensweise beim Entwurf</h3>
+<section id="slide-orgdb0ad50">
+<h3 id="orgdb0ad50">Vorgehensweise beim Entwurf</h3>
 <ul>
 <li>Da war zunächst die Frage, ob eine Funktion mit akkumulierendem
 Parameter zweckmäßig ist.</li>
@@ -295,8 +295,8 @@ Folie!</li>
 </ul>
 
 </section>
-<section id="slide-orgc4d1026">
-<h3 id="orgc4d1026">Funktionsschablone für <code>rev-list</code> mit <code>rev</code></h3>
+<section id="slide-orge0e62b2">
+<h3 id="orge0e62b2">Funktionsschablone für <code>rev-list</code> mit <code>rev</code></h3>
 <div class="org-src-container">
 
 <pre class="src src-scheme">    <span style="color: #707183;">(</span><span style="color: #0000FF;">define</span> <span style="color: #006699;">rev-list</span>
@@ -324,8 +324,8 @@ Akkumulatorinvariante gültig bleibt.</li>
 </ul>
 
 </section>
-<section id="slide-orgea1fb50">
-<h3 id="orgea1fb50">Akkumulatorinvariante für <code>rev</code></h3>
+<section id="slide-orgd260862">
+<h3 id="orgd260862">Akkumulatorinvariante für <code>rev</code></h3>
 <ul>
 <li>Eine Akkumulatorinvariante ist eine Aussage über das Argument der
 Hauptfunktion (hier: <code>list</code>), das entsprechende Argument der
@@ -364,6 +364,8 @@ vorangehen.</li>
 <script src="reveal.js-master/dist/reveal.js"></script>
 <script src="reveal.js-master/plugin/zoom/zoom.js"></script>
 <script src="reveal.js-master/plugin/search/search.js"></script>
+<script src="reveal.js-master/plugin/notes/notes.js"></script>
+<script src="reveal.js-master/plugin/chalkboard/plugin.js"></script>
 <script src="reveal.js-master/plugin/menu/menu.js"></script>
 <script>
 // Full list of configuration options available here:
@@ -391,13 +393,13 @@ transition: 'slide',
 transitionSpeed: 'default',
 
 // Plugins with reveal.js 4.x
-plugins: [ RevealZoom, RevealSearch, RevealMenu ],
+plugins: [ RevealZoom, RevealSearch, RevealNotes, RevealChalkboard, RevealMenu ],
 
 // Optional libraries used to extend reveal.js
 dependencies: [
 ]
 
-,menu: {hideMissingTitles: true, markers: false, themes: true }});
+,menu: {hideMissingTitles: true, markers: false, themes: true, openButton: false, openSlideNumber: true } , touch: false});
 </script>
 </body>
 </html>
