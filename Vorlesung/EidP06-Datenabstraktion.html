@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="de" xml:lang="de">
 <head>
-<!-- 2020-01-01 Wed 14:09 -->
+<!-- 2021-01-26 Tue 15:25 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Datenabstraktion</title>
@@ -210,7 +210,7 @@
 @licstart  The following is the entire license notice for the
 JavaScript code in this tag.
 
-Copyright (C) 2012-2019 Free Software Foundation, Inc.
+Copyright (C) 2012-2020 Free Software Foundation, Inc.
 
 The JavaScript code in this tag is free software: you can
 redistribute it and/or modify it under the terms of the GNU
@@ -280,9 +280,10 @@ for the JavaScript code in this tag.
 <br />
 <span class="subtitle">Einführung in die Programmierung</span>
 </h1>
-<div id="outline-container-org5a889ec" class="outline-2">
-<h2 id="org5a889ec">Zusammengesetzte Datenstrukturen</h2>
-<div class="outline-text-2" id="text-org5a889ec">
+
+<div id="outline-container-orga1881b7" class="outline-2">
+<h2 id="orga1881b7">Zusammengesetzte Datenstrukturen</h2>
+<div class="outline-text-2" id="text-orga1881b7">
 <ul class="org-ul">
 <li>Im Abschnitt über die Verwendung von Hilfsfunktionen wurde der
 Begriff der <i>prozeduralen Abstraktion</i> geprägt: Eine Funktion kann
@@ -294,9 +295,9 @@ abstrahiert werden.</li>
 primitiveren Datenobjekten konstruiert werden.</li>
 </ul>
 </div>
-<div id="outline-container-orgf3939f5" class="outline-3">
-<h3 id="orgf3939f5">Datenabstraktion</h3>
-<div class="outline-text-3" id="text-orgf3939f5">
+<div id="outline-container-orgbe11105" class="outline-3">
+<h3 id="orgbe11105">Datenabstraktion</h3>
+<div class="outline-text-3" id="text-orgbe11105">
 <ul class="org-ul">
 <li>Grundgedanke: Einzelne Dinge werden zu einem neuen Ganzen. 
 <ul class="org-ul">
@@ -309,9 +310,9 @@ primitiveren Datenobjekten konstruiert werden.</li>
 </div>
 </div>
 
-<div id="outline-container-orgb4f601a" class="outline-3">
-<h3 id="orgb4f601a">Beispiel: Rechnen mit Punkten in der Ebene</h3>
-<div class="outline-text-3" id="text-orgb4f601a">
+<div id="outline-container-org0268398" class="outline-3">
+<h3 id="org0268398">Beispiel: Rechnen mit Punkten in der Ebene</h3>
+<div class="outline-text-3" id="text-org0268398">
 <ul class="org-ul">
 <li>In den bisherigen Beispielen wurden nur Funktionen betrachtet, die
 atomare Daten (Zahlen) verarbeiten.</li>
@@ -319,9 +320,9 @@ atomare Daten (Zahlen) verarbeiten.</li>
 </ul>
 </div>
 
-<div id="outline-container-orgec79352" class="outline-4">
-<h4 id="orgec79352">Defintion von Punkten</h4>
-<div class="outline-text-4" id="text-orgec79352">
+<div id="outline-container-orgeadde56" class="outline-4">
+<h4 id="orgeadde56">Defintion von Punkten</h4>
+<div class="outline-text-4" id="text-orgeadde56">
 <ul class="org-ul">
 <li>Ein Punkt in der Ebene wird durch seine x- und seine y-Koordinate
 bestimmt (kartesisches Koordinatensystem).</li>
@@ -343,9 +344,9 @@ y-Koordinate eines Punkts zugänglich macht:
 </ul>
 </div>
 </div>
-<div id="outline-container-org6222af5" class="outline-4">
-<h4 id="org6222af5">Punkt-Funktionen</h4>
-<div class="outline-text-4" id="text-org6222af5">
+<div id="outline-container-orgc6ec972" class="outline-4">
+<h4 id="orgc6ec972">Punkt-Funktionen</h4>
+<div class="outline-text-4" id="text-orgc6ec972">
 <ul class="org-ul">
 <li><p>
 Unter diesen Voraussetzungen könnte eine Funktion zur Addition
@@ -378,6 +379,7 @@ Weitere <code>point</code>-Funktionen könnten sein:
 </div>
 
 </div></li>
+
 <li>Diese (und weitere) Funktionen können programmiert werden, ohne
 <ul class="org-ul">
 <li>die Funktionen <code>make-point</code>, <code>point-x</code> und <code>point-y</code> implementiert
@@ -387,9 +389,9 @@ zu haben und</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org3cd4666" class="outline-4">
-<h4 id="org3cd4666">Implementierung der Datenstruktur durch <code>pairs</code></h4>
-<div class="outline-text-4" id="text-org3cd4666">
+<div id="outline-container-org442ac7f" class="outline-4">
+<h4 id="org442ac7f">Implementierung der Datenstruktur durch <code>pairs</code></h4>
+<div class="outline-text-4" id="text-org442ac7f">
 <p>
 <b>Anmerkung:</b> Die hier gezeigte Implementierung funktioniert nicht in
 den Lehrsprachen von DrRacket.
@@ -413,9 +415,9 @@ beiden Funktionen <code>car</code> und <code>cdr</code>:
 </ul>
 </div>
 </div>
-<div id="outline-container-orgeb35bcc" class="outline-4">
-<h4 id="orgeb35bcc">Die Funktionen <code>make-point</code>, <code>point-x</code> und <code>point-y</code></h4>
-<div class="outline-text-4" id="text-orgeb35bcc">
+<div id="outline-container-orga7b48d7" class="outline-4">
+<h4 id="orga7b48d7">Die Funktionen <code>make-point</code>, <code>point-x</code> und <code>point-y</code></h4>
+<div class="outline-text-4" id="text-orga7b48d7">
 <ul class="org-ul">
 <li><code>make-point</code> heißt auch Konstruktionsfunktion.</li>
 <li><code>point-x</code> und <code>point-y</code> nennt man auch Selektionsfunktionen.</li>
@@ -433,9 +435,9 @@ beiden Funktionen <code>car</code> und <code>cdr</code>:
 </div>
 </div>
 </div>
-<div id="outline-container-org1267f88" class="outline-4">
-<h4 id="org1267f88">Abstraktionsbarrieren</h4>
-<div class="outline-text-4" id="text-org1267f88">
+<div id="outline-container-orgf37279b" class="outline-4">
+<h4 id="orgf37279b">Abstraktionsbarrieren</h4>
+<div class="outline-text-4" id="text-orgf37279b">
 
 <div class="figure">
 <p><img src="./Abbildungen/barrieren.png" alt="barrieren.png" width="400px" />
@@ -443,9 +445,9 @@ beiden Funktionen <code>car</code> und <code>cdr</code>:
 </div>
 </div>
 </div>
-<div id="outline-container-org313eb7a" class="outline-4">
-<h4 id="org313eb7a">Nutzen der Abstraktion</h4>
-<div class="outline-text-4" id="text-org313eb7a">
+<div id="outline-container-org52a6575" class="outline-4">
+<h4 id="org52a6575">Nutzen der Abstraktion</h4>
+<div class="outline-text-4" id="text-org52a6575">
 <ul class="org-ul">
 <li>Programm leichter pflegbar</li>
 <li>Komplexe Datenstrukturen können auf verschieden Arten unter
@@ -461,23 +463,18 @@ vor, Datenstrukturen zu definieren.</li>
 </div>
 </div>
 
-<div id="outline-container-orgd11d30b" class="outline-3">
-<h3 id="orgd11d30b">Definition von Strukturen in Racket</h3>
-<div class="outline-text-3" id="text-orgd11d30b">
+<div id="outline-container-org4025154" class="outline-3">
+<h3 id="org4025154">Definition von Strukturen in Racket</h3>
+<div class="outline-text-3" id="text-org4025154">
 <ul class="org-ul">
 <li>Sprache: DrRacket-Lehrsprache „Zwischenstufe mit lambda”</li>
 <li>Für die Definition von Strukturen (Verbünde, records) steht die
 Pseudofunktion <code>define-struct</code> zur Verfügung.</li>
-<li><p>
-Punkte im zweidimensionalen, kartesischen Koordinatensystem (s. o.)
+<li>Punkte im zweidimensionalen, kartesischen Koordinatensystem (s. o.)
 könnten wie folgt definiert werden:
-</p>
-<pre class="example">
-(define-struct point [x y])
-</pre></li>
+<code class="src src-scheme"><span style="color: #707183;">(</span>define-struct point <span style="color: #7388D6;">[</span>x y<span style="color: #7388D6;">]</span><span style="color: #707183;">)</span></code></li>
 <li>Mit dieser Definition stehen automatisch die folgenden Funktionen
-bereit:</li>
-</ul>
+bereit:
 <ul class="org-ul">
 <li><code>make-point</code> : akzeptiert zwei Zahlen als Argumente und erzeugt
 ein neues Exemplar der Struktur <code>point</code>.</li>
@@ -488,11 +485,12 @@ liefert die <code>y</code>-Komponente.</li>
 <li><code>point?</code> : akzeptiert einen beliebigen Wert als Argument und
 liefert <code>#true</code>, falls der Wert ein Exemplar der Struktur <code>point</code>
 ist.</li>
+</ul></li>
 </ul>
 </div>
-<div id="outline-container-org9c8ed07" class="outline-4">
-<h4 id="org9c8ed07">Benutzungsbeispiel in DrRacket</h4>
-<div class="outline-text-4" id="text-org9c8ed07">
+<div id="outline-container-org1e22899" class="outline-4">
+<h4 id="org1e22899">Benutzungsbeispiel in DrRacket</h4>
+<div class="outline-text-4" id="text-org1e22899">
 <pre class="example">
 Willkommen bei DrRacket, Version 6.7 [3m].
 Sprache: Zwischenstufe mit lambda; memory limit: 128 MB.
@@ -512,13 +510,12 @@ Sprache: Zwischenstufe mit lambda; memory limit: 128 MB.
 </pre>
 </div>
 </div>
-<div id="outline-container-org9b34383" class="outline-4">
-<h4 id="org9b34383">Weiterverwendung von <code>add-point</code> &#x2026;</h4>
-<div class="outline-text-4" id="text-org9b34383">
+<div id="outline-container-org9a36a2a" class="outline-4">
+<h4 id="org9a36a2a">Weiterverwendung von <code>add-point</code> &#x2026;</h4>
+<div class="outline-text-4" id="text-org9a36a2a">
 <p>
-Die in Abschnitt <a href="#org6222af5">Punkt-Funktionen</a> eingeführten Funktionen
+Die in Abschnitt <a href="#orgc6ec972">Punkt-Funktionen</a> eingeführten Funktionen
 </p>
-
 <div class="org-src-container">
 <pre class="src src-scheme">  <span style="color: #707183;">(</span><span style="color: #0000FF;">define</span> <span style="color: #006699;">add-point</span>
     <span style="color: #7388D6;">(</span><span style="color: #0000FF;">lambda</span> <span style="color: #909183;">[</span>p1 p2<span style="color: #909183;">]</span>
@@ -542,9 +539,9 @@ können unverändert bleiben.
 </p>
 </div>
 </div>
-<div id="outline-container-org6e37e6a" class="outline-4">
-<h4 id="org6e37e6a">Regel (7) für das Aufschreiben von Strukturdefinitionen</h4>
-<div class="outline-text-4" id="text-org6e37e6a">
+<div id="outline-container-org6885713" class="outline-4">
+<h4 id="org6885713">Regel (7) für das Aufschreiben von Strukturdefinitionen</h4>
+<div class="outline-text-4" id="text-org6885713">
 <ul class="org-ul">
 <li>Für den Entwurf einer zusammengesetzten Datenstruktur ist es
 hilfreich, ihre Zusammensetzung durch einen Kommentar genau zu beschreiben.</li>
@@ -552,13 +549,13 @@ hilfreich, ihre Zusammensetzung durch einen Kommentar genau zu beschreiben.</li>
 <li><p>
 Beispiel:
 </p>
-<pre class="example">
-;; Ein Rechteck ist ein Wert
-;;  (make-rectangle a b)
-;; wobei a und b Zahlen sind, die die Seitenlängen eines Rechecks
-;; beschreiben.
-(define-struct rectangle [a b])
-</pre></li>
+<div class="org-src-container">
+<pre class="src src-scheme">  <span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">Ein Rechteck ist ein Wert</span>
+  <span style="color: #8D8D84;">;;  </span><span style="color: #8D8D84; font-style: italic;">(make-rectangle a b)</span>
+  <span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">wobei a und b Zahlen sind, die die Seitenl&#228;ngen eines Rechecks beschreiben.</span>
+  <span style="color: #707183;">(</span>define-struct rectangle <span style="color: #7388D6;">[</span>a b<span style="color: #7388D6;">]</span><span style="color: #707183;">)</span>
+</pre>
+</div></li>
 </ul>
 <p>
 <b>Regel 7 (Datenstrukturen)</b>
@@ -576,9 +573,9 @@ Datenstruktur besteht.</li>
 </div>
 </div>
 </div>
-<div id="outline-container-org7d27ba9" class="outline-3">
-<h3 id="org7d27ba9">Entwicklungsmethodik für strukturverarbeitende Funktionen</h3>
-<div class="outline-text-3" id="text-org7d27ba9">
+<div id="outline-container-orge1dc230" class="outline-3">
+<h3 id="orge1dc230">Entwicklungsmethodik für strukturverarbeitende Funktionen</h3>
+<div class="outline-text-3" id="text-orge1dc230">
 <p>
 <b>Regel 8 (strukturverarbeitende Funktionen)</b>
 </p>
@@ -594,9 +591,9 @@ nimm den Aufruf des Konstruktors in die Schablone mit auf.</li>
 </ol>
 </div>
 
-<div id="outline-container-orgd9bfa7b" class="outline-4">
-<h4 id="orgd9bfa7b">Anwendungsbeispiele für Regel 8</h4>
-<div class="outline-text-4" id="text-orgd9bfa7b">
+<div id="outline-container-org8c496da" class="outline-4">
+<h4 id="org8c496da">Anwendungsbeispiele für Regel 8</h4>
+<div class="outline-text-4" id="text-org8c496da">
 <p>
 Für die Funktion <code>add-point</code> ergäbe sich damit die folgenden Schablone:
 </p>
@@ -626,13 +623,13 @@ Für die Funktion <code>equal-point?</code> ergäbe sich eine Schablone ohne Kon
 </div>
 </div>
 
-<div id="outline-container-org64bbdb6" class="outline-4">
-<h4 id="org64bbdb6">Regel-konforme Aufschreibung der Funktionen <code>equal-point?</code> und <code>add-point</code></h4>
-<div class="outline-text-4" id="text-org64bbdb6">
+<div id="outline-container-orgee631a4" class="outline-4">
+<h4 id="orgee631a4">Regel-konforme Aufschreibung der Funktionen <code>equal-point?</code> und <code>add-point</code></h4>
+<div class="outline-text-4" id="text-orgee631a4">
 </div>
-<div id="outline-container-orgf241109" class="outline-5">
-<h5 id="orgf241109"><code>equal-point?</code></h5>
-<div class="outline-text-5" id="text-orgf241109">
+<div id="outline-container-orga15c9b5" class="outline-5">
+<h5 id="orga15c9b5"><code>equal-point?</code></h5>
+<div class="outline-text-5" id="text-orga15c9b5">
 <div class="org-src-container">
 <pre class="src src-scheme"><span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">ein Punkt ist ein Wert</span>
 <span style="color: #8D8D84;">;;   </span><span style="color: #8D8D84; font-style: italic;">(make-point x y)</span>
@@ -654,9 +651,9 @@ Für die Funktion <code>equal-point?</code> ergäbe sich eine Schablone ohne Kon
 </div>
 </div>
 </div>
-<div id="outline-container-orgeb2f5a8" class="outline-5">
-<h5 id="orgeb2f5a8"><code>add-point</code></h5>
-<div class="outline-text-5" id="text-orgeb2f5a8">
+<div id="outline-container-org00e6c50" class="outline-5">
+<h5 id="org00e6c50"><code>add-point</code></h5>
+<div class="outline-text-5" id="text-org00e6c50">
 <div class="org-src-container">
 <pre class="src src-scheme"><span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">Berechnung eines neuen Punktes durch die Addition zweier Punkte</span>
 <span style="color: #707183;">(</span><span style="color: #0000FF;">define</span> <span style="color: #006699;">add-point</span>
@@ -673,13 +670,13 @@ Für die Funktion <code>equal-point?</code> ergäbe sich eine Schablone ohne Kon
 </div>
 </div>
 </div>
-<div id="outline-container-org418e4c6" class="outline-2">
-<h2 id="org418e4c6">Formulierung von Tests</h2>
-<div class="outline-text-2" id="text-org418e4c6">
+<div id="outline-container-orgcc3bab2" class="outline-2">
+<h2 id="orgcc3bab2">Formulierung von Tests</h2>
+<div class="outline-text-2" id="text-orgcc3bab2">
 </div>
-<div id="outline-container-orgb8a3cfc" class="outline-3">
-<h3 id="orgb8a3cfc">Tests statt Beispielanwendungen</h3>
-<div class="outline-text-3" id="text-orgb8a3cfc">
+<div id="outline-container-org21350a4" class="outline-3">
+<h3 id="org21350a4">Tests statt Beispielanwendungen</h3>
+<div class="outline-text-3" id="text-org21350a4">
 <ul class="org-ul">
 <li>Man beachte, dass Formulierung der Beispielanwendungen für die
 Funktion <code>add-point</code> die Existenz der Funktion <code>equal-point?</code> voraussetzt.</li>
@@ -692,9 +689,9 @@ Beispielanwendungen zu benutzen.</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org47f0a8f" class="outline-3">
-<h3 id="org47f0a8f">Die Funktion <code>add-point</code> mit Tests</h3>
-<div class="outline-text-3" id="text-org47f0a8f">
+<div id="outline-container-org1db2cab" class="outline-3">
+<h3 id="org1db2cab">Die Funktion <code>add-point</code> mit Tests</h3>
+<div class="outline-text-3" id="text-org1db2cab">
 <ul class="org-ul">
 <li>Statt des selbst definierten Gleichheitsprädikats <code>equal-point?</code>
 verwenden wir für den Test die Standard-Testprozedur <code>check-expect</code>.</li>
@@ -733,9 +730,9 @@ Der eine Test ist bestanden!
 </pre>
 </div>
 </div>
-<div id="outline-container-org6d54b9a" class="outline-3">
-<h3 id="org6d54b9a">Testfälle in Racket</h3>
-<div class="outline-text-3" id="text-org6d54b9a">
+<div id="outline-container-org9714890" class="outline-3">
+<h3 id="org9714890">Testfälle in Racket</h3>
+<div class="outline-text-3" id="text-org9714890">
 <dl class="org-dl">
 <dt>(check-expect expr expr)</dt><dd>Dieser Testfall überprüft, ob der erste
 expr den gleichen Wert hat wie der zweite expr, wobei das zweite
@@ -748,8 +745,6 @@ zweiten expr abweicht.</dd>
 <dt>(check-member-of expr expr &#x2026;)</dt><dd>Ähnlich wie
 check-expect: Der Testfall überprüft, dass das Resultat des ersten
 Operanden gleich dem Wert eines der folgenden Operanden ist.</dd>
-</dl>
-<dl class="org-dl">
 <dt>(check-range expr expr expr)</dt><dd>Ähnlich wie check-expect: Alle drei
 Operanden müssen Zahlen sein. Der Testfall überprüft, ob die erste
 Zahl zwischen der zweiten und der dritten liegt (inklusive).</dd>
@@ -760,9 +755,9 @@ entspricht, die der Wert des zweiten expr ist.</dd>
 </div>
 </div>
 
-<div id="outline-container-orga2bd5b0" class="outline-3">
-<h3 id="orga2bd5b0">Modifikation der Regel 3</h3>
-<div class="outline-text-3" id="text-orga2bd5b0">
+<div id="outline-container-org48643b0" class="outline-3">
+<h3 id="org48643b0">Modifikation der Regel 3</h3>
+<div class="outline-text-3" id="text-org48643b0">
 <p>
 <b>Regel 3neu</b>
 </p>
@@ -778,9 +773,9 @@ zu schreiben.
 </p>
 </div>
 
-<div id="outline-container-org95dca3d" class="outline-4">
-<h4 id="org95dca3d">Anwendung auf die Funktion <code>distance-to-0</code></h4>
-<div class="outline-text-4" id="text-org95dca3d">
+<div id="outline-container-org02ec7da" class="outline-4">
+<h4 id="org02ec7da">Anwendung auf die Funktion <code>distance-to-0</code></h4>
+<div class="outline-text-4" id="text-org02ec7da">
 <div class="org-src-container">
 <pre class="src src-scheme"><span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">ein Punkt ist ein Wert</span>
 <span style="color: #8D8D84;">;;   </span><span style="color: #8D8D84; font-style: italic;">(make-point x y)</span>
@@ -811,37 +806,40 @@ zu schreiben.
 </div>
 </div>
 
-<div id="outline-container-org9379bba" class="outline-2">
-<h2 id="org9379bba">Gemischte Daten</h2>
-<div class="outline-text-2" id="text-org9379bba">
+<div id="outline-container-orgfd8fe6f" class="outline-2">
+<h2 id="orgfd8fe6f">Gemischte Daten</h2>
+<div class="outline-text-2" id="text-orgfd8fe6f">
 </div>
-<div id="outline-container-orgea9304d" class="outline-3">
-<h3 id="orgea9304d">Datenabstraktion durch Generalisierung</h3>
-<div class="outline-text-3" id="text-orgea9304d">
+<div id="outline-container-org48f1223" class="outline-3">
+<h3 id="org48f1223">Datenabstraktion durch Generalisierung</h3>
+<div class="outline-text-3" id="text-org48f1223">
 <ul class="org-ul">
 <li>Funktionen sollen verschiedene &#x2013; aber verwandte &#x2013; Datenstrukturen
 verarbeiten.</li>
 
-<li>Beispiel: Rechtecke und Kreise sind geometrische Figuren.</li>
-</ul>
+<li><p>
+Beispiel: Rechtecke und Kreise sind geometrische Figuren.
+</p>
 
-<pre class="example">
-    ;; Eine Figur ist entweder
-    ;; - ein Rechteck oder
-    ;; - ein Kreis
-    ;; Name: shape
+<div class="small">
+<div class="org-src-container">
+<pre class="src src-scheme">    <span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">Eine Figur ist entweder</span>
+    <span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">- ein Rechteck oder</span>
+    <span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">- ein Kreis</span>
+    <span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">Name: shape</span>
 </pre>
+</div>
 
-<ul class="org-ul">
+</div></li>
 <li>Für <code>shapes</code>-verarbeitende Funktionen sind nur die
 Datenstrukturdefinitionen für Rechtecke und Kreise erforderlich.</li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-org5bf51b1" class="outline-3">
-<h3 id="org5bf51b1">Definition von <code>rectangle</code></h3>
-<div class="outline-text-3" id="text-org5bf51b1">
+<div id="outline-container-org4a161c5" class="outline-3">
+<h3 id="org4a161c5">Definition von <code>rectangle</code></h3>
+<div class="outline-text-3" id="text-org4a161c5">
 <div class="org-src-container">
 <pre class="src src-scheme"><span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">Eine Rechteck ist ein Wert </span>
 <span style="color: #8D8D84;">;;   </span><span style="color: #8D8D84; font-style: italic;">(make-rectangle h w)</span>
@@ -860,9 +858,9 @@ Datenstrukturdefinitionen für Rechtecke und Kreise erforderlich.</li>
 </div>
 </div>
 
-<div id="outline-container-orga275615" class="outline-3">
-<h3 id="orga275615">Definition von <code>circle</code></h3>
-<div class="outline-text-3" id="text-orga275615">
+<div id="outline-container-org69b8fc3" class="outline-3">
+<h3 id="org69b8fc3">Definition von <code>circle</code></h3>
+<div class="outline-text-3" id="text-org69b8fc3">
 <div class="org-src-container">
 <pre class="src src-scheme"><span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">Ein Kreis ist ein Wert</span>
 <span style="color: #8D8D84;">;;    </span><span style="color: #8D8D84; font-style: italic;">(make-cicle r)</span>
@@ -879,9 +877,9 @@ Datenstrukturdefinitionen für Rechtecke und Kreise erforderlich.</li>
 </div>
 </div>
 
-<div id="outline-container-org4c20cb3" class="outline-3">
-<h3 id="org4c20cb3">Flächeninhalt von Figuren</h3>
-<div class="outline-text-3" id="text-org4c20cb3">
+<div id="outline-container-org1e0872e" class="outline-3">
+<h3 id="org1e0872e">Flächeninhalt von Figuren</h3>
+<div class="outline-text-3" id="text-org1e0872e">
 <div class="org-src-container">
 <pre class="src src-scheme"><span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">Eine Figur ist entweder</span>
 <span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">- ein Rechteck oder</span>
@@ -901,9 +899,9 @@ Datenstrukturdefinitionen für Rechtecke und Kreise erforderlich.</li>
 </div>
 </div>
 
-<div id="outline-container-org77c209b" class="outline-3">
-<h3 id="org77c209b">Entwurfsmethodik für Funktionen zur Verarbeitung gemischter Daten</h3>
-<div class="outline-text-3" id="text-org77c209b">
+<div id="outline-container-orgba7efeb" class="outline-3">
+<h3 id="orgba7efeb">Entwurfsmethodik für Funktionen zur Verarbeitung gemischter Daten</h3>
+<div class="outline-text-3" id="text-orgba7efeb">
 <p>
 <b>Regel 9 (Funktionen für gemischte Daten)</b>  
 </p>
@@ -947,8 +945,9 @@ sich für eine \(s\) -verarbeitende Funktion die folgende Funktionsschablone:
 </div>
 </div>
 <div id="postamble" class="status">
+<p class="date">Datum: 26. 01. 2021</p>
 <p class="author">Autor: Johannes Brauer</p>
-<p class="date">Created: 2020-01-01 Wed 14:09</p>
+<p class="date">Created: 2021-01-26 Tue 15:25</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
