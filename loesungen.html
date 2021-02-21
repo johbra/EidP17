@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="de" xml:lang="de">
 <head>
-<!-- 2021-02-16 Tue 14:34 -->
+<!-- 2021-02-21 Sun 13:50 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Aufgaben &#x2013; ausgewählte Lösungen</title>
@@ -276,42 +276,44 @@ for the JavaScript code in this tag.
 <h2>Inhaltsverzeichnis</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org8e1ba33">1. Erste Schritte in Racket</a></li>
-<li><a href="#org36969e2">2. Auswertung arithmetischer Ausdrücke</a></li>
-<li><a href="#org2d39674">3. Aufschreiben elementarer Funktionen</a></li>
-<li><a href="#orgb70a1e6">4. Aufschreiben elementarer Funktionen</a></li>
-<li><a href="#org82eb91c">5. Anwenden der Aufschreibregeln</a></li>
-<li><a href="#org5a31fbe">6. Profit für den Kinobesitzer</a></li>
-<li><a href="#orgcc4db8d">7. Modifikation von <code>kino.rkt</code></a></li>
-<li><a href="#orgebaf9bd">8. Einsatz von Hilfsfunktionen</a></li>
-<li><a href="#orgec802ca">9. Ersetzungsmodell</a></li>
-<li><a href="#org55bb160">10. Bedingte Funktion</a></li>
-<li><a href="#org3cfc1ac">11. Zusatzaufgaben zu bedingten Funktionen</a></li>
+<li><a href="#orgd2632e1">1. Erste Schritte in Racket</a></li>
+<li><a href="#org23664bb">2. Auswertung arithmetischer Ausdrücke</a></li>
+<li><a href="#org3880d7e">3. Aufschreiben elementarer Funktionen</a></li>
+<li><a href="#org869fd0a">4. Aufschreiben elementarer Funktionen</a></li>
+<li><a href="#orged4fa92">5. Anwenden der Aufschreibregeln</a></li>
+<li><a href="#org802c888">6. Profit für den Kinobesitzer</a></li>
+<li><a href="#org40777b0">7. Modifikation von <code>kino.rkt</code></a></li>
+<li><a href="#org6443ec5">8. Einsatz von Hilfsfunktionen</a></li>
+<li><a href="#orga65bd51">9. Ersetzungsmodell</a></li>
+<li><a href="#orgb6737f1">10. Bedingte Funktion</a></li>
+<li><a href="#org4836edd">11. Zusatzaufgaben zu bedingten Funktionen</a></li>
 <li><a href="#datenabstraktion">12. Datenabstraktion</a></li>
-<li><a href="#org766d271">13. Datenabstraktion &#x2013; Zusatzaufgabe</a>
+<li><a href="#orga7f5e27">13. Datenabstraktion &#x2013; Zusatzaufgabe</a>
 <ul>
-<li><a href="#org3f8b00e">13.1. Vorbemerkungen</a></li>
-<li><a href="#org59298bf">13.2. Aufgabenstellungen</a></li>
+<li><a href="#orgc0581e1">13.1. Vorbemerkungen</a></li>
+<li><a href="#orga149b8c">13.2. Aufgabenstellungen</a></li>
 </ul>
 </li>
-<li><a href="#orgf72d3b7">14. Datenabstraktion &#x2013; gemischte Daten</a></li>
-<li><a href="#orgfd25614">15. Datenabstraktion &#x2013; gemischte Daten &#x2013; Zusatzaufgabe</a>
+<li><a href="#orgb08aa8f">14. Datenabstraktion &#x2013; gemischte Daten</a></li>
+<li><a href="#org80192f4">15. Datenabstraktion &#x2013; gemischte Daten &#x2013; Zusatzaufgabe</a>
 <ul>
-<li><a href="#orgc8b4c7b">15.1. Vorbemerkung</a></li>
-<li><a href="#org47c1bad">15.2. Aufgabenstellungen</a></li>
+<li><a href="#org46967e3">15.1. Vorbemerkung</a></li>
+<li><a href="#org5799c76">15.2. Aufgabenstellungen</a></li>
 </ul>
 </li>
 <li><a href="#listenkonstruktion">16. Listenkonstruktion und -zerlegung</a></li>
 <li><a href="#listenverarbeitung">17. Listenverarbeitung</a></li>
-<li><a href="#org5f15c58">18. Funktionen über zwei Listen</a></li>
+<li><a href="#orgd56b740">18. Funktionen über zwei Listen</a></li>
 <li><a href="#formaleaspekte">19. Formale Aspekte</a></li>
+<li><a href="#orgbb0c22e">20. Lokale Definitionen</a></li>
+<li><a href="#orga9ee582">21. Listen über gemischten Daten (Zusatzaufgabe)</a></li>
 </ul>
 </div>
 </div>
 
 
-<div id="outline-container-org8e1ba33" class="outline-2">
-<h2 id="org8e1ba33"><span class="section-number-2">1</span> Erste Schritte in Racket</h2>
+<div id="outline-container-orgd2632e1" class="outline-2">
+<h2 id="orgd2632e1"><span class="section-number-2">1</span> Erste Schritte in Racket</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 Machen Sie sich mit den NORDAKADEMIE-Rechnern vertraut und richten Sie
@@ -338,8 +340,8 @@ finden Sie alle vordefinierten mathematischen Funktionen?
 </div>
 </div>
 
-<div id="outline-container-org36969e2" class="outline-2">
-<h2 id="org36969e2"><span class="section-number-2">2</span> Auswertung arithmetischer Ausdrücke</h2>
+<div id="outline-container-org23664bb" class="outline-2">
+<h2 id="org23664bb"><span class="section-number-2">2</span> Auswertung arithmetischer Ausdrücke</h2>
 <div class="outline-text-2" id="text-2">
 <ol class="org-ol">
 <li>Wie wird der Ausdruck<br />
@@ -358,8 +360,8 @@ Werten Sie die folgenden Ausdrücke aus und vergleichen Sie die Resultate:
 </div>
 </div>
 
-<div id="outline-container-org2d39674" class="outline-2">
-<h2 id="org2d39674"><span class="section-number-2">3</span> Aufschreiben elementarer Funktionen</h2>
+<div id="outline-container-org3880d7e" class="outline-2">
+<h2 id="org3880d7e"><span class="section-number-2">3</span> Aufschreiben elementarer Funktionen</h2>
 <div class="outline-text-2" id="text-3">
 <p>
 Schreiben Sie für die folgenden mathematischen Formeln Racket-Funktions&#x00ad;definitionen auf:
@@ -401,8 +403,8 @@ Funktionsaufrufe für diese Funktionen ein.
 </p>
 </div>
 </div>
-<div id="outline-container-orgb70a1e6" class="outline-2">
-<h2 id="orgb70a1e6"><span class="section-number-2">4</span> Aufschreiben elementarer Funktionen</h2>
+<div id="outline-container-org869fd0a" class="outline-2">
+<h2 id="org869fd0a"><span class="section-number-2">4</span> Aufschreiben elementarer Funktionen</h2>
 <div class="outline-text-2" id="text-4">
 <p>
 In der Praxis findet der Programmierer selten mathematische Formeln
@@ -497,8 +499,8 @@ Hinweis: Ein Aufruf <code>(expt x y)</code> liefert \(x^y\) als Ergebnis.
 </div>
 </div>
 
-<div id="outline-container-org82eb91c" class="outline-2">
-<h2 id="org82eb91c"><span class="section-number-2">5</span> Anwenden der Aufschreibregeln</h2>
+<div id="outline-container-orged4fa92" class="outline-2">
+<h2 id="orged4fa92"><span class="section-number-2">5</span> Anwenden der Aufschreibregeln</h2>
 <div class="outline-text-2" id="text-5">
 <p>
 Schreiben Sie die Funktion zur Berechnung der Bahnhofsmiete in
@@ -524,8 +526,8 @@ folgenden Aufgaben gemäß diesen Regeln aufzuschreiben!!!</b>
 </div>
 </div>
 
-<div id="outline-container-org5a31fbe" class="outline-2">
-<h2 id="org5a31fbe"><span class="section-number-2">6</span> Profit für den Kinobesitzer</h2>
+<div id="outline-container-org802c888" class="outline-2">
+<h2 id="org802c888"><span class="section-number-2">6</span> Profit für den Kinobesitzer</h2>
 <div class="outline-text-2" id="text-6">
 <p>
 Ein altmodisches Vorstadtkino besitzt eine einfache Formel für die
@@ -549,8 +551,8 @@ Berechnung des Profits bei gegebener Besucherzahl.
 </div>
 </div>
 </div>
-<div id="outline-container-orgcc4db8d" class="outline-2">
-<h2 id="orgcc4db8d"><span class="section-number-2">7</span> Modifikation von <code>kino.rkt</code></h2>
+<div id="outline-container-org40777b0" class="outline-2">
+<h2 id="org40777b0"><span class="section-number-2">7</span> Modifikation von <code>kino.rkt</code></h2>
 <div class="outline-text-2" id="text-7">
 <ol class="org-ol">
 <li>Modifizieren Sie das Programm <code>kino.rkt</code> so, dass die Fixkosten
@@ -563,8 +565,8 @@ vergleichen Sie die Ergebnisse.</li>
 </div>
 </div>
 
-<div id="outline-container-orgebaf9bd" class="outline-2">
-<h2 id="orgebaf9bd"><span class="section-number-2">8</span> Einsatz von Hilfsfunktionen</h2>
+<div id="outline-container-org6443ec5" class="outline-2">
+<h2 id="org6443ec5"><span class="section-number-2">8</span> Einsatz von Hilfsfunktionen</h2>
 <div class="outline-text-2" id="text-8">
 <p>
 Die folgenden Aufgaben sind unter Benutzung von Hilfsfunktionen zu
@@ -639,8 +641,8 @@ Wandstärke und die Länge des Rohrs.</li>
 </div>
 </div>
 
-<div id="outline-container-orgec802ca" class="outline-2">
-<h2 id="orgec802ca"><span class="section-number-2">9</span> Ersetzungsmodell</h2>
+<div id="outline-container-orga65bd51" class="outline-2">
+<h2 id="orga65bd51"><span class="section-number-2">9</span> Ersetzungsmodell</h2>
 <div class="outline-text-2" id="text-9">
 <p>
 Gegeben sei die folgende Funktionsdefinition:
@@ -745,8 +747,8 @@ Als Alternative hier noch eine Schreibarbeit sparende Lösung von Alessandra Bla
 </div>
 </div>
 
-<div id="outline-container-org55bb160" class="outline-2">
-<h2 id="org55bb160"><span class="section-number-2">10</span> Bedingte Funktion</h2>
+<div id="outline-container-orgb6737f1" class="outline-2">
+<h2 id="orgb6737f1"><span class="section-number-2">10</span> Bedingte Funktion</h2>
 <div class="outline-text-2" id="text-10">
 <p>
 Schreiben Sie ein Programm, das aus dem Bruttoeinkommen eines
@@ -920,8 +922,8 @@ Konstanten, Regel 5) Gebrauch.</li>
 </div>
 </div>
 
-<div id="outline-container-org3cfc1ac" class="outline-2">
-<h2 id="org3cfc1ac"><span class="section-number-2">11</span> Zusatzaufgaben zu bedingten Funktionen</h2>
+<div id="outline-container-org4836edd" class="outline-2">
+<h2 id="org4836edd"><span class="section-number-2">11</span> Zusatzaufgaben zu bedingten Funktionen</h2>
 <div class="outline-text-2" id="text-11">
 <ol class="org-ol">
 <li><p>
@@ -1113,7 +1115,7 @@ vorausgesetzt \(b\neq 0\).
 </ol>
 </div>
 </div>
-<div id="outline-container-orga02644d" class="outline-2">
+<div id="outline-container-org15551fd" class="outline-2">
 <h2 id="datenabstraktion"><span class="section-number-2">12</span> Datenabstraktion</h2>
 <div class="outline-text-2" id="text-datenabstraktion">
 <p>
@@ -1242,12 +1244,12 @@ weiblicher Vegetarier ist.
 </div>
 </div>
 
-<div id="outline-container-org766d271" class="outline-2">
-<h2 id="org766d271"><span class="section-number-2">13</span> Datenabstraktion &#x2013; Zusatzaufgabe</h2>
+<div id="outline-container-orga7f5e27" class="outline-2">
+<h2 id="orga7f5e27"><span class="section-number-2">13</span> Datenabstraktion &#x2013; Zusatzaufgabe</h2>
 <div class="outline-text-2" id="text-13">
 </div>
-<div id="outline-container-org3f8b00e" class="outline-3">
-<h3 id="org3f8b00e"><span class="section-number-3">13.1</span> Vorbemerkungen</h3>
+<div id="outline-container-orgc0581e1" class="outline-3">
+<h3 id="orgc0581e1"><span class="section-number-3">13.1</span> Vorbemerkungen</h3>
 <div class="outline-text-3" id="text-13-1">
 <p>
 In den Lehrsprachen von DrRacket gibt es ein vordefinierte
@@ -1339,8 +1341,8 @@ Mit <code>(stop)</code> wird die Zeichenfläche geschlossen.
 </div>
 </div>
 
-<div id="outline-container-org59298bf" class="outline-3">
-<h3 id="org59298bf"><span class="section-number-3">13.2</span> Aufgabenstellungen</h3>
+<div id="outline-container-orga149b8c" class="outline-3">
+<h3 id="orga149b8c"><span class="section-number-3">13.2</span> Aufgabenstellungen</h3>
 <div class="outline-text-3" id="text-13-2">
 <ol class="org-ol">
 <li>Experimentieren Sie mit den o. g. Funktionen.</li>
@@ -1527,8 +1529,8 @@ Das sei nur ein kleine Anregung für eigene „Animationen“.
 </div>
 </div>
 </div>
-<div id="outline-container-orgf72d3b7" class="outline-2">
-<h2 id="orgf72d3b7"><span class="section-number-2">14</span> Datenabstraktion &#x2013; gemischte Daten</h2>
+<div id="outline-container-orgb08aa8f" class="outline-2">
+<h2 id="orgb08aa8f"><span class="section-number-2">14</span> Datenabstraktion &#x2013; gemischte Daten</h2>
 <div class="outline-text-2" id="text-14">
 <p>
 Lösen Sie die Aufgabe unter Anwendung der passenden Regeln!
@@ -1653,12 +1655,12 @@ sich aus dem Grundgehalt und der monatlichen Sollarbeitszeit plus
 </div>
 </div>
 
-<div id="outline-container-orgfd25614" class="outline-2">
-<h2 id="orgfd25614"><span class="section-number-2">15</span> Datenabstraktion &#x2013; gemischte Daten &#x2013; Zusatzaufgabe</h2>
+<div id="outline-container-org80192f4" class="outline-2">
+<h2 id="org80192f4"><span class="section-number-2">15</span> Datenabstraktion &#x2013; gemischte Daten &#x2013; Zusatzaufgabe</h2>
 <div class="outline-text-2" id="text-15">
 </div>
-<div id="outline-container-orgc8b4c7b" class="outline-3">
-<h3 id="orgc8b4c7b"><span class="section-number-3">15.1</span> Vorbemerkung</h3>
+<div id="outline-container-org46967e3" class="outline-3">
+<h3 id="org46967e3"><span class="section-number-3">15.1</span> Vorbemerkung</h3>
 <div class="outline-text-3" id="text-15-1">
 <p>
 Diese Aufgabe stellt eine Fortführung von Aufgabe 13 dar. Falls Sie
@@ -1666,8 +1668,8 @@ diese noch nicht bearbeitet haben, sollten Sie zunächst damit beginnen.
 </p>
 </div>
 </div>
-<div id="outline-container-org47c1bad" class="outline-3">
-<h3 id="org47c1bad"><span class="section-number-3">15.2</span> Aufgabenstellungen</h3>
+<div id="outline-container-org5799c76" class="outline-3">
+<h3 id="org5799c76"><span class="section-number-3">15.2</span> Aufgabenstellungen</h3>
 <div class="outline-text-3" id="text-15-2">
 <ol class="org-ol">
 <li>Enwtickeln Sie eine Datenstrukturdefinition für farbige
@@ -1925,7 +1927,7 @@ Figuren verarbeiten, auf.</li>
 </div>
 </div>
 
-<div id="outline-container-orgaf4f2d5" class="outline-2">
+<div id="outline-container-org79b175e" class="outline-2">
 <h2 id="listenkonstruktion"><span class="section-number-2">16</span> Listenkonstruktion und -zerlegung</h2>
 <div class="outline-text-2" id="text-listenkonstruktion">
 <p>
@@ -2141,7 +2143,7 @@ Werten Sie die folgenden Funktionsaufrufe aus:
 </table>
 </div>
 </div>
-<div id="outline-container-org1ca4b9c" class="outline-2">
+<div id="outline-container-orgb82041b" class="outline-2">
 <h2 id="listenverarbeitung"><span class="section-number-2">17</span> Listenverarbeitung</h2>
 <div class="outline-text-2" id="text-listenverarbeitung">
 <ol class="org-ol">
@@ -2616,7 +2618,7 @@ Zeichenkette und könnte z. B. so benutzt werden:
 </pre>
 </div></li>
 <li><p>
-<a id="org03bd6ab"></a>Gegeben sei die Datenstrukturdefinition <code>gast</code> aus Aufgabe
+<a id="org953203d"></a>Gegeben sei die Datenstrukturdefinition <code>gast</code> aus Aufgabe
 12 und z.&nbsp;B.  die folgende Gästeliste:
 </p>
 <div class="org-src-container">
@@ -2681,8 +2683,8 @@ eine Liste mit den weiblichen Gästen bildet.</li>
 </ol>
 </div>
 </div>
-<div id="outline-container-org5f15c58" class="outline-2">
-<h2 id="org5f15c58"><span class="section-number-2">18</span> Funktionen über zwei Listen</h2>
+<div id="outline-container-orgd56b740" class="outline-2">
+<h2 id="orgd56b740"><span class="section-number-2">18</span> Funktionen über zwei Listen</h2>
 <div class="outline-text-2" id="text-18">
 <p>
 Die in den folgenden Aufgaben zu entwickelnden Funktionen haben alle 2
@@ -2797,7 +2799,7 @@ auftauchen. Beispiel:
 </div>
 </div>
 
-<div id="outline-container-org80d57d4" class="outline-2">
+<div id="outline-container-org5c8d581" class="outline-2">
 <h2 id="formaleaspekte"><span class="section-number-2">19</span> Formale Aspekte</h2>
 <div class="outline-text-2" id="text-formaleaspekte">
 <ol class="org-ol">
@@ -2871,10 +2873,260 @@ berechnet.
 </ol>
 </div>
 </div>
+<div id="outline-container-orgbb0c22e" class="outline-2">
+<h2 id="orgbb0c22e"><span class="section-number-2">20</span> Lokale Definitionen</h2>
+<div class="outline-text-2" id="text-20">
+<ol class="org-ol">
+<li><p>
+Schreiben Sie unter Anwendung der Regeln 11 bis 13 eine Funktion
+<code>exchange</code>, die eine Liste von Symbolen <code>l</code> und zwei Symbole <code>s1</code>
+und <code>s2</code> als
+Argumente erwartet und eine Liste als Resultat liefert, bei der
+jedes Auftreten von <code>s1</code> in <code>l</code> durch <code>s2</code> ersetzt ist. So
+soll z. B. der Aufruf
+</p>
+<pre class="example">
+(exchange '(a b c a c) 'a 'f)
+</pre>
+
+<p>
+das Resultat
+</p>
+<pre class="example">
+(list 'f 'b 'c 'f 'c)
+</pre>
+
+<p>
+liefern.
+</p>
+
+<p>
+Modifizieren Sie anschließend die Funktion so, dass durch
+Verwendung von lokalen Variablen Mehrfachberechnungen des gleichen
+Ausdrucks vermieden werden.
+</p>
+<div class="org-src-container">
+<pre class="src src-scheme"><span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">Zweckbestimmung s. Aufgabestellung</span>
+<span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">exchange: (list-of symbol) symbol symbol -&gt; symbol</span>
+<span style="color: #707183;">(</span>check-expect <span style="color: #7388D6;">(</span>exchange '<span style="color: #909183;">()</span> 'a 'f<span style="color: #7388D6;">)</span> '<span style="color: #7388D6;">()</span><span style="color: #707183;">)</span>
+<span style="color: #707183;">(</span>check-expect <span style="color: #7388D6;">(</span>exchange '<span style="color: #909183;">(</span>a<span style="color: #909183;">)</span> 'a 'f<span style="color: #7388D6;">)</span> '<span style="color: #7388D6;">(</span>f<span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
+<span style="color: #707183;">(</span>check-expect <span style="color: #7388D6;">(</span>exchange '<span style="color: #909183;">(</span>b<span style="color: #909183;">)</span> 'a 'f<span style="color: #7388D6;">)</span> '<span style="color: #7388D6;">(</span>b<span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
+<span style="color: #707183;">(</span>check-expect <span style="color: #7388D6;">(</span>exchange '<span style="color: #909183;">(</span>a b c a c<span style="color: #909183;">)</span> 'a 'f<span style="color: #7388D6;">)</span> '<span style="color: #7388D6;">(</span>f b c f c<span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
+<span style="color: #8D8D84;">; </span><span style="color: #8D8D84; font-style: italic;">(define exchange</span>
+<span style="color: #8D8D84;">;   </span><span style="color: #8D8D84; font-style: italic;">(lambda (lvs s1 s2)</span>
+<span style="color: #8D8D84;">;     </span><span style="color: #8D8D84; font-style: italic;">(cond</span>
+<span style="color: #8D8D84;">;       </span><span style="color: #8D8D84; font-style: italic;">[(empty? lvs) empty]</span>
+<span style="color: #8D8D84;">;       </span><span style="color: #8D8D84; font-style: italic;">[else</span>
+<span style="color: #8D8D84;">;        </span><span style="color: #8D8D84; font-style: italic;">(cond </span>
+<span style="color: #8D8D84;">;          </span><span style="color: #8D8D84; font-style: italic;">[(equal? (first lvs) s1) (cons s2 (exchange (rest lvs) s1 s2))]</span>
+<span style="color: #8D8D84;">;          </span><span style="color: #8D8D84; font-style: italic;">[else (cons (first lvs) (exchange (rest lvs) s1 s2))])])))</span>
+
+<span style="color: #707183;">(</span><span style="color: #0000FF;">define</span> <span style="color: #006699;">exchange</span>
+  <span style="color: #7388D6;">(</span><span style="color: #0000FF;">lambda</span> <span style="color: #909183;">[</span>lvs s1 s2<span style="color: #909183;">]</span>   
+    <span style="color: #909183;">(</span><span style="color: #0000FF;">cond</span>
+      <span style="color: #709870;">[</span><span style="color: #907373;">(</span>empty? lvs<span style="color: #907373;">)</span> '<span style="color: #907373;">()</span><span style="color: #709870;">]</span>
+      <span style="color: #709870;">[</span>else
+       <span style="color: #907373;">(</span><span style="color: #0000FF;">let</span> <span style="color: #6276BA;">[</span><span style="color: #858580;">(</span>fst <span style="color: #80A880;">(</span>first lvs<span style="color: #80A880;">)</span><span style="color: #858580;">)</span>
+             <span style="color: #858580;">(</span>exc-rest <span style="color: #80A880;">(</span>exchange <span style="color: #887070;">(</span>rest lvs<span style="color: #887070;">)</span> s1 s2<span style="color: #80A880;">)</span><span style="color: #858580;">)</span><span style="color: #6276BA;">]</span>
+         <span style="color: #6276BA;">(</span><span style="color: #0000FF;">cond</span> <span style="color: #858580;">[</span><span style="color: #80A880;">(</span>equal? fst s1<span style="color: #80A880;">)</span>
+                <span style="color: #80A880;">(</span>cons s2 exc-rest<span style="color: #80A880;">)</span><span style="color: #858580;">]</span>
+               <span style="color: #858580;">[</span>else <span style="color: #80A880;">(</span>cons fst
+                           exc-rest<span style="color: #80A880;">)</span><span style="color: #858580;">]</span><span style="color: #6276BA;">)</span><span style="color: #907373;">)</span><span style="color: #709870;">]</span><span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span> 
+</pre>
+</div></li>
+<li><p>
+Bildung der ersten Ableitung mathematischer Formeln (symbolische
+Differentiation)
+</p>
+
+<p>
+Es sollen Ausdrücke abgeleitet werden, die nur aus Konstanten,
+Variablen und den Operationen \(+\) und \(\cdot\) bestehen.
+</p>
+
+<p>
+Sei \(D_x\) die partielle Ableitung einer Funktion \(f\) nach \(x\), dann
+gelten folgende Regeln:
+</p>
+<ul class="org-ul">
+<li>\(D_x(x) = 1\)</li>
+<li>\(D_x(y) = 0\), \(y\neq x\), sei \(y\) eine Konstante oder Variable</li>
+<li>\(D_x(e_1 + e_2) = D_x(e_1)+D_x(e_2)\) (Summenregel)</li>
+<li>\(D_x(e_1\cdot e_2) = e_1\cdot D_x(e_2) + e_2\cdot D_x(e_1)\) (Produktregel)</li>
+</ul>
+<p>
+Repräsentation der Formeln:
+</p>
+<ul class="org-ul">
+<li>Konstante: numerisches Atom</li>
+<li>Variable: symbolisches Atom</li>
+<li>\(e_1 + e_2\): (ADD \(e_1\) \(e_2\))</li>
+<li>\(e_1 \cdot e_2\): (MUL \(e_1\) \(e_2\))</li>
+</ul>
+<p>
+Anwendungsbeispiele:
+</p>
+<ol class="org-ol">
+<li><p>
+Der Ausdruck <br />
+</p>
+<pre class="example">
+(diff '(add x x) x)
+</pre>
+
+<p>
+liefere '<code>(add 1 1)</code>
+</p></li>
+<li><p>
+Der Ausdruck <br />
+</p>
+<pre class="example">
+(diff '(mul x x) 'x)
+</pre>
+
+<p>
+liefere '<code>(add (mul x 1) (mul 1 x))</code>.<br />
+</p></li>
+</ol>
+<p>
+Hinweise:
+</p>
+<ul class="org-ul">
+<li>Definieren Sie zur Erzeugung von Formeln geeignete Hilfsfunktionen!</li>
+<li>Wenn eine Formel nicht korrekt aufgebaut ist, kann das Symbol
+’ERROR zurückgeliefert werden, das möglicherweise in einem
+korrekten Teil der Formel eingeschachtelt erscheint.</li>
+<li>Machen Sie ausgiebig von lokalen Definitionen Gebrauch.</li>
+</ul></li>
+</ol>
+</div>
+</div>
+<div id="outline-container-orga9ee582" class="outline-2">
+<h2 id="orga9ee582"><span class="section-number-2">21</span> Listen über gemischten Daten (Zusatzaufgabe)</h2>
+<div class="outline-text-2" id="text-21">
+<p>
+Diese Aufgabe ist eine Fortführung der Aufgaben 13 und 15. Dort haben
+Sie Funktionen zum Bewegen einzelner Figuren (shapes) geschrieben. Ein Bild
+hingegen besteht aus einer Sammlung von Figuren. Um Bilder zeichnen,
+verschieben und löschen zu können ist es sinnvoll, alle Bildteile
+(Figuren) in einer Datenstruktur zusammen zu fassen. Da die Anzahl der
+Figuren eines Bildes von Bild zu Bild variieren kann, bietet es sich
+an, die Figuren eines Bildes in einer Liste zu verwalten. 
+</p>
+
+<ol class="org-ol">
+<li>Beschreiben Sie eine Datendefinition für Listen von Figuren.</li>
+<li><p>
+Erzeugen Sie eine Beispielliste (genannt face), die aus den Figuren
+der folgenden Tabelle besteht:
+</p>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">Figur</th>
+<th scope="col" class="org-left">Position</th>
+<th scope="col" class="org-left">Größen</th>
+<th scope="col" class="org-left">Farbe</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">circle</td>
+<td class="org-left">(50,50)</td>
+<td class="org-left">40</td>
+<td class="org-left">red</td>
+</tr>
+
+<tr>
+<td class="org-left">rectangle</td>
+<td class="org-left">(30,20)</td>
+<td class="org-left">5 × 5</td>
+<td class="org-left">blue</td>
+</tr>
+
+<tr>
+<td class="org-left">rectangle</td>
+<td class="org-left">(65,20)</td>
+<td class="org-left">5 × 5</td>
+<td class="org-left">blue</td>
+</tr>
+
+<tr>
+<td class="org-left">rectangle</td>
+<td class="org-left">(40,75)</td>
+<td class="org-left">20 × 10</td>
+<td class="org-left">red</td>
+</tr>
+
+<tr>
+<td class="org-left">rectangle</td>
+<td class="org-left">(45,35)</td>
+<td class="org-left">10 × 30</td>
+<td class="org-left">blue</td>
+</tr>
+</tbody>
+</table>
+
+<p>
+Die Tabelle setzt eine Zeichenfläche der Größe 300 x 100 voraus.
+</p></li>
+<li>Entwickeln Sie eine Funktionsschablone für figurenverarbeitende
+Funktionen.</li>
+<li>Entwickeln Sie auf der Grundlage dieser Funktionsschablone eine
+Funktion <code>draw-losh</code>, die eine Liste von Figuren als Argument
+erwartet und alle Elemente der Liste zeichnet und <code>#true</code> zurückliefert.</li>
+<li>Entwickeln Sie eine Funktion <code>translate-losh</code>, die eine Liste von
+Figuren sowie eine <code>posn</code>-Struktur <code>delta</code> als Argumente akzeptiert
+und eine Liste von Figuren als Resultat liefert, in der alle
+Figuren der Argumentliste um <code>delta</code> verschoben sind. Die Funktion
+hat keinen Effekt auf der Zeichenfläche.</li>
+<li>Entwicklen Sie die Funktion <code>clear-losh</code>, die die eine Liste von Figuren als Argument
+erwartet und alle Elemente der Liste von der Zeichenfläche
+entfernt und <code>#true</code> zurückliefert.</li>
+<li>Entwicklen Sie die Funktion <code>draw-and-clear-picture</code>. Sie zeichnet
+ein Bild, wartet eine Weile und löscht anschließend das Bild von
+der Zeichenfläche.</li>
+<li><p>
+Entwicklen Sie die Funktion <code>move-picture</code>, die eine
+<code>posn</code>-Struktur <code>delta</code> und ein Bild als Argumente akzeptiert. Sie zeichnet
+ein Bild, wartet eine Weile und löscht anschließend das Bild von
+der Zeichenfläche. Sie liefert als Resultat das um <code>delta</code>
+verschobene Bild. 
+</p>
+
+<p>
+Testen Sie die Funktion z. B. so
+</p>
+<div class="org-src-container">
+<pre class="src src-scheme">   <span style="color: #707183;">(</span>start 500 100<span style="color: #707183;">)</span>
+
+   <span style="color: #707183;">(</span>draw-losh
+     <span style="color: #7388D6;">(</span>move-picture <span style="color: #909183;">(</span>make-posn -5 0<span style="color: #909183;">)</span>
+       <span style="color: #909183;">(</span>move-picture <span style="color: #709870;">(</span>make-pos 23 0<span style="color: #709870;">)</span>
+         <span style="color: #709870;">(</span>move-picture <span style="color: #907373;">(</span>make-pos 10 0<span style="color: #907373;">)</span> face<span style="color: #709870;">)</span><span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
+
+   <span style="color: #707183;">(</span>stop<span style="color: #707183;">)</span>
+</pre>
+</div></li>
+</ol>
+</div>
+</div>
 </div>
 <div id="postamble" class="status">
 <p class="author">Autor: Johannes Brauer</p>
-<p class="date">Created: 2021-02-16 Tue 14:34</p>
+<p class="date">Created: 2021-02-21 Sun 13:50</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
