@@ -3,10 +3,10 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="de" xml:lang="de">
 <head>
-<!-- 2021-02-21 Sun 13:50 -->
+<!-- 2021-03-05 Fri 13:21 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Aufgaben &#x2013; ausgewählte Lösungen</title>
+<title>Aufgaben</title>
 <meta name="generator" content="Org mode" />
 <meta name="author" content="Johannes Brauer" />
 <style type="text/css">
@@ -268,7 +268,7 @@ for the JavaScript code in this tag.
 </head>
 <body>
 <div id="content">
-<h1 class="title">Aufgaben &#x2013; ausgewählte Lösungen
+<h1 class="title">Aufgaben
 <br />
 <span class="subtitle">Einführung in die Programmierung</span>
 </h1>
@@ -276,44 +276,48 @@ for the JavaScript code in this tag.
 <h2>Inhaltsverzeichnis</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#orgd2632e1">1. Erste Schritte in Racket</a></li>
-<li><a href="#org23664bb">2. Auswertung arithmetischer Ausdrücke</a></li>
-<li><a href="#org3880d7e">3. Aufschreiben elementarer Funktionen</a></li>
-<li><a href="#org869fd0a">4. Aufschreiben elementarer Funktionen</a></li>
-<li><a href="#orged4fa92">5. Anwenden der Aufschreibregeln</a></li>
-<li><a href="#org802c888">6. Profit für den Kinobesitzer</a></li>
-<li><a href="#org40777b0">7. Modifikation von <code>kino.rkt</code></a></li>
-<li><a href="#org6443ec5">8. Einsatz von Hilfsfunktionen</a></li>
-<li><a href="#orga65bd51">9. Ersetzungsmodell</a></li>
-<li><a href="#orgb6737f1">10. Bedingte Funktion</a></li>
-<li><a href="#org4836edd">11. Zusatzaufgaben zu bedingten Funktionen</a></li>
+<li><a href="#org1ef6633">1. Erste Schritte in Racket</a></li>
+<li><a href="#orgc2462b5">2. Auswertung arithmetischer Ausdrücke</a></li>
+<li><a href="#org9736d54">3. Aufschreiben elementarer Funktionen</a></li>
+<li><a href="#org54b36d6">4. Aufschreiben elementarer Funktionen</a></li>
+<li><a href="#org18e2a42">5. Anwenden der Aufschreibregeln</a></li>
+<li><a href="#org5dd2960">6. Profit für den Kinobesitzer</a></li>
+<li><a href="#org9db61b8">7. Modifikation von <code>kino.rkt</code></a></li>
+<li><a href="#org582d897">8. Einsatz von Hilfsfunktionen</a></li>
+<li><a href="#orga0f8718">9. Ersetzungsmodell</a></li>
+<li><a href="#org5254a14">10. Bedingte Funktion</a></li>
+<li><a href="#org2ea780c">11. Zusatzaufgaben zu bedingten Funktionen</a></li>
 <li><a href="#datenabstraktion">12. Datenabstraktion</a></li>
-<li><a href="#orga7f5e27">13. Datenabstraktion &#x2013; Zusatzaufgabe</a>
+<li><a href="#orga3410f7">13. Datenabstraktion &#x2013; Zusatzaufgabe</a>
 <ul>
-<li><a href="#orgc0581e1">13.1. Vorbemerkungen</a></li>
-<li><a href="#orga149b8c">13.2. Aufgabenstellungen</a></li>
+<li><a href="#org322a2cc">13.1. Vorbemerkungen</a></li>
+<li><a href="#orge19c620">13.2. Aufgabenstellungen</a></li>
 </ul>
 </li>
-<li><a href="#orgb08aa8f">14. Datenabstraktion &#x2013; gemischte Daten</a></li>
-<li><a href="#org80192f4">15. Datenabstraktion &#x2013; gemischte Daten &#x2013; Zusatzaufgabe</a>
+<li><a href="#org3b8d6f0">14. Datenabstraktion &#x2013; gemischte Daten</a></li>
+<li><a href="#org184c3ff">15. Datenabstraktion &#x2013; gemischte Daten &#x2013; Zusatzaufgabe</a>
 <ul>
-<li><a href="#org46967e3">15.1. Vorbemerkung</a></li>
-<li><a href="#org5799c76">15.2. Aufgabenstellungen</a></li>
+<li><a href="#orga106aa1">15.1. Vorbemerkung</a></li>
+<li><a href="#org23b03b7">15.2. Aufgabenstellungen</a></li>
 </ul>
 </li>
 <li><a href="#listenkonstruktion">16. Listenkonstruktion und -zerlegung</a></li>
 <li><a href="#listenverarbeitung">17. Listenverarbeitung</a></li>
-<li><a href="#orgd56b740">18. Funktionen über zwei Listen</a></li>
+<li><a href="#org9ce64ce">18. Funktionen über zwei Listen</a></li>
 <li><a href="#formaleaspekte">19. Formale Aspekte</a></li>
-<li><a href="#orgbb0c22e">20. Lokale Definitionen</a></li>
-<li><a href="#orga9ee582">21. Listen über gemischten Daten (Zusatzaufgabe)</a></li>
+<li><a href="#org7e5caa5">20. Lokale Definitionen</a></li>
+<li><a href="#org9baab6d">21. Listen über gemischten Daten (Zusatzaufgabe)</a></li>
+<li><a href="#akkumulierendeparameter">22. Hilfsfunktionen mit akkumulierenden Parametern</a></li>
+<li><a href="#abstraktionvonfunktionen">23. Abstraktion von Funktionen</a></li>
+<li><a href="#fho">24. Anwendung von <code>map</code>, <code>filter</code> und <code>foldr</code></a></li>
+<li><a href="#org2f8a4c5">25. Definition von Funktionen höherer Ordnung</a></li>
 </ul>
 </div>
 </div>
 
 
-<div id="outline-container-orgd2632e1" class="outline-2">
-<h2 id="orgd2632e1"><span class="section-number-2">1</span> Erste Schritte in Racket</h2>
+<div id="outline-container-org1ef6633" class="outline-2">
+<h2 id="org1ef6633"><span class="section-number-2">1</span> Erste Schritte in Racket</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 Machen Sie sich mit den NORDAKADEMIE-Rechnern vertraut und richten Sie
@@ -340,8 +344,8 @@ finden Sie alle vordefinierten mathematischen Funktionen?
 </div>
 </div>
 
-<div id="outline-container-org23664bb" class="outline-2">
-<h2 id="org23664bb"><span class="section-number-2">2</span> Auswertung arithmetischer Ausdrücke</h2>
+<div id="outline-container-orgc2462b5" class="outline-2">
+<h2 id="orgc2462b5"><span class="section-number-2">2</span> Auswertung arithmetischer Ausdrücke</h2>
 <div class="outline-text-2" id="text-2">
 <ol class="org-ol">
 <li>Wie wird der Ausdruck<br />
@@ -360,8 +364,8 @@ Werten Sie die folgenden Ausdrücke aus und vergleichen Sie die Resultate:
 </div>
 </div>
 
-<div id="outline-container-org3880d7e" class="outline-2">
-<h2 id="org3880d7e"><span class="section-number-2">3</span> Aufschreiben elementarer Funktionen</h2>
+<div id="outline-container-org9736d54" class="outline-2">
+<h2 id="org9736d54"><span class="section-number-2">3</span> Aufschreiben elementarer Funktionen</h2>
 <div class="outline-text-2" id="text-3">
 <p>
 Schreiben Sie für die folgenden mathematischen Formeln Racket-Funktions&#x00ad;definitionen auf:
@@ -403,8 +407,8 @@ Funktionsaufrufe für diese Funktionen ein.
 </p>
 </div>
 </div>
-<div id="outline-container-org869fd0a" class="outline-2">
-<h2 id="org869fd0a"><span class="section-number-2">4</span> Aufschreiben elementarer Funktionen</h2>
+<div id="outline-container-org54b36d6" class="outline-2">
+<h2 id="org54b36d6"><span class="section-number-2">4</span> Aufschreiben elementarer Funktionen</h2>
 <div class="outline-text-2" id="text-4">
 <p>
 In der Praxis findet der Programmierer selten mathematische Formeln
@@ -499,8 +503,8 @@ Hinweis: Ein Aufruf <code>(expt x y)</code> liefert \(x^y\) als Ergebnis.
 </div>
 </div>
 
-<div id="outline-container-orged4fa92" class="outline-2">
-<h2 id="orged4fa92"><span class="section-number-2">5</span> Anwenden der Aufschreibregeln</h2>
+<div id="outline-container-org18e2a42" class="outline-2">
+<h2 id="org18e2a42"><span class="section-number-2">5</span> Anwenden der Aufschreibregeln</h2>
 <div class="outline-text-2" id="text-5">
 <p>
 Schreiben Sie die Funktion zur Berechnung der Bahnhofsmiete in
@@ -526,8 +530,8 @@ folgenden Aufgaben gemäß diesen Regeln aufzuschreiben!!!</b>
 </div>
 </div>
 
-<div id="outline-container-org802c888" class="outline-2">
-<h2 id="org802c888"><span class="section-number-2">6</span> Profit für den Kinobesitzer</h2>
+<div id="outline-container-org5dd2960" class="outline-2">
+<h2 id="org5dd2960"><span class="section-number-2">6</span> Profit für den Kinobesitzer</h2>
 <div class="outline-text-2" id="text-6">
 <p>
 Ein altmodisches Vorstadtkino besitzt eine einfache Formel für die
@@ -551,8 +555,8 @@ Berechnung des Profits bei gegebener Besucherzahl.
 </div>
 </div>
 </div>
-<div id="outline-container-org40777b0" class="outline-2">
-<h2 id="org40777b0"><span class="section-number-2">7</span> Modifikation von <code>kino.rkt</code></h2>
+<div id="outline-container-org9db61b8" class="outline-2">
+<h2 id="org9db61b8"><span class="section-number-2">7</span> Modifikation von <code>kino.rkt</code></h2>
 <div class="outline-text-2" id="text-7">
 <ol class="org-ol">
 <li>Modifizieren Sie das Programm <code>kino.rkt</code> so, dass die Fixkosten
@@ -565,8 +569,8 @@ vergleichen Sie die Ergebnisse.</li>
 </div>
 </div>
 
-<div id="outline-container-org6443ec5" class="outline-2">
-<h2 id="org6443ec5"><span class="section-number-2">8</span> Einsatz von Hilfsfunktionen</h2>
+<div id="outline-container-org582d897" class="outline-2">
+<h2 id="org582d897"><span class="section-number-2">8</span> Einsatz von Hilfsfunktionen</h2>
 <div class="outline-text-2" id="text-8">
 <p>
 Die folgenden Aufgaben sind unter Benutzung von Hilfsfunktionen zu
@@ -641,8 +645,8 @@ Wandstärke und die Länge des Rohrs.</li>
 </div>
 </div>
 
-<div id="outline-container-orga65bd51" class="outline-2">
-<h2 id="orga65bd51"><span class="section-number-2">9</span> Ersetzungsmodell</h2>
+<div id="outline-container-orga0f8718" class="outline-2">
+<h2 id="orga0f8718"><span class="section-number-2">9</span> Ersetzungsmodell</h2>
 <div class="outline-text-2" id="text-9">
 <p>
 Gegeben sei die folgende Funktionsdefinition:
@@ -723,32 +727,13 @@ Ausführlich:
     = <span style="color: #707183;">(</span>+ 117 361<span style="color: #707183;">)</span>
     = 478
 </pre>
-</div>
-<p>
-Als Alternative hier noch eine Schreibarbeit sparende Lösung von Alessandra Blank:
-</p>
-<div class="org-src-container">
-<pre class="src src-scheme"><span style="color: #8D8D84;">; </span><span style="color: #8D8D84; font-style: italic;">Nebenrechnung f&#252;r x:</span>
-  sei x = <span style="color: #707183;">(</span>f 1 <span style="color: #7388D6;">(</span>* 2 3<span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
-  x = <span style="color: #707183;">(</span>f 1 6<span style="color: #707183;">)</span>
-    = <span style="color: #707183;">(</span><span style="color: #7388D6;">(</span><span style="color: #0000FF;">lambda</span> <span style="color: #909183;">[</span>x y<span style="color: #909183;">]</span> <span style="color: #909183;">(</span>+ <span style="color: #709870;">(</span>* 3 x<span style="color: #709870;">)</span> <span style="color: #709870;">(</span>* y y<span style="color: #709870;">)</span><span style="color: #909183;">)</span><span style="color: #7388D6;">)</span> 1 6<span style="color: #707183;">)</span>
-    = <span style="color: #707183;">(</span>+ <span style="color: #7388D6;">(</span>* 3 1<span style="color: #7388D6;">)</span> <span style="color: #7388D6;">(</span>* 6 6<span style="color: #7388D6;">)</span>
-    = <span style="color: #7388D6;">(</span>+ 3 36<span style="color: #7388D6;">)</span>
-   x = 39
-
-  <span style="color: #7388D6;">(</span>f 39 19<span style="color: #7388D6;">)</span>
-  = <span style="color: #7388D6;">(</span><span style="color: #909183;">(</span><span style="color: #0000FF;">lambda</span> <span style="color: #709870;">[</span>x y<span style="color: #709870;">]</span> <span style="color: #709870;">(</span>+ <span style="color: #907373;">(</span>* 3 x<span style="color: #907373;">)</span> <span style="color: #907373;">(</span>* y y<span style="color: #907373;">)</span><span style="color: #709870;">)</span><span style="color: #909183;">)</span> 39 19<span style="color: #7388D6;">)</span>
-  = <span style="color: #7388D6;">(</span>+ <span style="color: #909183;">(</span>* 3 39<span style="color: #909183;">)</span> <span style="color: #909183;">(</span>* 19 19<span style="color: #909183;">)</span><span style="color: #7388D6;">)</span>
-  = <span style="color: #7388D6;">(</span>+ 117 361<span style="color: #7388D6;">)</span>
-  = 478
-</pre>
 </div></li>
 </ol>
 </div>
 </div>
 
-<div id="outline-container-orgb6737f1" class="outline-2">
-<h2 id="orgb6737f1"><span class="section-number-2">10</span> Bedingte Funktion</h2>
+<div id="outline-container-org5254a14" class="outline-2">
+<h2 id="org5254a14"><span class="section-number-2">10</span> Bedingte Funktion</h2>
 <div class="outline-text-2" id="text-10">
 <p>
 Schreiben Sie ein Programm, das aus dem Bruttoeinkommen eines
@@ -922,8 +907,8 @@ Konstanten, Regel 5) Gebrauch.</li>
 </div>
 </div>
 
-<div id="outline-container-org4836edd" class="outline-2">
-<h2 id="org4836edd"><span class="section-number-2">11</span> Zusatzaufgaben zu bedingten Funktionen</h2>
+<div id="outline-container-org2ea780c" class="outline-2">
+<h2 id="org2ea780c"><span class="section-number-2">11</span> Zusatzaufgaben zu bedingten Funktionen</h2>
 <div class="outline-text-2" id="text-11">
 <ol class="org-ol">
 <li><p>
@@ -1115,7 +1100,7 @@ vorausgesetzt \(b\neq 0\).
 </ol>
 </div>
 </div>
-<div id="outline-container-org15551fd" class="outline-2">
+<div id="outline-container-org567f834" class="outline-2">
 <h2 id="datenabstraktion"><span class="section-number-2">12</span> Datenabstraktion</h2>
 <div class="outline-text-2" id="text-datenabstraktion">
 <p>
@@ -1244,12 +1229,12 @@ weiblicher Vegetarier ist.
 </div>
 </div>
 
-<div id="outline-container-orga7f5e27" class="outline-2">
-<h2 id="orga7f5e27"><span class="section-number-2">13</span> Datenabstraktion &#x2013; Zusatzaufgabe</h2>
+<div id="outline-container-orga3410f7" class="outline-2">
+<h2 id="orga3410f7"><span class="section-number-2">13</span> Datenabstraktion &#x2013; Zusatzaufgabe</h2>
 <div class="outline-text-2" id="text-13">
 </div>
-<div id="outline-container-orgc0581e1" class="outline-3">
-<h3 id="orgc0581e1"><span class="section-number-3">13.1</span> Vorbemerkungen</h3>
+<div id="outline-container-org322a2cc" class="outline-3">
+<h3 id="org322a2cc"><span class="section-number-3">13.1</span> Vorbemerkungen</h3>
 <div class="outline-text-3" id="text-13-1">
 <p>
 In den Lehrsprachen von DrRacket gibt es ein vordefinierte
@@ -1341,8 +1326,8 @@ Mit <code>(stop)</code> wird die Zeichenfläche geschlossen.
 </div>
 </div>
 
-<div id="outline-container-orga149b8c" class="outline-3">
-<h3 id="orga149b8c"><span class="section-number-3">13.2</span> Aufgabenstellungen</h3>
+<div id="outline-container-orge19c620" class="outline-3">
+<h3 id="orge19c620"><span class="section-number-3">13.2</span> Aufgabenstellungen</h3>
 <div class="outline-text-3" id="text-13-2">
 <ol class="org-ol">
 <li>Experimentieren Sie mit den o. g. Funktionen.</li>
@@ -1529,8 +1514,8 @@ Das sei nur ein kleine Anregung für eigene „Animationen“.
 </div>
 </div>
 </div>
-<div id="outline-container-orgb08aa8f" class="outline-2">
-<h2 id="orgb08aa8f"><span class="section-number-2">14</span> Datenabstraktion &#x2013; gemischte Daten</h2>
+<div id="outline-container-org3b8d6f0" class="outline-2">
+<h2 id="org3b8d6f0"><span class="section-number-2">14</span> Datenabstraktion &#x2013; gemischte Daten</h2>
 <div class="outline-text-2" id="text-14">
 <p>
 Lösen Sie die Aufgabe unter Anwendung der passenden Regeln!
@@ -1655,12 +1640,12 @@ sich aus dem Grundgehalt und der monatlichen Sollarbeitszeit plus
 </div>
 </div>
 
-<div id="outline-container-org80192f4" class="outline-2">
-<h2 id="org80192f4"><span class="section-number-2">15</span> Datenabstraktion &#x2013; gemischte Daten &#x2013; Zusatzaufgabe</h2>
+<div id="outline-container-org184c3ff" class="outline-2">
+<h2 id="org184c3ff"><span class="section-number-2">15</span> Datenabstraktion &#x2013; gemischte Daten &#x2013; Zusatzaufgabe</h2>
 <div class="outline-text-2" id="text-15">
 </div>
-<div id="outline-container-org46967e3" class="outline-3">
-<h3 id="org46967e3"><span class="section-number-3">15.1</span> Vorbemerkung</h3>
+<div id="outline-container-orga106aa1" class="outline-3">
+<h3 id="orga106aa1"><span class="section-number-3">15.1</span> Vorbemerkung</h3>
 <div class="outline-text-3" id="text-15-1">
 <p>
 Diese Aufgabe stellt eine Fortführung von Aufgabe 13 dar. Falls Sie
@@ -1668,8 +1653,8 @@ diese noch nicht bearbeitet haben, sollten Sie zunächst damit beginnen.
 </p>
 </div>
 </div>
-<div id="outline-container-org5799c76" class="outline-3">
-<h3 id="org5799c76"><span class="section-number-3">15.2</span> Aufgabenstellungen</h3>
+<div id="outline-container-org23b03b7" class="outline-3">
+<h3 id="org23b03b7"><span class="section-number-3">15.2</span> Aufgabenstellungen</h3>
 <div class="outline-text-3" id="text-15-2">
 <ol class="org-ol">
 <li>Enwtickeln Sie eine Datenstrukturdefinition für farbige
@@ -1927,7 +1912,7 @@ Figuren verarbeiten, auf.</li>
 </div>
 </div>
 
-<div id="outline-container-org79b175e" class="outline-2">
+<div id="outline-container-org3ea4fa5" class="outline-2">
 <h2 id="listenkonstruktion"><span class="section-number-2">16</span> Listenkonstruktion und -zerlegung</h2>
 <div class="outline-text-2" id="text-listenkonstruktion">
 <p>
@@ -2143,7 +2128,7 @@ Werten Sie die folgenden Funktionsaufrufe aus:
 </table>
 </div>
 </div>
-<div id="outline-container-orgb82041b" class="outline-2">
+<div id="outline-container-org1d2ac0b" class="outline-2">
 <h2 id="listenverarbeitung"><span class="section-number-2">17</span> Listenverarbeitung</h2>
 <div class="outline-text-2" id="text-listenverarbeitung">
 <ol class="org-ol">
@@ -2618,7 +2603,7 @@ Zeichenkette und könnte z. B. so benutzt werden:
 </pre>
 </div></li>
 <li><p>
-<a id="org953203d"></a>Gegeben sei die Datenstrukturdefinition <code>gast</code> aus Aufgabe
+<a id="org9e22a2b"></a>Gegeben sei die Datenstrukturdefinition <code>gast</code> aus Aufgabe
 12 und z.&nbsp;B.  die folgende Gästeliste:
 </p>
 <div class="org-src-container">
@@ -2683,8 +2668,8 @@ eine Liste mit den weiblichen Gästen bildet.</li>
 </ol>
 </div>
 </div>
-<div id="outline-container-orgd56b740" class="outline-2">
-<h2 id="orgd56b740"><span class="section-number-2">18</span> Funktionen über zwei Listen</h2>
+<div id="outline-container-org9ce64ce" class="outline-2">
+<h2 id="org9ce64ce"><span class="section-number-2">18</span> Funktionen über zwei Listen</h2>
 <div class="outline-text-2" id="text-18">
 <p>
 Die in den folgenden Aufgaben zu entwickelnden Funktionen haben alle 2
@@ -2799,7 +2784,7 @@ auftauchen. Beispiel:
 </div>
 </div>
 
-<div id="outline-container-org5c8d581" class="outline-2">
+<div id="outline-container-orge4c8504" class="outline-2">
 <h2 id="formaleaspekte"><span class="section-number-2">19</span> Formale Aspekte</h2>
 <div class="outline-text-2" id="text-formaleaspekte">
 <ol class="org-ol">
@@ -2869,12 +2854,107 @@ Gegeben sei folgende Racket-Funktion
 <p>
 Zeigen Sie, dass der Aufruf <code>(f n)</code> für alle natürlichen Zahlen \[n >= 0\] die Zahl \[f(n)=\frac{n}{n+1}\]
 berechnet.
+</p>
+<p>
+Behauptung: 
+Der Aufruf (f n) liefert für jede natürliche Zahl \(n >= 0\) den Wert
+\(\frac{n}{n+1}\) als Resultat.
+</p>
+
+<p>
+Verankerung
+Der Aufruf (f 0) besitzt Rekursionstiefe 0 und liefert nach dem Ersetzungsmodell:
+</p>
+<div class="org-src-container">
+<pre class="src src-scheme">   <span style="color: #707183;">(</span>f 0<span style="color: #707183;">)</span>
+        = <span style="color: #707183;">(</span><span style="color: #7388D6;">(</span><span style="color: #0000FF;">lambda</span> <span style="color: #909183;">[</span>n<span style="color: #909183;">]</span>
+        <span style="color: #909183;">(</span><span style="color: #0000FF;">cond</span>
+          <span style="color: #709870;">[</span><span style="color: #907373;">(</span>= n 0<span style="color: #907373;">)</span> 0<span style="color: #709870;">]</span>
+          <span style="color: #709870;">[</span>else <span style="color: #907373;">(</span>+ <span style="color: #6276BA;">(</span>f <span style="color: #858580;">(</span>- n 1<span style="color: #858580;">)</span><span style="color: #6276BA;">)</span>
+                   <span style="color: #6276BA;">(</span>/ 1 <span style="color: #858580;">(</span>* n <span style="color: #80A880;">(</span>+ n 1<span style="color: #80A880;">)</span><span style="color: #858580;">)</span><span style="color: #6276BA;">)</span><span style="color: #907373;">)</span><span style="color: #709870;">]</span><span style="color: #909183;">)</span><span style="color: #7388D6;">)</span>
+          0<span style="color: #707183;">)</span>
+        = <span style="color: #707183;">(</span><span style="color: #0000FF;">cond</span>
+        <span style="color: #7388D6;">[</span><span style="color: #909183;">(</span>= 0 0<span style="color: #909183;">)</span> 0<span style="color: #7388D6;">]</span>
+        <span style="color: #7388D6;">[</span>else <span style="color: #909183;">(</span>+ <span style="color: #709870;">(</span>f <span style="color: #907373;">(</span>- 0 1<span style="color: #907373;">)</span><span style="color: #709870;">)</span>
+                 <span style="color: #709870;">(</span>/ 1 <span style="color: #907373;">(</span>* 0 <span style="color: #6276BA;">(</span>+ 0 1<span style="color: #6276BA;">)</span><span style="color: #907373;">)</span><span style="color: #709870;">)</span><span style="color: #909183;">)</span><span style="color: #7388D6;">]</span><span style="color: #707183;">)</span>
+        = <span style="color: #707183;">(</span><span style="color: #0000FF;">cond</span>
+            <span style="color: #7388D6;">[</span>true 0<span style="color: #7388D6;">]</span>
+                ...<span style="color: #707183;">)</span>
+        = 0
+</pre>
+</div>
+<p>
+= \(\frac{0}{0+1}\)
+</p>
+
+<p>
+Induktionsannahme:
+Die Behauptung gilt für eine Rekursionstiefe \(k = m\), d. h. \((f m)=\frac{m}{m+1}\). 
+</p>
+
+<p>
+Induktionsschluss:  
+Es ist zu zeigen, dass der Aufruf <code>(f (+ m 1))</code> den Wert 
+\(\frac{m+1}{m+2}\) als Resultat liefert. 
+</p>
+
+<p>
+Sei x = (+ m 1)
+</p>
+<div class="org-src-container">
+<pre class="src src-scheme">        <span style="color: #707183;">(</span>f x<span style="color: #707183;">)</span>
+        = <span style="color: #707183;">(</span><span style="color: #7388D6;">(</span><span style="color: #0000FF;">lambda</span> <span style="color: #909183;">[</span>n<span style="color: #909183;">]</span>
+             <span style="color: #909183;">(</span><span style="color: #0000FF;">cond</span> 
+           <span style="color: #709870;">[</span><span style="color: #907373;">(</span>= n 0<span style="color: #907373;">)</span> 0<span style="color: #709870;">]</span>
+           <span style="color: #709870;">[</span>else <span style="color: #907373;">(</span>+ <span style="color: #6276BA;">(</span>f <span style="color: #858580;">(</span>- n 1<span style="color: #858580;">)</span><span style="color: #6276BA;">)</span>
+                    <span style="color: #6276BA;">(</span>/ 1 <span style="color: #858580;">(</span>* n <span style="color: #80A880;">(</span>+ n 1<span style="color: #80A880;">)</span><span style="color: #858580;">)</span><span style="color: #6276BA;">)</span><span style="color: #907373;">)</span><span style="color: #709870;">]</span><span style="color: #909183;">)</span><span style="color: #7388D6;">)</span> x<span style="color: #707183;">)</span>
+        = <span style="color: #707183;">(</span><span style="color: #0000FF;">cond</span> 
+        <span style="color: #7388D6;">[</span><span style="color: #909183;">(</span>= x 0<span style="color: #909183;">)</span> 0<span style="color: #7388D6;">]</span>
+        <span style="color: #7388D6;">[</span>else <span style="color: #909183;">(</span>+ <span style="color: #709870;">(</span>f <span style="color: #907373;">(</span>- x 1<span style="color: #907373;">)</span><span style="color: #709870;">)</span>
+                 <span style="color: #709870;">(</span>/ 1 <span style="color: #907373;">(</span>* x <span style="color: #6276BA;">(</span>+ x 1<span style="color: #6276BA;">)</span><span style="color: #907373;">)</span><span style="color: #709870;">)</span><span style="color: #909183;">)</span><span style="color: #7388D6;">]</span><span style="color: #707183;">)</span>
+        = <span style="color: #707183;">(</span><span style="color: #0000FF;">cond</span>
+            <span style="color: #7388D6;">[</span>#false 0<span style="color: #7388D6;">]</span>                       x &gt; 0, da 
+                                                 x = m+1 und m &gt;= 0
+                ...<span style="color: #707183;">)</span>
+        = <span style="color: #707183;">(</span><span style="color: #0000FF;">cond</span>
+        <span style="color: #7388D6;">[</span>else <span style="color: #909183;">(</span>+ <span style="color: #709870;">(</span>f <span style="color: #907373;">(</span>- x 1<span style="color: #907373;">)</span><span style="color: #709870;">)</span>
+                 <span style="color: #709870;">(</span>/ 1 <span style="color: #907373;">(</span>* x <span style="color: #6276BA;">(</span>+ x 1<span style="color: #6276BA;">)</span><span style="color: #907373;">)</span><span style="color: #709870;">)</span><span style="color: #909183;">)</span><span style="color: #7388D6;">]</span><span style="color: #707183;">)</span>
+        = <span style="color: #707183;">(</span>+ <span style="color: #7388D6;">(</span>f <span style="color: #909183;">(</span>- x 1<span style="color: #909183;">)</span><span style="color: #7388D6;">)</span> <span style="color: #7388D6;">(</span>/ 1 <span style="color: #909183;">(</span>* x <span style="color: #709870;">(</span>+ x 1<span style="color: #709870;">)</span><span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
+        
+        Setze f&#252;r x wieder <span style="color: #707183;">(</span>+ m 1<span style="color: #707183;">)</span> ein: 
+        = <span style="color: #707183;">(</span>+ <span style="color: #7388D6;">(</span>f <span style="color: #909183;">(</span>- <span style="color: #709870;">(</span>+ m 1<span style="color: #709870;">)</span> 1<span style="color: #909183;">)</span><span style="color: #7388D6;">)</span> <span style="color: #7388D6;">(</span>/ 1 <span style="color: #909183;">(</span>* <span style="color: #709870;">(</span>+ m 1<span style="color: #709870;">)</span> <span style="color: #709870;">(</span>+ <span style="color: #907373;">(</span>+ m 1<span style="color: #907373;">)</span> 1<span style="color: #709870;">)</span><span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
+        
+        = <span style="color: #707183;">(</span>+ <span style="color: #7388D6;">(</span>f m<span style="color: #7388D6;">)</span> <span style="color: #7388D6;">(</span>/ 1 <span style="color: #909183;">(</span>* <span style="color: #709870;">(</span>+ m 1<span style="color: #709870;">)</span> <span style="color: #709870;">(</span>+ <span style="color: #907373;">(</span>+ m 1<span style="color: #907373;">)</span> 1<span style="color: #709870;">)</span><span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
+</pre>
+</div>
+
+<p>
+Wechsel auf die mathematische Notation:<br />
+\(= f(m) + \frac{1}{(m + 1) * (m + 2)}\) <br />
+Anwendung der Induktionsannahme:<br />
+\(= \frac{m}{m+1} + \frac{1}{(m + 1) * (m + 2)}\)
+</p>
+
+<p>
+\(= \frac{m \cdot (m + 2) + 1}{(m + 1) \cdot (m + 2)}\)
+</p>
+
+<p>
+\(= \frac{m^2 + 2m + 1}{(m + 1) \cdot (m + 2)}\)
+</p>
+
+<p>
+\(= \frac{(m + 1)^2}{(m + 1) \cdot (m + 2)}\)
+</p>
+
+<p>
+\(= \frac{m + 1}{m + 2}\)
 </p></li>
 </ol>
 </div>
 </div>
-<div id="outline-container-orgbb0c22e" class="outline-2">
-<h2 id="orgbb0c22e"><span class="section-number-2">20</span> Lokale Definitionen</h2>
+<div id="outline-container-org7e5caa5" class="outline-2">
+<h2 id="org7e5caa5"><span class="section-number-2">20</span> Lokale Definitionen</h2>
 <div class="outline-text-2" id="text-20">
 <ol class="org-ol">
 <li><p>
@@ -2997,12 +3077,119 @@ Hinweise:
 ’ERROR zurückgeliefert werden, das möglicherweise in einem
 korrekten Teil der Formel eingeschachtelt erscheint.</li>
 <li>Machen Sie ausgiebig von lokalen Definitionen Gebrauch.</li>
-</ul></li>
+</ul>
+<div class="org-src-container">
+<pre class="src src-scheme"><span style="color: #8D8D84;">;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;</span>
+<span style="color: #8D8D84;">;</span>
+<span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">Datenstrukturdefinition fuer Formeln: Eine formel ist</span>
+<span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">- numerisches Atom oder</span>
+<span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">- symbolisches Atom oder</span>
+<span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">- (add e1 e2) mit e1, e2 sind Formeln, oder</span>
+<span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">- (mul e1 e2) mit e1, e2 sind Formeln</span>
+
+<span style="color: #8D8D84;">;</span><span style="color: #8D8D84; font-style: italic;">Hilfsdefinitionen</span>
+<span style="color: #707183;">(</span><span style="color: #0000FF;">define</span> <span style="color: #006699;">addop</span> 'add<span style="color: #707183;">)</span>
+<span style="color: #707183;">(</span><span style="color: #0000FF;">define</span> <span style="color: #006699;">mulop</span> 'mul<span style="color: #707183;">)</span>
+
+<span style="color: #8D8D84;">;</span><span style="color: #8D8D84; font-style: italic;">ein paar Variablen</span>
+<span style="color: #707183;">(</span><span style="color: #0000FF;">define</span> <span style="color: #006699;">x</span> 'x<span style="color: #707183;">)</span>
+<span style="color: #707183;">(</span><span style="color: #0000FF;">define</span> <span style="color: #006699;">y</span> 'y<span style="color: #707183;">)</span>
+<span style="color: #707183;">(</span><span style="color: #0000FF;">define</span> <span style="color: #006699;">z</span> 'z<span style="color: #707183;">)</span>
+
+<span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">baut aus den beiden Argumenten eine Summenformel</span>
+<span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">add: formel formel -&gt; formel</span>
+<span style="color: #707183;">(</span>check-expect <span style="color: #7388D6;">(</span>add x y<span style="color: #7388D6;">)</span> '<span style="color: #7388D6;">(</span>add x y<span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
+<span style="color: #707183;">(</span><span style="color: #0000FF;">define</span> <span style="color: #006699;">add</span> 
+  <span style="color: #7388D6;">(</span><span style="color: #0000FF;">lambda</span> <span style="color: #909183;">[</span>u v<span style="color: #909183;">]</span>
+    <span style="color: #909183;">(</span>list addop u v<span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
+
+<span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">baut aus den beiden Argumenten eine Produktformel</span>
+<span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">mul: formel formel -&gt; formel</span>
+<span style="color: #707183;">(</span>check-expect <span style="color: #7388D6;">(</span>mul x y<span style="color: #7388D6;">)</span> '<span style="color: #7388D6;">(</span>mul x y<span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
+<span style="color: #707183;">(</span><span style="color: #0000FF;">define</span> <span style="color: #006699;">mul</span> 
+  <span style="color: #7388D6;">(</span><span style="color: #0000FF;">lambda</span> <span style="color: #909183;">[</span>u v<span style="color: #909183;">]</span>
+    <span style="color: #909183;">(</span>list mulop u v<span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
+
+<span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">bildet die erste Ableitung der Formel exp nach der Variablen var.</span>
+<span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">Regeln s. Aufgabenblatt</span>
+<span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">diff: formel symbol -&gt; formel</span>
+<span style="color: #707183;">(</span>check-expect <span style="color: #7388D6;">(</span>diff 1 x<span style="color: #7388D6;">)</span> 0<span style="color: #707183;">)</span>
+<span style="color: #707183;">(</span>check-expect <span style="color: #7388D6;">(</span>diff x x<span style="color: #7388D6;">)</span> 1<span style="color: #707183;">)</span>
+<span style="color: #707183;">(</span>check-expect <span style="color: #7388D6;">(</span>diff y x<span style="color: #7388D6;">)</span> 0<span style="color: #707183;">)</span>
+<span style="color: #707183;">(</span>check-expect <span style="color: #7388D6;">(</span>diff '<span style="color: #909183;">(</span>add x x<span style="color: #909183;">)</span> x<span style="color: #7388D6;">)</span> '<span style="color: #7388D6;">(</span>add 1 1<span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
+<span style="color: #707183;">(</span>check-expect <span style="color: #7388D6;">(</span>diff '<span style="color: #909183;">(</span>mul x x<span style="color: #909183;">)</span> 'x<span style="color: #7388D6;">)</span> '<span style="color: #7388D6;">(</span>add <span style="color: #909183;">(</span>mul x 1<span style="color: #909183;">)</span> <span style="color: #909183;">(</span>mul 1 x<span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
+<span style="color: #707183;">(</span><span style="color: #0000FF;">define</span> <span style="color: #006699;">diff</span> 
+  <span style="color: #7388D6;">(</span><span style="color: #0000FF;">lambda</span> <span style="color: #909183;">[</span>exp var<span style="color: #909183;">]</span>
+    <span style="color: #909183;">(</span><span style="color: #0000FF;">let*</span> 
+        <span style="color: #709870;">[</span><span style="color: #907373;">(</span>operand-1 
+          <span style="color: #6276BA;">(</span><span style="color: #0000FF;">lambda</span> <span style="color: #858580;">[</span>s<span style="color: #858580;">]</span> <span style="color: #858580;">(</span>first <span style="color: #80A880;">(</span>rest s<span style="color: #80A880;">)</span><span style="color: #858580;">)</span><span style="color: #6276BA;">)</span><span style="color: #907373;">)</span>
+         <span style="color: #907373;">(</span>operand-2 
+          <span style="color: #6276BA;">(</span><span style="color: #0000FF;">lambda</span> <span style="color: #858580;">[</span>s<span style="color: #858580;">]</span> <span style="color: #858580;">(</span>first <span style="color: #80A880;">(</span>rest <span style="color: #887070;">(</span>rest s<span style="color: #887070;">)</span><span style="color: #80A880;">)</span><span style="color: #858580;">)</span><span style="color: #6276BA;">)</span><span style="color: #907373;">)</span>
+         <span style="color: #907373;">(</span>variable? symbol?<span style="color: #907373;">)</span>
+         <span style="color: #907373;">(</span>same-variable? equal?<span style="color: #907373;">)</span>
+         <span style="color: #907373;">(</span>add? <span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">prueft, ob formula eine Summe ist</span>
+          <span style="color: #6276BA;">(</span><span style="color: #0000FF;">lambda</span> <span style="color: #858580;">[</span>formula<span style="color: #858580;">]</span>
+            <span style="color: #858580;">(</span><span style="color: #0000FF;">and</span> <span style="color: #80A880;">(</span>cons? formula<span style="color: #80A880;">)</span> <span style="color: #80A880;">(</span>equal? <span style="color: #887070;">(</span>first formula<span style="color: #887070;">)</span> addop<span style="color: #80A880;">)</span><span style="color: #858580;">)</span><span style="color: #6276BA;">)</span><span style="color: #907373;">)</span>
+         <span style="color: #907373;">(</span>mul? <span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">prueft, ob formula ein Produkt ist</span>
+          <span style="color: #6276BA;">(</span><span style="color: #0000FF;">lambda</span> <span style="color: #858580;">[</span>formula<span style="color: #858580;">]</span>
+            <span style="color: #858580;">(</span><span style="color: #0000FF;">and</span> <span style="color: #80A880;">(</span>cons? formula<span style="color: #80A880;">)</span> <span style="color: #80A880;">(</span>equal? <span style="color: #887070;">(</span>first formula<span style="color: #887070;">)</span> mulop<span style="color: #80A880;">)</span><span style="color: #858580;">)</span><span style="color: #6276BA;">)</span><span style="color: #907373;">)</span><span style="color: #709870;">]</span>
+      <span style="color: #709870;">(</span><span style="color: #0000FF;">cond</span> <span style="color: #907373;">[</span><span style="color: #6276BA;">(</span>number? exp<span style="color: #6276BA;">)</span> 0<span style="color: #907373;">]</span>
+            <span style="color: #907373;">[</span><span style="color: #6276BA;">(</span>variable? exp<span style="color: #6276BA;">)</span>
+             <span style="color: #6276BA;">(</span><span style="color: #0000FF;">if</span> <span style="color: #858580;">(</span>same-variable? exp var<span style="color: #858580;">)</span> 1 0<span style="color: #6276BA;">)</span><span style="color: #907373;">]</span>
+            <span style="color: #907373;">[</span><span style="color: #6276BA;">(</span>add? exp<span style="color: #6276BA;">)</span>
+             <span style="color: #6276BA;">(</span>add <span style="color: #858580;">(</span>diff <span style="color: #80A880;">(</span>operand-1 exp<span style="color: #80A880;">)</span> var<span style="color: #858580;">)</span>
+                  <span style="color: #858580;">(</span>diff <span style="color: #80A880;">(</span>operand-2 exp<span style="color: #80A880;">)</span> var<span style="color: #858580;">)</span><span style="color: #6276BA;">)</span><span style="color: #907373;">]</span>
+            <span style="color: #907373;">[</span><span style="color: #6276BA;">(</span>mul? exp<span style="color: #6276BA;">)</span>
+             <span style="color: #6276BA;">(</span>add
+              <span style="color: #858580;">(</span>mul <span style="color: #80A880;">(</span>operand-1 exp<span style="color: #80A880;">)</span>
+                    <span style="color: #80A880;">(</span>diff <span style="color: #887070;">(</span>operand-2 exp<span style="color: #887070;">)</span> var<span style="color: #80A880;">)</span><span style="color: #858580;">)</span>
+              <span style="color: #858580;">(</span>mul <span style="color: #80A880;">(</span>diff <span style="color: #887070;">(</span>operand-1 exp<span style="color: #887070;">)</span> var<span style="color: #80A880;">)</span>
+                    <span style="color: #80A880;">(</span>operand-2 exp<span style="color: #80A880;">)</span><span style="color: #858580;">)</span><span style="color: #6276BA;">)</span><span style="color: #907373;">]</span>
+         <span style="color: #907373;">[</span>else 'Error<span style="color: #907373;">]</span><span style="color: #709870;">)</span><span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
+
+<span style="color: #8D8D84;">;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;</span>
+<span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">L&#246;sung mit Vereinfachung der abgeleiteten Ausdr&#252;cke        ;;</span>
+<span style="color: #8D8D84;">;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;</span>
+
+<span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">Ersetze die obigen Funktionen add und mul durch die folgenden:</span>
+<span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">nimmt primitive Vereinfachungen einer Summenformel vor; eine Summenformel</span>
+<span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">vereinfacht sich quasi selbst</span>
+<span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">add: formel formel -&gt; formel</span>
+<span style="color: #707183;">(</span>check-expect <span style="color: #7388D6;">(</span>add x 0<span style="color: #7388D6;">)</span> x<span style="color: #707183;">)</span>
+<span style="color: #707183;">(</span>check-expect <span style="color: #7388D6;">(</span>add 0 x<span style="color: #7388D6;">)</span> x<span style="color: #707183;">)</span>
+<span style="color: #707183;">(</span>check-expect <span style="color: #7388D6;">(</span>add 2 3<span style="color: #7388D6;">)</span> 5<span style="color: #707183;">)</span>
+<span style="color: #707183;">(</span>check-expect <span style="color: #7388D6;">(</span>add x y<span style="color: #7388D6;">)</span> '<span style="color: #7388D6;">(</span>add x y<span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
+<span style="color: #707183;">(</span><span style="color: #0000FF;">define</span> <span style="color: #006699;">add</span> 
+  <span style="color: #7388D6;">(</span><span style="color: #0000FF;">lambda</span> <span style="color: #909183;">[</span>x y<span style="color: #909183;">]</span>
+    <span style="color: #909183;">(</span><span style="color: #0000FF;">cond</span>
+      <span style="color: #709870;">[</span><span style="color: #907373;">(</span>equal? x 0<span style="color: #907373;">)</span> y<span style="color: #709870;">]</span>
+      <span style="color: #709870;">[</span><span style="color: #907373;">(</span>equal? y 0<span style="color: #907373;">)</span> x<span style="color: #709870;">]</span>
+      <span style="color: #709870;">[</span><span style="color: #907373;">(</span><span style="color: #0000FF;">and</span> <span style="color: #6276BA;">(</span>number? x<span style="color: #6276BA;">)</span> <span style="color: #6276BA;">(</span>number? y<span style="color: #6276BA;">)</span><span style="color: #907373;">)</span> <span style="color: #907373;">(</span>+ x y<span style="color: #907373;">)</span><span style="color: #709870;">]</span> 
+      <span style="color: #709870;">[</span>else <span style="color: #907373;">(</span>list 'add x y<span style="color: #907373;">)</span><span style="color: #709870;">]</span><span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
+
+<span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">mul: exp exp -&gt; exp</span>
+<span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">nimmt primitive Vereinfachungen einer Produktformel vor; eine Produktformel</span>
+<span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">vereinfacht sich quasi selbst</span>
+<span style="color: #707183;">(</span>check-expect <span style="color: #7388D6;">(</span>mul x 0<span style="color: #7388D6;">)</span> 0<span style="color: #707183;">)</span>
+<span style="color: #707183;">(</span>check-expect <span style="color: #7388D6;">(</span>mul x 1<span style="color: #7388D6;">)</span> x<span style="color: #707183;">)</span>
+<span style="color: #707183;">(</span>check-expect <span style="color: #7388D6;">(</span>mul 1 x<span style="color: #7388D6;">)</span> x<span style="color: #707183;">)</span>
+<span style="color: #707183;">(</span>check-expect <span style="color: #7388D6;">(</span>mul 2 3<span style="color: #7388D6;">)</span> 6<span style="color: #707183;">)</span>
+<span style="color: #707183;">(</span>check-expect <span style="color: #7388D6;">(</span>mul x y<span style="color: #7388D6;">)</span> '<span style="color: #7388D6;">(</span>mul x y<span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
+<span style="color: #707183;">(</span><span style="color: #0000FF;">define</span> <span style="color: #006699;">mul</span>
+  <span style="color: #7388D6;">(</span><span style="color: #0000FF;">lambda</span> <span style="color: #909183;">[</span>x y<span style="color: #909183;">]</span> 
+    <span style="color: #909183;">(</span><span style="color: #0000FF;">cond</span>
+      <span style="color: #709870;">[</span><span style="color: #907373;">(</span><span style="color: #0000FF;">or</span> <span style="color: #6276BA;">(</span>equal? x 0<span style="color: #6276BA;">)</span> <span style="color: #6276BA;">(</span>equal? y 0<span style="color: #6276BA;">)</span><span style="color: #907373;">)</span> 0<span style="color: #709870;">]</span>
+      <span style="color: #709870;">[</span><span style="color: #907373;">(</span>equal? y 1<span style="color: #907373;">)</span> x<span style="color: #709870;">]</span>
+      <span style="color: #709870;">[</span><span style="color: #907373;">(</span>equal? x 1<span style="color: #907373;">)</span> y<span style="color: #709870;">]</span>
+      <span style="color: #709870;">[</span><span style="color: #907373;">(</span><span style="color: #0000FF;">and</span> <span style="color: #6276BA;">(</span>number? x<span style="color: #6276BA;">)</span> <span style="color: #6276BA;">(</span>number? y<span style="color: #6276BA;">)</span><span style="color: #907373;">)</span> <span style="color: #907373;">(</span>* x y<span style="color: #907373;">)</span><span style="color: #709870;">]</span>
+      <span style="color: #709870;">[</span>else <span style="color: #907373;">(</span>list 'mul x y<span style="color: #907373;">)</span><span style="color: #709870;">]</span><span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
+</pre>
+</div></li>
 </ol>
 </div>
 </div>
-<div id="outline-container-orga9ee582" class="outline-2">
-<h2 id="orga9ee582"><span class="section-number-2">21</span> Listen über gemischten Daten (Zusatzaufgabe)</h2>
+<div id="outline-container-org9baab6d" class="outline-2">
+<h2 id="org9baab6d"><span class="section-number-2">21</span> Listen über gemischten Daten (Zusatzaufgabe)</h2>
 <div class="outline-text-2" id="text-21">
 <p>
 Diese Aufgabe ist eine Fortführung der Aufgaben 13 und 15. Dort haben
@@ -3123,10 +3310,531 @@ Testen Sie die Funktion z. B. so
 </ol>
 </div>
 </div>
+<div id="outline-container-org1d0b7f7" class="outline-2">
+<h2 id="akkumulierendeparameter"><span class="section-number-2">22</span> Hilfsfunktionen mit akkumulierenden Parametern</h2>
+<div class="outline-text-2" id="text-akkumulierendeparameter">
+<ol class="org-ol">
+<li><p>
+Schreiben Sie die Funktion <code>sum</code>, die die Summe der
+Elemente einer Liste von Zahlen berechnet, unter Benutzung einer
+Hilfsfunktion mit akkumulierendem Parameter.  Verwenden Sie die
+Funktionsschablone aus der Vorlesung.  Formulieren Sie die
+Akkumulatorinvariante.
+</p>
+<div class="org-src-container">
+<pre class="src src-scheme"><span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">berechnet die Summe einer Liste von Zahlen</span>
+<span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">sum: (list-of number) -&gt; number</span>
+<span style="color: #707183;">(</span>check-expect <span style="color: #7388D6;">(</span>sum '<span style="color: #909183;">(</span>1 2 3<span style="color: #909183;">)</span><span style="color: #7388D6;">)</span> 6<span style="color: #707183;">)</span>
+<span style="color: #707183;">(</span><span style="color: #0000FF;">define</span> <span style="color: #006699;">sum</span>
+  <span style="color: #7388D6;">(</span><span style="color: #0000FF;">lambda</span> <span style="color: #909183;">[</span>alon<span style="color: #909183;">]</span>
+    <span style="color: #909183;">(</span><span style="color: #0000FF;">letrec</span>
+        <span style="color: #709870;">[</span><span style="color: #907373;">(</span><span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">Akkumulatorinvariante:</span>
+          <span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">accu enth&#228;lt die Summe der Elemente aus alon, </span>
+          <span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">die denen aus alon1 vorangehen</span>
+          sum-acc
+          <span style="color: #6276BA;">(</span><span style="color: #0000FF;">lambda</span> <span style="color: #858580;">[</span>alon1 accu<span style="color: #858580;">]</span>
+            <span style="color: #858580;">(</span><span style="color: #0000FF;">cond</span>
+              <span style="color: #80A880;">[</span><span style="color: #887070;">(</span>empty? alon1<span style="color: #887070;">)</span> accu<span style="color: #80A880;">]</span>
+              <span style="color: #80A880;">[</span>else 
+               <span style="color: #887070;">(</span>sum-acc <span style="color: #707183;">(</span>rest alon1<span style="color: #707183;">)</span> <span style="color: #707183;">(</span>+ <span style="color: #7388D6;">(</span>first alon1<span style="color: #7388D6;">)</span> accu<span style="color: #707183;">)</span><span style="color: #887070;">)</span><span style="color: #80A880;">]</span><span style="color: #858580;">)</span><span style="color: #6276BA;">)</span><span style="color: #907373;">)</span><span style="color: #709870;">]</span>
+      <span style="color: #709870;">(</span>sum-acc alon 0<span style="color: #709870;">)</span><span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
+</pre>
+</div></li>
+
+<li><p>
+Gegeben ist ein Weg in einem ungerichteten Graphen, dessen 
+Knoten Orte repräsentieren und dessen Kanten mit den Entfernungen 
+zwischen den Orten attributiert sind, z. B. so:
+</p>
+
+
+<div class="figure">
+<p><img src="./Abbildungen/entfernungen.png" alt="entfernungen.png" />
+</p>
+</div>
+
+<p>
+Entwickeln Sie eine Funktion, die aus einer Liste mit relativen 
+Entfernungen eine Liste mit den absoluten Entfernungen der Orte 
+vom Ursprungsort berechnet. Für den obigen Graphen soll also aus 
+der Liste (120 90 70 65) die Liste (120 210 280 345) werden.
+</p>
+<ol class="org-ol">
+<li>Entwickeln Sie zunächst eine Funktion (ggf. mit Hilfsfunktion)
+nach den bekannten Regeln (ohne akkumulierende
+Parameter).</li>
+<li>Diskutieren Sie, warum eine Hilfsfunktion mit akkumulierendem
+Parameter sinnvoll ist.</li>
+<li>Entwickeln Sie eine solche.</li>
+</ol>
+<div class="org-src-container">
+<pre class="src src-scheme"><span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">L&#246;sung ohne akkumulierenden Parameter</span>
+<span style="color: #8D8D84;">; </span><span style="color: #8D8D84; font-style: italic;">(define relativ-&gt;absolut</span>
+<span style="color: #8D8D84;">;   </span><span style="color: #8D8D84; font-style: italic;">(lambda [lvz]</span>
+<span style="color: #8D8D84;">;     </span><span style="color: #8D8D84; font-style: italic;">(cond</span>
+<span style="color: #8D8D84;">;       </span><span style="color: #8D8D84; font-style: italic;">[(empty? lvz) empty]</span>
+<span style="color: #8D8D84;">;       </span><span style="color: #8D8D84; font-style: italic;">[else </span>
+<span style="color: #8D8D84;">;        </span><span style="color: #8D8D84; font-style: italic;">(cons (first lvz)</span>
+<span style="color: #8D8D84;">;              </span><span style="color: #8D8D84; font-style: italic;">(addiere-auf-jede (first lvz) </span>
+<span style="color: #8D8D84;">;                                </span><span style="color: #8D8D84; font-style: italic;">(relativ-&gt;absolut (rest lvz))))])))</span>
+<span style="color: #8D8D84;">; </span>
+<span style="color: #8D8D84;">; </span><span style="color: #8D8D84; font-style: italic;">(define addiere-auf-jede </span>
+<span style="color: #8D8D84;">;   </span><span style="color: #8D8D84; font-style: italic;">(lambda [zahl lvz]</span>
+<span style="color: #8D8D84;">;     </span><span style="color: #8D8D84; font-style: italic;">(cond</span>
+<span style="color: #8D8D84;">;       </span><span style="color: #8D8D84; font-style: italic;">[(empty? lvz) empty]</span>
+<span style="color: #8D8D84;">;       </span><span style="color: #8D8D84; font-style: italic;">[else (cons (+ (first lvz) zahl) (addiere-auf-jede zahl </span>
+<span style="color: #8D8D84;">;                                                         </span><span style="color: #8D8D84; font-style: italic;">(rest lvz)))])))</span>
+<span style="color: #8D8D84;">; </span>
+
+
+<span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">Warum akkumulierender Parameter? Weil die Hilfsfunktion wie die </span>
+<span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">Hauptfunktion die Liste rekursiv abarbeitet!</span>
+
+<span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">Was ist zu akkumulieren?</span>
+<span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">Das Problem besteht darin, dass der rekursive Aufruf </span>
+<span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">(relativ-&gt;absolut (rest lvz)) nichts von dem Wert des </span>
+<span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">ersten Elements "wei&#223;". Dieses Problem kann gel&#246;st werden, </span>
+<span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">indem man in einem Parameter die Distanz vom Ursprung</span>
+<span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">akkumuliert. Das f&#252;hrt zu folgender L&#246;sung:</span>
+
+<span style="color: #8D8D84;">; </span><span style="color: #8D8D84; font-style: italic;">;; relativ-&gt;absolut: (list-of number) -&gt; (list-of number)</span>
+<span style="color: #8D8D84;">; </span><span style="color: #8D8D84; font-style: italic;">(check-expect (relativ-&gt;absolut '(50 40 70 30 30))</span>
+<span style="color: #8D8D84;">;               </span><span style="color: #8D8D84; font-style: italic;">(list 50 90 160 190 220))</span>
+<span style="color: #8D8D84;">; </span><span style="color: #8D8D84; font-style: italic;">(define relativ-&gt;absolut</span>
+<span style="color: #8D8D84;">;   </span><span style="color: #8D8D84; font-style: italic;">(lambda [lvz]</span>
+<span style="color: #8D8D84;">;     </span><span style="color: #8D8D84; font-style: italic;">(letrec</span>
+<span style="color: #8D8D84;">;         </span><span style="color: #8D8D84; font-style: italic;">[(;; Akkumulatorinvariante: akku-distanz ist die akkumulierte Distanz</span>
+<span style="color: #8D8D84;">;           </span><span style="color: #8D8D84; font-style: italic;">;; derjenigen Elemente von lvz, die denen aus lvz1 vorangehen.</span>
+<span style="color: #8D8D84;">;           </span><span style="color: #8D8D84; font-style: italic;">relabs (lambda [lvz1 akku-distanz]</span>
+<span style="color: #8D8D84;">;                    </span><span style="color: #8D8D84; font-style: italic;">(cond</span>
+<span style="color: #8D8D84;">;                      </span><span style="color: #8D8D84; font-style: italic;">[(empty? lvz1) empty]</span>
+<span style="color: #8D8D84;">;                      </span><span style="color: #8D8D84; font-style: italic;">[else </span>
+<span style="color: #8D8D84;">;                       </span><span style="color: #8D8D84; font-style: italic;">(cons (+ akku-distanz (first lvz1))</span>
+<span style="color: #8D8D84;">;                             </span><span style="color: #8D8D84; font-style: italic;">(relabs (rest lvz1) </span>
+<span style="color: #8D8D84;">;                                     </span><span style="color: #8D8D84; font-style: italic;">(+ akku-distanz (first lvz1))))])))]</span>
+<span style="color: #8D8D84;">;       </span><span style="color: #8D8D84; font-style: italic;">(relabs lvz 0))))</span>
+<span style="color: #8D8D84;">; </span>
+
+
+<span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">relabs ist aber nicht endrekursiv. Das kann erreicht werden, </span>
+<span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">indem in einem weiteren akkumulierenden Parameter akku-entfrnngn </span>
+<span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">die Ergebnisliste aufgebaut wird.  Man beachte, dass die Liste </span>
+<span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">dabei in umgekehrter Reihenfolge entsteht.</span>
+
+<span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">relativ-&gt;absolut: (list-of number) -&gt; (list-of number)</span>
+<span style="color: #707183;">(</span>check-expect <span style="color: #7388D6;">(</span>relativ-&gt;absolut '<span style="color: #909183;">(</span>50 40 70 30 30<span style="color: #909183;">)</span><span style="color: #7388D6;">)</span>
+              <span style="color: #7388D6;">(</span>list 50 90 160 190 220<span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
+<span style="color: #707183;">(</span><span style="color: #0000FF;">define</span> <span style="color: #006699;">relativ-&gt;absolut</span>
+  <span style="color: #7388D6;">(</span><span style="color: #0000FF;">lambda</span> <span style="color: #909183;">[</span>lvz<span style="color: #909183;">]</span>
+    <span style="color: #909183;">(</span><span style="color: #0000FF;">letrec</span>
+        <span style="color: #709870;">[</span><span style="color: #907373;">(</span><span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">Akkumulatorinvariante: akku-distanz ist die akkumulierte Distanz</span>
+          <span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">derjenigen Elemente von lvz, die denen aus lvz1 vorangehen.</span>
+          relabs <span style="color: #6276BA;">(</span><span style="color: #0000FF;">lambda</span> <span style="color: #858580;">[</span>lvz1 akku-distanz akku-entfrnngn<span style="color: #858580;">]</span>
+                   <span style="color: #858580;">(</span><span style="color: #0000FF;">cond</span>
+                     <span style="color: #80A880;">[</span><span style="color: #887070;">(</span>empty? lvz1<span style="color: #887070;">)</span> <span style="color: #887070;">(</span>reverse akku-entfrnngn<span style="color: #887070;">)</span><span style="color: #80A880;">]</span>
+                                     <span style="color: #8D8D84;">;;;;;;;</span>
+                     <span style="color: #80A880;">[</span>else          
+                      <span style="color: #887070;">(</span>relabs <span style="color: #707183;">(</span>rest lvz1<span style="color: #707183;">)</span>
+                              <span style="color: #707183;">(</span>+ akku-distanz <span style="color: #7388D6;">(</span>first lvz1<span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
+                              <span style="color: #707183;">(</span>cons <span style="color: #7388D6;">(</span>+ akku-distanz <span style="color: #909183;">(</span>first lvz1<span style="color: #909183;">)</span><span style="color: #7388D6;">)</span>
+                                    akku-entfrnngn<span style="color: #707183;">)</span><span style="color: #887070;">)</span><span style="color: #80A880;">]</span><span style="color: #858580;">)</span><span style="color: #6276BA;">)</span><span style="color: #907373;">)</span><span style="color: #709870;">]</span>
+      <span style="color: #709870;">(</span>relabs lvz 0 '<span style="color: #907373;">()</span><span style="color: #709870;">)</span><span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
+</pre>
+</div></li>
+<li><p>
+Definieren Sie eine Funktion <code>(singletons x)</code>, die als Argument
+eine Liste von den Atomen <code>x</code> hat und als Ergebnis eine Liste von
+den Atomen liefern soll, die in <code>x</code> genau einmal auftreten.
+</p>
+<div class="org-src-container">
+<pre class="src src-scheme"><span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">"klassische" Loesung mit natuerlicher Rekursion nach den Regeln</span>
+<span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">f&#252;r listenverarbeitende Funktionen</span>
+
+<span style="color: #8D8D84;">;;</span><span style="color: #8D8D84; font-style: italic;">Test-Hilfsprozedur</span>
+<span style="color: #8D8D84;">;;</span><span style="color: #8D8D84; font-style: italic;">erzeugt Liste mit anzahl-maligem Auftreten von x</span>
+<span style="color: #707183;">(</span><span style="color: #0000FF;">define</span> <span style="color: #006699;">vervielfache</span>
+  <span style="color: #7388D6;">(</span><span style="color: #0000FF;">lambda</span> <span style="color: #909183;">[</span>x anzahl<span style="color: #909183;">]</span>
+    <span style="color: #909183;">(</span><span style="color: #0000FF;">cond</span> <span style="color: #709870;">[</span><span style="color: #907373;">(</span>&lt;= anzahl 0<span style="color: #907373;">)</span> '<span style="color: #907373;">()</span><span style="color: #709870;">]</span>
+          <span style="color: #709870;">[</span>else <span style="color: #907373;">(</span>cons x <span style="color: #6276BA;">(</span>vervielfache x <span style="color: #858580;">(</span>- anzahl 1<span style="color: #858580;">)</span><span style="color: #6276BA;">)</span><span style="color: #907373;">)</span><span style="color: #709870;">]</span><span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
+
+<span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">entfernt jedes Auftreten von elem in list</span>
+<span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">eliminate: X (listof X) -&gt; (listof X)</span>
+<span style="color: #707183;">(</span>check-expect <span style="color: #7388D6;">(</span>eliminate 2 '<span style="color: #909183;">()</span><span style="color: #7388D6;">)</span> '<span style="color: #7388D6;">()</span><span style="color: #707183;">)</span>
+<span style="color: #707183;">(</span>check-expect <span style="color: #7388D6;">(</span>eliminate 2 '<span style="color: #909183;">(</span>1 2 3 3 2 1 4 5 4<span style="color: #909183;">)</span><span style="color: #7388D6;">)</span> '<span style="color: #7388D6;">(</span>1 3 3 1 4 5 4<span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
+<span style="color: #707183;">(</span>check-expect <span style="color: #7388D6;">(</span>eliminate 6 '<span style="color: #909183;">(</span>1 2 3 3 2 1 4 5 4<span style="color: #909183;">)</span><span style="color: #7388D6;">)</span> '<span style="color: #7388D6;">(</span>1 2 3 3 2 1 4 5 4<span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
+<span style="color: #707183;">(</span><span style="color: #0000FF;">define</span> <span style="color: #006699;">eliminate</span>
+  <span style="color: #7388D6;">(</span><span style="color: #0000FF;">lambda</span> <span style="color: #909183;">[</span>elem list<span style="color: #909183;">]</span>
+    <span style="color: #909183;">(</span><span style="color: #0000FF;">cond</span>
+      <span style="color: #709870;">[</span><span style="color: #907373;">(</span>empty? list<span style="color: #907373;">)</span> empty<span style="color: #709870;">]</span>
+      <span style="color: #709870;">[</span><span style="color: #907373;">(</span>equal? elem <span style="color: #6276BA;">(</span>first list<span style="color: #6276BA;">)</span><span style="color: #907373;">)</span>
+       <span style="color: #907373;">(</span>eliminate elem <span style="color: #6276BA;">(</span>rest list<span style="color: #6276BA;">)</span><span style="color: #907373;">)</span><span style="color: #709870;">]</span>
+      <span style="color: #709870;">[</span>else <span style="color: #907373;">(</span>cons <span style="color: #6276BA;">(</span>first list<span style="color: #6276BA;">)</span> 
+                  <span style="color: #6276BA;">(</span>eliminate elem <span style="color: #858580;">(</span>rest list<span style="color: #858580;">)</span><span style="color: #6276BA;">)</span><span style="color: #907373;">)</span><span style="color: #709870;">]</span><span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
+
+<span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">entfernt jedes Duplikat aus list</span>
+<span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">singletons: (listof X) -&gt; (listof X)</span>
+<span style="color: #707183;">(</span>check-expect <span style="color: #7388D6;">(</span>singletons empty<span style="color: #7388D6;">)</span> empty<span style="color: #707183;">)</span>
+<span style="color: #707183;">(</span>check-expect <span style="color: #7388D6;">(</span>singletons '<span style="color: #909183;">(</span>a<span style="color: #909183;">)</span><span style="color: #7388D6;">)</span> '<span style="color: #7388D6;">(</span>a<span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
+<span style="color: #707183;">(</span>check-expect <span style="color: #7388D6;">(</span>singletons '<span style="color: #909183;">(</span>1 2 3 3 2 1 4 5 4<span style="color: #909183;">)</span><span style="color: #7388D6;">)</span> '<span style="color: #7388D6;">(</span>5<span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
+<span style="color: #707183;">(</span>check-expect <span style="color: #7388D6;">(</span>singletons '<span style="color: #909183;">(</span>1 1 5 2 3 3 2 1 4 5 4<span style="color: #909183;">)</span><span style="color: #7388D6;">)</span> '<span style="color: #7388D6;">()</span><span style="color: #707183;">)</span>
+<span style="color: #707183;">(</span>check-expect <span style="color: #7388D6;">(</span>singletons <span style="color: #909183;">(</span>vervielfache 'a 10001<span style="color: #909183;">)</span><span style="color: #7388D6;">)</span> '<span style="color: #7388D6;">()</span><span style="color: #707183;">)</span>
+<span style="color: #707183;">(</span><span style="color: #0000FF;">define</span> <span style="color: #006699;">singletons</span>
+  <span style="color: #7388D6;">(</span><span style="color: #0000FF;">lambda</span> <span style="color: #909183;">[</span>list<span style="color: #909183;">]</span>
+    <span style="color: #909183;">(</span><span style="color: #0000FF;">cond</span>
+      <span style="color: #709870;">[</span><span style="color: #907373;">(</span>empty? list<span style="color: #907373;">)</span> empty<span style="color: #709870;">]</span>
+      <span style="color: #709870;">[</span>else 
+       <span style="color: #907373;">(</span><span style="color: #0000FF;">let</span> <span style="color: #6276BA;">[</span><span style="color: #858580;">(</span>singlerest <span style="color: #80A880;">(</span>singletons <span style="color: #887070;">(</span>rest list<span style="color: #887070;">)</span><span style="color: #80A880;">)</span><span style="color: #858580;">)</span><span style="color: #6276BA;">]</span>
+         <span style="color: #6276BA;">(</span><span style="color: #0000FF;">cond</span>
+           <span style="color: #858580;">[</span><span style="color: #80A880;">(</span>member? <span style="color: #887070;">(</span>first list<span style="color: #887070;">)</span> <span style="color: #887070;">(</span>rest list<span style="color: #887070;">)</span><span style="color: #80A880;">)</span> 
+            <span style="color: #80A880;">(</span>eliminate <span style="color: #887070;">(</span>first list<span style="color: #887070;">)</span> singlerest<span style="color: #80A880;">)</span><span style="color: #858580;">]</span>
+           <span style="color: #858580;">[</span>else <span style="color: #80A880;">(</span>cons <span style="color: #887070;">(</span>first list<span style="color: #887070;">)</span> singlerest<span style="color: #80A880;">)</span><span style="color: #858580;">]</span><span style="color: #6276BA;">)</span><span style="color: #907373;">)</span><span style="color: #709870;">]</span><span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
+</pre>
+</div></li>
+<li value="4"><p>
+Modifizieren die Funktion <code>(singletons x)</code> so, dass zwei
+akkumulierende Parameter verwendet werden.  Der eine soll zum
+Akkumulieren der Atome, die genau einmal in <code>x</code> auftreten, dienen,
+der andere zum Akkumulieren der Atome, die mehrmals in <code>x</code>
+auftreten.
+</p>
+<div class="org-src-container">
+<pre class="src src-scheme"><span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">entfernt jedes Duplikat aus list</span>
+<span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">singletons: (list-of atom) -&gt; (list-of atom)</span>
+<span style="color: #707183;">(</span>check-expect <span style="color: #7388D6;">(</span>singletons empty<span style="color: #7388D6;">)</span> empty<span style="color: #707183;">)</span>
+<span style="color: #707183;">(</span>check-expect <span style="color: #7388D6;">(</span>singletons '<span style="color: #909183;">(</span>1 2 3 3 2 1 3 4 5 4<span style="color: #909183;">)</span><span style="color: #7388D6;">)</span> '<span style="color: #7388D6;">(</span>5<span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
+<span style="color: #707183;">(</span>check-expect <span style="color: #7388D6;">(</span>singletons <span style="color: #909183;">(</span>vervielfache 1 100000<span style="color: #909183;">)</span><span style="color: #7388D6;">)</span> empty<span style="color: #707183;">)</span>
+<span style="color: #707183;">(</span><span style="color: #0000FF;">define</span> <span style="color: #006699;">singletons</span>
+  <span style="color: #7388D6;">(</span><span style="color: #0000FF;">lambda</span> <span style="color: #909183;">[</span>list<span style="color: #909183;">]</span>
+    <span style="color: #909183;">(</span><span style="color: #0000FF;">letrec</span>
+        <span style="color: #709870;">[</span><span style="color: #907373;">(</span><span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">Fuer den Listenkopf ueberpruefe zuerst, ob er schon in</span>
+          <span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">multis vorhanden ist. </span>
+          <span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">Wenn ja, braucht er nicht weiter verarbeitet zu werden. </span>
+          <span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">Wenn nein, muss er zu multis hinzugefuegt werden, </span>
+          <span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">wenn er im Listenrumpf noch einmal auftritt, sonst zu</span>
+          <span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">singles.</span>
+          singletonsAccu
+          <span style="color: #6276BA;">(</span><span style="color: #0000FF;">lambda</span> <span style="color: #858580;">[</span>list0 singles multis<span style="color: #858580;">]</span>
+            <span style="color: #858580;">(</span><span style="color: #0000FF;">cond</span> 
+              <span style="color: #80A880;">[</span><span style="color: #887070;">(</span>empty? list0<span style="color: #887070;">)</span> singles<span style="color: #80A880;">]</span>
+              <span style="color: #80A880;">[</span><span style="color: #887070;">(</span>member? <span style="color: #707183;">(</span>first list0<span style="color: #707183;">)</span> multis<span style="color: #887070;">)</span>
+               <span style="color: #887070;">(</span>singletonsAccu <span style="color: #707183;">(</span>rest list0<span style="color: #707183;">)</span> singles multis<span style="color: #887070;">)</span><span style="color: #80A880;">]</span>
+              <span style="color: #80A880;">[</span><span style="color: #887070;">(</span>member? <span style="color: #707183;">(</span>first list0<span style="color: #707183;">)</span> <span style="color: #707183;">(</span>rest list0<span style="color: #707183;">)</span> <span style="color: #887070;">)</span>
+               <span style="color: #887070;">(</span>singletonsAccu <span style="color: #707183;">(</span>rest list0<span style="color: #707183;">)</span> 
+                               singles 
+                               <span style="color: #707183;">(</span>cons <span style="color: #7388D6;">(</span>first list0<span style="color: #7388D6;">)</span> multis<span style="color: #707183;">)</span><span style="color: #887070;">)</span><span style="color: #80A880;">]</span>
+              <span style="color: #80A880;">[</span>else
+               <span style="color: #887070;">(</span>singletonsAccu <span style="color: #707183;">(</span>rest list0<span style="color: #707183;">)</span> 
+                               <span style="color: #707183;">(</span>cons <span style="color: #7388D6;">(</span>first list0<span style="color: #7388D6;">)</span> singles<span style="color: #707183;">)</span> 
+                               multis<span style="color: #887070;">)</span><span style="color: #80A880;">]</span><span style="color: #858580;">)</span><span style="color: #6276BA;">)</span><span style="color: #907373;">)</span><span style="color: #709870;">]</span>
+      <span style="color: #709870;">(</span>singletonsAccu list empty empty<span style="color: #709870;">)</span><span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
+
+<span style="color: #707183;">(</span><span style="color: #0000FF;">define</span> <span style="color: #006699;">vervielfache</span>
+  <span style="color: #7388D6;">(</span><span style="color: #0000FF;">lambda</span> <span style="color: #909183;">(</span>x anzahl<span style="color: #909183;">)</span>
+    <span style="color: #909183;">(</span><span style="color: #0000FF;">cond</span> <span style="color: #709870;">[</span><span style="color: #907373;">(</span>&lt;= anzahl 0<span style="color: #907373;">)</span> '<span style="color: #907373;">()</span><span style="color: #709870;">]</span>
+          <span style="color: #709870;">[</span>else <span style="color: #907373;">(</span>cons x <span style="color: #6276BA;">(</span>vervielfache x <span style="color: #858580;">(</span>- anzahl 1<span style="color: #858580;">)</span><span style="color: #6276BA;">)</span><span style="color: #907373;">)</span><span style="color: #709870;">]</span><span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
+</pre>
+</div></li>
+</ol>
+</div>
+</div>
+<div id="outline-container-orgb818a6a" class="outline-2">
+<h2 id="abstraktionvonfunktionen"><span class="section-number-2">23</span> Abstraktion von Funktionen</h2>
+<div class="outline-text-2" id="text-abstraktionvonfunktionen">
+<p>
+Wenn Sie die Funktionen <code>vegetarier</code> und <code>frauen</code> aus Aufgabe <a href="#org9e22a2b">17i</a>
+regelkonform entwickelt haben, dürften sie sich nur an einer Stelle
+<i>wesentlich</i> unterscheiden. 
+Überlegen Sie, wie diese „Verschiedenheit“ in Form eines Parameters
+   in eine verallgemeinerte Funktion <code>filter-gaeste</code> übernommen werden
+   kann, so dass z.&nbsp;B. die Funktion <code>frauen</code> dann so
+   implementiert werden könnte: 
+</p>
+<div class="org-src-container">
+<pre class="src src-scheme"><span style="color: #707183;">(</span><span style="color: #0000FF;">define</span> <span style="color: #006699;">frauen</span>
+  <span style="color: #7388D6;">(</span><span style="color: #0000FF;">lambda</span> <span style="color: #909183;">[</span>gaeste<span style="color: #909183;">]</span>
+      <span style="color: #909183;">(</span>filter-gaeste gast-weiblich? gaeste<span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
+</pre>
+</div>
+<ol class="org-ol">
+<li>Schreiben Sie die Funktion <code>filter-gaeste</code> regelkonform auf.</li>
+<li>Schreiben Sie die Funktion <code>vegetarier</code> unter Nutzung der Funktion
+<code>filter-gaeste</code> auf.</li>
+</ol>
+<div class="org-src-container">
+<pre class="src src-scheme"><span style="color: #8D8D84;">; </span><span style="color: #8D8D84; font-style: italic;">Ein Gast besteht aus</span>
+<span style="color: #8D8D84;">; </span><span style="color: #8D8D84; font-style: italic;">- einer Zeichenkette f&#252;r den Namen</span>
+<span style="color: #8D8D84;">; </span><span style="color: #8D8D84; font-style: italic;">- einem boolschen Wert, der angibt ob es sich um eine Frau handelt</span>
+<span style="color: #8D8D84;">; </span><span style="color: #8D8D84; font-style: italic;">- einem boolschen Wert, der angibt ob es sich um einen Vegetarier handelt</span>
+
+<span style="color: #707183;">(</span>define-struct gast <span style="color: #7388D6;">[</span>name weiblich? vegetarier?<span style="color: #7388D6;">]</span><span style="color: #707183;">)</span>
+
+<span style="color: #707183;">(</span><span style="color: #0000FF;">define</span> <span style="color: #006699;">party</span>
+  <span style="color: #7388D6;">(</span>list
+   <span style="color: #909183;">(</span>make-gast <span style="color: #008000;">"Karl"</span> #false #false<span style="color: #909183;">)</span>
+   <span style="color: #909183;">(</span>make-gast <span style="color: #008000;">"Rosa"</span> #true #true<span style="color: #909183;">)</span>
+   <span style="color: #909183;">(</span>make-gast <span style="color: #008000;">"Klara"</span> #true #false<span style="color: #909183;">)</span> 
+   <span style="color: #909183;">(</span>make-gast <span style="color: #008000;">"Egon"</span> #false #true<span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
+
+<span style="color: #8D8D84;">; </span><span style="color: #8D8D84; font-style: italic;">filtert aus einer G&#228;steliste diejenigen mit einer bestimmten Eigenschaft</span>
+<span style="color: #8D8D84;">; </span><span style="color: #8D8D84; font-style: italic;">filter-gaeste : (gast -&gt; boolean) (list-of gast) -&gt; (list-of gast)</span>
+<span style="color: #707183;">(</span><span style="color: #0000FF;">define</span> <span style="color: #006699;">filter-gaeste</span>
+  <span style="color: #7388D6;">(</span><span style="color: #0000FF;">lambda</span> <span style="color: #909183;">[</span>praedikat? gaeste<span style="color: #909183;">]</span>
+    <span style="color: #909183;">(</span><span style="color: #0000FF;">cond</span>
+      <span style="color: #709870;">[</span><span style="color: #907373;">(</span>empty? gaeste<span style="color: #907373;">)</span> '<span style="color: #907373;">()</span><span style="color: #709870;">]</span>
+      <span style="color: #709870;">[</span><span style="color: #907373;">(</span>praedikat? <span style="color: #6276BA;">(</span>first gaeste<span style="color: #6276BA;">)</span><span style="color: #907373;">)</span> <span style="color: #907373;">(</span>cons <span style="color: #6276BA;">(</span>first gaeste<span style="color: #6276BA;">)</span>
+                                         <span style="color: #6276BA;">(</span>filter-gaeste praedikat? <span style="color: #858580;">(</span>rest gaeste<span style="color: #858580;">)</span><span style="color: #6276BA;">)</span><span style="color: #907373;">)</span><span style="color: #709870;">]</span>
+      <span style="color: #709870;">[</span>else <span style="color: #907373;">(</span>filter-gaeste praedikat? <span style="color: #6276BA;">(</span>rest gaeste<span style="color: #6276BA;">)</span><span style="color: #907373;">)</span><span style="color: #709870;">]</span><span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
+
+<span style="color: #8D8D84;">; </span><span style="color: #8D8D84; font-style: italic;">aus einer G&#228;steliste eine Liste der Vegetarier bilden</span>
+<span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">vegetarier : (list-of gast) -&gt; (list-of gast)</span>
+<span style="color: #707183;">(</span>check-expect <span style="color: #7388D6;">(</span>vegetarier party<span style="color: #7388D6;">)</span> <span style="color: #7388D6;">(</span>list <span style="color: #909183;">(</span>make-gast <span style="color: #008000;">"Rosa"</span> #true #true<span style="color: #909183;">)</span>
+                                       <span style="color: #909183;">(</span>make-gast <span style="color: #008000;">"Egon"</span> #false #true<span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
+<span style="color: #707183;">(</span><span style="color: #0000FF;">define</span> <span style="color: #006699;">vegetarier</span>
+  <span style="color: #7388D6;">(</span><span style="color: #0000FF;">lambda</span> <span style="color: #909183;">[</span>gaeste<span style="color: #909183;">]</span>
+    <span style="color: #909183;">(</span>filter-gaeste gast-vegetarier? gaeste<span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org59d99a1" class="outline-2">
+<h2 id="fho"><span class="section-number-2">24</span> Anwendung von <code>map</code>, <code>filter</code> und <code>foldr</code></h2>
+<div class="outline-text-2" id="text-fho">
+<p>
+Implementieren Sie folgende Funktionen unter Nutzung der Funktionen
+<code>filter</code>, <code>foldr</code> und <code>map</code> aus dem Skript:
+</p>
+
+<ol class="org-ol">
+<li>Die Funktion <code>frauen</code> aus der vorangegangen Aufgabe
+unter Verwendung der Funktion <code>filter</code>.</li>
+<li>Eine Funktion, die zu allen Zahlen einer Liste jeweils 42 addiert.</li>
+<li>Eine Funktion, die sich wie b) verhält, aber nur die geraden Zahlen
+zurückgibt.</li>
+<li>Eine Funktion, die sich wie c) verhält, aber das Produkt aller Zahlen
+zurückgibt.</li>
+<li>Eine Funktion, die aus einer Liste von Zahlen alle Zahlen streicht,
+die nicht durch 4 oder 5 teilbar sind.</li>
+<li>Eine Funktion, die die Summe der Quadrate der natürlichen Zahlen in
+einer Liste berechnet.</li>
+<li>Eine Funktion <code>und</code>, die genau dann <code>true</code> zurück liefert, wenn alle
+Elemente einer Liste von Booleans <code>true</code> sind.</li>
+<li>Eine Funktion <code>partitioniere</code>, die ein Prädikat als Argument nimmt
+und, angewandt auf eine Liste, zwei Listen zurückgibt, wobei erstere
+alle Elemente enthält, die das Prädikat erfüllen, und die andere die
+restlichen Elemente enthält.</li>
+<li>Eine Funktion <code>sort</code>, die, angewendet auf eine Liste von Zahlen,
+diese Liste absteigend sortiert.</li>
+<li><p>
+Modifizieren Sie die Funktion <code>sort</code> aus 8. so, dass durch einen
+zusätzlichen Parameter die Sortierreihenfolge bestimmt werden kann.
+</p>
+<div class="org-src-container">
+<pre class="src src-scheme"> <span style="color: #8D8D84;">;;; </span><span style="color: #8D8D84; font-style: italic;">L&#246;sungen zu Aufgabe 24 ;;;</span>
+ <span style="color: #8D8D84;">;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;</span>
+ <span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">b) Eine Funktion, die zu allen Zahlen einer Liste jeweils 42 addiert.</span>
+ <span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">add42: (list-of number) -&gt; (list-of number)</span>
+ <span style="color: #707183;">(</span>check-expect <span style="color: #7388D6;">(</span>add42 '<span style="color: #909183;">()</span><span style="color: #7388D6;">)</span> '<span style="color: #7388D6;">()</span><span style="color: #707183;">)</span>
+ <span style="color: #707183;">(</span>check-expect <span style="color: #7388D6;">(</span>add42 '<span style="color: #909183;">(</span> 3 <span style="color: #909183;">)</span><span style="color: #7388D6;">)</span> '<span style="color: #7388D6;">(</span>45 <span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
+ <span style="color: #707183;">(</span>check-expect <span style="color: #7388D6;">(</span>add42 '<span style="color: #909183;">(</span> 3 4 5 <span style="color: #909183;">)</span><span style="color: #7388D6;">)</span> '<span style="color: #7388D6;">(</span>45 46 47<span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
+ <span style="color: #707183;">(</span><span style="color: #0000FF;">define</span> <span style="color: #006699;">add42</span>
+   <span style="color: #7388D6;">(</span><span style="color: #0000FF;">lambda</span> <span style="color: #909183;">[</span>lvz<span style="color: #909183;">]</span>
+     <span style="color: #909183;">(</span><span style="color: #0000FF;">map</span> <span style="color: #709870;">(</span><span style="color: #0000FF;">lambda</span> <span style="color: #907373;">[</span>x<span style="color: #907373;">]</span> <span style="color: #907373;">(</span>+ x 42<span style="color: #907373;">)</span><span style="color: #709870;">)</span> lvz<span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
+
+ <span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">c) Eine Funktion, die sich wie a) verh&#228;lt, aber nur die geraden Zahlen zur&#252;ckgibt.</span>
+ <span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">add42even: (list-of number) -&gt; (list-of number)</span>
+ <span style="color: #707183;">(</span>check-expect <span style="color: #7388D6;">(</span>add42even '<span style="color: #909183;">()</span><span style="color: #7388D6;">)</span> '<span style="color: #7388D6;">()</span><span style="color: #707183;">)</span>
+ <span style="color: #707183;">(</span>check-expect <span style="color: #7388D6;">(</span>add42even '<span style="color: #909183;">(</span> 3 <span style="color: #909183;">)</span><span style="color: #7388D6;">)</span> '<span style="color: #7388D6;">()</span><span style="color: #707183;">)</span>
+ <span style="color: #707183;">(</span>check-expect <span style="color: #7388D6;">(</span>add42even '<span style="color: #909183;">(</span> 3 4 5 6<span style="color: #909183;">)</span><span style="color: #7388D6;">)</span> '<span style="color: #7388D6;">(</span> 46 48 <span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
+ <span style="color: #707183;">(</span><span style="color: #0000FF;">define</span> <span style="color: #006699;">add42even</span>
+   <span style="color: #7388D6;">(</span><span style="color: #0000FF;">lambda</span> <span style="color: #909183;">[</span>lvz<span style="color: #909183;">]</span>
+      <span style="color: #909183;">(</span>filter even? <span style="color: #709870;">(</span>add42 lvz<span style="color: #709870;">)</span><span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
+
+ <span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">d) Eine Funktion, die sich wie b) verh&#228;lt, aber das Produkt aller Zahlen zur&#252;ckgibt.</span>
+ <span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">prod-of-add42even (list-of number) -&gt; number</span>
+ <span style="color: #707183;">(</span>check-expect <span style="color: #7388D6;">(</span>prod-of-add42even '<span style="color: #909183;">()</span><span style="color: #7388D6;">)</span> 1<span style="color: #707183;">)</span>
+ <span style="color: #707183;">(</span>check-expect <span style="color: #7388D6;">(</span>prod-of-add42even '<span style="color: #909183;">(</span> 3 <span style="color: #909183;">)</span><span style="color: #7388D6;">)</span> 1<span style="color: #707183;">)</span>
+ <span style="color: #707183;">(</span>check-expect <span style="color: #7388D6;">(</span>prod-of-add42even '<span style="color: #909183;">(</span> 3 4 5 6 <span style="color: #909183;">)</span><span style="color: #7388D6;">)</span> <span style="color: #7388D6;">(</span>* 46 48<span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
+ <span style="color: #707183;">(</span><span style="color: #0000FF;">define</span> <span style="color: #006699;">prod-of-add42even</span>
+   <span style="color: #7388D6;">(</span><span style="color: #0000FF;">lambda</span> <span style="color: #909183;">[</span>lvz<span style="color: #909183;">]</span>
+     <span style="color: #909183;">(</span>foldr * 1 <span style="color: #709870;">(</span>add42even lvz<span style="color: #709870;">)</span><span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span> 
+    
+ <span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">e) Eine Funktion, die aus einer Liste von Zahlen alle Zahlen streicht,</span>
+ <span style="color: #8D8D84;">;;   </span><span style="color: #8D8D84; font-style: italic;">die nicht durch 4 oder 5 teilbar sind.</span>
+ <span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">nur-durch-4-und-5-teilbare: (list-of number) -&gt; (list-of number)</span>
+ <span style="color: #707183;">(</span>check-expect <span style="color: #7388D6;">(</span>nur-durch-4-und-5-teilbare '<span style="color: #909183;">()</span><span style="color: #7388D6;">)</span> '<span style="color: #7388D6;">()</span><span style="color: #707183;">)</span>
+ <span style="color: #707183;">(</span>check-expect <span style="color: #7388D6;">(</span>nur-durch-4-und-5-teilbare '<span style="color: #909183;">(</span> 4 <span style="color: #909183;">)</span><span style="color: #7388D6;">)</span> '<span style="color: #7388D6;">(</span>4<span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
+ <span style="color: #707183;">(</span>check-expect <span style="color: #7388D6;">(</span>nur-durch-4-und-5-teilbare '<span style="color: #909183;">(</span> 3 4 5 6 8 15 40<span style="color: #909183;">)</span><span style="color: #7388D6;">)</span> '<span style="color: #7388D6;">(</span>4 5 8 15 40<span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
+ <span style="color: #707183;">(</span><span style="color: #0000FF;">define</span> <span style="color: #006699;">nur-durch-4-und-5-teilbare</span>
+   <span style="color: #7388D6;">(</span><span style="color: #0000FF;">lambda</span> <span style="color: #909183;">[</span>lvz<span style="color: #909183;">]</span>
+     <span style="color: #909183;">(</span>filter <span style="color: #709870;">(</span><span style="color: #0000FF;">lambda</span> <span style="color: #907373;">[</span>x<span style="color: #907373;">]</span> <span style="color: #907373;">(</span><span style="color: #0000FF;">or</span> <span style="color: #6276BA;">(</span>= <span style="color: #858580;">(</span>modulo x 4<span style="color: #858580;">)</span> 0<span style="color: #6276BA;">)</span>
+                             <span style="color: #6276BA;">(</span>= <span style="color: #858580;">(</span>modulo x 5<span style="color: #858580;">)</span> 0<span style="color: #6276BA;">)</span><span style="color: #907373;">)</span><span style="color: #709870;">)</span>
+             lvz<span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
+
+ <span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">f) Eine Funktion, die die Summe der Quadrate der nat&#252;rlichen Zahlen in einer Liste berechnet.</span>
+
+ <span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">liefert true f&#252;r nat&#252;rliche Zahlen</span>
+ <span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">nat-number?: number -&gt; boolean</span>
+ <span style="color: #707183;">(</span>check-expect <span style="color: #7388D6;">(</span>nat-number? -1<span style="color: #7388D6;">)</span> #false<span style="color: #707183;">)</span>
+ <span style="color: #707183;">(</span>check-expect <span style="color: #7388D6;">(</span>nat-number? 2.5<span style="color: #7388D6;">)</span> #false<span style="color: #707183;">)</span>
+ <span style="color: #707183;">(</span>check-expect <span style="color: #7388D6;">(</span>nat-number? 11<span style="color: #7388D6;">)</span> #true<span style="color: #707183;">)</span>
+ <span style="color: #707183;">(</span><span style="color: #0000FF;">define</span> <span style="color: #006699;">nat-number?</span>
+   <span style="color: #7388D6;">(</span><span style="color: #0000FF;">lambda</span> <span style="color: #909183;">[</span>x<span style="color: #909183;">]</span> <span style="color: #909183;">(</span><span style="color: #0000FF;">and</span> <span style="color: #709870;">(</span>&gt; x 0<span style="color: #709870;">)</span> <span style="color: #709870;">(</span>integer? x<span style="color: #709870;">)</span><span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
+
+ <span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">sum-quad-nat: (list-of number) -&gt; number</span>
+ <span style="color: #707183;">(</span>check-expect <span style="color: #7388D6;">(</span>sum-quad-nat '<span style="color: #909183;">()</span><span style="color: #7388D6;">)</span> 0<span style="color: #707183;">)</span>
+ <span style="color: #707183;">(</span>check-expect <span style="color: #7388D6;">(</span>sum-quad-nat '<span style="color: #909183;">(</span>1<span style="color: #909183;">)</span><span style="color: #7388D6;">)</span> 1<span style="color: #707183;">)</span>
+ <span style="color: #707183;">(</span>check-expect <span style="color: #7388D6;">(</span>sum-quad-nat '<span style="color: #909183;">(</span>-2 3.5 2 3 4<span style="color: #909183;">)</span><span style="color: #7388D6;">)</span> 29<span style="color: #707183;">)</span>
+ <span style="color: #707183;">(</span><span style="color: #0000FF;">define</span> <span style="color: #006699;">sum-quad-nat</span>
+   <span style="color: #7388D6;">(</span><span style="color: #0000FF;">lambda</span> <span style="color: #909183;">[</span>lvz<span style="color: #909183;">]</span>
+     <span style="color: #909183;">(</span>foldr + 0 <span style="color: #709870;">(</span><span style="color: #0000FF;">map</span> <span style="color: #907373;">(</span><span style="color: #0000FF;">lambda</span> <span style="color: #6276BA;">[</span>x<span style="color: #6276BA;">]</span> <span style="color: #6276BA;">(</span>* x x<span style="color: #6276BA;">)</span><span style="color: #907373;">)</span> <span style="color: #907373;">(</span>filter nat-number? lvz<span style="color: #907373;">)</span><span style="color: #709870;">)</span><span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
+
+ <span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">g) Eine Funktion und, die genau dann true zur&#252;ck liefert, wenn alle Elemente einer</span>
+ <span style="color: #8D8D84;">;;   </span><span style="color: #8D8D84; font-style: italic;">Liste von Booleans true sind.</span>
+ <span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">und: (list-of boolean) -&gt; boolean</span>
+ <span style="color: #707183;">(</span>check-expect <span style="color: #7388D6;">(</span>und '<span style="color: #909183;">()</span><span style="color: #7388D6;">)</span> #true<span style="color: #707183;">)</span>
+ <span style="color: #707183;">(</span>check-expect <span style="color: #7388D6;">(</span>und '<span style="color: #909183;">(</span>#true<span style="color: #909183;">)</span><span style="color: #7388D6;">)</span> #true<span style="color: #707183;">)</span>
+ <span style="color: #707183;">(</span>check-expect <span style="color: #7388D6;">(</span>und '<span style="color: #909183;">(</span>#false<span style="color: #909183;">)</span><span style="color: #7388D6;">)</span> #false<span style="color: #707183;">)</span>
+ <span style="color: #707183;">(</span>check-expect <span style="color: #7388D6;">(</span>und '<span style="color: #909183;">(</span>#true #true #true<span style="color: #909183;">)</span><span style="color: #7388D6;">)</span> #true<span style="color: #707183;">)</span>
+ <span style="color: #707183;">(</span>check-expect <span style="color: #7388D6;">(</span>und '<span style="color: #909183;">(</span>#true #true #false<span style="color: #909183;">)</span><span style="color: #7388D6;">)</span> #false<span style="color: #707183;">)</span>
+ <span style="color: #707183;">(</span><span style="color: #0000FF;">define</span> <span style="color: #006699;">und</span>
+   <span style="color: #7388D6;">(</span><span style="color: #0000FF;">lambda</span> <span style="color: #909183;">[</span>lvb<span style="color: #909183;">]</span>
+     <span style="color: #909183;">(</span>foldr <span style="color: #709870;">(</span><span style="color: #0000FF;">lambda</span> <span style="color: #907373;">[</span>x y<span style="color: #907373;">]</span> <span style="color: #907373;">(</span><span style="color: #0000FF;">and</span> x y<span style="color: #907373;">)</span><span style="color: #709870;">)</span> #true lvb<span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
+ <span style="color: #8D8D84;">;;; </span><span style="color: #8D8D84; font-style: italic;">Hinweis: der Aufruf (foldr and #true lvb) ist nicht m&#246;glich, da and keine Funktion</span>
+<span style="color: #8D8D84;">;;;  </span><span style="color: #8D8D84; font-style: italic;">sondern eine Pseudofunktion ist</span>
+
+<span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">h) Eine Funktion partitioniere, die ein Pr&#228;dikat als Argument nimmt und, angewandt</span>
+<span style="color: #8D8D84;">;;  </span><span style="color: #8D8D84; font-style: italic;">auf eine Liste, zwei Listen zur&#252;ckgibt, wobei erstere alle Elemente enth&#228;lt, die das</span>
+<span style="color: #8D8D84;">;;  </span><span style="color: #8D8D84; font-style: italic;">Pr&#228;dikat erf&#252;llen, und die andere die restlichen Elemente enth&#228;lt.</span>
+<span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">partitioniere: (number-&gt; boolean) (list-of number) -&gt; (list-of (list-of number))</span>
+ <span style="color: #707183;">(</span>check-expect <span style="color: #7388D6;">(</span>partitioniere even? '<span style="color: #909183;">()</span><span style="color: #7388D6;">)</span> '<span style="color: #7388D6;">(</span><span style="color: #909183;">()</span> <span style="color: #909183;">()</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
+ <span style="color: #707183;">(</span>check-expect <span style="color: #7388D6;">(</span>partitioniere even? '<span style="color: #909183;">(</span>2<span style="color: #909183;">)</span><span style="color: #7388D6;">)</span> '<span style="color: #7388D6;">(</span><span style="color: #909183;">(</span>2<span style="color: #909183;">)</span> <span style="color: #909183;">()</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
+ <span style="color: #707183;">(</span>check-expect <span style="color: #7388D6;">(</span>partitioniere even? '<span style="color: #909183;">(</span>3<span style="color: #909183;">)</span><span style="color: #7388D6;">)</span> '<span style="color: #7388D6;">(</span><span style="color: #909183;">()</span> <span style="color: #909183;">(</span>3<span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
+ <span style="color: #707183;">(</span>check-expect <span style="color: #7388D6;">(</span>partitioniere even? '<span style="color: #909183;">(</span>-2 7 5<span style="color: #909183;">)</span><span style="color: #7388D6;">)</span> '<span style="color: #7388D6;">(</span><span style="color: #909183;">(</span>-2<span style="color: #909183;">)</span> <span style="color: #909183;">(</span>7 5<span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
+ <span style="color: #707183;">(</span><span style="color: #0000FF;">define</span> <span style="color: #006699;">partitioniere</span>
+    <span style="color: #7388D6;">(</span><span style="color: #0000FF;">lambda</span> <span style="color: #909183;">[</span>praed? lvz<span style="color: #909183;">]</span>
+     <span style="color: #909183;">(</span>list <span style="color: #709870;">(</span>filter praed? lvz<span style="color: #709870;">)</span>
+           <span style="color: #709870;">(</span>filter <span style="color: #907373;">(</span><span style="color: #0000FF;">lambda</span> <span style="color: #6276BA;">[</span>x<span style="color: #6276BA;">]</span> <span style="color: #6276BA;">(</span>not <span style="color: #858580;">(</span>praed? x<span style="color: #858580;">)</span><span style="color: #6276BA;">)</span><span style="color: #907373;">)</span> lvz<span style="color: #709870;">)</span><span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
+
+<span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">i) Eine Funktion sort, die, angewendet auf eine Liste von Zahlen, diese Liste absteigend sortiert.</span>
+ <span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">sortiere: (list-of number) -&gt; (list-of number)</span>
+ <span style="color: #707183;">(</span>check-expect <span style="color: #7388D6;">(</span>sortiere '<span style="color: #909183;">()</span><span style="color: #7388D6;">)</span> '<span style="color: #7388D6;">()</span><span style="color: #707183;">)</span>
+ <span style="color: #707183;">(</span>check-expect <span style="color: #7388D6;">(</span>sortiere '<span style="color: #909183;">(</span>1<span style="color: #909183;">)</span><span style="color: #7388D6;">)</span> '<span style="color: #7388D6;">(</span>1<span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
+ <span style="color: #707183;">(</span>check-expect <span style="color: #7388D6;">(</span>sortiere '<span style="color: #909183;">(</span>3 4 9 2 1 2<span style="color: #909183;">)</span><span style="color: #7388D6;">)</span> '<span style="color: #7388D6;">(</span>9 4 3 2 2 1<span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
+ <span style="color: #707183;">(</span><span style="color: #0000FF;">define</span> <span style="color: #006699;">sortiere</span> 
+   <span style="color: #7388D6;">(</span><span style="color: #0000FF;">lambda</span> <span style="color: #909183;">[</span>lst<span style="color: #909183;">]</span>
+     <span style="color: #909183;">(</span><span style="color: #0000FF;">letrec</span> 
+         <span style="color: #709870;">[</span><span style="color: #907373;">(</span>insert <span style="color: #6276BA;">(</span><span style="color: #0000FF;">lambda</span> <span style="color: #858580;">[</span>an alon<span style="color: #858580;">]</span>
+                    <span style="color: #858580;">(</span><span style="color: #0000FF;">cond</span>
+                      <span style="color: #80A880;">[</span><span style="color: #887070;">(</span>empty? alon<span style="color: #887070;">)</span> <span style="color: #887070;">(</span>list an<span style="color: #887070;">)</span><span style="color: #80A880;">]</span>
+                      <span style="color: #80A880;">[</span><span style="color: #887070;">(</span>&gt; an <span style="color: #707183;">(</span>first alon<span style="color: #707183;">)</span><span style="color: #887070;">)</span> <span style="color: #887070;">(</span>cons an alon<span style="color: #887070;">)</span><span style="color: #80A880;">]</span>
+                      <span style="color: #80A880;">[</span>else <span style="color: #887070;">(</span>cons <span style="color: #707183;">(</span>first alon<span style="color: #707183;">)</span> <span style="color: #707183;">(</span>insert an <span style="color: #7388D6;">(</span>rest alon<span style="color: #7388D6;">)</span><span style="color: #707183;">)</span><span style="color: #887070;">)</span><span style="color: #80A880;">]</span><span style="color: #858580;">)</span><span style="color: #6276BA;">)</span><span style="color: #907373;">)</span><span style="color: #709870;">]</span>
+       <span style="color: #709870;">(</span>foldr insert '<span style="color: #907373;">()</span> lst<span style="color: #709870;">)</span><span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
+
+ <span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">j) Modifizieren Sie die Funktion sort aus i). so, dass durch einen zus&#228;tzlichen</span>
+<span style="color: #8D8D84;">;;  </span><span style="color: #8D8D84; font-style: italic;">Parameter die Sortierreihenfolge bestimmt werden kann.</span>
+ <span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">sortiere: (list-of number) -&gt; (list-of number)</span>
+ <span style="color: #707183;">(</span>check-expect <span style="color: #7388D6;">(</span>sortiere2 '<span style="color: #909183;">()</span> &lt;<span style="color: #7388D6;">)</span> '<span style="color: #7388D6;">()</span><span style="color: #707183;">)</span>
+ <span style="color: #707183;">(</span>check-expect <span style="color: #7388D6;">(</span>sortiere2 '<span style="color: #909183;">(</span>1<span style="color: #909183;">)</span> &gt;<span style="color: #7388D6;">)</span> '<span style="color: #7388D6;">(</span>1<span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
+ <span style="color: #707183;">(</span>check-expect <span style="color: #7388D6;">(</span>sortiere2 '<span style="color: #909183;">(</span>3 4 9 2 1 2<span style="color: #909183;">)</span> &gt;<span style="color: #7388D6;">)</span> '<span style="color: #7388D6;">(</span>9 4 3 2 2 1<span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
+ <span style="color: #707183;">(</span>check-expect <span style="color: #7388D6;">(</span>sortiere2 '<span style="color: #909183;">(</span>3 4 9 2 1 2<span style="color: #909183;">)</span> &lt;<span style="color: #7388D6;">)</span> '<span style="color: #7388D6;">(</span>1 2 2 3 4 9<span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
+ <span style="color: #707183;">(</span><span style="color: #0000FF;">define</span> <span style="color: #006699;">sortiere2</span> 
+   <span style="color: #7388D6;">(</span><span style="color: #0000FF;">lambda</span> <span style="color: #909183;">[</span>lst auf/ab<span style="color: #909183;">]</span>
+     <span style="color: #909183;">(</span><span style="color: #0000FF;">letrec</span> 
+         <span style="color: #709870;">[</span><span style="color: #907373;">(</span>insert <span style="color: #6276BA;">(</span><span style="color: #0000FF;">lambda</span> <span style="color: #858580;">[</span>an alon<span style="color: #858580;">]</span>
+                    <span style="color: #858580;">(</span><span style="color: #0000FF;">cond</span>
+                      <span style="color: #80A880;">[</span><span style="color: #887070;">(</span>empty? alon<span style="color: #887070;">)</span> <span style="color: #887070;">(</span>list an<span style="color: #887070;">)</span><span style="color: #80A880;">]</span>
+                      <span style="color: #80A880;">[</span><span style="color: #887070;">(</span>auf/ab an <span style="color: #707183;">(</span>first alon<span style="color: #707183;">)</span><span style="color: #887070;">)</span> <span style="color: #887070;">(</span>cons an alon<span style="color: #887070;">)</span><span style="color: #80A880;">]</span>
+                      <span style="color: #80A880;">[</span>else <span style="color: #887070;">(</span>cons <span style="color: #707183;">(</span>first alon<span style="color: #707183;">)</span> <span style="color: #707183;">(</span>insert an <span style="color: #7388D6;">(</span>rest alon<span style="color: #7388D6;">)</span><span style="color: #707183;">)</span><span style="color: #887070;">)</span><span style="color: #80A880;">]</span><span style="color: #858580;">)</span><span style="color: #6276BA;">)</span><span style="color: #907373;">)</span><span style="color: #709870;">]</span>
+       <span style="color: #709870;">(</span>foldr insert '<span style="color: #907373;">()</span> lst<span style="color: #709870;">)</span><span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
+</pre>
+</div></li>
+</ol>
+</div>
+</div>
+<div id="outline-container-org2f8a4c5" class="outline-2">
+<h2 id="org2f8a4c5"><span class="section-number-2">25</span> Definition von Funktionen höherer Ordnung</h2>
+<div class="outline-text-2" id="text-25">
+<p>
+Definieren Sie die folgenden Funktionen höherer Ordnung rekursiv oder
+durch Verwendung von anderen Funktionen höherer Ordnung:
+</p>
+<ol class="org-ol">
+<li><p>
+Eine Funktion
+</p>
+
+<div class="org-src-container">
+<pre class="src src-scheme"><span style="color: #707183;">(</span>Number -&gt; Number<span style="color: #707183;">)</span> <span style="color: #707183;">(</span>Number-&gt; Number<span style="color: #707183;">)</span> list-of Number  
+  -&gt; list-of Number,
+</pre>
+</div>
+<p>
+die zwei Funktionen und eine Liste von Zahlen als Argument erhält und
+auf jede Zahl zuerst die erste und dann die zweite Funktion anwendet.
+</p></li>
+<li><p>
+Eine Funktion
+</p>
+
+<div class="org-src-container">
+<pre class="src src-scheme"><span style="color: #707183;">(</span>Number -&gt; Number<span style="color: #707183;">)</span> <span style="color: #707183;">(</span>Number -&gt; Number<span style="color: #707183;">)</span> -&gt; Number,
+</pre>
+</div>
+<p>
+die zwei Funktionen als Argument erhält und die kleinste natürliche
+Zahl sucht, für die diese beiden Funktionen dasselbe Ergebnis
+liefern. Begrenzen Sie die Suche auf Zahlen bis 1000 und geben Sie
+-1 zurück, wenn keine passende Zahl gefunden wurde.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-scheme"><span style="color: #8D8D84;">;;; </span><span style="color: #8D8D84; font-style: italic;">L&#246;sungen zu Aufgabe 25 ;;;</span>
+<span style="color: #8D8D84;">;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;</span>
+<span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">a) Eine Funktion, die zwei Funktionen und eine Liste von Zahlen als Argument erh&#228;lt</span>
+<span style="color: #8D8D84;">;;    </span><span style="color: #8D8D84; font-style: italic;">und auf jede Zahl zuerst die erste und dann die zweite Funktion anwendet.</span>
+<span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">hintereinander: (Number -&gt; Number) (Number-&gt; Number) (list-of Number) -&gt; (list-of Number)</span>
+<span style="color: #707183;">(</span>check-expect <span style="color: #7388D6;">(</span>hintereinander <span style="color: #909183;">(</span><span style="color: #0000FF;">lambda</span> <span style="color: #709870;">[</span>x<span style="color: #709870;">]</span> <span style="color: #709870;">(</span>* x x<span style="color: #709870;">)</span><span style="color: #909183;">)</span>
+                              <span style="color: #909183;">(</span><span style="color: #0000FF;">lambda</span> <span style="color: #709870;">[</span>x<span style="color: #709870;">]</span> <span style="color: #709870;">(</span>- x 2<span style="color: #709870;">)</span><span style="color: #909183;">)</span>
+                              '<span style="color: #909183;">()</span><span style="color: #7388D6;">)</span>
+              '<span style="color: #7388D6;">()</span><span style="color: #707183;">)</span>
+<span style="color: #707183;">(</span>check-expect <span style="color: #7388D6;">(</span>hintereinander <span style="color: #909183;">(</span><span style="color: #0000FF;">lambda</span> <span style="color: #709870;">[</span>x<span style="color: #709870;">]</span> <span style="color: #709870;">(</span>* x x<span style="color: #709870;">)</span><span style="color: #909183;">)</span> <span style="color: #909183;">(</span><span style="color: #0000FF;">lambda</span> <span style="color: #709870;">[</span>x<span style="color: #709870;">]</span> <span style="color: #709870;">(</span>- x 2<span style="color: #709870;">)</span><span style="color: #909183;">)</span> '<span style="color: #909183;">(</span>3<span style="color: #909183;">)</span><span style="color: #7388D6;">)</span> '<span style="color: #7388D6;">(</span>7<span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
+<span style="color: #707183;">(</span>check-expect <span style="color: #7388D6;">(</span>hintereinander <span style="color: #909183;">(</span><span style="color: #0000FF;">lambda</span> <span style="color: #709870;">[</span>x<span style="color: #709870;">]</span> <span style="color: #709870;">(</span>* x x<span style="color: #709870;">)</span><span style="color: #909183;">)</span> <span style="color: #909183;">(</span><span style="color: #0000FF;">lambda</span> <span style="color: #709870;">[</span>x<span style="color: #709870;">]</span> <span style="color: #709870;">(</span>- x 2<span style="color: #709870;">)</span><span style="color: #909183;">)</span> '<span style="color: #909183;">(</span>-2 7 5<span style="color: #909183;">)</span><span style="color: #7388D6;">)</span> '<span style="color: #7388D6;">(</span>2 47 23<span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
+<span style="color: #707183;">(</span><span style="color: #0000FF;">define</span> <span style="color: #006699;">hintereinander</span>
+  <span style="color: #7388D6;">(</span><span style="color: #0000FF;">lambda</span> <span style="color: #909183;">[</span>f g lvz<span style="color: #909183;">]</span>
+    <span style="color: #909183;">(</span><span style="color: #0000FF;">map</span> <span style="color: #709870;">(</span><span style="color: #0000FF;">lambda</span> <span style="color: #907373;">[</span>x<span style="color: #907373;">]</span> <span style="color: #907373;">(</span>g <span style="color: #6276BA;">(</span>f x<span style="color: #6276BA;">)</span><span style="color: #907373;">)</span><span style="color: #709870;">)</span> lvz<span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
+
+<span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">b) Eine Funktion, die zwei Funktionen als Argument erh&#228;lt und die kleinste nat&#252;rliche</span>
+<span style="color: #8D8D84;">;;    </span><span style="color: #8D8D84; font-style: italic;">Zahl sucht, f&#252;r die diese beiden Funktionen dasselbe Ergebnis liefern. Begrenzen </span>
+<span style="color: #8D8D84;">;;    </span><span style="color: #8D8D84; font-style: italic;">Sie die Suche auf Zahlen bis 1000 und geben Sie -1 zur&#252;ck, wenn keine passende Zahl</span>
+<span style="color: #8D8D84;">;;    </span><span style="color: #8D8D84; font-style: italic;">gefunden wurde.</span>
+<span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">gleiches-ergebnis: (Number -&gt; Number) (Number -&gt; Number) -&gt; Number</span>
+<span style="color: #707183;">(</span>check-expect <span style="color: #7388D6;">(</span>gleiches-ergebnis <span style="color: #909183;">(</span><span style="color: #0000FF;">lambda</span> <span style="color: #709870;">[</span>x<span style="color: #709870;">]</span> <span style="color: #709870;">(</span>* x x<span style="color: #709870;">)</span><span style="color: #909183;">)</span>
+                                 <span style="color: #909183;">(</span><span style="color: #0000FF;">lambda</span> <span style="color: #709870;">[</span>x<span style="color: #709870;">]</span> <span style="color: #709870;">(</span>- x 2<span style="color: #709870;">)</span><span style="color: #909183;">)</span><span style="color: #7388D6;">)</span>
+              -1<span style="color: #707183;">)</span>
+<span style="color: #707183;">(</span>check-expect <span style="color: #7388D6;">(</span>gleiches-ergebnis + *<span style="color: #7388D6;">)</span> 0<span style="color: #707183;">)</span>
+<span style="color: #707183;">(</span>check-expect <span style="color: #7388D6;">(</span>gleiches-ergebnis <span style="color: #909183;">(</span><span style="color: #0000FF;">lambda</span> <span style="color: #709870;">[</span>x<span style="color: #709870;">]</span> <span style="color: #709870;">(</span>* x x<span style="color: #709870;">)</span><span style="color: #909183;">)</span>
+                                 <span style="color: #909183;">(</span><span style="color: #0000FF;">lambda</span> <span style="color: #709870;">[</span>x<span style="color: #709870;">]</span> <span style="color: #709870;">(</span>- 2 x<span style="color: #709870;">)</span><span style="color: #909183;">)</span><span style="color: #7388D6;">)</span>
+              1<span style="color: #707183;">)</span>
+<span style="color: #707183;">(</span>check-expect <span style="color: #7388D6;">(</span>gleiches-ergebnis <span style="color: #909183;">(</span><span style="color: #0000FF;">lambda</span> <span style="color: #709870;">[</span>x<span style="color: #709870;">]</span> <span style="color: #709870;">(</span>- 20 x<span style="color: #709870;">)</span><span style="color: #909183;">)</span>
+                                 <span style="color: #909183;">(</span><span style="color: #0000FF;">lambda</span> <span style="color: #709870;">[</span>x<span style="color: #709870;">]</span> <span style="color: #709870;">(</span>+ 2 x<span style="color: #709870;">)</span><span style="color: #909183;">)</span><span style="color: #7388D6;">)</span>
+              9<span style="color: #707183;">)</span>
+<span style="color: #707183;">(</span><span style="color: #0000FF;">define</span> <span style="color: #006699;">gleiches-ergebnis</span> 
+  <span style="color: #7388D6;">(</span><span style="color: #0000FF;">lambda</span> <span style="color: #909183;">[</span>f g<span style="color: #909183;">]</span>
+    <span style="color: #909183;">(</span><span style="color: #0000FF;">letrec</span> <span style="color: #709870;">[</span><span style="color: #907373;">(</span>ge2 <span style="color: #6276BA;">(</span><span style="color: #0000FF;">lambda</span> <span style="color: #858580;">[</span>f g n<span style="color: #858580;">]</span>
+                    <span style="color: #858580;">(</span><span style="color: #0000FF;">cond</span>
+                      <span style="color: #80A880;">[</span><span style="color: #887070;">(</span>= <span style="color: #707183;">(</span>f n<span style="color: #707183;">)</span> <span style="color: #707183;">(</span>g n<span style="color: #707183;">)</span><span style="color: #887070;">)</span> n<span style="color: #80A880;">]</span>
+                      <span style="color: #80A880;">[</span><span style="color: #887070;">(</span>= n 1000<span style="color: #887070;">)</span> -1<span style="color: #80A880;">]</span>
+                      <span style="color: #80A880;">[</span>else <span style="color: #887070;">(</span>ge2 f g <span style="color: #707183;">(</span>+ n 1<span style="color: #707183;">)</span><span style="color: #887070;">)</span><span style="color: #80A880;">]</span><span style="color: #858580;">)</span><span style="color: #6276BA;">)</span><span style="color: #907373;">)</span><span style="color: #709870;">]</span>
+      <span style="color: #709870;">(</span>ge2 f g 0<span style="color: #709870;">)</span><span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
+</pre>
+</div></li>
+</ol>
+</div>
+</div>
 </div>
 <div id="postamble" class="status">
 <p class="author">Autor: Johannes Brauer</p>
-<p class="date">Created: 2021-02-21 Sun 13:50</p>
+<p class="date">Created: 2021-03-05 Fri 13:21</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
