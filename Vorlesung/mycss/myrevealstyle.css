@@ -57,3 +57,4 @@
 .reveal .nebeneinander400 {display:block; width:400px; float: left;}
 .reveal .nebeneinander500 {display:block; width:450px; float: left;}
 .reveal .clear {clear:left;}
+.reveal .hidden {display: none;}
