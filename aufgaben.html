@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="de" xml:lang="de">
 <head>
-<!-- 2022-01-09 Sun 18:49 -->
+<!-- 2022-01-17 Mon 16:29 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Aufgaben</title>
@@ -252,48 +252,48 @@ ol { list-style-type: lower-alpha; }
 <h2>Inhaltsverzeichnis</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org3fddaef">1. Erste Schritte in Racket</a></li>
-<li><a href="#org96dfc69">2. Auswertung arithmetischer Ausdrücke</a></li>
-<li><a href="#org5b89d78">3. Aufschreiben elementarer Funktionen</a></li>
-<li><a href="#org465335f">4. Aufschreiben elementarer Funktionen</a></li>
-<li><a href="#org1dec808">5. Anwenden der Aufschreibregeln</a></li>
-<li><a href="#orgafb2e35">6. Profit für den Kinobesitzer</a></li>
-<li><a href="#org15edd51">7. Modifikation von <code>kino.rkt</code></a></li>
-<li><a href="#org5fac364">8. Einsatz von Hilfsfunktionen</a></li>
-<li><a href="#org387b4cc">9. Ersetzungsmodell</a></li>
-<li><a href="#orgecaa5f7">10. Bedingte Funktion</a></li>
-<li><a href="#org3d427ad">11. Zusatzaufgaben zu bedingten Funktionen</a></li>
+<li><a href="#org6feed4d">1. Erste Schritte in Racket</a></li>
+<li><a href="#org4c77b76">2. Auswertung arithmetischer Ausdrücke</a></li>
+<li><a href="#org22aed2e">3. Aufschreiben elementarer Funktionen</a></li>
+<li><a href="#orgc847f03">4. Aufschreiben elementarer Funktionen (2)</a></li>
+<li><a href="#orgacbc899">5. Anwenden der Aufschreibregeln</a></li>
+<li><a href="#orgc9566b1">6. Profit für den Kinobesitzer</a></li>
+<li><a href="#org941e9cd">7. Modifikation von <code>kino.rkt</code></a></li>
+<li><a href="#org93a4e45">8. Einsatz von Hilfsfunktionen</a></li>
+<li><a href="#orgfc107a3">9. Ersetzungsmodell</a></li>
+<li><a href="#org45815a1">10. Bedingte Funktion</a></li>
+<li><a href="#org289dd62">11. Zusatzaufgaben zu bedingten Funktionen</a></li>
 <li><a href="#datenabstraktion">12. Datenabstraktion</a></li>
-<li><a href="#org58747ae">13. Datenabstraktion &#x2013; Zusatzaufgabe</a>
+<li><a href="#org2c4e4c3">13. Datenabstraktion &#x2013; Zusatzaufgabe</a>
 <ul>
-<li><a href="#org1638bfb">13.1. Vorbemerkungen</a></li>
-<li><a href="#org9ce919b">13.2. Aufgabenstellungen</a></li>
+<li><a href="#orga721f37">13.1. Vorbemerkungen</a></li>
+<li><a href="#orgd84f993">13.2. Aufgabenstellungen</a></li>
 </ul>
 </li>
-<li><a href="#orgb2668b8">14. Datenabstraktion &#x2013; gemischte Daten</a></li>
-<li><a href="#org944f8ed">15. Datenabstraktion &#x2013; gemischte Daten &#x2013; Zusatzaufgabe</a>
+<li><a href="#org1e35561">14. Datenabstraktion &#x2013; gemischte Daten</a></li>
+<li><a href="#org6dba1e3">15. Datenabstraktion &#x2013; gemischte Daten &#x2013; Zusatzaufgabe</a>
 <ul>
-<li><a href="#org6a93253">15.1. Vorbemerkung</a></li>
-<li><a href="#orgd6b9332">15.2. Aufgabenstellungen</a></li>
+<li><a href="#org15c97b4">15.1. Vorbemerkung</a></li>
+<li><a href="#orge3c16ca">15.2. Aufgabenstellungen</a></li>
 </ul>
 </li>
 <li><a href="#listenkonstruktion">16. Listenkonstruktion und -zerlegung</a></li>
 <li><a href="#listenverarbeitung">17. Listenverarbeitung</a></li>
-<li><a href="#orgbba38a9">18. Funktionen über zwei Listen</a></li>
+<li><a href="#org448dd46">18. Funktionen über zwei Listen</a></li>
 <li><a href="#formaleaspekte">19. Formale Aspekte</a></li>
-<li><a href="#orga2c34d2">20. Lokale Definitionen</a></li>
-<li><a href="#org3b9306c">21. Listen über gemischten Daten (Zusatzaufgabe)</a></li>
+<li><a href="#org4303534">20. Lokale Definitionen</a></li>
+<li><a href="#org5d68588">21. Listen über gemischten Daten (Zusatzaufgabe)</a></li>
 <li><a href="#akkumulierendeparameter">22. Hilfsfunktionen mit akkumulierenden Parametern</a></li>
 <li><a href="#abstraktionvonfunktionen">23. Abstraktion von Funktionen</a></li>
 <li><a href="#fho">24. Anwendung von <code>map</code>, <code>filter</code> und <code>foldr</code></a></li>
-<li><a href="#org3afe1ba">25. Definition von Funktionen höherer Ordnung</a></li>
+<li><a href="#org6a30dec">25. Definition von Funktionen höherer Ordnung</a></li>
 </ul>
 </div>
 </div>
 
 
-<div id="outline-container-org3fddaef" class="outline-2">
-<h2 id="org3fddaef"><span class="section-number-2">1</span> Erste Schritte in Racket</h2>
+<div id="outline-container-org6feed4d" class="outline-2">
+<h2 id="org6feed4d"><span class="section-number-2">1</span> Erste Schritte in Racket</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 Machen Sie sich mit den NORDAKADEMIE-Rechnern vertraut und richten Sie
@@ -320,40 +320,38 @@ finden Sie alle vordefinierten mathematischen Funktionen?
 </div>
 </div>
 
-<div id="outline-container-org96dfc69" class="outline-2">
-<h2 id="org96dfc69"><span class="section-number-2">2</span> Auswertung arithmetischer Ausdrücke</h2>
+<div id="outline-container-org4c77b76" class="outline-2">
+<h2 id="org4c77b76"><span class="section-number-2">2</span> Auswertung arithmetischer Ausdrücke</h2>
 <div class="outline-text-2" id="text-2">
-<p>
-a. Wie wird der Ausdruck<br />
-   <code>(* (+ 2 2) (/ (* (+ 3 5) (/ 30 10)) 2))</code> <br />
-   ausgewertet?
-b. Experimentieren Sie mit verschiedenen Operatoren und Zahlenarten.
-c. Werten Sie die folgenden Ausdrücke aus und vergleichen Sie die Resultate:
+<ol class="org-ol">
+<li>Wie wird der Ausdruck<br />
+<code>(* (+ 2 2) (/ (* (+ 3 5) (/ 30 10)) 2))</code> <br />
+ausgewertet?</li>
+<li>Experimentieren Sie mit verschiedenen Operatoren und Zahlenarten.</li>
+<li><p>
+Werten Sie die folgenden Ausdrücke aus und vergleichen Sie die Resultate:
 </p>
 <pre class="example">
 (- 1.0 0.9)
 (- 1000.0 999.9) 
 (- #i1000.0 #i999.9)
-</pre>
+</pre></li>
+</ol>
 </div>
 </div>
 
-<div id="outline-container-org5b89d78" class="outline-2">
-<h2 id="org5b89d78"><span class="section-number-2">3</span> Aufschreiben elementarer Funktionen</h2>
+<div id="outline-container-org22aed2e" class="outline-2">
+<h2 id="org22aed2e"><span class="section-number-2">3</span> Aufschreiben elementarer Funktionen</h2>
 <div class="outline-text-2" id="text-3">
 <p>
 Schreiben Sie für die folgenden mathematischen Formeln Racket-Funktions&#x00ad;definitionen auf:
 </p>
 
-<p>
-a) \(n^2 + 1\)
-</p>
-<p>
-b) \(\frac{1}{2}n^2 + 3\)
-</p>
-<p>
-c) \(2 - \frac{1}{n}\)
-</p>
+<ol class="org-ol">
+<li>\(n^2 + 1\)</li>
+<li>\(\frac{1}{2}n^2 + 3\)</li>
+<li>\(2 - \frac{1}{n}\)</li>
+</ol>
 <p>
 Geben Sie die Racket-Funktionen in das Definitionsfenster von
 DrRacket ein. Geben Sie anschließend in das Interaktionsfenster
@@ -361,8 +359,8 @@ Funktionsaufrufe für diese Funktionen ein.
 </p>
 </div>
 </div>
-<div id="outline-container-org465335f" class="outline-2">
-<h2 id="org465335f"><span class="section-number-2">4</span> Aufschreiben elementarer Funktionen</h2>
+<div id="outline-container-orgc847f03" class="outline-2">
+<h2 id="orgc847f03"><span class="section-number-2">4</span> Aufschreiben elementarer Funktionen (2)</h2>
 <div class="outline-text-2" id="text-4">
 <p>
 In der Praxis findet der Programmierer selten mathematische Formeln
@@ -378,20 +376,19 @@ In der Praxis findet der Programmierer selten mathematische Formeln
 Finden Sie für die folgenden Aufgabenstellungen die passenden
    Formeln und schreiben Sie diese als Funktionsdefinitionen in
    <i>Racket</i> auf: 
-   a) Berechnung des Rauminhalts eines Quaders aus dessen Länge, Breite und Höhe.  
 </p>
-<p>
-b) Schreiben Sie eine Funktion, die aus der Entfernung und den
-   Geschwindigkeiten zweier Züge die Zeit ermittelt, nach der die
-   Züge sich treffen, wenn Sie sich auf einem gemeinsamen
-   Streckenabschnitt von ihren jeweiligen Startpunkten aus
-   aufeinander zu bewegen. 
-</p>
-<p>
-d) Berechnung der Miete, die eine Spielerin in Monopoly
-   bezahlen muss, falls sie auf einen Bahnhof trifft, der einer
-   anderen Spielerin gehört. Die Miete ist davon abhängig wie viele
-   Bahnhöfe der anderen Spielerin gehören:
+<ol class="org-ol">
+<li>Berechnung des Rauminhalts eines Quaders aus dessen Länge, Breite und Höhe.</li>
+<li>Schreiben Sie eine Funktion, die aus der Entfernung und den
+Geschwindigkeiten zweier Züge die Zeit ermittelt, nach der die
+Züge sich treffen, wenn Sie sich auf einem gemeinsamen
+Streckenabschnitt von ihren jeweiligen Startpunkten aus
+aufeinander zu bewegen.</li>
+<li><p>
+Berechnung der Miete, die eine Spielerin in Monopoly
+bezahlen muss, falls sie auf einen Bahnhof trifft, der einer
+anderen Spielerin gehört. Die Miete ist davon abhängig wie viele
+Bahnhöfe der anderen Spielerin gehören:
 </p>
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
@@ -431,12 +428,13 @@ d) Berechnung der Miete, die eine Spielerin in Monopoly
 </table>
 <p>
 Hinweis: Ein Aufruf <code>(expt x y)</code> liefert \(x^y\) als Ergebnis.
-</p>
+</p></li>
+</ol>
 </div>
 </div>
 
-<div id="outline-container-org1dec808" class="outline-2">
-<h2 id="org1dec808"><span class="section-number-2">5</span> Anwenden der Aufschreibregeln</h2>
+<div id="outline-container-orgacbc899" class="outline-2">
+<h2 id="orgacbc899"><span class="section-number-2">5</span> Anwenden der Aufschreibregeln</h2>
 <div class="outline-text-2" id="text-5">
 <p>
 Schreiben Sie die Funktion zur Berechnung der Bahnhofsmiete in
@@ -449,8 +447,8 @@ folgenden Aufgaben gemäß diesen Regeln aufzuschreiben!!!</b>
 </div>
 </div>
 
-<div id="outline-container-orgafb2e35" class="outline-2">
-<h2 id="orgafb2e35"><span class="section-number-2">6</span> Profit für den Kinobesitzer</h2>
+<div id="outline-container-orgc9566b1" class="outline-2">
+<h2 id="orgc9566b1"><span class="section-number-2">6</span> Profit für den Kinobesitzer</h2>
 <div class="outline-text-2" id="text-6">
 <p>
 Ein altmodisches Vorstadtkino besitzt eine einfache Formel für die
@@ -462,39 +460,41 @@ Berechnung des Profits bei gegebener Besucherzahl.
 </p>
 </div>
 </div>
-<div id="outline-container-org15edd51" class="outline-2">
-<h2 id="org15edd51"><span class="section-number-2">7</span> Modifikation von <code>kino.rkt</code></h2>
+<div id="outline-container-org941e9cd" class="outline-2">
+<h2 id="org941e9cd"><span class="section-number-2">7</span> Modifikation von <code>kino.rkt</code></h2>
 <div class="outline-text-2" id="text-7">
-<p>
-a) Modifizieren Sie das Programm <code>kino.rkt</code> so, dass die Fixkosten
-   einer Veranstaltung wegfallen und dafür 15 Währungseinheiten pro
-   Besucher an Kosten anfallen. 
-b) Nehmen Sie die gleiche Modifikation auch an der Funktion <code>profit</code>
-   aus der Vorlesung vor, die ohne Hilfsfunktionen auskommt, und
-   vergleichen Sie die Ergebnisse. 
-</p>
+<ol class="org-ol">
+<li>Modifizieren Sie das Programm <code>kino.rkt</code> so, dass die Fixkosten
+einer Veranstaltung wegfallen und dafür 15 Währungseinheiten pro
+Besucher an Kosten anfallen.</li>
+<li>Nehmen Sie die gleiche Modifikation auch an der Funktion <code>profit</code>
+aus der Vorlesung vor, die ohne Hilfsfunktionen auskommt, und
+vergleichen Sie die Ergebnisse.</li>
+</ol>
 </div>
 </div>
 
-<div id="outline-container-org5fac364" class="outline-2">
-<h2 id="org5fac364"><span class="section-number-2">8</span> Einsatz von Hilfsfunktionen</h2>
+<div id="outline-container-org93a4e45" class="outline-2">
+<h2 id="org93a4e45"><span class="section-number-2">8</span> Einsatz von Hilfsfunktionen</h2>
 <div class="outline-text-2" id="text-8">
 <p>
 Die folgenden Aufgaben sind unter Benutzung von Hilfsfunktionen zu
 lösen. Befolgen Sie unbedingt alle in der Vorlesung angegebenen Regeln:
-a) Schreiben Sie ein Programm, das das Volumen eines Zylinders zu
-   berechnen erlaubt. Eingangsgrößen sind der Radius und die Höhe des Zylinders.
-b) Schreiben Sie ein Programm, das die Oberfläche eines Zylinders zu
-   berechnen erlaubt. Eingangsgrößen sind der Radius und die Höhe des Zylinders.
-c) Schreiben Sie ein Programm, das die Oberfläche eines Rohrs zu
-   berechnen erlaubt. Eingangsgrößen sind der Innenradius, die
-   Wandstärke und die Länge des Rohrs.
 </p>
+<ol class="org-ol">
+<li>Schreiben Sie ein Programm, das das Volumen eines Zylinders zu
+berechnen erlaubt. Eingangsgrößen sind der Radius und die Höhe des Zylinders.</li>
+<li>Schreiben Sie ein Programm, das die Oberfläche eines Zylinders zu
+berechnen erlaubt. Eingangsgrößen sind der Radius und die Höhe des Zylinders.</li>
+<li>Schreiben Sie ein Programm, das die Oberfläche eines Rohrs zu
+berechnen erlaubt. Eingangsgrößen sind der Innenradius, die
+Wandstärke und die Länge des Rohrs.</li>
+</ol>
 </div>
 </div>
 
-<div id="outline-container-org387b4cc" class="outline-2">
-<h2 id="org387b4cc"><span class="section-number-2">9</span> Ersetzungsmodell</h2>
+<div id="outline-container-orgfc107a3" class="outline-2">
+<h2 id="orgfc107a3"><span class="section-number-2">9</span> Ersetzungsmodell</h2>
 <div class="outline-text-2" id="text-9">
 <p>
 Gegeben sei die folgende Funktionsdefinition:
@@ -508,19 +508,17 @@ Gegeben sei die folgende Funktionsdefinition:
 <p>
 Werten Sie die folgenden Ausdrücke Schritt für Schritt unter Anwendung
 des Ersetzungsmodells aus:
-a) <code>(f 1 (* 2 3))</code>
 </p>
-<p>
-b) <code>(+ (f 1 2) (f 2 1))</code>
-</p>
-<p>
-c) <code>(f (f 1 (* 2 3)) 19)</code>
-</p>
+<ol class="org-ol">
+<li><code>(f 1 (* 2 3))</code></li>
+<li><code>(+ (f 1 2) (f 2 1))</code></li>
+<li><code>(f (f 1 (* 2 3)) 19)</code></li>
+</ol>
 </div>
 </div>
 
-<div id="outline-container-orgecaa5f7" class="outline-2">
-<h2 id="orgecaa5f7"><span class="section-number-2">10</span> Bedingte Funktion</h2>
+<div id="outline-container-org45815a1" class="outline-2">
+<h2 id="org45815a1"><span class="section-number-2">10</span> Bedingte Funktion</h2>
 <div class="outline-text-2" id="text-10">
 <p>
 Schreiben Sie ein Programm, das aus dem Bruttoeinkommen eines
@@ -577,7 +575,7 @@ jeweiligen Intervall.
 Die Funktion <code>nettoeinkommen</code> soll nach folgendem Schema aufrufbar sein:
 </p>
 
-<pre class="example" id="org2398234">
+<pre class="example" id="org6292e67">
 (nettoeinkommen anzahl-arbeitsStunden stundenLohn)
 </pre>
 
@@ -608,8 +606,8 @@ Konstanten, Regel 5) Gebrauch.</li>
 </div>
 </div>
 
-<div id="outline-container-org3d427ad" class="outline-2">
-<h2 id="org3d427ad"><span class="section-number-2">11</span> Zusatzaufgaben zu bedingten Funktionen</h2>
+<div id="outline-container-org289dd62" class="outline-2">
+<h2 id="org289dd62"><span class="section-number-2">11</span> Zusatzaufgaben zu bedingten Funktionen</h2>
 <div class="outline-text-2" id="text-11">
 <ol class="org-ol">
 <li><p>
@@ -640,10 +638,14 @@ nächsten 900€</li>
 </ul>
 <p>
 Lösen Sie die folgenden Teilaufgaben
-a. Bestimmen Sie manuell die Gutschriften für Umsätze 2000€ und
-   2600€.
-b. Schreiben Sie eine Funktion <code>rueckerstattung</code>, die einen Umsatz
-   als Argument akzeptiert und den Rückerstattungsbetrag ermittelt.
+</p>
+<ol class="org-ol">
+<li>Bestimmen Sie manuell die Gutschriften für Umsätze 2000€ und
+2600€.</li>
+<li>Schreiben Sie eine Funktion <code>rueckerstattung</code>, die einen Umsatz
+als Argument akzeptiert und den Rückerstattungsbetrag ermittelt.</li>
+</ol>
+<p>
 <br />
 </p></li>
 <li>Wieviele reelle Lösungen besitzt eine quadratische Gleichung
@@ -707,12 +709,12 @@ weiblicher Vegetarier ist.
 </div>
 </div>
 
-<div id="outline-container-org58747ae" class="outline-2">
-<h2 id="org58747ae"><span class="section-number-2">13</span> Datenabstraktion &#x2013; Zusatzaufgabe</h2>
+<div id="outline-container-org2c4e4c3" class="outline-2">
+<h2 id="org2c4e4c3"><span class="section-number-2">13</span> Datenabstraktion &#x2013; Zusatzaufgabe</h2>
 <div class="outline-text-2" id="text-13">
 </div>
-<div id="outline-container-org1638bfb" class="outline-3">
-<h3 id="org1638bfb"><span class="section-number-3">13.1</span> Vorbemerkungen</h3>
+<div id="outline-container-orga721f37" class="outline-3">
+<h3 id="orga721f37"><span class="section-number-3">13.1</span> Vorbemerkungen</h3>
 <div class="outline-text-3" id="text-13-1">
 <p>
 In den Lehrsprachen von DrRacket gibt es ein vordefinierte
@@ -804,39 +806,40 @@ Mit <code>(stop)</code> wird die Zeichenfläche geschlossen.
 </div>
 </div>
 
-<div id="outline-container-org9ce919b" class="outline-3">
-<h3 id="org9ce919b"><span class="section-number-3">13.2</span> Aufgabenstellungen</h3>
+<div id="outline-container-orgd84f993" class="outline-3">
+<h3 id="orgd84f993"><span class="section-number-3">13.2</span> Aufgabenstellungen</h3>
 <div class="outline-text-3" id="text-13-2">
 <ol class="org-ol">
 <li>Experimentieren Sie mit den o. g. Funktionen.</li>
+<li>Kreise und Rechtecke bewegen
+<ol class="org-ol">
+<li>Entwickeln Sie eine Datenstruktur <code>circle</code> für farbige Kreise. Diese
+sollen durch drei Komponenten definiert sein: den Mittelpunkt,
+den Radius und die Farbe des Umfangs.</li>
+<li>Schreiben Sie die Datendefinition für Kreise und die
+Funktionsschablone (gemäß Regeln 7 und 8) für Kreise
+verarbeitende Funktionen.</li>
+<li>Benutzen Sie die Schablone für die Entwicklung einer Funktion
+<code>draw-a-circle</code>. Die Funktion erwartet einen Kreis (<code>circle</code>) als
+Argument und zeichnet ihn auf einer Zeichenfläche. Der
+Funktionswert sollte <code>#true</code> sein.</li>
+<li>Entwickeln Sie eine Funktion <code>translate-circle</code> mit einer
+<code>circle</code>-Struktur <code>c</code> und einer <code>posn</code>-Struktur <code>delta</code> als
+Parameter. Die Funktion liefert einen <code>circle</code> als Resultat,
+dessen Mittelpunkt gegenüber dem von <code>c</code> um den x-Wert von
+<code>delta</code> nach rechts und um den y-Wert von <code>delta</code> nach unten
+verschoben ist. Die Funktion hat keinen Effekt auf der
+Zeichenfläche.</li>
+<li>Schreiben Sie eine Funktion <code>clear-a-circle</code>, die einen Kreis
+von der Zeichenfläche entfernt.</li>
 <li><p>
-Kreise und Rechtecke bewegen
-a. Entwickeln Sie eine Datenstruktur <code>circle</code> für farbige Kreise. Diese
-   sollen durch drei Komponenten definiert sein: den Mittelpunkt,
-   den Radius und die Farbe des Umfangs.
-b. Schreiben Sie die Datendefinition für Kreise und die
-   Funktionsschablone (gemäß Regeln 7 und 8) für Kreise
-   verarbeitende Funktionen.
-c. Benutzen Sie die Schablone für die Entwicklung einer Funktion
-   <code>draw-a-circle</code>. Die Funktion erwartet einen Kreis (<code>circle</code>) als
-   Argument und zeichnet ihn auf einer Zeichenfläche. Der
-   Funktionswert sollte <code>#true</code> sein.
-d. Entwickeln Sie eine Funktion <code>translate-circle</code> mit einer
-   <code>circle</code>-Struktur <code>c</code> und einer <code>posn</code>-Struktur <code>delta</code> als
-   Parameter. Die Funktion liefert einen <code>circle</code> als Resultat,
-   dessen Mittelpunkt gegenüber dem von <code>c</code> um den x-Wert von
-   <code>delta</code> nach rechts und um den y-Wert von <code>delta</code> nach unten
-   verschoben ist. Die Funktion hat keinen Effekt auf der
-   Zeichenfläche.
-e. Schreiben Sie eine Funktion <code>clear-a-circle</code>, die einen Kreis
-   von der Zeichenfläche entfernt.
-f. Schreiben Sie eine Funktion <code>draw-and-clear-circle</code>, die eine
-   <code>circle</code>-Struktur zeichnet, eine kurze Zeit wartet und sie
-   anschließend wieder entfernt. Für die Implementierung der
-   Wartezeit steht die Prozedur <code>sleep-for-a-while</code> zur
-   Verfügung. Der Aufruf <br />
-   <code>(sleep-for-a-while 3)</code> erzeugt eine
-   Wartezeit von drei Sekunden. Der Funktionswert ist <code>#true</code>.
+Schreiben Sie eine Funktion <code>draw-and-clear-circle</code>, die eine
+<code>circle</code>-Struktur zeichnet, eine kurze Zeit wartet und sie
+anschließend wieder entfernt. Für die Implementierung der
+Wartezeit steht die Prozedur <code>sleep-for-a-while</code> zur
+Verfügung. Der Aufruf <br />
+<code>(sleep-for-a-while 3)</code> erzeugt eine
+Wartezeit von drei Sekunden. Der Funktionswert ist <code>#true</code>.
 </p>
 
 <p>
@@ -883,12 +886,13 @@ Position des Kreises angezeigt wird.
 <p>
 Das sei nur ein kleine Anregung für eigene „Animationen“.
 </p></li>
+</ol></li>
 </ol>
 </div>
 </div>
 </div>
-<div id="outline-container-orgb2668b8" class="outline-2">
-<h2 id="orgb2668b8"><span class="section-number-2">14</span> Datenabstraktion &#x2013; gemischte Daten</h2>
+<div id="outline-container-org1e35561" class="outline-2">
+<h2 id="org1e35561"><span class="section-number-2">14</span> Datenabstraktion &#x2013; gemischte Daten</h2>
 <div class="outline-text-2" id="text-14">
 <p>
 Lösen Sie die Aufgabe unter Anwendung der passenden Regeln!
@@ -946,12 +950,12 @@ sich aus dem Grundgehalt und der monatlichen Sollarbeitszeit plus
 </div>
 </div>
 
-<div id="outline-container-org944f8ed" class="outline-2">
-<h2 id="org944f8ed"><span class="section-number-2">15</span> Datenabstraktion &#x2013; gemischte Daten &#x2013; Zusatzaufgabe</h2>
+<div id="outline-container-org6dba1e3" class="outline-2">
+<h2 id="org6dba1e3"><span class="section-number-2">15</span> Datenabstraktion &#x2013; gemischte Daten &#x2013; Zusatzaufgabe</h2>
 <div class="outline-text-2" id="text-15">
 </div>
-<div id="outline-container-org6a93253" class="outline-3">
-<h3 id="org6a93253"><span class="section-number-3">15.1</span> Vorbemerkung</h3>
+<div id="outline-container-org15c97b4" class="outline-3">
+<h3 id="org15c97b4"><span class="section-number-3">15.1</span> Vorbemerkung</h3>
 <div class="outline-text-3" id="text-15-1">
 <p>
 Diese Aufgabe stellt eine Fortführung von Aufgabe 13 dar. Falls Sie
@@ -959,8 +963,8 @@ diese noch nicht bearbeitet haben, sollten Sie zunächst damit beginnen.
 </p>
 </div>
 </div>
-<div id="outline-container-orgd6b9332" class="outline-3">
-<h3 id="orgd6b9332"><span class="section-number-3">15.2</span> Aufgabenstellungen</h3>
+<div id="outline-container-orge3c16ca" class="outline-3">
+<h3 id="orge3c16ca"><span class="section-number-3">15.2</span> Aufgabenstellungen</h3>
 <div class="outline-text-3" id="text-15-2">
 <ol class="org-ol">
 <li>Enwtickeln Sie eine Datenstrukturdefinition für farbige
@@ -1301,7 +1305,7 @@ Zeichenkette und könnte z. B. so benutzt werden:
 <li>Lösen Sie die Aufgabe, ohne die Summe der Listenelemente zu berechnen.</li>
 </ol></li>
 <li><p>
-<a id="org3553bbb"></a>Gegeben sei die Datenstrukturdefinition <code>gast</code> aus Aufgabe
+<a id="orgce062f5"></a>Gegeben sei die Datenstrukturdefinition <code>gast</code> aus Aufgabe
 12 und z.&nbsp;B.  die folgende Gästeliste:
 </p>
 <div class="org-src-container">
@@ -1330,8 +1334,8 @@ b) Schreiben Sie eine Funktion <code>frauen</code>, die aus einer Gästeliste
 </ol>
 </div>
 </div>
-<div id="outline-container-orgbba38a9" class="outline-2">
-<h2 id="orgbba38a9"><span class="section-number-2">18</span> Funktionen über zwei Listen</h2>
+<div id="outline-container-org448dd46" class="outline-2">
+<h2 id="org448dd46"><span class="section-number-2">18</span> Funktionen über zwei Listen</h2>
 <div class="outline-text-2" id="text-18">
 <p>
 Die in den folgenden Aufgaben zu entwickelnden Funktionen haben alle 2
@@ -1418,8 +1422,8 @@ berechnet.
 </ol>
 </div>
 </div>
-<div id="outline-container-orga2c34d2" class="outline-2">
-<h2 id="orga2c34d2"><span class="section-number-2">20</span> Lokale Definitionen</h2>
+<div id="outline-container-org4303534" class="outline-2">
+<h2 id="org4303534"><span class="section-number-2">20</span> Lokale Definitionen</h2>
 <div class="outline-text-2" id="text-20">
 <ol class="org-ol">
 <li><p>
@@ -1517,8 +1521,8 @@ korrekten Teil der Formel eingeschachtelt erscheint.</li>
 </ol>
 </div>
 </div>
-<div id="outline-container-org3b9306c" class="outline-2">
-<h2 id="org3b9306c"><span class="section-number-2">21</span> Listen über gemischten Daten (Zusatzaufgabe)</h2>
+<div id="outline-container-org5d68588" class="outline-2">
+<h2 id="org5d68588"><span class="section-number-2">21</span> Listen über gemischten Daten (Zusatzaufgabe)</h2>
 <div class="outline-text-2" id="text-21">
 <p>
 Diese Aufgabe ist eine Fortführung der Aufgaben 13 und 15. Dort haben
@@ -1656,7 +1660,7 @@ zwischen den Orten attributiert sind, z. B. so:
 </p>
 
 
-<div id="orgde04031" class="figure">
+<div id="org7fa0161" class="figure">
 <p><img src="./Abbildungen/entfernungen.png" alt="entfernungen.png" />
 </p>
 </div>
@@ -1688,7 +1692,7 @@ auftreten.</li>
 <h2 id="abstraktionvonfunktionen"><span class="section-number-2">23</span> Abstraktion von Funktionen</h2>
 <div class="outline-text-2" id="text-abstraktionvonfunktionen">
 <p>
-Wenn Sie die Funktionen <code>vegetarier</code> und <code>frauen</code> aus Aufgabe <a href="#org3553bbb">17i</a>
+Wenn Sie die Funktionen <code>vegetarier</code> und <code>frauen</code> aus Aufgabe <a href="#orgce062f5">17i</a>
 regelkonform entwickelt haben, dürften sie sich nur an einer Stelle
 <i>wesentlich</i> unterscheiden. 
 Überlegen Sie, wie diese „Verschiedenheit“ in Form eines Parameters
@@ -1768,8 +1772,8 @@ Betrachten Sie zum Schluss Ihren Racket-Audruck hinsichtlich der Lesbarkeit.
 </ol>
 </div>
 </div>
-<div id="outline-container-org3afe1ba" class="outline-2">
-<h2 id="org3afe1ba"><span class="section-number-2">25</span> Definition von Funktionen höherer Ordnung</h2>
+<div id="outline-container-org6a30dec" class="outline-2">
+<h2 id="org6a30dec"><span class="section-number-2">25</span> Definition von Funktionen höherer Ordnung</h2>
 <div class="outline-text-2" id="text-25">
 <p>
 Definieren Sie die folgenden Funktionen höherer Ordnung rekursiv oder
@@ -1809,7 +1813,7 @@ liefern. Begrenzen Sie die Suche auf Zahlen bis 1000 und geben Sie
 </div>
 <div id="postamble" class="status">
 <p class="author">Autor: Johannes Brauer</p>
-<p class="date">Created: 2022-01-09 Sun 18:49</p>
+<p class="date">Created: 2022-01-17 Mon 16:29</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
