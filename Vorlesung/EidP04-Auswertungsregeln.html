@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="de" xml:lang="de">
 <head>
-<!-- 2019-12-31 Tue 22:58 -->
+<!-- 2022-01-24 Mon 19:07 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Auswertungsregeln</title>
@@ -40,7 +40,7 @@
   }
   pre.src {
     position: relative;
-    overflow: visible;
+    overflow: auto;
     padding-top: 1.2em;
   }
   pre.src:before {
@@ -52,7 +52,7 @@
     padding: 3px;
     border: 1px solid black;
   }
-  pre.src:hover:before { display: inline;}
+  pre.src:hover:before { display: inline; margin-top: 14px;}
   /* Languages per Org manual */
   pre.src-asymptote:before { content: 'Asymptote'; }
   pre.src-awk:before { content: 'Awk'; }
@@ -206,50 +206,26 @@
 <script type="text/javascript" src="styles/lib/js/jquery.stickytableheaders.min.js"></script>
 <link rel="stylesheet" type="text/css" href="mycss/mystyle.css" />
 <script type="text/javascript">
-/*
-@licstart  The following is the entire license notice for the
-JavaScript code in this tag.
-
-Copyright (C) 2012-2019 Free Software Foundation, Inc.
-
-The JavaScript code in this tag is free software: you can
-redistribute it and/or modify it under the terms of the GNU
-General Public License (GNU GPL) as published by the Free Software
-Foundation, either version 3 of the License, or (at your option)
-any later version.  The code is distributed WITHOUT ANY WARRANTY;
-without even the implied warranty of MERCHANTABILITY or FITNESS
-FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
-
-As additional permission under GNU GPL version 3 section 7, you
-may distribute non-source (e.g., minimized or compacted) forms of
-that code without the copy of the GNU GPL normally required by
-section 4, provided you include this license notice and a URL
-through which recipients can access the Corresponding Source.
-
-
-@licend  The above is the entire license notice
-for the JavaScript code in this tag.
-*/
+// @license magnet:?xt=urn:btih:e95b018ef3580986a04669f1b5879592219e2a7a&dn=public-domain.txt Public Domain
 <!--/*--><![CDATA[/*><!--*/
- function CodeHighlightOn(elem, id)
- {
-   var target = document.getElementById(id);
-   if(null != target) {
-     elem.cacheClassElem = elem.className;
-     elem.cacheClassTarget = target.className;
-     target.className = "code-highlighted";
-     elem.className   = "code-highlighted";
-   }
- }
- function CodeHighlightOff(elem, id)
- {
-   var target = document.getElementById(id);
-   if(elem.cacheClassElem)
-     elem.className = elem.cacheClassElem;
-   if(elem.cacheClassTarget)
-     target.className = elem.cacheClassTarget;
- }
-/*]]>*///-->
+     function CodeHighlightOn(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(null != target) {
+         elem.classList.add("code-highlighted");
+         target.classList.add("code-highlighted");
+       }
+     }
+     function CodeHighlightOff(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(null != target) {
+         elem.classList.remove("code-highlighted");
+         target.classList.remove("code-highlighted");
+       }
+     }
+    /*]]>*///-->
+// @license-end
 </script>
 <script type="text/x-mathjax-config">
     MathJax.Hub.Config({
@@ -272,7 +248,7 @@ for the JavaScript code in this tag.
 });
 </script>
 <script type="text/javascript"
-        src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_HTML"></script>
 </head>
 <body>
 <div id="content">
@@ -281,9 +257,9 @@ for the JavaScript code in this tag.
 <span class="subtitle">Einführung in die Programmierung</span>
 </h1>
 
-<div id="outline-container-org1e8b3d6" class="outline-2">
-<h2 id="org1e8b3d6">Syntax und Semantik einer mathematischen Formelsprache</h2>
-<div class="outline-text-2" id="text-org1e8b3d6">
+<div id="outline-container-org76aed5b" class="outline-2">
+<h2 id="org76aed5b">Syntax und Semantik einer mathematischen Formelsprache</h2>
+<div class="outline-text-2" id="text-org76aed5b">
 <p>
 Die Auswertung von Ausdrücken in <i>Racket</i> basiert auf der Anwendung
 einfacher äquivalenter Umformungen, wie sie aus der Schulmathematik
@@ -305,9 +281,9 @@ auch als die <i>Syntax</i> der Sprache.
 </p>
 </div>
 
-<div id="outline-container-org4001839" class="outline-3">
-<h3 id="org4001839">Syntax der mathematischen Formelsprache</h3>
-<div class="outline-text-3" id="text-org4001839">
+<div id="outline-container-org2dda078" class="outline-3">
+<h3 id="org2dda078">Syntax der mathematischen Formelsprache</h3>
+<div class="outline-text-3" id="text-org2dda078">
 <p>
 Sie legt z. B. fest, dass
 </p>
@@ -318,16 +294,14 @@ Sie legt z. B. fest, dass
 verwendet werden dürfen.</li>
 </ul>
 <p>
-Zu den Syntaxregeln gehört aber z. B auch, dass
+Zu den Syntaxregeln gehört aber z. B. auch, dass
 </p>
 <ul class="org-ul">
-<li>links und rechts von Operationszeichen \(+\) jeweils ein Operand
+<li>links und rechts vom Operationszeichen \(+\) jeweils ein Operand
 stehen muss und dass</li>
-<li><p>
-die Zeichenfolge \(2ab\) als Abkürzung für \(2\cdot a\cdot b\)
+<li>die Zeichenfolge \(2ab\) als Abkürzung für \(2\cdot a\cdot b\)
 geschrieben werden darf, das Operationszeichen \(\cdot\) also in
-bestimmten Situationen weggelassen werden darf.
-</p></li>
+bestimmten Situationen weggelassen werden darf.</li>
 </ul>
 
 <p>
@@ -341,9 +315,9 @@ Sprache.
 </div>
 </div>
 
-<div id="outline-container-org25edd46" class="outline-3">
-<h3 id="org25edd46">Semantik der mathematischen Formelsprache</h3>
-<div class="outline-text-3" id="text-org25edd46">
+<div id="outline-container-orge3b26b1" class="outline-3">
+<h3 id="orge3b26b1">Semantik der mathematischen Formelsprache</h3>
+<div class="outline-text-3" id="text-orge3b26b1">
 <p>
 Sie bestimmt z. B., dass
 </p>
@@ -423,20 +397,20 @@ bf(3,4) & = & 3\cdot 3 + 2\cdot 3\cdot 4 + 4\cdot 4 \\
 </div>
 </div>
 
-<div id="outline-container-org3df81fb" class="outline-2">
-<h2 id="org3df81fb">Syntax und Semantik von <i>Racket</i> (vorläufig)</h2>
-<div class="outline-text-2" id="text-org3df81fb">
+<div id="outline-container-org68c23f9" class="outline-2">
+<h2 id="org68c23f9">Syntax und Semantik von <i>Racket</i> (vorläufig)</h2>
+<div class="outline-text-2" id="text-org68c23f9">
 <p>
 Funktionale Programmiersprachen zeichnen sich u. a. dadurch aus, dass
 sie sich hinsichtlich ihrer Semantik sehr strikt an der Mathematik
-orientieren. Das bedeutet z. B., dass die Auswertung von Ausdrücken
+orientieren. Das bedeutet z.&nbsp;B., dass die Auswertung von Ausdrücken
 durch eine Folge von äquivalenten Umformungen definiert ist.
 </p>
 
 <p>
 Betrachten wir dies exemplarisch anhand der Funktion \(f\) aus dem
-vorhergehenden Abschnitt. Die Syntax von <i>Racket</i> verlangt zunächst
-das wir die mathematische Funktionsdefintion
+vorhergehenden Abschnitt. Die Syntax von <i>Racket</i> verlangt zunächst,
+dass wir die mathematische Funktionsdefintion
 </p>
 \begin{equation}
 bf(a,b) = a\cdot a + 2ab + b\cdot b
@@ -444,12 +418,12 @@ bf(a,b) = a\cdot a + 2ab + b\cdot b
 <p>
 umschreiben. Wollen wir in <i>Racket</i> eine Funktion mit Namen <code>bf</code> und
 den Parametern <code>a</code> und <code>b</code> definieren, sieht das so aus:<br />
-<code class="src src-scheme"><span style="color: #707183;">(</span><span style="color: #0000FF;">define</span> <span style="color: #006699;">bf</span> <span style="color: #7388D6;">(</span><span style="color: #0000FF;">lambda</span> <span style="color: #909183;">[</span>a b<span style="color: #909183;">]</span> ... <span style="color: #7388D6;">)</span><span style="color: #707183;">)</span></code>
+<code class="src src-scheme"><span style="color: #2aa198;">(</span><span style="color: #859900; font-weight: bold;">define</span> <span style="color: #268bd2;">bf</span> <span style="color: #b58900;">(</span><span style="color: #859900; font-weight: bold;">lambda</span> <span style="color: #268bd2;">[</span>a b<span style="color: #268bd2;">]</span> ... <span style="color: #b58900;">)</span><span style="color: #2aa198;">)</span></code>
 </p>
 
 <p>
 Wollen wir nun die rechte Seite der Funktionsdefinition nach <i>Racket</i>
-übertragen, müssen wir die Syntaxregel von <i>Racket</i> beachten, wonach
+übertragen, müssen wir die Syntaxregel von <i>Racket</i> beachten, wonach die
 Grundform eines (arithmetischen) Ausdrucks (in <i>Racket</i>) immer so
 aussieht:
 </p>
@@ -460,13 +434,13 @@ aussieht:
 <p>
 Damit erhalten wir die vollständige Funktionsdefinition:
 </p>
-<div class="small">
+<div class="small" id="orgbfc153c">
 <div class="org-src-container">
-<pre class="src src-scheme"><span style="color: #707183;">(</span><span style="color: #0000FF;">define</span> <span style="color: #006699;">bf</span>
-  <span style="color: #7388D6;">(</span><span style="color: #0000FF;">lambda</span> <span style="color: #909183;">[</span>a b<span style="color: #909183;">]</span>
-    <span style="color: #909183;">(</span>+ <span style="color: #709870;">(</span>* a a<span style="color: #709870;">)</span>
-       <span style="color: #709870;">(</span>* 2 a b<span style="color: #709870;">)</span>
-       <span style="color: #709870;">(</span>* b b<span style="color: #709870;">)</span><span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
+<pre class="src src-scheme"><span style="color: #2aa198;">(</span><span style="color: #859900; font-weight: bold;">define</span> <span style="color: #268bd2;">bf</span>
+  <span style="color: #b58900;">(</span><span style="color: #859900; font-weight: bold;">lambda</span> <span style="color: #268bd2;">[</span>a b<span style="color: #268bd2;">]</span>
+    <span style="color: #268bd2;">(</span>+ <span style="color: #6c71c4;">(</span>* a a<span style="color: #6c71c4;">)</span>
+       <span style="color: #6c71c4;">(</span>* 2 a b<span style="color: #6c71c4;">)</span>
+       <span style="color: #6c71c4;">(</span>* b b<span style="color: #6c71c4;">)</span><span style="color: #268bd2;">)</span><span style="color: #b58900;">)</span><span style="color: #2aa198;">)</span>
 </pre>
 </div>
 
@@ -482,7 +456,7 @@ Regeln Ausdrücke in <i>Racket</i> in einfachere Ausdrücke äquivalent
 umgeformt werden. 
 Die Frage lautet also z. B., wie aus der
 Funktionsanwendung<br />
-<code class="src src-scheme"> <span style="color: #707183;">(</span>bf 3 4<span style="color: #707183;">)</span></code><br />
+<code class="src src-scheme"> <span style="color: #2aa198;">(</span>bf 3 4<span style="color: #2aa198;">)</span></code><br />
 das Resultat <code>49</code> entsteht.
 </p>
 
@@ -490,7 +464,7 @@ das Resultat <code>49</code> entsteht.
 Betrachten wir dazu eine verallgemeinerte Definition einer
 Funktion <code>f</code> mit den formalen Parametern <code>x-1 ... x-n</code> und der
 Berechnungsvorschrift <code>exp</code>:<br />
-<code class="src src-scheme"> <span style="color: #707183;">(</span><span style="color: #0000FF;">define</span> <span style="color: #006699;">f</span> <span style="color: #7388D6;">(</span><span style="color: #0000FF;">lambda</span> <span style="color: #909183;">[</span>x-1 ... x-n<span style="color: #909183;">]</span> exp<span style="color: #7388D6;">)</span><span style="color: #707183;">)</span></code>
+<code class="src src-scheme"> <span style="color: #2aa198;">(</span><span style="color: #859900; font-weight: bold;">define</span> <span style="color: #268bd2;">f</span> <span style="color: #b58900;">(</span><span style="color: #859900; font-weight: bold;">lambda</span> <span style="color: #268bd2;">[</span>x-1 ... x-n<span style="color: #268bd2;">]</span> exp<span style="color: #b58900;">)</span><span style="color: #2aa198;">)</span></code>
 </p>
 
 <p>
@@ -498,9 +472,9 @@ Für die Anwendung der Funktion gilt dann die folgende Ersetzungsregel.
 </p>
 </div>
 
-<div id="outline-container-org890c8a5" class="outline-3">
-<h3 id="org890c8a5">Ersetzungsmodell für Funktionsanwendungen:</h3>
-<div class="outline-text-3" id="text-org890c8a5">
+<div id="outline-container-org6831f61" class="outline-3">
+<h3 id="org6831f61">Ersetzungsmodell für Funktionsanwendungen</h3>
+<div class="outline-text-3" id="text-org6831f61">
 <ul class="org-ul">
 <li><p>
 Formal: Mit <code>(define f (lambda [x-1 ... x-n] exp))</code> gilt: 
@@ -555,23 +529,24 @@ Multiplikation und Addition erforderlich ist:
 </div>
 </div>
 
-<div id="outline-container-org7054dd0" class="outline-2">
-<h2 id="org7054dd0">Zusammenfassung</h2>
-<div class="outline-text-2" id="text-org7054dd0">
+<div id="outline-container-org6d972b2" class="outline-2">
+<h2 id="org6d972b2">Zusammenfassung</h2>
+<div class="outline-text-2" id="text-org6d972b2">
 <ul class="org-ul">
 <li>Die <b>Syntax</b> einer Programmiersprache legt zulässige Elemente und Strukturen fest.</li>
-<li>Die <b>Semantik</b> einer Programmiersprache legt die Bedeutung syntaktisch korrekter Ausdrücke fest.</li>
+<li>Die <b>Semantik</b> einer Programmiersprache legt die Bedeutung syntaktisch korrekter Ausdrücke fest.</li>
 <li>Die Semantik funktionaler Programmiersprachen orientiert sich an der Mathematik.</li>
-<li>Ausdrücke werden schrittweise über <b>äquivalente Umformungen</b> durch
-das <b>Ersetzungsmodell für Funktionsanwendungen</b> vereinfacht.</li>
+<li>Ausdrücke werden schrittweise über <b>äquivalente Umformungen</b> durch
+das <b>Ersetzungsmodell für Funktionsanwendungen</b> vereinfacht.</li>
 </ul>
 </div>
 </div>
 </div>
 <div id="postamble" class="status">
+<p class="date">Datum: 24. 01. 2022</p>
 <p class="author">Autor: Johannes Brauer</p>
-<p class="date">Created: 2019-12-31 Tue 22:58</p>
-<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
+<p class="date">Created: 2022-01-24 Mon 19:07</p>
+<p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
 </html>

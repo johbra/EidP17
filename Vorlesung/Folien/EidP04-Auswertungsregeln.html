@@ -19,12 +19,12 @@
 <div class="reveal">
 <div class="slides">
 <section id="sec-title-slide">
-<h1 class="title">Auswertungsregeln</h1><h3 class="subtitle">Einführung in die Programmierung</h3><h2 class="author">Johannes Brauer</h2><h3 class="date">18. 01. 2021</h3>
+<h1 class="title">Auswertungsregeln</h1><h3 class="subtitle">Einführung in die Programmierung</h3><h2 class="author">Johannes Brauer</h2><h3 class="date">24. 01. 2022</h3>
 </section>
 
 <section>
-<section id="slide-org1c06624">
-<h2 id="org1c06624">Syntax und Semantik einer mathematischen Formelsprache</h2>
+<section id="slide-orgaca89bd">
+<h2 id="orgaca89bd">Syntax und Semantik einer mathematischen Formelsprache</h2>
 <p>
 Die Auswertung von Ausdrücken in <i>Racket</i> basiert auf der Anwendung
 einfacher äquivalenter Umformungen, wie sie aus der Schulmathematik
@@ -49,8 +49,8 @@ auch als die <i>Syntax</i> der Sprache.
 </p>
 
 </section>
-<section id="slide-org60a72ea">
-<h3 id="org60a72ea">Syntax der mathematischen Formelsprache</h3>
+<section id="slide-org91b49ac">
+<h3 id="org91b49ac">Syntax der mathematischen Formelsprache</h3>
 <p>
 Sie legt z. B. fest, dass
 </p>
@@ -62,10 +62,10 @@ verwendet werden dürfen.</li>
 
 </ul>
 <p>
-Zu den Syntaxregeln gehört aber z. B auch, dass
+Zu den Syntaxregeln gehört aber z. B. auch, dass
 </p>
 <ul>
-<li>links und rechts von Operationszeichen \(+\) jeweils ein Operand
+<li>links und rechts vom Operationszeichen \(+\) jeweils ein Operand
 stehen muss und dass</li>
 <li>die Zeichenfolge \(2ab\) als Abkürzung für \(2\cdot a\cdot b\)
 geschrieben werden darf, das Operationszeichen \(\cdot\) also in
@@ -83,8 +83,8 @@ Sprache.
 </p>
 
 </section>
-<section id="slide-orgbfeafe6">
-<h3 id="orgbfeafe6">Semantik der mathematischen Formelsprache</h3>
+<section id="slide-org8f7b49f">
+<h3 id="org8f7b49f">Semantik der mathematischen Formelsprache</h3>
 <p>
 Sie bestimmt z. B., dass
 </p>
@@ -178,19 +178,19 @@ bf(3,4) & = & 3\cdot 3 + 2\cdot 3\cdot 4 + 4\cdot 4 \\
 </section>
 </section>
 <section>
-<section id="slide-orgc4bbd92">
-<h2 id="orgc4bbd92">Syntax und Semantik von <i>Racket</i> (vorläufig)</h2>
+<section id="slide-orgb108540">
+<h2 id="orgb108540">Syntax und Semantik von <i>Racket</i> (vorläufig)</h2>
 <p>
 Funktionale Programmiersprachen zeichnen sich u. a. dadurch aus, dass
 sie sich hinsichtlich ihrer Semantik sehr strikt an der Mathematik
-orientieren. Das bedeutet z. B., dass die Auswertung von Ausdrücken
+orientieren. Das bedeutet z.&nbsp;B., dass die Auswertung von Ausdrücken
 durch eine Folge von äquivalenten Umformungen definiert ist.
 </p>
 
 <p>
 Betrachten wir dies exemplarisch anhand der Funktion \(f\) aus dem
-vorhergehenden Abschnitt. Die Syntax von <i>Racket</i> verlangt zunächst
-das wir die mathematische Funktionsdefintion
+vorhergehenden Abschnitt. Die Syntax von <i>Racket</i> verlangt zunächst,
+dass wir die mathematische Funktionsdefintion
 </p>
 <div>
 \begin{equation}
@@ -201,14 +201,14 @@ bf(a,b) = a\cdot a + 2ab + b\cdot b
 <p>
 umschreiben. Wollen wir in <i>Racket</i> eine Funktion mit Namen <code>bf</code> und
 den Parametern <code>a</code> und <code>b</code> definieren, sieht das so aus:<br />
-<code class="src src-scheme"><span style="color: #707183;">(</span><span style="color: #0000FF;">define</span> <span style="color: #006699;">bf</span> <span style="color: #7388D6;">(</span><span style="color: #0000FF;">lambda</span> <span style="color: #909183;">[</span>a b<span style="color: #909183;">]</span> ... <span style="color: #7388D6;">)</span><span style="color: #707183;">)</span></code>
+<code class="src src-scheme"><span style="color: #2aa198;">(</span><span style="color: #859900; font-weight: bold;">define</span> <span style="color: #268bd2;">bf</span> <span style="color: #b58900;">(</span><span style="color: #859900; font-weight: bold;">lambda</span> <span style="color: #268bd2;">[</span>a b<span style="color: #268bd2;">]</span> ... <span style="color: #b58900;">)</span><span style="color: #2aa198;">)</span></code>
 </p>
 
 </section>
 <section>
 <p>
 Wollen wir nun die rechte Seite der Funktionsdefinition nach <i>Racket</i>
-übertragen, müssen wir die Syntaxregel von <i>Racket</i> beachten, wonach
+übertragen, müssen wir die Syntaxregel von <i>Racket</i> beachten, wonach die
 Grundform eines (arithmetischen) Ausdrucks (in <i>Racket</i>) immer so
 aussieht:
 </p>
@@ -219,14 +219,14 @@ aussieht:
 <p>
 Damit erhalten wir die vollständige Funktionsdefinition:
 </p>
-<div class="small">
+<div class="small" id="org5149b26">
 <div class="org-src-container">
 
-<pre class="src src-scheme"><span style="color: #707183;">(</span><span style="color: #0000FF;">define</span> <span style="color: #006699;">bf</span>
-  <span style="color: #7388D6;">(</span><span style="color: #0000FF;">lambda</span> <span style="color: #909183;">[</span>a b<span style="color: #909183;">]</span>
-    <span style="color: #909183;">(</span>+ <span style="color: #709870;">(</span>* a a<span style="color: #709870;">)</span>
-       <span style="color: #709870;">(</span>* 2 a b<span style="color: #709870;">)</span>
-       <span style="color: #709870;">(</span>* b b<span style="color: #709870;">)</span><span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
+<pre class="src src-scheme"><span style="color: #2aa198;">(</span><span style="color: #859900; font-weight: bold;">define</span> <span style="color: #268bd2;">bf</span>
+  <span style="color: #b58900;">(</span><span style="color: #859900; font-weight: bold;">lambda</span> <span style="color: #268bd2;">[</span>a b<span style="color: #268bd2;">]</span>
+    <span style="color: #268bd2;">(</span>+ <span style="color: #6c71c4;">(</span>* a a<span style="color: #6c71c4;">)</span>
+       <span style="color: #6c71c4;">(</span>* 2 a b<span style="color: #6c71c4;">)</span>
+       <span style="color: #6c71c4;">(</span>* b b<span style="color: #6c71c4;">)</span><span style="color: #268bd2;">)</span><span style="color: #b58900;">)</span><span style="color: #2aa198;">)</span>
 </pre>
 </div>
 
@@ -244,7 +244,7 @@ Regeln Ausdrücke in <i>Racket</i> in einfachere Ausdrücke äquivalent
 umgeformt werden. 
 Die Frage lautet also z. B., wie aus der
 Funktionsanwendung<br />
-<code class="src src-scheme"> <span style="color: #707183;">(</span>bf 3 4<span style="color: #707183;">)</span></code><br />
+<code class="src src-scheme"> <span style="color: #2aa198;">(</span>bf 3 4<span style="color: #2aa198;">)</span></code><br />
 das Resultat <code>49</code> entsteht.
 </p>
 
@@ -252,7 +252,7 @@ das Resultat <code>49</code> entsteht.
 Betrachten wir dazu eine verallgemeinerte Definition einer
 Funktion <code>f</code> mit den formalen Parametern <code>x-1 ... x-n</code> und der
 Berechnungsvorschrift <code>exp</code>:<br />
-<code class="src src-scheme"> <span style="color: #707183;">(</span><span style="color: #0000FF;">define</span> <span style="color: #006699;">f</span> <span style="color: #7388D6;">(</span><span style="color: #0000FF;">lambda</span> <span style="color: #909183;">[</span>x-1 ... x-n<span style="color: #909183;">]</span> exp<span style="color: #7388D6;">)</span><span style="color: #707183;">)</span></code>
+<code class="src src-scheme"> <span style="color: #2aa198;">(</span><span style="color: #859900; font-weight: bold;">define</span> <span style="color: #268bd2;">f</span> <span style="color: #b58900;">(</span><span style="color: #859900; font-weight: bold;">lambda</span> <span style="color: #268bd2;">[</span>x-1 ... x-n<span style="color: #268bd2;">]</span> exp<span style="color: #b58900;">)</span><span style="color: #2aa198;">)</span></code>
 </p>
 
 <p>
@@ -260,8 +260,8 @@ Für die Anwendung der Funktion gilt dann die folgende Ersetzungsregel.
 </p>
 
 </section>
-<section id="slide-orgdf2b1ea">
-<h3 id="orgdf2b1ea">Ersetzungsmodell für Funktionsanwendungen:</h3>
+<section id="slide-org43ae450">
+<h3 id="org43ae450">Ersetzungsmodell für Funktionsanwendungen</h3>
 <ul>
 <li><p>
 Formal: Mit <code>(define f (lambda [x-1 ... x-n] exp))</code> gilt: 
@@ -323,8 +323,8 @@ Multiplikation und Addition erforderlich ist:
 </section>
 </section>
 <section>
-<section id="slide-org3c654ce">
-<h2 id="org3c654ce">Zusammenfassung</h2>
+<section id="slide-org470a660">
+<h2 id="org470a660">Zusammenfassung</h2>
 <ul>
 <li>Die <b>Syntax</b> einer Programmiersprache legt zulässige Elemente und Strukturen fest.</li>
 <li>Die <b>Semantik</b> einer Programmiersprache legt die Bedeutung syntaktisch korrekter Ausdrücke fest.</li>
@@ -359,7 +359,6 @@ mouseWheel: false,
 fragmentInURL: true,
 hashOneBasedIndex: false,
 pdfSeparateFragments: true,
-
 overview: true,
 width: 1120,
 height: 800,
