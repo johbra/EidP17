@@ -19,17 +19,17 @@
 <div class="reveal">
 <div class="slides">
 <section id="sec-title-slide">
-<h1 class="title">Erste Schritte in Racket</h1><h3 class="subtitle">Einführung in die Programmierung</h3><h2 class="author">Johannes Brauer</h2><h3 class="date">29. 12. 2020</h3>
+<h1 class="title">Erste Schritte in Racket</h1><h3 class="subtitle">Einführung in die Programmierung</h3><h2 class="author">Johannes Brauer</h2><h3 class="date">20. 12. 2022</h3>
 </section>
 
 <section>
-<section id="slide-org200fe6d">
-<h2 id="org200fe6d">Die Sprache <i>Racket</i></h2>
-<div class="outline-text-2" id="text-org200fe6d">
+<section id="slide-org64d7be1">
+<h2 id="org64d7be1">Die Sprache <i>Racket</i></h2>
+<div class="outline-text-2" id="text-org64d7be1">
 </div>
 </section>
-<section id="slide-orgece3cba">
-<h3 id="orgece3cba">Funktionale Programmierung</h3>
+<section id="slide-orgb3e6120">
+<h3 id="orgb3e6120">Funktionale Programmierung</h3>
 <ul>
 <li>Es gibt verschiedene Programmierparadigmen, die sich in der
 Herangehensweise sehr unterscheiden.</li>
@@ -48,8 +48,8 @@ Programmierparadigmen eher an.</li>
 
 </ul>
 </section>
-<section id="slide-org3738b4b">
-<h3 id="org3738b4b">Die funktionale Programmiersprache Racket und DrRacket</h3>
+<section id="slide-orgb0f790f">
+<h3 id="orgb0f790f">Die funktionale Programmiersprache Racket und DrRacket</h3>
 <ul>
 <li>Racket ist ein Dialekt von Scheme. Scheme ist eine Variante von
 Lisp. Lisp ist eine sehr alte Programmiersprache (entstanden Ende
@@ -69,8 +69,8 @@ Racket. Sie bietet alles Notwendige, ist aber trotzdem nicht
 </ul>
 
 </section>
-<section id="slide-org915cfe0">
-<h3 id="org915cfe0">Installation und Einrichtung von DrRacket</h3>
+<section id="slide-org7669c29">
+<h3 id="org7669c29">Installation und Einrichtung von DrRacket</h3>
 <ul>
 <li>Auf den NORDAKADEMIE-PCs und Virtuellen Maschinen ist DrRacket im
 Startmenü im Ordner Racket zu finden.</li>
@@ -109,8 +109,8 @@ Anschließend einmal auf „Start“ klicken.
 </ul>
 
 </section>
-<section id="slide-org2085ea1">
-<h3 id="org2085ea1">Aufbau von DrRacket</h3>
+<section id="slide-orgc4fa5a6">
+<h3 id="orgc4fa5a6">Aufbau von DrRacket</h3>
 <ul>
 <li>DrRacket verwendet wie viele funktionale Sprachen eine
 read-eval-print loop (REPL).</li>
@@ -131,13 +131,13 @@ read-eval-print loop (REPL).</li>
 </section>
 </section>
 <section>
-<section id="slide-org450f44e">
-<h2 id="org450f44e">Elementare Ausdrücke</h2>
-<div class="outline-text-2" id="text-org450f44e">
+<section id="slide-org0273307">
+<h2 id="org0273307">Elementare Ausdrücke</h2>
+<div class="outline-text-2" id="text-org0273307">
 </div>
 </section>
-<section id="slide-org76c6f16">
-<h3 id="org76c6f16">Auswertung arithmetischer Ausdrücke</h3>
+<section id="slide-org3baf2e0">
+<h3 id="org3baf2e0">Auswertung arithmetischer Ausdrücke</h3>
 <ul>
 <li>Wir beginnen mit Zahlen</li>
 <li>Racket kennt 
@@ -154,8 +154,8 @@ den Dezimalpunkt statt des Dezimalkommas.</li>
 
 </ul>
 </section>
-<section id="slide-orgd9c6cb2">
-<h3 id="orgd9c6cb2">Grundform des arithmetischen Ausdrucks (in <i>Racket</i>):</h3>
+<section id="slide-orgb420dea">
+<h3 id="orgb420dea">Grundform des arithmetischen Ausdrucks (in <i>Racket</i>):</h3>
 <ul>
 <li><code>(operator operand-1 operand-2 ... operand-n)</code></li>
 <li><p>
@@ -179,13 +179,13 @@ Beispiele:
 </section>
 </section>
 <section>
-<section id="slide-org187babf">
-<h2 id="org187babf">Anwendung und Definition einfacher Funktionen in der Repl</h2>
-<div class="outline-text-2" id="text-org187babf">
+<section id="slide-org4e88f5e">
+<h2 id="org4e88f5e">Anwendung und Definition einfacher Funktionen in der Repl</h2>
+<div class="outline-text-2" id="text-org4e88f5e">
 </div>
 </section>
-<section id="slide-org5aa2f37">
-<h3 id="org5aa2f37">Funktionale Abstraktion</h3>
+<section id="slide-orge8011e3">
+<h3 id="orge8011e3">Funktionale Abstraktion</h3>
 <ul>
 <li>Problem: Berechnung der Ökosteuer bei:
 <ul>
@@ -290,8 +290,36 @@ wieder den Wert 210.
 
 </ol>
 </section>
-<section id="slide-orgfab4ce8">
-<h3 id="orgfab4ce8">Ausdrücke in <i>Racket</i> (1)</h3>
+<section id="slide-org18fae91">
+<h3 id="org18fae91">Exkurs: Lambda-Ausdrücke in Excel</h3>
+
+<div class="figure">
+<p><img src="./Abbildungen/Excel1.png" alt="Excel1.png" width="700px" />
+</p>
+</div>
+<div class="nebeneinander500">
+
+<div class="figure">
+<p><img src="./Abbildungen/Excel2.png" alt="Excel2.png" width="320px" />
+</p>
+</div>
+
+</div>
+<div class="nebeneinander500">
+
+<div class="figure">
+<p><img src="./Abbildungen/Excel3.png" alt="Excel3.png" width="380px" />
+</p>
+</div>
+
+</div>
+<div class="clear">
+
+</div>
+
+</section>
+<section id="slide-orga4edc35">
+<h3 id="orga4edc35">Ausdrücke in <i>Racket</i> (1)</h3>
 <p>
 Nach dem zuvor Erläuterten kann der Aufbau von Ausdrücken in
 <i>Racket</i> wie folgt präzisiert werden. Die Grundform bleibt dabei
@@ -337,8 +365,8 @@ nach Bedarf.
 </section>
 </section>
 <section>
-<section id="slide-orgc99eb05">
-<h2 id="orgc99eb05">Zusammenfassung</h2>
+<section id="slide-orgd3a7b29">
+<h2 id="orgd3a7b29">Zusammenfassung</h2>
 <ul>
 <li>Funktionale Programmierung ist ein wichtiges Programmierparadigma.</li>
 <li>Racket ist eine funktionale Programmiersprache, die einfach und
