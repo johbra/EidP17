@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="de" xml:lang="de">
 <head>
-<!-- 2023-02-02 Thu 17:48 -->
+<!-- 2023-02-08 Wed 22:03 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Aufgaben &#x2013; Lösungen</title>
@@ -276,23 +276,32 @@ for the JavaScript code in this tag.
 <h2>Inhaltsverzeichnis</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org4e7b418">1. Erste Schritte in Racket</a></li>
-<li><a href="#orgbcc0cab">2. Auswertung arithmetischer Ausdrücke</a></li>
-<li><a href="#orgffdd2f9">3. Aufschreiben elementarer Funktionen</a></li>
-<li><a href="#org1e29530">4. Aufschreiben elementarer Funktionen (2)</a></li>
-<li><a href="#orgb777f5d">5. Anwenden der Aufschreibregeln</a></li>
-<li><a href="#orgf5a7308">6. Profit für den Kinobesitzer</a></li>
-<li><a href="#org14b1321">7. Modifikation von <code>kino.rkt</code></a></li>
-<li><a href="#org1744906">8. Einsatz von Hilfsfunktionen</a></li>
-<li><a href="#orgf323a1e">9. Ersetzungsmodell</a></li>
-<li><a href="#orgee4f782">10. Bedingte Funktion</a></li>
+<li><a href="#org941ef6d">1. Erste Schritte in Racket</a></li>
+<li><a href="#orgdcfcdc3">2. Auswertung arithmetischer Ausdrücke</a></li>
+<li><a href="#orgdfb298a">3. Aufschreiben elementarer Funktionen</a></li>
+<li><a href="#orged7f8f0">4. Aufschreiben elementarer Funktionen (2)</a></li>
+<li><a href="#orgca415ac">5. Anwenden der Aufschreibregeln</a></li>
+<li><a href="#org90d1348">6. Profit für den Kinobesitzer</a></li>
+<li><a href="#org1b45bb3">7. Modifikation von <code>kino.rkt</code></a></li>
+<li><a href="#orgd566a5d">8. Einsatz von Hilfsfunktionen</a></li>
+<li><a href="#org25872f0">9. Ersetzungsmodell</a></li>
+<li><a href="#org8248f37">10. Bedingte Funktion</a></li>
+<li><a href="#org7196e56">11. Zusatzaufgaben zu bedingten Funktionen</a></li>
+<li><a href="#datenabstraktion">12. Datenabstraktion</a></li>
+<li><a href="#orgfaaf081">13. Datenabstraktion &#x2013; Zusatzaufgabe</a>
+<ul>
+<li><a href="#org1d19085">13.1. Vorbemerkungen</a></li>
+<li><a href="#org1124572">13.2. Aufgabenstellungen</a></li>
+</ul>
+</li>
+<li><a href="#orge1629db">14. Datenabstraktion &#x2013; gemischte Daten</a></li>
 </ul>
 </div>
 </div>
 
 
-<div id="outline-container-org4e7b418" class="outline-2">
-<h2 id="org4e7b418"><span class="section-number-2">1</span> Erste Schritte in Racket</h2>
+<div id="outline-container-org941ef6d" class="outline-2">
+<h2 id="org941ef6d"><span class="section-number-2">1</span> Erste Schritte in Racket</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 Machen Sie sich mit den NORDAKADEMIE-Rechnern vertraut und richten Sie
@@ -319,8 +328,8 @@ finden Sie alle vordefinierten mathematischen Funktionen?
 </div>
 </div>
 
-<div id="outline-container-orgbcc0cab" class="outline-2">
-<h2 id="orgbcc0cab"><span class="section-number-2">2</span> Auswertung arithmetischer Ausdrücke</h2>
+<div id="outline-container-orgdcfcdc3" class="outline-2">
+<h2 id="orgdcfcdc3"><span class="section-number-2">2</span> Auswertung arithmetischer Ausdrücke</h2>
 <div class="outline-text-2" id="text-2">
 <ol class="org-ol">
 <li>Wie wird der Ausdruck<br />
@@ -339,8 +348,8 @@ Werten Sie die folgenden Ausdrücke aus und vergleichen Sie die Resultate:
 </div>
 </div>
 
-<div id="outline-container-orgffdd2f9" class="outline-2">
-<h2 id="orgffdd2f9"><span class="section-number-2">3</span> Aufschreiben elementarer Funktionen</h2>
+<div id="outline-container-orgdfb298a" class="outline-2">
+<h2 id="orgdfb298a"><span class="section-number-2">3</span> Aufschreiben elementarer Funktionen</h2>
 <div class="outline-text-2" id="text-3">
 <p>
 Schreiben Sie für die folgenden mathematischen Formeln Racket-Funktions&#x00ad;definitionen auf:
@@ -382,8 +391,8 @@ Funktionsaufrufe für diese Funktionen ein.
 </p>
 </div>
 </div>
-<div id="outline-container-org1e29530" class="outline-2">
-<h2 id="org1e29530"><span class="section-number-2">4</span> Aufschreiben elementarer Funktionen (2)</h2>
+<div id="outline-container-orged7f8f0" class="outline-2">
+<h2 id="orged7f8f0"><span class="section-number-2">4</span> Aufschreiben elementarer Funktionen (2)</h2>
 <div class="outline-text-2" id="text-4">
 <p>
 In der Praxis findet der Programmierer selten mathematische Formeln
@@ -478,8 +487,8 @@ Hinweis: Ein Aufruf <code>(expt x y)</code> liefert \(x^y\) als Ergebnis.
 </div>
 </div>
 
-<div id="outline-container-orgb777f5d" class="outline-2">
-<h2 id="orgb777f5d"><span class="section-number-2">5</span> Anwenden der Aufschreibregeln</h2>
+<div id="outline-container-orgca415ac" class="outline-2">
+<h2 id="orgca415ac"><span class="section-number-2">5</span> Anwenden der Aufschreibregeln</h2>
 <div class="outline-text-2" id="text-5">
 <p>
 Schreiben Sie die Funktion zur Berechnung der Bahnhofsmiete in
@@ -505,8 +514,8 @@ folgenden Aufgaben gemäß diesen Regeln aufzuschreiben!!!</b>
 </div>
 </div>
 
-<div id="outline-container-orgf5a7308" class="outline-2">
-<h2 id="orgf5a7308"><span class="section-number-2">6</span> Profit für den Kinobesitzer</h2>
+<div id="outline-container-org90d1348" class="outline-2">
+<h2 id="org90d1348"><span class="section-number-2">6</span> Profit für den Kinobesitzer</h2>
 <div class="outline-text-2" id="text-6">
 <p>
 Ein altmodisches Vorstadtkino besitzt eine einfache Formel für die
@@ -530,8 +539,8 @@ Berechnung des Profits bei gegebener Besucherzahl.
 </div>
 </div>
 </div>
-<div id="outline-container-org14b1321" class="outline-2">
-<h2 id="org14b1321"><span class="section-number-2">7</span> Modifikation von <code>kino.rkt</code></h2>
+<div id="outline-container-org1b45bb3" class="outline-2">
+<h2 id="org1b45bb3"><span class="section-number-2">7</span> Modifikation von <code>kino.rkt</code></h2>
 <div class="outline-text-2" id="text-7">
 <ol class="org-ol">
 <li>Modifizieren Sie das Programm <code>kino.rkt</code> so, dass die Fixkosten
@@ -544,8 +553,8 @@ vergleichen Sie die Ergebnisse.</li>
 </div>
 </div>
 
-<div id="outline-container-org1744906" class="outline-2">
-<h2 id="org1744906"><span class="section-number-2">8</span> Einsatz von Hilfsfunktionen</h2>
+<div id="outline-container-orgd566a5d" class="outline-2">
+<h2 id="orgd566a5d"><span class="section-number-2">8</span> Einsatz von Hilfsfunktionen</h2>
 <div class="outline-text-2" id="text-8">
 <p>
 Die folgenden Aufgaben sind unter Benutzung von Hilfsfunktionen zu
@@ -620,8 +629,8 @@ Wandstärke und die Länge des Rohrs.</li>
 </div>
 </div>
 
-<div id="outline-container-orgf323a1e" class="outline-2">
-<h2 id="orgf323a1e"><span class="section-number-2">9</span> Ersetzungsmodell</h2>
+<div id="outline-container-org25872f0" class="outline-2">
+<h2 id="org25872f0"><span class="section-number-2">9</span> Ersetzungsmodell</h2>
 <div class="outline-text-2" id="text-9">
 <p>
 Gegeben sei die folgende Funktionsdefinition:
@@ -707,8 +716,8 @@ Ausführlich:
 </div>
 </div>
 
-<div id="outline-container-orgee4f782" class="outline-2">
-<h2 id="orgee4f782"><span class="section-number-2">10</span> Bedingte Funktion</h2>
+<div id="outline-container-org8248f37" class="outline-2">
+<h2 id="org8248f37"><span class="section-number-2">10</span> Bedingte Funktion</h2>
 <div class="outline-text-2" id="text-10">
 <p>
 Schreiben Sie ein Programm, das aus dem Bruttoeinkommen eines
@@ -881,10 +890,640 @@ Konstanten, Regel 5) Gebrauch.</li>
 </div>
 </div>
 </div>
+
+<div id="outline-container-org7196e56" class="outline-2">
+<h2 id="org7196e56"><span class="section-number-2">11</span> Zusatzaufgaben zu bedingten Funktionen</h2>
+<div class="outline-text-2" id="text-11">
+<ol class="org-ol">
+<li><p>
+Eine Kreditkartengesellschaft gewährt ihren Kunden nach
+Jahresumsatz gestaffelte Rückerstattung von
+Kreditkartenbelastungen. Die Rückerstattungen könnten z. B. wie 
+folgt aussehen:
+</p>
+<ul class="org-ul">
+<li>ein viertel Prozent für die ersten 500€ des Jahresumsatzes (nur
+Belastungen keine Gutschriften werden gezählt),</li>
+<li>ein halbes Prozent für die nächsten 1000€, d. h. für den
+Umsatzanteil zwischen 500€ und 1500€,</li>
+<li>ein dreiviertel Prozent für die nächsten 1000€, d. h. für den
+Umsatzanteil zwischen 1500€ und 2500€ und</li>
+<li>ein Prozent für die Umsatzanteile oberhalb von 2500€.</li>
+</ul>
+<p>
+Ein Kunde mit einem Umsatz von 400€ erhält demnach eine Gutschrift
+von 1€ (\(= \frac{1}{4} \cdot \frac{1}{100} \cdot 400\)). Ein Kunde
+mit einem Umsatz von 1400€ erhält eine Gutschrift von 5,75€:
+</p>
+<ul class="org-ul">
+<li>1,25€ (\(= \frac{1}{4} \cdot \frac{1}{100} \cdot 500\)) für die
+ersten 500€ plus</li>
+<li>4,50€ (\(=\frac{1}{2} \cdot \frac{1}{100} \cdot 900\)) für die
+nächsten 900€</li>
+</ul>
+<p>
+Lösen Sie die folgenden Teilaufgaben
+</p>
+<ol class="org-ol">
+<li>Bestimmen Sie manuell die Gutschriften für Umsätze 2000€ und
+2600€.</li>
+<li>Schreiben Sie eine Funktion <code>rueckerstattung</code>, die einen Umsatz
+als Argument akzeptiert und den Rückerstattungsbetrag ermittelt.</li>
+</ol>
+<p>
+<br />
+</p>
+<div class="org-src-container">
+<pre class="src src-scheme">      <span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">berechnet die R&#252;ckerstattung f&#252;r Ums&#228;tze zwischen 0 and 500</span>
+      <span style="color: #707183;">(</span><span style="color: #0000FF;">define</span> <span style="color: #006699;">rueckerstattung-0-500</span>
+        <span style="color: #7388D6;">(</span><span style="color: #0000FF;">lambda</span> <span style="color: #909183;">[</span>a<span style="color: #909183;">]</span>
+          <span style="color: #909183;">(</span>* a <span style="color: #709870;">(</span>* .25 1/100<span style="color: #709870;">)</span><span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
+      <span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">Beispielanwendungen</span>
+      <span style="color: #707183;">(</span>= <span style="color: #7388D6;">(</span>rueckerstattung-0-500 400<span style="color: #7388D6;">)</span> 1<span style="color: #707183;">)</span>
+         
+      <span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">berechnet die R&#252;ckerstattung f&#252;r Ums&#228;tze zwischen 500 and 1500</span>
+      <span style="color: #707183;">(</span><span style="color: #0000FF;">define</span> <span style="color: #006699;">rueckerstattung-500-1500</span>
+        <span style="color: #7388D6;">(</span><span style="color: #0000FF;">lambda</span> <span style="color: #909183;">[</span>a<span style="color: #909183;">]</span> 
+          <span style="color: #909183;">(</span>+ <span style="color: #709870;">(</span>rueckerstattung-0-500 500<span style="color: #709870;">)</span>
+             <span style="color: #709870;">(</span>* <span style="color: #907373;">(</span>- a 500<span style="color: #907373;">)</span> <span style="color: #907373;">(</span>* .50 1/100<span style="color: #907373;">)</span><span style="color: #709870;">)</span><span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
+      <span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">Beispielanwendungen</span>
+      <span style="color: #707183;">(</span>= <span style="color: #7388D6;">(</span>rueckerstattung-500-1500 1400<span style="color: #7388D6;">)</span> 5.75<span style="color: #707183;">)</span>
+         
+      <span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">berechnet die R&#252;ckerstattung f&#252;r Ums&#228;tze zwischen 1500 and 2500</span>
+      <span style="color: #707183;">(</span><span style="color: #0000FF;">define</span> <span style="color: #006699;">rueckerstattung-1500-2500</span>
+        <span style="color: #7388D6;">(</span><span style="color: #0000FF;">lambda</span> <span style="color: #909183;">[</span>a<span style="color: #909183;">]</span>
+          <span style="color: #909183;">(</span>+ <span style="color: #709870;">(</span>rueckerstattung-500-1500 1500<span style="color: #709870;">)</span>
+             <span style="color: #709870;">(</span>* <span style="color: #907373;">(</span>- a 1500<span style="color: #907373;">)</span> <span style="color: #907373;">(</span>* .75 1/100<span style="color: #907373;">)</span><span style="color: #709870;">)</span><span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
+      <span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">Beispielanwendungen</span>
+      <span style="color: #707183;">(</span>= <span style="color: #7388D6;">(</span>rueckerstattung-1500-2500 2000<span style="color: #7388D6;">)</span> 10.00<span style="color: #707183;">)</span>
+         
+      <span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">berechnet die R&#252;ckerstattung f&#252;r Ums&#228;tze von 2500 und h&#246;her</span>
+      <span style="color: #707183;">(</span><span style="color: #0000FF;">define</span> <span style="color: #006699;">rueckerstattung-2500+</span>
+        <span style="color: #7388D6;">(</span><span style="color: #0000FF;">lambda</span> <span style="color: #909183;">[</span>a<span style="color: #909183;">]</span>
+          <span style="color: #909183;">(</span>+ <span style="color: #709870;">(</span>rueckerstattung-1500-2500 2500<span style="color: #709870;">)</span>
+             <span style="color: #709870;">(</span>* <span style="color: #907373;">(</span>- a 2500<span style="color: #907373;">)</span> <span style="color: #907373;">(</span>* 1 1/100<span style="color: #907373;">)</span><span style="color: #709870;">)</span><span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
+      <span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">Beispielanwendungen</span>
+      <span style="color: #707183;">(</span>= <span style="color: #7388D6;">(</span>rueckerstattung-2500+ 2600<span style="color: #7388D6;">)</span> 14.75<span style="color: #707183;">)</span>
+         
+      <span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">berechnet R&#252;ckerstattungsbetrag f&#252;r Kreditkarteninhaber</span>
+      <span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">bei einem bestimmten Jahresumsatz</span>
+      <span style="color: #707183;">(</span><span style="color: #0000FF;">define</span> <span style="color: #006699;">rueckerstattung</span>
+        <span style="color: #7388D6;">(</span><span style="color: #0000FF;">lambda</span> <span style="color: #909183;">[</span>umsatz<span style="color: #909183;">]</span>
+          <span style="color: #909183;">(</span><span style="color: #0000FF;">cond</span>
+            <span style="color: #709870;">[</span><span style="color: #907373;">(</span>&lt;= umsatz 500<span style="color: #907373;">)</span>
+             <span style="color: #907373;">(</span>rueckerstattung-0-500 umsatz<span style="color: #907373;">)</span><span style="color: #709870;">]</span>
+            <span style="color: #709870;">[</span><span style="color: #907373;">(</span><span style="color: #0000FF;">and</span> <span style="color: #6276BA;">(</span>&gt; umsatz 500<span style="color: #6276BA;">)</span> <span style="color: #6276BA;">(</span>&lt;= umsatz 1500<span style="color: #6276BA;">)</span><span style="color: #907373;">)</span>
+             <span style="color: #907373;">(</span>rueckerstattung-500-1500 umsatz<span style="color: #907373;">)</span><span style="color: #709870;">]</span>
+            <span style="color: #709870;">[</span><span style="color: #907373;">(</span><span style="color: #0000FF;">and</span> <span style="color: #6276BA;">(</span>&gt; umsatz 1500<span style="color: #6276BA;">)</span> <span style="color: #6276BA;">(</span>&lt;= umsatz 2500<span style="color: #6276BA;">)</span><span style="color: #907373;">)</span>
+             <span style="color: #907373;">(</span>rueckerstattung-1500-2500 umsatz<span style="color: #907373;">)</span><span style="color: #709870;">]</span>
+            <span style="color: #709870;">[</span>else
+             <span style="color: #907373;">(</span>rueckerstattung-2500+ umsatz<span style="color: #907373;">)</span><span style="color: #709870;">]</span><span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
+      <span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">Beispielanwendungen</span>
+      <span style="color: #707183;">(</span>= <span style="color: #7388D6;">(</span>rueckerstattung 400<span style="color: #7388D6;">)</span> 1<span style="color: #707183;">)</span>
+      <span style="color: #707183;">(</span>= <span style="color: #7388D6;">(</span>rueckerstattung 1400<span style="color: #7388D6;">)</span> 5.75<span style="color: #707183;">)</span>
+      <span style="color: #707183;">(</span>= <span style="color: #7388D6;">(</span>rueckerstattung 2000<span style="color: #7388D6;">)</span> 10.00<span style="color: #707183;">)</span>
+      <span style="color: #707183;">(</span>= <span style="color: #7388D6;">(</span>rueckerstattung 2600<span style="color: #7388D6;">)</span> 14.75<span style="color: #707183;">)</span>
+</pre>
+</div></li>
+<li><p>
+Wieviele reelle Lösungen besitzt eine quadratische Gleichung
+\[ax^2 + bx + c = 0\] 
+für beliebige Koeffizienten \(a\), \(b\) und \(c\)?
+</p>
+<ol class="org-ol">
+<li>Betrachten Sie zunächst nur <i>echte</i> quadratische
+Gleichungen, d. h. es gilt \(a\neq0\)</li>
+<li>Erweitern Sie die Lösung so, dass auch der Fall \(a=0\) korrekt
+behandelt wird.</li>
+</ol>
+
+<p>
+<b>Lösung:</b>
+Die Lösungen der quadratischen Gleichung
+\[ax^2 + bx + c = 0\] 
+können für den Fall \(a\neq 0\) mit der Formel
+\[L_{q}: x_{1,2}=\frac{-b\pm\sqrt{b^2-4ac}}{2a}\]
+berechnet werden. Für den Fall \(a=0\) gibt es eine Lösung \(-c/b\),
+vorausgesetzt \(b\neq 0\).
+</p>
+<div class="org-src-container">
+<pre class="src src-scheme">   <span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">berechnet der Radikanden der L&#246;sungsformel</span>
+   <span style="color: #707183;">(</span><span style="color: #0000FF;">define</span> <span style="color: #006699;">radikand</span>
+     <span style="color: #7388D6;">(</span><span style="color: #0000FF;">lambda</span> <span style="color: #909183;">[</span>a b c<span style="color: #909183;">]</span>
+       <span style="color: #909183;">(</span>- <span style="color: #709870;">(</span>sqr b<span style="color: #709870;">)</span> <span style="color: #709870;">(</span>* 4 a c<span style="color: #709870;">)</span><span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
+   <span style="color: #8D8D84;">;</span><span style="color: #8D8D84; font-style: italic;">: Beispielanwendungen</span>
+   <span style="color: #707183;">(</span>= <span style="color: #7388D6;">(</span>radikand 1 2 1<span style="color: #7388D6;">)</span> 0<span style="color: #707183;">)</span>
+   <span style="color: #707183;">(</span>= <span style="color: #7388D6;">(</span>radikand 1 1 1<span style="color: #7388D6;">)</span> -3<span style="color: #707183;">)</span>
+   <span style="color: #707183;">(</span>= <span style="color: #7388D6;">(</span>radikand 1 3 1<span style="color: #7388D6;">)</span> 5<span style="color: #707183;">)</span>
+   
+   <span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">berechnet die Anzahl der L&#246;sungen einer quadratischen Gleichung mit</span>
+   <span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">den Koeffizienten a, b und c</span>
+   <span style="color: #707183;">(</span><span style="color: #0000FF;">define</span> <span style="color: #006699;">anzahl-loesungen</span>
+     <span style="color: #7388D6;">(</span><span style="color: #0000FF;">lambda</span> <span style="color: #909183;">[</span>a b c<span style="color: #909183;">]</span>
+       <span style="color: #909183;">(</span><span style="color: #0000FF;">cond</span>
+         <span style="color: #709870;">[</span><span style="color: #907373;">(</span>= 0 a<span style="color: #907373;">)</span> <span style="color: #907373;">(</span><span style="color: #0000FF;">cond</span>
+                    <span style="color: #6276BA;">[</span><span style="color: #858580;">(</span>= 0 b c<span style="color: #858580;">)</span> <span style="color: #008000;">"unendlich viele L&#246;sungen"</span><span style="color: #6276BA;">]</span>
+                    <span style="color: #6276BA;">[</span><span style="color: #858580;">(</span><span style="color: #0000FF;">and</span> <span style="color: #80A880;">(</span>= 0 b<span style="color: #80A880;">)</span> <span style="color: #80A880;">(</span>not <span style="color: #887070;">(</span>= 0 c<span style="color: #887070;">)</span><span style="color: #80A880;">)</span><span style="color: #858580;">)</span> <span style="color: #008000;">"keine L&#246;sung"</span><span style="color: #6276BA;">]</span>
+                    <span style="color: #6276BA;">[</span>else <span style="color: #008000;">"eine L&#246;sung"</span><span style="color: #6276BA;">]</span><span style="color: #907373;">)</span><span style="color: #709870;">]</span>
+         <span style="color: #709870;">[</span>else <span style="color: #907373;">(</span><span style="color: #0000FF;">cond</span> <span style="color: #6276BA;">[</span><span style="color: #858580;">(</span>&gt; <span style="color: #80A880;">(</span>radikand a b c<span style="color: #80A880;">)</span> 0<span style="color: #858580;">)</span> <span style="color: #008000;">"zwei L&#246;sungen"</span><span style="color: #6276BA;">]</span>
+                     <span style="color: #6276BA;">[</span><span style="color: #858580;">(</span>= <span style="color: #80A880;">(</span>radikand a b c<span style="color: #80A880;">)</span> 0<span style="color: #858580;">)</span> <span style="color: #008000;">"eine L&#246;sung"</span><span style="color: #6276BA;">]</span>
+                     <span style="color: #6276BA;">[</span>else <span style="color: #008000;">"keine L&#246;sung"</span><span style="color: #6276BA;">]</span><span style="color: #907373;">)</span><span style="color: #709870;">]</span><span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
+   <span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">Beispielanwendugen</span>
+   <span style="color: #707183;">(</span>string=? <span style="color: #7388D6;">(</span>anzahl-loesungen 0 0 0<span style="color: #7388D6;">)</span> <span style="color: #008000;">"unendlich viele L&#246;sungen"</span><span style="color: #707183;">)</span>
+   <span style="color: #707183;">(</span>string=? <span style="color: #7388D6;">(</span>anzahl-loesungen 0 0 1<span style="color: #7388D6;">)</span> <span style="color: #008000;">"keine L&#246;sung"</span><span style="color: #707183;">)</span>
+   <span style="color: #707183;">(</span>string=? <span style="color: #7388D6;">(</span>anzahl-loesungen 0 1 2<span style="color: #7388D6;">)</span> <span style="color: #008000;">"eine L&#246;sung"</span><span style="color: #707183;">)</span>
+   <span style="color: #707183;">(</span>string=? <span style="color: #7388D6;">(</span>anzahl-loesungen 1 4 1<span style="color: #7388D6;">)</span> <span style="color: #008000;">"zwei L&#246;sungen"</span><span style="color: #707183;">)</span>
+   <span style="color: #707183;">(</span>string=? <span style="color: #7388D6;">(</span>anzahl-loesungen 1 2 1<span style="color: #7388D6;">)</span> <span style="color: #008000;">"eine L&#246;sung"</span><span style="color: #707183;">)</span>
+   <span style="color: #707183;">(</span>string=? <span style="color: #7388D6;">(</span>anzahl-loesungen 4 1 1<span style="color: #7388D6;">)</span> <span style="color: #008000;">"keine L&#246;sung"</span><span style="color: #707183;">)</span>
+   
+   <span style="color: #8D8D84;">;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;</span>
+   <span style="color: #8D8D84;">;;; </span><span style="color: #8D8D84; font-style: italic;">Funktion zur Berechnung der L&#246;sungen einer quadratischen Gleichung;;;</span>
+   <span style="color: #8D8D84;">;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;</span>
+   
+   <span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">Eine quadgl-loesung ist ein Wert</span>
+   <span style="color: #8D8D84;">;;  </span><span style="color: #8D8D84; font-style: italic;">(make-quadgl-loesung art x1 x2)</span>
+   <span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">wobei art die Anzahl der L&#246;sungen durch eine Zeichenkette</span>
+   <span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">("trivial" "keine" "eine" "zwei") repr&#228;sentiert wird und</span>
+   <span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">x1, x2 ggf. die L&#246;sungen enthalten</span>
+   <span style="color: #707183;">(</span>define-struct quadgl-loesung <span style="color: #7388D6;">[</span>art x1 x2<span style="color: #7388D6;">]</span><span style="color: #707183;">)</span>
+   
+   <span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">berechnet die L&#246;sungen einer quadratischen Gleichung mit</span>
+   <span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">den Koeffizienten a, b und c</span>
+   <span style="color: #707183;">(</span><span style="color: #0000FF;">define</span> <span style="color: #006699;">loesungen</span>
+     <span style="color: #7388D6;">(</span><span style="color: #0000FF;">lambda</span> <span style="color: #909183;">[</span>a b c<span style="color: #909183;">]</span>
+       <span style="color: #909183;">(</span><span style="color: #0000FF;">cond</span>
+         <span style="color: #709870;">[</span><span style="color: #907373;">(</span>= 0 a<span style="color: #907373;">)</span> <span style="color: #907373;">(</span><span style="color: #0000FF;">cond</span>
+                    <span style="color: #6276BA;">[</span><span style="color: #858580;">(</span>= 0 b c<span style="color: #858580;">)</span> 
+                       <span style="color: #858580;">(</span>make-quadgl-loesung <span style="color: #008000;">"trivial"</span> 0 0<span style="color: #858580;">)</span><span style="color: #6276BA;">]</span>
+                    <span style="color: #6276BA;">[</span><span style="color: #858580;">(</span><span style="color: #0000FF;">and</span> <span style="color: #80A880;">(</span>= 0 b<span style="color: #80A880;">)</span> <span style="color: #80A880;">(</span>not <span style="color: #887070;">(</span>= 0 c<span style="color: #887070;">)</span><span style="color: #80A880;">)</span><span style="color: #858580;">)</span> 
+                       <span style="color: #858580;">(</span>make-quadgl-loesung <span style="color: #008000;">"keine"</span> 0 0<span style="color: #858580;">)</span><span style="color: #6276BA;">]</span>
+                    <span style="color: #6276BA;">[</span>else <span style="color: #858580;">(</span>make-quadgl-loesung <span style="color: #008000;">"eine"</span> <span style="color: #80A880;">(</span>/ <span style="color: #887070;">(</span>- c<span style="color: #887070;">)</span> b<span style="color: #80A880;">)</span> 0<span style="color: #858580;">)</span><span style="color: #6276BA;">]</span><span style="color: #907373;">)</span><span style="color: #709870;">]</span>
+         <span style="color: #709870;">[</span>else <span style="color: #907373;">(</span><span style="color: #0000FF;">cond</span> <span style="color: #6276BA;">[</span><span style="color: #858580;">(</span>&gt; <span style="color: #80A880;">(</span>radikand a b c<span style="color: #80A880;">)</span> 0<span style="color: #858580;">)</span>
+                      <span style="color: #858580;">(</span>make-quadgl-loesung 
+                          <span style="color: #008000;">"zwei"</span>
+                          <span style="color: #80A880;">(</span>/ <span style="color: #887070;">(</span>+ <span style="color: #707183;">(</span>- b<span style="color: #707183;">)</span> <span style="color: #707183;">(</span>sqrt <span style="color: #7388D6;">(</span>radikand a b c<span style="color: #7388D6;">)</span><span style="color: #707183;">)</span><span style="color: #887070;">)</span>
+                             <span style="color: #887070;">(</span>* 2 a<span style="color: #887070;">)</span><span style="color: #80A880;">)</span>
+                          <span style="color: #80A880;">(</span>/ <span style="color: #887070;">(</span>- <span style="color: #707183;">(</span>- b<span style="color: #707183;">)</span> <span style="color: #707183;">(</span>sqrt <span style="color: #7388D6;">(</span>radikand a b c<span style="color: #7388D6;">)</span><span style="color: #707183;">)</span><span style="color: #887070;">)</span>
+                             <span style="color: #887070;">(</span>* 2 a<span style="color: #887070;">)</span><span style="color: #80A880;">)</span><span style="color: #858580;">)</span><span style="color: #6276BA;">]</span> 
+                     <span style="color: #6276BA;">[</span><span style="color: #858580;">(</span>= <span style="color: #80A880;">(</span>radikand a b c<span style="color: #80A880;">)</span> 0<span style="color: #858580;">)</span>
+                      <span style="color: #858580;">(</span>make-quadgl-loesung <span style="color: #008000;">"eine"</span> <span style="color: #80A880;">(</span>/ <span style="color: #887070;">(</span>- b<span style="color: #887070;">)</span> <span style="color: #887070;">(</span>* 2 a<span style="color: #887070;">)</span><span style="color: #80A880;">)</span> 0<span style="color: #858580;">)</span><span style="color: #6276BA;">]</span>
+                     <span style="color: #6276BA;">[</span>else <span style="color: #858580;">(</span>make-quadgl-loesung <span style="color: #008000;">"keine"</span> 0 0<span style="color: #858580;">)</span><span style="color: #6276BA;">]</span><span style="color: #907373;">)</span><span style="color: #709870;">]</span><span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
+   <span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">Beispielanwendugen</span>
+   <span style="color: #707183;">(</span>string=? <span style="color: #7388D6;">(</span>quadgl-loesung-art <span style="color: #909183;">(</span>loesungen 0 0 0<span style="color: #909183;">)</span><span style="color: #7388D6;">)</span> <span style="color: #008000;">"trivial"</span><span style="color: #707183;">)</span>
+   <span style="color: #707183;">(</span>string=? <span style="color: #7388D6;">(</span>quadgl-loesung-art <span style="color: #909183;">(</span>loesungen 0 0 1<span style="color: #909183;">)</span><span style="color: #7388D6;">)</span> <span style="color: #008000;">"keine"</span><span style="color: #707183;">)</span>
+   <span style="color: #707183;">(</span><span style="color: #0000FF;">and</span> <span style="color: #7388D6;">(</span>string=? <span style="color: #909183;">(</span>quadgl-loesung-art <span style="color: #709870;">(</span>loesungen 0 1 2<span style="color: #709870;">)</span><span style="color: #909183;">)</span> <span style="color: #008000;">"eine"</span><span style="color: #7388D6;">)</span>
+        <span style="color: #7388D6;">(</span>= <span style="color: #909183;">(</span>quadgl-loesung-x1 <span style="color: #709870;">(</span>loesungen 0 1 2<span style="color: #709870;">)</span><span style="color: #909183;">)</span> -2<span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
+   <span style="color: #707183;">(</span><span style="color: #0000FF;">and</span> <span style="color: #7388D6;">(</span>string=? <span style="color: #909183;">(</span>quadgl-loesung-art <span style="color: #709870;">(</span>loesungen 1 4 3<span style="color: #709870;">)</span><span style="color: #909183;">)</span> <span style="color: #008000;">"zwei"</span><span style="color: #7388D6;">)</span>
+        <span style="color: #7388D6;">(</span>= <span style="color: #909183;">(</span>quadgl-loesung-x1 <span style="color: #709870;">(</span>loesungen 1 4 3<span style="color: #709870;">)</span><span style="color: #909183;">)</span> -1<span style="color: #7388D6;">)</span>
+        <span style="color: #7388D6;">(</span>= <span style="color: #909183;">(</span>quadgl-loesung-x2 <span style="color: #709870;">(</span>loesungen 1 4 3<span style="color: #709870;">)</span><span style="color: #909183;">)</span> -3<span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
+   <span style="color: #707183;">(</span><span style="color: #0000FF;">and</span> <span style="color: #7388D6;">(</span>string=? <span style="color: #909183;">(</span>quadgl-loesung-art <span style="color: #709870;">(</span>loesungen 1 2 1<span style="color: #709870;">)</span><span style="color: #909183;">)</span> <span style="color: #008000;">"eine"</span><span style="color: #7388D6;">)</span>
+        <span style="color: #7388D6;">(</span>= <span style="color: #909183;">(</span>quadgl-loesung-x1 <span style="color: #709870;">(</span>loesungen 1 2 1<span style="color: #709870;">)</span><span style="color: #909183;">)</span> -1<span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
+   <span style="color: #707183;">(</span>string=? <span style="color: #7388D6;">(</span>quadgl-loesung-art <span style="color: #909183;">(</span>loesungen 4 1 1<span style="color: #909183;">)</span><span style="color: #7388D6;">)</span> <span style="color: #008000;">"keine"</span><span style="color: #707183;">)</span>
+</pre>
+</div></li>
+</ol>
+</div>
+</div>
+<div id="outline-container-orga276a84" class="outline-2">
+<h2 id="datenabstraktion"><span class="section-number-2">12</span> Datenabstraktion</h2>
+<div class="outline-text-2" id="text-datenabstraktion">
+<p>
+Befolgen Sie für die Lösung der Aufgabe die Regeln 7 und 8!
+</p>
+
+<ol class="org-ol">
+<li><p>
+Definieren Sie eine Datenstruktur für „Zeitpunkte seit
+Mitternacht”, die aus den Komponenten <code>stunden</code>, <code>minuten</code> und
+<code>sekunden</code> besteht.
+</p>
+
+<p>
+Entwickeln Sie eine Funktion <code>zeit-&gt;sekunden</code>, die eine
+   Zeitpunkt-seit-Mittnacht-Struktur verarbeitet und die seit
+   Mitternacht vergangenen Sekunden berechnet.
+</p></li>
+
+<li><p>
+Definieren Sie geeignete <b>Datenstrukturen</b> für Kreise, die durch
+</p>
+<ul class="org-ul">
+<li>die Koordinaten des Mittelpunkts und</li>
+<li>den Radius</li>
+</ul>
+
+<p>
+gegeben sind.
+</p>
+
+<p>
+Schreiben Sie eine Funktion, die prüft, ob ein Punkt
+   innerhalb eines Kreises liegt.
+</p>
+<div class="org-src-container">
+<pre class="src src-scheme"><span style="color: #8D8D84;">; </span><span style="color: #8D8D84; font-style: italic;">Autor der L&#246;sungen zu Aufgabe 12: David L&#252;der (I16b)</span>
+<span style="color: #8D8D84;">; </span><span style="color: #8D8D84; font-style: italic;">Aufgabe 12a</span>
+
+<span style="color: #8D8D84;">; </span><span style="color: #8D8D84; font-style: italic;">Eine Tageszeit ist ein Wert</span>
+<span style="color: #8D8D84;">; </span><span style="color: #8D8D84; font-style: italic;">(make-daytime h m s)</span>
+<span style="color: #8D8D84;">; </span><span style="color: #8D8D84; font-style: italic;">wobei h die Stunden, m die Minuten und s die Sekunden angeben, </span>
+<span style="color: #8D8D84;">; </span><span style="color: #8D8D84; font-style: italic;">um die Uhrzeit zu definieren.</span>
+<span style="color: #707183;">(</span>define-struct daytime <span style="color: #7388D6;">[</span>h m s<span style="color: #7388D6;">]</span><span style="color: #707183;">)</span>
+
+<span style="color: #8D8D84;">; </span><span style="color: #8D8D84; font-style: italic;">gibt die absolute Zahl der vergangenen Sekunden seit Mitternacht </span>
+<span style="color: #8D8D84;">; </span><span style="color: #8D8D84; font-style: italic;">bei gegebeher Tageszeit zur&#252;ck.</span>
+<span style="color: #707183;">(</span>check-expect <span style="color: #7388D6;">(</span>zeit-&gt;sekunden <span style="color: #909183;">(</span>make-daytime 0 0 0<span style="color: #909183;">)</span><span style="color: #7388D6;">)</span> 0<span style="color: #707183;">)</span>
+<span style="color: #707183;">(</span>check-expect <span style="color: #7388D6;">(</span>zeit-&gt;sekunden <span style="color: #909183;">(</span>make-daytime 0 2 36<span style="color: #909183;">)</span><span style="color: #7388D6;">)</span> 156<span style="color: #707183;">)</span>
+<span style="color: #707183;">(</span>check-expect <span style="color: #7388D6;">(</span>zeit-&gt;sekunden <span style="color: #909183;">(</span>make-daytime 2 1 50<span style="color: #909183;">)</span><span style="color: #7388D6;">)</span> 7310<span style="color: #707183;">)</span>
+<span style="color: #707183;">(</span>check-expect <span style="color: #7388D6;">(</span>zeit-&gt;sekunden <span style="color: #909183;">(</span>make-daytime 23 59 59<span style="color: #909183;">)</span><span style="color: #7388D6;">)</span> 86399<span style="color: #707183;">)</span>
+<span style="color: #707183;">(</span><span style="color: #0000FF;">define</span> <span style="color: #006699;">zeit-&gt;sekunden</span>
+  <span style="color: #7388D6;">(</span><span style="color: #0000FF;">lambda</span> <span style="color: #909183;">[</span>uhrzeit<span style="color: #909183;">]</span>
+    <span style="color: #909183;">(</span>+ <span style="color: #709870;">(</span>* <span style="color: #907373;">(</span>daytime-h uhrzeit<span style="color: #907373;">)</span> 3600<span style="color: #709870;">)</span>
+       <span style="color: #709870;">(</span>* <span style="color: #907373;">(</span>daytime-m uhrzeit<span style="color: #907373;">)</span> 60<span style="color: #709870;">)</span>
+       <span style="color: #709870;">(</span>daytime-s uhrzeit<span style="color: #709870;">)</span><span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
+
+<span style="color: #8D8D84;">; </span><span style="color: #8D8D84; font-style: italic;">Aufgabe 12b</span>
+
+<span style="color: #8D8D84;">; </span><span style="color: #8D8D84; font-style: italic;">Ein Punkt ist ein Wert</span>
+<span style="color: #8D8D84;">; </span><span style="color: #8D8D84; font-style: italic;">(make-point x y)</span>
+<span style="color: #8D8D84;">; </span><span style="color: #8D8D84; font-style: italic;">wobei x und y Zahlen sind, welche die Position im Zweidimensionalen </span>
+<span style="color: #8D8D84;">; </span><span style="color: #8D8D84; font-style: italic;">angeben.</span>
+<span style="color: #707183;">(</span>define-struct point <span style="color: #7388D6;">[</span>x y<span style="color: #7388D6;">]</span><span style="color: #707183;">)</span>
+
+<span style="color: #8D8D84;">; </span><span style="color: #8D8D84; font-style: italic;">Ein Kreis ist ein Wert</span>
+<span style="color: #8D8D84;">; </span><span style="color: #8D8D84; font-style: italic;">(make-circle center radius)</span>
+<span style="color: #8D8D84;">; </span><span style="color: #8D8D84; font-style: italic;">wobei center ein Punkt ist, welcher den Mittelpunkt darstellt und radius</span>
+<span style="color: #8D8D84;">; </span><span style="color: #8D8D84; font-style: italic;">eine Zahl ist, welche den Radius des Kreises angibt.</span>
+<span style="color: #707183;">(</span>define-struct circle <span style="color: #7388D6;">[</span>center radius<span style="color: #7388D6;">]</span><span style="color: #707183;">)</span>
+
+<span style="color: #8D8D84;">; </span><span style="color: #8D8D84; font-style: italic;">berechnet den Abstand zwischen zwei &#252;bergebenen Punkten im Zweidimensionalen</span>
+<span style="color: #707183;">(</span>check-expect <span style="color: #7388D6;">(</span>point-distance <span style="color: #909183;">(</span>make-point 1 1<span style="color: #909183;">)</span> <span style="color: #909183;">(</span>make-point 1 2<span style="color: #909183;">)</span><span style="color: #7388D6;">)</span> 1<span style="color: #707183;">)</span>
+<span style="color: #707183;">(</span>check-expect <span style="color: #7388D6;">(</span>point-distance <span style="color: #909183;">(</span>make-point 7 2<span style="color: #909183;">)</span> <span style="color: #909183;">(</span>make-point 2 2<span style="color: #909183;">)</span><span style="color: #7388D6;">)</span> 5<span style="color: #707183;">)</span>
+<span style="color: #707183;">(</span>check-within <span style="color: #7388D6;">(</span>point-distance <span style="color: #909183;">(</span>make-point 5 5<span style="color: #909183;">)</span> <span style="color: #909183;">(</span>make-point 2 4<span style="color: #909183;">)</span><span style="color: #7388D6;">)</span> 3.16 0.01<span style="color: #707183;">)</span>
+<span style="color: #707183;">(</span><span style="color: #0000FF;">define</span> <span style="color: #006699;">point-distance</span>
+  <span style="color: #7388D6;">(</span><span style="color: #0000FF;">lambda</span> <span style="color: #909183;">[</span>p1 p2<span style="color: #909183;">]</span>
+    <span style="color: #909183;">(</span>sqrt <span style="color: #709870;">(</span>+ <span style="color: #907373;">(</span>sqr <span style="color: #6276BA;">(</span>- <span style="color: #858580;">(</span>point-x p1<span style="color: #858580;">)</span> <span style="color: #858580;">(</span>point-x p2<span style="color: #858580;">)</span><span style="color: #6276BA;">)</span><span style="color: #907373;">)</span>
+             <span style="color: #907373;">(</span>sqr <span style="color: #6276BA;">(</span>- <span style="color: #858580;">(</span>point-y p1<span style="color: #858580;">)</span> <span style="color: #858580;">(</span>point-y p2<span style="color: #858580;">)</span><span style="color: #6276BA;">)</span><span style="color: #907373;">)</span><span style="color: #709870;">)</span><span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
+
+<span style="color: #8D8D84;">; </span><span style="color: #8D8D84; font-style: italic;">pr&#252;ft, ob ein Punkt innerhalb eines Kreises liegt, dabei werden der Kreis </span>
+<span style="color: #8D8D84;">; </span><span style="color: #8D8D84; font-style: italic;">und der Punkt &#252;bergeben</span>
+<span style="color: #707183;">(</span>check-expect <span style="color: #7388D6;">(</span>in-circle? <span style="color: #909183;">(</span>make-circle <span style="color: #709870;">(</span>make-point 10 10<span style="color: #709870;">)</span> 2<span style="color: #909183;">)</span>
+                          <span style="color: #909183;">(</span>make-point 10 9<span style="color: #909183;">)</span><span style="color: #7388D6;">)</span> #true<span style="color: #707183;">)</span>
+<span style="color: #707183;">(</span>check-expect <span style="color: #7388D6;">(</span>in-circle? <span style="color: #909183;">(</span>make-circle <span style="color: #709870;">(</span>make-point 7 3<span style="color: #709870;">)</span> 5<span style="color: #909183;">)</span>
+                          <span style="color: #909183;">(</span>make-point 2 2<span style="color: #909183;">)</span><span style="color: #7388D6;">)</span> #false<span style="color: #707183;">)</span>
+<span style="color: #707183;">(</span>check-expect <span style="color: #7388D6;">(</span>in-circle? <span style="color: #909183;">(</span>make-circle <span style="color: #709870;">(</span>make-point 9 2<span style="color: #709870;">)</span> 7<span style="color: #909183;">)</span>
+                          <span style="color: #909183;">(</span>make-point 8 4<span style="color: #909183;">)</span><span style="color: #7388D6;">)</span> #true<span style="color: #707183;">)</span>
+<span style="color: #707183;">(</span><span style="color: #0000FF;">define</span> <span style="color: #006699;">in-circle?</span>
+  <span style="color: #7388D6;">(</span><span style="color: #0000FF;">lambda</span> <span style="color: #909183;">[</span>circle point<span style="color: #909183;">]</span>
+    <span style="color: #909183;">(</span>&lt;= <span style="color: #709870;">(</span>point-distance <span style="color: #907373;">(</span>circle-center circle<span style="color: #907373;">)</span> point<span style="color: #709870;">)</span> <span style="color: #709870;">(</span>circle-radius circle<span style="color: #709870;">)</span><span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
+</pre>
+</div></li>
+<li><p>
+Definieren Sie eine Datenstruktur für Gäste einer Veranstaltung.
+Ein Gast besteht aus einer Zeichenkette für den Namen, einem
+boolschen Wert, der angibt ob es sich um eine Frau handelt, und einem
+boolschen Wert, der angibt ob es sich um einen Vegetarier handelt.
+</p>
+
+<p>
+Schreiben Sie eine Funktion, die prüft, ob ein Gast ein nicht
+weiblicher Vegetarier ist.
+</p>
+<div class="org-src-container">
+<pre class="src src-scheme"><span style="color: #8D8D84;">; </span><span style="color: #8D8D84; font-style: italic;">Ein Gast besteht aus</span>
+<span style="color: #8D8D84;">; </span><span style="color: #8D8D84; font-style: italic;">- einer Zeichenkette f&#252;r den Namen</span>
+<span style="color: #8D8D84;">; </span><span style="color: #8D8D84; font-style: italic;">- einem boolschen Wert, der angibt ob es sich um eine Frau handelt</span>
+<span style="color: #8D8D84;">; </span><span style="color: #8D8D84; font-style: italic;">- einem boolschen Wert, der angibt ob es sich um einen Vegetarier handelt</span>
+
+<span style="color: #707183;">(</span>define-struct gast <span style="color: #7388D6;">[</span>name weiblich? vegetarier?<span style="color: #7388D6;">]</span><span style="color: #707183;">)</span>
+
+<span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">pr&#252;ft, ob ein Gast ein nicht weiblicher Vegetarier ist</span>
+<span style="color: #707183;">(</span><span style="color: #0000FF;">define</span> <span style="color: #006699;">nicht-weiblicher-vegetarier?</span>
+  <span style="color: #7388D6;">(</span><span style="color: #0000FF;">lambda</span> <span style="color: #909183;">[</span>gast<span style="color: #909183;">]</span>
+    <span style="color: #909183;">(</span><span style="color: #0000FF;">and</span> <span style="color: #709870;">(</span>not <span style="color: #907373;">(</span>gast-weiblich? gast<span style="color: #907373;">)</span><span style="color: #709870;">)</span> <span style="color: #709870;">(</span>gast-vegetarier? gast<span style="color: #709870;">)</span><span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
+
+<span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">Beispielanwendungen</span>
+<span style="color: #707183;">(</span>nicht-weiblicher-vegetarier? <span style="color: #7388D6;">(</span>make-gast <span style="color: #008000;">"Karl"</span> #false #true<span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
+<span style="color: #707183;">(</span>not <span style="color: #7388D6;">(</span>nicht-weiblicher-vegetarier? <span style="color: #909183;">(</span>make-gast <span style="color: #008000;">"Klara"</span> #true #true<span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
+<span style="color: #707183;">(</span>not <span style="color: #7388D6;">(</span>nicht-weiblicher-vegetarier? <span style="color: #909183;">(</span>make-gast <span style="color: #008000;">"Karl"</span> #false #false<span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
+
+</pre>
+</div></li>
+</ol>
+</div>
+</div>
+
+<div id="outline-container-orgfaaf081" class="outline-2">
+<h2 id="orgfaaf081"><span class="section-number-2">13</span> Datenabstraktion &#x2013; Zusatzaufgabe</h2>
+<div class="outline-text-2" id="text-13">
+</div>
+<div id="outline-container-org1d19085" class="outline-3">
+<h3 id="org1d19085"><span class="section-number-3">13.1</span> Vorbemerkungen</h3>
+<div class="outline-text-3" id="text-13-1">
+<p>
+In den Lehrsprachen von DrRacket gibt es ein vordefinierte
+Strukturdefinition namens <code>posn</code> für Punkte in der Ebene, die genauso
+aufgebaut ist wie die Strukturdefinition <code>point</code> aus der
+Vorlesung. Die damit vordefinierten Funktionen sind
+</p>
+<ul class="org-ul">
+<li>die Konstruktionsfunktion <code>make-posn</code>,</li>
+<li>die Selektionsfunktionen <code>posn-x</code> und <code>posn-y</code> und</li>
+<li>das Typprädikat <code>posn?</code>.</li>
+</ul>
+
+<p>
+Wenn man über den Menüpunkt <code>Sprache-&gt;Teachpack hinzufügen...</code> das
+Teachpack <code>draw.rkt</code> auswählt und anschließend den <code>Start</code>-Knopf
+drückt, steht ein Grafikpaket mit den folgenden Funktionen bereit:
+</p>
+<dl class="org-dl">
+<dt><code>draw-solid-line</code></dt><dd>erwartet zwei Punkte (<code>posn</code>-Strukturen), die
+den Anfang und das Ende einer Strecke definieren sowie eine Farbe
+als Argumente</dd>
+<dt><code>draw-solid-rect</code></dt><dd>erwartet vier Argumente: ein Punkt für die
+linke obere Ecke des Rechtecks, zwei Zahlen für Breite und Höhe
+des Rechecks und eine Farbe</dd>
+<dt><code>draw-solid-disk</code></dt><dd>erwartet drei Argumente: ein Punkt für den
+Mittelpunkt, eine Zahl für den Radius der Scheibe und eine Farbe</dd>
+<dt><code>draw-circle</code></dt><dd>erwartet drei Argumente: ein Punkt für den
+Mittelpunkt, eine Zahl für den Radius des Kreises und eine Farbe</dd>
+</dl>
+<p>
+Alle Funktionen liefern als Funktionswert <code>true</code>, wobei wir in diesem Fall
+an den Funktionswerten weniger interessiert sind als an ihrem
+<b>Effekt</b>. Der besteht nämlich darin, dass die Prozeduren jeweils eine
+Strecke, ein Rechteck, eine Scheibe und einen Kreis auf eine zuvor
+definierte Zeichenfläche zeichnen.
+</p>
+
+<p>
+Eine Zeichenfläche kann mit einem Ausdruck <code>(start x y)</code> erzeugt
+werden, wobei <code>x</code> und <code>y</code> die Breite und die Höhe in Pixeln der
+Zeichenfläche angeben. Zum Beispiel erzeugt ein Aufruf <code>(start 150
+200)</code> die folgende Zeichenfläche: <img src="./Abbildungen/canvas.png" alt="canvas.png" /> Ein
+Anwendungsbeispiel zeigt die folgende Abbildung:
+<img src="./Abbildungen/drawings.png" alt="drawings.png" />
+</p>
+
+<p>
+Der <b>Ursprung des Koordinatensystems</b> liegt in der linken oberen Ecke
+der Zeichenfläche. Die x-Koordinate zählt nach rechts, die
+y-Koordinate nach unten positiv: <br />
+<img src="http://www.htdp.org/2003-09-26/Book/curriculum1aa-Z-G-17.gif" alt="curriculum1aa-Z-G-17.gif" />
+</p>
+
+<p>
+Die <b>Farben</b> werden durch Symbole wie '<code>yellow</code>, '<code>red</code>, '<code>green</code>
+angegeben. Bitte beachten Sie das vorangestellte Hochkomma.
+</p>
+
+<p>
+Für jede Zeichenoperation gibt es eine korrespondierende
+<b>Löschoperation</b>: <code>clear-solid-line</code>, <code>clear-solid-rect</code>,
+<code>clear-solid-disk</code> und <code>clear-circle</code>. Wenn diese Funktionen mit den
+gleichen Argumenten wie zuvor die zugehörigen <code>draw</code>-Operationen aufgerufen
+werden, werden die entsprechenden Figuren von der Zeichenfläche
+entfernt.
+</p>
+
+<p>
+Um <b>mehrere Zeichenoperationen hintereinander</b> ausführen zu
+können, d. h. <b>mehrere Effekte</b> zu <b>kombininieren</b>, macht man davon
+Gebrauch, dass die einzelnen Zeichenoperationen <code>#true</code> als Resultat
+liefern. Dadurch ist es möglich mehrere Zeichenoperationen
+hintereinander auszuführen, indem man sie in eine Und-Verknüpfung
+einschließt:
+</p>
+<pre class="example">
+(and exp1 exp2)
+</pre>
+
+<p>
+Dieser Ausdruck bewirkt, dass man zuerst den Effekt von <code>exp1</code> und
+anschließend den von <code>exp2</code> zu sehen bekommt.
+</p>
+
+<p>
+Mit <code>(stop)</code> wird die Zeichenfläche geschlossen.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org1124572" class="outline-3">
+<h3 id="org1124572"><span class="section-number-3">13.2</span> Aufgabenstellungen</h3>
+<div class="outline-text-3" id="text-13-2">
+<ol class="org-ol">
+<li>Experimentieren Sie mit den o. g. Funktionen.</li>
+<li>Kreise und Rechtecke bewegen
+<ol class="org-ol">
+<li>Entwickeln Sie eine Datenstruktur <code>circle</code> für farbige Kreise. Diese
+sollen durch drei Komponenten definiert sein: den Mittelpunkt,
+den Radius und die Farbe des Umfangs.</li>
+<li>Schreiben Sie die Datendefinition für Kreise und die
+Funktionsschablone (gemäß Regeln 7 und 8) für Kreise
+verarbeitende Funktionen.</li>
+<li>Benutzen Sie die Schablone für die Entwicklung einer Funktion
+<code>draw-a-circle</code>. Die Funktion erwartet einen Kreis (<code>circle</code>) als
+Argument und zeichnet ihn auf einer Zeichenfläche. Der
+Funktionswert sollte <code>#true</code> sein.</li>
+<li>Entwickeln Sie eine Funktion <code>translate-circle</code> mit einer
+<code>circle</code>-Struktur <code>c</code> und einer <code>posn</code>-Struktur <code>delta</code> als
+Parameter. Die Funktion liefert einen <code>circle</code> als Resultat,
+dessen Mittelpunkt gegenüber dem von <code>c</code> um den x-Wert von
+<code>delta</code> nach rechts und um den y-Wert von <code>delta</code> nach unten
+verschoben ist. Die Funktion hat keinen Effekt auf der
+Zeichenfläche.</li>
+<li>Schreiben Sie eine Funktion <code>clear-a-circle</code>, die einen Kreis
+von der Zeichenfläche entfernt.</li>
+<li><p>
+Schreiben Sie eine Funktion <code>draw-and-clear-circle</code>, die eine
+<code>circle</code>-Struktur zeichnet, eine kurze Zeit wartet und sie
+anschließend wieder entfernt. Für die Implementierung der
+Wartezeit steht die Prozedur <code>sleep-for-a-while</code> zur
+Verfügung. Der Aufruf <br />
+<code>(sleep-for-a-while 3)</code> erzeugt eine
+Wartezeit von drei Sekunden. Der Funktionswert ist <code>#true</code>.
+</p>
+
+<p>
+Die Funktion
+</p>
+<div class="org-src-container">
+<pre class="src src-scheme"><span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">zeichnet und l&#246;scht einen Kreis a-circle und </span>
+<span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">bewegt ihn um a-posn</span>
+<span style="color: #707183;">(</span><span style="color: #0000FF;">define</span> <span style="color: #006699;">move-circle</span>
+   <span style="color: #7388D6;">(</span><span style="color: #0000FF;">lambda</span> <span style="color: #909183;">[</span>a-posn a-circle<span style="color: #909183;">]</span>
+      <span style="color: #909183;">(</span><span style="color: #0000FF;">cond</span>
+        <span style="color: #709870;">[</span><span style="color: #907373;">(</span>draw-and-clear-circle a-circle<span style="color: #907373;">)</span> 
+           <span style="color: #907373;">(</span>translate-circle a-circle a-posn<span style="color: #907373;">)</span><span style="color: #709870;">]</span>
+        <span style="color: #709870;">[</span>else a-circle<span style="color: #709870;">]</span><span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
+</pre>
+</div>
+<p>
+zeichnet und löscht einen Kreis auf der Zeichenfläche und
+erzeugt anschließend einen (verschobenen) Kreis, so dass eine
+erneute Zeichenoperation den Kreis an einer neuen Position
+erscheinen lässt. 
+</p>
+
+<p>
+Zum Beispiel bewegt der Ausdruck
+</p>
+<div class="org-src-container">
+<pre class="src src-scheme"><span style="color: #707183;">(</span>draw-a-circle 
+ <span style="color: #7388D6;">(</span>move-circle 
+  <span style="color: #909183;">(</span>make-posn 10 0<span style="color: #909183;">)</span> 
+  <span style="color: #909183;">(</span>move-circle
+   <span style="color: #709870;">(</span>make-posn 10 0<span style="color: #709870;">)</span> 
+    <span style="color: #709870;">(</span>move-circle 
+     <span style="color: #907373;">(</span>make-posn 10 0<span style="color: #907373;">)</span>
+     <span style="color: #907373;">(</span>make-circle <span style="color: #6276BA;">(</span>make-posn 10 50<span style="color: #6276BA;">)</span> 10 'green<span style="color: #907373;">)</span><span style="color: #709870;">)</span><span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
+</pre>
+</div>
+<p>
+einen grünen Kreis dreimal um 10 Pixel nach rechts. Der äußere
+Aufruf von <code>draw-a-circle</code> sorgt dafür, dass auch die letzte
+Position des Kreises angezeigt wird.
+</p>
+
+<p>
+Das sei nur ein kleine Anregung für eigene „Animationen“.
+</p></li>
+</ol></li>
+</ol>
+</div>
+</div>
+</div>
+<div id="outline-container-orge1629db" class="outline-2">
+<h2 id="orge1629db"><span class="section-number-2">14</span> Datenabstraktion &#x2013; gemischte Daten</h2>
+<div class="outline-text-2" id="text-14">
+<p>
+Lösen Sie die Aufgabe unter Anwendung der passenden Regeln!
+</p>
+
+<p>
+Ein <i>Mitarbeiter</i> ist entweder
+</p>
+
+<ul class="org-ul">
+<li>ein <i>Festangestellter</i> oder</li>
+<li>ein <i>Werkstudent</i></li>
+</ul>
+
+<p>
+Ein <i>Festangestellter</i> wird definiert durch
+</p>
+
+<ul class="org-ul">
+<li>seinen Namen,</li>
+<li>sein Grundgehalt,</li>
+<li>die im letzten Monat geleisteten Arbeitsstunden.</li>
+</ul>
+
+<p>
+Ein <i>Werkstudent</i> wird definiert durch
+</p>
+
+<ul class="org-ul">
+<li>seinen Namen,</li>
+<li>seinen Stundenlohn,</li>
+<li>die im letzten Monat geleisteten Arbeitsstunden.</li>
+</ul>
+
+<p>
+Definieren Sie 
+</p>
+
+<ul class="org-ul">
+<li>geeignete Datenstrukturen für <i>Mitarbeiter</i>,</li>
+<li>eine Funktionsschablone für Funktionen, die <i>Mitarbeiter</i>
+verarbeiten.</li>
+</ul>
+
+<p>
+Entwickeln auf der Grundlage dieser Schablone eine Funktion, die den
+Bruttomonatslohn eines Mitarbeiters berechnet. Bei <i>Festangestellten</i>
+berechnet sich der Monatslohn aus dem Grundgehalt zuzüglich
+Überstundenentgelt. Überstunden sind die über die monatliche
+Sollarbeitszeit (die als globale Konstante definiert wird)
+hinausgehenden Arbeitsstunden. Der Stundenlohn pro Überstunde berechnet
+sich aus dem Grundgehalt und der monatlichen Sollarbeitszeit plus
+\(25\%\). Minderstunden bleiben unberücksichtigt.
+</p>
+<div class="org-src-container">
+<pre class="src src-scheme"><span style="color: #8D8D84;">; </span><span style="color: #8D8D84; font-style: italic;">Autor der L&#246;sung zu Aufgabe 14: Marlon Tobaben (I16b)</span>
+
+<span style="color: #8D8D84;">;;</span><span style="color: #8D8D84; font-style: italic;">Die Konstante f&#252;r die monatliche sollarbeitszeit eines angestellten</span>
+<span style="color: #707183;">(</span><span style="color: #0000FF;">define</span> <span style="color: #006699;">sollarbeitszeit</span> 120<span style="color: #707183;">)</span>
+
+<span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">Ein mitarbeiter ist entweder</span>
+<span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">- ein festangestellter</span>
+<span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">- ein werksstudent</span>
+<span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">name: mitarbeiter</span>
+
+<span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">Ein festangestellter ist ein Wert </span>
+<span style="color: #8D8D84;">;;   </span><span style="color: #8D8D84; font-style: italic;">(make-festangestellter name grundgehalt arbeitsstunden)</span>
+<span style="color: #8D8D84;">;;  </span><span style="color: #8D8D84; font-style: italic;">wobei der name ein string und</span>
+<span style="color: #8D8D84;">;;       </span><span style="color: #8D8D84; font-style: italic;">das grundgehalt und arbeitsstunden Zahlen sind.</span>
+<span style="color: #707183;">(</span>define-struct festangestellter <span style="color: #7388D6;">[</span>name grundgehalt arbeitsstunden<span style="color: #7388D6;">]</span><span style="color: #707183;">)</span>
+
+<span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">Ein werksstudent ist ein Wert </span>
+<span style="color: #8D8D84;">;;   </span><span style="color: #8D8D84; font-style: italic;">(make-werksstudent name stundenlohn arbeitsstunden)</span>
+<span style="color: #8D8D84;">;;  </span><span style="color: #8D8D84; font-style: italic;">wobei der name ein string und</span>
+<span style="color: #8D8D84;">;;       </span><span style="color: #8D8D84; font-style: italic;">das stundenlohn  und arbeitsstunden Zahlen sind.</span>
+<span style="color: #707183;">(</span>define-struct werksstudent <span style="color: #7388D6;">[</span>name stundenlohn arbeitsstunden<span style="color: #7388D6;">]</span><span style="color: #707183;">)</span>
+
+<span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">Die Funktion ueberstunden-festangestellter berechnet die &#220;berstunden eines</span>
+<span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">festangestellten anhand der sollarbeitszeit</span>
+<span style="color: #707183;">(</span>check-expect <span style="color: #7388D6;">(</span>ueberstunden-festangestellter 120<span style="color: #7388D6;">)</span>  0<span style="color: #707183;">)</span>
+<span style="color: #707183;">(</span>check-expect <span style="color: #7388D6;">(</span>ueberstunden-festangestellter 130<span style="color: #7388D6;">)</span> 10<span style="color: #707183;">)</span>
+<span style="color: #707183;">(</span>check-expect <span style="color: #7388D6;">(</span>ueberstunden-festangestellter 150<span style="color: #7388D6;">)</span> 30<span style="color: #707183;">)</span>
+
+<span style="color: #707183;">(</span><span style="color: #0000FF;">define</span> <span style="color: #006699;">ueberstunden-festangestellter</span>
+  <span style="color: #7388D6;">(</span><span style="color: #0000FF;">lambda</span> <span style="color: #909183;">[</span>arbeitsstunden<span style="color: #909183;">]</span>
+    <span style="color: #909183;">(</span><span style="color: #0000FF;">cond</span> <span style="color: #709870;">[</span><span style="color: #907373;">(</span>&gt; <span style="color: #6276BA;">(</span>- arbeitsstunden sollarbeitszeit<span style="color: #6276BA;">)</span> 0<span style="color: #907373;">)</span>
+           <span style="color: #907373;">(</span>- arbeitsstunden sollarbeitszeit<span style="color: #907373;">)</span><span style="color: #709870;">]</span>
+          <span style="color: #709870;">[</span>else 0<span style="color: #709870;">]</span><span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
+
+<span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">Funktion bruttolohn-festangesteller berechnet den Bruttolohn eines Festanstellten </span>
+<span style="color: #8D8D84;">;;</span><span style="color: #8D8D84; font-style: italic;">unter Ber&#252;cksichtung der sollarbeitszeit und mit 25% zuschlag bei ueberstunden</span>
+<span style="color: #707183;">(</span>check-expect <span style="color: #7388D6;">(</span>bruttolohn-festangestellter
+               <span style="color: #909183;">(</span>make-festangestellter <span style="color: #008000;">"Peter"</span> 3000 120<span style="color: #909183;">)</span><span style="color: #7388D6;">)</span>  3000<span style="color: #707183;">)</span>
+<span style="color: #707183;">(</span>check-expect <span style="color: #7388D6;">(</span>bruttolohn-festangestellter
+               <span style="color: #909183;">(</span>make-festangestellter <span style="color: #008000;">"Heinz"</span> 3000   0<span style="color: #909183;">)</span><span style="color: #7388D6;">)</span>  3000<span style="color: #707183;">)</span>
+<span style="color: #707183;">(</span>check-expect <span style="color: #7388D6;">(</span>bruttolohn-festangestellter
+               <span style="color: #909183;">(</span>make-festangestellter <span style="color: #008000;">"Heinz"</span> 3000 240<span style="color: #909183;">)</span><span style="color: #7388D6;">)</span>  6750<span style="color: #707183;">)</span>
+<span style="color: #707183;">(</span><span style="color: #0000FF;">define</span> <span style="color: #006699;">bruttolohn-festangestellter</span>
+  <span style="color: #7388D6;">(</span><span style="color: #0000FF;">lambda</span> <span style="color: #909183;">[</span>f<span style="color: #909183;">]</span>
+    <span style="color: #909183;">(</span>+ <span style="color: #709870;">(</span>festangestellter-grundgehalt f<span style="color: #709870;">)</span> 
+       <span style="color: #709870;">(</span>* <span style="color: #907373;">(</span>ueberstunden-festangestellter <span style="color: #6276BA;">(</span>festangestellter-arbeitsstunden f<span style="color: #6276BA;">)</span><span style="color: #907373;">)</span>
+          <span style="color: #907373;">(</span>* <span style="color: #6276BA;">(</span>/ <span style="color: #858580;">(</span>festangestellter-grundgehalt f<span style="color: #858580;">)</span> sollarbeitszeit<span style="color: #6276BA;">)</span> 1.25<span style="color: #907373;">)</span><span style="color: #709870;">)</span><span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
+
+<span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">Funktion bruttolohn-werkstundent berechnet den Bruttolohn eines werksstundenten</span>
+<span style="color: #707183;">(</span>check-expect <span style="color: #7388D6;">(</span>bruttolohn-werksstudent <span style="color: #909183;">(</span>make-werksstudent <span style="color: #008000;">"Peter"</span> 10 120<span style="color: #909183;">)</span><span style="color: #7388D6;">)</span>  1200<span style="color: #707183;">)</span>
+<span style="color: #707183;">(</span>check-expect <span style="color: #7388D6;">(</span>bruttolohn-werksstudent <span style="color: #909183;">(</span>make-werksstudent <span style="color: #008000;">"Heinz"</span>  0  20<span style="color: #909183;">)</span><span style="color: #7388D6;">)</span>     0<span style="color: #707183;">)</span>
+<span style="color: #707183;">(</span>check-expect <span style="color: #7388D6;">(</span>bruttolohn-werksstudent <span style="color: #909183;">(</span>make-werksstudent <span style="color: #008000;">"Heinz"</span> 20 120<span style="color: #909183;">)</span><span style="color: #7388D6;">)</span>  2400<span style="color: #707183;">)</span>
+<span style="color: #707183;">(</span><span style="color: #0000FF;">define</span> <span style="color: #006699;">bruttolohn-werksstudent</span>
+  <span style="color: #7388D6;">(</span><span style="color: #0000FF;">lambda</span> <span style="color: #909183;">[</span>w<span style="color: #909183;">]</span>
+    <span style="color: #909183;">(</span>* <span style="color: #709870;">(</span>werksstudent-stundenlohn w<span style="color: #709870;">)</span> <span style="color: #709870;">(</span>werksstudent-arbeitsstunden w<span style="color: #709870;">)</span><span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
+
+<span style="color: #8D8D84;">;;</span><span style="color: #8D8D84; font-style: italic;">Funktion bruttolohn-mitarbeiter berechnet den bruttolohn eines mitarbeiters</span>
+<span style="color: #707183;">(</span>check-expect <span style="color: #7388D6;">(</span>bruttolohn-mitarbeiter <span style="color: #909183;">(</span>make-werksstudent <span style="color: #008000;">"Heinz"</span>  0  20<span style="color: #909183;">)</span><span style="color: #7388D6;">)</span> 0<span style="color: #707183;">)</span>
+<span style="color: #707183;">(</span>check-expect <span style="color: #7388D6;">(</span>bruttolohn-mitarbeiter <span style="color: #909183;">(</span>make-festangestellter <span style="color: #008000;">"Heinz"</span> 3000  0<span style="color: #909183;">)</span><span style="color: #7388D6;">)</span> 3000<span style="color: #707183;">)</span>
+<span style="color: #707183;">(</span><span style="color: #0000FF;">define</span> <span style="color: #006699;">bruttolohn-mitarbeiter</span>
+  <span style="color: #7388D6;">(</span><span style="color: #0000FF;">lambda</span> <span style="color: #909183;">[</span>mitarbeiter<span style="color: #909183;">]</span>
+    <span style="color: #909183;">(</span><span style="color: #0000FF;">cond</span> 
+      <span style="color: #709870;">[</span><span style="color: #907373;">(</span>festangestellter? mitarbeiter<span style="color: #907373;">)</span> <span style="color: #907373;">(</span>bruttolohn-festangestellter mitarbeiter<span style="color: #907373;">)</span><span style="color: #709870;">]</span>
+      <span style="color: #709870;">[</span><span style="color: #907373;">(</span>werksstudent?     mitarbeiter<span style="color: #907373;">)</span> <span style="color: #907373;">(</span>bruttolohn-werksstudent     mitarbeiter<span style="color: #907373;">)</span><span style="color: #709870;">]</span><span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
+</pre>
+</div>
+</div>
+</div>
 </div>
 <div id="postamble" class="status">
 <p class="author">Autor: Johannes Brauer</p>
-<p class="date">Created: 2023-02-02 Thu 17:48</p>
+<p class="date">Created: 2023-02-08 Wed 22:03</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
